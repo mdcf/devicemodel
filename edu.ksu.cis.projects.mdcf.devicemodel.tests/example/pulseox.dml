@@ -1,0 +1,82 @@
+// Type Extension (native) Declarations
+type Nat
+type String
+type SemanticCategory
+type DateTime
+type DeviceNomenclature
+type Periodicity
+
+// A typed literal is defined as any character in between parentheses (...), greedy (allow nested)
+// - e.g., Nat ( 23 )
+// - the literal type constructor gives a clue on how to parse the content and
+//   such processing is defined outside of the model as extensions
+// - leading and trailing whitespaces between the parentheses are ignored
+//
+// We can add subtyping to type spec, e.g.,
+//   type Int
+//   type Nat <: Int
+//
+
+// A feature group defines a structural type (no type recursion/cycle allowed)
+// structural sub-typing can be easily defined including attribute modifiers (sans value, even constant ones)
+featuregroup PulseOximeterICEMAN { // ICEMAN style
+  // notes:
+  // - const modifier = constant attribute
+  // - val modifier   = read only attribute (value might change overtime)
+  // - var modifier   = writable (and readable) attribute 
+  // - def modifier   = define a value for previously declared attribute
+  const protocolName      = String             ( N560                )
+  const manufacturer      = String             ( Nellcor             )
+  const deviceID          = String             ( N-560               )
+  const deviceCode        = String             ( Oximeter            )
+  const complianceLevel   = Nat                ( 0                   )
+  const semantics         = SemanticCategory   ( SNOMED;ICEMAN       )
+     
+  // sub-feature group whose type StatusMonitor is defined below
+  deviceHealth:DeviceStatusMonitor : StatusMonitor
+     
+  // sub-feature group whose type is directly defined (anonymous)
+  sensor:FingerSensor = {
+    val location          = String             ( finger              )
+           
+    metric:PulseAmplitude = {
+      val value           : Nat // only type spec without value
+      val units           = String             ( unitless            )
+                 
+      timedTrigger:ReportPulseAmplitude <: TimedTrigger = { // <: is structural subtyping
+        def status        = String             ( Off                 )
+        def triggerSource = Nat                ( 1036                )
+        def timeInterval  = Nat                ( 2000                )
+      }
+    }
+  }
+}
+
+featuregroup TimedTrigger {
+  val status        : String
+  val triggerSource : Nat
+  val timeInterval  : Nat
+}
+ 
+featuregroup StatusMonitor {
+  val status            = String               ( Disconnected        )
+  val dateTime          = DateTime             ( 2002-05-30T09:00:00 )
+  val powerStatus       = String               ( onBattery           )
+  val batteryLevel      = Nat                  ( 67                  )
+}
+ 
+featuregroup PulseOximeterYUJIN { // Yu Jin's style
+  const deviceID          = String             ( N-560                )
+  const deviceTypeNomen   = DeviceNomenclature ( MDC_DEV_SPEC_PROFILE_PULS_OXIM )
+ 
+  measurement:PulseRate = {
+      const unitNomenclature
+                          = DeviceNomenclature ( MDC_DIM_BEAT_PER_MIN )
+      const range         = < Nat(20), Nat(250) > // tuple literal
+     
+      var reportPeriodicity = Periodicity        ( Periodic             )
+ 
+      val someSet         = Nat { (1), (2), (3) } // set literal
+      val someList        = Nat [ (1), (2), (3) ] // list literal
+  }
+}

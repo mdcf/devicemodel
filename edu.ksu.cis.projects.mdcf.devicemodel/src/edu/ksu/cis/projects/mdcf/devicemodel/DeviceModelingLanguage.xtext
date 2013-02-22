@@ -1,0 +1,58 @@
+grammar edu.ksu.cis.projects.mdcf.devicemodel.DeviceModelingLanguage hidden(WS, ML_COMMENT, SL_COMMENT)
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate deviceModelingLanguage "http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage"
+
+Model:                 decls+=Decl*;
+	
+Decl:                  'type'         {TypeDecl}         name=ID
+                     | 'featuregroup' {FeatureGroupDecl} name=ID
+                       ( '<:' supers+=[FeatureGroupDecl|ID] 
+                     	      ( ',' supers+=[FeatureGroupDecl|ID] )*
+                       )?  
+                       body=FeatureGroupBody; 
+
+FeatureGroupBody:    '{' {FeatureGroupBody} groupElements += GroupElementDecl* '}';
+
+GroupElementDecl:    GroupAttrDecl | SubGroupDecl;
+
+GroupAttrDecl:       modifier=Modifier attributeName=ID 
+	                   ( ':' attributeType=Type 
+	                   | '=' attributeLiteral=Literal );
+
+Modifier:            'const' | 'val' | 'var' | 'def';
+
+Type:                  {BasicType} baseType=[TypeDecl|ID]
+	                     ( {ListType.base=current} '[' ']'
+	                     | {SetType.base=current}  '{' '}' )*
+                     | '<' {TupleType} elemTypes+=Type ( '*' elemTypes+=Type )+ '>';
+ 
+Literal:             BasicLiteral | TupleLiteral | ListLiteral | SetLiteral;
+
+BasicLiteral:        typeCons=[TypeDecl|ID] lit=LIT;
+
+TupleLiteral:        '<' {TupleLiteral} ( elems+=Literal ( ',' elems+=Literal)* )? '>';
+
+ListLiteral:         typeCons=[TypeDecl|ID] '[' ( elems+=ELiteral ( ',' elems+=ELiteral)* )? ']';
+
+SetLiteral:          typeCons=[TypeDecl|ID] '{' ( elems+=ELiteral ( ',' elems+=ELiteral)* )? '}';
+
+ELiteral:            lit=LIT;
+
+SubGroupDecl:        ( categoryName=ID ':' )? name=ID type=SubGroupType;
+
+SubGroupType:          ':' {SubGroupTypeRef}  type=[FeatureGroupDecl|ID] 
+                     | {SubGroupTypeAnon} 
+                       ( '<:' supers+=[FeatureGroupDecl|ID] 
+                     	      ( ',' supers+=[FeatureGroupDecl|ID] )*
+                       )? 
+                       '=' body=FeatureGroupBody;
+
+terminal ID:         '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+
+terminal LIT:        '(' -> ')';
+
+terminal ML_COMMENT: '/*' -> '*/';
+terminal SL_COMMENT: '//' !('\n'|'\r')* ('\r'? '\n')?;
+terminal WS:         (' '|'\t'|'\r'|'\n')+;

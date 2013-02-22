@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xtext:Grammar xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xtext="http://www.eclipse.org/2008/Xtext" name="edu.ksu.cis.projects.mdcf.devicemodel.DeviceModelingLanguage" definesHiddenTokens="true" hiddenTokens="//@rules.19 //@rules.17 //@rules.18">
+  <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="ecore">
+    <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  </metamodelDeclarations>
+  <metamodelDeclarations xsi:type="xtext:GeneratedMetamodel" name="deviceModelingLanguage">
+    <ePackage href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#/"/>
+  </metamodelDeclarations>
+  <rules xsi:type="xtext:ParserRule" name="Model">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//Model"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" cardinality="*" feature="decls" operator="+=">
+      <terminal xsi:type="xtext:RuleCall" rule="//@rules.1"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Decl">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//Decl"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="type"/>
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.1">
+            <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//TypeDecl"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="featuregroup"/>
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.1">
+            <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//FeatureGroupDecl"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="&lt;:"/>
+          <elements xsi:type="xtext:Assignment" feature="supers" operator="+=">
+            <terminal xsi:type="xtext:CrossReference">
+              <type metamodel="//@metamodelDeclarations.1">
+                <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//FeatureGroupDecl"/>
+              </type>
+              <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+            </terminal>
+          </elements>
+          <elements xsi:type="xtext:Group" cardinality="*">
+            <elements xsi:type="xtext:Keyword" value=","/>
+            <elements xsi:type="xtext:Assignment" feature="supers" operator="+=">
+              <terminal xsi:type="xtext:CrossReference">
+                <type metamodel="//@metamodelDeclarations.1">
+                  <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//FeatureGroupDecl"/>
+                </type>
+                <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+              </terminal>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="body" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="FeatureGroupBody">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//FeatureGroupBody"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="{"/>
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.1">
+          <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//FeatureGroupBody"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="groupElements" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.3"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="}"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="GroupElementDecl">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//GroupElementDecl"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.4"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.13"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="GroupAttrDecl">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//GroupAttrDecl"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="modifier" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.5"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="attributeName" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+      </elements>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value=":"/>
+          <elements xsi:type="xtext:Assignment" feature="attributeType" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.6"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="="/>
+          <elements xsi:type="xtext:Assignment" feature="attributeLiteral" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.7"/>
+          </elements>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Modifier">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="const"/>
+      <elements xsi:type="xtext:Keyword" value="val"/>
+      <elements xsi:type="xtext:Keyword" value="var"/>
+      <elements xsi:type="xtext:Keyword" value="def"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Type">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//Type"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.1">
+            <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//BasicType"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="baseType" operator="=">
+          <terminal xsi:type="xtext:CrossReference">
+            <type metamodel="//@metamodelDeclarations.1">
+              <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//TypeDecl"/>
+            </type>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Alternatives" cardinality="*">
+          <elements xsi:type="xtext:Group">
+            <elements xsi:type="xtext:Action" feature="base" operator="=">
+              <type metamodel="//@metamodelDeclarations.1">
+                <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//ListType"/>
+              </type>
+            </elements>
+            <elements xsi:type="xtext:Keyword" value="["/>
+            <elements xsi:type="xtext:Keyword" value="]"/>
+          </elements>
+          <elements xsi:type="xtext:Group">
+            <elements xsi:type="xtext:Action" feature="base" operator="=">
+              <type metamodel="//@metamodelDeclarations.1">
+                <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//SetType"/>
+              </type>
+            </elements>
+            <elements xsi:type="xtext:Keyword" value="{"/>
+            <elements xsi:type="xtext:Keyword" value="}"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="&lt;"/>
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.1">
+            <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//TupleType"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="elemTypes" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.6"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="+">
+          <elements xsi:type="xtext:Keyword" value="*"/>
+          <elements xsi:type="xtext:Assignment" feature="elemTypes" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.6"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=">"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Literal">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//Literal"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.8"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.9"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.10"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="BasicLiteral">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//BasicLiteral"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="typeCons" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.1">
+            <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//TypeDecl"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="lit" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.16"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TupleLiteral">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//TupleLiteral"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="&lt;"/>
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.1">
+          <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//TupleLiteral"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="elems" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.7"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="elems" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.7"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=">"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ListLiteral">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//ListLiteral"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="typeCons" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.1">
+            <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//TypeDecl"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="["/>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="elems" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="elems" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="]"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SetLiteral">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//SetLiteral"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="typeCons" operator="=">
+        <terminal xsi:type="xtext:CrossReference">
+          <type metamodel="//@metamodelDeclarations.1">
+            <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//TypeDecl"/>
+          </type>
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="{"/>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="elems" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="elems" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="}"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ELiteral">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//ELiteral"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="lit" operator="=">
+      <terminal xsi:type="xtext:RuleCall" rule="//@rules.16"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SubGroupDecl">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//SubGroupDecl"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="categoryName" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="type" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.14"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="SubGroupType">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//SubGroupType"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.1">
+            <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//SubGroupTypeRef"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="type" operator="=">
+          <terminal xsi:type="xtext:CrossReference">
+            <type metamodel="//@metamodelDeclarations.1">
+              <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//FeatureGroupDecl"/>
+            </type>
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+          </terminal>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Action">
+          <type metamodel="//@metamodelDeclarations.1">
+            <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//SubGroupTypeAnon"/>
+          </type>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="&lt;:"/>
+          <elements xsi:type="xtext:Assignment" feature="supers" operator="+=">
+            <terminal xsi:type="xtext:CrossReference">
+              <type metamodel="//@metamodelDeclarations.1">
+                <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//FeatureGroupDecl"/>
+              </type>
+              <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+            </terminal>
+          </elements>
+          <elements xsi:type="xtext:Group" cardinality="*">
+            <elements xsi:type="xtext:Keyword" value=","/>
+            <elements xsi:type="xtext:Assignment" feature="supers" operator="+=">
+              <terminal xsi:type="xtext:CrossReference">
+                <type metamodel="//@metamodelDeclarations.1">
+                  <classifier xsi:type="ecore:EClass" href="http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage#//FeatureGroupDecl"/>
+                </type>
+                <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+              </terminal>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="="/>
+        <elements xsi:type="xtext:Assignment" feature="body" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="ID">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" cardinality="?" value="^"/>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="a"/>
+          <right value="z"/>
+        </elements>
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="A"/>
+          <right value="Z"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="_"/>
+      </elements>
+      <elements xsi:type="xtext:Alternatives" cardinality="*">
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="a"/>
+          <right value="z"/>
+        </elements>
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="A"/>
+          <right value="Z"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="_"/>
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="0"/>
+          <right value="9"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="LIT">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:UntilToken">
+        <terminal xsi:type="xtext:Keyword" value=")"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="ML_COMMENT">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="/*"/>
+      <elements xsi:type="xtext:UntilToken">
+        <terminal xsi:type="xtext:Keyword" value="*/"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="SL_COMMENT">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="//"/>
+      <elements xsi:type="xtext:NegatedToken" cardinality="*">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+          <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" cardinality="?" value="&#xD;"/>
+        <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="WS">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives" cardinality="+">
+      <elements xsi:type="xtext:Keyword" value=" "/>
+      <elements xsi:type="xtext:Keyword" value="&#x9;"/>
+      <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+      <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+    </alternatives>
+  </rules>
+</xtext:Grammar>

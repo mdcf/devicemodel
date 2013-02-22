@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: edu.ksu.cis.projects.mdcf.devicemodel.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: edu.ksu.cis.projects.mdcf.devicemodel.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: edu.ksu.cis.projects.mdcf.devicemodel;visibility:=reexport,
+ org.eclipse.xtext.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.ui,
+ org.eclipse.xtext.builder,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types.ui,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.compare
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: edu.ksu.cis.projects.mdcf.devicemodel.ui.contentassist,
+ edu.ksu.cis.projects.mdcf.devicemodel.ui.contentassist.antlr,
+ edu.ksu.cis.projects.mdcf.devicemodel.ui.internal
+Bundle-Activator: edu.ksu.cis.projects.mdcf.devicemodel.ui.internal.DeviceModelingLanguageActivator
