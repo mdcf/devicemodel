@@ -2,8 +2,8 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupAttrDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Literal;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Type;
 
@@ -17,21 +17,21 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Group Attr Decl</b></em>'.
+ * An implementation of the model object '<em><b>Attr Decl</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.GroupAttrDeclImpl#getModifier <em>Modifier</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.GroupAttrDeclImpl#getAttributeName <em>Attribute Name</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.GroupAttrDeclImpl#getAttributeType <em>Attribute Type</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.GroupAttrDeclImpl#getAttributeLiteral <em>Attribute Literal</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AttrDeclImpl#getModifier <em>Modifier</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AttrDeclImpl#getAttributeName <em>Attribute Name</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AttrDeclImpl#getType <em>Type</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AttrDeclImpl#getLiteral <em>Literal</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttrDecl
+public class AttrDeclImpl extends FeatureDeclImpl implements AttrDecl
 {
   /**
    * The default value of the '{@link #getModifier() <em>Modifier</em>}' attribute.
@@ -74,31 +74,31 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
   protected String attributeName = ATTRIBUTE_NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getAttributeType() <em>Attribute Type</em>}' containment reference.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAttributeType()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected Type attributeType;
+  protected Type type;
 
   /**
-   * The cached value of the '{@link #getAttributeLiteral() <em>Attribute Literal</em>}' containment reference.
+   * The cached value of the '{@link #getLiteral() <em>Literal</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAttributeLiteral()
+   * @see #getLiteral()
    * @generated
    * @ordered
    */
-  protected Literal attributeLiteral;
+  protected Literal literal;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GroupAttrDeclImpl()
+  protected AttrDeclImpl()
   {
     super();
   }
@@ -111,7 +111,7 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.GROUP_ATTR_DECL;
+    return DeviceModelingLanguagePackage.Literals.ATTR_DECL;
   }
 
   /**
@@ -134,7 +134,7 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
     String oldModifier = modifier;
     modifier = newModifier;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.GROUP_ATTR_DECL__MODIFIER, oldModifier, modifier));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.ATTR_DECL__MODIFIER, oldModifier, modifier));
   }
 
   /**
@@ -157,7 +157,7 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
     String oldAttributeName = attributeName;
     attributeName = newAttributeName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_NAME, oldAttributeName, attributeName));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.ATTR_DECL__ATTRIBUTE_NAME, oldAttributeName, attributeName));
   }
 
   /**
@@ -165,9 +165,9 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type getAttributeType()
+  public Type getType()
   {
-    return attributeType;
+    return type;
   }
 
   /**
@@ -175,13 +175,13 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAttributeType(Type newAttributeType, NotificationChain msgs)
+  public NotificationChain basicSetType(Type newType, NotificationChain msgs)
   {
-    Type oldAttributeType = attributeType;
-    attributeType = newAttributeType;
+    Type oldType = type;
+    type = newType;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_TYPE, oldAttributeType, newAttributeType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.ATTR_DECL__TYPE, oldType, newType);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -192,20 +192,20 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAttributeType(Type newAttributeType)
+  public void setType(Type newType)
   {
-    if (newAttributeType != attributeType)
+    if (newType != type)
     {
       NotificationChain msgs = null;
-      if (attributeType != null)
-        msgs = ((InternalEObject)attributeType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_TYPE, null, msgs);
-      if (newAttributeType != null)
-        msgs = ((InternalEObject)newAttributeType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_TYPE, null, msgs);
-      msgs = basicSetAttributeType(newAttributeType, msgs);
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.ATTR_DECL__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.ATTR_DECL__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_TYPE, newAttributeType, newAttributeType));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.ATTR_DECL__TYPE, newType, newType));
   }
 
   /**
@@ -213,9 +213,9 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Literal getAttributeLiteral()
+  public Literal getLiteral()
   {
-    return attributeLiteral;
+    return literal;
   }
 
   /**
@@ -223,13 +223,13 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAttributeLiteral(Literal newAttributeLiteral, NotificationChain msgs)
+  public NotificationChain basicSetLiteral(Literal newLiteral, NotificationChain msgs)
   {
-    Literal oldAttributeLiteral = attributeLiteral;
-    attributeLiteral = newAttributeLiteral;
+    Literal oldLiteral = literal;
+    literal = newLiteral;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_LITERAL, oldAttributeLiteral, newAttributeLiteral);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.ATTR_DECL__LITERAL, oldLiteral, newLiteral);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -240,20 +240,20 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAttributeLiteral(Literal newAttributeLiteral)
+  public void setLiteral(Literal newLiteral)
   {
-    if (newAttributeLiteral != attributeLiteral)
+    if (newLiteral != literal)
     {
       NotificationChain msgs = null;
-      if (attributeLiteral != null)
-        msgs = ((InternalEObject)attributeLiteral).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_LITERAL, null, msgs);
-      if (newAttributeLiteral != null)
-        msgs = ((InternalEObject)newAttributeLiteral).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_LITERAL, null, msgs);
-      msgs = basicSetAttributeLiteral(newAttributeLiteral, msgs);
+      if (literal != null)
+        msgs = ((InternalEObject)literal).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.ATTR_DECL__LITERAL, null, msgs);
+      if (newLiteral != null)
+        msgs = ((InternalEObject)newLiteral).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.ATTR_DECL__LITERAL, null, msgs);
+      msgs = basicSetLiteral(newLiteral, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_LITERAL, newAttributeLiteral, newAttributeLiteral));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.ATTR_DECL__LITERAL, newLiteral, newLiteral));
   }
 
   /**
@@ -266,10 +266,10 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_TYPE:
-        return basicSetAttributeType(null, msgs);
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_LITERAL:
-        return basicSetAttributeLiteral(null, msgs);
+      case DeviceModelingLanguagePackage.ATTR_DECL__TYPE:
+        return basicSetType(null, msgs);
+      case DeviceModelingLanguagePackage.ATTR_DECL__LITERAL:
+        return basicSetLiteral(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -284,14 +284,14 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__MODIFIER:
+      case DeviceModelingLanguagePackage.ATTR_DECL__MODIFIER:
         return getModifier();
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_NAME:
+      case DeviceModelingLanguagePackage.ATTR_DECL__ATTRIBUTE_NAME:
         return getAttributeName();
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_TYPE:
-        return getAttributeType();
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_LITERAL:
-        return getAttributeLiteral();
+      case DeviceModelingLanguagePackage.ATTR_DECL__TYPE:
+        return getType();
+      case DeviceModelingLanguagePackage.ATTR_DECL__LITERAL:
+        return getLiteral();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -306,17 +306,17 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__MODIFIER:
+      case DeviceModelingLanguagePackage.ATTR_DECL__MODIFIER:
         setModifier((String)newValue);
         return;
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_NAME:
+      case DeviceModelingLanguagePackage.ATTR_DECL__ATTRIBUTE_NAME:
         setAttributeName((String)newValue);
         return;
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_TYPE:
-        setAttributeType((Type)newValue);
+      case DeviceModelingLanguagePackage.ATTR_DECL__TYPE:
+        setType((Type)newValue);
         return;
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_LITERAL:
-        setAttributeLiteral((Literal)newValue);
+      case DeviceModelingLanguagePackage.ATTR_DECL__LITERAL:
+        setLiteral((Literal)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -332,17 +332,17 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__MODIFIER:
+      case DeviceModelingLanguagePackage.ATTR_DECL__MODIFIER:
         setModifier(MODIFIER_EDEFAULT);
         return;
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_NAME:
+      case DeviceModelingLanguagePackage.ATTR_DECL__ATTRIBUTE_NAME:
         setAttributeName(ATTRIBUTE_NAME_EDEFAULT);
         return;
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_TYPE:
-        setAttributeType((Type)null);
+      case DeviceModelingLanguagePackage.ATTR_DECL__TYPE:
+        setType((Type)null);
         return;
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_LITERAL:
-        setAttributeLiteral((Literal)null);
+      case DeviceModelingLanguagePackage.ATTR_DECL__LITERAL:
+        setLiteral((Literal)null);
         return;
     }
     super.eUnset(featureID);
@@ -358,14 +358,14 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__MODIFIER:
+      case DeviceModelingLanguagePackage.ATTR_DECL__MODIFIER:
         return MODIFIER_EDEFAULT == null ? modifier != null : !MODIFIER_EDEFAULT.equals(modifier);
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_NAME:
+      case DeviceModelingLanguagePackage.ATTR_DECL__ATTRIBUTE_NAME:
         return ATTRIBUTE_NAME_EDEFAULT == null ? attributeName != null : !ATTRIBUTE_NAME_EDEFAULT.equals(attributeName);
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_TYPE:
-        return attributeType != null;
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL__ATTRIBUTE_LITERAL:
-        return attributeLiteral != null;
+      case DeviceModelingLanguagePackage.ATTR_DECL__TYPE:
+        return type != null;
+      case DeviceModelingLanguagePackage.ATTR_DECL__LITERAL:
+        return literal != null;
     }
     return super.eIsSet(featureID);
   }
@@ -389,4 +389,4 @@ public class GroupAttrDeclImpl extends GroupElementDeclImpl implements GroupAttr
     return result.toString();
   }
 
-} //GroupAttrDeclImpl
+} //AttrDeclImpl

@@ -1,0 +1,30 @@
+features MDS {
+  inv 0..*  scan.*  : Scanner
+  inv 0..*  num.*   : Numeric
+  inv 0..*  rtsa.*  : RealTimeSA
+  inv 0..*  enum.*  : Enumeration
+  inv 0..*  pms.*   : PMStore
+}
+
+features PMStore {
+  inv 0..*  pmseg.* : PMSegment
+}
+
+features Metric { /* ... */ }
+
+features Numeric <: Metric { /* ... */ }
+
+features RealTimeSA <: Metric { /* ... */ }
+
+features Enumeration <: Metric { /* ... */ }
+
+features PMSegment <: Metric { /* ... */ }
+
+features Scanner { /* ... */ }
+
+features CfgScanner <: Scanner { /* ... */ }
+
+features EpiCfgScanner <: CfgScanner { /* ... */ }
+
+features PeriCfgScammer <: CfgScanner { /* ... */ }
+

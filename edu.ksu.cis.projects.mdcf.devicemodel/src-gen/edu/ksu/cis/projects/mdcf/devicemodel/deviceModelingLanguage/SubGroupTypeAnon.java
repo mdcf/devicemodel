@@ -21,11 +21,11 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface SubGroupTypeAnon extends SubGroupType
+public interface SubGroupTypeAnon extends SubFeaturesType
 {
   /**
    * Returns the value of the '<em><b>Supers</b></em>' reference list.
-   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureGroupDecl}.
+   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesDecl}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Supers</em>' reference list isn't clear,
@@ -37,7 +37,7 @@ public interface SubGroupTypeAnon extends SubGroupType
    * @model
    * @generated
    */
-  EList<FeatureGroupDecl> getSupers();
+  EList<FeaturesDecl> getSupers();
 
   /**
    * Returns the value of the '<em><b>Body</b></em>' containment reference.
@@ -48,12 +48,12 @@ public interface SubGroupTypeAnon extends SubGroupType
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Body</em>' containment reference.
-   * @see #setBody(FeatureGroupBody)
+   * @see #setBody(FeaturesBody)
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSubGroupTypeAnon_Body()
    * @model containment="true"
    * @generated
    */
-  FeatureGroupBody getBody();
+  FeaturesBody getBody();
 
   /**
    * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeAnon#getBody <em>Body</em>}' containment reference.
@@ -63,6 +63,6 @@ public interface SubGroupTypeAnon extends SubGroupType
    * @see #getBody()
    * @generated
    */
-  void setBody(FeatureGroupBody value);
+  void setBody(FeaturesBody value);
 
 } // SubGroupTypeAnon

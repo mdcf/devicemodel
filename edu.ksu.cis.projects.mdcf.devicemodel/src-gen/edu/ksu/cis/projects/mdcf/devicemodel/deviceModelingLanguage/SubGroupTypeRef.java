@@ -19,7 +19,7 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * @model
  * @generated
  */
-public interface SubGroupTypeRef extends SubGroupType
+public interface SubGroupTypeRef extends SubFeaturesType
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' reference.
@@ -30,12 +30,12 @@ public interface SubGroupTypeRef extends SubGroupType
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' reference.
-   * @see #setType(FeatureGroupDecl)
+   * @see #setType(FeaturesDecl)
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSubGroupTypeRef_Type()
    * @model
    * @generated
    */
-  FeatureGroupDecl getType();
+  FeaturesDecl getType();
 
   /**
    * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeRef#getType <em>Type</em>}' reference.
@@ -45,6 +45,6 @@ public interface SubGroupTypeRef extends SubGroupType
    * @see #getType()
    * @generated
    */
-  void setType(FeatureGroupDecl value);
+  void setType(FeaturesDecl value);
 
 } // SubGroupTypeRef

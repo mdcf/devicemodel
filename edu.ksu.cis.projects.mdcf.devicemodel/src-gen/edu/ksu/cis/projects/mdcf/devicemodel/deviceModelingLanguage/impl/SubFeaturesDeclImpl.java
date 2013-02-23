@@ -3,53 +3,49 @@
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupDecl;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesType;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Sub Group Decl</b></em>'.
+ * An implementation of the model object '<em><b>Sub Features Decl</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubGroupDeclImpl#getCategoryName <em>Category Name</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubGroupDeclImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubGroupDeclImpl#getType <em>Type</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesDeclImpl#getCategoryNames <em>Category Names</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesDeclImpl#getName <em>Name</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesDeclImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SubGroupDeclImpl extends GroupElementDeclImpl implements SubGroupDecl
+public class SubFeaturesDeclImpl extends FeatureDeclImpl implements SubFeaturesDecl
 {
   /**
-   * The default value of the '{@link #getCategoryName() <em>Category Name</em>}' attribute.
+   * The cached value of the '{@link #getCategoryNames() <em>Category Names</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCategoryName()
+   * @see #getCategoryNames()
    * @generated
    * @ordered
    */
-  protected static final String CATEGORY_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCategoryName() <em>Category Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCategoryName()
-   * @generated
-   * @ordered
-   */
-  protected String categoryName = CATEGORY_NAME_EDEFAULT;
+  protected EList<String> categoryNames;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -79,14 +75,14 @@ public class SubGroupDeclImpl extends GroupElementDeclImpl implements SubGroupDe
    * @generated
    * @ordered
    */
-  protected SubGroupType type;
+  protected SubFeaturesType type;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SubGroupDeclImpl()
+  protected SubFeaturesDeclImpl()
   {
     super();
   }
@@ -99,7 +95,7 @@ public class SubGroupDeclImpl extends GroupElementDeclImpl implements SubGroupDe
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.SUB_GROUP_DECL;
+    return DeviceModelingLanguagePackage.Literals.SUB_FEATURES_DECL;
   }
 
   /**
@@ -107,22 +103,13 @@ public class SubGroupDeclImpl extends GroupElementDeclImpl implements SubGroupDe
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getCategoryName()
+  public EList<String> getCategoryNames()
   {
-    return categoryName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCategoryName(String newCategoryName)
-  {
-    String oldCategoryName = categoryName;
-    categoryName = newCategoryName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_GROUP_DECL__CATEGORY_NAME, oldCategoryName, categoryName));
+    if (categoryNames == null)
+    {
+      categoryNames = new EDataTypeEList<String>(String.class, this, DeviceModelingLanguagePackage.SUB_FEATURES_DECL__CATEGORY_NAMES);
+    }
+    return categoryNames;
   }
 
   /**
@@ -145,7 +132,7 @@ public class SubGroupDeclImpl extends GroupElementDeclImpl implements SubGroupDe
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_GROUP_DECL__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_FEATURES_DECL__NAME, oldName, name));
   }
 
   /**
@@ -153,7 +140,7 @@ public class SubGroupDeclImpl extends GroupElementDeclImpl implements SubGroupDe
    * <!-- end-user-doc -->
    * @generated
    */
-  public SubGroupType getType()
+  public SubFeaturesType getType()
   {
     return type;
   }
@@ -163,13 +150,13 @@ public class SubGroupDeclImpl extends GroupElementDeclImpl implements SubGroupDe
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetType(SubGroupType newType, NotificationChain msgs)
+  public NotificationChain basicSetType(SubFeaturesType newType, NotificationChain msgs)
   {
-    SubGroupType oldType = type;
+    SubFeaturesType oldType = type;
     type = newType;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_GROUP_DECL__TYPE, oldType, newType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_FEATURES_DECL__TYPE, oldType, newType);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -180,20 +167,20 @@ public class SubGroupDeclImpl extends GroupElementDeclImpl implements SubGroupDe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(SubGroupType newType)
+  public void setType(SubFeaturesType newType)
   {
     if (newType != type)
     {
       NotificationChain msgs = null;
       if (type != null)
-        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.SUB_GROUP_DECL__TYPE, null, msgs);
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.SUB_FEATURES_DECL__TYPE, null, msgs);
       if (newType != null)
-        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.SUB_GROUP_DECL__TYPE, null, msgs);
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.SUB_FEATURES_DECL__TYPE, null, msgs);
       msgs = basicSetType(newType, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_GROUP_DECL__TYPE, newType, newType));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_FEATURES_DECL__TYPE, newType, newType));
   }
 
   /**
@@ -206,7 +193,7 @@ public class SubGroupDeclImpl extends GroupElementDeclImpl implements SubGroupDe
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_GROUP_DECL__TYPE:
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__TYPE:
         return basicSetType(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -222,11 +209,11 @@ public class SubGroupDeclImpl extends GroupElementDeclImpl implements SubGroupDe
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_GROUP_DECL__CATEGORY_NAME:
-        return getCategoryName();
-      case DeviceModelingLanguagePackage.SUB_GROUP_DECL__NAME:
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__CATEGORY_NAMES:
+        return getCategoryNames();
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__NAME:
         return getName();
-      case DeviceModelingLanguagePackage.SUB_GROUP_DECL__TYPE:
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__TYPE:
         return getType();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -237,19 +224,21 @@ public class SubGroupDeclImpl extends GroupElementDeclImpl implements SubGroupDe
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_GROUP_DECL__CATEGORY_NAME:
-        setCategoryName((String)newValue);
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__CATEGORY_NAMES:
+        getCategoryNames().clear();
+        getCategoryNames().addAll((Collection<? extends String>)newValue);
         return;
-      case DeviceModelingLanguagePackage.SUB_GROUP_DECL__NAME:
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__NAME:
         setName((String)newValue);
         return;
-      case DeviceModelingLanguagePackage.SUB_GROUP_DECL__TYPE:
-        setType((SubGroupType)newValue);
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__TYPE:
+        setType((SubFeaturesType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -265,14 +254,14 @@ public class SubGroupDeclImpl extends GroupElementDeclImpl implements SubGroupDe
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_GROUP_DECL__CATEGORY_NAME:
-        setCategoryName(CATEGORY_NAME_EDEFAULT);
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__CATEGORY_NAMES:
+        getCategoryNames().clear();
         return;
-      case DeviceModelingLanguagePackage.SUB_GROUP_DECL__NAME:
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case DeviceModelingLanguagePackage.SUB_GROUP_DECL__TYPE:
-        setType((SubGroupType)null);
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__TYPE:
+        setType((SubFeaturesType)null);
         return;
     }
     super.eUnset(featureID);
@@ -288,11 +277,11 @@ public class SubGroupDeclImpl extends GroupElementDeclImpl implements SubGroupDe
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_GROUP_DECL__CATEGORY_NAME:
-        return CATEGORY_NAME_EDEFAULT == null ? categoryName != null : !CATEGORY_NAME_EDEFAULT.equals(categoryName);
-      case DeviceModelingLanguagePackage.SUB_GROUP_DECL__NAME:
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__CATEGORY_NAMES:
+        return categoryNames != null && !categoryNames.isEmpty();
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case DeviceModelingLanguagePackage.SUB_GROUP_DECL__TYPE:
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__TYPE:
         return type != null;
     }
     return super.eIsSet(featureID);
@@ -309,12 +298,12 @@ public class SubGroupDeclImpl extends GroupElementDeclImpl implements SubGroupDe
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (categoryName: ");
-    result.append(categoryName);
+    result.append(" (categoryNames: ");
+    result.append(categoryNames);
     result.append(", name: ");
     result.append(name);
     result.append(')');
     return result.toString();
   }
 
-} //SubGroupDeclImpl
+} //SubFeaturesDeclImpl

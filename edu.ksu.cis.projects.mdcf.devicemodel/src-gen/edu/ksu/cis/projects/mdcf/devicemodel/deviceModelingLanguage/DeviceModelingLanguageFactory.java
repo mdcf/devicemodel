@@ -41,31 +41,85 @@ public interface DeviceModelingLanguageFactory extends EFactory
   Decl createDecl();
 
   /**
-   * Returns a new object of class '<em>Feature Group Body</em>'.
+   * Returns a new object of class '<em>Type Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Feature Group Body</em>'.
+   * @return a new object of class '<em>Type Decl</em>'.
    * @generated
    */
-  FeatureGroupBody createFeatureGroupBody();
+  TypeDecl createTypeDecl();
 
   /**
-   * Returns a new object of class '<em>Group Element Decl</em>'.
+   * Returns a new object of class '<em>Features Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Group Element Decl</em>'.
+   * @return a new object of class '<em>Features Decl</em>'.
    * @generated
    */
-  GroupElementDecl createGroupElementDecl();
+  FeaturesDecl createFeaturesDecl();
 
   /**
-   * Returns a new object of class '<em>Group Attr Decl</em>'.
+   * Returns a new object of class '<em>Features Body</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Group Attr Decl</em>'.
+   * @return a new object of class '<em>Features Body</em>'.
    * @generated
    */
-  GroupAttrDecl createGroupAttrDecl();
+  FeaturesBody createFeaturesBody();
+
+  /**
+   * Returns a new object of class '<em>Feature Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature Decl</em>'.
+   * @generated
+   */
+  FeatureDecl createFeatureDecl();
+
+  /**
+   * Returns a new object of class '<em>Invariant Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Invariant Decl</em>'.
+   * @generated
+   */
+  InvariantDecl createInvariantDecl();
+
+  /**
+   * Returns a new object of class '<em>Multiplicity Invariant Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multiplicity Invariant Decl</em>'.
+   * @generated
+   */
+  MultiplicityInvariantDecl createMultiplicityInvariantDecl();
+
+  /**
+   * Returns a new object of class '<em>Sub Features Match</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sub Features Match</em>'.
+   * @generated
+   */
+  SubFeaturesMatch createSubFeaturesMatch();
+
+  /**
+   * Returns a new object of class '<em>Constraint Nat</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Constraint Nat</em>'.
+   * @generated
+   */
+  ConstraintNat createConstraintNat();
+
+  /**
+   * Returns a new object of class '<em>Attr Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Attr Decl</em>'.
+   * @generated
+   */
+  AttrDecl createAttrDecl();
 
   /**
    * Returns a new object of class '<em>Type</em>'.
@@ -131,40 +185,40 @@ public interface DeviceModelingLanguageFactory extends EFactory
   ELiteral createELiteral();
 
   /**
-   * Returns a new object of class '<em>Sub Group Decl</em>'.
+   * Returns a new object of class '<em>Sub Features Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Group Decl</em>'.
+   * @return a new object of class '<em>Sub Features Decl</em>'.
    * @generated
    */
-  SubGroupDecl createSubGroupDecl();
+  SubFeaturesDecl createSubFeaturesDecl();
 
   /**
-   * Returns a new object of class '<em>Sub Group Type</em>'.
+   * Returns a new object of class '<em>Sub Features Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Group Type</em>'.
+   * @return a new object of class '<em>Sub Features Type</em>'.
    * @generated
    */
-  SubGroupType createSubGroupType();
+  SubFeaturesType createSubFeaturesType();
 
   /**
-   * Returns a new object of class '<em>Type Decl</em>'.
+   * Returns a new object of class '<em>Num Nat Constraint</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type Decl</em>'.
+   * @return a new object of class '<em>Num Nat Constraint</em>'.
    * @generated
    */
-  TypeDecl createTypeDecl();
+  NumNatConstraint createNumNatConstraint();
 
   /**
-   * Returns a new object of class '<em>Feature Group Decl</em>'.
+   * Returns a new object of class '<em>Any Nat Constraint</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Feature Group Decl</em>'.
+   * @return a new object of class '<em>Any Nat Constraint</em>'.
    * @generated
    */
-  FeatureGroupDecl createFeatureGroupDecl();
+  AnyNatConstraint createAnyNatConstraint();
 
   /**
    * Returns a new object of class '<em>Basic Type</em>'.

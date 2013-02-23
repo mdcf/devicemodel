@@ -113,61 +113,310 @@ public interface DeviceModelingLanguagePackage extends EPackage
   int DECL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureGroupBodyImpl <em>Feature Group Body</em>}' class.
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.TypeDeclImpl <em>Type Decl</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureGroupBodyImpl
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getFeatureGroupBody()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.TypeDeclImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getTypeDecl()
    * @generated
    */
-  int FEATURE_GROUP_BODY = 2;
+  int TYPE_DECL = 2;
 
   /**
-   * The feature id for the '<em><b>Group Elements</b></em>' containment reference list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE_GROUP_BODY__GROUP_ELEMENTS = 0;
+  int TYPE_DECL__NAME = DECL__NAME;
 
   /**
-   * The number of structural features of the '<em>Feature Group Body</em>' class.
+   * The feature id for the '<em><b>Supers</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE_GROUP_BODY_FEATURE_COUNT = 1;
+  int TYPE_DECL__SUPERS = DECL_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.GroupElementDeclImpl <em>Group Element Decl</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.GroupElementDeclImpl
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getGroupElementDecl()
-   * @generated
-   */
-  int GROUP_ELEMENT_DECL = 3;
-
-  /**
-   * The number of structural features of the '<em>Group Element Decl</em>' class.
+   * The feature id for the '<em><b>Elems</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GROUP_ELEMENT_DECL_FEATURE_COUNT = 0;
+  int TYPE_DECL__ELEMS = DECL_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.GroupAttrDeclImpl <em>Group Attr Decl</em>}' class.
+   * The number of structural features of the '<em>Type Decl</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.GroupAttrDeclImpl
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getGroupAttrDecl()
+   * @generated
+   * @ordered
+   */
+  int TYPE_DECL_FEATURE_COUNT = DECL_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeaturesDeclImpl <em>Features Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeaturesDeclImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getFeaturesDecl()
    * @generated
    */
-  int GROUP_ATTR_DECL = 4;
+  int FEATURES_DECL = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURES_DECL__NAME = DECL__NAME;
+
+  /**
+   * The feature id for the '<em><b>Complete</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURES_DECL__COMPLETE = DECL_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Supers</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURES_DECL__SUPERS = DECL_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURES_DECL__BODY = DECL_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Features Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURES_DECL_FEATURE_COUNT = DECL_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeaturesBodyImpl <em>Features Body</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeaturesBodyImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getFeaturesBody()
+   * @generated
+   */
+  int FEATURES_BODY = 4;
+
+  /**
+   * The feature id for the '<em><b>Features</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURES_BODY__FEATURES = 0;
+
+  /**
+   * The number of structural features of the '<em>Features Body</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURES_BODY_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureDeclImpl <em>Feature Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureDeclImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getFeatureDecl()
+   * @generated
+   */
+  int FEATURE_DECL = 5;
+
+  /**
+   * The number of structural features of the '<em>Feature Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE_DECL_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.InvariantDeclImpl <em>Invariant Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.InvariantDeclImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getInvariantDecl()
+   * @generated
+   */
+  int INVARIANT_DECL = 6;
+
+  /**
+   * The number of structural features of the '<em>Invariant Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INVARIANT_DECL_FEATURE_COUNT = FEATURE_DECL_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantDeclImpl <em>Multiplicity Invariant Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantDeclImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getMultiplicityInvariantDecl()
+   * @generated
+   */
+  int MULTIPLICITY_INVARIANT_DECL = 7;
+
+  /**
+   * The feature id for the '<em><b>Inv Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_INVARIANT_DECL__INV_NAME = INVARIANT_DECL_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Lo</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_INVARIANT_DECL__LO = INVARIANT_DECL_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Hi</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_INVARIANT_DECL__HI = INVARIANT_DECL_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Match</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_INVARIANT_DECL__MATCH = INVARIANT_DECL_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_INVARIANT_DECL__TYPE = INVARIANT_DECL_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>Multiplicity Invariant Decl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_INVARIANT_DECL_FEATURE_COUNT = INVARIANT_DECL_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl <em>Sub Features Match</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSubFeaturesMatch()
+   * @generated
+   */
+  int SUB_FEATURES_MATCH = 8;
+
+  /**
+   * The feature id for the '<em><b>Category Names</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_FEATURES_MATCH__CATEGORY_NAMES = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_FEATURES_MATCH__NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Any</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_FEATURES_MATCH__ANY = 2;
+
+  /**
+   * The number of structural features of the '<em>Sub Features Match</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_FEATURES_MATCH_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ConstraintNatImpl <em>Constraint Nat</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ConstraintNatImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getConstraintNat()
+   * @generated
+   */
+  int CONSTRAINT_NAT = 9;
+
+  /**
+   * The number of structural features of the '<em>Constraint Nat</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRAINT_NAT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AttrDeclImpl <em>Attr Decl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AttrDeclImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getAttrDecl()
+   * @generated
+   */
+  int ATTR_DECL = 10;
 
   /**
    * The feature id for the '<em><b>Modifier</b></em>' attribute.
@@ -176,7 +425,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_ATTR_DECL__MODIFIER = GROUP_ELEMENT_DECL_FEATURE_COUNT + 0;
+  int ATTR_DECL__MODIFIER = FEATURE_DECL_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Attribute Name</b></em>' attribute.
@@ -185,34 +434,34 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int GROUP_ATTR_DECL__ATTRIBUTE_NAME = GROUP_ELEMENT_DECL_FEATURE_COUNT + 1;
+  int ATTR_DECL__ATTRIBUTE_NAME = FEATURE_DECL_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Attribute Type</b></em>' containment reference.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GROUP_ATTR_DECL__ATTRIBUTE_TYPE = GROUP_ELEMENT_DECL_FEATURE_COUNT + 2;
+  int ATTR_DECL__TYPE = FEATURE_DECL_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Attribute Literal</b></em>' containment reference.
+   * The feature id for the '<em><b>Literal</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GROUP_ATTR_DECL__ATTRIBUTE_LITERAL = GROUP_ELEMENT_DECL_FEATURE_COUNT + 3;
+  int ATTR_DECL__LITERAL = FEATURE_DECL_FEATURE_COUNT + 3;
 
   /**
-   * The number of structural features of the '<em>Group Attr Decl</em>' class.
+   * The number of structural features of the '<em>Attr Decl</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GROUP_ATTR_DECL_FEATURE_COUNT = GROUP_ELEMENT_DECL_FEATURE_COUNT + 4;
+  int ATTR_DECL_FEATURE_COUNT = FEATURE_DECL_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.TypeImpl <em>Type</em>}' class.
@@ -222,7 +471,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getType()
    * @generated
    */
-  int TYPE = 5;
+  int TYPE = 11;
 
   /**
    * The number of structural features of the '<em>Type</em>' class.
@@ -241,7 +490,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getLiteral()
    * @generated
    */
-  int LITERAL = 6;
+  int LITERAL = 12;
 
   /**
    * The number of structural features of the '<em>Literal</em>' class.
@@ -260,7 +509,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getBasicLiteral()
    * @generated
    */
-  int BASIC_LITERAL = 7;
+  int BASIC_LITERAL = 13;
 
   /**
    * The feature id for the '<em><b>Type Cons</b></em>' reference.
@@ -297,7 +546,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getTupleLiteral()
    * @generated
    */
-  int TUPLE_LITERAL = 8;
+  int TUPLE_LITERAL = 14;
 
   /**
    * The feature id for the '<em><b>Elems</b></em>' containment reference list.
@@ -325,7 +574,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getListLiteral()
    * @generated
    */
-  int LIST_LITERAL = 9;
+  int LIST_LITERAL = 15;
 
   /**
    * The feature id for the '<em><b>Type Cons</b></em>' reference.
@@ -362,7 +611,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSetLiteral()
    * @generated
    */
-  int SET_LITERAL = 10;
+  int SET_LITERAL = 16;
 
   /**
    * The feature id for the '<em><b>Type Cons</b></em>' reference.
@@ -399,7 +648,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getELiteral()
    * @generated
    */
-  int ELITERAL = 11;
+  int ELITERAL = 17;
 
   /**
    * The feature id for the '<em><b>Lit</b></em>' attribute.
@@ -420,23 +669,23 @@ public interface DeviceModelingLanguagePackage extends EPackage
   int ELITERAL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubGroupDeclImpl <em>Sub Group Decl</em>}' class.
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesDeclImpl <em>Sub Features Decl</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubGroupDeclImpl
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSubGroupDecl()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesDeclImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSubFeaturesDecl()
    * @generated
    */
-  int SUB_GROUP_DECL = 12;
+  int SUB_FEATURES_DECL = 18;
 
   /**
-   * The feature id for the '<em><b>Category Name</b></em>' attribute.
+   * The feature id for the '<em><b>Category Names</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUB_GROUP_DECL__CATEGORY_NAME = GROUP_ELEMENT_DECL_FEATURE_COUNT + 0;
+  int SUB_FEATURES_DECL__CATEGORY_NAMES = FEATURE_DECL_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -445,7 +694,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_GROUP_DECL__NAME = GROUP_ELEMENT_DECL_FEATURE_COUNT + 1;
+  int SUB_FEATURES_DECL__NAME = FEATURE_DECL_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -454,109 +703,82 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_GROUP_DECL__TYPE = GROUP_ELEMENT_DECL_FEATURE_COUNT + 2;
+  int SUB_FEATURES_DECL__TYPE = FEATURE_DECL_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Sub Group Decl</em>' class.
+   * The number of structural features of the '<em>Sub Features Decl</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUB_GROUP_DECL_FEATURE_COUNT = GROUP_ELEMENT_DECL_FEATURE_COUNT + 3;
+  int SUB_FEATURES_DECL_FEATURE_COUNT = FEATURE_DECL_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubGroupTypeImpl <em>Sub Group Type</em>}' class.
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesTypeImpl <em>Sub Features Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubGroupTypeImpl
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSubGroupType()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesTypeImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSubFeaturesType()
    * @generated
    */
-  int SUB_GROUP_TYPE = 13;
+  int SUB_FEATURES_TYPE = 19;
 
   /**
-   * The number of structural features of the '<em>Sub Group Type</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_GROUP_TYPE_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.TypeDeclImpl <em>Type Decl</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.TypeDeclImpl
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getTypeDecl()
-   * @generated
-   */
-  int TYPE_DECL = 14;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The number of structural features of the '<em>Sub Features Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_DECL__NAME = DECL__NAME;
+  int SUB_FEATURES_TYPE_FEATURE_COUNT = 0;
 
   /**
-   * The number of structural features of the '<em>Type Decl</em>' class.
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.NumNatConstraintImpl <em>Num Nat Constraint</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.NumNatConstraintImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getNumNatConstraint()
+   * @generated
+   */
+  int NUM_NAT_CONSTRAINT = 20;
+
+  /**
+   * The feature id for the '<em><b>Num</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_DECL_FEATURE_COUNT = DECL_FEATURE_COUNT + 0;
+  int NUM_NAT_CONSTRAINT__NUM = CONSTRAINT_NAT_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureGroupDeclImpl <em>Feature Group Decl</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureGroupDeclImpl
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getFeatureGroupDecl()
-   * @generated
-   */
-  int FEATURE_GROUP_DECL = 15;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The number of structural features of the '<em>Num Nat Constraint</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE_GROUP_DECL__NAME = DECL__NAME;
+  int NUM_NAT_CONSTRAINT_FEATURE_COUNT = CONSTRAINT_NAT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Supers</b></em>' reference list.
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AnyNatConstraintImpl <em>Any Nat Constraint</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AnyNatConstraintImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getAnyNatConstraint()
+   * @generated
+   */
+  int ANY_NAT_CONSTRAINT = 21;
+
+  /**
+   * The number of structural features of the '<em>Any Nat Constraint</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE_GROUP_DECL__SUPERS = DECL_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Body</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE_GROUP_DECL__BODY = DECL_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Feature Group Decl</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FEATURE_GROUP_DECL_FEATURE_COUNT = DECL_FEATURE_COUNT + 2;
+  int ANY_NAT_CONSTRAINT_FEATURE_COUNT = CONSTRAINT_NAT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.BasicTypeImpl <em>Basic Type</em>}' class.
@@ -566,7 +788,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getBasicType()
    * @generated
    */
-  int BASIC_TYPE = 16;
+  int BASIC_TYPE = 22;
 
   /**
    * The feature id for the '<em><b>Base Type</b></em>' reference.
@@ -594,7 +816,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getListType()
    * @generated
    */
-  int LIST_TYPE = 17;
+  int LIST_TYPE = 23;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -622,7 +844,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSetType()
    * @generated
    */
-  int SET_TYPE = 18;
+  int SET_TYPE = 24;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -650,7 +872,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getTupleType()
    * @generated
    */
-  int TUPLE_TYPE = 19;
+  int TUPLE_TYPE = 25;
 
   /**
    * The feature id for the '<em><b>Elem Types</b></em>' containment reference list.
@@ -678,7 +900,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSubGroupTypeRef()
    * @generated
    */
-  int SUB_GROUP_TYPE_REF = 20;
+  int SUB_GROUP_TYPE_REF = 26;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -687,7 +909,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_GROUP_TYPE_REF__TYPE = SUB_GROUP_TYPE_FEATURE_COUNT + 0;
+  int SUB_GROUP_TYPE_REF__TYPE = SUB_FEATURES_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Sub Group Type Ref</em>' class.
@@ -696,7 +918,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_GROUP_TYPE_REF_FEATURE_COUNT = SUB_GROUP_TYPE_FEATURE_COUNT + 1;
+  int SUB_GROUP_TYPE_REF_FEATURE_COUNT = SUB_FEATURES_TYPE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubGroupTypeAnonImpl <em>Sub Group Type Anon</em>}' class.
@@ -706,7 +928,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSubGroupTypeAnon()
    * @generated
    */
-  int SUB_GROUP_TYPE_ANON = 21;
+  int SUB_GROUP_TYPE_ANON = 27;
 
   /**
    * The feature id for the '<em><b>Supers</b></em>' reference list.
@@ -715,7 +937,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_GROUP_TYPE_ANON__SUPERS = SUB_GROUP_TYPE_FEATURE_COUNT + 0;
+  int SUB_GROUP_TYPE_ANON__SUPERS = SUB_FEATURES_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -724,7 +946,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_GROUP_TYPE_ANON__BODY = SUB_GROUP_TYPE_FEATURE_COUNT + 1;
+  int SUB_GROUP_TYPE_ANON__BODY = SUB_FEATURES_TYPE_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Sub Group Type Anon</em>' class.
@@ -733,7 +955,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_GROUP_TYPE_ANON_FEATURE_COUNT = SUB_GROUP_TYPE_FEATURE_COUNT + 2;
+  int SUB_GROUP_TYPE_ANON_FEATURE_COUNT = SUB_FEATURES_TYPE_FEATURE_COUNT + 2;
 
 
   /**
@@ -779,89 +1001,292 @@ public interface DeviceModelingLanguagePackage extends EPackage
   EAttribute getDecl_Name();
 
   /**
-   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureGroupBody <em>Feature Group Body</em>}'.
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl <em>Type Decl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Feature Group Body</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureGroupBody
+   * @return the meta object for class '<em>Type Decl</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl
    * @generated
    */
-  EClass getFeatureGroupBody();
+  EClass getTypeDecl();
 
   /**
-   * Returns the meta object for the containment reference list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureGroupBody#getGroupElements <em>Group Elements</em>}'.
+   * Returns the meta object for the reference list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl#getSupers <em>Supers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Group Elements</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureGroupBody#getGroupElements()
-   * @see #getFeatureGroupBody()
+   * @return the meta object for the reference list '<em>Supers</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl#getSupers()
+   * @see #getTypeDecl()
    * @generated
    */
-  EReference getFeatureGroupBody_GroupElements();
+  EReference getTypeDecl_Supers();
 
   /**
-   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupElementDecl <em>Group Element Decl</em>}'.
+   * Returns the meta object for the containment reference list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl#getElems <em>Elems</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Group Element Decl</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupElementDecl
+   * @return the meta object for the containment reference list '<em>Elems</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl#getElems()
+   * @see #getTypeDecl()
    * @generated
    */
-  EClass getGroupElementDecl();
+  EReference getTypeDecl_Elems();
 
   /**
-   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupAttrDecl <em>Group Attr Decl</em>}'.
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesDecl <em>Features Decl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Group Attr Decl</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupAttrDecl
+   * @return the meta object for class '<em>Features Decl</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesDecl
    * @generated
    */
-  EClass getGroupAttrDecl();
+  EClass getFeaturesDecl();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupAttrDecl#getModifier <em>Modifier</em>}'.
+   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesDecl#getComplete <em>Complete</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Complete</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesDecl#getComplete()
+   * @see #getFeaturesDecl()
+   * @generated
+   */
+  EAttribute getFeaturesDecl_Complete();
+
+  /**
+   * Returns the meta object for the reference list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesDecl#getSupers <em>Supers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Supers</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesDecl#getSupers()
+   * @see #getFeaturesDecl()
+   * @generated
+   */
+  EReference getFeaturesDecl_Supers();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesDecl#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Body</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesDecl#getBody()
+   * @see #getFeaturesDecl()
+   * @generated
+   */
+  EReference getFeaturesDecl_Body();
+
+  /**
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesBody <em>Features Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Features Body</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesBody
+   * @generated
+   */
+  EClass getFeaturesBody();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesBody#getFeatures <em>Features</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Features</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesBody#getFeatures()
+   * @see #getFeaturesBody()
+   * @generated
+   */
+  EReference getFeaturesBody_Features();
+
+  /**
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl <em>Feature Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Feature Decl</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl
+   * @generated
+   */
+  EClass getFeatureDecl();
+
+  /**
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.InvariantDecl <em>Invariant Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Invariant Decl</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.InvariantDecl
+   * @generated
+   */
+  EClass getInvariantDecl();
+
+  /**
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl <em>Multiplicity Invariant Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multiplicity Invariant Decl</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl
+   * @generated
+   */
+  EClass getMultiplicityInvariantDecl();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getInvName <em>Inv Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Inv Name</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getInvName()
+   * @see #getMultiplicityInvariantDecl()
+   * @generated
+   */
+  EAttribute getMultiplicityInvariantDecl_InvName();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getLo <em>Lo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Lo</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getLo()
+   * @see #getMultiplicityInvariantDecl()
+   * @generated
+   */
+  EReference getMultiplicityInvariantDecl_Lo();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getHi <em>Hi</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Hi</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getHi()
+   * @see #getMultiplicityInvariantDecl()
+   * @generated
+   */
+  EReference getMultiplicityInvariantDecl_Hi();
+
+  /**
+   * Returns the meta object for the containment reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getMatch <em>Match</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Match</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getMatch()
+   * @see #getMultiplicityInvariantDecl()
+   * @generated
+   */
+  EReference getMultiplicityInvariantDecl_Match();
+
+  /**
+   * Returns the meta object for the reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Type</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getType()
+   * @see #getMultiplicityInvariantDecl()
+   * @generated
+   */
+  EReference getMultiplicityInvariantDecl_Type();
+
+  /**
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch <em>Sub Features Match</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Sub Features Match</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch
+   * @generated
+   */
+  EClass getSubFeaturesMatch();
+
+  /**
+   * Returns the meta object for the attribute list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch#getCategoryNames <em>Category Names</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Category Names</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch#getCategoryNames()
+   * @see #getSubFeaturesMatch()
+   * @generated
+   */
+  EAttribute getSubFeaturesMatch_CategoryNames();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch#getName()
+   * @see #getSubFeaturesMatch()
+   * @generated
+   */
+  EAttribute getSubFeaturesMatch_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch#getAny <em>Any</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Any</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch#getAny()
+   * @see #getSubFeaturesMatch()
+   * @generated
+   */
+  EAttribute getSubFeaturesMatch_Any();
+
+  /**
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintNat <em>Constraint Nat</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Constraint Nat</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintNat
+   * @generated
+   */
+  EClass getConstraintNat();
+
+  /**
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl <em>Attr Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Attr Decl</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl
+   * @generated
+   */
+  EClass getAttrDecl();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl#getModifier <em>Modifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Modifier</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupAttrDecl#getModifier()
-   * @see #getGroupAttrDecl()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl#getModifier()
+   * @see #getAttrDecl()
    * @generated
    */
-  EAttribute getGroupAttrDecl_Modifier();
+  EAttribute getAttrDecl_Modifier();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupAttrDecl#getAttributeName <em>Attribute Name</em>}'.
+   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl#getAttributeName <em>Attribute Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Attribute Name</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupAttrDecl#getAttributeName()
-   * @see #getGroupAttrDecl()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl#getAttributeName()
+   * @see #getAttrDecl()
    * @generated
    */
-  EAttribute getGroupAttrDecl_AttributeName();
+  EAttribute getAttrDecl_AttributeName();
 
   /**
-   * Returns the meta object for the containment reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupAttrDecl#getAttributeType <em>Attribute Type</em>}'.
+   * Returns the meta object for the containment reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Attribute Type</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupAttrDecl#getAttributeType()
-   * @see #getGroupAttrDecl()
+   * @return the meta object for the containment reference '<em>Type</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl#getType()
+   * @see #getAttrDecl()
    * @generated
    */
-  EReference getGroupAttrDecl_AttributeType();
+  EReference getAttrDecl_Type();
 
   /**
-   * Returns the meta object for the containment reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupAttrDecl#getAttributeLiteral <em>Attribute Literal</em>}'.
+   * Returns the meta object for the containment reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl#getLiteral <em>Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Attribute Literal</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupAttrDecl#getAttributeLiteral()
-   * @see #getGroupAttrDecl()
+   * @return the meta object for the containment reference '<em>Literal</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl#getLiteral()
+   * @see #getAttrDecl()
    * @generated
    */
-  EReference getGroupAttrDecl_AttributeLiteral();
+  EReference getAttrDecl_Literal();
 
   /**
    * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Type <em>Type</em>}'.
@@ -1022,99 +1447,88 @@ public interface DeviceModelingLanguagePackage extends EPackage
   EAttribute getELiteral_Lit();
 
   /**
-   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupDecl <em>Sub Group Decl</em>}'.
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl <em>Sub Features Decl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sub Group Decl</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupDecl
+   * @return the meta object for class '<em>Sub Features Decl</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl
    * @generated
    */
-  EClass getSubGroupDecl();
+  EClass getSubFeaturesDecl();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupDecl#getCategoryName <em>Category Name</em>}'.
+   * Returns the meta object for the attribute list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl#getCategoryNames <em>Category Names</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Category Name</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupDecl#getCategoryName()
-   * @see #getSubGroupDecl()
+   * @return the meta object for the attribute list '<em>Category Names</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl#getCategoryNames()
+   * @see #getSubFeaturesDecl()
    * @generated
    */
-  EAttribute getSubGroupDecl_CategoryName();
+  EAttribute getSubFeaturesDecl_CategoryNames();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupDecl#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupDecl#getName()
-   * @see #getSubGroupDecl()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl#getName()
+   * @see #getSubFeaturesDecl()
    * @generated
    */
-  EAttribute getSubGroupDecl_Name();
+  EAttribute getSubFeaturesDecl_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupDecl#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Type</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupDecl#getType()
-   * @see #getSubGroupDecl()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl#getType()
+   * @see #getSubFeaturesDecl()
    * @generated
    */
-  EReference getSubGroupDecl_Type();
+  EReference getSubFeaturesDecl_Type();
 
   /**
-   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupType <em>Sub Group Type</em>}'.
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesType <em>Sub Features Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sub Group Type</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupType
+   * @return the meta object for class '<em>Sub Features Type</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesType
    * @generated
    */
-  EClass getSubGroupType();
+  EClass getSubFeaturesType();
 
   /**
-   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl <em>Type Decl</em>}'.
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NumNatConstraint <em>Num Nat Constraint</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Type Decl</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl
+   * @return the meta object for class '<em>Num Nat Constraint</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NumNatConstraint
    * @generated
    */
-  EClass getTypeDecl();
+  EClass getNumNatConstraint();
 
   /**
-   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureGroupDecl <em>Feature Group Decl</em>}'.
+   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NumNatConstraint#getNum <em>Num</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Feature Group Decl</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureGroupDecl
+   * @return the meta object for the attribute '<em>Num</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NumNatConstraint#getNum()
+   * @see #getNumNatConstraint()
    * @generated
    */
-  EClass getFeatureGroupDecl();
+  EAttribute getNumNatConstraint_Num();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureGroupDecl#getSupers <em>Supers</em>}'.
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AnyNatConstraint <em>Any Nat Constraint</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Supers</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureGroupDecl#getSupers()
-   * @see #getFeatureGroupDecl()
+   * @return the meta object for class '<em>Any Nat Constraint</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AnyNatConstraint
    * @generated
    */
-  EReference getFeatureGroupDecl_Supers();
-
-  /**
-   * Returns the meta object for the containment reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureGroupDecl#getBody <em>Body</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Body</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureGroupDecl#getBody()
-   * @see #getFeatureGroupDecl()
-   * @generated
-   */
-  EReference getFeatureGroupDecl_Body();
+  EClass getAnyNatConstraint();
 
   /**
    * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicType <em>Basic Type</em>}'.
@@ -1313,42 +1727,206 @@ public interface DeviceModelingLanguagePackage extends EPackage
     EAttribute DECL__NAME = eINSTANCE.getDecl_Name();
 
     /**
-     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureGroupBodyImpl <em>Feature Group Body</em>}' class.
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.TypeDeclImpl <em>Type Decl</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureGroupBodyImpl
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getFeatureGroupBody()
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.TypeDeclImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getTypeDecl()
      * @generated
      */
-    EClass FEATURE_GROUP_BODY = eINSTANCE.getFeatureGroupBody();
+    EClass TYPE_DECL = eINSTANCE.getTypeDecl();
 
     /**
-     * The meta object literal for the '<em><b>Group Elements</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Supers</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FEATURE_GROUP_BODY__GROUP_ELEMENTS = eINSTANCE.getFeatureGroupBody_GroupElements();
+    EReference TYPE_DECL__SUPERS = eINSTANCE.getTypeDecl_Supers();
 
     /**
-     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.GroupElementDeclImpl <em>Group Element Decl</em>}' class.
+     * The meta object literal for the '<em><b>Elems</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.GroupElementDeclImpl
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getGroupElementDecl()
      * @generated
      */
-    EClass GROUP_ELEMENT_DECL = eINSTANCE.getGroupElementDecl();
+    EReference TYPE_DECL__ELEMS = eINSTANCE.getTypeDecl_Elems();
 
     /**
-     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.GroupAttrDeclImpl <em>Group Attr Decl</em>}' class.
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeaturesDeclImpl <em>Features Decl</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.GroupAttrDeclImpl
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getGroupAttrDecl()
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeaturesDeclImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getFeaturesDecl()
      * @generated
      */
-    EClass GROUP_ATTR_DECL = eINSTANCE.getGroupAttrDecl();
+    EClass FEATURES_DECL = eINSTANCE.getFeaturesDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Complete</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FEATURES_DECL__COMPLETE = eINSTANCE.getFeaturesDecl_Complete();
+
+    /**
+     * The meta object literal for the '<em><b>Supers</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FEATURES_DECL__SUPERS = eINSTANCE.getFeaturesDecl_Supers();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FEATURES_DECL__BODY = eINSTANCE.getFeaturesDecl_Body();
+
+    /**
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeaturesBodyImpl <em>Features Body</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeaturesBodyImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getFeaturesBody()
+     * @generated
+     */
+    EClass FEATURES_BODY = eINSTANCE.getFeaturesBody();
+
+    /**
+     * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FEATURES_BODY__FEATURES = eINSTANCE.getFeaturesBody_Features();
+
+    /**
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureDeclImpl <em>Feature Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureDeclImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getFeatureDecl()
+     * @generated
+     */
+    EClass FEATURE_DECL = eINSTANCE.getFeatureDecl();
+
+    /**
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.InvariantDeclImpl <em>Invariant Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.InvariantDeclImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getInvariantDecl()
+     * @generated
+     */
+    EClass INVARIANT_DECL = eINSTANCE.getInvariantDecl();
+
+    /**
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantDeclImpl <em>Multiplicity Invariant Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantDeclImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getMultiplicityInvariantDecl()
+     * @generated
+     */
+    EClass MULTIPLICITY_INVARIANT_DECL = eINSTANCE.getMultiplicityInvariantDecl();
+
+    /**
+     * The meta object literal for the '<em><b>Inv Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTIPLICITY_INVARIANT_DECL__INV_NAME = eINSTANCE.getMultiplicityInvariantDecl_InvName();
+
+    /**
+     * The meta object literal for the '<em><b>Lo</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTIPLICITY_INVARIANT_DECL__LO = eINSTANCE.getMultiplicityInvariantDecl_Lo();
+
+    /**
+     * The meta object literal for the '<em><b>Hi</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTIPLICITY_INVARIANT_DECL__HI = eINSTANCE.getMultiplicityInvariantDecl_Hi();
+
+    /**
+     * The meta object literal for the '<em><b>Match</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTIPLICITY_INVARIANT_DECL__MATCH = eINSTANCE.getMultiplicityInvariantDecl_Match();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTIPLICITY_INVARIANT_DECL__TYPE = eINSTANCE.getMultiplicityInvariantDecl_Type();
+
+    /**
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl <em>Sub Features Match</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSubFeaturesMatch()
+     * @generated
+     */
+    EClass SUB_FEATURES_MATCH = eINSTANCE.getSubFeaturesMatch();
+
+    /**
+     * The meta object literal for the '<em><b>Category Names</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SUB_FEATURES_MATCH__CATEGORY_NAMES = eINSTANCE.getSubFeaturesMatch_CategoryNames();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SUB_FEATURES_MATCH__NAME = eINSTANCE.getSubFeaturesMatch_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Any</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SUB_FEATURES_MATCH__ANY = eINSTANCE.getSubFeaturesMatch_Any();
+
+    /**
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ConstraintNatImpl <em>Constraint Nat</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ConstraintNatImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getConstraintNat()
+     * @generated
+     */
+    EClass CONSTRAINT_NAT = eINSTANCE.getConstraintNat();
+
+    /**
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AttrDeclImpl <em>Attr Decl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AttrDeclImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getAttrDecl()
+     * @generated
+     */
+    EClass ATTR_DECL = eINSTANCE.getAttrDecl();
 
     /**
      * The meta object literal for the '<em><b>Modifier</b></em>' attribute feature.
@@ -1356,7 +1934,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GROUP_ATTR_DECL__MODIFIER = eINSTANCE.getGroupAttrDecl_Modifier();
+    EAttribute ATTR_DECL__MODIFIER = eINSTANCE.getAttrDecl_Modifier();
 
     /**
      * The meta object literal for the '<em><b>Attribute Name</b></em>' attribute feature.
@@ -1364,23 +1942,23 @@ public interface DeviceModelingLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GROUP_ATTR_DECL__ATTRIBUTE_NAME = eINSTANCE.getGroupAttrDecl_AttributeName();
+    EAttribute ATTR_DECL__ATTRIBUTE_NAME = eINSTANCE.getAttrDecl_AttributeName();
 
     /**
-     * The meta object literal for the '<em><b>Attribute Type</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GROUP_ATTR_DECL__ATTRIBUTE_TYPE = eINSTANCE.getGroupAttrDecl_AttributeType();
+    EReference ATTR_DECL__TYPE = eINSTANCE.getAttrDecl_Type();
 
     /**
-     * The meta object literal for the '<em><b>Attribute Literal</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Literal</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GROUP_ATTR_DECL__ATTRIBUTE_LITERAL = eINSTANCE.getGroupAttrDecl_AttributeLiteral();
+    EReference ATTR_DECL__LITERAL = eINSTANCE.getAttrDecl_Literal();
 
     /**
      * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.TypeImpl <em>Type</em>}' class.
@@ -1517,22 +2095,22 @@ public interface DeviceModelingLanguagePackage extends EPackage
     EAttribute ELITERAL__LIT = eINSTANCE.getELiteral_Lit();
 
     /**
-     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubGroupDeclImpl <em>Sub Group Decl</em>}' class.
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesDeclImpl <em>Sub Features Decl</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubGroupDeclImpl
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSubGroupDecl()
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesDeclImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSubFeaturesDecl()
      * @generated
      */
-    EClass SUB_GROUP_DECL = eINSTANCE.getSubGroupDecl();
+    EClass SUB_FEATURES_DECL = eINSTANCE.getSubFeaturesDecl();
 
     /**
-     * The meta object literal for the '<em><b>Category Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Category Names</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SUB_GROUP_DECL__CATEGORY_NAME = eINSTANCE.getSubGroupDecl_CategoryName();
+    EAttribute SUB_FEATURES_DECL__CATEGORY_NAMES = eINSTANCE.getSubFeaturesDecl_CategoryNames();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1540,7 +2118,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SUB_GROUP_DECL__NAME = eINSTANCE.getSubGroupDecl_Name();
+    EAttribute SUB_FEATURES_DECL__NAME = eINSTANCE.getSubFeaturesDecl_Name();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
@@ -1548,53 +2126,45 @@ public interface DeviceModelingLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SUB_GROUP_DECL__TYPE = eINSTANCE.getSubGroupDecl_Type();
+    EReference SUB_FEATURES_DECL__TYPE = eINSTANCE.getSubFeaturesDecl_Type();
 
     /**
-     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubGroupTypeImpl <em>Sub Group Type</em>}' class.
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesTypeImpl <em>Sub Features Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubGroupTypeImpl
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSubGroupType()
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesTypeImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSubFeaturesType()
      * @generated
      */
-    EClass SUB_GROUP_TYPE = eINSTANCE.getSubGroupType();
+    EClass SUB_FEATURES_TYPE = eINSTANCE.getSubFeaturesType();
 
     /**
-     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.TypeDeclImpl <em>Type Decl</em>}' class.
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.NumNatConstraintImpl <em>Num Nat Constraint</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.TypeDeclImpl
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getTypeDecl()
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.NumNatConstraintImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getNumNatConstraint()
      * @generated
      */
-    EClass TYPE_DECL = eINSTANCE.getTypeDecl();
+    EClass NUM_NAT_CONSTRAINT = eINSTANCE.getNumNatConstraint();
 
     /**
-     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureGroupDeclImpl <em>Feature Group Decl</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureGroupDeclImpl
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getFeatureGroupDecl()
-     * @generated
-     */
-    EClass FEATURE_GROUP_DECL = eINSTANCE.getFeatureGroupDecl();
-
-    /**
-     * The meta object literal for the '<em><b>Supers</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Num</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FEATURE_GROUP_DECL__SUPERS = eINSTANCE.getFeatureGroupDecl_Supers();
+    EAttribute NUM_NAT_CONSTRAINT__NUM = eINSTANCE.getNumNatConstraint_Num();
 
     /**
-     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AnyNatConstraintImpl <em>Any Nat Constraint</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AnyNatConstraintImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getAnyNatConstraint()
      * @generated
      */
-    EReference FEATURE_GROUP_DECL__BODY = eINSTANCE.getFeatureGroupDecl_Body();
+    EClass ANY_NAT_CONSTRAINT = eINSTANCE.getAnyNatConstraint();
 
     /**
      * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.BasicTypeImpl <em>Basic Type</em>}' class.

@@ -3,8 +3,8 @@
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureGroupBody;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupElementDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesBody;
 
 import java.util.Collection;
 
@@ -22,35 +22,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Feature Group Body</b></em>'.
+ * An implementation of the model object '<em><b>Features Body</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureGroupBodyImpl#getGroupElements <em>Group Elements</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeaturesBodyImpl#getFeatures <em>Features</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FeatureGroupBodyImpl extends MinimalEObjectImpl.Container implements FeatureGroupBody
+public class FeaturesBodyImpl extends MinimalEObjectImpl.Container implements FeaturesBody
 {
   /**
-   * The cached value of the '{@link #getGroupElements() <em>Group Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGroupElements()
+   * @see #getFeatures()
    * @generated
    * @ordered
    */
-  protected EList<GroupElementDecl> groupElements;
+  protected EList<FeatureDecl> features;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FeatureGroupBodyImpl()
+  protected FeaturesBodyImpl()
   {
     super();
   }
@@ -63,7 +63,7 @@ public class FeatureGroupBodyImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.FEATURE_GROUP_BODY;
+    return DeviceModelingLanguagePackage.Literals.FEATURES_BODY;
   }
 
   /**
@@ -71,13 +71,13 @@ public class FeatureGroupBodyImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<GroupElementDecl> getGroupElements()
+  public EList<FeatureDecl> getFeatures()
   {
-    if (groupElements == null)
+    if (features == null)
     {
-      groupElements = new EObjectContainmentEList<GroupElementDecl>(GroupElementDecl.class, this, DeviceModelingLanguagePackage.FEATURE_GROUP_BODY__GROUP_ELEMENTS);
+      features = new EObjectContainmentEList<FeatureDecl>(FeatureDecl.class, this, DeviceModelingLanguagePackage.FEATURES_BODY__FEATURES);
     }
-    return groupElements;
+    return features;
   }
 
   /**
@@ -90,8 +90,8 @@ public class FeatureGroupBodyImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.FEATURE_GROUP_BODY__GROUP_ELEMENTS:
-        return ((InternalEList<?>)getGroupElements()).basicRemove(otherEnd, msgs);
+      case DeviceModelingLanguagePackage.FEATURES_BODY__FEATURES:
+        return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +106,8 @@ public class FeatureGroupBodyImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.FEATURE_GROUP_BODY__GROUP_ELEMENTS:
-        return getGroupElements();
+      case DeviceModelingLanguagePackage.FEATURES_BODY__FEATURES:
+        return getFeatures();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +123,9 @@ public class FeatureGroupBodyImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.FEATURE_GROUP_BODY__GROUP_ELEMENTS:
-        getGroupElements().clear();
-        getGroupElements().addAll((Collection<? extends GroupElementDecl>)newValue);
+      case DeviceModelingLanguagePackage.FEATURES_BODY__FEATURES:
+        getFeatures().clear();
+        getFeatures().addAll((Collection<? extends FeatureDecl>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class FeatureGroupBodyImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.FEATURE_GROUP_BODY__GROUP_ELEMENTS:
-        getGroupElements().clear();
+      case DeviceModelingLanguagePackage.FEATURES_BODY__FEATURES:
+        getFeatures().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,10 +158,10 @@ public class FeatureGroupBodyImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.FEATURE_GROUP_BODY__GROUP_ELEMENTS:
-        return groupElements != null && !groupElements.isEmpty();
+      case DeviceModelingLanguagePackage.FEATURES_BODY__FEATURES:
+        return features != null && !features.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //FeatureGroupBodyImpl
+} //FeaturesBodyImpl

@@ -86,25 +86,72 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.FEATURE_GROUP_BODY:
+      case DeviceModelingLanguagePackage.TYPE_DECL:
       {
-        FeatureGroupBody featureGroupBody = (FeatureGroupBody)theEObject;
-        T result = caseFeatureGroupBody(featureGroupBody);
+        TypeDecl typeDecl = (TypeDecl)theEObject;
+        T result = caseTypeDecl(typeDecl);
+        if (result == null) result = caseDecl(typeDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.GROUP_ELEMENT_DECL:
+      case DeviceModelingLanguagePackage.FEATURES_DECL:
       {
-        GroupElementDecl groupElementDecl = (GroupElementDecl)theEObject;
-        T result = caseGroupElementDecl(groupElementDecl);
+        FeaturesDecl featuresDecl = (FeaturesDecl)theEObject;
+        T result = caseFeaturesDecl(featuresDecl);
+        if (result == null) result = caseDecl(featuresDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL:
+      case DeviceModelingLanguagePackage.FEATURES_BODY:
       {
-        GroupAttrDecl groupAttrDecl = (GroupAttrDecl)theEObject;
-        T result = caseGroupAttrDecl(groupAttrDecl);
-        if (result == null) result = caseGroupElementDecl(groupAttrDecl);
+        FeaturesBody featuresBody = (FeaturesBody)theEObject;
+        T result = caseFeaturesBody(featuresBody);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.FEATURE_DECL:
+      {
+        FeatureDecl featureDecl = (FeatureDecl)theEObject;
+        T result = caseFeatureDecl(featureDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.INVARIANT_DECL:
+      {
+        InvariantDecl invariantDecl = (InvariantDecl)theEObject;
+        T result = caseInvariantDecl(invariantDecl);
+        if (result == null) result = caseFeatureDecl(invariantDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL:
+      {
+        MultiplicityInvariantDecl multiplicityInvariantDecl = (MultiplicityInvariantDecl)theEObject;
+        T result = caseMultiplicityInvariantDecl(multiplicityInvariantDecl);
+        if (result == null) result = caseInvariantDecl(multiplicityInvariantDecl);
+        if (result == null) result = caseFeatureDecl(multiplicityInvariantDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH:
+      {
+        SubFeaturesMatch subFeaturesMatch = (SubFeaturesMatch)theEObject;
+        T result = caseSubFeaturesMatch(subFeaturesMatch);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.CONSTRAINT_NAT:
+      {
+        ConstraintNat constraintNat = (ConstraintNat)theEObject;
+        T result = caseConstraintNat(constraintNat);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.ATTR_DECL:
+      {
+        AttrDecl attrDecl = (AttrDecl)theEObject;
+        T result = caseAttrDecl(attrDecl);
+        if (result == null) result = caseFeatureDecl(attrDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -161,34 +208,34 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.SUB_GROUP_DECL:
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL:
       {
-        SubGroupDecl subGroupDecl = (SubGroupDecl)theEObject;
-        T result = caseSubGroupDecl(subGroupDecl);
-        if (result == null) result = caseGroupElementDecl(subGroupDecl);
+        SubFeaturesDecl subFeaturesDecl = (SubFeaturesDecl)theEObject;
+        T result = caseSubFeaturesDecl(subFeaturesDecl);
+        if (result == null) result = caseFeatureDecl(subFeaturesDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE:
+      case DeviceModelingLanguagePackage.SUB_FEATURES_TYPE:
       {
-        SubGroupType subGroupType = (SubGroupType)theEObject;
-        T result = caseSubGroupType(subGroupType);
+        SubFeaturesType subFeaturesType = (SubFeaturesType)theEObject;
+        T result = caseSubFeaturesType(subFeaturesType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.TYPE_DECL:
+      case DeviceModelingLanguagePackage.NUM_NAT_CONSTRAINT:
       {
-        TypeDecl typeDecl = (TypeDecl)theEObject;
-        T result = caseTypeDecl(typeDecl);
-        if (result == null) result = caseDecl(typeDecl);
+        NumNatConstraint numNatConstraint = (NumNatConstraint)theEObject;
+        T result = caseNumNatConstraint(numNatConstraint);
+        if (result == null) result = caseConstraintNat(numNatConstraint);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.FEATURE_GROUP_DECL:
+      case DeviceModelingLanguagePackage.ANY_NAT_CONSTRAINT:
       {
-        FeatureGroupDecl featureGroupDecl = (FeatureGroupDecl)theEObject;
-        T result = caseFeatureGroupDecl(featureGroupDecl);
-        if (result == null) result = caseDecl(featureGroupDecl);
+        AnyNatConstraint anyNatConstraint = (AnyNatConstraint)theEObject;
+        T result = caseAnyNatConstraint(anyNatConstraint);
+        if (result == null) result = caseConstraintNat(anyNatConstraint);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -228,7 +275,7 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
       {
         SubGroupTypeRef subGroupTypeRef = (SubGroupTypeRef)theEObject;
         T result = caseSubGroupTypeRef(subGroupTypeRef);
-        if (result == null) result = caseSubGroupType(subGroupTypeRef);
+        if (result == null) result = caseSubFeaturesType(subGroupTypeRef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -236,7 +283,7 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
       {
         SubGroupTypeAnon subGroupTypeAnon = (SubGroupTypeAnon)theEObject;
         T result = caseSubGroupTypeAnon(subGroupTypeAnon);
-        if (result == null) result = caseSubGroupType(subGroupTypeAnon);
+        if (result == null) result = caseSubFeaturesType(subGroupTypeAnon);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -277,49 +324,145 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Feature Group Body</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Type Decl</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Feature Group Body</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Type Decl</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFeatureGroupBody(FeatureGroupBody object)
+  public T caseTypeDecl(TypeDecl object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Group Element Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Features Decl</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Group Element Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Features Decl</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGroupElementDecl(GroupElementDecl object)
+  public T caseFeaturesDecl(FeaturesDecl object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Group Attr Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Features Body</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Group Attr Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Features Body</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGroupAttrDecl(GroupAttrDecl object)
+  public T caseFeaturesBody(FeaturesBody object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Feature Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Feature Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFeatureDecl(FeatureDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Invariant Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Invariant Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInvariantDecl(InvariantDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multiplicity Invariant Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multiplicity Invariant Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMultiplicityInvariantDecl(MultiplicityInvariantDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sub Features Match</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sub Features Match</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubFeaturesMatch(SubFeaturesMatch object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Constraint Nat</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Constraint Nat</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConstraintNat(ConstraintNat object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Attr Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Attr Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAttrDecl(AttrDecl object)
   {
     return null;
   }
@@ -437,65 +580,65 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Group Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Sub Features Decl</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Group Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Sub Features Decl</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSubGroupDecl(SubGroupDecl object)
+  public T caseSubFeaturesDecl(SubFeaturesDecl object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Group Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Sub Features Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Group Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Sub Features Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSubGroupType(SubGroupType object)
+  public T caseSubFeaturesType(SubFeaturesType object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Type Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Num Nat Constraint</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Num Nat Constraint</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTypeDecl(TypeDecl object)
+  public T caseNumNatConstraint(NumNatConstraint object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Feature Group Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Any Nat Constraint</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Feature Group Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Any Nat Constraint</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFeatureGroupDecl(FeatureGroupDecl object)
+  public T caseAnyNatConstraint(AnyNatConstraint object)
   {
     return null;
   }

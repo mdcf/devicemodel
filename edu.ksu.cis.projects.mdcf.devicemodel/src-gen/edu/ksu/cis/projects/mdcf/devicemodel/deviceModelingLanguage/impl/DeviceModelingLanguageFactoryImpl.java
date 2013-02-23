@@ -66,9 +66,15 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
     {
       case DeviceModelingLanguagePackage.MODEL: return createModel();
       case DeviceModelingLanguagePackage.DECL: return createDecl();
-      case DeviceModelingLanguagePackage.FEATURE_GROUP_BODY: return createFeatureGroupBody();
-      case DeviceModelingLanguagePackage.GROUP_ELEMENT_DECL: return createGroupElementDecl();
-      case DeviceModelingLanguagePackage.GROUP_ATTR_DECL: return createGroupAttrDecl();
+      case DeviceModelingLanguagePackage.TYPE_DECL: return createTypeDecl();
+      case DeviceModelingLanguagePackage.FEATURES_DECL: return createFeaturesDecl();
+      case DeviceModelingLanguagePackage.FEATURES_BODY: return createFeaturesBody();
+      case DeviceModelingLanguagePackage.FEATURE_DECL: return createFeatureDecl();
+      case DeviceModelingLanguagePackage.INVARIANT_DECL: return createInvariantDecl();
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL: return createMultiplicityInvariantDecl();
+      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH: return createSubFeaturesMatch();
+      case DeviceModelingLanguagePackage.CONSTRAINT_NAT: return createConstraintNat();
+      case DeviceModelingLanguagePackage.ATTR_DECL: return createAttrDecl();
       case DeviceModelingLanguagePackage.TYPE: return createType();
       case DeviceModelingLanguagePackage.LITERAL: return createLiteral();
       case DeviceModelingLanguagePackage.BASIC_LITERAL: return createBasicLiteral();
@@ -76,10 +82,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.LIST_LITERAL: return createListLiteral();
       case DeviceModelingLanguagePackage.SET_LITERAL: return createSetLiteral();
       case DeviceModelingLanguagePackage.ELITERAL: return createELiteral();
-      case DeviceModelingLanguagePackage.SUB_GROUP_DECL: return createSubGroupDecl();
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE: return createSubGroupType();
-      case DeviceModelingLanguagePackage.TYPE_DECL: return createTypeDecl();
-      case DeviceModelingLanguagePackage.FEATURE_GROUP_DECL: return createFeatureGroupDecl();
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL: return createSubFeaturesDecl();
+      case DeviceModelingLanguagePackage.SUB_FEATURES_TYPE: return createSubFeaturesType();
+      case DeviceModelingLanguagePackage.NUM_NAT_CONSTRAINT: return createNumNatConstraint();
+      case DeviceModelingLanguagePackage.ANY_NAT_CONSTRAINT: return createAnyNatConstraint();
       case DeviceModelingLanguagePackage.BASIC_TYPE: return createBasicType();
       case DeviceModelingLanguagePackage.LIST_TYPE: return createListType();
       case DeviceModelingLanguagePackage.SET_TYPE: return createSetType();
@@ -118,10 +124,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeatureGroupBody createFeatureGroupBody()
+  public TypeDecl createTypeDecl()
   {
-    FeatureGroupBodyImpl featureGroupBody = new FeatureGroupBodyImpl();
-    return featureGroupBody;
+    TypeDeclImpl typeDecl = new TypeDeclImpl();
+    return typeDecl;
   }
 
   /**
@@ -129,10 +135,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public GroupElementDecl createGroupElementDecl()
+  public FeaturesDecl createFeaturesDecl()
   {
-    GroupElementDeclImpl groupElementDecl = new GroupElementDeclImpl();
-    return groupElementDecl;
+    FeaturesDeclImpl featuresDecl = new FeaturesDeclImpl();
+    return featuresDecl;
   }
 
   /**
@@ -140,10 +146,76 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public GroupAttrDecl createGroupAttrDecl()
+  public FeaturesBody createFeaturesBody()
   {
-    GroupAttrDeclImpl groupAttrDecl = new GroupAttrDeclImpl();
-    return groupAttrDecl;
+    FeaturesBodyImpl featuresBody = new FeaturesBodyImpl();
+    return featuresBody;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FeatureDecl createFeatureDecl()
+  {
+    FeatureDeclImpl featureDecl = new FeatureDeclImpl();
+    return featureDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InvariantDecl createInvariantDecl()
+  {
+    InvariantDeclImpl invariantDecl = new InvariantDeclImpl();
+    return invariantDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MultiplicityInvariantDecl createMultiplicityInvariantDecl()
+  {
+    MultiplicityInvariantDeclImpl multiplicityInvariantDecl = new MultiplicityInvariantDeclImpl();
+    return multiplicityInvariantDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SubFeaturesMatch createSubFeaturesMatch()
+  {
+    SubFeaturesMatchImpl subFeaturesMatch = new SubFeaturesMatchImpl();
+    return subFeaturesMatch;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ConstraintNat createConstraintNat()
+  {
+    ConstraintNatImpl constraintNat = new ConstraintNatImpl();
+    return constraintNat;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AttrDecl createAttrDecl()
+  {
+    AttrDeclImpl attrDecl = new AttrDeclImpl();
+    return attrDecl;
   }
 
   /**
@@ -228,10 +300,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public SubGroupDecl createSubGroupDecl()
+  public SubFeaturesDecl createSubFeaturesDecl()
   {
-    SubGroupDeclImpl subGroupDecl = new SubGroupDeclImpl();
-    return subGroupDecl;
+    SubFeaturesDeclImpl subFeaturesDecl = new SubFeaturesDeclImpl();
+    return subFeaturesDecl;
   }
 
   /**
@@ -239,10 +311,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public SubGroupType createSubGroupType()
+  public SubFeaturesType createSubFeaturesType()
   {
-    SubGroupTypeImpl subGroupType = new SubGroupTypeImpl();
-    return subGroupType;
+    SubFeaturesTypeImpl subFeaturesType = new SubFeaturesTypeImpl();
+    return subFeaturesType;
   }
 
   /**
@@ -250,10 +322,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeDecl createTypeDecl()
+  public NumNatConstraint createNumNatConstraint()
   {
-    TypeDeclImpl typeDecl = new TypeDeclImpl();
-    return typeDecl;
+    NumNatConstraintImpl numNatConstraint = new NumNatConstraintImpl();
+    return numNatConstraint;
   }
 
   /**
@@ -261,10 +333,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeatureGroupDecl createFeatureGroupDecl()
+  public AnyNatConstraint createAnyNatConstraint()
   {
-    FeatureGroupDeclImpl featureGroupDecl = new FeatureGroupDeclImpl();
-    return featureGroupDecl;
+    AnyNatConstraintImpl anyNatConstraint = new AnyNatConstraintImpl();
+    return anyNatConstraint;
   }
 
   /**

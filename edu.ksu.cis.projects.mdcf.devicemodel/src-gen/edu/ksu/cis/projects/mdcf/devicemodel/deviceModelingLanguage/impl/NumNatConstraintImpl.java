@@ -3,47 +3,55 @@
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesDecl;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeRef;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NumNatConstraint;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Sub Group Type Ref</b></em>'.
+ * An implementation of the model object '<em><b>Num Nat Constraint</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubGroupTypeRefImpl#getType <em>Type</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.NumNatConstraintImpl#getNum <em>Num</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SubGroupTypeRefImpl extends SubFeaturesTypeImpl implements SubGroupTypeRef
+public class NumNatConstraintImpl extends ConstraintNatImpl implements NumNatConstraint
 {
   /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * The default value of the '{@link #getNum() <em>Num</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getType()
+   * @see #getNum()
    * @generated
    * @ordered
    */
-  protected FeaturesDecl type;
+  protected static final String NUM_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getNum() <em>Num</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNum()
+   * @generated
+   * @ordered
+   */
+  protected String num = NUM_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SubGroupTypeRefImpl()
+  protected NumNatConstraintImpl()
   {
     super();
   }
@@ -56,7 +64,7 @@ public class SubGroupTypeRefImpl extends SubFeaturesTypeImpl implements SubGroup
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.SUB_GROUP_TYPE_REF;
+    return DeviceModelingLanguagePackage.Literals.NUM_NAT_CONSTRAINT;
   }
 
   /**
@@ -64,19 +72,9 @@ public class SubGroupTypeRefImpl extends SubFeaturesTypeImpl implements SubGroup
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeaturesDecl getType()
+  public String getNum()
   {
-    if (type != null && type.eIsProxy())
-    {
-      InternalEObject oldType = (InternalEObject)type;
-      type = (FeaturesDecl)eResolveProxy(oldType);
-      if (type != oldType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeviceModelingLanguagePackage.SUB_GROUP_TYPE_REF__TYPE, oldType, type));
-      }
-    }
-    return type;
+    return num;
   }
 
   /**
@@ -84,22 +82,12 @@ public class SubGroupTypeRefImpl extends SubFeaturesTypeImpl implements SubGroup
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeaturesDecl basicGetType()
+  public void setNum(String newNum)
   {
-    return type;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setType(FeaturesDecl newType)
-  {
-    FeaturesDecl oldType = type;
-    type = newType;
+    String oldNum = num;
+    num = newNum;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_GROUP_TYPE_REF__TYPE, oldType, type));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.NUM_NAT_CONSTRAINT__NUM, oldNum, num));
   }
 
   /**
@@ -112,9 +100,8 @@ public class SubGroupTypeRefImpl extends SubFeaturesTypeImpl implements SubGroup
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_REF__TYPE:
-        if (resolve) return getType();
-        return basicGetType();
+      case DeviceModelingLanguagePackage.NUM_NAT_CONSTRAINT__NUM:
+        return getNum();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -129,8 +116,8 @@ public class SubGroupTypeRefImpl extends SubFeaturesTypeImpl implements SubGroup
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_REF__TYPE:
-        setType((FeaturesDecl)newValue);
+      case DeviceModelingLanguagePackage.NUM_NAT_CONSTRAINT__NUM:
+        setNum((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -146,8 +133,8 @@ public class SubGroupTypeRefImpl extends SubFeaturesTypeImpl implements SubGroup
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_REF__TYPE:
-        setType((FeaturesDecl)null);
+      case DeviceModelingLanguagePackage.NUM_NAT_CONSTRAINT__NUM:
+        setNum(NUM_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -163,10 +150,27 @@ public class SubGroupTypeRefImpl extends SubFeaturesTypeImpl implements SubGroup
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_REF__TYPE:
-        return type != null;
+      case DeviceModelingLanguagePackage.NUM_NAT_CONSTRAINT__NUM:
+        return NUM_EDEFAULT == null ? num != null : !NUM_EDEFAULT.equals(num);
     }
     return super.eIsSet(featureID);
   }
 
-} //SubGroupTypeRefImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (num: ");
+    result.append(num);
+    result.append(')');
+    return result.toString();
+  }
+
+} //NumNatConstraintImpl

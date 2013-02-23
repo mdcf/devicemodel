@@ -2,24 +2,30 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AnyNatConstraint;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintNat;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Decl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguageFactory;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ELiteral;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureGroupBody;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureGroupDecl;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupAttrDecl;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupElementDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesBody;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.InvariantDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ListLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ListType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Literal;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NumNatConstraint;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetType;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupDecl;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeAnon;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeRef;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TupleLiteral;
@@ -61,21 +67,63 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass featureGroupBodyEClass = null;
+  private EClass typeDeclEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass groupElementDeclEClass = null;
+  private EClass featuresDeclEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass groupAttrDeclEClass = null;
+  private EClass featuresBodyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass featureDeclEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass invariantDeclEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiplicityInvariantDeclEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass subFeaturesMatchEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass constraintNatEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass attrDeclEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -131,28 +179,28 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass subGroupDeclEClass = null;
+  private EClass subFeaturesDeclEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass subGroupTypeEClass = null;
+  private EClass subFeaturesTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass typeDeclEClass = null;
+  private EClass numNatConstraintEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass featureGroupDeclEClass = null;
+  private EClass anyNatConstraintEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -304,9 +352,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getFeatureGroupBody()
+  public EClass getTypeDecl()
   {
-    return featureGroupBodyEClass;
+    return typeDeclEClass;
   }
 
   /**
@@ -314,9 +362,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFeatureGroupBody_GroupElements()
+  public EReference getTypeDecl_Supers()
   {
-    return (EReference)featureGroupBodyEClass.getEStructuralFeatures().get(0);
+    return (EReference)typeDeclEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -324,9 +372,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGroupElementDecl()
+  public EReference getTypeDecl_Elems()
   {
-    return groupElementDeclEClass;
+    return (EReference)typeDeclEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -334,9 +382,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGroupAttrDecl()
+  public EClass getFeaturesDecl()
   {
-    return groupAttrDeclEClass;
+    return featuresDeclEClass;
   }
 
   /**
@@ -344,9 +392,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGroupAttrDecl_Modifier()
+  public EAttribute getFeaturesDecl_Complete()
   {
-    return (EAttribute)groupAttrDeclEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)featuresDeclEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -354,9 +402,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGroupAttrDecl_AttributeName()
+  public EReference getFeaturesDecl_Supers()
   {
-    return (EAttribute)groupAttrDeclEClass.getEStructuralFeatures().get(1);
+    return (EReference)featuresDeclEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -364,9 +412,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroupAttrDecl_AttributeType()
+  public EReference getFeaturesDecl_Body()
   {
-    return (EReference)groupAttrDeclEClass.getEStructuralFeatures().get(2);
+    return (EReference)featuresDeclEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -374,9 +422,199 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGroupAttrDecl_AttributeLiteral()
+  public EClass getFeaturesBody()
   {
-    return (EReference)groupAttrDeclEClass.getEStructuralFeatures().get(3);
+    return featuresBodyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFeaturesBody_Features()
+  {
+    return (EReference)featuresBodyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFeatureDecl()
+  {
+    return featureDeclEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInvariantDecl()
+  {
+    return invariantDeclEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMultiplicityInvariantDecl()
+  {
+    return multiplicityInvariantDeclEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMultiplicityInvariantDecl_InvName()
+  {
+    return (EAttribute)multiplicityInvariantDeclEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMultiplicityInvariantDecl_Lo()
+  {
+    return (EReference)multiplicityInvariantDeclEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMultiplicityInvariantDecl_Hi()
+  {
+    return (EReference)multiplicityInvariantDeclEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMultiplicityInvariantDecl_Match()
+  {
+    return (EReference)multiplicityInvariantDeclEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMultiplicityInvariantDecl_Type()
+  {
+    return (EReference)multiplicityInvariantDeclEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSubFeaturesMatch()
+  {
+    return subFeaturesMatchEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSubFeaturesMatch_CategoryNames()
+  {
+    return (EAttribute)subFeaturesMatchEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSubFeaturesMatch_Name()
+  {
+    return (EAttribute)subFeaturesMatchEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSubFeaturesMatch_Any()
+  {
+    return (EAttribute)subFeaturesMatchEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getConstraintNat()
+  {
+    return constraintNatEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAttrDecl()
+  {
+    return attrDeclEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAttrDecl_Modifier()
+  {
+    return (EAttribute)attrDeclEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAttrDecl_AttributeName()
+  {
+    return (EAttribute)attrDeclEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAttrDecl_Type()
+  {
+    return (EReference)attrDeclEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAttrDecl_Literal()
+  {
+    return (EReference)attrDeclEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -534,9 +772,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSubGroupDecl()
+  public EClass getSubFeaturesDecl()
   {
-    return subGroupDeclEClass;
+    return subFeaturesDeclEClass;
   }
 
   /**
@@ -544,9 +782,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSubGroupDecl_CategoryName()
+  public EAttribute getSubFeaturesDecl_CategoryNames()
   {
-    return (EAttribute)subGroupDeclEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)subFeaturesDeclEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -554,9 +792,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSubGroupDecl_Name()
+  public EAttribute getSubFeaturesDecl_Name()
   {
-    return (EAttribute)subGroupDeclEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)subFeaturesDeclEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -564,9 +802,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSubGroupDecl_Type()
+  public EReference getSubFeaturesDecl_Type()
   {
-    return (EReference)subGroupDeclEClass.getEStructuralFeatures().get(2);
+    return (EReference)subFeaturesDeclEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -574,9 +812,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSubGroupType()
+  public EClass getSubFeaturesType()
   {
-    return subGroupTypeEClass;
+    return subFeaturesTypeEClass;
   }
 
   /**
@@ -584,9 +822,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTypeDecl()
+  public EClass getNumNatConstraint()
   {
-    return typeDeclEClass;
+    return numNatConstraintEClass;
   }
 
   /**
@@ -594,9 +832,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getFeatureGroupDecl()
+  public EAttribute getNumNatConstraint_Num()
   {
-    return featureGroupDeclEClass;
+    return (EAttribute)numNatConstraintEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -604,19 +842,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFeatureGroupDecl_Supers()
+  public EClass getAnyNatConstraint()
   {
-    return (EReference)featureGroupDeclEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFeatureGroupDecl_Body()
-  {
-    return (EReference)featureGroupDeclEClass.getEStructuralFeatures().get(1);
+    return anyNatConstraintEClass;
   }
 
   /**
@@ -785,16 +1013,41 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     declEClass = createEClass(DECL);
     createEAttribute(declEClass, DECL__NAME);
 
-    featureGroupBodyEClass = createEClass(FEATURE_GROUP_BODY);
-    createEReference(featureGroupBodyEClass, FEATURE_GROUP_BODY__GROUP_ELEMENTS);
+    typeDeclEClass = createEClass(TYPE_DECL);
+    createEReference(typeDeclEClass, TYPE_DECL__SUPERS);
+    createEReference(typeDeclEClass, TYPE_DECL__ELEMS);
 
-    groupElementDeclEClass = createEClass(GROUP_ELEMENT_DECL);
+    featuresDeclEClass = createEClass(FEATURES_DECL);
+    createEAttribute(featuresDeclEClass, FEATURES_DECL__COMPLETE);
+    createEReference(featuresDeclEClass, FEATURES_DECL__SUPERS);
+    createEReference(featuresDeclEClass, FEATURES_DECL__BODY);
 
-    groupAttrDeclEClass = createEClass(GROUP_ATTR_DECL);
-    createEAttribute(groupAttrDeclEClass, GROUP_ATTR_DECL__MODIFIER);
-    createEAttribute(groupAttrDeclEClass, GROUP_ATTR_DECL__ATTRIBUTE_NAME);
-    createEReference(groupAttrDeclEClass, GROUP_ATTR_DECL__ATTRIBUTE_TYPE);
-    createEReference(groupAttrDeclEClass, GROUP_ATTR_DECL__ATTRIBUTE_LITERAL);
+    featuresBodyEClass = createEClass(FEATURES_BODY);
+    createEReference(featuresBodyEClass, FEATURES_BODY__FEATURES);
+
+    featureDeclEClass = createEClass(FEATURE_DECL);
+
+    invariantDeclEClass = createEClass(INVARIANT_DECL);
+
+    multiplicityInvariantDeclEClass = createEClass(MULTIPLICITY_INVARIANT_DECL);
+    createEAttribute(multiplicityInvariantDeclEClass, MULTIPLICITY_INVARIANT_DECL__INV_NAME);
+    createEReference(multiplicityInvariantDeclEClass, MULTIPLICITY_INVARIANT_DECL__LO);
+    createEReference(multiplicityInvariantDeclEClass, MULTIPLICITY_INVARIANT_DECL__HI);
+    createEReference(multiplicityInvariantDeclEClass, MULTIPLICITY_INVARIANT_DECL__MATCH);
+    createEReference(multiplicityInvariantDeclEClass, MULTIPLICITY_INVARIANT_DECL__TYPE);
+
+    subFeaturesMatchEClass = createEClass(SUB_FEATURES_MATCH);
+    createEAttribute(subFeaturesMatchEClass, SUB_FEATURES_MATCH__CATEGORY_NAMES);
+    createEAttribute(subFeaturesMatchEClass, SUB_FEATURES_MATCH__NAME);
+    createEAttribute(subFeaturesMatchEClass, SUB_FEATURES_MATCH__ANY);
+
+    constraintNatEClass = createEClass(CONSTRAINT_NAT);
+
+    attrDeclEClass = createEClass(ATTR_DECL);
+    createEAttribute(attrDeclEClass, ATTR_DECL__MODIFIER);
+    createEAttribute(attrDeclEClass, ATTR_DECL__ATTRIBUTE_NAME);
+    createEReference(attrDeclEClass, ATTR_DECL__TYPE);
+    createEReference(attrDeclEClass, ATTR_DECL__LITERAL);
 
     typeEClass = createEClass(TYPE);
 
@@ -818,18 +1071,17 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     eLiteralEClass = createEClass(ELITERAL);
     createEAttribute(eLiteralEClass, ELITERAL__LIT);
 
-    subGroupDeclEClass = createEClass(SUB_GROUP_DECL);
-    createEAttribute(subGroupDeclEClass, SUB_GROUP_DECL__CATEGORY_NAME);
-    createEAttribute(subGroupDeclEClass, SUB_GROUP_DECL__NAME);
-    createEReference(subGroupDeclEClass, SUB_GROUP_DECL__TYPE);
+    subFeaturesDeclEClass = createEClass(SUB_FEATURES_DECL);
+    createEAttribute(subFeaturesDeclEClass, SUB_FEATURES_DECL__CATEGORY_NAMES);
+    createEAttribute(subFeaturesDeclEClass, SUB_FEATURES_DECL__NAME);
+    createEReference(subFeaturesDeclEClass, SUB_FEATURES_DECL__TYPE);
 
-    subGroupTypeEClass = createEClass(SUB_GROUP_TYPE);
+    subFeaturesTypeEClass = createEClass(SUB_FEATURES_TYPE);
 
-    typeDeclEClass = createEClass(TYPE_DECL);
+    numNatConstraintEClass = createEClass(NUM_NAT_CONSTRAINT);
+    createEAttribute(numNatConstraintEClass, NUM_NAT_CONSTRAINT__NUM);
 
-    featureGroupDeclEClass = createEClass(FEATURE_GROUP_DECL);
-    createEReference(featureGroupDeclEClass, FEATURE_GROUP_DECL__SUPERS);
-    createEReference(featureGroupDeclEClass, FEATURE_GROUP_DECL__BODY);
+    anyNatConstraintEClass = createEClass(ANY_NAT_CONSTRAINT);
 
     basicTypeEClass = createEClass(BASIC_TYPE);
     createEReference(basicTypeEClass, BASIC_TYPE__BASE_TYPE);
@@ -880,20 +1132,24 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    groupAttrDeclEClass.getESuperTypes().add(this.getGroupElementDecl());
+    typeDeclEClass.getESuperTypes().add(this.getDecl());
+    featuresDeclEClass.getESuperTypes().add(this.getDecl());
+    invariantDeclEClass.getESuperTypes().add(this.getFeatureDecl());
+    multiplicityInvariantDeclEClass.getESuperTypes().add(this.getInvariantDecl());
+    attrDeclEClass.getESuperTypes().add(this.getFeatureDecl());
     basicLiteralEClass.getESuperTypes().add(this.getLiteral());
     tupleLiteralEClass.getESuperTypes().add(this.getLiteral());
     listLiteralEClass.getESuperTypes().add(this.getLiteral());
     setLiteralEClass.getESuperTypes().add(this.getLiteral());
-    subGroupDeclEClass.getESuperTypes().add(this.getGroupElementDecl());
-    typeDeclEClass.getESuperTypes().add(this.getDecl());
-    featureGroupDeclEClass.getESuperTypes().add(this.getDecl());
+    subFeaturesDeclEClass.getESuperTypes().add(this.getFeatureDecl());
+    numNatConstraintEClass.getESuperTypes().add(this.getConstraintNat());
+    anyNatConstraintEClass.getESuperTypes().add(this.getConstraintNat());
     basicTypeEClass.getESuperTypes().add(this.getType());
     listTypeEClass.getESuperTypes().add(this.getType());
     setTypeEClass.getESuperTypes().add(this.getType());
     tupleTypeEClass.getESuperTypes().add(this.getType());
-    subGroupTypeRefEClass.getESuperTypes().add(this.getSubGroupType());
-    subGroupTypeAnonEClass.getESuperTypes().add(this.getSubGroupType());
+    subGroupTypeRefEClass.getESuperTypes().add(this.getSubFeaturesType());
+    subGroupTypeAnonEClass.getESuperTypes().add(this.getSubFeaturesType());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -902,16 +1158,41 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEClass(declEClass, Decl.class, "Decl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, Decl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(featureGroupBodyEClass, FeatureGroupBody.class, "FeatureGroupBody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFeatureGroupBody_GroupElements(), this.getGroupElementDecl(), null, "groupElements", null, 0, -1, FeatureGroupBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(typeDeclEClass, TypeDecl.class, "TypeDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTypeDecl_Supers(), this.getTypeDecl(), null, "supers", null, 0, -1, TypeDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeDecl_Elems(), this.getELiteral(), null, "elems", null, 0, -1, TypeDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(groupElementDeclEClass, GroupElementDecl.class, "GroupElementDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(featuresDeclEClass, FeaturesDecl.class, "FeaturesDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFeaturesDecl_Complete(), ecorePackage.getEString(), "complete", null, 0, 1, FeaturesDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFeaturesDecl_Supers(), this.getFeaturesDecl(), null, "supers", null, 0, -1, FeaturesDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFeaturesDecl_Body(), this.getFeaturesBody(), null, "body", null, 0, 1, FeaturesDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(groupAttrDeclEClass, GroupAttrDecl.class, "GroupAttrDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGroupAttrDecl_Modifier(), ecorePackage.getEString(), "modifier", null, 0, 1, GroupAttrDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGroupAttrDecl_AttributeName(), ecorePackage.getEString(), "attributeName", null, 0, 1, GroupAttrDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGroupAttrDecl_AttributeType(), this.getType(), null, "attributeType", null, 0, 1, GroupAttrDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGroupAttrDecl_AttributeLiteral(), this.getLiteral(), null, "attributeLiteral", null, 0, 1, GroupAttrDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(featuresBodyEClass, FeaturesBody.class, "FeaturesBody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFeaturesBody_Features(), this.getFeatureDecl(), null, "features", null, 0, -1, FeaturesBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(featureDeclEClass, FeatureDecl.class, "FeatureDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(invariantDeclEClass, InvariantDecl.class, "InvariantDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(multiplicityInvariantDeclEClass, MultiplicityInvariantDecl.class, "MultiplicityInvariantDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMultiplicityInvariantDecl_InvName(), ecorePackage.getEString(), "invName", null, 0, 1, MultiplicityInvariantDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMultiplicityInvariantDecl_Lo(), this.getConstraintNat(), null, "lo", null, 0, 1, MultiplicityInvariantDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMultiplicityInvariantDecl_Hi(), this.getConstraintNat(), null, "hi", null, 0, 1, MultiplicityInvariantDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMultiplicityInvariantDecl_Match(), this.getSubFeaturesMatch(), null, "match", null, 0, 1, MultiplicityInvariantDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMultiplicityInvariantDecl_Type(), this.getFeaturesDecl(), null, "type", null, 0, 1, MultiplicityInvariantDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(subFeaturesMatchEClass, SubFeaturesMatch.class, "SubFeaturesMatch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSubFeaturesMatch_CategoryNames(), ecorePackage.getEString(), "categoryNames", null, 0, -1, SubFeaturesMatch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSubFeaturesMatch_Name(), ecorePackage.getEString(), "name", null, 0, 1, SubFeaturesMatch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSubFeaturesMatch_Any(), ecorePackage.getEString(), "any", null, 0, 1, SubFeaturesMatch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(constraintNatEClass, ConstraintNat.class, "ConstraintNat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(attrDeclEClass, AttrDecl.class, "AttrDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAttrDecl_Modifier(), ecorePackage.getEString(), "modifier", null, 0, 1, AttrDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttrDecl_AttributeName(), ecorePackage.getEString(), "attributeName", null, 0, 1, AttrDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttrDecl_Type(), this.getType(), null, "type", null, 0, 1, AttrDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttrDecl_Literal(), this.getLiteral(), null, "literal", null, 0, 1, AttrDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -935,18 +1216,17 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEClass(eLiteralEClass, ELiteral.class, "ELiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getELiteral_Lit(), ecorePackage.getEString(), "lit", null, 0, 1, ELiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(subGroupDeclEClass, SubGroupDecl.class, "SubGroupDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSubGroupDecl_CategoryName(), ecorePackage.getEString(), "categoryName", null, 0, 1, SubGroupDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSubGroupDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, SubGroupDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSubGroupDecl_Type(), this.getSubGroupType(), null, "type", null, 0, 1, SubGroupDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(subFeaturesDeclEClass, SubFeaturesDecl.class, "SubFeaturesDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSubFeaturesDecl_CategoryNames(), ecorePackage.getEString(), "categoryNames", null, 0, -1, SubFeaturesDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSubFeaturesDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, SubFeaturesDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubFeaturesDecl_Type(), this.getSubFeaturesType(), null, "type", null, 0, 1, SubFeaturesDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(subGroupTypeEClass, SubGroupType.class, "SubGroupType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(subFeaturesTypeEClass, SubFeaturesType.class, "SubFeaturesType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(typeDeclEClass, TypeDecl.class, "TypeDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(numNatConstraintEClass, NumNatConstraint.class, "NumNatConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNumNatConstraint_Num(), ecorePackage.getEString(), "num", null, 0, 1, NumNatConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(featureGroupDeclEClass, FeatureGroupDecl.class, "FeatureGroupDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFeatureGroupDecl_Supers(), this.getFeatureGroupDecl(), null, "supers", null, 0, -1, FeatureGroupDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFeatureGroupDecl_Body(), this.getFeatureGroupBody(), null, "body", null, 0, 1, FeatureGroupDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(anyNatConstraintEClass, AnyNatConstraint.class, "AnyNatConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(basicTypeEClass, BasicType.class, "BasicType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBasicType_BaseType(), this.getTypeDecl(), null, "baseType", null, 0, 1, BasicType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -961,11 +1241,11 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEReference(getTupleType_ElemTypes(), this.getType(), null, "elemTypes", null, 0, -1, TupleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subGroupTypeRefEClass, SubGroupTypeRef.class, "SubGroupTypeRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSubGroupTypeRef_Type(), this.getFeatureGroupDecl(), null, "type", null, 0, 1, SubGroupTypeRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubGroupTypeRef_Type(), this.getFeaturesDecl(), null, "type", null, 0, 1, SubGroupTypeRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subGroupTypeAnonEClass, SubGroupTypeAnon.class, "SubGroupTypeAnon", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSubGroupTypeAnon_Supers(), this.getFeatureGroupDecl(), null, "supers", null, 0, -1, SubGroupTypeAnon.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSubGroupTypeAnon_Body(), this.getFeatureGroupBody(), null, "body", null, 0, 1, SubGroupTypeAnon.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubGroupTypeAnon_Supers(), this.getFeaturesDecl(), null, "supers", null, 0, -1, SubGroupTypeAnon.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubGroupTypeAnon_Body(), this.getFeaturesBody(), null, "body", null, 0, 1, SubGroupTypeAnon.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

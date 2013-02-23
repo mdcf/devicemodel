@@ -5,7 +5,6 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesBody;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesDecl;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeAnon;
 
 import java.util.Collection;
 
@@ -23,20 +22,41 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Sub Group Type Anon</b></em>'.
+ * An implementation of the model object '<em><b>Features Decl</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubGroupTypeAnonImpl#getSupers <em>Supers</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubGroupTypeAnonImpl#getBody <em>Body</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeaturesDeclImpl#getComplete <em>Complete</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeaturesDeclImpl#getSupers <em>Supers</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeaturesDeclImpl#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SubGroupTypeAnonImpl extends SubFeaturesTypeImpl implements SubGroupTypeAnon
+public class FeaturesDeclImpl extends DeclImpl implements FeaturesDecl
 {
+  /**
+   * The default value of the '{@link #getComplete() <em>Complete</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getComplete()
+   * @generated
+   * @ordered
+   */
+  protected static final String COMPLETE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getComplete() <em>Complete</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getComplete()
+   * @generated
+   * @ordered
+   */
+  protected String complete = COMPLETE_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getSupers() <em>Supers</em>}' reference list.
    * <!-- begin-user-doc -->
@@ -62,7 +82,7 @@ public class SubGroupTypeAnonImpl extends SubFeaturesTypeImpl implements SubGrou
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SubGroupTypeAnonImpl()
+  protected FeaturesDeclImpl()
   {
     super();
   }
@@ -75,7 +95,30 @@ public class SubGroupTypeAnonImpl extends SubFeaturesTypeImpl implements SubGrou
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.SUB_GROUP_TYPE_ANON;
+    return DeviceModelingLanguagePackage.Literals.FEATURES_DECL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getComplete()
+  {
+    return complete;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setComplete(String newComplete)
+  {
+    String oldComplete = complete;
+    complete = newComplete;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.FEATURES_DECL__COMPLETE, oldComplete, complete));
   }
 
   /**
@@ -87,7 +130,7 @@ public class SubGroupTypeAnonImpl extends SubFeaturesTypeImpl implements SubGrou
   {
     if (supers == null)
     {
-      supers = new EObjectResolvingEList<FeaturesDecl>(FeaturesDecl.class, this, DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON__SUPERS);
+      supers = new EObjectResolvingEList<FeaturesDecl>(FeaturesDecl.class, this, DeviceModelingLanguagePackage.FEATURES_DECL__SUPERS);
     }
     return supers;
   }
@@ -113,7 +156,7 @@ public class SubGroupTypeAnonImpl extends SubFeaturesTypeImpl implements SubGrou
     body = newBody;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON__BODY, oldBody, newBody);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.FEATURES_DECL__BODY, oldBody, newBody);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -130,14 +173,14 @@ public class SubGroupTypeAnonImpl extends SubFeaturesTypeImpl implements SubGrou
     {
       NotificationChain msgs = null;
       if (body != null)
-        msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON__BODY, null, msgs);
+        msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.FEATURES_DECL__BODY, null, msgs);
       if (newBody != null)
-        msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON__BODY, null, msgs);
+        msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.FEATURES_DECL__BODY, null, msgs);
       msgs = basicSetBody(newBody, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON__BODY, newBody, newBody));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.FEATURES_DECL__BODY, newBody, newBody));
   }
 
   /**
@@ -150,7 +193,7 @@ public class SubGroupTypeAnonImpl extends SubFeaturesTypeImpl implements SubGrou
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON__BODY:
+      case DeviceModelingLanguagePackage.FEATURES_DECL__BODY:
         return basicSetBody(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -166,9 +209,11 @@ public class SubGroupTypeAnonImpl extends SubFeaturesTypeImpl implements SubGrou
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON__SUPERS:
+      case DeviceModelingLanguagePackage.FEATURES_DECL__COMPLETE:
+        return getComplete();
+      case DeviceModelingLanguagePackage.FEATURES_DECL__SUPERS:
         return getSupers();
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON__BODY:
+      case DeviceModelingLanguagePackage.FEATURES_DECL__BODY:
         return getBody();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -185,11 +230,14 @@ public class SubGroupTypeAnonImpl extends SubFeaturesTypeImpl implements SubGrou
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON__SUPERS:
+      case DeviceModelingLanguagePackage.FEATURES_DECL__COMPLETE:
+        setComplete((String)newValue);
+        return;
+      case DeviceModelingLanguagePackage.FEATURES_DECL__SUPERS:
         getSupers().clear();
         getSupers().addAll((Collection<? extends FeaturesDecl>)newValue);
         return;
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON__BODY:
+      case DeviceModelingLanguagePackage.FEATURES_DECL__BODY:
         setBody((FeaturesBody)newValue);
         return;
     }
@@ -206,10 +254,13 @@ public class SubGroupTypeAnonImpl extends SubFeaturesTypeImpl implements SubGrou
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON__SUPERS:
+      case DeviceModelingLanguagePackage.FEATURES_DECL__COMPLETE:
+        setComplete(COMPLETE_EDEFAULT);
+        return;
+      case DeviceModelingLanguagePackage.FEATURES_DECL__SUPERS:
         getSupers().clear();
         return;
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON__BODY:
+      case DeviceModelingLanguagePackage.FEATURES_DECL__BODY:
         setBody((FeaturesBody)null);
         return;
     }
@@ -226,12 +277,31 @@ public class SubGroupTypeAnonImpl extends SubFeaturesTypeImpl implements SubGrou
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON__SUPERS:
+      case DeviceModelingLanguagePackage.FEATURES_DECL__COMPLETE:
+        return COMPLETE_EDEFAULT == null ? complete != null : !COMPLETE_EDEFAULT.equals(complete);
+      case DeviceModelingLanguagePackage.FEATURES_DECL__SUPERS:
         return supers != null && !supers.isEmpty();
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON__BODY:
+      case DeviceModelingLanguagePackage.FEATURES_DECL__BODY:
         return body != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //SubGroupTypeAnonImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (complete: ");
+    result.append(complete);
+    result.append(')');
+    return result.toString();
+  }
+
+} //FeaturesDeclImpl

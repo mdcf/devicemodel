@@ -3,7 +3,7 @@
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GroupElementDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -11,21 +11,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Group Element Decl</b></em>'.
+ * An implementation of the model object '<em><b>Feature Decl</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class GroupElementDeclImpl extends MinimalEObjectImpl.Container implements GroupElementDecl
+public class FeatureDeclImpl extends MinimalEObjectImpl.Container implements FeatureDecl
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GroupElementDeclImpl()
+  protected FeatureDeclImpl()
   {
     super();
   }
@@ -38,7 +38,7 @@ public class GroupElementDeclImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.GROUP_ELEMENT_DECL;
+    return DeviceModelingLanguagePackage.Literals.FEATURE_DECL;
   }
 
-} //GroupElementDeclImpl
+} //FeatureDeclImpl
