@@ -39,7 +39,7 @@ public class DeviceModelingLanguageParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getDeclAccess().getAlternatives(), "rule__Decl__Alternatives");
 					put(grammarAccess.getFeatureDeclAccess().getAlternatives(), "rule__FeatureDecl__Alternatives");
-					put(grammarAccess.getSubFeaturesMatchAccess().getAlternatives_2(), "rule__SubFeaturesMatch__Alternatives_2");
+					put(grammarAccess.getSubFeaturesMatchAccess().getAlternatives_3(), "rule__SubFeaturesMatch__Alternatives_3");
 					put(grammarAccess.getConstraintNatAccess().getAlternatives(), "rule__ConstraintNat__Alternatives");
 					put(grammarAccess.getAttrDeclAccess().getAlternatives_2(), "rule__AttrDecl__Alternatives_2");
 					put(grammarAccess.getModifierAccess().getAlternatives(), "rule__Modifier__Alternatives");
@@ -57,12 +57,13 @@ public class DeviceModelingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFeaturesDeclAccess().getGroup_3(), "rule__FeaturesDecl__Group_3__0");
 					put(grammarAccess.getFeaturesDeclAccess().getGroup_3_2(), "rule__FeaturesDecl__Group_3_2__0");
 					put(grammarAccess.getFeaturesBodyAccess().getGroup(), "rule__FeaturesBody__Group__0");
+					put(grammarAccess.getFeaturesBodyAccess().getGroup_1(), "rule__FeaturesBody__Group_1__0");
 					put(grammarAccess.getMultiplicityInvariantDeclAccess().getGroup(), "rule__MultiplicityInvariantDecl__Group__0");
 					put(grammarAccess.getMultiplicityInvariantDeclAccess().getGroup_1(), "rule__MultiplicityInvariantDecl__Group_1__0");
 					put(grammarAccess.getMultiplicityInvariantDeclAccess().getGroup_2(), "rule__MultiplicityInvariantDecl__Group_2__0");
 					put(grammarAccess.getMultiplicityInvariantDeclAccess().getGroup_4(), "rule__MultiplicityInvariantDecl__Group_4__0");
 					put(grammarAccess.getSubFeaturesMatchAccess().getGroup(), "rule__SubFeaturesMatch__Group__0");
-					put(grammarAccess.getSubFeaturesMatchAccess().getGroup_1(), "rule__SubFeaturesMatch__Group_1__0");
+					put(grammarAccess.getSubFeaturesMatchAccess().getGroup_2(), "rule__SubFeaturesMatch__Group_2__0");
 					put(grammarAccess.getConstraintNatAccess().getGroup_0(), "rule__ConstraintNat__Group_0__0");
 					put(grammarAccess.getConstraintNatAccess().getGroup_1(), "rule__ConstraintNat__Group_1__0");
 					put(grammarAccess.getAttrDeclAccess().getGroup(), "rule__AttrDecl__Group__0");
@@ -100,15 +101,16 @@ public class DeviceModelingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFeaturesDeclAccess().getSupersAssignment_3_1(), "rule__FeaturesDecl__SupersAssignment_3_1");
 					put(grammarAccess.getFeaturesDeclAccess().getSupersAssignment_3_2_1(), "rule__FeaturesDecl__SupersAssignment_3_2_1");
 					put(grammarAccess.getFeaturesDeclAccess().getBodyAssignment_4(), "rule__FeaturesDecl__BodyAssignment_4");
-					put(grammarAccess.getFeaturesBodyAccess().getFeaturesAssignment_2(), "rule__FeaturesBody__FeaturesAssignment_2");
+					put(grammarAccess.getFeaturesBodyAccess().getFeaturesAssignment_1_1(), "rule__FeaturesBody__FeaturesAssignment_1_1");
 					put(grammarAccess.getMultiplicityInvariantDeclAccess().getInvNameAssignment_1_0(), "rule__MultiplicityInvariantDecl__InvNameAssignment_1_0");
 					put(grammarAccess.getMultiplicityInvariantDeclAccess().getLoAssignment_2_0(), "rule__MultiplicityInvariantDecl__LoAssignment_2_0");
 					put(grammarAccess.getMultiplicityInvariantDeclAccess().getHiAssignment_2_2(), "rule__MultiplicityInvariantDecl__HiAssignment_2_2");
 					put(grammarAccess.getMultiplicityInvariantDeclAccess().getMatchAssignment_3(), "rule__MultiplicityInvariantDecl__MatchAssignment_3");
 					put(grammarAccess.getMultiplicityInvariantDeclAccess().getTypeAssignment_4_1(), "rule__MultiplicityInvariantDecl__TypeAssignment_4_1");
-					put(grammarAccess.getSubFeaturesMatchAccess().getCategoryNamesAssignment_1_0(), "rule__SubFeaturesMatch__CategoryNamesAssignment_1_0");
-					put(grammarAccess.getSubFeaturesMatchAccess().getNameAssignment_2_0(), "rule__SubFeaturesMatch__NameAssignment_2_0");
-					put(grammarAccess.getSubFeaturesMatchAccess().getAnyAssignment_2_1(), "rule__SubFeaturesMatch__AnyAssignment_2_1");
+					put(grammarAccess.getSubFeaturesMatchAccess().getDistinctAssignment_1(), "rule__SubFeaturesMatch__DistinctAssignment_1");
+					put(grammarAccess.getSubFeaturesMatchAccess().getCategoryNamesAssignment_2_0(), "rule__SubFeaturesMatch__CategoryNamesAssignment_2_0");
+					put(grammarAccess.getSubFeaturesMatchAccess().getNameAssignment_3_0(), "rule__SubFeaturesMatch__NameAssignment_3_0");
+					put(grammarAccess.getSubFeaturesMatchAccess().getAnyAssignment_3_1(), "rule__SubFeaturesMatch__AnyAssignment_3_1");
 					put(grammarAccess.getConstraintNatAccess().getNumAssignment_0_1(), "rule__ConstraintNat__NumAssignment_0_1");
 					put(grammarAccess.getAttrDeclAccess().getModifierAssignment_0(), "rule__AttrDecl__ModifierAssignment_0");
 					put(grammarAccess.getAttrDeclAccess().getAttributeNameAssignment_1(), "rule__AttrDecl__AttributeNameAssignment_1");

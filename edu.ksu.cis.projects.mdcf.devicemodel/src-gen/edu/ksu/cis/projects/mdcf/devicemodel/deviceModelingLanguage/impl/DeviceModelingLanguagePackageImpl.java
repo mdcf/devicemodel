@@ -532,7 +532,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSubFeaturesMatch_CategoryNames()
+  public EAttribute getSubFeaturesMatch_Distinct()
   {
     return (EAttribute)subFeaturesMatchEClass.getEStructuralFeatures().get(0);
   }
@@ -542,7 +542,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSubFeaturesMatch_Name()
+  public EAttribute getSubFeaturesMatch_CategoryNames()
   {
     return (EAttribute)subFeaturesMatchEClass.getEStructuralFeatures().get(1);
   }
@@ -552,9 +552,19 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSubFeaturesMatch_Any()
+  public EAttribute getSubFeaturesMatch_Name()
   {
     return (EAttribute)subFeaturesMatchEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSubFeaturesMatch_Any()
+  {
+    return (EAttribute)subFeaturesMatchEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1037,6 +1047,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     createEReference(multiplicityInvariantDeclEClass, MULTIPLICITY_INVARIANT_DECL__TYPE);
 
     subFeaturesMatchEClass = createEClass(SUB_FEATURES_MATCH);
+    createEAttribute(subFeaturesMatchEClass, SUB_FEATURES_MATCH__DISTINCT);
     createEAttribute(subFeaturesMatchEClass, SUB_FEATURES_MATCH__CATEGORY_NAMES);
     createEAttribute(subFeaturesMatchEClass, SUB_FEATURES_MATCH__NAME);
     createEAttribute(subFeaturesMatchEClass, SUB_FEATURES_MATCH__ANY);
@@ -1182,6 +1193,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEReference(getMultiplicityInvariantDecl_Type(), this.getFeaturesDecl(), null, "type", null, 0, 1, MultiplicityInvariantDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subFeaturesMatchEClass, SubFeaturesMatch.class, "SubFeaturesMatch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSubFeaturesMatch_Distinct(), ecorePackage.getEString(), "distinct", null, 0, 1, SubFeaturesMatch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSubFeaturesMatch_CategoryNames(), ecorePackage.getEString(), "categoryNames", null, 0, -1, SubFeaturesMatch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSubFeaturesMatch_Name(), ecorePackage.getEString(), "name", null, 0, 1, SubFeaturesMatch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSubFeaturesMatch_Any(), ecorePackage.getEString(), "any", null, 0, 1, SubFeaturesMatch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

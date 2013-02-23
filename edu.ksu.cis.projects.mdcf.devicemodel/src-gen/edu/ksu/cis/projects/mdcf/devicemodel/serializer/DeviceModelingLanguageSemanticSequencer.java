@@ -325,7 +325,7 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (categoryNames+=ID* (name=ID | any='*'))
+	 *     (distinct='distinct'? categoryNames+=ID* (name=ID | any='*'))
 	 */
 	protected void sequence_SubFeaturesMatch(EObject context, SubFeaturesMatch semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

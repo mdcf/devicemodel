@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl#getDistinct <em>Distinct</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl#getCategoryNames <em>Category Names</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl#getAny <em>Any</em>}</li>
@@ -35,6 +36,26 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  */
 public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implements SubFeaturesMatch
 {
+  /**
+   * The default value of the '{@link #getDistinct() <em>Distinct</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDistinct()
+   * @generated
+   * @ordered
+   */
+  protected static final String DISTINCT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDistinct() <em>Distinct</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDistinct()
+   * @generated
+   * @ordered
+   */
+  protected String distinct = DISTINCT_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getCategoryNames() <em>Category Names</em>}' attribute list.
    * <!-- begin-user-doc -->
@@ -111,6 +132,29 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getDistinct()
+  {
+    return distinct;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDistinct(String newDistinct)
+  {
+    String oldDistinct = distinct;
+    distinct = newDistinct;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__DISTINCT, oldDistinct, distinct));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<String> getCategoryNames()
   {
     if (categoryNames == null)
@@ -176,6 +220,8 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__DISTINCT:
+        return getDistinct();
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__CATEGORY_NAMES:
         return getCategoryNames();
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__NAME:
@@ -197,6 +243,9 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__DISTINCT:
+        setDistinct((String)newValue);
+        return;
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__CATEGORY_NAMES:
         getCategoryNames().clear();
         getCategoryNames().addAll((Collection<? extends String>)newValue);
@@ -221,6 +270,9 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__DISTINCT:
+        setDistinct(DISTINCT_EDEFAULT);
+        return;
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__CATEGORY_NAMES:
         getCategoryNames().clear();
         return;
@@ -244,6 +296,8 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__DISTINCT:
+        return DISTINCT_EDEFAULT == null ? distinct != null : !DISTINCT_EDEFAULT.equals(distinct);
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__CATEGORY_NAMES:
         return categoryNames != null && !categoryNames.isEmpty();
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__NAME:
@@ -265,7 +319,9 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (categoryNames: ");
+    result.append(" (distinct: ");
+    result.append(distinct);
+    result.append(", categoryNames: ");
     result.append(categoryNames);
     result.append(", name: ");
     result.append(name);

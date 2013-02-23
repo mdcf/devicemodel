@@ -354,13 +354,22 @@ public interface DeviceModelingLanguagePackage extends EPackage
   int SUB_FEATURES_MATCH = 8;
 
   /**
+   * The feature id for the '<em><b>Distinct</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_FEATURES_MATCH__DISTINCT = 0;
+
+  /**
    * The feature id for the '<em><b>Category Names</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUB_FEATURES_MATCH__CATEGORY_NAMES = 0;
+  int SUB_FEATURES_MATCH__CATEGORY_NAMES = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -369,7 +378,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_FEATURES_MATCH__NAME = 1;
+  int SUB_FEATURES_MATCH__NAME = 2;
 
   /**
    * The feature id for the '<em><b>Any</b></em>' attribute.
@@ -378,7 +387,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_FEATURES_MATCH__ANY = 2;
+  int SUB_FEATURES_MATCH__ANY = 3;
 
   /**
    * The number of structural features of the '<em>Sub Features Match</em>' class.
@@ -387,7 +396,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_FEATURES_MATCH_FEATURE_COUNT = 3;
+  int SUB_FEATURES_MATCH_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ConstraintNatImpl <em>Constraint Nat</em>}' class.
@@ -1192,6 +1201,17 @@ public interface DeviceModelingLanguagePackage extends EPackage
   EClass getSubFeaturesMatch();
 
   /**
+   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch#getDistinct <em>Distinct</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Distinct</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch#getDistinct()
+   * @see #getSubFeaturesMatch()
+   * @generated
+   */
+  EAttribute getSubFeaturesMatch_Distinct();
+
+  /**
    * Returns the meta object for the attribute list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch#getCategoryNames <em>Category Names</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1883,6 +1903,14 @@ public interface DeviceModelingLanguagePackage extends EPackage
      * @generated
      */
     EClass SUB_FEATURES_MATCH = eINSTANCE.getSubFeaturesMatch();
+
+    /**
+     * The meta object literal for the '<em><b>Distinct</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SUB_FEATURES_MATCH__DISTINCT = eINSTANCE.getSubFeaturesMatch_Distinct();
 
     /**
      * The meta object literal for the '<em><b>Category Names</b></em>' attribute list feature.

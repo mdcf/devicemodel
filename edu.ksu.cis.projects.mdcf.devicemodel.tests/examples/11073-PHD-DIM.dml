@@ -1,14 +1,22 @@
-features MDS {
-  inv 0..*  scan.*  : Scanner
-  inv 0..*  num.*   : Numeric
-  inv 0..*  rtsa.*  : RealTimeSA
-  inv 0..*  enum.*  : Enumeration
-  inv 0..*  pms.*   : PMStore
+features MDS <: MDSInv, MDSAttributes
+
+features MDSInv {
+  inv 0..*           num.*  : Numeric
+  inv 0..*           rtsa.* : RealTimeSA
+  inv 0..*           enum.* : Enumeration
+  inv 0..*           pms.*  : PMStore
+  inv 0..*  distinct *      : Scanner
 }
 
-features PMStore {
-  inv 0..*  pmseg.* : PMSegment
-}
+features MDSAttributes { /* ... */ }
+
+features Scanner { /* ... */ }
+
+features CfgScanner <: Scanner { /* ... */ }
+
+features EpiCfgScanner <: CfgScanner { /* ... */ }
+
+features PeriCfgScammer <: CfgScanner { /* ... */ }
 
 features Metric { /* ... */ }
 
@@ -20,11 +28,6 @@ features Enumeration <: Metric { /* ... */ }
 
 features PMSegment <: Metric { /* ... */ }
 
-features Scanner { /* ... */ }
-
-features CfgScanner <: Scanner { /* ... */ }
-
-features EpiCfgScanner <: CfgScanner { /* ... */ }
-
-features PeriCfgScammer <: CfgScanner { /* ... */ }
-
+features PMStore {
+  inv 0..*  pmseg.* : PMSegment
+}

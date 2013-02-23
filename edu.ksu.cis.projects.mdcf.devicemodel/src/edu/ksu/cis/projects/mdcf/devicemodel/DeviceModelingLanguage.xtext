@@ -16,7 +16,7 @@ FeaturesDecl:        (complete='complete')? 'features' name=ID
                        ( '<:' supers+=[FeaturesDecl|ID] ( ',' supers+=[FeaturesDecl|ID] )* )?  
                        body=FeaturesBody;
 
-FeaturesBody:        '{' {FeaturesBody} features += FeatureDecl* '}';
+FeaturesBody:        {FeaturesBody} ( '{' features += FeatureDecl* '}' )?;
 
 FeatureDecl:         InvariantDecl | AttrDecl | SubFeaturesDecl;
 
@@ -27,7 +27,8 @@ MultiplicityInvariantDecl:
 	                     match=SubFeaturesMatch 
 	                     ( ':' type=[FeaturesDecl|ID] )?;
 
-SubFeaturesMatch:    {SubFeaturesMatch} ( categoryNames+=ID '.' )* ( name=ID | any='*' );
+SubFeaturesMatch:    {SubFeaturesMatch} ( distinct='distinct' )? 
+                       ( categoryNames+=ID '.' )* ( name=ID | any='*' );
 
 ConstraintNat:       {NumNatConstraint} num=NAT | {AnyNatConstraint} '*' ;	                     
 

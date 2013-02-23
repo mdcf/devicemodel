@@ -1,4 +1,6 @@
-features PulseOxMDS <: MDS {
+features PulseOxMDS <: PulseOxMDSInv, PulseOxMDSAttributes, MDS
+
+features PulseOxMDSInv <: MDSInv {
   inv 1..*  num.sp02.*      : SpO2
   inv 1..*  num.pulserate.* : PulseRate
   inv 0..1  rtsa.pleth.*    : Plethysmogram
@@ -7,6 +9,8 @@ features PulseOxMDS <: MDS {
   inv 0..1  enum.po.*       : PulsatileOccurence
   inv 0..1  enum.pc.*       : PulsatileCharacteristic
 }
+
+features PulseOxMDSAttributes { /* ... */}
 
 features SpO2 <: Numeric { /* ... */ }
 
