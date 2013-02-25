@@ -58,16 +58,16 @@ features PulseOximeterICEMAN { // ICEMAN style
 }
 
 features TimedTrigger {
-  val status        : String
-  val triggerSource : Nat
-  val timeInterval  : Nat
+  val status              : String
+  val triggerSource       : Nat
+  val timeInterval        : Nat
 }
  
 features StatusMonitor {
-  val status            = String               ( Disconnected        )
-  val dateTime          = DateTime             ( 2002-05-30T09:00:00 )
-  val powerStatus       = String               ( onBattery           )
-  val batteryLevel      = Nat                  ( 67                  )
+  val status              = String               ( Disconnected        )
+  val dateTime            = DateTime             ( 2002-05-30T09:00:00 )
+  val powerStatus         = String               ( onBattery           )
+  val batteryLevel        = Nat                  ( 67                  )
 }
  
 features PulseOximeterYUJIN { // Yu Jin's style
