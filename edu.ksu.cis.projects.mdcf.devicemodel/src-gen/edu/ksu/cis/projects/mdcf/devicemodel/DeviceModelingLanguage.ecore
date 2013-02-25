@@ -73,6 +73,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elems" upperBound="-1"
         eType="#//ELiteral" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptionLiteral" eSuperTypes="#//Literal"/>
   <eClassifiers xsi:type="ecore:EClass" name="ELiteral">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -102,6 +103,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="TupleType" eSuperTypes="#//Type">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elemTypes" upperBound="-1"
         eType="#//Type" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptionType" eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="#//Type" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoneLiteral" eSuperTypes="#//OptionLiteral">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SomeLiteral" eSuperTypes="#//OptionLiteral">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lit" eType="#//Literal"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SubGroupTypeRef" eSuperTypes="#//SubFeaturesType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//FeaturesDecl"/>

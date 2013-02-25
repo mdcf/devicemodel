@@ -201,6 +201,14 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DeviceModelingLanguagePackage.OPTION_LITERAL:
+      {
+        OptionLiteral optionLiteral = (OptionLiteral)theEObject;
+        T result = caseOptionLiteral(optionLiteral);
+        if (result == null) result = caseLiteral(optionLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DeviceModelingLanguagePackage.ELITERAL:
       {
         ELiteral eLiteral = (ELiteral)theEObject;
@@ -268,6 +276,32 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         TupleType tupleType = (TupleType)theEObject;
         T result = caseTupleType(tupleType);
         if (result == null) result = caseType(tupleType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.OPTION_TYPE:
+      {
+        OptionType optionType = (OptionType)theEObject;
+        T result = caseOptionType(optionType);
+        if (result == null) result = caseType(optionType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.NONE_LITERAL:
+      {
+        NoneLiteral noneLiteral = (NoneLiteral)theEObject;
+        T result = caseNoneLiteral(noneLiteral);
+        if (result == null) result = caseOptionLiteral(noneLiteral);
+        if (result == null) result = caseLiteral(noneLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.SOME_LITERAL:
+      {
+        SomeLiteral someLiteral = (SomeLiteral)theEObject;
+        T result = caseSomeLiteral(someLiteral);
+        if (result == null) result = caseOptionLiteral(someLiteral);
+        if (result == null) result = caseLiteral(someLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -564,6 +598,22 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Option Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Option Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOptionLiteral(OptionLiteral object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>ELiteral</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -703,6 +753,54 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTupleType(TupleType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Option Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Option Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOptionType(OptionType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>None Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>None Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNoneLiteral(NoneLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Some Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Some Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSomeLiteral(SomeLiteral object)
   {
     return null;
   }

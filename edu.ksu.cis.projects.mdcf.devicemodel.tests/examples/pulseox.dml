@@ -16,7 +16,7 @@ type S11073 { // literal set
 	( MDC_DIM_BEAT_PER_MIN           )
 }
 
-type MY_S11073 <: S11073 { // literal set mixin
+type MY_S11073 include S11073 { // literal set mixin
 	( MDC_DIM_BEAT_PER_SEC           )
 }
 
@@ -48,7 +48,7 @@ features PulseOximeterICEMAN { // ICEMAN style
       val value           : Nat // only type spec without value
       val units           = String             ( unitless            )
                  
-      timedTrigger.ReportPulseAmplitude <: TimedTrigger = { // <: is structural subtyping
+      timedTrigger.ReportPulseAmplitude include TimedTrigger = { // include is structural subtyping
         def status        = String             ( Off                 )
         def triggerSource = Nat                ( 1036                )
         def timeInterval  = Nat                ( 2000                )
@@ -83,5 +83,8 @@ features PulseOximeterYUJIN { // Yu Jin's style
  
       val someSet         = Nat { (1), (2), (3) } // set literal
       val someList        = Nat [ (1), (2), (3) ] // list literal
+      val opt1            : Nat?                  // option type
+      val opt2            = none : Nat?           // typed none literal
+      val opt3            = some Nat(1)           // some literal
   }
 }

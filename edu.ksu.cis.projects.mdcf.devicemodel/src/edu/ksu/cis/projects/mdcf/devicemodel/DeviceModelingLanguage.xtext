@@ -9,11 +9,11 @@ Model:               decls+=Decl*;
 Decl:                TypeDecl | FeaturesDecl; 
                        
 TypeDecl:            'type' name=ID
-                       ( '<:' supers+=[TypeDecl|ID] ( ',' supers+=[TypeDecl|ID] )* )?
+                       ( 'include' supers+=[TypeDecl|ID] ( ',' supers+=[TypeDecl|ID] )* )?
                        ( '{' ( elems+=ELiteral ( ',' elems+=ELiteral )* )? '}' )?;
 	                   
 FeaturesDecl:        (complete='complete')? 'features' name=ID
-                       ( '<:' supers+=[FeaturesDecl|ID] ( ',' supers+=[FeaturesDecl|ID] )* )?  
+                       ( 'include' supers+=[FeaturesDecl|ID] ( ',' supers+=[FeaturesDecl|ID] )* )?  
                        body=FeaturesBody;
 
 FeaturesBody:        {FeaturesBody} ( '{' features += FeatureDecl* '}' )?;
@@ -38,12 +38,13 @@ AttrDecl:            modifier=Modifier attributeName=ID
 
 Modifier:            'const' | 'val' | 'var' | 'def';
 
-Type:                  {BasicType} baseType=[TypeDecl|ID]
+Type:                ( {BasicType} baseType=[TypeDecl|ID]
 	                       ( {ListType.base=current} '[' ']'
 	                       | {SetType.base=current}  '{' '}' )*
-                     | '<' {TupleType} elemTypes+=Type ( '*' elemTypes+=Type )+ '>';
+                       | '<' {TupleType} elemTypes+=Type ( '*' elemTypes+=Type )+ '>'
+                     ) ( '?' {OptionType.base=current} )?;
  
-Literal:             BasicLiteral | TupleLiteral | ListLiteral | SetLiteral;
+Literal:             BasicLiteral | TupleLiteral | ListLiteral | SetLiteral | OptionLiteral;
 
 BasicLiteral:        typeCons=[TypeDecl|ID] lit=LIT;
 
@@ -53,13 +54,16 @@ ListLiteral:         typeCons=[TypeDecl|ID] '[' ( elems+=ELiteral ( ',' elems+=E
 
 SetLiteral:          typeCons=[TypeDecl|ID] '{' ( elems+=ELiteral ( ',' elems+=ELiteral)* )? '}';
 
+OptionLiteral:         'none' {NoneLiteral} ':' type=Type
+                     | 'some' {SomeLiteral} lit=Literal;
+
 ELiteral:            lit=LIT;
 
 SubFeaturesDecl:     ( categoryNames+=ID '.' )* name=ID type=SubFeaturesType;
 
 SubFeaturesType:       ':' {SubGroupTypeRef}  type=[FeaturesDecl|ID] 
                      | {SubGroupTypeAnon} 
-                       ( '<:' supers+=[FeaturesDecl|ID] 
+                       ( 'include' supers+=[FeaturesDecl|ID] 
                      	      ( ',' supers+=[FeaturesDecl|ID] )*
                        )? 
                        '=' body=FeaturesBody;

@@ -20,9 +20,13 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ListType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Literal;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NumNatConstraint;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SomeLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesType;
@@ -172,6 +176,13 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass optionLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass eLiteralEClass = null;
 
   /**
@@ -229,6 +240,27 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * @generated
    */
   private EClass tupleTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass optionTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass noneLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass someLiteralEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -762,6 +794,16 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getOptionLiteral()
+  {
+    return optionLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getELiteral()
   {
     return eLiteralEClass;
@@ -942,6 +984,66 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getOptionType()
+  {
+    return optionTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOptionType_Base()
+  {
+    return (EReference)optionTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNoneLiteral()
+  {
+    return noneLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getNoneLiteral_Type()
+  {
+    return (EReference)noneLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSomeLiteral()
+  {
+    return someLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSomeLiteral_Lit()
+  {
+    return (EReference)someLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSubGroupTypeRef()
   {
     return subGroupTypeRefEClass;
@@ -1079,6 +1181,8 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     createEReference(setLiteralEClass, SET_LITERAL__TYPE_CONS);
     createEReference(setLiteralEClass, SET_LITERAL__ELEMS);
 
+    optionLiteralEClass = createEClass(OPTION_LITERAL);
+
     eLiteralEClass = createEClass(ELITERAL);
     createEAttribute(eLiteralEClass, ELITERAL__LIT);
 
@@ -1105,6 +1209,15 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
 
     tupleTypeEClass = createEClass(TUPLE_TYPE);
     createEReference(tupleTypeEClass, TUPLE_TYPE__ELEM_TYPES);
+
+    optionTypeEClass = createEClass(OPTION_TYPE);
+    createEReference(optionTypeEClass, OPTION_TYPE__BASE);
+
+    noneLiteralEClass = createEClass(NONE_LITERAL);
+    createEReference(noneLiteralEClass, NONE_LITERAL__TYPE);
+
+    someLiteralEClass = createEClass(SOME_LITERAL);
+    createEReference(someLiteralEClass, SOME_LITERAL__LIT);
 
     subGroupTypeRefEClass = createEClass(SUB_GROUP_TYPE_REF);
     createEReference(subGroupTypeRefEClass, SUB_GROUP_TYPE_REF__TYPE);
@@ -1152,6 +1265,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     tupleLiteralEClass.getESuperTypes().add(this.getLiteral());
     listLiteralEClass.getESuperTypes().add(this.getLiteral());
     setLiteralEClass.getESuperTypes().add(this.getLiteral());
+    optionLiteralEClass.getESuperTypes().add(this.getLiteral());
     subFeaturesDeclEClass.getESuperTypes().add(this.getFeatureDecl());
     numNatConstraintEClass.getESuperTypes().add(this.getConstraintNat());
     anyNatConstraintEClass.getESuperTypes().add(this.getConstraintNat());
@@ -1159,6 +1273,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     listTypeEClass.getESuperTypes().add(this.getType());
     setTypeEClass.getESuperTypes().add(this.getType());
     tupleTypeEClass.getESuperTypes().add(this.getType());
+    optionTypeEClass.getESuperTypes().add(this.getType());
+    noneLiteralEClass.getESuperTypes().add(this.getOptionLiteral());
+    someLiteralEClass.getESuperTypes().add(this.getOptionLiteral());
     subGroupTypeRefEClass.getESuperTypes().add(this.getSubFeaturesType());
     subGroupTypeAnonEClass.getESuperTypes().add(this.getSubFeaturesType());
 
@@ -1225,6 +1342,8 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEReference(getSetLiteral_TypeCons(), this.getTypeDecl(), null, "typeCons", null, 0, 1, SetLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSetLiteral_Elems(), this.getELiteral(), null, "elems", null, 0, -1, SetLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(optionLiteralEClass, OptionLiteral.class, "OptionLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(eLiteralEClass, ELiteral.class, "ELiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getELiteral_Lit(), ecorePackage.getEString(), "lit", null, 0, 1, ELiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1251,6 +1370,15 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
 
     initEClass(tupleTypeEClass, TupleType.class, "TupleType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTupleType_ElemTypes(), this.getType(), null, "elemTypes", null, 0, -1, TupleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(optionTypeEClass, OptionType.class, "OptionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOptionType_Base(), this.getType(), null, "base", null, 0, 1, OptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(noneLiteralEClass, NoneLiteral.class, "NoneLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNoneLiteral_Type(), this.getType(), null, "type", null, 0, 1, NoneLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(someLiteralEClass, SomeLiteral.class, "SomeLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSomeLiteral_Lit(), this.getLiteral(), null, "lit", null, 0, 1, SomeLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subGroupTypeRefEClass, SubGroupTypeRef.class, "SubGroupTypeRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSubGroupTypeRef_Type(), this.getFeaturesDecl(), null, "type", null, 0, 1, SubGroupTypeRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

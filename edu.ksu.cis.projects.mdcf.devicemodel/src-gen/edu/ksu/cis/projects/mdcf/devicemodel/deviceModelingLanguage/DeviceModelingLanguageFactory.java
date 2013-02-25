@@ -176,6 +176,15 @@ public interface DeviceModelingLanguageFactory extends EFactory
   SetLiteral createSetLiteral();
 
   /**
+   * Returns a new object of class '<em>Option Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Option Literal</em>'.
+   * @generated
+   */
+  OptionLiteral createOptionLiteral();
+
+  /**
    * Returns a new object of class '<em>ELiteral</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -255,6 +264,33 @@ public interface DeviceModelingLanguageFactory extends EFactory
    * @generated
    */
   TupleType createTupleType();
+
+  /**
+   * Returns a new object of class '<em>Option Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Option Type</em>'.
+   * @generated
+   */
+  OptionType createOptionType();
+
+  /**
+   * Returns a new object of class '<em>None Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>None Literal</em>'.
+   * @generated
+   */
+  NoneLiteral createNoneLiteral();
+
+  /**
+   * Returns a new object of class '<em>Some Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Some Literal</em>'.
+   * @generated
+   */
+  SomeLiteral createSomeLiteral();
 
   /**
    * Returns a new object of class '<em>Sub Group Type Ref</em>'.

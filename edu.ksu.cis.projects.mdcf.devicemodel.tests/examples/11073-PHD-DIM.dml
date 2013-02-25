@@ -1,4 +1,4 @@
-features MDS <: MDSInv, MDSAttributes
+features MDS include MDSInv, MDSAttributes
 
 features MDSInv {
   inv 0..*           num.*  : Numeric
@@ -12,21 +12,21 @@ features MDSAttributes { /* ... */ }
 
 features Scanner { /* ... */ }
 
-features CfgScanner <: Scanner { /* ... */ }
+features CfgScanner include Scanner { /* ... */ }
 
-features EpiCfgScanner <: CfgScanner { /* ... */ }
+features EpiCfgScanner include CfgScanner { /* ... */ }
 
-features PeriCfgScammer <: CfgScanner { /* ... */ }
+features PeriCfgScammer include CfgScanner { /* ... */ }
 
 features Metric { /* ... */ }
 
-features Numeric <: Metric { /* ... */ }
+features Numeric include Metric { /* ... */ }
 
-features RealTimeSA <: Metric { /* ... */ }
+features RealTimeSA include Metric { /* ... */ }
 
-features Enumeration <: Metric { /* ... */ }
+features Enumeration include Metric { /* ... */ }
 
-features PMSegment <: Metric { /* ... */ }
+features PMSegment include Metric { /* ... */ }
 
 features PMStore {
   inv 0..*  pmseg.* : PMSegment

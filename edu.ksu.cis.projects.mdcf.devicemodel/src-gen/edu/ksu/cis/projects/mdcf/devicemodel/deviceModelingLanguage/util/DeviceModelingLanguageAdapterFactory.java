@@ -160,6 +160,11 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createSetLiteralAdapter();
       }
       @Override
+      public Adapter caseOptionLiteral(OptionLiteral object)
+      {
+        return createOptionLiteralAdapter();
+      }
+      @Override
       public Adapter caseELiteral(ELiteral object)
       {
         return createELiteralAdapter();
@@ -203,6 +208,21 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseTupleType(TupleType object)
       {
         return createTupleTypeAdapter();
+      }
+      @Override
+      public Adapter caseOptionType(OptionType object)
+      {
+        return createOptionTypeAdapter();
+      }
+      @Override
+      public Adapter caseNoneLiteral(NoneLiteral object)
+      {
+        return createNoneLiteralAdapter();
+      }
+      @Override
+      public Adapter caseSomeLiteral(SomeLiteral object)
+      {
+        return createSomeLiteralAdapter();
       }
       @Override
       public Adapter caseSubGroupTypeRef(SubGroupTypeRef object)
@@ -492,6 +512,21 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionLiteral <em>Option Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionLiteral
+   * @generated
+   */
+  public Adapter createOptionLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ELiteral <em>ELiteral</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -622,6 +657,51 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTupleTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionType <em>Option Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionType
+   * @generated
+   */
+  public Adapter createOptionTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneLiteral <em>None Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneLiteral
+   * @generated
+   */
+  public Adapter createNoneLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SomeLiteral <em>Some Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SomeLiteral
+   * @generated
+   */
+  public Adapter createSomeLiteralAdapter()
   {
     return null;
   }

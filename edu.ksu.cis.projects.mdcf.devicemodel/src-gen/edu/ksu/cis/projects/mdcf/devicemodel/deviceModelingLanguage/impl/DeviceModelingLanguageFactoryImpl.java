@@ -81,6 +81,7 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.TUPLE_LITERAL: return createTupleLiteral();
       case DeviceModelingLanguagePackage.LIST_LITERAL: return createListLiteral();
       case DeviceModelingLanguagePackage.SET_LITERAL: return createSetLiteral();
+      case DeviceModelingLanguagePackage.OPTION_LITERAL: return createOptionLiteral();
       case DeviceModelingLanguagePackage.ELITERAL: return createELiteral();
       case DeviceModelingLanguagePackage.SUB_FEATURES_DECL: return createSubFeaturesDecl();
       case DeviceModelingLanguagePackage.SUB_FEATURES_TYPE: return createSubFeaturesType();
@@ -90,6 +91,9 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.LIST_TYPE: return createListType();
       case DeviceModelingLanguagePackage.SET_TYPE: return createSetType();
       case DeviceModelingLanguagePackage.TUPLE_TYPE: return createTupleType();
+      case DeviceModelingLanguagePackage.OPTION_TYPE: return createOptionType();
+      case DeviceModelingLanguagePackage.NONE_LITERAL: return createNoneLiteral();
+      case DeviceModelingLanguagePackage.SOME_LITERAL: return createSomeLiteral();
       case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_REF: return createSubGroupTypeRef();
       case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON: return createSubGroupTypeAnon();
       default:
@@ -289,6 +293,17 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public OptionLiteral createOptionLiteral()
+  {
+    OptionLiteralImpl optionLiteral = new OptionLiteralImpl();
+    return optionLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ELiteral createELiteral()
   {
     ELiteralImpl eLiteral = new ELiteralImpl();
@@ -381,6 +396,39 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     TupleTypeImpl tupleType = new TupleTypeImpl();
     return tupleType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OptionType createOptionType()
+  {
+    OptionTypeImpl optionType = new OptionTypeImpl();
+    return optionType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NoneLiteral createNoneLiteral()
+  {
+    NoneLiteralImpl noneLiteral = new NoneLiteralImpl();
+    return noneLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SomeLiteral createSomeLiteral()
+  {
+    SomeLiteralImpl someLiteral = new SomeLiteralImpl();
+    return someLiteral;
   }
 
   /**

@@ -65,6 +65,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SetLiteral/typeCons"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SetLiteral/elems"/>
     </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//OptionLiteral"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//ELiteral">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//ELiteral/lit"/>
     </genClasses>
@@ -89,6 +90,15 @@
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//TupleType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//TupleType/elemTypes"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//OptionType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//OptionType/base"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//NoneLiteral">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//NoneLiteral/type"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SomeLiteral">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SomeLiteral/lit"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SubGroupTypeRef">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SubGroupTypeRef/type"/>
