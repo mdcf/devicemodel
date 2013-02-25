@@ -10,7 +10,7 @@ Decl:                TypeDecl | FeaturesDecl;
                        
 TypeDecl:            'type' name=ID
                        ( 'include' supers+=[TypeDecl|ID] ( ',' supers+=[TypeDecl|ID] )* )?
-                       ( '{' ( elems+=ELiteral ( ',' elems+=ELiteral )* )? '}' )?;
+                       ( '{' ( elems+=LIT ( ',' elems+=LIT )* )? '}' )?;
 	                   
 FeaturesDecl:        (complete='complete')? 'features' name=ID
                        ( 'include' supers+=[FeaturesDecl|ID] ( ',' supers+=[FeaturesDecl|ID] )* )?  
@@ -18,7 +18,17 @@ FeaturesDecl:        (complete='complete')? 'features' name=ID
 
 FeaturesBody:        {FeaturesBody} ( '{' features += FeatureDecl* '}' )?;
 
-FeatureDecl:         InvariantDecl | AttrDecl | SubFeaturesDecl;
+FeatureDecl:         SubFeaturesDecl | InvariantDecl | AttrDecl;
+
+
+SubFeaturesDecl:     ( categoryNames+=ID '.' )* name=ID type=SubFeaturesType;
+
+SubFeaturesType:       ':' {SubGroupTypeRef}  type=[FeaturesDecl|ID] 
+                     | {SubGroupTypeAnon} 
+                       ( 'include' supers+=[FeaturesDecl|ID] 
+                            ( ',' supers+=[FeaturesDecl|ID] )*
+                       )? 
+                       '=' body=FeaturesBody;
 
 InvariantDecl:       MultiplicityInvariantDecl;
 
@@ -38,11 +48,16 @@ AttrDecl:            modifier=Modifier attributeName=ID
 
 Modifier:            'const' | 'val' | 'var' | 'def';
 
-Type:                ( {BasicType} baseType=[TypeDecl|ID]
+Type:                BasicType
+                       ( 
 	                       ( {ListType.base=current} '[' ']'
-	                       | {SetType.base=current}  '{' '}' )*
-                       | '<' {TupleType} elemTypes+=Type ( '*' elemTypes+=Type )+ '>'
-                     ) ( '?' {OptionType.base=current} )?;
+	                       | {SetType.base=current}  '{' '}' )+
+                         ( '?' {OptionType.base=current} )?
+                       )?;
+
+BasicType:           ( baseType=[TypeDecl|ID]
+                       | '<' {TupleType} elemTypes+=Type ( '*' elemTypes+=Type )+ '>')
+                     ( '?' {OptionType.base=current} )?;
  
 Literal:             BasicLiteral | TupleLiteral | ListLiteral | SetLiteral | OptionLiteral;
 
@@ -50,23 +65,26 @@ BasicLiteral:        typeCons=[TypeDecl|ID] lit=LIT;
 
 TupleLiteral:        '<' {TupleLiteral} ( elems+=Literal ( ',' elems+=Literal)* )? '>';
 
-ListLiteral:         typeCons=[TypeDecl|ID] '[' ( elems+=ELiteral ( ',' elems+=ELiteral)* )? ']';
+ListLiteral:         '[' basicType=BasicType ':' ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? ']';
 
-SetLiteral:          typeCons=[TypeDecl|ID] '{' ( elems+=ELiteral ( ',' elems+=ELiteral)* )? '}';
+SetLiteral:          '{' basicType=BasicType ':' ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? '}';
 
 OptionLiteral:         'none' {NoneLiteral} ':' type=Type
                      | 'some' {SomeLiteral} lit=Literal;
 
-ELiteral:            lit=LIT;
+SimpleLiteral:         SimpleBasicLiteral | SimpleTupleLiteral
+                     | SimpleListLiteral | SimpleSetLiteral | SimpleOptionLiteral;
 
-SubFeaturesDecl:     ( categoryNames+=ID '.' )* name=ID type=SubFeaturesType;
+SimpleBasicLiteral:  lit=LIT;
 
-SubFeaturesType:       ':' {SubGroupTypeRef}  type=[FeaturesDecl|ID] 
-                     | {SubGroupTypeAnon} 
-                       ( 'include' supers+=[FeaturesDecl|ID] 
-                     	      ( ',' supers+=[FeaturesDecl|ID] )*
-                       )? 
-                       '=' body=FeaturesBody;
+SimpleTupleLiteral:  '<' {SimpleTupleLiteral} ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? '>';
+
+SimpleOptionLiteral:   'none' {SimpleNoneLiteral}
+                     | 'some' {SimpleSomeLiteral} lit=SimpleLiteral;
+
+SimpleListLiteral:   '[' {SimpleListLiteral} ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? ']';
+
+SimpleSetLiteral:    '{' {SimpleSetLiteral} ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? '}';
 
 terminal ID:         '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

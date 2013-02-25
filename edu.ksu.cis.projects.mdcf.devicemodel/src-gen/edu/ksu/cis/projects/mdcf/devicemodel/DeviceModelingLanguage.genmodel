@@ -16,7 +16,7 @@
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//TypeDecl">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//TypeDecl/supers"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//TypeDecl/elems"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//TypeDecl/elems"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//FeaturesDecl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//FeaturesDecl/complete"/>
@@ -27,6 +27,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//FeaturesBody/features"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//FeatureDecl"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SubFeaturesDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubFeaturesDecl/categoryNames"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubFeaturesDecl/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SubFeaturesDecl/type"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SubFeaturesType"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//InvariantDecl"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//MultiplicityInvariantDecl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//MultiplicityInvariantDecl/invName"/>
@@ -49,6 +55,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//AttrDecl/literal"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Type"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//BasicType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//BasicType/baseType"/>
+    </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Literal"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//BasicLiteral">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//BasicLiteral/typeCons"/>
@@ -58,47 +67,27 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//TupleLiteral/elems"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//ListLiteral">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ListLiteral/typeCons"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ListLiteral/basicType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ListLiteral/elems"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SetLiteral">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SetLiteral/typeCons"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SetLiteral/basicType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SetLiteral/elems"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//OptionLiteral"/>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//ELiteral">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//ELiteral/lit"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SimpleLiteral"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SimpleBasicLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SimpleBasicLiteral/lit"/>
     </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SubFeaturesDecl">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubFeaturesDecl/categoryNames"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubFeaturesDecl/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SubFeaturesDecl/type"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SimpleTupleLiteral">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SimpleTupleLiteral/elems"/>
     </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SubFeaturesType"/>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//NumNatConstraint">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//NumNatConstraint/num"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SimpleOptionLiteral"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SimpleListLiteral">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SimpleListLiteral/elems"/>
     </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//AnyNatConstraint"/>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//BasicType">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//BasicType/baseType"/>
-    </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//ListType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ListType/base"/>
-    </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SetType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SetType/base"/>
-    </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//TupleType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//TupleType/elemTypes"/>
-    </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//OptionType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//OptionType/base"/>
-    </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//NoneLiteral">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//NoneLiteral/type"/>
-    </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SomeLiteral">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SomeLiteral/lit"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SimpleSetLiteral">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SimpleSetLiteral/elems"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SubGroupTypeRef">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SubGroupTypeRef/type"/>
@@ -106,6 +95,32 @@
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SubGroupTypeAnon">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SubGroupTypeAnon/supers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SubGroupTypeAnon/body"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//NumNatConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//NumNatConstraint/num"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//AnyNatConstraint"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//ListType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ListType/base"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SetType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SetType/base"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//OptionType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//OptionType/base"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//TupleType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//TupleType/elemTypes"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//NoneLiteral">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//NoneLiteral/type"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SomeLiteral">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SomeLiteral/lit"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SimpleNoneLiteral"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SimpleSomeLiteral">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SimpleSomeLiteral/lit"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

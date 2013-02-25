@@ -116,6 +116,21 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL:
+      {
+        SubFeaturesDecl subFeaturesDecl = (SubFeaturesDecl)theEObject;
+        T result = caseSubFeaturesDecl(subFeaturesDecl);
+        if (result == null) result = caseFeatureDecl(subFeaturesDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.SUB_FEATURES_TYPE:
+      {
+        SubFeaturesType subFeaturesType = (SubFeaturesType)theEObject;
+        T result = caseSubFeaturesType(subFeaturesType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DeviceModelingLanguagePackage.INVARIANT_DECL:
       {
         InvariantDecl invariantDecl = (InvariantDecl)theEObject;
@@ -159,6 +174,14 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
       {
         Type type = (Type)theEObject;
         T result = caseType(type);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.BASIC_TYPE:
+      {
+        BasicType basicType = (BasicType)theEObject;
+        T result = caseBasicType(basicType);
+        if (result == null) result = caseType(basicType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -209,25 +232,66 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.ELITERAL:
+      case DeviceModelingLanguagePackage.SIMPLE_LITERAL:
       {
-        ELiteral eLiteral = (ELiteral)theEObject;
-        T result = caseELiteral(eLiteral);
+        SimpleLiteral simpleLiteral = (SimpleLiteral)theEObject;
+        T result = caseSimpleLiteral(simpleLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL:
+      case DeviceModelingLanguagePackage.SIMPLE_BASIC_LITERAL:
       {
-        SubFeaturesDecl subFeaturesDecl = (SubFeaturesDecl)theEObject;
-        T result = caseSubFeaturesDecl(subFeaturesDecl);
-        if (result == null) result = caseFeatureDecl(subFeaturesDecl);
+        SimpleBasicLiteral simpleBasicLiteral = (SimpleBasicLiteral)theEObject;
+        T result = caseSimpleBasicLiteral(simpleBasicLiteral);
+        if (result == null) result = caseSimpleLiteral(simpleBasicLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.SUB_FEATURES_TYPE:
+      case DeviceModelingLanguagePackage.SIMPLE_TUPLE_LITERAL:
       {
-        SubFeaturesType subFeaturesType = (SubFeaturesType)theEObject;
-        T result = caseSubFeaturesType(subFeaturesType);
+        SimpleTupleLiteral simpleTupleLiteral = (SimpleTupleLiteral)theEObject;
+        T result = caseSimpleTupleLiteral(simpleTupleLiteral);
+        if (result == null) result = caseSimpleLiteral(simpleTupleLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.SIMPLE_OPTION_LITERAL:
+      {
+        SimpleOptionLiteral simpleOptionLiteral = (SimpleOptionLiteral)theEObject;
+        T result = caseSimpleOptionLiteral(simpleOptionLiteral);
+        if (result == null) result = caseSimpleLiteral(simpleOptionLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.SIMPLE_LIST_LITERAL:
+      {
+        SimpleListLiteral simpleListLiteral = (SimpleListLiteral)theEObject;
+        T result = caseSimpleListLiteral(simpleListLiteral);
+        if (result == null) result = caseSimpleLiteral(simpleListLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.SIMPLE_SET_LITERAL:
+      {
+        SimpleSetLiteral simpleSetLiteral = (SimpleSetLiteral)theEObject;
+        T result = caseSimpleSetLiteral(simpleSetLiteral);
+        if (result == null) result = caseSimpleLiteral(simpleSetLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_REF:
+      {
+        SubGroupTypeRef subGroupTypeRef = (SubGroupTypeRef)theEObject;
+        T result = caseSubGroupTypeRef(subGroupTypeRef);
+        if (result == null) result = caseSubFeaturesType(subGroupTypeRef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON:
+      {
+        SubGroupTypeAnon subGroupTypeAnon = (SubGroupTypeAnon)theEObject;
+        T result = caseSubGroupTypeAnon(subGroupTypeAnon);
+        if (result == null) result = caseSubFeaturesType(subGroupTypeAnon);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -247,14 +311,6 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.BASIC_TYPE:
-      {
-        BasicType basicType = (BasicType)theEObject;
-        T result = caseBasicType(basicType);
-        if (result == null) result = caseType(basicType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case DeviceModelingLanguagePackage.LIST_TYPE:
       {
         ListType listType = (ListType)theEObject;
@@ -271,19 +327,21 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.TUPLE_TYPE:
-      {
-        TupleType tupleType = (TupleType)theEObject;
-        T result = caseTupleType(tupleType);
-        if (result == null) result = caseType(tupleType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case DeviceModelingLanguagePackage.OPTION_TYPE:
       {
         OptionType optionType = (OptionType)theEObject;
         T result = caseOptionType(optionType);
+        if (result == null) result = caseBasicType(optionType);
         if (result == null) result = caseType(optionType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.TUPLE_TYPE:
+      {
+        TupleType tupleType = (TupleType)theEObject;
+        T result = caseTupleType(tupleType);
+        if (result == null) result = caseBasicType(tupleType);
+        if (result == null) result = caseType(tupleType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -305,19 +363,21 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_REF:
+      case DeviceModelingLanguagePackage.SIMPLE_NONE_LITERAL:
       {
-        SubGroupTypeRef subGroupTypeRef = (SubGroupTypeRef)theEObject;
-        T result = caseSubGroupTypeRef(subGroupTypeRef);
-        if (result == null) result = caseSubFeaturesType(subGroupTypeRef);
+        SimpleNoneLiteral simpleNoneLiteral = (SimpleNoneLiteral)theEObject;
+        T result = caseSimpleNoneLiteral(simpleNoneLiteral);
+        if (result == null) result = caseSimpleOptionLiteral(simpleNoneLiteral);
+        if (result == null) result = caseSimpleLiteral(simpleNoneLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON:
+      case DeviceModelingLanguagePackage.SIMPLE_SOME_LITERAL:
       {
-        SubGroupTypeAnon subGroupTypeAnon = (SubGroupTypeAnon)theEObject;
-        T result = caseSubGroupTypeAnon(subGroupTypeAnon);
-        if (result == null) result = caseSubFeaturesType(subGroupTypeAnon);
+        SimpleSomeLiteral simpleSomeLiteral = (SimpleSomeLiteral)theEObject;
+        T result = caseSimpleSomeLiteral(simpleSomeLiteral);
+        if (result == null) result = caseSimpleOptionLiteral(simpleSomeLiteral);
+        if (result == null) result = caseSimpleLiteral(simpleSomeLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -422,6 +482,38 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Sub Features Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sub Features Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubFeaturesDecl(SubFeaturesDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sub Features Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sub Features Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubFeaturesType(SubFeaturesType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Invariant Decl</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -513,6 +605,22 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseType(Type object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Basic Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Basic Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBasicType(BasicType object)
   {
     return null;
   }
@@ -614,49 +722,129 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>ELiteral</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Simple Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>ELiteral</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Simple Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseELiteral(ELiteral object)
+  public T caseSimpleLiteral(SimpleLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Features Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Simple Basic Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Features Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Simple Basic Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSubFeaturesDecl(SubFeaturesDecl object)
+  public T caseSimpleBasicLiteral(SimpleBasicLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Features Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Simple Tuple Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Features Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Simple Tuple Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSubFeaturesType(SubFeaturesType object)
+  public T caseSimpleTupleLiteral(SimpleTupleLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Simple Option Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Simple Option Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSimpleOptionLiteral(SimpleOptionLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Simple List Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Simple List Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSimpleListLiteral(SimpleListLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Simple Set Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Simple Set Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSimpleSetLiteral(SimpleSetLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sub Group Type Ref</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sub Group Type Ref</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubGroupTypeRef(SubGroupTypeRef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sub Group Type Anon</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sub Group Type Anon</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubGroupTypeAnon(SubGroupTypeAnon object)
   {
     return null;
   }
@@ -694,22 +882,6 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Basic Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Basic Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBasicType(BasicType object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>List Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -742,22 +914,6 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Tuple Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Tuple Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTupleType(TupleType object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Option Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -769,6 +925,22 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseOptionType(OptionType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Tuple Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tuple Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTupleType(TupleType object)
   {
     return null;
   }
@@ -806,33 +978,33 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Group Type Ref</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Simple None Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Group Type Ref</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Simple None Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSubGroupTypeRef(SubGroupTypeRef object)
+  public T caseSimpleNoneLiteral(SimpleNoneLiteral object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Group Type Anon</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Simple Some Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Group Type Anon</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Simple Some Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSubGroupTypeAnon(SubGroupTypeAnon object)
+  public T caseSimpleSomeLiteral(SimpleSomeLiteral object)
   {
     return null;
   }

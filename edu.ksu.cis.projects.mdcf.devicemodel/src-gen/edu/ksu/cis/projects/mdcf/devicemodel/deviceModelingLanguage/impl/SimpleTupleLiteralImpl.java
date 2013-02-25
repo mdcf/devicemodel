@@ -3,8 +3,8 @@
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TupleType;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Type;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleTupleLiteral;
 
 import java.util.Collection;
 
@@ -20,35 +20,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Tuple Type</b></em>'.
+ * An implementation of the model object '<em><b>Simple Tuple Literal</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.TupleTypeImpl#getElemTypes <em>Elem Types</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SimpleTupleLiteralImpl#getElems <em>Elems</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TupleTypeImpl extends BasicTypeImpl implements TupleType
+public class SimpleTupleLiteralImpl extends SimpleLiteralImpl implements SimpleTupleLiteral
 {
   /**
-   * The cached value of the '{@link #getElemTypes() <em>Elem Types</em>}' containment reference list.
+   * The cached value of the '{@link #getElems() <em>Elems</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElemTypes()
+   * @see #getElems()
    * @generated
    * @ordered
    */
-  protected EList<Type> elemTypes;
+  protected EList<SimpleLiteral> elems;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TupleTypeImpl()
+  protected SimpleTupleLiteralImpl()
   {
     super();
   }
@@ -61,7 +61,7 @@ public class TupleTypeImpl extends BasicTypeImpl implements TupleType
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.TUPLE_TYPE;
+    return DeviceModelingLanguagePackage.Literals.SIMPLE_TUPLE_LITERAL;
   }
 
   /**
@@ -69,13 +69,13 @@ public class TupleTypeImpl extends BasicTypeImpl implements TupleType
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Type> getElemTypes()
+  public EList<SimpleLiteral> getElems()
   {
-    if (elemTypes == null)
+    if (elems == null)
     {
-      elemTypes = new EObjectContainmentEList<Type>(Type.class, this, DeviceModelingLanguagePackage.TUPLE_TYPE__ELEM_TYPES);
+      elems = new EObjectContainmentEList<SimpleLiteral>(SimpleLiteral.class, this, DeviceModelingLanguagePackage.SIMPLE_TUPLE_LITERAL__ELEMS);
     }
-    return elemTypes;
+    return elems;
   }
 
   /**
@@ -88,8 +88,8 @@ public class TupleTypeImpl extends BasicTypeImpl implements TupleType
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.TUPLE_TYPE__ELEM_TYPES:
-        return ((InternalEList<?>)getElemTypes()).basicRemove(otherEnd, msgs);
+      case DeviceModelingLanguagePackage.SIMPLE_TUPLE_LITERAL__ELEMS:
+        return ((InternalEList<?>)getElems()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -104,8 +104,8 @@ public class TupleTypeImpl extends BasicTypeImpl implements TupleType
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.TUPLE_TYPE__ELEM_TYPES:
-        return getElemTypes();
+      case DeviceModelingLanguagePackage.SIMPLE_TUPLE_LITERAL__ELEMS:
+        return getElems();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,9 +121,9 @@ public class TupleTypeImpl extends BasicTypeImpl implements TupleType
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.TUPLE_TYPE__ELEM_TYPES:
-        getElemTypes().clear();
-        getElemTypes().addAll((Collection<? extends Type>)newValue);
+      case DeviceModelingLanguagePackage.SIMPLE_TUPLE_LITERAL__ELEMS:
+        getElems().clear();
+        getElems().addAll((Collection<? extends SimpleLiteral>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,8 +139,8 @@ public class TupleTypeImpl extends BasicTypeImpl implements TupleType
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.TUPLE_TYPE__ELEM_TYPES:
-        getElemTypes().clear();
+      case DeviceModelingLanguagePackage.SIMPLE_TUPLE_LITERAL__ELEMS:
+        getElems().clear();
         return;
     }
     super.eUnset(featureID);
@@ -156,10 +156,10 @@ public class TupleTypeImpl extends BasicTypeImpl implements TupleType
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.TUPLE_TYPE__ELEM_TYPES:
-        return elemTypes != null && !elemTypes.isEmpty();
+      case DeviceModelingLanguagePackage.SIMPLE_TUPLE_LITERAL__ELEMS:
+        return elems != null && !elems.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //TupleTypeImpl
+} //SimpleTupleLiteralImpl

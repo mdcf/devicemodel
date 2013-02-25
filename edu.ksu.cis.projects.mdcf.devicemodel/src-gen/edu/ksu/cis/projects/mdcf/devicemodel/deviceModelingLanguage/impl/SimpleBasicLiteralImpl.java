@@ -3,29 +3,28 @@
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ELiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleBasicLiteral;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>ELiteral</b></em>'.
+ * An implementation of the model object '<em><b>Simple Basic Literal</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ELiteralImpl#getLit <em>Lit</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SimpleBasicLiteralImpl#getLit <em>Lit</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ELiteralImpl extends MinimalEObjectImpl.Container implements ELiteral
+public class SimpleBasicLiteralImpl extends SimpleLiteralImpl implements SimpleBasicLiteral
 {
   /**
    * The default value of the '{@link #getLit() <em>Lit</em>}' attribute.
@@ -52,7 +51,7 @@ public class ELiteralImpl extends MinimalEObjectImpl.Container implements ELiter
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ELiteralImpl()
+  protected SimpleBasicLiteralImpl()
   {
     super();
   }
@@ -65,7 +64,7 @@ public class ELiteralImpl extends MinimalEObjectImpl.Container implements ELiter
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.ELITERAL;
+    return DeviceModelingLanguagePackage.Literals.SIMPLE_BASIC_LITERAL;
   }
 
   /**
@@ -88,7 +87,7 @@ public class ELiteralImpl extends MinimalEObjectImpl.Container implements ELiter
     String oldLit = lit;
     lit = newLit;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.ELITERAL__LIT, oldLit, lit));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SIMPLE_BASIC_LITERAL__LIT, oldLit, lit));
   }
 
   /**
@@ -101,7 +100,7 @@ public class ELiteralImpl extends MinimalEObjectImpl.Container implements ELiter
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.ELITERAL__LIT:
+      case DeviceModelingLanguagePackage.SIMPLE_BASIC_LITERAL__LIT:
         return getLit();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -117,7 +116,7 @@ public class ELiteralImpl extends MinimalEObjectImpl.Container implements ELiter
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.ELITERAL__LIT:
+      case DeviceModelingLanguagePackage.SIMPLE_BASIC_LITERAL__LIT:
         setLit((String)newValue);
         return;
     }
@@ -134,7 +133,7 @@ public class ELiteralImpl extends MinimalEObjectImpl.Container implements ELiter
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.ELITERAL__LIT:
+      case DeviceModelingLanguagePackage.SIMPLE_BASIC_LITERAL__LIT:
         setLit(LIT_EDEFAULT);
         return;
     }
@@ -151,7 +150,7 @@ public class ELiteralImpl extends MinimalEObjectImpl.Container implements ELiter
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.ELITERAL__LIT:
+      case DeviceModelingLanguagePackage.SIMPLE_BASIC_LITERAL__LIT:
         return LIT_EDEFAULT == null ? lit != null : !LIT_EDEFAULT.equals(lit);
     }
     return super.eIsSet(featureID);
@@ -174,4 +173,4 @@ public class ELiteralImpl extends MinimalEObjectImpl.Container implements ELiter
     return result.toString();
   }
 
-} //ELiteralImpl
+} //SimpleBasicLiteralImpl

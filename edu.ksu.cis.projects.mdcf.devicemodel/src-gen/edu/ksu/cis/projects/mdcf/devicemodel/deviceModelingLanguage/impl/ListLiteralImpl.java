@@ -2,10 +2,10 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ELiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ListLiteral;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleLiteral;
 
 import java.util.Collection;
 
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ListLiteralImpl#getTypeCons <em>Type Cons</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ListLiteralImpl#getBasicType <em>Basic Type</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ListLiteralImpl#getElems <em>Elems</em>}</li>
  * </ul>
  * </p>
@@ -39,14 +39,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ListLiteralImpl extends LiteralImpl implements ListLiteral
 {
   /**
-   * The cached value of the '{@link #getTypeCons() <em>Type Cons</em>}' reference.
+   * The cached value of the '{@link #getBasicType() <em>Basic Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTypeCons()
+   * @see #getBasicType()
    * @generated
    * @ordered
    */
-  protected TypeDecl typeCons;
+  protected BasicType basicType;
 
   /**
    * The cached value of the '{@link #getElems() <em>Elems</em>}' containment reference list.
@@ -56,7 +56,7 @@ public class ListLiteralImpl extends LiteralImpl implements ListLiteral
    * @generated
    * @ordered
    */
-  protected EList<ELiteral> elems;
+  protected EList<SimpleLiteral> elems;
 
   /**
    * <!-- begin-user-doc -->
@@ -84,19 +84,9 @@ public class ListLiteralImpl extends LiteralImpl implements ListLiteral
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeDecl getTypeCons()
+  public BasicType getBasicType()
   {
-    if (typeCons != null && typeCons.eIsProxy())
-    {
-      InternalEObject oldTypeCons = (InternalEObject)typeCons;
-      typeCons = (TypeDecl)eResolveProxy(oldTypeCons);
-      if (typeCons != oldTypeCons)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeviceModelingLanguagePackage.LIST_LITERAL__TYPE_CONS, oldTypeCons, typeCons));
-      }
-    }
-    return typeCons;
+    return basicType;
   }
 
   /**
@@ -104,22 +94,16 @@ public class ListLiteralImpl extends LiteralImpl implements ListLiteral
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeDecl basicGetTypeCons()
+  public NotificationChain basicSetBasicType(BasicType newBasicType, NotificationChain msgs)
   {
-    return typeCons;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTypeCons(TypeDecl newTypeCons)
-  {
-    TypeDecl oldTypeCons = typeCons;
-    typeCons = newTypeCons;
+    BasicType oldBasicType = basicType;
+    basicType = newBasicType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.LIST_LITERAL__TYPE_CONS, oldTypeCons, typeCons));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.LIST_LITERAL__BASIC_TYPE, oldBasicType, newBasicType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -127,11 +111,32 @@ public class ListLiteralImpl extends LiteralImpl implements ListLiteral
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ELiteral> getElems()
+  public void setBasicType(BasicType newBasicType)
+  {
+    if (newBasicType != basicType)
+    {
+      NotificationChain msgs = null;
+      if (basicType != null)
+        msgs = ((InternalEObject)basicType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.LIST_LITERAL__BASIC_TYPE, null, msgs);
+      if (newBasicType != null)
+        msgs = ((InternalEObject)newBasicType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.LIST_LITERAL__BASIC_TYPE, null, msgs);
+      msgs = basicSetBasicType(newBasicType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.LIST_LITERAL__BASIC_TYPE, newBasicType, newBasicType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<SimpleLiteral> getElems()
   {
     if (elems == null)
     {
-      elems = new EObjectContainmentEList<ELiteral>(ELiteral.class, this, DeviceModelingLanguagePackage.LIST_LITERAL__ELEMS);
+      elems = new EObjectContainmentEList<SimpleLiteral>(SimpleLiteral.class, this, DeviceModelingLanguagePackage.LIST_LITERAL__ELEMS);
     }
     return elems;
   }
@@ -146,6 +151,8 @@ public class ListLiteralImpl extends LiteralImpl implements ListLiteral
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.LIST_LITERAL__BASIC_TYPE:
+        return basicSetBasicType(null, msgs);
       case DeviceModelingLanguagePackage.LIST_LITERAL__ELEMS:
         return ((InternalEList<?>)getElems()).basicRemove(otherEnd, msgs);
     }
@@ -162,9 +169,8 @@ public class ListLiteralImpl extends LiteralImpl implements ListLiteral
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.LIST_LITERAL__TYPE_CONS:
-        if (resolve) return getTypeCons();
-        return basicGetTypeCons();
+      case DeviceModelingLanguagePackage.LIST_LITERAL__BASIC_TYPE:
+        return getBasicType();
       case DeviceModelingLanguagePackage.LIST_LITERAL__ELEMS:
         return getElems();
     }
@@ -182,12 +188,12 @@ public class ListLiteralImpl extends LiteralImpl implements ListLiteral
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.LIST_LITERAL__TYPE_CONS:
-        setTypeCons((TypeDecl)newValue);
+      case DeviceModelingLanguagePackage.LIST_LITERAL__BASIC_TYPE:
+        setBasicType((BasicType)newValue);
         return;
       case DeviceModelingLanguagePackage.LIST_LITERAL__ELEMS:
         getElems().clear();
-        getElems().addAll((Collection<? extends ELiteral>)newValue);
+        getElems().addAll((Collection<? extends SimpleLiteral>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -203,8 +209,8 @@ public class ListLiteralImpl extends LiteralImpl implements ListLiteral
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.LIST_LITERAL__TYPE_CONS:
-        setTypeCons((TypeDecl)null);
+      case DeviceModelingLanguagePackage.LIST_LITERAL__BASIC_TYPE:
+        setBasicType((BasicType)null);
         return;
       case DeviceModelingLanguagePackage.LIST_LITERAL__ELEMS:
         getElems().clear();
@@ -223,8 +229,8 @@ public class ListLiteralImpl extends LiteralImpl implements ListLiteral
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.LIST_LITERAL__TYPE_CONS:
-        return typeCons != null;
+      case DeviceModelingLanguagePackage.LIST_LITERAL__BASIC_TYPE:
+        return basicType != null;
       case DeviceModelingLanguagePackage.LIST_LITERAL__ELEMS:
         return elems != null && !elems.isEmpty();
     }

@@ -77,6 +77,24 @@ public interface DeviceModelingLanguageFactory extends EFactory
   FeatureDecl createFeatureDecl();
 
   /**
+   * Returns a new object of class '<em>Sub Features Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sub Features Decl</em>'.
+   * @generated
+   */
+  SubFeaturesDecl createSubFeaturesDecl();
+
+  /**
+   * Returns a new object of class '<em>Sub Features Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sub Features Type</em>'.
+   * @generated
+   */
+  SubFeaturesType createSubFeaturesType();
+
+  /**
    * Returns a new object of class '<em>Invariant Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -129,6 +147,15 @@ public interface DeviceModelingLanguageFactory extends EFactory
    * @generated
    */
   Type createType();
+
+  /**
+   * Returns a new object of class '<em>Basic Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Basic Type</em>'.
+   * @generated
+   */
+  BasicType createBasicType();
 
   /**
    * Returns a new object of class '<em>Literal</em>'.
@@ -185,31 +212,76 @@ public interface DeviceModelingLanguageFactory extends EFactory
   OptionLiteral createOptionLiteral();
 
   /**
-   * Returns a new object of class '<em>ELiteral</em>'.
+   * Returns a new object of class '<em>Simple Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>ELiteral</em>'.
+   * @return a new object of class '<em>Simple Literal</em>'.
    * @generated
    */
-  ELiteral createELiteral();
+  SimpleLiteral createSimpleLiteral();
 
   /**
-   * Returns a new object of class '<em>Sub Features Decl</em>'.
+   * Returns a new object of class '<em>Simple Basic Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Features Decl</em>'.
+   * @return a new object of class '<em>Simple Basic Literal</em>'.
    * @generated
    */
-  SubFeaturesDecl createSubFeaturesDecl();
+  SimpleBasicLiteral createSimpleBasicLiteral();
 
   /**
-   * Returns a new object of class '<em>Sub Features Type</em>'.
+   * Returns a new object of class '<em>Simple Tuple Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Features Type</em>'.
+   * @return a new object of class '<em>Simple Tuple Literal</em>'.
    * @generated
    */
-  SubFeaturesType createSubFeaturesType();
+  SimpleTupleLiteral createSimpleTupleLiteral();
+
+  /**
+   * Returns a new object of class '<em>Simple Option Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple Option Literal</em>'.
+   * @generated
+   */
+  SimpleOptionLiteral createSimpleOptionLiteral();
+
+  /**
+   * Returns a new object of class '<em>Simple List Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple List Literal</em>'.
+   * @generated
+   */
+  SimpleListLiteral createSimpleListLiteral();
+
+  /**
+   * Returns a new object of class '<em>Simple Set Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple Set Literal</em>'.
+   * @generated
+   */
+  SimpleSetLiteral createSimpleSetLiteral();
+
+  /**
+   * Returns a new object of class '<em>Sub Group Type Ref</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sub Group Type Ref</em>'.
+   * @generated
+   */
+  SubGroupTypeRef createSubGroupTypeRef();
+
+  /**
+   * Returns a new object of class '<em>Sub Group Type Anon</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sub Group Type Anon</em>'.
+   * @generated
+   */
+  SubGroupTypeAnon createSubGroupTypeAnon();
 
   /**
    * Returns a new object of class '<em>Num Nat Constraint</em>'.
@@ -230,15 +302,6 @@ public interface DeviceModelingLanguageFactory extends EFactory
   AnyNatConstraint createAnyNatConstraint();
 
   /**
-   * Returns a new object of class '<em>Basic Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Basic Type</em>'.
-   * @generated
-   */
-  BasicType createBasicType();
-
-  /**
    * Returns a new object of class '<em>List Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -257,15 +320,6 @@ public interface DeviceModelingLanguageFactory extends EFactory
   SetType createSetType();
 
   /**
-   * Returns a new object of class '<em>Tuple Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Tuple Type</em>'.
-   * @generated
-   */
-  TupleType createTupleType();
-
-  /**
    * Returns a new object of class '<em>Option Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -273,6 +327,15 @@ public interface DeviceModelingLanguageFactory extends EFactory
    * @generated
    */
   OptionType createOptionType();
+
+  /**
+   * Returns a new object of class '<em>Tuple Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tuple Type</em>'.
+   * @generated
+   */
+  TupleType createTupleType();
 
   /**
    * Returns a new object of class '<em>None Literal</em>'.
@@ -293,22 +356,22 @@ public interface DeviceModelingLanguageFactory extends EFactory
   SomeLiteral createSomeLiteral();
 
   /**
-   * Returns a new object of class '<em>Sub Group Type Ref</em>'.
+   * Returns a new object of class '<em>Simple None Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Group Type Ref</em>'.
+   * @return a new object of class '<em>Simple None Literal</em>'.
    * @generated
    */
-  SubGroupTypeRef createSubGroupTypeRef();
+  SimpleNoneLiteral createSimpleNoneLiteral();
 
   /**
-   * Returns a new object of class '<em>Sub Group Type Anon</em>'.
+   * Returns a new object of class '<em>Simple Some Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Group Type Anon</em>'.
+   * @return a new object of class '<em>Simple Some Literal</em>'.
    * @generated
    */
-  SubGroupTypeAnon createSubGroupTypeAnon();
+  SimpleSomeLiteral createSimpleSomeLiteral();
 
   /**
    * Returns the package supported by this factory.

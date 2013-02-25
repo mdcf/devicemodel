@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetLiteral#getTypeCons <em>Type Cons</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetLiteral#getBasicType <em>Basic Type</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetLiteral#getElems <em>Elems</em>}</li>
  * </ul>
  * </p>
@@ -24,34 +24,34 @@ import org.eclipse.emf.common.util.EList;
 public interface SetLiteral extends Literal
 {
   /**
-   * Returns the value of the '<em><b>Type Cons</b></em>' reference.
+   * Returns the value of the '<em><b>Basic Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type Cons</em>' reference isn't clear,
+   * If the meaning of the '<em>Basic Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type Cons</em>' reference.
-   * @see #setTypeCons(TypeDecl)
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSetLiteral_TypeCons()
-   * @model
+   * @return the value of the '<em>Basic Type</em>' containment reference.
+   * @see #setBasicType(BasicType)
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSetLiteral_BasicType()
+   * @model containment="true"
    * @generated
    */
-  TypeDecl getTypeCons();
+  BasicType getBasicType();
 
   /**
-   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetLiteral#getTypeCons <em>Type Cons</em>}' reference.
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetLiteral#getBasicType <em>Basic Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type Cons</em>' reference.
-   * @see #getTypeCons()
+   * @param value the new value of the '<em>Basic Type</em>' containment reference.
+   * @see #getBasicType()
    * @generated
    */
-  void setTypeCons(TypeDecl value);
+  void setBasicType(BasicType value);
 
   /**
    * Returns the value of the '<em><b>Elems</b></em>' containment reference list.
-   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ELiteral}.
+   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleLiteral}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Elems</em>' containment reference list isn't clear,
@@ -63,6 +63,6 @@ public interface SetLiteral extends Literal
    * @model containment="true"
    * @generated
    */
-  EList<ELiteral> getElems();
+  EList<SimpleLiteral> getElems();
 
 } // SetLiteral

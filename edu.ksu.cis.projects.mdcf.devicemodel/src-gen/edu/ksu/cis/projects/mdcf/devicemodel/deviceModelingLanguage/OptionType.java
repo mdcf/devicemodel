@@ -19,7 +19,7 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * @model
  * @generated
  */
-public interface OptionType extends Type
+public interface OptionType extends Type, BasicType
 {
   /**
    * Returns the value of the '<em><b>Base</b></em>' containment reference.

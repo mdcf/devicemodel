@@ -81,10 +81,11 @@ features PulseOximeterYUJIN { // Yu Jin's style
      
       var reportPeriodicity = Periodicity        ( Periodic             )
  
-      val someSet         = Nat { (1), (2), (3) } // set literal
-      val someList        = Nat [ (1), (2), (3) ] // list literal
-      val opt1            : Nat?                  // option type
-      val opt2            = none : Nat?           // typed none literal
-      val opt3            = some Nat(1)           // some literal
+      val someSet         = { Nat : (1), (2), (3) }         // set of nats literal
+      val someList        = [ Nat : (1), (2), (3) ]         // list of nats literal
+      val someSetOfList   = { Nat : [ (1), (2) ], [ (3) ] } // set of list of nats literal
+      val opt1            : Nat?                            // nat option type
+      val opt2            = none : Nat?                     // nat none literal
+      val opt3            = some Nat(1)                     // some nat literal
   }
 }

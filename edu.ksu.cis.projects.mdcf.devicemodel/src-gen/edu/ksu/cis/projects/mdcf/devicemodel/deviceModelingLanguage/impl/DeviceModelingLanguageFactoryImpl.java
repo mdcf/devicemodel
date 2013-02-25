@@ -70,32 +70,39 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.FEATURES_DECL: return createFeaturesDecl();
       case DeviceModelingLanguagePackage.FEATURES_BODY: return createFeaturesBody();
       case DeviceModelingLanguagePackage.FEATURE_DECL: return createFeatureDecl();
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL: return createSubFeaturesDecl();
+      case DeviceModelingLanguagePackage.SUB_FEATURES_TYPE: return createSubFeaturesType();
       case DeviceModelingLanguagePackage.INVARIANT_DECL: return createInvariantDecl();
       case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL: return createMultiplicityInvariantDecl();
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH: return createSubFeaturesMatch();
       case DeviceModelingLanguagePackage.CONSTRAINT_NAT: return createConstraintNat();
       case DeviceModelingLanguagePackage.ATTR_DECL: return createAttrDecl();
       case DeviceModelingLanguagePackage.TYPE: return createType();
+      case DeviceModelingLanguagePackage.BASIC_TYPE: return createBasicType();
       case DeviceModelingLanguagePackage.LITERAL: return createLiteral();
       case DeviceModelingLanguagePackage.BASIC_LITERAL: return createBasicLiteral();
       case DeviceModelingLanguagePackage.TUPLE_LITERAL: return createTupleLiteral();
       case DeviceModelingLanguagePackage.LIST_LITERAL: return createListLiteral();
       case DeviceModelingLanguagePackage.SET_LITERAL: return createSetLiteral();
       case DeviceModelingLanguagePackage.OPTION_LITERAL: return createOptionLiteral();
-      case DeviceModelingLanguagePackage.ELITERAL: return createELiteral();
-      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL: return createSubFeaturesDecl();
-      case DeviceModelingLanguagePackage.SUB_FEATURES_TYPE: return createSubFeaturesType();
-      case DeviceModelingLanguagePackage.NUM_NAT_CONSTRAINT: return createNumNatConstraint();
-      case DeviceModelingLanguagePackage.ANY_NAT_CONSTRAINT: return createAnyNatConstraint();
-      case DeviceModelingLanguagePackage.BASIC_TYPE: return createBasicType();
-      case DeviceModelingLanguagePackage.LIST_TYPE: return createListType();
-      case DeviceModelingLanguagePackage.SET_TYPE: return createSetType();
-      case DeviceModelingLanguagePackage.TUPLE_TYPE: return createTupleType();
-      case DeviceModelingLanguagePackage.OPTION_TYPE: return createOptionType();
-      case DeviceModelingLanguagePackage.NONE_LITERAL: return createNoneLiteral();
-      case DeviceModelingLanguagePackage.SOME_LITERAL: return createSomeLiteral();
+      case DeviceModelingLanguagePackage.SIMPLE_LITERAL: return createSimpleLiteral();
+      case DeviceModelingLanguagePackage.SIMPLE_BASIC_LITERAL: return createSimpleBasicLiteral();
+      case DeviceModelingLanguagePackage.SIMPLE_TUPLE_LITERAL: return createSimpleTupleLiteral();
+      case DeviceModelingLanguagePackage.SIMPLE_OPTION_LITERAL: return createSimpleOptionLiteral();
+      case DeviceModelingLanguagePackage.SIMPLE_LIST_LITERAL: return createSimpleListLiteral();
+      case DeviceModelingLanguagePackage.SIMPLE_SET_LITERAL: return createSimpleSetLiteral();
       case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_REF: return createSubGroupTypeRef();
       case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON: return createSubGroupTypeAnon();
+      case DeviceModelingLanguagePackage.NUM_NAT_CONSTRAINT: return createNumNatConstraint();
+      case DeviceModelingLanguagePackage.ANY_NAT_CONSTRAINT: return createAnyNatConstraint();
+      case DeviceModelingLanguagePackage.LIST_TYPE: return createListType();
+      case DeviceModelingLanguagePackage.SET_TYPE: return createSetType();
+      case DeviceModelingLanguagePackage.OPTION_TYPE: return createOptionType();
+      case DeviceModelingLanguagePackage.TUPLE_TYPE: return createTupleType();
+      case DeviceModelingLanguagePackage.NONE_LITERAL: return createNoneLiteral();
+      case DeviceModelingLanguagePackage.SOME_LITERAL: return createSomeLiteral();
+      case DeviceModelingLanguagePackage.SIMPLE_NONE_LITERAL: return createSimpleNoneLiteral();
+      case DeviceModelingLanguagePackage.SIMPLE_SOME_LITERAL: return createSimpleSomeLiteral();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -172,6 +179,28 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public SubFeaturesDecl createSubFeaturesDecl()
+  {
+    SubFeaturesDeclImpl subFeaturesDecl = new SubFeaturesDeclImpl();
+    return subFeaturesDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SubFeaturesType createSubFeaturesType()
+  {
+    SubFeaturesTypeImpl subFeaturesType = new SubFeaturesTypeImpl();
+    return subFeaturesType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public InvariantDecl createInvariantDecl()
   {
     InvariantDeclImpl invariantDecl = new InvariantDeclImpl();
@@ -231,6 +260,17 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     TypeImpl type = new TypeImpl();
     return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BasicType createBasicType()
+  {
+    BasicTypeImpl basicType = new BasicTypeImpl();
+    return basicType;
   }
 
   /**
@@ -304,10 +344,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public ELiteral createELiteral()
+  public SimpleLiteral createSimpleLiteral()
   {
-    ELiteralImpl eLiteral = new ELiteralImpl();
-    return eLiteral;
+    SimpleLiteralImpl simpleLiteral = new SimpleLiteralImpl();
+    return simpleLiteral;
   }
 
   /**
@@ -315,10 +355,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public SubFeaturesDecl createSubFeaturesDecl()
+  public SimpleBasicLiteral createSimpleBasicLiteral()
   {
-    SubFeaturesDeclImpl subFeaturesDecl = new SubFeaturesDeclImpl();
-    return subFeaturesDecl;
+    SimpleBasicLiteralImpl simpleBasicLiteral = new SimpleBasicLiteralImpl();
+    return simpleBasicLiteral;
   }
 
   /**
@@ -326,10 +366,65 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public SubFeaturesType createSubFeaturesType()
+  public SimpleTupleLiteral createSimpleTupleLiteral()
   {
-    SubFeaturesTypeImpl subFeaturesType = new SubFeaturesTypeImpl();
-    return subFeaturesType;
+    SimpleTupleLiteralImpl simpleTupleLiteral = new SimpleTupleLiteralImpl();
+    return simpleTupleLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SimpleOptionLiteral createSimpleOptionLiteral()
+  {
+    SimpleOptionLiteralImpl simpleOptionLiteral = new SimpleOptionLiteralImpl();
+    return simpleOptionLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SimpleListLiteral createSimpleListLiteral()
+  {
+    SimpleListLiteralImpl simpleListLiteral = new SimpleListLiteralImpl();
+    return simpleListLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SimpleSetLiteral createSimpleSetLiteral()
+  {
+    SimpleSetLiteralImpl simpleSetLiteral = new SimpleSetLiteralImpl();
+    return simpleSetLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SubGroupTypeRef createSubGroupTypeRef()
+  {
+    SubGroupTypeRefImpl subGroupTypeRef = new SubGroupTypeRefImpl();
+    return subGroupTypeRef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SubGroupTypeAnon createSubGroupTypeAnon()
+  {
+    SubGroupTypeAnonImpl subGroupTypeAnon = new SubGroupTypeAnonImpl();
+    return subGroupTypeAnon;
   }
 
   /**
@@ -359,17 +454,6 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public BasicType createBasicType()
-  {
-    BasicTypeImpl basicType = new BasicTypeImpl();
-    return basicType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public ListType createListType()
   {
     ListTypeImpl listType = new ListTypeImpl();
@@ -392,10 +476,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public TupleType createTupleType()
+  public OptionType createOptionType()
   {
-    TupleTypeImpl tupleType = new TupleTypeImpl();
-    return tupleType;
+    OptionTypeImpl optionType = new OptionTypeImpl();
+    return optionType;
   }
 
   /**
@@ -403,10 +487,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public OptionType createOptionType()
+  public TupleType createTupleType()
   {
-    OptionTypeImpl optionType = new OptionTypeImpl();
-    return optionType;
+    TupleTypeImpl tupleType = new TupleTypeImpl();
+    return tupleType;
   }
 
   /**
@@ -436,10 +520,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public SubGroupTypeRef createSubGroupTypeRef()
+  public SimpleNoneLiteral createSimpleNoneLiteral()
   {
-    SubGroupTypeRefImpl subGroupTypeRef = new SubGroupTypeRefImpl();
-    return subGroupTypeRef;
+    SimpleNoneLiteralImpl simpleNoneLiteral = new SimpleNoneLiteralImpl();
+    return simpleNoneLiteral;
   }
 
   /**
@@ -447,10 +531,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public SubGroupTypeAnon createSubGroupTypeAnon()
+  public SimpleSomeLiteral createSimpleSomeLiteral()
   {
-    SubGroupTypeAnonImpl subGroupTypeAnon = new SubGroupTypeAnonImpl();
-    return subGroupTypeAnon;
+    SimpleSomeLiteralImpl simpleSomeLiteral = new SimpleSomeLiteralImpl();
+    return simpleSomeLiteral;
   }
 
   /**

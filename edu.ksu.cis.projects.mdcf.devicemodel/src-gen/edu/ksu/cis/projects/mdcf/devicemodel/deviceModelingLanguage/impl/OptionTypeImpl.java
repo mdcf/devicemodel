@@ -2,9 +2,11 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Type;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -21,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.OptionTypeImpl#getBaseType <em>Base Type</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.OptionTypeImpl#getBase <em>Base</em>}</li>
  * </ul>
  * </p>
@@ -29,6 +32,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class OptionTypeImpl extends TypeImpl implements OptionType
 {
+  /**
+   * The cached value of the '{@link #getBaseType() <em>Base Type</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBaseType()
+   * @generated
+   * @ordered
+   */
+  protected TypeDecl baseType;
+
   /**
    * The cached value of the '{@link #getBase() <em>Base</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -58,6 +71,49 @@ public class OptionTypeImpl extends TypeImpl implements OptionType
   protected EClass eStaticClass()
   {
     return DeviceModelingLanguagePackage.Literals.OPTION_TYPE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeDecl getBaseType()
+  {
+    if (baseType != null && baseType.eIsProxy())
+    {
+      InternalEObject oldBaseType = (InternalEObject)baseType;
+      baseType = (TypeDecl)eResolveProxy(oldBaseType);
+      if (baseType != oldBaseType)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeviceModelingLanguagePackage.OPTION_TYPE__BASE_TYPE, oldBaseType, baseType));
+      }
+    }
+    return baseType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeDecl basicGetBaseType()
+  {
+    return baseType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBaseType(TypeDecl newBaseType)
+  {
+    TypeDecl oldBaseType = baseType;
+    baseType = newBaseType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.OPTION_TYPE__BASE_TYPE, oldBaseType, baseType));
   }
 
   /**
@@ -134,6 +190,9 @@ public class OptionTypeImpl extends TypeImpl implements OptionType
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.OPTION_TYPE__BASE_TYPE:
+        if (resolve) return getBaseType();
+        return basicGetBaseType();
       case DeviceModelingLanguagePackage.OPTION_TYPE__BASE:
         return getBase();
     }
@@ -150,6 +209,9 @@ public class OptionTypeImpl extends TypeImpl implements OptionType
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.OPTION_TYPE__BASE_TYPE:
+        setBaseType((TypeDecl)newValue);
+        return;
       case DeviceModelingLanguagePackage.OPTION_TYPE__BASE:
         setBase((Type)newValue);
         return;
@@ -167,6 +229,9 @@ public class OptionTypeImpl extends TypeImpl implements OptionType
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.OPTION_TYPE__BASE_TYPE:
+        setBaseType((TypeDecl)null);
+        return;
       case DeviceModelingLanguagePackage.OPTION_TYPE__BASE:
         setBase((Type)null);
         return;
@@ -184,10 +249,50 @@ public class OptionTypeImpl extends TypeImpl implements OptionType
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.OPTION_TYPE__BASE_TYPE:
+        return baseType != null;
       case DeviceModelingLanguagePackage.OPTION_TYPE__BASE:
         return base != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == BasicType.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case DeviceModelingLanguagePackage.OPTION_TYPE__BASE_TYPE: return DeviceModelingLanguagePackage.BASIC_TYPE__BASE_TYPE;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == BasicType.class)
+    {
+      switch (baseFeatureID)
+      {
+        case DeviceModelingLanguagePackage.BASIC_TYPE__BASE_TYPE: return DeviceModelingLanguagePackage.OPTION_TYPE__BASE_TYPE;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
 } //OptionTypeImpl

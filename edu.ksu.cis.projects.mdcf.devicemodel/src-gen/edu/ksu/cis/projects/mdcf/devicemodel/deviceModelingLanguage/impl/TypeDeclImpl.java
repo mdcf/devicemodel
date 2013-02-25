@@ -3,21 +3,16 @@
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ELiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,14 +41,14 @@ public class TypeDeclImpl extends DeclImpl implements TypeDecl
   protected EList<TypeDecl> supers;
 
   /**
-   * The cached value of the '{@link #getElems() <em>Elems</em>}' containment reference list.
+   * The cached value of the '{@link #getElems() <em>Elems</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getElems()
    * @generated
    * @ordered
    */
-  protected EList<ELiteral> elems;
+  protected EList<String> elems;
 
   /**
    * <!-- begin-user-doc -->
@@ -95,29 +90,13 @@ public class TypeDeclImpl extends DeclImpl implements TypeDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ELiteral> getElems()
+  public EList<String> getElems()
   {
     if (elems == null)
     {
-      elems = new EObjectContainmentEList<ELiteral>(ELiteral.class, this, DeviceModelingLanguagePackage.TYPE_DECL__ELEMS);
+      elems = new EDataTypeEList<String>(String.class, this, DeviceModelingLanguagePackage.TYPE_DECL__ELEMS);
     }
     return elems;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case DeviceModelingLanguagePackage.TYPE_DECL__ELEMS:
-        return ((InternalEList<?>)getElems()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -155,7 +134,7 @@ public class TypeDeclImpl extends DeclImpl implements TypeDecl
         return;
       case DeviceModelingLanguagePackage.TYPE_DECL__ELEMS:
         getElems().clear();
-        getElems().addAll((Collection<? extends ELiteral>)newValue);
+        getElems().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -197,6 +176,23 @@ public class TypeDeclImpl extends DeclImpl implements TypeDecl
         return elems != null && !elems.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (elems: ");
+    result.append(elems);
+    result.append(')');
+    return result.toString();
   }
 
 } //TypeDeclImpl

@@ -40,19 +40,19 @@ public interface TypeDecl extends Decl
   EList<TypeDecl> getSupers();
 
   /**
-   * Returns the value of the '<em><b>Elems</b></em>' containment reference list.
-   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ELiteral}.
+   * Returns the value of the '<em><b>Elems</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Elems</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Elems</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Elems</em>' containment reference list.
+   * @return the value of the '<em>Elems</em>' attribute list.
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getTypeDecl_Elems()
-   * @model containment="true"
+   * @model unique="false"
    * @generated
    */
-  EList<ELiteral> getElems();
+  EList<String> getElems();
 
 } // TypeDecl

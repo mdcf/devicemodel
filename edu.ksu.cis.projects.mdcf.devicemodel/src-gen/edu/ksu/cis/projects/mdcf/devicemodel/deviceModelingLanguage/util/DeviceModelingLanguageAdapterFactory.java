@@ -105,6 +105,16 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createFeatureDeclAdapter();
       }
       @Override
+      public Adapter caseSubFeaturesDecl(SubFeaturesDecl object)
+      {
+        return createSubFeaturesDeclAdapter();
+      }
+      @Override
+      public Adapter caseSubFeaturesType(SubFeaturesType object)
+      {
+        return createSubFeaturesTypeAdapter();
+      }
+      @Override
       public Adapter caseInvariantDecl(InvariantDecl object)
       {
         return createInvariantDeclAdapter();
@@ -133,6 +143,11 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseType(Type object)
       {
         return createTypeAdapter();
+      }
+      @Override
+      public Adapter caseBasicType(BasicType object)
+      {
+        return createBasicTypeAdapter();
       }
       @Override
       public Adapter caseLiteral(Literal object)
@@ -165,19 +180,44 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createOptionLiteralAdapter();
       }
       @Override
-      public Adapter caseELiteral(ELiteral object)
+      public Adapter caseSimpleLiteral(SimpleLiteral object)
       {
-        return createELiteralAdapter();
+        return createSimpleLiteralAdapter();
       }
       @Override
-      public Adapter caseSubFeaturesDecl(SubFeaturesDecl object)
+      public Adapter caseSimpleBasicLiteral(SimpleBasicLiteral object)
       {
-        return createSubFeaturesDeclAdapter();
+        return createSimpleBasicLiteralAdapter();
       }
       @Override
-      public Adapter caseSubFeaturesType(SubFeaturesType object)
+      public Adapter caseSimpleTupleLiteral(SimpleTupleLiteral object)
       {
-        return createSubFeaturesTypeAdapter();
+        return createSimpleTupleLiteralAdapter();
+      }
+      @Override
+      public Adapter caseSimpleOptionLiteral(SimpleOptionLiteral object)
+      {
+        return createSimpleOptionLiteralAdapter();
+      }
+      @Override
+      public Adapter caseSimpleListLiteral(SimpleListLiteral object)
+      {
+        return createSimpleListLiteralAdapter();
+      }
+      @Override
+      public Adapter caseSimpleSetLiteral(SimpleSetLiteral object)
+      {
+        return createSimpleSetLiteralAdapter();
+      }
+      @Override
+      public Adapter caseSubGroupTypeRef(SubGroupTypeRef object)
+      {
+        return createSubGroupTypeRefAdapter();
+      }
+      @Override
+      public Adapter caseSubGroupTypeAnon(SubGroupTypeAnon object)
+      {
+        return createSubGroupTypeAnonAdapter();
       }
       @Override
       public Adapter caseNumNatConstraint(NumNatConstraint object)
@@ -190,11 +230,6 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createAnyNatConstraintAdapter();
       }
       @Override
-      public Adapter caseBasicType(BasicType object)
-      {
-        return createBasicTypeAdapter();
-      }
-      @Override
       public Adapter caseListType(ListType object)
       {
         return createListTypeAdapter();
@@ -205,14 +240,14 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createSetTypeAdapter();
       }
       @Override
-      public Adapter caseTupleType(TupleType object)
-      {
-        return createTupleTypeAdapter();
-      }
-      @Override
       public Adapter caseOptionType(OptionType object)
       {
         return createOptionTypeAdapter();
+      }
+      @Override
+      public Adapter caseTupleType(TupleType object)
+      {
+        return createTupleTypeAdapter();
       }
       @Override
       public Adapter caseNoneLiteral(NoneLiteral object)
@@ -225,14 +260,14 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createSomeLiteralAdapter();
       }
       @Override
-      public Adapter caseSubGroupTypeRef(SubGroupTypeRef object)
+      public Adapter caseSimpleNoneLiteral(SimpleNoneLiteral object)
       {
-        return createSubGroupTypeRefAdapter();
+        return createSimpleNoneLiteralAdapter();
       }
       @Override
-      public Adapter caseSubGroupTypeAnon(SubGroupTypeAnon object)
+      public Adapter caseSimpleSomeLiteral(SimpleSomeLiteral object)
       {
-        return createSubGroupTypeAnonAdapter();
+        return createSimpleSomeLiteralAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -347,6 +382,36 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl <em>Sub Features Decl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl
+   * @generated
+   */
+  public Adapter createSubFeaturesDeclAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesType <em>Sub Features Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesType
+   * @generated
+   */
+  public Adapter createSubFeaturesTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.InvariantDecl <em>Invariant Decl</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -432,6 +497,21 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicType <em>Basic Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicType
+   * @generated
+   */
+  public Adapter createBasicTypeAdapter()
   {
     return null;
   }
@@ -527,46 +607,121 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ELiteral <em>ELiteral</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleLiteral <em>Simple Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ELiteral
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleLiteral
    * @generated
    */
-  public Adapter createELiteralAdapter()
+  public Adapter createSimpleLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl <em>Sub Features Decl</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleBasicLiteral <em>Simple Basic Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleBasicLiteral
    * @generated
    */
-  public Adapter createSubFeaturesDeclAdapter()
+  public Adapter createSimpleBasicLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesType <em>Sub Features Type</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleTupleLiteral <em>Simple Tuple Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesType
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleTupleLiteral
    * @generated
    */
-  public Adapter createSubFeaturesTypeAdapter()
+  public Adapter createSimpleTupleLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleOptionLiteral <em>Simple Option Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleOptionLiteral
+   * @generated
+   */
+  public Adapter createSimpleOptionLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleListLiteral <em>Simple List Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleListLiteral
+   * @generated
+   */
+  public Adapter createSimpleListLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleSetLiteral <em>Simple Set Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleSetLiteral
+   * @generated
+   */
+  public Adapter createSimpleSetLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeRef <em>Sub Group Type Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeRef
+   * @generated
+   */
+  public Adapter createSubGroupTypeRefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeAnon <em>Sub Group Type Anon</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeAnon
+   * @generated
+   */
+  public Adapter createSubGroupTypeAnonAdapter()
   {
     return null;
   }
@@ -602,21 +757,6 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicType <em>Basic Type</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicType
-   * @generated
-   */
-  public Adapter createBasicTypeAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ListType <em>List Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -647,21 +787,6 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TupleType <em>Tuple Type</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TupleType
-   * @generated
-   */
-  public Adapter createTupleTypeAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionType <em>Option Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -672,6 +797,21 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOptionTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TupleType <em>Tuple Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TupleType
+   * @generated
+   */
+  public Adapter createTupleTypeAdapter()
   {
     return null;
   }
@@ -707,31 +847,31 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeRef <em>Sub Group Type Ref</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleNoneLiteral <em>Simple None Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeRef
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleNoneLiteral
    * @generated
    */
-  public Adapter createSubGroupTypeRefAdapter()
+  public Adapter createSimpleNoneLiteralAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeAnon <em>Sub Group Type Anon</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleSomeLiteral <em>Simple Some Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeAnon
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleSomeLiteral
    * @generated
    */
-  public Adapter createSubGroupTypeAnonAdapter()
+  public Adapter createSimpleSomeLiteralAdapter()
   {
     return null;
   }
