@@ -5,7 +5,7 @@ type SemanticCategory
 type DateTime
 type Periodicity
 
-// A typed literal is defined as any character in between parentheses (...), greedy (allow nested)
+// A typed literal is defined as any character in between parentheses (...), disallow nesting
 // - e.g., Nat ( 23 )
 // - the literal type constructor gives a clue on how to parse the content and
 //   such processing is defined outside of the model as extensions
@@ -16,7 +16,7 @@ type S11073 { // literal set
 	( MDC_DIM_BEAT_PER_MIN           )
 }
 
-type MY_S11073 include S11073 { // literal set mixin
+type MY_S11073 include S11073 { //  include means "copy-and-paste"
 	( MDC_DIM_BEAT_PER_SEC           )
 }
 
@@ -48,7 +48,7 @@ features PulseOximeterICEMAN { // ICEMAN style
       val value           : Nat // only type spec without value
       val units           = String             ( unitless            )
                  
-      timedTrigger.ReportPulseAmplitude include TimedTrigger = { // include is structural subtyping
+      timedTrigger.ReportPulseAmplitude include TimedTrigger = {
         def status        = String             ( Off                 )
         def triggerSource = Nat                ( 1036                )
         def timeInterval  = Nat                ( 2000                )
