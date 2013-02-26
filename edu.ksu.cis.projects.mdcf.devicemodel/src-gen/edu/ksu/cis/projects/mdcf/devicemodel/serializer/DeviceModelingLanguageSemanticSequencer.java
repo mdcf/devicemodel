@@ -521,7 +521,7 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (categoryNames+=ID* name=ID type=SubFeaturesType)
+	 *     (qNames+=ID* name=ID type=SubFeaturesType)
 	 */
 	protected void sequence_SubFeaturesDecl(EObject context, SubFeaturesDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -530,7 +530,7 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (distinct='distinct'? categoryNames+=ID* (name=ID | any='*'))
+	 *     (distinct='distinct'? qNames+=ID* (name=ID | any='*'))
 	 */
 	protected void sequence_SubFeaturesMatch(EObject context, SubFeaturesMatch semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

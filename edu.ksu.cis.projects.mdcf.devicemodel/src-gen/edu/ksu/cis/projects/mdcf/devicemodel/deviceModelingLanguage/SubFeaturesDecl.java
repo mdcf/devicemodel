@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl#getCategoryNames <em>Category Names</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl#getQNames <em>QNames</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl#getName <em>Name</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl#getType <em>Type</em>}</li>
  * </ul>
@@ -25,20 +25,20 @@ import org.eclipse.emf.common.util.EList;
 public interface SubFeaturesDecl extends FeatureDecl
 {
   /**
-   * Returns the value of the '<em><b>Category Names</b></em>' attribute list.
+   * Returns the value of the '<em><b>QNames</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Category Names</em>' attribute list isn't clear,
+   * If the meaning of the '<em>QNames</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Category Names</em>' attribute list.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSubFeaturesDecl_CategoryNames()
+   * @return the value of the '<em>QNames</em>' attribute list.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSubFeaturesDecl_QNames()
    * @model unique="false"
    * @generated
    */
-  EList<String> getCategoryNames();
+  EList<String> getQNames();
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

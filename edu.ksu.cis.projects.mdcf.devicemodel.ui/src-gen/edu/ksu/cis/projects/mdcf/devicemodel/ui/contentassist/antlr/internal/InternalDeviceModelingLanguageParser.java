@@ -6517,31 +6517,31 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__SubFeaturesDecl__Group_0__0__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2272:1: rule__SubFeaturesDecl__Group_0__0__Impl : ( ( rule__SubFeaturesDecl__CategoryNamesAssignment_0_0 ) ) ;
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2272:1: rule__SubFeaturesDecl__Group_0__0__Impl : ( ( rule__SubFeaturesDecl__QNamesAssignment_0_0 ) ) ;
     public final void rule__SubFeaturesDecl__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2276:1: ( ( ( rule__SubFeaturesDecl__CategoryNamesAssignment_0_0 ) ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2277:1: ( ( rule__SubFeaturesDecl__CategoryNamesAssignment_0_0 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2276:1: ( ( ( rule__SubFeaturesDecl__QNamesAssignment_0_0 ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2277:1: ( ( rule__SubFeaturesDecl__QNamesAssignment_0_0 ) )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2277:1: ( ( rule__SubFeaturesDecl__CategoryNamesAssignment_0_0 ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2278:1: ( rule__SubFeaturesDecl__CategoryNamesAssignment_0_0 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2277:1: ( ( rule__SubFeaturesDecl__QNamesAssignment_0_0 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2278:1: ( rule__SubFeaturesDecl__QNamesAssignment_0_0 )
             {
-             before(grammarAccess.getSubFeaturesDeclAccess().getCategoryNamesAssignment_0_0()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2279:1: ( rule__SubFeaturesDecl__CategoryNamesAssignment_0_0 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2279:2: rule__SubFeaturesDecl__CategoryNamesAssignment_0_0
+             before(grammarAccess.getSubFeaturesDeclAccess().getQNamesAssignment_0_0()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2279:1: ( rule__SubFeaturesDecl__QNamesAssignment_0_0 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2279:2: rule__SubFeaturesDecl__QNamesAssignment_0_0
             {
-            pushFollow(FOLLOW_rule__SubFeaturesDecl__CategoryNamesAssignment_0_0_in_rule__SubFeaturesDecl__Group_0__0__Impl4702);
-            rule__SubFeaturesDecl__CategoryNamesAssignment_0_0();
+            pushFollow(FOLLOW_rule__SubFeaturesDecl__QNamesAssignment_0_0_in_rule__SubFeaturesDecl__Group_0__0__Impl4702);
+            rule__SubFeaturesDecl__QNamesAssignment_0_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSubFeaturesDeclAccess().getCategoryNamesAssignment_0_0()); 
+             after(grammarAccess.getSubFeaturesDeclAccess().getQNamesAssignment_0_0()); 
 
             }
 
@@ -8983,31 +8983,31 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__SubFeaturesMatch__Group_2__0__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3216:1: rule__SubFeaturesMatch__Group_2__0__Impl : ( ( rule__SubFeaturesMatch__CategoryNamesAssignment_2_0 ) ) ;
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3216:1: rule__SubFeaturesMatch__Group_2__0__Impl : ( ( rule__SubFeaturesMatch__QNamesAssignment_2_0 ) ) ;
     public final void rule__SubFeaturesMatch__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3220:1: ( ( ( rule__SubFeaturesMatch__CategoryNamesAssignment_2_0 ) ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3221:1: ( ( rule__SubFeaturesMatch__CategoryNamesAssignment_2_0 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3220:1: ( ( ( rule__SubFeaturesMatch__QNamesAssignment_2_0 ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3221:1: ( ( rule__SubFeaturesMatch__QNamesAssignment_2_0 ) )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3221:1: ( ( rule__SubFeaturesMatch__CategoryNamesAssignment_2_0 ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3222:1: ( rule__SubFeaturesMatch__CategoryNamesAssignment_2_0 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3221:1: ( ( rule__SubFeaturesMatch__QNamesAssignment_2_0 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3222:1: ( rule__SubFeaturesMatch__QNamesAssignment_2_0 )
             {
-             before(grammarAccess.getSubFeaturesMatchAccess().getCategoryNamesAssignment_2_0()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3223:1: ( rule__SubFeaturesMatch__CategoryNamesAssignment_2_0 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3223:2: rule__SubFeaturesMatch__CategoryNamesAssignment_2_0
+             before(grammarAccess.getSubFeaturesMatchAccess().getQNamesAssignment_2_0()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3223:1: ( rule__SubFeaturesMatch__QNamesAssignment_2_0 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3223:2: rule__SubFeaturesMatch__QNamesAssignment_2_0
             {
-            pushFollow(FOLLOW_rule__SubFeaturesMatch__CategoryNamesAssignment_2_0_in_rule__SubFeaturesMatch__Group_2__0__Impl6559);
-            rule__SubFeaturesMatch__CategoryNamesAssignment_2_0();
+            pushFollow(FOLLOW_rule__SubFeaturesMatch__QNamesAssignment_2_0_in_rule__SubFeaturesMatch__Group_2__0__Impl6559);
+            rule__SubFeaturesMatch__QNamesAssignment_2_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSubFeaturesMatchAccess().getCategoryNamesAssignment_2_0()); 
+             after(grammarAccess.getSubFeaturesMatchAccess().getQNamesAssignment_2_0()); 
 
             }
 
@@ -17507,9 +17507,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
     // $ANTLR end "rule__FeaturesBody__FeaturesAssignment_1_1"
 
 
-    // $ANTLR start "rule__SubFeaturesDecl__CategoryNamesAssignment_0_0"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:6591:1: rule__SubFeaturesDecl__CategoryNamesAssignment_0_0 : ( RULE_ID ) ;
-    public final void rule__SubFeaturesDecl__CategoryNamesAssignment_0_0() throws RecognitionException {
+    // $ANTLR start "rule__SubFeaturesDecl__QNamesAssignment_0_0"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:6591:1: rule__SubFeaturesDecl__QNamesAssignment_0_0 : ( RULE_ID ) ;
+    public final void rule__SubFeaturesDecl__QNamesAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -17520,9 +17520,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:6596:1: ( RULE_ID )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:6597:1: RULE_ID
             {
-             before(grammarAccess.getSubFeaturesDeclAccess().getCategoryNamesIDTerminalRuleCall_0_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SubFeaturesDecl__CategoryNamesAssignment_0_013176); 
-             after(grammarAccess.getSubFeaturesDeclAccess().getCategoryNamesIDTerminalRuleCall_0_0_0()); 
+             before(grammarAccess.getSubFeaturesDeclAccess().getQNamesIDTerminalRuleCall_0_0_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SubFeaturesDecl__QNamesAssignment_0_013176); 
+             after(grammarAccess.getSubFeaturesDeclAccess().getQNamesIDTerminalRuleCall_0_0_0()); 
 
             }
 
@@ -17541,7 +17541,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__SubFeaturesDecl__CategoryNamesAssignment_0_0"
+    // $ANTLR end "rule__SubFeaturesDecl__QNamesAssignment_0_0"
 
 
     // $ANTLR start "rule__SubFeaturesDecl__NameAssignment_1"
@@ -18048,9 +18048,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
     // $ANTLR end "rule__SubFeaturesMatch__DistinctAssignment_1"
 
 
-    // $ANTLR start "rule__SubFeaturesMatch__CategoryNamesAssignment_2_0"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:6810:1: rule__SubFeaturesMatch__CategoryNamesAssignment_2_0 : ( RULE_ID ) ;
-    public final void rule__SubFeaturesMatch__CategoryNamesAssignment_2_0() throws RecognitionException {
+    // $ANTLR start "rule__SubFeaturesMatch__QNamesAssignment_2_0"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:6810:1: rule__SubFeaturesMatch__QNamesAssignment_2_0 : ( RULE_ID ) ;
+    public final void rule__SubFeaturesMatch__QNamesAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -18061,9 +18061,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:6815:1: ( RULE_ID )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:6816:1: RULE_ID
             {
-             before(grammarAccess.getSubFeaturesMatchAccess().getCategoryNamesIDTerminalRuleCall_2_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SubFeaturesMatch__CategoryNamesAssignment_2_013624); 
-             after(grammarAccess.getSubFeaturesMatchAccess().getCategoryNamesIDTerminalRuleCall_2_0_0()); 
+             before(grammarAccess.getSubFeaturesMatchAccess().getQNamesIDTerminalRuleCall_2_0_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__SubFeaturesMatch__QNamesAssignment_2_013624); 
+             after(grammarAccess.getSubFeaturesMatchAccess().getQNamesIDTerminalRuleCall_2_0_0()); 
 
             }
 
@@ -18082,7 +18082,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__SubFeaturesMatch__CategoryNamesAssignment_2_0"
+    // $ANTLR end "rule__SubFeaturesMatch__QNamesAssignment_2_0"
 
 
     // $ANTLR start "rule__SubFeaturesMatch__NameAssignment_3_0"
@@ -19521,7 +19521,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
     public static final BitSet FOLLOW_rule__SubFeaturesDecl__TypeAssignment_2_in_rule__SubFeaturesDecl__Group__2__Impl4636 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SubFeaturesDecl__Group_0__0__Impl_in_rule__SubFeaturesDecl__Group_0__04672 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_rule__SubFeaturesDecl__Group_0__1_in_rule__SubFeaturesDecl__Group_0__04675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SubFeaturesDecl__CategoryNamesAssignment_0_0_in_rule__SubFeaturesDecl__Group_0__0__Impl4702 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SubFeaturesDecl__QNamesAssignment_0_0_in_rule__SubFeaturesDecl__Group_0__0__Impl4702 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SubFeaturesDecl__Group_0__1__Impl_in_rule__SubFeaturesDecl__Group_0__14732 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_20_in_rule__SubFeaturesDecl__Group_0__1__Impl4760 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SubFeaturesType__Group_0__0__Impl_in_rule__SubFeaturesType__Group_0__04795 = new BitSet(new long[]{0x0000000000000010L});
@@ -19598,7 +19598,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
     public static final BitSet FOLLOW_rule__SubFeaturesMatch__Alternatives_3_in_rule__SubFeaturesMatch__Group__3__Impl6491 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SubFeaturesMatch__Group_2__0__Impl_in_rule__SubFeaturesMatch__Group_2__06529 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_rule__SubFeaturesMatch__Group_2__1_in_rule__SubFeaturesMatch__Group_2__06532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SubFeaturesMatch__CategoryNamesAssignment_2_0_in_rule__SubFeaturesMatch__Group_2__0__Impl6559 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SubFeaturesMatch__QNamesAssignment_2_0_in_rule__SubFeaturesMatch__Group_2__0__Impl6559 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SubFeaturesMatch__Group_2__1__Impl_in_rule__SubFeaturesMatch__Group_2__16589 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_20_in_rule__SubFeaturesMatch__Group_2__1__Impl6617 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ConstraintNat__Group_0__0__Impl_in_rule__ConstraintNat__Group_0__06652 = new BitSet(new long[]{0x0000000000000040L});
@@ -19857,7 +19857,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
     public static final BitSet FOLLOW_RULE_ID_in_rule__FeaturesDecl__SupersAssignment_3_2_113079 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFeaturesBody_in_rule__FeaturesDecl__BodyAssignment_413114 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFeatureDecl_in_rule__FeaturesBody__FeaturesAssignment_1_113145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__SubFeaturesDecl__CategoryNamesAssignment_0_013176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__SubFeaturesDecl__QNamesAssignment_0_013176 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__SubFeaturesDecl__NameAssignment_113207 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSubFeaturesType_in_rule__SubFeaturesDecl__TypeAssignment_213238 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__SubFeaturesType__TypeAssignment_0_213273 = new BitSet(new long[]{0x0000000000000002L});
@@ -19870,7 +19870,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
     public static final BitSet FOLLOW_ruleSubFeaturesMatch_in_rule__MultiplicityInvariantDecl__MatchAssignment_313510 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__MultiplicityInvariantDecl__TypeAssignment_4_113545 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_34_in_rule__SubFeaturesMatch__DistinctAssignment_113585 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__SubFeaturesMatch__CategoryNamesAssignment_2_013624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__SubFeaturesMatch__QNamesAssignment_2_013624 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__SubFeaturesMatch__NameAssignment_3_013655 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_25_in_rule__SubFeaturesMatch__AnyAssignment_3_113691 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_NAT_in_rule__ConstraintNat__NumAssignment_0_113730 = new BitSet(new long[]{0x0000000000000002L});

@@ -28,7 +28,7 @@
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//FeatureDecl"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SubFeaturesDecl">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubFeaturesDecl/categoryNames"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubFeaturesDecl/qNames"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubFeaturesDecl/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SubFeaturesDecl/type"/>
     </genClasses>
@@ -43,7 +43,7 @@
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SubFeaturesMatch">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubFeaturesMatch/distinct"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubFeaturesMatch/categoryNames"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubFeaturesMatch/qNames"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubFeaturesMatch/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubFeaturesMatch/any"/>
     </genClasses>

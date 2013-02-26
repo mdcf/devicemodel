@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesDeclImpl#getCategoryNames <em>Category Names</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesDeclImpl#getQNames <em>QNames</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesDeclImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesDeclImpl#getType <em>Type</em>}</li>
  * </ul>
@@ -38,14 +38,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class SubFeaturesDeclImpl extends FeatureDeclImpl implements SubFeaturesDecl
 {
   /**
-   * The cached value of the '{@link #getCategoryNames() <em>Category Names</em>}' attribute list.
+   * The cached value of the '{@link #getQNames() <em>QNames</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCategoryNames()
+   * @see #getQNames()
    * @generated
    * @ordered
    */
-  protected EList<String> categoryNames;
+  protected EList<String> qNames;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -103,13 +103,13 @@ public class SubFeaturesDeclImpl extends FeatureDeclImpl implements SubFeaturesD
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getCategoryNames()
+  public EList<String> getQNames()
   {
-    if (categoryNames == null)
+    if (qNames == null)
     {
-      categoryNames = new EDataTypeEList<String>(String.class, this, DeviceModelingLanguagePackage.SUB_FEATURES_DECL__CATEGORY_NAMES);
+      qNames = new EDataTypeEList<String>(String.class, this, DeviceModelingLanguagePackage.SUB_FEATURES_DECL__QNAMES);
     }
-    return categoryNames;
+    return qNames;
   }
 
   /**
@@ -209,8 +209,8 @@ public class SubFeaturesDeclImpl extends FeatureDeclImpl implements SubFeaturesD
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__CATEGORY_NAMES:
-        return getCategoryNames();
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__QNAMES:
+        return getQNames();
       case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__NAME:
         return getName();
       case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__TYPE:
@@ -230,9 +230,9 @@ public class SubFeaturesDeclImpl extends FeatureDeclImpl implements SubFeaturesD
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__CATEGORY_NAMES:
-        getCategoryNames().clear();
-        getCategoryNames().addAll((Collection<? extends String>)newValue);
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__QNAMES:
+        getQNames().clear();
+        getQNames().addAll((Collection<? extends String>)newValue);
         return;
       case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__NAME:
         setName((String)newValue);
@@ -254,8 +254,8 @@ public class SubFeaturesDeclImpl extends FeatureDeclImpl implements SubFeaturesD
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__CATEGORY_NAMES:
-        getCategoryNames().clear();
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__QNAMES:
+        getQNames().clear();
         return;
       case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__NAME:
         setName(NAME_EDEFAULT);
@@ -277,8 +277,8 @@ public class SubFeaturesDeclImpl extends FeatureDeclImpl implements SubFeaturesD
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__CATEGORY_NAMES:
-        return categoryNames != null && !categoryNames.isEmpty();
+      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__QNAMES:
+        return qNames != null && !qNames.isEmpty();
       case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DeviceModelingLanguagePackage.SUB_FEATURES_DECL__TYPE:
@@ -298,8 +298,8 @@ public class SubFeaturesDeclImpl extends FeatureDeclImpl implements SubFeaturesD
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (categoryNames: ");
-    result.append(categoryNames);
+    result.append(" (qNames: ");
+    result.append(qNames);
     result.append(", name: ");
     result.append(name);
     result.append(')');

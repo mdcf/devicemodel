@@ -271,13 +271,13 @@ public interface DeviceModelingLanguagePackage extends EPackage
   int SUB_FEATURES_DECL = 6;
 
   /**
-   * The feature id for the '<em><b>Category Names</b></em>' attribute list.
+   * The feature id for the '<em><b>QNames</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUB_FEATURES_DECL__CATEGORY_NAMES = FEATURE_DECL_FEATURE_COUNT + 0;
+  int SUB_FEATURES_DECL__QNAMES = FEATURE_DECL_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -428,13 +428,13 @@ public interface DeviceModelingLanguagePackage extends EPackage
   int SUB_FEATURES_MATCH__DISTINCT = 0;
 
   /**
-   * The feature id for the '<em><b>Category Names</b></em>' attribute list.
+   * The feature id for the '<em><b>QNames</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUB_FEATURES_MATCH__CATEGORY_NAMES = 1;
+  int SUB_FEATURES_MATCH__QNAMES = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1416,15 +1416,15 @@ public interface DeviceModelingLanguagePackage extends EPackage
   EClass getSubFeaturesDecl();
 
   /**
-   * Returns the meta object for the attribute list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl#getCategoryNames <em>Category Names</em>}'.
+   * Returns the meta object for the attribute list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl#getQNames <em>QNames</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Category Names</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl#getCategoryNames()
+   * @return the meta object for the attribute list '<em>QNames</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl#getQNames()
    * @see #getSubFeaturesDecl()
    * @generated
    */
-  EAttribute getSubFeaturesDecl_CategoryNames();
+  EAttribute getSubFeaturesDecl_QNames();
 
   /**
    * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl#getName <em>Name</em>}'.
@@ -1555,15 +1555,15 @@ public interface DeviceModelingLanguagePackage extends EPackage
   EAttribute getSubFeaturesMatch_Distinct();
 
   /**
-   * Returns the meta object for the attribute list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch#getCategoryNames <em>Category Names</em>}'.
+   * Returns the meta object for the attribute list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch#getQNames <em>QNames</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Category Names</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch#getCategoryNames()
+   * @return the meta object for the attribute list '<em>QNames</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch#getQNames()
    * @see #getSubFeaturesMatch()
    * @generated
    */
-  EAttribute getSubFeaturesMatch_CategoryNames();
+  EAttribute getSubFeaturesMatch_QNames();
 
   /**
    * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch#getName <em>Name</em>}'.
@@ -2322,12 +2322,12 @@ public interface DeviceModelingLanguagePackage extends EPackage
     EClass SUB_FEATURES_DECL = eINSTANCE.getSubFeaturesDecl();
 
     /**
-     * The meta object literal for the '<em><b>Category Names</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>QNames</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SUB_FEATURES_DECL__CATEGORY_NAMES = eINSTANCE.getSubFeaturesDecl_CategoryNames();
+    EAttribute SUB_FEATURES_DECL__QNAMES = eINSTANCE.getSubFeaturesDecl_QNames();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2434,12 +2434,12 @@ public interface DeviceModelingLanguagePackage extends EPackage
     EAttribute SUB_FEATURES_MATCH__DISTINCT = eINSTANCE.getSubFeaturesMatch_Distinct();
 
     /**
-     * The meta object literal for the '<em><b>Category Names</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>QNames</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SUB_FEATURES_MATCH__CATEGORY_NAMES = eINSTANCE.getSubFeaturesMatch_CategoryNames();
+    EAttribute SUB_FEATURES_MATCH__QNAMES = eINSTANCE.getSubFeaturesMatch_QNames();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

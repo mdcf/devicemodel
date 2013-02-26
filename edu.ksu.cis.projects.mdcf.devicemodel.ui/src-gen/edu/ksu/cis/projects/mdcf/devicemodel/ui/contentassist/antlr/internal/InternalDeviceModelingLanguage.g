@@ -2275,9 +2275,9 @@ rule__SubFeaturesDecl__Group_0__0__Impl
     }
 :
 (
-{ before(grammarAccess.getSubFeaturesDeclAccess().getCategoryNamesAssignment_0_0()); }
-(rule__SubFeaturesDecl__CategoryNamesAssignment_0_0)
-{ after(grammarAccess.getSubFeaturesDeclAccess().getCategoryNamesAssignment_0_0()); }
+{ before(grammarAccess.getSubFeaturesDeclAccess().getQNamesAssignment_0_0()); }
+(rule__SubFeaturesDecl__QNamesAssignment_0_0)
+{ after(grammarAccess.getSubFeaturesDeclAccess().getQNamesAssignment_0_0()); }
 )
 
 ;
@@ -3219,9 +3219,9 @@ rule__SubFeaturesMatch__Group_2__0__Impl
     }
 :
 (
-{ before(grammarAccess.getSubFeaturesMatchAccess().getCategoryNamesAssignment_2_0()); }
-(rule__SubFeaturesMatch__CategoryNamesAssignment_2_0)
-{ after(grammarAccess.getSubFeaturesMatchAccess().getCategoryNamesAssignment_2_0()); }
+{ before(grammarAccess.getSubFeaturesMatchAccess().getQNamesAssignment_2_0()); }
+(rule__SubFeaturesMatch__QNamesAssignment_2_0)
+{ after(grammarAccess.getSubFeaturesMatchAccess().getQNamesAssignment_2_0()); }
 )
 
 ;
@@ -6588,14 +6588,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SubFeaturesDecl__CategoryNamesAssignment_0_0
+rule__SubFeaturesDecl__QNamesAssignment_0_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getSubFeaturesDeclAccess().getCategoryNamesIDTerminalRuleCall_0_0_0()); }
-	RULE_ID{ after(grammarAccess.getSubFeaturesDeclAccess().getCategoryNamesIDTerminalRuleCall_0_0_0()); }
+{ before(grammarAccess.getSubFeaturesDeclAccess().getQNamesIDTerminalRuleCall_0_0_0()); }
+	RULE_ID{ after(grammarAccess.getSubFeaturesDeclAccess().getQNamesIDTerminalRuleCall_0_0_0()); }
 )
 
 ;
@@ -6807,14 +6807,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SubFeaturesMatch__CategoryNamesAssignment_2_0
+rule__SubFeaturesMatch__QNamesAssignment_2_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getSubFeaturesMatchAccess().getCategoryNamesIDTerminalRuleCall_2_0_0()); }
-	RULE_ID{ after(grammarAccess.getSubFeaturesMatchAccess().getCategoryNamesIDTerminalRuleCall_2_0_0()); }
+{ before(grammarAccess.getSubFeaturesMatchAccess().getQNamesIDTerminalRuleCall_2_0_0()); }
+	RULE_ID{ after(grammarAccess.getSubFeaturesMatchAccess().getQNamesIDTerminalRuleCall_2_0_0()); }
 )
 
 ;

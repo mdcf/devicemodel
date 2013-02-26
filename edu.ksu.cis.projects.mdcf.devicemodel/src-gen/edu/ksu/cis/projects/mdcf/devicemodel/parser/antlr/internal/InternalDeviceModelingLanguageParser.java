@@ -1279,11 +1279,11 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleSubFeaturesDecl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:493:1: ruleSubFeaturesDecl returns [EObject current=null] : ( ( ( (lv_categoryNames_0_0= RULE_ID ) ) otherlv_1= '.' )* ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleSubFeaturesType ) ) ) ;
+    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:493:1: ruleSubFeaturesDecl returns [EObject current=null] : ( ( ( (lv_qNames_0_0= RULE_ID ) ) otherlv_1= '.' )* ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleSubFeaturesType ) ) ) ;
     public final EObject ruleSubFeaturesDecl() throws RecognitionException {
         EObject current = null;
 
-        Token lv_categoryNames_0_0=null;
+        Token lv_qNames_0_0=null;
         Token otherlv_1=null;
         Token lv_name_2_0=null;
         EObject lv_type_3_0 = null;
@@ -1292,13 +1292,13 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalAntlrP
          enterRule(); 
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:496:28: ( ( ( ( (lv_categoryNames_0_0= RULE_ID ) ) otherlv_1= '.' )* ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleSubFeaturesType ) ) ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:497:1: ( ( ( (lv_categoryNames_0_0= RULE_ID ) ) otherlv_1= '.' )* ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleSubFeaturesType ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:496:28: ( ( ( ( (lv_qNames_0_0= RULE_ID ) ) otherlv_1= '.' )* ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleSubFeaturesType ) ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:497:1: ( ( ( (lv_qNames_0_0= RULE_ID ) ) otherlv_1= '.' )* ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleSubFeaturesType ) ) )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:497:1: ( ( ( (lv_categoryNames_0_0= RULE_ID ) ) otherlv_1= '.' )* ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleSubFeaturesType ) ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:497:2: ( ( (lv_categoryNames_0_0= RULE_ID ) ) otherlv_1= '.' )* ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleSubFeaturesType ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:497:1: ( ( ( (lv_qNames_0_0= RULE_ID ) ) otherlv_1= '.' )* ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleSubFeaturesType ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:497:2: ( ( (lv_qNames_0_0= RULE_ID ) ) otherlv_1= '.' )* ( (lv_name_2_0= RULE_ID ) ) ( (lv_type_3_0= ruleSubFeaturesType ) )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:497:2: ( ( (lv_categoryNames_0_0= RULE_ID ) ) otherlv_1= '.' )*
+            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:497:2: ( ( (lv_qNames_0_0= RULE_ID ) ) otherlv_1= '.' )*
             loop14:
             do {
                 int alt14=2;
@@ -1317,17 +1317,17 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalAntlrP
 
                 switch (alt14) {
             	case 1 :
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:497:3: ( (lv_categoryNames_0_0= RULE_ID ) ) otherlv_1= '.'
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:497:3: ( (lv_qNames_0_0= RULE_ID ) ) otherlv_1= '.'
             	    {
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:497:3: ( (lv_categoryNames_0_0= RULE_ID ) )
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:498:1: (lv_categoryNames_0_0= RULE_ID )
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:497:3: ( (lv_qNames_0_0= RULE_ID ) )
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:498:1: (lv_qNames_0_0= RULE_ID )
             	    {
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:498:1: (lv_categoryNames_0_0= RULE_ID )
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:499:3: lv_categoryNames_0_0= RULE_ID
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:498:1: (lv_qNames_0_0= RULE_ID )
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:499:3: lv_qNames_0_0= RULE_ID
             	    {
-            	    lv_categoryNames_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSubFeaturesDecl1105); 
+            	    lv_qNames_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSubFeaturesDecl1105); 
 
-            	    			newLeafNode(lv_categoryNames_0_0, grammarAccess.getSubFeaturesDeclAccess().getCategoryNamesIDTerminalRuleCall_0_0_0()); 
+            	    			newLeafNode(lv_qNames_0_0, grammarAccess.getSubFeaturesDeclAccess().getQNamesIDTerminalRuleCall_0_0_0()); 
             	    		
 
             	    	        if (current==null) {
@@ -1335,8 +1335,8 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalAntlrP
             	    	        }
             	           		addWithLastConsumed(
             	           			current, 
-            	           			"categoryNames",
-            	            		lv_categoryNames_0_0, 
+            	           			"qNames",
+            	            		lv_qNames_0_0, 
             	            		"ID");
             	    	    
 
@@ -2121,12 +2121,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalAntlrP
 
 
     // $ANTLR start "ruleSubFeaturesMatch"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:831:1: ruleSubFeaturesMatch returns [EObject current=null] : ( () ( (lv_distinct_1_0= 'distinct' ) )? ( ( (lv_categoryNames_2_0= RULE_ID ) ) otherlv_3= '.' )* ( ( (lv_name_4_0= RULE_ID ) ) | ( (lv_any_5_0= '*' ) ) ) ) ;
+    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:831:1: ruleSubFeaturesMatch returns [EObject current=null] : ( () ( (lv_distinct_1_0= 'distinct' ) )? ( ( (lv_qNames_2_0= RULE_ID ) ) otherlv_3= '.' )* ( ( (lv_name_4_0= RULE_ID ) ) | ( (lv_any_5_0= '*' ) ) ) ) ;
     public final EObject ruleSubFeaturesMatch() throws RecognitionException {
         EObject current = null;
 
         Token lv_distinct_1_0=null;
-        Token lv_categoryNames_2_0=null;
+        Token lv_qNames_2_0=null;
         Token otherlv_3=null;
         Token lv_name_4_0=null;
         Token lv_any_5_0=null;
@@ -2134,11 +2134,11 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalAntlrP
          enterRule(); 
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:834:28: ( ( () ( (lv_distinct_1_0= 'distinct' ) )? ( ( (lv_categoryNames_2_0= RULE_ID ) ) otherlv_3= '.' )* ( ( (lv_name_4_0= RULE_ID ) ) | ( (lv_any_5_0= '*' ) ) ) ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:835:1: ( () ( (lv_distinct_1_0= 'distinct' ) )? ( ( (lv_categoryNames_2_0= RULE_ID ) ) otherlv_3= '.' )* ( ( (lv_name_4_0= RULE_ID ) ) | ( (lv_any_5_0= '*' ) ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:834:28: ( ( () ( (lv_distinct_1_0= 'distinct' ) )? ( ( (lv_qNames_2_0= RULE_ID ) ) otherlv_3= '.' )* ( ( (lv_name_4_0= RULE_ID ) ) | ( (lv_any_5_0= '*' ) ) ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:835:1: ( () ( (lv_distinct_1_0= 'distinct' ) )? ( ( (lv_qNames_2_0= RULE_ID ) ) otherlv_3= '.' )* ( ( (lv_name_4_0= RULE_ID ) ) | ( (lv_any_5_0= '*' ) ) ) )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:835:1: ( () ( (lv_distinct_1_0= 'distinct' ) )? ( ( (lv_categoryNames_2_0= RULE_ID ) ) otherlv_3= '.' )* ( ( (lv_name_4_0= RULE_ID ) ) | ( (lv_any_5_0= '*' ) ) ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:835:2: () ( (lv_distinct_1_0= 'distinct' ) )? ( ( (lv_categoryNames_2_0= RULE_ID ) ) otherlv_3= '.' )* ( ( (lv_name_4_0= RULE_ID ) ) | ( (lv_any_5_0= '*' ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:835:1: ( () ( (lv_distinct_1_0= 'distinct' ) )? ( ( (lv_qNames_2_0= RULE_ID ) ) otherlv_3= '.' )* ( ( (lv_name_4_0= RULE_ID ) ) | ( (lv_any_5_0= '*' ) ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:835:2: () ( (lv_distinct_1_0= 'distinct' ) )? ( ( (lv_qNames_2_0= RULE_ID ) ) otherlv_3= '.' )* ( ( (lv_name_4_0= RULE_ID ) ) | ( (lv_any_5_0= '*' ) ) )
             {
             // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:835:2: ()
             // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:836:5: 
@@ -2184,7 +2184,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalAntlrP
 
             }
 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:856:3: ( ( (lv_categoryNames_2_0= RULE_ID ) ) otherlv_3= '.' )*
+            // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:856:3: ( ( (lv_qNames_2_0= RULE_ID ) ) otherlv_3= '.' )*
             loop21:
             do {
                 int alt21=2;
@@ -2203,17 +2203,17 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalAntlrP
 
                 switch (alt21) {
             	case 1 :
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:856:4: ( (lv_categoryNames_2_0= RULE_ID ) ) otherlv_3= '.'
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:856:4: ( (lv_qNames_2_0= RULE_ID ) ) otherlv_3= '.'
             	    {
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:856:4: ( (lv_categoryNames_2_0= RULE_ID ) )
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:857:1: (lv_categoryNames_2_0= RULE_ID )
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:856:4: ( (lv_qNames_2_0= RULE_ID ) )
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:857:1: (lv_qNames_2_0= RULE_ID )
             	    {
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:857:1: (lv_categoryNames_2_0= RULE_ID )
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:858:3: lv_categoryNames_2_0= RULE_ID
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:857:1: (lv_qNames_2_0= RULE_ID )
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/parser/antlr/internal/InternalDeviceModelingLanguage.g:858:3: lv_qNames_2_0= RULE_ID
             	    {
-            	    lv_categoryNames_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSubFeaturesMatch1853); 
+            	    lv_qNames_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSubFeaturesMatch1853); 
 
-            	    			newLeafNode(lv_categoryNames_2_0, grammarAccess.getSubFeaturesMatchAccess().getCategoryNamesIDTerminalRuleCall_2_0_0()); 
+            	    			newLeafNode(lv_qNames_2_0, grammarAccess.getSubFeaturesMatchAccess().getQNamesIDTerminalRuleCall_2_0_0()); 
             	    		
 
             	    	        if (current==null) {
@@ -2221,8 +2221,8 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalAntlrP
             	    	        }
             	           		addWithLastConsumed(
             	           			current, 
-            	           			"categoryNames",
-            	            		lv_categoryNames_2_0, 
+            	           			"qNames",
+            	            		lv_qNames_2_0, 
             	            		"ID");
             	    	    
 

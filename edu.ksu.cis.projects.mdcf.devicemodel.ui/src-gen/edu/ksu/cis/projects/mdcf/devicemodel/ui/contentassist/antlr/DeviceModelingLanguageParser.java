@@ -122,7 +122,7 @@ public class DeviceModelingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFeaturesDeclAccess().getSupersAssignment_3_2_1(), "rule__FeaturesDecl__SupersAssignment_3_2_1");
 					put(grammarAccess.getFeaturesDeclAccess().getBodyAssignment_4(), "rule__FeaturesDecl__BodyAssignment_4");
 					put(grammarAccess.getFeaturesBodyAccess().getFeaturesAssignment_1_1(), "rule__FeaturesBody__FeaturesAssignment_1_1");
-					put(grammarAccess.getSubFeaturesDeclAccess().getCategoryNamesAssignment_0_0(), "rule__SubFeaturesDecl__CategoryNamesAssignment_0_0");
+					put(grammarAccess.getSubFeaturesDeclAccess().getQNamesAssignment_0_0(), "rule__SubFeaturesDecl__QNamesAssignment_0_0");
 					put(grammarAccess.getSubFeaturesDeclAccess().getNameAssignment_1(), "rule__SubFeaturesDecl__NameAssignment_1");
 					put(grammarAccess.getSubFeaturesDeclAccess().getTypeAssignment_2(), "rule__SubFeaturesDecl__TypeAssignment_2");
 					put(grammarAccess.getSubFeaturesTypeAccess().getTypeAssignment_0_2(), "rule__SubFeaturesType__TypeAssignment_0_2");
@@ -135,7 +135,7 @@ public class DeviceModelingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicityInvariantDeclAccess().getMatchAssignment_3(), "rule__MultiplicityInvariantDecl__MatchAssignment_3");
 					put(grammarAccess.getMultiplicityInvariantDeclAccess().getTypeAssignment_4_1(), "rule__MultiplicityInvariantDecl__TypeAssignment_4_1");
 					put(grammarAccess.getSubFeaturesMatchAccess().getDistinctAssignment_1(), "rule__SubFeaturesMatch__DistinctAssignment_1");
-					put(grammarAccess.getSubFeaturesMatchAccess().getCategoryNamesAssignment_2_0(), "rule__SubFeaturesMatch__CategoryNamesAssignment_2_0");
+					put(grammarAccess.getSubFeaturesMatchAccess().getQNamesAssignment_2_0(), "rule__SubFeaturesMatch__QNamesAssignment_2_0");
 					put(grammarAccess.getSubFeaturesMatchAccess().getNameAssignment_3_0(), "rule__SubFeaturesMatch__NameAssignment_3_0");
 					put(grammarAccess.getSubFeaturesMatchAccess().getAnyAssignment_3_1(), "rule__SubFeaturesMatch__AnyAssignment_3_1");
 					put(grammarAccess.getConstraintNatAccess().getNumAssignment_0_1(), "rule__ConstraintNat__NumAssignment_0_1");

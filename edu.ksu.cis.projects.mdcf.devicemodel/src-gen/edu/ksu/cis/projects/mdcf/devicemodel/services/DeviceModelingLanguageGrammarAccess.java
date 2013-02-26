@@ -304,8 +304,8 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SubFeaturesDecl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
-		private final Assignment cCategoryNamesAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cCategoryNamesIDTerminalRuleCall_0_0_0 = (RuleCall)cCategoryNamesAssignment_0_0.eContents().get(0);
+		private final Assignment cQNamesAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cQNamesIDTerminalRuleCall_0_0_0 = (RuleCall)cQNamesAssignment_0_0.eContents().get(0);
 		private final Keyword cFullStopKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
@@ -313,20 +313,20 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final RuleCall cTypeSubFeaturesTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		
 		//SubFeaturesDecl:
-		//	(categoryNames+=ID ".")* name=ID type=SubFeaturesType;
+		//	(qNames+=ID ".")* name=ID type=SubFeaturesType;
 		public ParserRule getRule() { return rule; }
 
-		//(categoryNames+=ID ".")* name=ID type=SubFeaturesType
+		//(qNames+=ID ".")* name=ID type=SubFeaturesType
 		public Group getGroup() { return cGroup; }
 
-		//(categoryNames+=ID ".")*
+		//(qNames+=ID ".")*
 		public Group getGroup_0() { return cGroup_0; }
 
-		//categoryNames+=ID
-		public Assignment getCategoryNamesAssignment_0_0() { return cCategoryNamesAssignment_0_0; }
+		//qNames+=ID
+		public Assignment getQNamesAssignment_0_0() { return cQNamesAssignment_0_0; }
 
 		//ID
-		public RuleCall getCategoryNamesIDTerminalRuleCall_0_0_0() { return cCategoryNamesIDTerminalRuleCall_0_0_0; }
+		public RuleCall getQNamesIDTerminalRuleCall_0_0_0() { return cQNamesIDTerminalRuleCall_0_0_0; }
 
 		//"."
 		public Keyword getFullStopKeyword_0_1() { return cFullStopKeyword_0_1; }
@@ -545,8 +545,8 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Assignment cDistinctAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final Keyword cDistinctDistinctKeyword_1_0 = (Keyword)cDistinctAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Assignment cCategoryNamesAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cCategoryNamesIDTerminalRuleCall_2_0_0 = (RuleCall)cCategoryNamesAssignment_2_0.eContents().get(0);
+		private final Assignment cQNamesAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cQNamesIDTerminalRuleCall_2_0_0 = (RuleCall)cQNamesAssignment_2_0.eContents().get(0);
 		private final Keyword cFullStopKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
 		private final Assignment cNameAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
@@ -555,10 +555,10 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Keyword cAnyAsteriskKeyword_3_1_0 = (Keyword)cAnyAssignment_3_1.eContents().get(0);
 		
 		//SubFeaturesMatch:
-		//	{SubFeaturesMatch} distinct="distinct"? (categoryNames+=ID ".")* (name=ID | any="*");
+		//	{SubFeaturesMatch} distinct="distinct"? (qNames+=ID ".")* (name=ID | any="*");
 		public ParserRule getRule() { return rule; }
 
-		//{SubFeaturesMatch} distinct="distinct"? (categoryNames+=ID ".")* (name=ID | any="*")
+		//{SubFeaturesMatch} distinct="distinct"? (qNames+=ID ".")* (name=ID | any="*")
 		public Group getGroup() { return cGroup; }
 
 		//{SubFeaturesMatch}
@@ -570,14 +570,14 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//"distinct"
 		public Keyword getDistinctDistinctKeyword_1_0() { return cDistinctDistinctKeyword_1_0; }
 
-		//(categoryNames+=ID ".")*
+		//(qNames+=ID ".")*
 		public Group getGroup_2() { return cGroup_2; }
 
-		//categoryNames+=ID
-		public Assignment getCategoryNamesAssignment_2_0() { return cCategoryNamesAssignment_2_0; }
+		//qNames+=ID
+		public Assignment getQNamesAssignment_2_0() { return cQNamesAssignment_2_0; }
 
 		//ID
-		public RuleCall getCategoryNamesIDTerminalRuleCall_2_0_0() { return cCategoryNamesIDTerminalRuleCall_2_0_0; }
+		public RuleCall getQNamesIDTerminalRuleCall_2_0_0() { return cQNamesIDTerminalRuleCall_2_0_0; }
 
 		//"."
 		public Keyword getFullStopKeyword_2_1() { return cFullStopKeyword_2_1; }
@@ -1546,7 +1546,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//SubFeaturesDecl:
-	//	(categoryNames+=ID ".")* name=ID type=SubFeaturesType;
+	//	(qNames+=ID ".")* name=ID type=SubFeaturesType;
 	public SubFeaturesDeclElements getSubFeaturesDeclAccess() {
 		return (pSubFeaturesDecl != null) ? pSubFeaturesDecl : (pSubFeaturesDecl = new SubFeaturesDeclElements());
 	}
@@ -1587,7 +1587,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//SubFeaturesMatch:
-	//	{SubFeaturesMatch} distinct="distinct"? (categoryNames+=ID ".")* (name=ID | any="*");
+	//	{SubFeaturesMatch} distinct="distinct"? (qNames+=ID ".")* (name=ID | any="*");
 	public SubFeaturesMatchElements getSubFeaturesMatchAccess() {
 		return (pSubFeaturesMatch != null) ? pSubFeaturesMatch : (pSubFeaturesMatch = new SubFeaturesMatchElements());
 	}

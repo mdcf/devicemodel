@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl#getDistinct <em>Distinct</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl#getCategoryNames <em>Category Names</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl#getQNames <em>QNames</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl#getAny <em>Any</em>}</li>
  * </ul>
@@ -57,14 +57,14 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
   protected String distinct = DISTINCT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getCategoryNames() <em>Category Names</em>}' attribute list.
+   * The cached value of the '{@link #getQNames() <em>QNames</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCategoryNames()
+   * @see #getQNames()
    * @generated
    * @ordered
    */
-  protected EList<String> categoryNames;
+  protected EList<String> qNames;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -155,13 +155,13 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getCategoryNames()
+  public EList<String> getQNames()
   {
-    if (categoryNames == null)
+    if (qNames == null)
     {
-      categoryNames = new EDataTypeEList<String>(String.class, this, DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__CATEGORY_NAMES);
+      qNames = new EDataTypeEList<String>(String.class, this, DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__QNAMES);
     }
-    return categoryNames;
+    return qNames;
   }
 
   /**
@@ -222,8 +222,8 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
     {
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__DISTINCT:
         return getDistinct();
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__CATEGORY_NAMES:
-        return getCategoryNames();
+      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__QNAMES:
+        return getQNames();
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__NAME:
         return getName();
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__ANY:
@@ -246,9 +246,9 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__DISTINCT:
         setDistinct((String)newValue);
         return;
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__CATEGORY_NAMES:
-        getCategoryNames().clear();
-        getCategoryNames().addAll((Collection<? extends String>)newValue);
+      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__QNAMES:
+        getQNames().clear();
+        getQNames().addAll((Collection<? extends String>)newValue);
         return;
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__NAME:
         setName((String)newValue);
@@ -273,8 +273,8 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__DISTINCT:
         setDistinct(DISTINCT_EDEFAULT);
         return;
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__CATEGORY_NAMES:
-        getCategoryNames().clear();
+      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__QNAMES:
+        getQNames().clear();
         return;
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__NAME:
         setName(NAME_EDEFAULT);
@@ -298,8 +298,8 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
     {
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__DISTINCT:
         return DISTINCT_EDEFAULT == null ? distinct != null : !DISTINCT_EDEFAULT.equals(distinct);
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__CATEGORY_NAMES:
-        return categoryNames != null && !categoryNames.isEmpty();
+      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__QNAMES:
+        return qNames != null && !qNames.isEmpty();
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__ANY:
@@ -321,8 +321,8 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (distinct: ");
     result.append(distinct);
-    result.append(", categoryNames: ");
-    result.append(categoryNames);
+    result.append(", qNames: ");
+    result.append(qNames);
     result.append(", name: ");
     result.append(name);
     result.append(", any: ");

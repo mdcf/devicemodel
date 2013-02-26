@@ -496,9 +496,9 @@ ruleSubFeaturesDecl returns [EObject current=null]
     @after { leaveRule(); }:
 (((
 (
-		lv_categoryNames_0_0=RULE_ID
+		lv_qNames_0_0=RULE_ID
 		{
-			newLeafNode(lv_categoryNames_0_0, grammarAccess.getSubFeaturesDeclAccess().getCategoryNamesIDTerminalRuleCall_0_0_0()); 
+			newLeafNode(lv_qNames_0_0, grammarAccess.getSubFeaturesDeclAccess().getQNamesIDTerminalRuleCall_0_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -506,8 +506,8 @@ ruleSubFeaturesDecl returns [EObject current=null]
 	        }
        		addWithLastConsumed(
        			$current, 
-       			"categoryNames",
-        		lv_categoryNames_0_0, 
+       			"qNames",
+        		lv_qNames_0_0, 
         		"ID");
 	    }
 
@@ -855,9 +855,9 @@ ruleSubFeaturesMatch returns [EObject current=null]
 )
 )?((
 (
-		lv_categoryNames_2_0=RULE_ID
+		lv_qNames_2_0=RULE_ID
 		{
-			newLeafNode(lv_categoryNames_2_0, grammarAccess.getSubFeaturesMatchAccess().getCategoryNamesIDTerminalRuleCall_2_0_0()); 
+			newLeafNode(lv_qNames_2_0, grammarAccess.getSubFeaturesMatchAccess().getQNamesIDTerminalRuleCall_2_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -865,8 +865,8 @@ ruleSubFeaturesMatch returns [EObject current=null]
 	        }
        		addWithLastConsumed(
        			$current, 
-       			"categoryNames",
-        		lv_categoryNames_2_0, 
+       			"qNames",
+        		lv_qNames_2_0, 
         		"ID");
 	    }
 
