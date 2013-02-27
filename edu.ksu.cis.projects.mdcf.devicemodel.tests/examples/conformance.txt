@@ -1,0 +1,21 @@
+Note: all attributes in sub-features are flattened first,
+thus, a set of features only consists of just attributes. 
+
+features F1 conforms to features F2 iff
+  forall attr in F2.
+    exists attr' in F1.
+        modifier(attr') conforms modifier(attr)
+      and
+        name(attr') == name(attr)
+      and
+        type(attr') conforms type(attr)
+
+Modifier conformance:
+* const conforms to const
+* val   conforms to val
+* var   conforms to val
+* var   conforms to var
+
+Type conformance:
+* forall t in Types.     t conforms to t
+* forall t, t' in Types. t include t' ==> t conforms to t'
