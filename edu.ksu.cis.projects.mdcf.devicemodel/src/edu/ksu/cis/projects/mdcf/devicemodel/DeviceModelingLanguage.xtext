@@ -6,17 +6,19 @@ generate deviceModelingLanguage "http://mdcf.projects.cis.ksu.edu/devicemodel/De
 
 Model:               decls+=Decl*;
 	
-Decl:                TypeDecl | ComponentDecl | AppRequirement;
+Decl:                TypeDecl | ComponentDecl;
 
 TypeDecl:            'type' name=ID;
                      
 ComponentDecl:       ( 'component' {Component}  
-                     | 'instance'  {Instance}  )
+                     | 'instance'  {Instance}  
+                     | 'app'       {App}       )
                      name=ID 
                      ( 'extends' supers+=[ComponentDecl|ID] 
                        ( 'with' supers+=[ComponentDecl|ID] )*
                      )? 
-                     ( '{' members+=MemberDecl* '}' )?;
+                     ( '{' members+=MemberDecl* '}' )?
+                     ( 'requires' '{' devices+=Device* '}' )?;
                      
 MemberDecl:          AttrDecl | SubMemberDecl | InvariantDecl;
                      
@@ -26,8 +28,8 @@ AttrDecl:            modifier=Modifier attributeName=ID
 
 Modifier:            'const' | 'val' | 'var' | 'def';
 
-SubMemberDecl:       {SubMemberDecl} name=ID 
-                     ( ':' supers+=[ComponentDecl|ID] ( 'with'  supers+=[ComponentDecl|ID] )* 
+SubMemberDecl:       name=ID 
+                     ( ':' supers+=[ComponentDecl|ID] ( 'with' supers+=[ComponentDecl|ID] )* 
                        ( '{' members+=MemberDecl*  '}' )?
                      | '{' members+=MemberDecl*  '}' );
 
@@ -38,20 +40,12 @@ MultiplicityInvariantDecl:
                        match=SubMemberMatch 
                        ( ':' type=[ComponentDecl|ID] )?;
 
-SubMemberMatch:      {SubMemberMatch} ( qNames+=ID '.' )* ( name=ID | any='*' );
+SubMemberMatch:      ( qNames+=ID '.' )* ( name=ID | any='*' );
 
 ConstraintNat:       {NumNatConstraint} num=NAT | {AnyNatConstraint} '*' ;                       
 
-AppOrComponent:      ComponentDecl | AppRequirement;
-
-AppRequirement:      'app' name=ID 'requires'
-                       devices+=Device*
-                     ( 'extends' supers+=[ComponentDecl|ID] ( 'with' supers+=[ComponentDecl|ID] )* 
-                       ( '{' members+=MemberDecl*  '}' )?
-                     | '{' members+=MemberDecl*  '}' );
-
-Device:              name=ID ':' type=[AppOrComponent|ID];
-
+Device:              name=ID ':' supers+=[ComponentDecl|ID] ( 'with' supers+=[ComponentDecl|ID] )* 
+                       ( '{' members+=MemberDecl*  '}' )?;
 
 Type:                BasicType
                        ( 

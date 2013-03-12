@@ -214,10 +214,10 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:18:7: ( 'extends' )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:18:9: 'extends'
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:18:7: ( 'app' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:18:9: 'app'
             {
-            match("extends"); 
+            match("app"); 
 
 
             }
@@ -235,10 +235,10 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:19:7: ( 'with' )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:19:9: 'with'
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:19:7: ( 'extends' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:19:9: 'extends'
             {
-            match("with"); 
+            match("extends"); 
 
 
             }
@@ -256,10 +256,11 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:20:7: ( '{' )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:20:9: '{'
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:20:7: ( 'with' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:20:9: 'with'
             {
-            match('{'); 
+            match("with"); 
+
 
             }
 
@@ -276,10 +277,10 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:21:7: ( '}' )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:21:9: '}'
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:21:7: ( '{' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:21:9: '{'
             {
-            match('}'); 
+            match('{'); 
 
             }
 
@@ -296,10 +297,10 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:22:7: ( ':' )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:22:9: ':'
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:22:7: ( '}' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:22:9: '}'
             {
-            match(':'); 
+            match('}'); 
 
             }
 
@@ -316,10 +317,11 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:23:7: ( '=' )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:23:9: '='
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:23:7: ( 'requires' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:23:9: 'requires'
             {
-            match('='); 
+            match("requires"); 
+
 
             }
 
@@ -336,11 +338,10 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:24:7: ( 'inv' )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:24:9: 'inv'
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:24:7: ( ':' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:24:9: ':'
             {
-            match("inv"); 
-
+            match(':'); 
 
             }
 
@@ -357,11 +358,10 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:25:7: ( '..' )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:25:9: '..'
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:25:7: ( '=' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:25:9: '='
             {
-            match(".."); 
-
+            match('='); 
 
             }
 
@@ -378,10 +378,11 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:26:7: ( '.' )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:26:9: '.'
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:26:7: ( 'inv' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:26:9: 'inv'
             {
-            match('.'); 
+            match("inv"); 
+
 
             }
 
@@ -398,10 +399,11 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:27:7: ( '*' )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:27:9: '*'
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:27:7: ( '..' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:27:9: '..'
             {
-            match('*'); 
+            match(".."); 
+
 
             }
 
@@ -418,11 +420,10 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:28:7: ( 'app' )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:28:9: 'app'
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:28:7: ( '.' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:28:9: '.'
             {
-            match("app"); 
-
+            match('.'); 
 
             }
 
@@ -439,11 +440,10 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:29:7: ( 'requires' )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:29:9: 'requires'
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:29:7: ( '*' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:29:9: '*'
             {
-            match("requires"); 
-
+            match('*'); 
 
             }
 
@@ -662,10 +662,10 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7803:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7803:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7543:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7543:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7803:11: ( '^' )?
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7543:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -674,7 +674,7 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7803:11: '^'
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7543:11: '^'
                     {
                     match('^'); 
 
@@ -692,7 +692,7 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7803:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7543:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -741,11 +741,11 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_LIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7805:10: ( '(' ( options {greedy=false; } : . )* ')' )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7805:12: '(' ( options {greedy=false; } : . )* ')'
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7545:10: ( '(' ( options {greedy=false; } : . )* ')' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7545:12: '(' ( options {greedy=false; } : . )* ')'
             {
             match('('); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7805:16: ( options {greedy=false; } : . )*
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7545:16: ( options {greedy=false; } : . )*
             loop3:
             do {
                 int alt3=2;
@@ -761,7 +761,7 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7805:44: .
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7545:44: .
             	    {
             	    matchAny(); 
 
@@ -790,10 +790,10 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_NAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7807:10: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7807:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7547:10: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7547:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7807:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7547:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -811,17 +811,17 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7807:13: '0'
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7547:13: '0'
                     {
                     match('0'); 
 
                     }
                     break;
                 case 2 :
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7807:17: '1' .. '9' ( '0' .. '9' )*
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7547:17: '1' .. '9' ( '0' .. '9' )*
                     {
                     matchRange('1','9'); 
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7807:26: ( '0' .. '9' )*
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7547:26: ( '0' .. '9' )*
                     loop4:
                     do {
                         int alt4=2;
@@ -834,7 +834,7 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7807:27: '0' .. '9'
+                    	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7547:27: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -868,12 +868,12 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7809:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7809:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7549:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7549:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7809:24: ( options {greedy=false; } : . )*
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7549:24: ( options {greedy=false; } : . )*
             loop6:
             do {
                 int alt6=2;
@@ -898,7 +898,7 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7809:52: .
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7549:52: .
             	    {
             	    matchAny(); 
 
@@ -928,12 +928,12 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7811:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7811:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7551:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7551:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7811:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7551:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop7:
             do {
                 int alt7=2;
@@ -946,7 +946,7 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7811:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7551:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -966,7 +966,7 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7811:40: ( ( '\\r' )? '\\n' )?
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7551:40: ( ( '\\r' )? '\\n' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -975,9 +975,9 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7811:41: ( '\\r' )? '\\n'
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7551:41: ( '\\r' )? '\\n'
                     {
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7811:41: ( '\\r' )?
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7551:41: ( '\\r' )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -986,7 +986,7 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7811:41: '\\r'
+                            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7551:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1018,10 +1018,10 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7813:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7813:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7553:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7553:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7813:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:7553:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt10=0;
             loop10:
             do {
@@ -1328,45 +1328,44 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
 
     protected DFA11 dfa11 = new DFA11(this);
     static final String DFA11_eotS =
-        "\1\uffff\7\32\4\uffff\1\47\1\uffff\2\32\4\uffff\1\52\3\uffff\2\32"+
-        "\5\uffff\7\32\2\uffff\2\32\1\uffff\2\32\2\uffff\2\32\1\77\1\100"+
-        "\1\101\2\32\1\104\2\32\1\107\5\32\3\uffff\1\115\1\32\1\uffff\1\32"+
-        "\1\120\1\uffff\1\32\1\122\1\123\1\124\1\32\1\uffff\2\32\1\uffff"+
-        "\1\32\3\uffff\6\32\1\137\2\32\1\142\1\uffff\1\143\1\144\3\uffff";
+        "\1\uffff\10\32\2\uffff\1\32\2\uffff\1\51\5\uffff\1\52\3\uffff\2"+
+        "\32\5\uffff\11\32\3\uffff\2\32\2\uffff\2\32\1\77\1\100\1\101\2\32"+
+        "\1\104\1\105\7\32\3\uffff\1\115\1\32\2\uffff\1\32\1\120\1\32\1\122"+
+        "\1\123\1\124\1\32\1\uffff\2\32\1\uffff\1\32\3\uffff\6\32\1\137\2"+
+        "\32\1\142\1\uffff\1\143\1\144\3\uffff";
     static final String DFA11_eofS =
         "\145\uffff";
     static final String DFA11_minS =
-        "\1\11\1\157\1\141\1\145\1\171\1\156\1\170\1\151\4\uffff\1\56\1\uffff"+
-        "\1\160\1\145\4\uffff\1\60\3\uffff\2\157\3\uffff\1\52\1\uffff\1\155"+
-        "\1\154\1\146\1\160\1\163\2\164\2\uffff\1\160\1\161\1\uffff\1\156"+
-        "\1\155\2\uffff\1\163\1\160\3\60\1\145\1\164\1\60\1\145\1\150\1\60"+
-        "\1\165\2\145\1\164\1\157\3\uffff\1\60\1\141\1\uffff\1\156\1\60\1"+
-        "\uffff\1\151\3\60\1\156\1\uffff\1\156\1\144\1\uffff\1\162\3\uffff"+
-        "\1\145\1\143\1\163\1\145\1\156\1\145\1\60\1\163\1\164\1\60\1\uffff"+
-        "\2\60\3\uffff";
+        "\1\11\1\157\1\141\1\145\1\171\1\156\1\160\1\170\1\151\2\uffff\1"+
+        "\145\2\uffff\1\56\5\uffff\1\60\3\uffff\2\157\3\uffff\1\52\1\uffff"+
+        "\1\155\1\154\1\146\1\160\1\163\1\160\2\164\1\161\3\uffff\1\156\1"+
+        "\155\2\uffff\1\163\1\160\3\60\1\145\1\164\2\60\1\145\1\150\1\165"+
+        "\2\145\1\164\1\157\3\uffff\1\60\1\141\2\uffff\1\156\1\60\1\151\3"+
+        "\60\1\156\1\uffff\1\156\1\144\1\uffff\1\162\3\uffff\1\145\1\143"+
+        "\1\163\1\145\1\156\1\145\1\60\1\163\1\164\1\60\1\uffff\2\60\3\uffff";
     static final String DFA11_maxS =
-        "\1\175\1\157\1\141\1\145\1\171\1\156\1\170\1\151\4\uffff\1\56\1"+
-        "\uffff\1\160\1\145\4\uffff\1\172\3\uffff\2\157\3\uffff\1\57\1\uffff"+
-        "\1\156\1\162\1\146\1\160\1\166\2\164\2\uffff\1\160\1\161\1\uffff"+
-        "\1\156\1\155\2\uffff\1\163\1\160\3\172\1\145\1\164\1\172\1\145\1"+
-        "\150\1\172\1\165\2\145\1\164\1\157\3\uffff\1\172\1\141\1\uffff\1"+
-        "\156\1\172\1\uffff\1\151\3\172\1\156\1\uffff\1\156\1\144\1\uffff"+
-        "\1\162\3\uffff\1\145\1\143\1\163\1\145\1\156\1\145\1\172\1\163\1"+
-        "\164\1\172\1\uffff\2\172\3\uffff";
+        "\1\175\1\157\1\141\1\145\1\171\1\156\1\160\1\170\1\151\2\uffff\1"+
+        "\145\2\uffff\1\56\5\uffff\1\172\3\uffff\2\157\3\uffff\1\57\1\uffff"+
+        "\1\156\1\162\1\146\1\160\1\166\1\160\2\164\1\161\3\uffff\1\156\1"+
+        "\155\2\uffff\1\163\1\160\3\172\1\145\1\164\2\172\1\145\1\150\1\165"+
+        "\2\145\1\164\1\157\3\uffff\1\172\1\141\2\uffff\1\156\1\172\1\151"+
+        "\3\172\1\156\1\uffff\1\156\1\144\1\uffff\1\162\3\uffff\1\145\1\143"+
+        "\1\163\1\145\1\156\1\145\1\172\1\163\1\164\1\172\1\uffff\2\172\3"+
+        "\uffff";
     static final String DFA11_acceptS =
-        "\10\uffff\1\12\1\13\1\14\1\15\1\uffff\1\21\2\uffff\1\24\1\25\1\26"+
+        "\11\uffff\1\13\1\14\1\uffff\1\16\1\17\1\uffff\1\23\1\24\1\25\1\26"+
         "\1\27\1\uffff\1\31\1\32\1\33\2\uffff\1\36\1\37\1\40\1\uffff\1\43"+
-        "\7\uffff\1\17\1\20\2\uffff\1\30\2\uffff\1\41\1\42\20\uffff\1\2\1"+
-        "\3\1\4\2\uffff\1\16\2\uffff\1\22\5\uffff\1\5\2\uffff\1\11\1\uffff"+
-        "\1\34\1\35\1\1\12\uffff\1\10\2\uffff\1\7\1\23\1\6";
+        "\11\uffff\1\21\1\22\1\30\2\uffff\1\41\1\42\20\uffff\1\2\1\3\1\4"+
+        "\2\uffff\1\20\1\10\7\uffff\1\5\2\uffff\1\12\1\uffff\1\34\1\35\1"+
+        "\1\12\uffff\1\11\2\uffff\1\7\1\15\1\6";
     static final String DFA11_specialS =
         "\145\uffff}>";
     static final String[] DFA11_transitionS = {
             "\2\36\2\uffff\1\36\22\uffff\1\36\1\23\6\uffff\1\33\1\uffff\1"+
-            "\15\1\uffff\1\27\1\uffff\1\14\1\35\12\34\1\12\1\uffff\1\25\1"+
-            "\13\1\26\1\22\1\uffff\32\32\1\20\1\uffff\1\21\1\32\1\24\1\uffff"+
-            "\1\16\1\32\1\1\1\3\1\6\3\32\1\5\4\32\1\30\3\32\1\17\1\31\1\4"+
-            "\1\32\1\2\1\7\3\32\1\10\1\uffff\1\11",
+            "\17\1\uffff\1\27\1\uffff\1\16\1\35\12\34\1\14\1\uffff\1\25\1"+
+            "\15\1\26\1\22\1\uffff\32\32\1\20\1\uffff\1\21\1\32\1\24\1\uffff"+
+            "\1\6\1\32\1\1\1\3\1\7\3\32\1\5\4\32\1\30\3\32\1\13\1\31\1\4"+
+            "\1\32\1\2\1\10\3\32\1\11\1\uffff\1\12",
             "\1\37",
             "\1\40",
             "\1\41",
@@ -1374,14 +1373,14 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
             "\1\43",
             "\1\44",
             "\1\45",
-            "",
-            "",
-            "",
-            "",
             "\1\46",
             "",
+            "",
+            "\1\47",
+            "",
+            "",
             "\1\50",
-            "\1\51",
+            "",
             "",
             "",
             "",
@@ -1404,10 +1403,10 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
             "\1\65\2\uffff\1\66",
             "\1\67",
             "\1\70",
-            "",
-            "",
             "\1\71",
             "\1\72",
+            "",
+            "",
             "",
             "\1\73",
             "\1\74",
@@ -1421,9 +1420,9 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
             "\1\102",
             "\1\103",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
-            "\1\105",
-            "\1\106",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\106",
+            "\1\107",
             "\1\110",
             "\1\111",
             "\1\112",
@@ -1435,9 +1434,9 @@ public class InternalDeviceModelingLanguageLexer extends Lexer {
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\116",
             "",
+            "",
             "\1\117",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
-            "",
             "\1\121",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",

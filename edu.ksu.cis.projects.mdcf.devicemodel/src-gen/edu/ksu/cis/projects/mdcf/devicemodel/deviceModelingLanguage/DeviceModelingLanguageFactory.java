@@ -122,24 +122,6 @@ public interface DeviceModelingLanguageFactory extends EFactory
   ConstraintNat createConstraintNat();
 
   /**
-   * Returns a new object of class '<em>App Or Component</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>App Or Component</em>'.
-   * @generated
-   */
-  AppOrComponent createAppOrComponent();
-
-  /**
-   * Returns a new object of class '<em>App Requirement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>App Requirement</em>'.
-   * @generated
-   */
-  AppRequirement createAppRequirement();
-
-  /**
    * Returns a new object of class '<em>Device</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -291,6 +273,15 @@ public interface DeviceModelingLanguageFactory extends EFactory
    * @generated
    */
   Instance createInstance();
+
+  /**
+   * Returns a new object of class '<em>App</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>App</em>'.
+   * @generated
+   */
+  App createApp();
 
   /**
    * Returns a new object of class '<em>Num Nat Constraint</em>'.

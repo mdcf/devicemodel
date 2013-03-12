@@ -75,8 +75,6 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL: return createMultiplicityInvariantDecl();
       case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH: return createSubMemberMatch();
       case DeviceModelingLanguagePackage.CONSTRAINT_NAT: return createConstraintNat();
-      case DeviceModelingLanguagePackage.APP_OR_COMPONENT: return createAppOrComponent();
-      case DeviceModelingLanguagePackage.APP_REQUIREMENT: return createAppRequirement();
       case DeviceModelingLanguagePackage.DEVICE: return createDevice();
       case DeviceModelingLanguagePackage.TYPE: return createType();
       case DeviceModelingLanguagePackage.BASIC_TYPE: return createBasicType();
@@ -94,6 +92,7 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.SIMPLE_SET_LITERAL: return createSimpleSetLiteral();
       case DeviceModelingLanguagePackage.COMPONENT: return createComponent();
       case DeviceModelingLanguagePackage.INSTANCE: return createInstance();
+      case DeviceModelingLanguagePackage.APP: return createApp();
       case DeviceModelingLanguagePackage.NUM_NAT_CONSTRAINT: return createNumNatConstraint();
       case DeviceModelingLanguagePackage.ANY_NAT_CONSTRAINT: return createAnyNatConstraint();
       case DeviceModelingLanguagePackage.LIST_TYPE: return createListType();
@@ -230,28 +229,6 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     ConstraintNatImpl constraintNat = new ConstraintNatImpl();
     return constraintNat;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AppOrComponent createAppOrComponent()
-  {
-    AppOrComponentImpl appOrComponent = new AppOrComponentImpl();
-    return appOrComponent;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AppRequirement createAppRequirement()
-  {
-    AppRequirementImpl appRequirement = new AppRequirementImpl();
-    return appRequirement;
   }
 
   /**
@@ -439,6 +416,17 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     InstanceImpl instance = new InstanceImpl();
     return instance;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public App createApp()
+  {
+    AppImpl app = new AppImpl();
+    return app;
   }
 
   /**

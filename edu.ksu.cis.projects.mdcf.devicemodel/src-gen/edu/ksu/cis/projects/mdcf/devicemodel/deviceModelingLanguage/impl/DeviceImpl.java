@@ -9,6 +9,7 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,27 +17,50 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Component Decl</b></em>'.
+ * An implementation of the model object '<em><b>Device</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getSupers <em>Supers</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getMembers <em>Members</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getDevices <em>Devices</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceImpl#getSupers <em>Supers</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceImpl#getMembers <em>Members</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
+public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getSupers() <em>Supers</em>}' reference list.
    * <!-- begin-user-doc -->
@@ -58,21 +82,11 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   protected EList<MemberDecl> members;
 
   /**
-   * The cached value of the '{@link #getDevices() <em>Devices</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDevices()
-   * @generated
-   * @ordered
-   */
-  protected EList<Device> devices;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ComponentDeclImpl()
+  protected DeviceImpl()
   {
     super();
   }
@@ -85,7 +99,30 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.COMPONENT_DECL;
+    return DeviceModelingLanguagePackage.Literals.DEVICE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.DEVICE__NAME, oldName, name));
   }
 
   /**
@@ -97,7 +134,7 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   {
     if (supers == null)
     {
-      supers = new EObjectResolvingEList<ComponentDecl>(ComponentDecl.class, this, DeviceModelingLanguagePackage.COMPONENT_DECL__SUPERS);
+      supers = new EObjectResolvingEList<ComponentDecl>(ComponentDecl.class, this, DeviceModelingLanguagePackage.DEVICE__SUPERS);
     }
     return supers;
   }
@@ -111,23 +148,9 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   {
     if (members == null)
     {
-      members = new EObjectContainmentEList<MemberDecl>(MemberDecl.class, this, DeviceModelingLanguagePackage.COMPONENT_DECL__MEMBERS);
+      members = new EObjectContainmentEList<MemberDecl>(MemberDecl.class, this, DeviceModelingLanguagePackage.DEVICE__MEMBERS);
     }
     return members;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Device> getDevices()
-  {
-    if (devices == null)
-    {
-      devices = new EObjectContainmentEList<Device>(Device.class, this, DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES);
-    }
-    return devices;
   }
 
   /**
@@ -140,10 +163,8 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__MEMBERS:
+      case DeviceModelingLanguagePackage.DEVICE__MEMBERS:
         return ((InternalEList<?>)getMembers()).basicRemove(otherEnd, msgs);
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES:
-        return ((InternalEList<?>)getDevices()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -158,12 +179,12 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__SUPERS:
+      case DeviceModelingLanguagePackage.DEVICE__NAME:
+        return getName();
+      case DeviceModelingLanguagePackage.DEVICE__SUPERS:
         return getSupers();
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__MEMBERS:
+      case DeviceModelingLanguagePackage.DEVICE__MEMBERS:
         return getMembers();
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES:
-        return getDevices();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -179,17 +200,16 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__SUPERS:
+      case DeviceModelingLanguagePackage.DEVICE__NAME:
+        setName((String)newValue);
+        return;
+      case DeviceModelingLanguagePackage.DEVICE__SUPERS:
         getSupers().clear();
         getSupers().addAll((Collection<? extends ComponentDecl>)newValue);
         return;
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__MEMBERS:
+      case DeviceModelingLanguagePackage.DEVICE__MEMBERS:
         getMembers().clear();
         getMembers().addAll((Collection<? extends MemberDecl>)newValue);
-        return;
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES:
-        getDevices().clear();
-        getDevices().addAll((Collection<? extends Device>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -205,14 +225,14 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__SUPERS:
+      case DeviceModelingLanguagePackage.DEVICE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case DeviceModelingLanguagePackage.DEVICE__SUPERS:
         getSupers().clear();
         return;
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__MEMBERS:
+      case DeviceModelingLanguagePackage.DEVICE__MEMBERS:
         getMembers().clear();
-        return;
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES:
-        getDevices().clear();
         return;
     }
     super.eUnset(featureID);
@@ -228,14 +248,31 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__SUPERS:
+      case DeviceModelingLanguagePackage.DEVICE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case DeviceModelingLanguagePackage.DEVICE__SUPERS:
         return supers != null && !supers.isEmpty();
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__MEMBERS:
+      case DeviceModelingLanguagePackage.DEVICE__MEMBERS:
         return members != null && !members.isEmpty();
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES:
-        return devices != null && !devices.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ComponentDeclImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
+  }
+
+} //DeviceImpl

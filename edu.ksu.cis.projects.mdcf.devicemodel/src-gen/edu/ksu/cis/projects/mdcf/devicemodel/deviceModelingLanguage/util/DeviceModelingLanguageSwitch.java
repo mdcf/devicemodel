@@ -99,7 +99,6 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         ComponentDecl componentDecl = (ComponentDecl)theEObject;
         T result = caseComponentDecl(componentDecl);
         if (result == null) result = caseDecl(componentDecl);
-        if (result == null) result = caseAppOrComponent(componentDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -154,22 +153,6 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
       {
         ConstraintNat constraintNat = (ConstraintNat)theEObject;
         T result = caseConstraintNat(constraintNat);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DeviceModelingLanguagePackage.APP_OR_COMPONENT:
-      {
-        AppOrComponent appOrComponent = (AppOrComponent)theEObject;
-        T result = caseAppOrComponent(appOrComponent);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DeviceModelingLanguagePackage.APP_REQUIREMENT:
-      {
-        AppRequirement appRequirement = (AppRequirement)theEObject;
-        T result = caseAppRequirement(appRequirement);
-        if (result == null) result = caseDecl(appRequirement);
-        if (result == null) result = caseAppOrComponent(appRequirement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -295,7 +278,6 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         T result = caseComponent(component);
         if (result == null) result = caseComponentDecl(component);
         if (result == null) result = caseDecl(component);
-        if (result == null) result = caseAppOrComponent(component);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -305,7 +287,15 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         T result = caseInstance(instance);
         if (result == null) result = caseComponentDecl(instance);
         if (result == null) result = caseDecl(instance);
-        if (result == null) result = caseAppOrComponent(instance);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.APP:
+      {
+        App app = (App)theEObject;
+        T result = caseApp(app);
+        if (result == null) result = caseComponentDecl(app);
+        if (result == null) result = caseDecl(app);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -593,38 +583,6 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>App Or Component</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>App Or Component</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAppOrComponent(AppOrComponent object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>App Requirement</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>App Requirement</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAppRequirement(AppRequirement object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Device</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -892,6 +850,22 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseInstance(Instance object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>App</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>App</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseApp(App object)
   {
     return null;
   }

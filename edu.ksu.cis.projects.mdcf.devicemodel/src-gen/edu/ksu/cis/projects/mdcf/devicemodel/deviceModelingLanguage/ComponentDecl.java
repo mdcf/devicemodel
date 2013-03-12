@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getSupers <em>Supers</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getMembers <em>Members</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getDevices <em>Devices</em>}</li>
  * </ul>
  * </p>
  *
@@ -21,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ComponentDecl extends Decl, AppOrComponent
+public interface ComponentDecl extends Decl
 {
   /**
    * Returns the value of the '<em><b>Supers</b></em>' reference list.
@@ -54,5 +55,21 @@ public interface ComponentDecl extends Decl, AppOrComponent
    * @generated
    */
   EList<MemberDecl> getMembers();
+
+  /**
+   * Returns the value of the '<em><b>Devices</b></em>' containment reference list.
+   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Devices</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Devices</em>' containment reference list.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getComponentDecl_Devices()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Device> getDevices();
 
 } // ComponentDecl

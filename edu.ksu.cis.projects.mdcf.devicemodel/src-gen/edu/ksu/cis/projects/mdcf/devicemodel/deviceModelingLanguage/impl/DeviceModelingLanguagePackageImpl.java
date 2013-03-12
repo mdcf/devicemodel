@@ -3,8 +3,7 @@
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AnyNatConstraint;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AppOrComponent;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AppRequirement;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.App;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicType;
@@ -144,20 +143,6 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass appOrComponentEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass appRequirementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass deviceEClass = null;
 
   /**
@@ -271,6 +256,13 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * @generated
    */
   private EClass instanceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass appEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -504,6 +496,16 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getComponentDecl_Devices()
+  {
+    return (EReference)componentDeclEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getMemberDecl()
   {
     return memberDeclEClass;
@@ -724,56 +726,6 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAppOrComponent()
-  {
-    return appOrComponentEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getAppRequirement()
-  {
-    return appRequirementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAppRequirement_Devices()
-  {
-    return (EReference)appRequirementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAppRequirement_Supers()
-  {
-    return (EReference)appRequirementEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAppRequirement_Members()
-  {
-    return (EReference)appRequirementEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getDevice()
   {
     return deviceEClass;
@@ -794,9 +746,19 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDevice_Type()
+  public EReference getDevice_Supers()
   {
     return (EReference)deviceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDevice_Members()
+  {
+    return (EReference)deviceEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1084,6 +1046,16 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getApp()
+  {
+    return appEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getNumNatConstraint()
   {
     return numNatConstraintEClass;
@@ -1340,6 +1312,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     componentDeclEClass = createEClass(COMPONENT_DECL);
     createEReference(componentDeclEClass, COMPONENT_DECL__SUPERS);
     createEReference(componentDeclEClass, COMPONENT_DECL__MEMBERS);
+    createEReference(componentDeclEClass, COMPONENT_DECL__DEVICES);
 
     memberDeclEClass = createEClass(MEMBER_DECL);
 
@@ -1370,16 +1343,10 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
 
     constraintNatEClass = createEClass(CONSTRAINT_NAT);
 
-    appOrComponentEClass = createEClass(APP_OR_COMPONENT);
-
-    appRequirementEClass = createEClass(APP_REQUIREMENT);
-    createEReference(appRequirementEClass, APP_REQUIREMENT__DEVICES);
-    createEReference(appRequirementEClass, APP_REQUIREMENT__SUPERS);
-    createEReference(appRequirementEClass, APP_REQUIREMENT__MEMBERS);
-
     deviceEClass = createEClass(DEVICE);
     createEAttribute(deviceEClass, DEVICE__NAME);
-    createEReference(deviceEClass, DEVICE__TYPE);
+    createEReference(deviceEClass, DEVICE__SUPERS);
+    createEReference(deviceEClass, DEVICE__MEMBERS);
 
     typeEClass = createEClass(TYPE);
 
@@ -1424,6 +1391,8 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     componentEClass = createEClass(COMPONENT);
 
     instanceEClass = createEClass(INSTANCE);
+
+    appEClass = createEClass(APP);
 
     numNatConstraintEClass = createEClass(NUM_NAT_CONSTRAINT);
     createEAttribute(numNatConstraintEClass, NUM_NAT_CONSTRAINT__NUM);
@@ -1491,13 +1460,10 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     // Add supertypes to classes
     typeDeclEClass.getESuperTypes().add(this.getDecl());
     componentDeclEClass.getESuperTypes().add(this.getDecl());
-    componentDeclEClass.getESuperTypes().add(this.getAppOrComponent());
     attrDeclEClass.getESuperTypes().add(this.getMemberDecl());
     subMemberDeclEClass.getESuperTypes().add(this.getMemberDecl());
     invariantDeclEClass.getESuperTypes().add(this.getMemberDecl());
     multiplicityInvariantDeclEClass.getESuperTypes().add(this.getInvariantDecl());
-    appRequirementEClass.getESuperTypes().add(this.getDecl());
-    appRequirementEClass.getESuperTypes().add(this.getAppOrComponent());
     basicTypeEClass.getESuperTypes().add(this.getType());
     basicLiteralEClass.getESuperTypes().add(this.getLiteral());
     tupleLiteralEClass.getESuperTypes().add(this.getLiteral());
@@ -1511,6 +1477,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     simpleSetLiteralEClass.getESuperTypes().add(this.getSimpleLiteral());
     componentEClass.getESuperTypes().add(this.getComponentDecl());
     instanceEClass.getESuperTypes().add(this.getComponentDecl());
+    appEClass.getESuperTypes().add(this.getComponentDecl());
     numNatConstraintEClass.getESuperTypes().add(this.getConstraintNat());
     anyNatConstraintEClass.getESuperTypes().add(this.getConstraintNat());
     listTypeEClass.getESuperTypes().add(this.getType());
@@ -1538,6 +1505,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEClass(componentDeclEClass, ComponentDecl.class, "ComponentDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComponentDecl_Supers(), this.getComponentDecl(), null, "supers", null, 0, -1, ComponentDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponentDecl_Members(), this.getMemberDecl(), null, "members", null, 0, -1, ComponentDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponentDecl_Devices(), this.getDevice(), null, "devices", null, 0, -1, ComponentDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(memberDeclEClass, MemberDecl.class, "MemberDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1568,16 +1536,10 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
 
     initEClass(constraintNatEClass, ConstraintNat.class, "ConstraintNat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(appOrComponentEClass, AppOrComponent.class, "AppOrComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(appRequirementEClass, AppRequirement.class, "AppRequirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAppRequirement_Devices(), this.getDevice(), null, "devices", null, 0, -1, AppRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAppRequirement_Supers(), this.getComponentDecl(), null, "supers", null, 0, -1, AppRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAppRequirement_Members(), this.getMemberDecl(), null, "members", null, 0, -1, AppRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDevice_Name(), ecorePackage.getEString(), "name", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDevice_Type(), this.getAppOrComponent(), null, "type", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDevice_Supers(), this.getComponentDecl(), null, "supers", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDevice_Members(), this.getMemberDecl(), null, "members", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1622,6 +1584,8 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(instanceEClass, Instance.class, "Instance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(appEClass, App.class, "App", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(numNatConstraintEClass, NumNatConstraint.class, "NumNatConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNumNatConstraint_Num(), ecorePackage.getEString(), "num", null, 0, 1, NumNatConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -130,16 +130,6 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createConstraintNatAdapter();
       }
       @Override
-      public Adapter caseAppOrComponent(AppOrComponent object)
-      {
-        return createAppOrComponentAdapter();
-      }
-      @Override
-      public Adapter caseAppRequirement(AppRequirement object)
-      {
-        return createAppRequirementAdapter();
-      }
-      @Override
       public Adapter caseDevice(Device object)
       {
         return createDeviceAdapter();
@@ -223,6 +213,11 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseInstance(Instance object)
       {
         return createInstanceAdapter();
+      }
+      @Override
+      public Adapter caseApp(App object)
+      {
+        return createAppAdapter();
       }
       @Override
       public Adapter caseNumNatConstraint(NumNatConstraint object)
@@ -467,36 +462,6 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createConstraintNatAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AppOrComponent <em>App Or Component</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AppOrComponent
-   * @generated
-   */
-  public Adapter createAppOrComponentAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AppRequirement <em>App Requirement</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AppRequirement
-   * @generated
-   */
-  public Adapter createAppRequirementAdapter()
   {
     return null;
   }
@@ -752,6 +717,21 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createInstanceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.App <em>App</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.App
+   * @generated
+   */
+  public Adapter createAppAdapter()
   {
     return null;
   }
