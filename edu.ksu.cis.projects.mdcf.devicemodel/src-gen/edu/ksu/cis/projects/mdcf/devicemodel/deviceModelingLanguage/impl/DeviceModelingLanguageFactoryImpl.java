@@ -67,16 +67,17 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.MODEL: return createModel();
       case DeviceModelingLanguagePackage.DECL: return createDecl();
       case DeviceModelingLanguagePackage.TYPE_DECL: return createTypeDecl();
-      case DeviceModelingLanguagePackage.FEATURES_DECL: return createFeaturesDecl();
-      case DeviceModelingLanguagePackage.FEATURES_BODY: return createFeaturesBody();
-      case DeviceModelingLanguagePackage.FEATURE_DECL: return createFeatureDecl();
-      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL: return createSubFeaturesDecl();
-      case DeviceModelingLanguagePackage.SUB_FEATURES_TYPE: return createSubFeaturesType();
+      case DeviceModelingLanguagePackage.COMPONENT_DECL: return createComponentDecl();
+      case DeviceModelingLanguagePackage.MEMBER_DECL: return createMemberDecl();
+      case DeviceModelingLanguagePackage.ATTR_DECL: return createAttrDecl();
+      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL: return createSubMemberDecl();
       case DeviceModelingLanguagePackage.INVARIANT_DECL: return createInvariantDecl();
       case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL: return createMultiplicityInvariantDecl();
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH: return createSubFeaturesMatch();
+      case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH: return createSubMemberMatch();
       case DeviceModelingLanguagePackage.CONSTRAINT_NAT: return createConstraintNat();
-      case DeviceModelingLanguagePackage.ATTR_DECL: return createAttrDecl();
+      case DeviceModelingLanguagePackage.APP_OR_COMPONENT: return createAppOrComponent();
+      case DeviceModelingLanguagePackage.APP_REQUIREMENT: return createAppRequirement();
+      case DeviceModelingLanguagePackage.DEVICE: return createDevice();
       case DeviceModelingLanguagePackage.TYPE: return createType();
       case DeviceModelingLanguagePackage.BASIC_TYPE: return createBasicType();
       case DeviceModelingLanguagePackage.LITERAL: return createLiteral();
@@ -91,13 +92,15 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.SIMPLE_OPTION_LITERAL: return createSimpleOptionLiteral();
       case DeviceModelingLanguagePackage.SIMPLE_LIST_LITERAL: return createSimpleListLiteral();
       case DeviceModelingLanguagePackage.SIMPLE_SET_LITERAL: return createSimpleSetLiteral();
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_REF: return createSubGroupTypeRef();
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON: return createSubGroupTypeAnon();
+      case DeviceModelingLanguagePackage.COMPONENT: return createComponent();
+      case DeviceModelingLanguagePackage.INSTANCE: return createInstance();
       case DeviceModelingLanguagePackage.NUM_NAT_CONSTRAINT: return createNumNatConstraint();
       case DeviceModelingLanguagePackage.ANY_NAT_CONSTRAINT: return createAnyNatConstraint();
       case DeviceModelingLanguagePackage.LIST_TYPE: return createListType();
       case DeviceModelingLanguagePackage.SET_TYPE: return createSetType();
       case DeviceModelingLanguagePackage.OPTION_TYPE: return createOptionType();
+      case DeviceModelingLanguagePackage.SOME_TYPE: return createSomeType();
+      case DeviceModelingLanguagePackage.NONE_TYPE: return createNoneType();
       case DeviceModelingLanguagePackage.TUPLE_TYPE: return createTupleType();
       case DeviceModelingLanguagePackage.NONE_LITERAL: return createNoneLiteral();
       case DeviceModelingLanguagePackage.SOME_LITERAL: return createSomeLiteral();
@@ -146,10 +149,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeaturesDecl createFeaturesDecl()
+  public ComponentDecl createComponentDecl()
   {
-    FeaturesDeclImpl featuresDecl = new FeaturesDeclImpl();
-    return featuresDecl;
+    ComponentDeclImpl componentDecl = new ComponentDeclImpl();
+    return componentDecl;
   }
 
   /**
@@ -157,10 +160,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeaturesBody createFeaturesBody()
+  public MemberDecl createMemberDecl()
   {
-    FeaturesBodyImpl featuresBody = new FeaturesBodyImpl();
-    return featuresBody;
+    MemberDeclImpl memberDecl = new MemberDeclImpl();
+    return memberDecl;
   }
 
   /**
@@ -168,10 +171,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public FeatureDecl createFeatureDecl()
+  public AttrDecl createAttrDecl()
   {
-    FeatureDeclImpl featureDecl = new FeatureDeclImpl();
-    return featureDecl;
+    AttrDeclImpl attrDecl = new AttrDeclImpl();
+    return attrDecl;
   }
 
   /**
@@ -179,21 +182,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public SubFeaturesDecl createSubFeaturesDecl()
+  public SubMemberDecl createSubMemberDecl()
   {
-    SubFeaturesDeclImpl subFeaturesDecl = new SubFeaturesDeclImpl();
-    return subFeaturesDecl;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SubFeaturesType createSubFeaturesType()
-  {
-    SubFeaturesTypeImpl subFeaturesType = new SubFeaturesTypeImpl();
-    return subFeaturesType;
+    SubMemberDeclImpl subMemberDecl = new SubMemberDeclImpl();
+    return subMemberDecl;
   }
 
   /**
@@ -223,10 +215,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public SubFeaturesMatch createSubFeaturesMatch()
+  public SubMemberMatch createSubMemberMatch()
   {
-    SubFeaturesMatchImpl subFeaturesMatch = new SubFeaturesMatchImpl();
-    return subFeaturesMatch;
+    SubMemberMatchImpl subMemberMatch = new SubMemberMatchImpl();
+    return subMemberMatch;
   }
 
   /**
@@ -245,10 +237,32 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public AttrDecl createAttrDecl()
+  public AppOrComponent createAppOrComponent()
   {
-    AttrDeclImpl attrDecl = new AttrDeclImpl();
-    return attrDecl;
+    AppOrComponentImpl appOrComponent = new AppOrComponentImpl();
+    return appOrComponent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AppRequirement createAppRequirement()
+  {
+    AppRequirementImpl appRequirement = new AppRequirementImpl();
+    return appRequirement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Device createDevice()
+  {
+    DeviceImpl device = new DeviceImpl();
+    return device;
   }
 
   /**
@@ -410,10 +424,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public SubGroupTypeRef createSubGroupTypeRef()
+  public Component createComponent()
   {
-    SubGroupTypeRefImpl subGroupTypeRef = new SubGroupTypeRefImpl();
-    return subGroupTypeRef;
+    ComponentImpl component = new ComponentImpl();
+    return component;
   }
 
   /**
@@ -421,10 +435,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public SubGroupTypeAnon createSubGroupTypeAnon()
+  public Instance createInstance()
   {
-    SubGroupTypeAnonImpl subGroupTypeAnon = new SubGroupTypeAnonImpl();
-    return subGroupTypeAnon;
+    InstanceImpl instance = new InstanceImpl();
+    return instance;
   }
 
   /**
@@ -480,6 +494,28 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     OptionTypeImpl optionType = new OptionTypeImpl();
     return optionType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SomeType createSomeType()
+  {
+    SomeTypeImpl someType = new SomeTypeImpl();
+    return someType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NoneType createNoneType()
+  {
+    NoneTypeImpl noneType = new NoneTypeImpl();
+    return noneType;
   }
 
   /**

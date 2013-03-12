@@ -50,49 +50,40 @@ public interface DeviceModelingLanguageFactory extends EFactory
   TypeDecl createTypeDecl();
 
   /**
-   * Returns a new object of class '<em>Features Decl</em>'.
+   * Returns a new object of class '<em>Component Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Features Decl</em>'.
+   * @return a new object of class '<em>Component Decl</em>'.
    * @generated
    */
-  FeaturesDecl createFeaturesDecl();
+  ComponentDecl createComponentDecl();
 
   /**
-   * Returns a new object of class '<em>Features Body</em>'.
+   * Returns a new object of class '<em>Member Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Features Body</em>'.
+   * @return a new object of class '<em>Member Decl</em>'.
    * @generated
    */
-  FeaturesBody createFeaturesBody();
+  MemberDecl createMemberDecl();
 
   /**
-   * Returns a new object of class '<em>Feature Decl</em>'.
+   * Returns a new object of class '<em>Attr Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Feature Decl</em>'.
+   * @return a new object of class '<em>Attr Decl</em>'.
    * @generated
    */
-  FeatureDecl createFeatureDecl();
+  AttrDecl createAttrDecl();
 
   /**
-   * Returns a new object of class '<em>Sub Features Decl</em>'.
+   * Returns a new object of class '<em>Sub Member Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Features Decl</em>'.
+   * @return a new object of class '<em>Sub Member Decl</em>'.
    * @generated
    */
-  SubFeaturesDecl createSubFeaturesDecl();
-
-  /**
-   * Returns a new object of class '<em>Sub Features Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Features Type</em>'.
-   * @generated
-   */
-  SubFeaturesType createSubFeaturesType();
+  SubMemberDecl createSubMemberDecl();
 
   /**
    * Returns a new object of class '<em>Invariant Decl</em>'.
@@ -113,13 +104,13 @@ public interface DeviceModelingLanguageFactory extends EFactory
   MultiplicityInvariantDecl createMultiplicityInvariantDecl();
 
   /**
-   * Returns a new object of class '<em>Sub Features Match</em>'.
+   * Returns a new object of class '<em>Sub Member Match</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Features Match</em>'.
+   * @return a new object of class '<em>Sub Member Match</em>'.
    * @generated
    */
-  SubFeaturesMatch createSubFeaturesMatch();
+  SubMemberMatch createSubMemberMatch();
 
   /**
    * Returns a new object of class '<em>Constraint Nat</em>'.
@@ -131,13 +122,31 @@ public interface DeviceModelingLanguageFactory extends EFactory
   ConstraintNat createConstraintNat();
 
   /**
-   * Returns a new object of class '<em>Attr Decl</em>'.
+   * Returns a new object of class '<em>App Or Component</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Attr Decl</em>'.
+   * @return a new object of class '<em>App Or Component</em>'.
    * @generated
    */
-  AttrDecl createAttrDecl();
+  AppOrComponent createAppOrComponent();
+
+  /**
+   * Returns a new object of class '<em>App Requirement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>App Requirement</em>'.
+   * @generated
+   */
+  AppRequirement createAppRequirement();
+
+  /**
+   * Returns a new object of class '<em>Device</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Device</em>'.
+   * @generated
+   */
+  Device createDevice();
 
   /**
    * Returns a new object of class '<em>Type</em>'.
@@ -266,22 +275,22 @@ public interface DeviceModelingLanguageFactory extends EFactory
   SimpleSetLiteral createSimpleSetLiteral();
 
   /**
-   * Returns a new object of class '<em>Sub Group Type Ref</em>'.
+   * Returns a new object of class '<em>Component</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Group Type Ref</em>'.
+   * @return a new object of class '<em>Component</em>'.
    * @generated
    */
-  SubGroupTypeRef createSubGroupTypeRef();
+  Component createComponent();
 
   /**
-   * Returns a new object of class '<em>Sub Group Type Anon</em>'.
+   * Returns a new object of class '<em>Instance</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Group Type Anon</em>'.
+   * @return a new object of class '<em>Instance</em>'.
    * @generated
    */
-  SubGroupTypeAnon createSubGroupTypeAnon();
+  Instance createInstance();
 
   /**
    * Returns a new object of class '<em>Num Nat Constraint</em>'.
@@ -327,6 +336,24 @@ public interface DeviceModelingLanguageFactory extends EFactory
    * @generated
    */
   OptionType createOptionType();
+
+  /**
+   * Returns a new object of class '<em>Some Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Some Type</em>'.
+   * @generated
+   */
+  SomeType createSomeType();
+
+  /**
+   * Returns a new object of class '<em>None Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>None Type</em>'.
+   * @generated
+   */
+  NoneType createNoneType();
 
   /**
    * Returns a new object of class '<em>Tuple Type</em>'.

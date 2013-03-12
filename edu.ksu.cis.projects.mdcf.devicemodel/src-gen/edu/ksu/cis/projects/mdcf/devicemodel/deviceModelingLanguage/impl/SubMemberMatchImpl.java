@@ -3,7 +3,7 @@
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberMatch;
 
 import java.util.Collection;
 
@@ -20,42 +20,21 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Sub Features Match</b></em>'.
+ * An implementation of the model object '<em><b>Sub Member Match</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl#getDistinct <em>Distinct</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl#getQNames <em>QNames</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubFeaturesMatchImpl#getAny <em>Any</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubMemberMatchImpl#getQNames <em>QNames</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubMemberMatchImpl#getName <em>Name</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubMemberMatchImpl#getAny <em>Any</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implements SubFeaturesMatch
+public class SubMemberMatchImpl extends MinimalEObjectImpl.Container implements SubMemberMatch
 {
-  /**
-   * The default value of the '{@link #getDistinct() <em>Distinct</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDistinct()
-   * @generated
-   * @ordered
-   */
-  protected static final String DISTINCT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDistinct() <em>Distinct</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDistinct()
-   * @generated
-   * @ordered
-   */
-  protected String distinct = DISTINCT_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getQNames() <em>QNames</em>}' attribute list.
    * <!-- begin-user-doc -->
@@ -111,7 +90,7 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SubFeaturesMatchImpl()
+  protected SubMemberMatchImpl()
   {
     super();
   }
@@ -124,30 +103,7 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.SUB_FEATURES_MATCH;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getDistinct()
-  {
-    return distinct;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDistinct(String newDistinct)
-  {
-    String oldDistinct = distinct;
-    distinct = newDistinct;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__DISTINCT, oldDistinct, distinct));
+    return DeviceModelingLanguagePackage.Literals.SUB_MEMBER_MATCH;
   }
 
   /**
@@ -159,7 +115,7 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
   {
     if (qNames == null)
     {
-      qNames = new EDataTypeEList<String>(String.class, this, DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__QNAMES);
+      qNames = new EDataTypeEList<String>(String.class, this, DeviceModelingLanguagePackage.SUB_MEMBER_MATCH__QNAMES);
     }
     return qNames;
   }
@@ -184,7 +140,7 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_MEMBER_MATCH__NAME, oldName, name));
   }
 
   /**
@@ -207,7 +163,7 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
     String oldAny = any;
     any = newAny;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__ANY, oldAny, any));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_MEMBER_MATCH__ANY, oldAny, any));
   }
 
   /**
@@ -220,13 +176,11 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__DISTINCT:
-        return getDistinct();
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__QNAMES:
+      case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH__QNAMES:
         return getQNames();
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__NAME:
+      case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH__NAME:
         return getName();
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__ANY:
+      case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH__ANY:
         return getAny();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -243,17 +197,14 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__DISTINCT:
-        setDistinct((String)newValue);
-        return;
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__QNAMES:
+      case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH__QNAMES:
         getQNames().clear();
         getQNames().addAll((Collection<? extends String>)newValue);
         return;
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__NAME:
+      case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH__NAME:
         setName((String)newValue);
         return;
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__ANY:
+      case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH__ANY:
         setAny((String)newValue);
         return;
     }
@@ -270,16 +221,13 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__DISTINCT:
-        setDistinct(DISTINCT_EDEFAULT);
-        return;
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__QNAMES:
+      case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH__QNAMES:
         getQNames().clear();
         return;
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__NAME:
+      case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__ANY:
+      case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH__ANY:
         setAny(ANY_EDEFAULT);
         return;
     }
@@ -296,13 +244,11 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__DISTINCT:
-        return DISTINCT_EDEFAULT == null ? distinct != null : !DISTINCT_EDEFAULT.equals(distinct);
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__QNAMES:
+      case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH__QNAMES:
         return qNames != null && !qNames.isEmpty();
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__NAME:
+      case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH__ANY:
+      case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH__ANY:
         return ANY_EDEFAULT == null ? any != null : !ANY_EDEFAULT.equals(any);
     }
     return super.eIsSet(featureID);
@@ -319,9 +265,7 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (distinct: ");
-    result.append(distinct);
-    result.append(", qNames: ");
+    result.append(" (qNames: ");
     result.append(qNames);
     result.append(", name: ");
     result.append(name);
@@ -331,4 +275,4 @@ public class SubFeaturesMatchImpl extends MinimalEObjectImpl.Container implement
     return result.toString();
   }
 
-} //SubFeaturesMatchImpl
+} //SubMemberMatchImpl

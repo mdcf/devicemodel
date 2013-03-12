@@ -90,29 +90,24 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createTypeDeclAdapter();
       }
       @Override
-      public Adapter caseFeaturesDecl(FeaturesDecl object)
+      public Adapter caseComponentDecl(ComponentDecl object)
       {
-        return createFeaturesDeclAdapter();
+        return createComponentDeclAdapter();
       }
       @Override
-      public Adapter caseFeaturesBody(FeaturesBody object)
+      public Adapter caseMemberDecl(MemberDecl object)
       {
-        return createFeaturesBodyAdapter();
+        return createMemberDeclAdapter();
       }
       @Override
-      public Adapter caseFeatureDecl(FeatureDecl object)
+      public Adapter caseAttrDecl(AttrDecl object)
       {
-        return createFeatureDeclAdapter();
+        return createAttrDeclAdapter();
       }
       @Override
-      public Adapter caseSubFeaturesDecl(SubFeaturesDecl object)
+      public Adapter caseSubMemberDecl(SubMemberDecl object)
       {
-        return createSubFeaturesDeclAdapter();
-      }
-      @Override
-      public Adapter caseSubFeaturesType(SubFeaturesType object)
-      {
-        return createSubFeaturesTypeAdapter();
+        return createSubMemberDeclAdapter();
       }
       @Override
       public Adapter caseInvariantDecl(InvariantDecl object)
@@ -125,9 +120,9 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createMultiplicityInvariantDeclAdapter();
       }
       @Override
-      public Adapter caseSubFeaturesMatch(SubFeaturesMatch object)
+      public Adapter caseSubMemberMatch(SubMemberMatch object)
       {
-        return createSubFeaturesMatchAdapter();
+        return createSubMemberMatchAdapter();
       }
       @Override
       public Adapter caseConstraintNat(ConstraintNat object)
@@ -135,9 +130,19 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createConstraintNatAdapter();
       }
       @Override
-      public Adapter caseAttrDecl(AttrDecl object)
+      public Adapter caseAppOrComponent(AppOrComponent object)
       {
-        return createAttrDeclAdapter();
+        return createAppOrComponentAdapter();
+      }
+      @Override
+      public Adapter caseAppRequirement(AppRequirement object)
+      {
+        return createAppRequirementAdapter();
+      }
+      @Override
+      public Adapter caseDevice(Device object)
+      {
+        return createDeviceAdapter();
       }
       @Override
       public Adapter caseType(Type object)
@@ -210,14 +215,14 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createSimpleSetLiteralAdapter();
       }
       @Override
-      public Adapter caseSubGroupTypeRef(SubGroupTypeRef object)
+      public Adapter caseComponent(Component object)
       {
-        return createSubGroupTypeRefAdapter();
+        return createComponentAdapter();
       }
       @Override
-      public Adapter caseSubGroupTypeAnon(SubGroupTypeAnon object)
+      public Adapter caseInstance(Instance object)
       {
-        return createSubGroupTypeAnonAdapter();
+        return createInstanceAdapter();
       }
       @Override
       public Adapter caseNumNatConstraint(NumNatConstraint object)
@@ -243,6 +248,16 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseOptionType(OptionType object)
       {
         return createOptionTypeAdapter();
+      }
+      @Override
+      public Adapter caseSomeType(SomeType object)
+      {
+        return createSomeTypeAdapter();
+      }
+      @Override
+      public Adapter caseNoneType(NoneType object)
+      {
+        return createNoneTypeAdapter();
       }
       @Override
       public Adapter caseTupleType(TupleType object)
@@ -337,76 +352,61 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesDecl <em>Features Decl</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl <em>Component Decl</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesDecl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl
    * @generated
    */
-  public Adapter createFeaturesDeclAdapter()
+  public Adapter createComponentDeclAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesBody <em>Features Body</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl <em>Member Decl</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesBody
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl
    * @generated
    */
-  public Adapter createFeaturesBodyAdapter()
+  public Adapter createMemberDeclAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl <em>Feature Decl</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl <em>Attr Decl</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl
    * @generated
    */
-  public Adapter createFeatureDeclAdapter()
+  public Adapter createAttrDeclAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl <em>Sub Features Decl</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberDecl <em>Sub Member Decl</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberDecl
    * @generated
    */
-  public Adapter createSubFeaturesDeclAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesType <em>Sub Features Type</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesType
-   * @generated
-   */
-  public Adapter createSubFeaturesTypeAdapter()
+  public Adapter createSubMemberDeclAdapter()
   {
     return null;
   }
@@ -442,16 +442,16 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch <em>Sub Features Match</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberMatch <em>Sub Member Match</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberMatch
    * @generated
    */
-  public Adapter createSubFeaturesMatchAdapter()
+  public Adapter createSubMemberMatchAdapter()
   {
     return null;
   }
@@ -472,16 +472,46 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl <em>Attr Decl</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AppOrComponent <em>App Or Component</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AppOrComponent
    * @generated
    */
-  public Adapter createAttrDeclAdapter()
+  public Adapter createAppOrComponentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AppRequirement <em>App Requirement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AppRequirement
+   * @generated
+   */
+  public Adapter createAppRequirementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device <em>Device</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device
+   * @generated
+   */
+  public Adapter createDeviceAdapter()
   {
     return null;
   }
@@ -697,31 +727,31 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeRef <em>Sub Group Type Ref</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component <em>Component</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeRef
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component
    * @generated
    */
-  public Adapter createSubGroupTypeRefAdapter()
+  public Adapter createComponentAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeAnon <em>Sub Group Type Anon</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Instance <em>Instance</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeAnon
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Instance
    * @generated
    */
-  public Adapter createSubGroupTypeAnonAdapter()
+  public Adapter createInstanceAdapter()
   {
     return null;
   }
@@ -797,6 +827,36 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOptionTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SomeType <em>Some Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SomeType
+   * @generated
+   */
+  public Adapter createSomeTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneType <em>None Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneType
+   * @generated
+   */
+  public Adapter createNoneTypeAdapter()
   {
     return null;
   }

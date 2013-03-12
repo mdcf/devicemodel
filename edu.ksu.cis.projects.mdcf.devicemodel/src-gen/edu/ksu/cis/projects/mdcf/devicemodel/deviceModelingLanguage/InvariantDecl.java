@@ -13,6 +13,6 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * @model
  * @generated
  */
-public interface InvariantDecl extends FeatureDecl
+public interface InvariantDecl extends MemberDecl
 {
 } // InvariantDecl

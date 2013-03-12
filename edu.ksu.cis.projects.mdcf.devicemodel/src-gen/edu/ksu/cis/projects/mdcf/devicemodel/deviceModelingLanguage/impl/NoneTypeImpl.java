@@ -1,0 +1,298 @@
+/**
+ */
+package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
+
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Type;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>None Type</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.NoneTypeImpl#getBaseType <em>Base Type</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.NoneTypeImpl#getBase <em>Base</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class NoneTypeImpl extends TypeImpl implements NoneType
+{
+  /**
+   * The cached value of the '{@link #getBaseType() <em>Base Type</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBaseType()
+   * @generated
+   * @ordered
+   */
+  protected TypeDecl baseType;
+
+  /**
+   * The cached value of the '{@link #getBase() <em>Base</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBase()
+   * @generated
+   * @ordered
+   */
+  protected Type base;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected NoneTypeImpl()
+  {
+    super();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EClass eStaticClass()
+  {
+    return DeviceModelingLanguagePackage.Literals.NONE_TYPE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeDecl getBaseType()
+  {
+    if (baseType != null && baseType.eIsProxy())
+    {
+      InternalEObject oldBaseType = (InternalEObject)baseType;
+      baseType = (TypeDecl)eResolveProxy(oldBaseType);
+      if (baseType != oldBaseType)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeviceModelingLanguagePackage.NONE_TYPE__BASE_TYPE, oldBaseType, baseType));
+      }
+    }
+    return baseType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeDecl basicGetBaseType()
+  {
+    return baseType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBaseType(TypeDecl newBaseType)
+  {
+    TypeDecl oldBaseType = baseType;
+    baseType = newBaseType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.NONE_TYPE__BASE_TYPE, oldBaseType, baseType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Type getBase()
+  {
+    return base;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBase(Type newBase, NotificationChain msgs)
+  {
+    Type oldBase = base;
+    base = newBase;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.NONE_TYPE__BASE, oldBase, newBase);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBase(Type newBase)
+  {
+    if (newBase != base)
+    {
+      NotificationChain msgs = null;
+      if (base != null)
+        msgs = ((InternalEObject)base).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.NONE_TYPE__BASE, null, msgs);
+      if (newBase != null)
+        msgs = ((InternalEObject)newBase).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.NONE_TYPE__BASE, null, msgs);
+      msgs = basicSetBase(newBase, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.NONE_TYPE__BASE, newBase, newBase));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case DeviceModelingLanguagePackage.NONE_TYPE__BASE:
+        return basicSetBase(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case DeviceModelingLanguagePackage.NONE_TYPE__BASE_TYPE:
+        if (resolve) return getBaseType();
+        return basicGetBaseType();
+      case DeviceModelingLanguagePackage.NONE_TYPE__BASE:
+        return getBase();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case DeviceModelingLanguagePackage.NONE_TYPE__BASE_TYPE:
+        setBaseType((TypeDecl)newValue);
+        return;
+      case DeviceModelingLanguagePackage.NONE_TYPE__BASE:
+        setBase((Type)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case DeviceModelingLanguagePackage.NONE_TYPE__BASE_TYPE:
+        setBaseType((TypeDecl)null);
+        return;
+      case DeviceModelingLanguagePackage.NONE_TYPE__BASE:
+        setBase((Type)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case DeviceModelingLanguagePackage.NONE_TYPE__BASE_TYPE:
+        return baseType != null;
+      case DeviceModelingLanguagePackage.NONE_TYPE__BASE:
+        return base != null;
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == BasicType.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case DeviceModelingLanguagePackage.NONE_TYPE__BASE_TYPE: return DeviceModelingLanguagePackage.BASIC_TYPE__BASE_TYPE;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == BasicType.class)
+    {
+      switch (baseFeatureID)
+      {
+        case DeviceModelingLanguagePackage.BASIC_TYPE__BASE_TYPE: return DeviceModelingLanguagePackage.NONE_TYPE__BASE_TYPE;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+  }
+
+} //NoneTypeImpl

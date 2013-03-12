@@ -94,40 +94,35 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.FEATURES_DECL:
+      case DeviceModelingLanguagePackage.COMPONENT_DECL:
       {
-        FeaturesDecl featuresDecl = (FeaturesDecl)theEObject;
-        T result = caseFeaturesDecl(featuresDecl);
-        if (result == null) result = caseDecl(featuresDecl);
+        ComponentDecl componentDecl = (ComponentDecl)theEObject;
+        T result = caseComponentDecl(componentDecl);
+        if (result == null) result = caseDecl(componentDecl);
+        if (result == null) result = caseAppOrComponent(componentDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.FEATURES_BODY:
+      case DeviceModelingLanguagePackage.MEMBER_DECL:
       {
-        FeaturesBody featuresBody = (FeaturesBody)theEObject;
-        T result = caseFeaturesBody(featuresBody);
+        MemberDecl memberDecl = (MemberDecl)theEObject;
+        T result = caseMemberDecl(memberDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.FEATURE_DECL:
+      case DeviceModelingLanguagePackage.ATTR_DECL:
       {
-        FeatureDecl featureDecl = (FeatureDecl)theEObject;
-        T result = caseFeatureDecl(featureDecl);
+        AttrDecl attrDecl = (AttrDecl)theEObject;
+        T result = caseAttrDecl(attrDecl);
+        if (result == null) result = caseMemberDecl(attrDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.SUB_FEATURES_DECL:
+      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL:
       {
-        SubFeaturesDecl subFeaturesDecl = (SubFeaturesDecl)theEObject;
-        T result = caseSubFeaturesDecl(subFeaturesDecl);
-        if (result == null) result = caseFeatureDecl(subFeaturesDecl);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DeviceModelingLanguagePackage.SUB_FEATURES_TYPE:
-      {
-        SubFeaturesType subFeaturesType = (SubFeaturesType)theEObject;
-        T result = caseSubFeaturesType(subFeaturesType);
+        SubMemberDecl subMemberDecl = (SubMemberDecl)theEObject;
+        T result = caseSubMemberDecl(subMemberDecl);
+        if (result == null) result = caseMemberDecl(subMemberDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -135,7 +130,7 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
       {
         InvariantDecl invariantDecl = (InvariantDecl)theEObject;
         T result = caseInvariantDecl(invariantDecl);
-        if (result == null) result = caseFeatureDecl(invariantDecl);
+        if (result == null) result = caseMemberDecl(invariantDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -144,14 +139,14 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         MultiplicityInvariantDecl multiplicityInvariantDecl = (MultiplicityInvariantDecl)theEObject;
         T result = caseMultiplicityInvariantDecl(multiplicityInvariantDecl);
         if (result == null) result = caseInvariantDecl(multiplicityInvariantDecl);
-        if (result == null) result = caseFeatureDecl(multiplicityInvariantDecl);
+        if (result == null) result = caseMemberDecl(multiplicityInvariantDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH:
+      case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH:
       {
-        SubFeaturesMatch subFeaturesMatch = (SubFeaturesMatch)theEObject;
-        T result = caseSubFeaturesMatch(subFeaturesMatch);
+        SubMemberMatch subMemberMatch = (SubMemberMatch)theEObject;
+        T result = caseSubMemberMatch(subMemberMatch);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -162,11 +157,26 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.ATTR_DECL:
+      case DeviceModelingLanguagePackage.APP_OR_COMPONENT:
       {
-        AttrDecl attrDecl = (AttrDecl)theEObject;
-        T result = caseAttrDecl(attrDecl);
-        if (result == null) result = caseFeatureDecl(attrDecl);
+        AppOrComponent appOrComponent = (AppOrComponent)theEObject;
+        T result = caseAppOrComponent(appOrComponent);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.APP_REQUIREMENT:
+      {
+        AppRequirement appRequirement = (AppRequirement)theEObject;
+        T result = caseAppRequirement(appRequirement);
+        if (result == null) result = caseDecl(appRequirement);
+        if (result == null) result = caseAppOrComponent(appRequirement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.DEVICE:
+      {
+        Device device = (Device)theEObject;
+        T result = caseDevice(device);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -279,19 +289,23 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_REF:
+      case DeviceModelingLanguagePackage.COMPONENT:
       {
-        SubGroupTypeRef subGroupTypeRef = (SubGroupTypeRef)theEObject;
-        T result = caseSubGroupTypeRef(subGroupTypeRef);
-        if (result == null) result = caseSubFeaturesType(subGroupTypeRef);
+        Component component = (Component)theEObject;
+        T result = caseComponent(component);
+        if (result == null) result = caseComponentDecl(component);
+        if (result == null) result = caseDecl(component);
+        if (result == null) result = caseAppOrComponent(component);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON:
+      case DeviceModelingLanguagePackage.INSTANCE:
       {
-        SubGroupTypeAnon subGroupTypeAnon = (SubGroupTypeAnon)theEObject;
-        T result = caseSubGroupTypeAnon(subGroupTypeAnon);
-        if (result == null) result = caseSubFeaturesType(subGroupTypeAnon);
+        Instance instance = (Instance)theEObject;
+        T result = caseInstance(instance);
+        if (result == null) result = caseComponentDecl(instance);
+        if (result == null) result = caseDecl(instance);
+        if (result == null) result = caseAppOrComponent(instance);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -333,6 +347,23 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         T result = caseOptionType(optionType);
         if (result == null) result = caseBasicType(optionType);
         if (result == null) result = caseType(optionType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.SOME_TYPE:
+      {
+        SomeType someType = (SomeType)theEObject;
+        T result = caseSomeType(someType);
+        if (result == null) result = caseType(someType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.NONE_TYPE:
+      {
+        NoneType noneType = (NoneType)theEObject;
+        T result = caseNoneType(noneType);
+        if (result == null) result = caseBasicType(noneType);
+        if (result == null) result = caseType(noneType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -434,81 +465,65 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Features Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Component Decl</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Features Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Component Decl</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFeaturesDecl(FeaturesDecl object)
+  public T caseComponentDecl(ComponentDecl object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Features Body</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Member Decl</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Features Body</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Member Decl</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFeaturesBody(FeaturesBody object)
+  public T caseMemberDecl(MemberDecl object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Feature Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Attr Decl</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Feature Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Attr Decl</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFeatureDecl(FeatureDecl object)
+  public T caseAttrDecl(AttrDecl object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Features Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Sub Member Decl</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Features Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Sub Member Decl</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSubFeaturesDecl(SubFeaturesDecl object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Features Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Features Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSubFeaturesType(SubFeaturesType object)
+  public T caseSubMemberDecl(SubMemberDecl object)
   {
     return null;
   }
@@ -546,17 +561,17 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Features Match</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Sub Member Match</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Features Match</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Sub Member Match</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSubFeaturesMatch(SubFeaturesMatch object)
+  public T caseSubMemberMatch(SubMemberMatch object)
   {
     return null;
   }
@@ -578,17 +593,49 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Attr Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>App Or Component</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Attr Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>App Or Component</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAttrDecl(AttrDecl object)
+  public T caseAppOrComponent(AppOrComponent object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>App Requirement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>App Requirement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAppRequirement(AppRequirement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Device</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Device</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDevice(Device object)
   {
     return null;
   }
@@ -818,33 +865,33 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Group Type Ref</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Group Type Ref</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Component</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSubGroupTypeRef(SubGroupTypeRef object)
+  public T caseComponent(Component object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Group Type Anon</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Instance</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Group Type Anon</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Instance</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSubGroupTypeAnon(SubGroupTypeAnon object)
+  public T caseInstance(Instance object)
   {
     return null;
   }
@@ -925,6 +972,38 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseOptionType(OptionType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Some Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Some Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSomeType(SomeType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>None Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>None Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNoneType(NoneType object)
   {
     return null;
   }

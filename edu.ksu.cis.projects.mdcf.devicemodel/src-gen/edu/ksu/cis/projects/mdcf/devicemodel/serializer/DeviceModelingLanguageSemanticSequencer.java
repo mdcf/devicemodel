@@ -3,17 +3,20 @@ package edu.ksu.cis.projects.mdcf.devicemodel.serializer;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AnyNatConstraint;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AppRequirement;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesBody;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeaturesDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Instance;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ListLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ListType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NumNatConstraint;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetLiteral;
@@ -25,10 +28,9 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleSetLit
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleSomeLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleTupleLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SomeLiteral;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesDecl;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubFeaturesMatch;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeAnon;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubGroupTypeRef;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SomeType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberMatch;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TupleLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TupleType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl;
@@ -59,9 +61,17 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 					return; 
 				}
 				else break;
+			case DeviceModelingLanguagePackage.APP_REQUIREMENT:
+				if(context == grammarAccess.getAppOrComponentRule() ||
+				   context == grammarAccess.getAppRequirementRule() ||
+				   context == grammarAccess.getDeclRule()) {
+					sequence_AppRequirement(context, (AppRequirement) semanticObject); 
+					return; 
+				}
+				else break;
 			case DeviceModelingLanguagePackage.ATTR_DECL:
 				if(context == grammarAccess.getAttrDeclRule() ||
-				   context == grammarAccess.getFeatureDeclRule()) {
+				   context == grammarAccess.getMemberDeclRule()) {
 					sequence_AttrDecl(context, (AttrDecl) semanticObject); 
 					return; 
 				}
@@ -75,7 +85,8 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 				else break;
 			case DeviceModelingLanguagePackage.BASIC_TYPE:
 				if(context == grammarAccess.getBasicTypeRule() ||
-				   context == grammarAccess.getBasicTypeAccess().getOptionTypeBaseAction_1_1() ||
+				   context == grammarAccess.getBasicTypeAccess().getNoneTypeBaseAction_1_1_1() ||
+				   context == grammarAccess.getBasicTypeAccess().getOptionTypeBaseAction_1_0_1() ||
 				   context == grammarAccess.getTypeRule() ||
 				   context == grammarAccess.getTypeAccess().getListTypeBaseAction_1_0_0_0() ||
 				   context == grammarAccess.getTypeAccess().getSetTypeBaseAction_1_0_1_0()) {
@@ -83,16 +94,25 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 					return; 
 				}
 				else break;
-			case DeviceModelingLanguagePackage.FEATURES_BODY:
-				if(context == grammarAccess.getFeaturesBodyRule()) {
-					sequence_FeaturesBody(context, (FeaturesBody) semanticObject); 
+			case DeviceModelingLanguagePackage.COMPONENT:
+				if(context == grammarAccess.getAppOrComponentRule() ||
+				   context == grammarAccess.getComponentDeclRule() ||
+				   context == grammarAccess.getDeclRule()) {
+					sequence_ComponentDecl(context, (Component) semanticObject); 
 					return; 
 				}
 				else break;
-			case DeviceModelingLanguagePackage.FEATURES_DECL:
-				if(context == grammarAccess.getDeclRule() ||
-				   context == grammarAccess.getFeaturesDeclRule()) {
-					sequence_FeaturesDecl(context, (FeaturesDecl) semanticObject); 
+			case DeviceModelingLanguagePackage.DEVICE:
+				if(context == grammarAccess.getDeviceRule()) {
+					sequence_Device(context, (Device) semanticObject); 
+					return; 
+				}
+				else break;
+			case DeviceModelingLanguagePackage.INSTANCE:
+				if(context == grammarAccess.getAppOrComponentRule() ||
+				   context == grammarAccess.getComponentDeclRule() ||
+				   context == grammarAccess.getDeclRule()) {
+					sequence_ComponentDecl(context, (Instance) semanticObject); 
 					return; 
 				}
 				else break;
@@ -106,8 +126,10 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 			case DeviceModelingLanguagePackage.LIST_TYPE:
 				if(context == grammarAccess.getTypeRule() ||
 				   context == grammarAccess.getTypeAccess().getListTypeBaseAction_1_0_0_0() ||
-				   context == grammarAccess.getTypeAccess().getOptionTypeBaseAction_1_1_1() ||
-				   context == grammarAccess.getTypeAccess().getSetTypeBaseAction_1_0_1_0()) {
+				   context == grammarAccess.getTypeAccess().getNoneTypeBaseAction_1_1_2_1() ||
+				   context == grammarAccess.getTypeAccess().getOptionTypeBaseAction_1_1_0_1() ||
+				   context == grammarAccess.getTypeAccess().getSetTypeBaseAction_1_0_1_0() ||
+				   context == grammarAccess.getTypeAccess().getSomeTypeBaseAction_1_1_1_1()) {
 					sequence_Type(context, (ListType) semanticObject); 
 					return; 
 				}
@@ -119,8 +141,8 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 				}
 				else break;
 			case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL:
-				if(context == grammarAccess.getFeatureDeclRule() ||
-				   context == grammarAccess.getInvariantDeclRule() ||
+				if(context == grammarAccess.getInvariantDeclRule() ||
+				   context == grammarAccess.getMemberDeclRule() ||
 				   context == grammarAccess.getMultiplicityInvariantDeclRule()) {
 					sequence_MultiplicityInvariantDecl(context, (MultiplicityInvariantDecl) semanticObject); 
 					return; 
@@ -130,6 +152,18 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 				if(context == grammarAccess.getLiteralRule() ||
 				   context == grammarAccess.getOptionLiteralRule()) {
 					sequence_OptionLiteral(context, (NoneLiteral) semanticObject); 
+					return; 
+				}
+				else break;
+			case DeviceModelingLanguagePackage.NONE_TYPE:
+				if(context == grammarAccess.getBasicTypeRule() ||
+				   context == grammarAccess.getTypeAccess().getListTypeBaseAction_1_0_0_0() ||
+				   context == grammarAccess.getTypeAccess().getSetTypeBaseAction_1_0_1_0()) {
+					sequence_BasicType(context, (NoneType) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getTypeRule()) {
+					sequence_BasicType_Type(context, (NoneType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -161,8 +195,10 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 			case DeviceModelingLanguagePackage.SET_TYPE:
 				if(context == grammarAccess.getTypeRule() ||
 				   context == grammarAccess.getTypeAccess().getListTypeBaseAction_1_0_0_0() ||
-				   context == grammarAccess.getTypeAccess().getOptionTypeBaseAction_1_1_1() ||
-				   context == grammarAccess.getTypeAccess().getSetTypeBaseAction_1_0_1_0()) {
+				   context == grammarAccess.getTypeAccess().getNoneTypeBaseAction_1_1_2_1() ||
+				   context == grammarAccess.getTypeAccess().getOptionTypeBaseAction_1_1_0_1() ||
+				   context == grammarAccess.getTypeAccess().getSetTypeBaseAction_1_0_1_0() ||
+				   context == grammarAccess.getTypeAccess().getSomeTypeBaseAction_1_1_1_1()) {
 					sequence_Type(context, (SetType) semanticObject); 
 					return; 
 				}
@@ -216,28 +252,22 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 					return; 
 				}
 				else break;
-			case DeviceModelingLanguagePackage.SUB_FEATURES_DECL:
-				if(context == grammarAccess.getFeatureDeclRule() ||
-				   context == grammarAccess.getSubFeaturesDeclRule()) {
-					sequence_SubFeaturesDecl(context, (SubFeaturesDecl) semanticObject); 
+			case DeviceModelingLanguagePackage.SOME_TYPE:
+				if(context == grammarAccess.getTypeRule()) {
+					sequence_Type(context, (SomeType) semanticObject); 
 					return; 
 				}
 				else break;
-			case DeviceModelingLanguagePackage.SUB_FEATURES_MATCH:
-				if(context == grammarAccess.getSubFeaturesMatchRule()) {
-					sequence_SubFeaturesMatch(context, (SubFeaturesMatch) semanticObject); 
+			case DeviceModelingLanguagePackage.SUB_MEMBER_DECL:
+				if(context == grammarAccess.getMemberDeclRule() ||
+				   context == grammarAccess.getSubMemberDeclRule()) {
+					sequence_SubMemberDecl(context, (SubMemberDecl) semanticObject); 
 					return; 
 				}
 				else break;
-			case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_ANON:
-				if(context == grammarAccess.getSubFeaturesTypeRule()) {
-					sequence_SubFeaturesType(context, (SubGroupTypeAnon) semanticObject); 
-					return; 
-				}
-				else break;
-			case DeviceModelingLanguagePackage.SUB_GROUP_TYPE_REF:
-				if(context == grammarAccess.getSubFeaturesTypeRule()) {
-					sequence_SubFeaturesType(context, (SubGroupTypeRef) semanticObject); 
+			case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH:
+				if(context == grammarAccess.getSubMemberMatchRule()) {
+					sequence_SubMemberMatch(context, (SubMemberMatch) semanticObject); 
 					return; 
 				}
 				else break;
@@ -250,7 +280,8 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 				else break;
 			case DeviceModelingLanguagePackage.TUPLE_TYPE:
 				if(context == grammarAccess.getBasicTypeRule() ||
-				   context == grammarAccess.getBasicTypeAccess().getOptionTypeBaseAction_1_1() ||
+				   context == grammarAccess.getBasicTypeAccess().getNoneTypeBaseAction_1_1_1() ||
+				   context == grammarAccess.getBasicTypeAccess().getOptionTypeBaseAction_1_0_1() ||
 				   context == grammarAccess.getTypeRule() ||
 				   context == grammarAccess.getTypeAccess().getListTypeBaseAction_1_0_0_0() ||
 				   context == grammarAccess.getTypeAccess().getSetTypeBaseAction_1_0_1_0()) {
@@ -271,7 +302,16 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (modifier=Modifier attributeName=ID (type=Type | literal=Literal))
+	 *     (name=ID devices+=Device* ((supers+=[ComponentDecl|ID] supers+=[ComponentDecl|ID]* members+=MemberDecl*) | members+=MemberDecl*))
+	 */
+	protected void sequence_AppRequirement(EObject context, AppRequirement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (modifier=Modifier attributeName=ID ((type=Type literal=Literal?) | literal=Literal))
 	 */
 	protected void sequence_AttrDecl(EObject context, AttrDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -315,7 +355,16 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     base=BasicType_OptionType_1_1
+	 *     base=BasicType_NoneType_1_1_1
+	 */
+	protected void sequence_BasicType(EObject context, NoneType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     base=BasicType_OptionType_1_0_1
 	 */
 	protected void sequence_BasicType(EObject context, OptionType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -333,9 +382,36 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (base=Type_OptionType_1_1_1 | base=BasicType_OptionType_1_1)
+	 *     (base=Type_NoneType_1_1_2_1 | base=BasicType_NoneType_1_1_1)
+	 */
+	protected void sequence_BasicType_Type(EObject context, NoneType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (base=Type_OptionType_1_1_0_1 | base=BasicType_OptionType_1_0_1)
 	 */
 	protected void sequence_BasicType_Type(EObject context, OptionType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID (supers+=[ComponentDecl|ID] supers+=[ComponentDecl|ID]*)? members+=MemberDecl*)
+	 */
+	protected void sequence_ComponentDecl(EObject context, Component semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID (supers+=[ComponentDecl|ID] supers+=[ComponentDecl|ID]*)? members+=MemberDecl*)
+	 */
+	protected void sequence_ComponentDecl(EObject context, Instance semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -367,19 +443,20 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (features+=FeatureDecl*)
+	 *     (name=ID type=[AppOrComponent|ID])
 	 */
-	protected void sequence_FeaturesBody(EObject context, FeaturesBody semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (complete='complete'? name=ID (supers+=[FeaturesDecl|ID] supers+=[FeaturesDecl|ID]*)? body=FeaturesBody)
-	 */
-	protected void sequence_FeaturesDecl(EObject context, FeaturesDecl semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_Device(EObject context, Device semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DeviceModelingLanguagePackage.Literals.DEVICE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceModelingLanguagePackage.Literals.DEVICE__NAME));
+			if(transientValues.isValueTransient(semanticObject, DeviceModelingLanguagePackage.Literals.DEVICE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceModelingLanguagePackage.Literals.DEVICE__TYPE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDeviceAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDeviceAccess().getTypeAppOrComponentIDTerminalRuleCall_2_0_1(), semanticObject.getType());
+		feeder.finish();
 	}
 	
 	
@@ -403,7 +480,7 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (invName=ID? lo=ConstraintNat hi=ConstraintNat match=SubFeaturesMatch type=[FeaturesDecl|ID]?)
+	 *     (invName=ID? lo=ConstraintNat hi=ConstraintNat match=SubMemberMatch type=[ComponentDecl|ID]?)
 	 */
 	protected void sequence_MultiplicityInvariantDecl(EObject context, MultiplicityInvariantDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -521,44 +598,19 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (qNames+=ID* name=ID type=SubFeaturesType)
+	 *     (name=ID ((supers+=[ComponentDecl|ID] supers+=[ComponentDecl|ID]* members+=MemberDecl*) | members+=MemberDecl*))
 	 */
-	protected void sequence_SubFeaturesDecl(EObject context, SubFeaturesDecl semanticObject) {
+	protected void sequence_SubMemberDecl(EObject context, SubMemberDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (distinct='distinct'? qNames+=ID* (name=ID | any='*'))
+	 *     (qNames+=ID* (name=ID | any='*'))
 	 */
-	protected void sequence_SubFeaturesMatch(EObject context, SubFeaturesMatch semanticObject) {
+	protected void sequence_SubMemberMatch(EObject context, SubMemberMatch semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     ((supers+=[FeaturesDecl|ID] supers+=[FeaturesDecl|ID]*)? body=FeaturesBody)
-	 */
-	protected void sequence_SubFeaturesType(EObject context, SubGroupTypeAnon semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     type=[FeaturesDecl|ID]
-	 */
-	protected void sequence_SubFeaturesType(EObject context, SubGroupTypeRef semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DeviceModelingLanguagePackage.Literals.SUB_GROUP_TYPE_REF__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceModelingLanguagePackage.Literals.SUB_GROUP_TYPE_REF__TYPE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSubFeaturesTypeAccess().getTypeFeaturesDeclIDTerminalRuleCall_0_2_0_1(), semanticObject.getType());
-		feeder.finish();
 	}
 	
 	
@@ -573,10 +625,17 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (supers+=[TypeDecl|ID] supers+=[TypeDecl|ID]*)? (elems+=LIT elems+=LIT*)?)
+	 *     name=ID
 	 */
 	protected void sequence_TypeDecl(EObject context, TypeDecl semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DeviceModelingLanguagePackage.Literals.DECL__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceModelingLanguagePackage.Literals.DECL__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTypeDeclAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	
@@ -608,6 +667,22 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getTypeAccess().getSetTypeBaseAction_1_0_1_0(), semanticObject.getBase());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     base=Type_SomeType_1_1_1_1
+	 */
+	protected void sequence_Type(EObject context, SomeType semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DeviceModelingLanguagePackage.Literals.SOME_TYPE__BASE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceModelingLanguagePackage.Literals.SOME_TYPE__BASE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTypeAccess().getSomeTypeBaseAction_1_1_1_1(), semanticObject.getBase());
 		feeder.finish();
 	}
 }

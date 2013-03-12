@@ -3,27 +3,27 @@
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.InvariantDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Instance;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Invariant Decl</b></em>'.
+ * An implementation of the model object '<em><b>Instance</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class InvariantDeclImpl extends MemberDeclImpl implements InvariantDecl
+public class InstanceImpl extends ComponentDeclImpl implements Instance
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected InvariantDeclImpl()
+  protected InstanceImpl()
   {
     super();
   }
@@ -36,7 +36,7 @@ public class InvariantDeclImpl extends MemberDeclImpl implements InvariantDecl
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.INVARIANT_DECL;
+    return DeviceModelingLanguagePackage.Literals.INSTANCE;
   }
 
-} //InvariantDeclImpl
+} //InstanceImpl

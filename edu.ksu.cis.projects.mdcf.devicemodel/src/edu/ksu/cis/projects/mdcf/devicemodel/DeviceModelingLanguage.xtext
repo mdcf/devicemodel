@@ -6,58 +6,68 @@ generate deviceModelingLanguage "http://mdcf.projects.cis.ksu.edu/devicemodel/De
 
 Model:               decls+=Decl*;
 	
-Decl:                TypeDecl | FeaturesDecl; 
-                       
-TypeDecl:            'type' name=ID
-                       ( 'include' supers+=[TypeDecl|ID] ( ',' supers+=[TypeDecl|ID] )* )?
-                       ( '{' ( elems+=LIT ( ',' elems+=LIT )* )? '}' )?;
-	                   
-FeaturesDecl:        (complete='complete')? 'features' name=ID
-                       ( 'include' supers+=[FeaturesDecl|ID] ( ',' supers+=[FeaturesDecl|ID] )* )?  
-                       body=FeaturesBody;
+Decl:                TypeDecl | ComponentDecl | AppRequirement;
 
-FeaturesBody:        {FeaturesBody} ( '{' features += FeatureDecl* '}' )?;
+TypeDecl:            'type' name=ID;
+                     
+ComponentDecl:       ( 'component' {Component}  
+                     | 'instance'  {Instance}  )
+                     name=ID 
+                     ( 'extends' supers+=[ComponentDecl|ID] 
+                       ( 'with' supers+=[ComponentDecl|ID] )*
+                     )? 
+                     ( '{' members+=MemberDecl* '}' )?;
+                     
+MemberDecl:          AttrDecl | SubMemberDecl | InvariantDecl;
+                     
+AttrDecl:            modifier=Modifier attributeName=ID 
+	                     ( ':' type=Type ( '=' literal=Literal )? 
+	                     | '=' literal=Literal );
 
-FeatureDecl:         SubFeaturesDecl | InvariantDecl | AttrDecl;
+Modifier:            'const' | 'val' | 'var' | 'def';
 
-
-SubFeaturesDecl:     ( qNames+=ID '.' )* name=ID type=SubFeaturesType;
-
-SubFeaturesType:       ':' {SubGroupTypeRef}  type=[FeaturesDecl|ID] 
-                     | {SubGroupTypeAnon} 
-                       ( 'include' supers+=[FeaturesDecl|ID] 
-                            ( ',' supers+=[FeaturesDecl|ID] )*
-                       )? 
-                       '=' body=FeaturesBody;
+SubMemberDecl:       {SubMemberDecl} name=ID 
+                     ( ':' supers+=[ComponentDecl|ID] ( 'with'  supers+=[ComponentDecl|ID] )* 
+                       ( '{' members+=MemberDecl*  '}' )?
+                     | '{' members+=MemberDecl*  '}' );
 
 InvariantDecl:       MultiplicityInvariantDecl;
 
 MultiplicityInvariantDecl: 
-	                   'inv' ( invName=ID ':' )? ( lo=ConstraintNat '..' hi=ConstraintNat ) 
-	                     match=SubFeaturesMatch 
-	                     ( ':' type=[FeaturesDecl|ID] )?;
+                     'inv' ( invName=ID ':' )? ( lo=ConstraintNat '..' hi=ConstraintNat ) 
+                       match=SubMemberMatch 
+                       ( ':' type=[ComponentDecl|ID] )?;
 
-SubFeaturesMatch:    {SubFeaturesMatch} ( distinct='distinct' )? 
-                       ( qNames+=ID '.' )* ( name=ID | any='*' );
+SubMemberMatch:      {SubMemberMatch} ( qNames+=ID '.' )* ( name=ID | any='*' );
 
-ConstraintNat:       {NumNatConstraint} num=NAT | {AnyNatConstraint} '*' ;	                     
+ConstraintNat:       {NumNatConstraint} num=NAT | {AnyNatConstraint} '*' ;                       
 
-AttrDecl:            modifier=Modifier attributeName=ID 
-	                     ( ':' type=Type 
-	                     | '=' literal=Literal );
+AppOrComponent:      ComponentDecl | AppRequirement;
 
-Modifier:            'const' | 'val' | 'var' | 'def';
+AppRequirement:      'app' name=ID 'requires'
+                       devices+=Device*
+                     ( 'extends' supers+=[ComponentDecl|ID] ( 'with' supers+=[ComponentDecl|ID] )* 
+                       ( '{' members+=MemberDecl*  '}' )?
+                     | '{' members+=MemberDecl*  '}' );
+
+Device:              name=ID ':' type=[AppOrComponent|ID];
+
 
 Type:                BasicType
                        ( 
 	                       ( {ListType.base=current} '[' ']'
 	                       | {SetType.base=current}  '{' '}' )+
-                         ( '?' {OptionType.base=current} )?
+                         ( '?' {OptionType.base=current} 
+                         | '!' {SomeType.base=current}
+                         | '_' {NoneType.base=current}
+                         )?
                        )?;
 
 BasicType:           ( baseType=[TypeDecl|ID]
                        | '<' {TupleType} elemTypes+=Type ( '*' elemTypes+=Type )+ '>')
-                     ( '?' {OptionType.base=current} )?;
+                     ( '?' {OptionType.base=current} 
+                     | '_' {NoneType.base=current}
+                     )?;
  
 Literal:             BasicLiteral | TupleLiteral | ListLiteral | SetLiteral | OptionLiteral;
 
@@ -85,6 +95,39 @@ SimpleOptionLiteral:   'none' {SimpleNoneLiteral}
 SimpleListLiteral:   '[' {SimpleListLiteral} ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? ']';
 
 SimpleSetLiteral:    '{' {SimpleSetLiteral} ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? '}';
+
+//TypeDecl:            'type' name=ID;
+//                       ( 'include' supers+=[TypeDecl|ID] ( ',' supers+=[TypeDecl|ID] )* )?
+//                       ( '{' ( elems+=LIT ( ',' elems+=LIT )* )? '}' )?;
+//FeaturesDecl:        (complete='complete')? 'features' name=ID
+//                       ( 'include' supers+=[FeaturesDecl|ID] ( ',' supers+=[FeaturesDecl|ID] )* )?  
+//                       body=FeaturesBody;
+//
+//FeaturesBody:        {FeaturesBody} ( '{' features += FeatureDecl* '}' )?;
+//
+//FeatureDecl:         SubFeaturesDecl | InvariantDecl | AttrDecl;
+//
+//
+//SubFeaturesDecl:     ( qNames+=ID '.' )* name=ID type=SubFeaturesType;
+//
+//SubFeaturesType:       ':' {SubGroupTypeRef}  type=[FeaturesDecl|ID] 
+//                     | {SubGroupTypeAnon} 
+//                       ( 'include' supers+=[FeaturesDecl|ID] 
+//                            ( ',' supers+=[FeaturesDecl|ID] )*
+//                       )? 
+//                       '=' body=FeaturesBody;
+//
+//InvariantDecl:       MultiplicityInvariantDecl;
+//
+//MultiplicityInvariantDecl: 
+//                     'inv' ( invName=ID ':' )? ( lo=ConstraintNat '..' hi=ConstraintNat ) 
+//                       match=SubFeaturesMatch 
+//                       ( ':' type=[FeaturesDecl|ID] )?;
+//
+//SubFeaturesMatch:    {SubFeaturesMatch} ( distinct='distinct' )? 
+//                       ( qNames+=ID '.' )* ( name=ID | any='*' );
+//
+//ConstraintNat:       {NumNatConstraint} num=NAT | {AnyNatConstraint} '*' ;                       
 
 terminal ID:         '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

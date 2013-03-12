@@ -2,30 +2,28 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Feature Decl</b></em>'.
+ * An implementation of the model object '<em><b>Component</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class FeatureDeclImpl extends MinimalEObjectImpl.Container implements FeatureDecl
+public class ComponentImpl extends ComponentDeclImpl implements Component
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FeatureDeclImpl()
+  protected ComponentImpl()
   {
     super();
   }
@@ -38,7 +36,7 @@ public class FeatureDeclImpl extends MinimalEObjectImpl.Container implements Fea
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.FEATURE_DECL;
+    return DeviceModelingLanguagePackage.Literals.COMPONENT;
   }
 
-} //FeatureDeclImpl
+} //ComponentImpl

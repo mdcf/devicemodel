@@ -1,27 +1,27 @@
-features PulseOxMDS include PulseOxMDSInv, PulseOxMDSAttributes, MDS
+component PulseOxMDS extends PulseOxMDSInv with PulseOxMDSAttributes with MDS
 
-features PulseOxMDSInv include MDSInv {
-  inv 1..*  num.sp02.*      : SpO2
-  inv 1..*  num.pulserate.* : PulseRate
-  inv 0..1  rtsa.pleth.*    : Plethysmogram
-  inv 0..2  num.pulsaq.*    : PulsatileQuality
-  inv 0..1  enum.dsa.*      : DeviceSensorAnnunciation
-  inv 0..1  enum.po.*       : PulsatileOccurence
-  inv 0..1  enum.pc.*       : PulsatileCharacteristic
+component PulseOxMDSInv extends MDSInv {
+  inv 1..*  * : SpO2
+  inv 1..*  * : PulseRate
+  inv 0..1  * : Plethysmogram
+  inv 0..2  * : PulsatileQuality
+  inv 0..1  * : DeviceSensorAnnunciation
+  inv 0..1  * : PulsatileOccurence
+  inv 0..1  * : PulsatileCharacteristic
 }
 
-features PulseOxMDSAttributes { /* ... */}
+component PulseOxMDSAttributes { /* ... */}
 
-features SpO2 include Numeric { /* ... */ }
+component SpO2 extends Numeric { /* ... */ }
 
-features PulseRate include Numeric { /* ... */ }
+component PulseRate extends Numeric { /* ... */ }
 
-features Plethysmogram include RealTimeSA { /* ... */ }
+component Plethysmogram extends RealTimeSA { /* ... */ }
 
-features PulsatileQuality include Numeric { /* ... */ }
+component PulsatileQuality extends Numeric { /* ... */ }
 
-features DeviceSensorAnnunciation include Enumeration { /* ... */ }
+component DeviceSensorAnnunciation extends Enumeration { /* ... */ }
 
-features PulsatileOccurence include Enumeration { /* ... */ }
+component PulsatileOccurence extends Enumeration { /* ... */ }
 
-features PulsatileCharacteristic include Enumeration { /* ... */ }
+component PulsatileCharacteristic extends Enumeration { /* ... */ }

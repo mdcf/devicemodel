@@ -1,33 +1,33 @@
-features MDS include MDSInv, MDSAttributes
+component MDS extends MDSInv with MDSAttributes
 
-features MDSInv {
-  inv 0..*           num.*  : Numeric
-  inv 0..*           rtsa.* : RealTimeSA
-  inv 0..*           enum.* : Enumeration
-  inv 0..*           pms.*  : PMStore
-  inv 0..*  distinct *      : Scanner
+component MDSInv {
+  inv 0..*   * : Numeric
+  inv 0..*   * : RealTimeSA
+  inv 0..*   * : Enumeration
+  inv 0..*   * : PMStore
+  inv 0..*   * : Scanner
 }
 
-features MDSAttributes { /* ... */ }
+component MDSAttributes { /* ... */ }
 
-features Scanner { /* ... */ }
+component Scanner { /* ... */ }
 
-features CfgScanner include Scanner { /* ... */ }
+component CfgScanner extends Scanner { /* ... */ }
 
-features EpiCfgScanner include CfgScanner { /* ... */ }
+component EpiCfgScanner extends CfgScanner { /* ... */ }
 
-features PeriCfgScammer include CfgScanner { /* ... */ }
+component PeriCfgScammer extends CfgScanner { /* ... */ }
 
-features Metric { /* ... */ }
+component Metric { /* ... */ }
 
-features Numeric include Metric { /* ... */ }
+component Numeric extends Metric { /* ... */ }
 
-features RealTimeSA include Metric { /* ... */ }
+component RealTimeSA extends Metric { /* ... */ }
 
-features Enumeration include Metric { /* ... */ }
+component Enumeration extends Metric { /* ... */ }
 
-features PMSegment include Metric { /* ... */ }
+component PMSegment extends Metric { /* ... */ }
 
-features PMStore {
-  inv 0..*  pmseg.* : PMSegment
+component PMStore {
+  inv 0..*   * : PMSegment
 }

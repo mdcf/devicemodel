@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class AttrDeclImpl extends FeatureDeclImpl implements AttrDecl
+public class AttrDeclImpl extends MemberDeclImpl implements AttrDecl
 {
   /**
    * The default value of the '{@link #getModifier() <em>Modifier</em>}' attribute.

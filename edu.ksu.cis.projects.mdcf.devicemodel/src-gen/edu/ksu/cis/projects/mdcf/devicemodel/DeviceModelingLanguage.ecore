@@ -9,57 +9,58 @@
   <eClassifiers xsi:type="ecore:EClass" name="Decl">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TypeDecl" eSuperTypes="#//Decl">
+  <eClassifiers xsi:type="ecore:EClass" name="TypeDecl" eSuperTypes="#//Decl"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentDecl" eSuperTypes="#//Decl #//AppOrComponent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="supers" unique="false"
-        upperBound="-1" eType="#//TypeDecl"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elems" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        upperBound="-1" eType="#//ComponentDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
+        eType="#//MemberDecl" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FeaturesDecl" eSuperTypes="#//Decl">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="complete" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="supers" unique="false"
-        upperBound="-1" eType="#//FeaturesDecl"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//FeaturesBody"
+  <eClassifiers xsi:type="ecore:EClass" name="MemberDecl"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AttrDecl" eSuperTypes="#//MemberDecl">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="literal" eType="#//Literal"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FeaturesBody">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
-        eType="#//FeatureDecl" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FeatureDecl"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SubFeaturesDecl" eSuperTypes="#//FeatureDecl">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qNames" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SubMemberDecl" eSuperTypes="#//MemberDecl">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//SubFeaturesType"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="supers" unique="false"
+        upperBound="-1" eType="#//ComponentDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
+        eType="#//MemberDecl" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SubFeaturesType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="InvariantDecl" eSuperTypes="#//FeatureDecl"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InvariantDecl" eSuperTypes="#//MemberDecl"/>
   <eClassifiers xsi:type="ecore:EClass" name="MultiplicityInvariantDecl" eSuperTypes="#//InvariantDecl">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="invName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lo" eType="#//ConstraintNat"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hi" eType="#//ConstraintNat"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="match" eType="#//SubFeaturesMatch"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="match" eType="#//SubMemberMatch"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//FeaturesDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ComponentDecl"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SubFeaturesMatch">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="distinct" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SubMemberMatch">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="qNames" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="any" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstraintNat"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AttrDecl" eSuperTypes="#//FeatureDecl">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attributeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="literal" eType="#//Literal"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AppOrComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AppRequirement" eSuperTypes="#//Decl #//AppOrComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="devices" upperBound="-1"
+        eType="#//Device" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="supers" unique="false"
+        upperBound="-1" eType="#//ComponentDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
+        eType="#//MemberDecl" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Device">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//AppOrComponent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="BasicType" eSuperTypes="#//Type">
@@ -104,15 +105,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elems" upperBound="-1"
         eType="#//SimpleLiteral" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SubGroupTypeRef" eSuperTypes="#//SubFeaturesType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//FeaturesDecl"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SubGroupTypeAnon" eSuperTypes="#//SubFeaturesType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="supers" unique="false"
-        upperBound="-1" eType="#//FeaturesDecl"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//FeaturesBody"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//ComponentDecl"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Instance" eSuperTypes="#//ComponentDecl"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumNatConstraint" eSuperTypes="#//ConstraintNat">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="num" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -126,6 +120,12 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OptionType" eSuperTypes="#//Type #//BasicType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="#//Type" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SomeType" eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="#//Type" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoneType" eSuperTypes="#//Type #//BasicType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="#//Type" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TupleType" eSuperTypes="#//BasicType">

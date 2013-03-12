@@ -112,12 +112,12 @@ public interface MultiplicityInvariantDecl extends InvariantDecl
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Match</em>' containment reference.
-   * @see #setMatch(SubFeaturesMatch)
+   * @see #setMatch(SubMemberMatch)
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getMultiplicityInvariantDecl_Match()
    * @model containment="true"
    * @generated
    */
-  SubFeaturesMatch getMatch();
+  SubMemberMatch getMatch();
 
   /**
    * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getMatch <em>Match</em>}' containment reference.
@@ -127,7 +127,7 @@ public interface MultiplicityInvariantDecl extends InvariantDecl
    * @see #getMatch()
    * @generated
    */
-  void setMatch(SubFeaturesMatch value);
+  void setMatch(SubMemberMatch value);
 
   /**
    * Returns the value of the '<em><b>Type</b></em>' reference.
@@ -138,12 +138,12 @@ public interface MultiplicityInvariantDecl extends InvariantDecl
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' reference.
-   * @see #setType(FeaturesDecl)
+   * @see #setType(ComponentDecl)
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getMultiplicityInvariantDecl_Type()
    * @model
    * @generated
    */
-  FeaturesDecl getType();
+  ComponentDecl getType();
 
   /**
    * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getType <em>Type</em>}' reference.
@@ -153,6 +153,6 @@ public interface MultiplicityInvariantDecl extends InvariantDecl
    * @see #getType()
    * @generated
    */
-  void setType(FeaturesDecl value);
+  void setType(ComponentDecl value);
 
 } // MultiplicityInvariantDecl
