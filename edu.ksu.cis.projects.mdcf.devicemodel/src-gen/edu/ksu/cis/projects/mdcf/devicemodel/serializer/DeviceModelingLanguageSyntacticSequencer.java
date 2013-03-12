@@ -22,6 +22,7 @@ public class DeviceModelingLanguageSyntacticSequencer extends AbstractSyntacticS
 	protected AbstractElementAlias match_ComponentDecl___RequiresKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q;
 	protected AbstractElementAlias match_Device___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q;
 	protected AbstractElementAlias match_SubMemberDecl___LeftCurlyBracketKeyword_1_0_3_0_RightCurlyBracketKeyword_1_0_3_2__q;
+	protected AbstractElementAlias match_TypeDecl___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -30,6 +31,7 @@ public class DeviceModelingLanguageSyntacticSequencer extends AbstractSyntacticS
 		match_ComponentDecl___RequiresKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getComponentDeclAccess().getRequiresKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getComponentDeclAccess().getLeftCurlyBracketKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getComponentDeclAccess().getRightCurlyBracketKeyword_4_3()));
 		match_Device___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDeviceAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getDeviceAccess().getRightCurlyBracketKeyword_4_2()));
 		match_SubMemberDecl___LeftCurlyBracketKeyword_1_0_3_0_RightCurlyBracketKeyword_1_0_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getSubMemberDeclAccess().getLeftCurlyBracketKeyword_1_0_3_0()), new TokenAlias(false, false, grammarAccess.getSubMemberDeclAccess().getRightCurlyBracketKeyword_1_0_3_2()));
+		match_TypeDecl___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTypeDeclAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getTypeDeclAccess().getRightCurlyBracketKeyword_3_2()));
 	}
 	
 	@Override
@@ -52,6 +54,8 @@ public class DeviceModelingLanguageSyntacticSequencer extends AbstractSyntacticS
 				emit_Device___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_SubMemberDecl___LeftCurlyBracketKeyword_1_0_3_0_RightCurlyBracketKeyword_1_0_3_2__q.equals(syntax))
 				emit_SubMemberDecl___LeftCurlyBracketKeyword_1_0_3_0_RightCurlyBracketKeyword_1_0_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_TypeDecl___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q.equals(syntax))
+				emit_TypeDecl___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -85,6 +89,14 @@ public class DeviceModelingLanguageSyntacticSequencer extends AbstractSyntacticS
 	 *     ('{' '}')?
 	 */
 	protected void emit_SubMemberDecl___LeftCurlyBracketKeyword_1_0_3_0_RightCurlyBracketKeyword_1_0_3_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     ('{' '}')?
+	 */
+	protected void emit_TypeDecl___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

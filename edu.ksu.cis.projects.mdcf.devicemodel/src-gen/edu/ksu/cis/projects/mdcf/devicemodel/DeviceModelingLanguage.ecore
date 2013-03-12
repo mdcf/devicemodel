@@ -9,7 +9,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="Decl">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TypeDecl" eSuperTypes="#//Decl"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeDecl" eSuperTypes="#//Decl">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="supers" unique="false"
+        upperBound="-1" eType="#//TypeDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elems" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentDecl" eSuperTypes="#//Decl">
     <eStructuralFeatures xsi:type="ecore:EReference" name="supers" unique="false"
         upperBound="-1" eType="#//ComponentDecl"/>
@@ -51,13 +56,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="any" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstraintNat"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Device">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="supers" unique="false"
-        upperBound="-1" eType="#//ComponentDecl"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
-        eType="#//MemberDecl" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="#//ComponentDecl"/>
   <eClassifiers xsi:type="ecore:EClass" name="Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="BasicType" eSuperTypes="#//Type">
     <eStructuralFeatures xsi:type="ecore:EReference" name="baseType" eType="#//TypeDecl"/>
@@ -102,7 +101,6 @@
         eType="#//SimpleLiteral" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//ComponentDecl"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Instance" eSuperTypes="#//ComponentDecl"/>
   <eClassifiers xsi:type="ecore:EClass" name="App" eSuperTypes="#//ComponentDecl"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumNatConstraint" eSuperTypes="#//ConstraintNat">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="num" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

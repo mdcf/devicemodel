@@ -60,12 +60,32 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Keyword cTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cIncludesKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cSupersAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cSupersTypeDeclCrossReference_2_1_0 = (CrossReference)cSupersAssignment_2_1.eContents().get(0);
+		private final RuleCall cSupersTypeDeclIDTerminalRuleCall_2_1_0_1 = (RuleCall)cSupersTypeDeclCrossReference_2_1_0.eContents().get(1);
+		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
+		private final Keyword cCommaKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
+		private final Assignment cSupersAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
+		private final CrossReference cSupersTypeDeclCrossReference_2_2_1_0 = (CrossReference)cSupersAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cSupersTypeDeclIDTerminalRuleCall_2_2_1_0_1 = (RuleCall)cSupersTypeDeclCrossReference_2_2_1_0.eContents().get(1);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
+		private final Assignment cElemsAssignment_3_1_0 = (Assignment)cGroup_3_1.eContents().get(0);
+		private final RuleCall cElemsLITTerminalRuleCall_3_1_0_0 = (RuleCall)cElemsAssignment_3_1_0.eContents().get(0);
+		private final Group cGroup_3_1_1 = (Group)cGroup_3_1.eContents().get(1);
+		private final Keyword cCommaKeyword_3_1_1_0 = (Keyword)cGroup_3_1_1.eContents().get(0);
+		private final Assignment cElemsAssignment_3_1_1_1 = (Assignment)cGroup_3_1_1.eContents().get(1);
+		private final RuleCall cElemsLITTerminalRuleCall_3_1_1_1_0 = (RuleCall)cElemsAssignment_3_1_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		
 		//TypeDecl:
-		//	"type" name=ID;
+		//	"type" name=ID ("includes" supers+=[TypeDecl] ("," supers+=[TypeDecl])*)? ("{" (elems+=LIT ("," elems+=LIT)*)? "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//"type" name=ID
+		//"type" name=ID ("includes" supers+=[TypeDecl] ("," supers+=[TypeDecl])*)? ("{" (elems+=LIT ("," elems+=LIT)*)? "}")?
 		public Group getGroup() { return cGroup; }
 
 		//"type"
@@ -76,6 +96,66 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//("includes" supers+=[TypeDecl] ("," supers+=[TypeDecl])*)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"includes"
+		public Keyword getIncludesKeyword_2_0() { return cIncludesKeyword_2_0; }
+
+		//supers+=[TypeDecl]
+		public Assignment getSupersAssignment_2_1() { return cSupersAssignment_2_1; }
+
+		//[TypeDecl]
+		public CrossReference getSupersTypeDeclCrossReference_2_1_0() { return cSupersTypeDeclCrossReference_2_1_0; }
+
+		//ID
+		public RuleCall getSupersTypeDeclIDTerminalRuleCall_2_1_0_1() { return cSupersTypeDeclIDTerminalRuleCall_2_1_0_1; }
+
+		//("," supers+=[TypeDecl])*
+		public Group getGroup_2_2() { return cGroup_2_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_2_0() { return cCommaKeyword_2_2_0; }
+
+		//supers+=[TypeDecl]
+		public Assignment getSupersAssignment_2_2_1() { return cSupersAssignment_2_2_1; }
+
+		//[TypeDecl]
+		public CrossReference getSupersTypeDeclCrossReference_2_2_1_0() { return cSupersTypeDeclCrossReference_2_2_1_0; }
+
+		//ID
+		public RuleCall getSupersTypeDeclIDTerminalRuleCall_2_2_1_0_1() { return cSupersTypeDeclIDTerminalRuleCall_2_2_1_0_1; }
+
+		//("{" (elems+=LIT ("," elems+=LIT)*)? "}")?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_3_0() { return cLeftCurlyBracketKeyword_3_0; }
+
+		//(elems+=LIT ("," elems+=LIT)*)?
+		public Group getGroup_3_1() { return cGroup_3_1; }
+
+		//elems+=LIT
+		public Assignment getElemsAssignment_3_1_0() { return cElemsAssignment_3_1_0; }
+
+		//LIT
+		public RuleCall getElemsLITTerminalRuleCall_3_1_0_0() { return cElemsLITTerminalRuleCall_3_1_0_0; }
+
+		//("," elems+=LIT)*
+		public Group getGroup_3_1_1() { return cGroup_3_1_1; }
+
+		//","
+		public Keyword getCommaKeyword_3_1_1_0() { return cCommaKeyword_3_1_1_0; }
+
+		//elems+=LIT
+		public Assignment getElemsAssignment_3_1_1_1() { return cElemsAssignment_3_1_1_1; }
+
+		//LIT
+		public RuleCall getElemsLITTerminalRuleCall_3_1_1_1_0() { return cElemsLITTerminalRuleCall_3_1_1_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_3_2() { return cRightCurlyBracketKeyword_3_2; }
 	}
 
 	public class ComponentDeclElements extends AbstractParserRuleElementFinder {
@@ -86,20 +166,20 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Keyword cComponentKeyword_0_0_0 = (Keyword)cGroup_0_0.eContents().get(0);
 		private final Action cComponentAction_0_0_1 = (Action)cGroup_0_0.eContents().get(1);
 		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
-		private final Keyword cInstanceKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
-		private final Action cInstanceAction_0_1_1 = (Action)cGroup_0_1.eContents().get(1);
+		private final Keyword cDeviceKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
+		private final Action cDeviceAction_0_1_1 = (Action)cGroup_0_1.eContents().get(1);
 		private final Group cGroup_0_2 = (Group)cAlternatives_0.eContents().get(2);
 		private final Keyword cAppKeyword_0_2_0 = (Keyword)cGroup_0_2.eContents().get(0);
 		private final Action cAppAction_0_2_1 = (Action)cGroup_0_2.eContents().get(1);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cExtendsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cIncludesKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cSupersAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final CrossReference cSupersComponentDeclCrossReference_2_1_0 = (CrossReference)cSupersAssignment_2_1.eContents().get(0);
 		private final RuleCall cSupersComponentDeclIDTerminalRuleCall_2_1_0_1 = (RuleCall)cSupersComponentDeclCrossReference_2_1_0.eContents().get(1);
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
-		private final Keyword cWithKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
+		private final Keyword cAndKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cSupersAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
 		private final CrossReference cSupersComponentDeclCrossReference_2_2_1_0 = (CrossReference)cSupersAssignment_2_2_1.eContents().get(0);
 		private final RuleCall cSupersComponentDeclIDTerminalRuleCall_2_2_1_0_1 = (RuleCall)cSupersComponentDeclCrossReference_2_2_1_0.eContents().get(1);
@@ -116,15 +196,15 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Keyword cRightCurlyBracketKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
 		
 		//ComponentDecl:
-		//	("component" {Component} | "instance" {Instance} | "app" {App}) name=ID ("extends" supers+=[ComponentDecl] ("with"
+		//	("component" {Component} | "device" {Device} | "app" {App}) name=ID ("includes" supers+=[ComponentDecl] ("and"
 		//	supers+=[ComponentDecl])*)? ("{" members+=MemberDecl* "}")? ("requires" "{" devices+=Device* "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//("component" {Component} | "instance" {Instance} | "app" {App}) name=ID ("extends" supers+=[ComponentDecl] ("with"
+		//("component" {Component} | "device" {Device} | "app" {App}) name=ID ("includes" supers+=[ComponentDecl] ("and"
 		//supers+=[ComponentDecl])*)? ("{" members+=MemberDecl* "}")? ("requires" "{" devices+=Device* "}")?
 		public Group getGroup() { return cGroup; }
 
-		//"component" {Component} | "instance" {Instance} | "app" {App}
+		//"component" {Component} | "device" {Device} | "app" {App}
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//"component" {Component}
@@ -136,14 +216,14 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//{Component}
 		public Action getComponentAction_0_0_1() { return cComponentAction_0_0_1; }
 
-		//"instance" {Instance}
+		//"device" {Device}
 		public Group getGroup_0_1() { return cGroup_0_1; }
 
-		//"instance"
-		public Keyword getInstanceKeyword_0_1_0() { return cInstanceKeyword_0_1_0; }
+		//"device"
+		public Keyword getDeviceKeyword_0_1_0() { return cDeviceKeyword_0_1_0; }
 
-		//{Instance}
-		public Action getInstanceAction_0_1_1() { return cInstanceAction_0_1_1; }
+		//{Device}
+		public Action getDeviceAction_0_1_1() { return cDeviceAction_0_1_1; }
 
 		//"app" {App}
 		public Group getGroup_0_2() { return cGroup_0_2; }
@@ -160,11 +240,11 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//("extends" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])*)?
+		//("includes" supers+=[ComponentDecl] ("and" supers+=[ComponentDecl])*)?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"extends"
-		public Keyword getExtendsKeyword_2_0() { return cExtendsKeyword_2_0; }
+		//"includes"
+		public Keyword getIncludesKeyword_2_0() { return cIncludesKeyword_2_0; }
 
 		//supers+=[ComponentDecl]
 		public Assignment getSupersAssignment_2_1() { return cSupersAssignment_2_1; }
@@ -175,11 +255,11 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//ID
 		public RuleCall getSupersComponentDeclIDTerminalRuleCall_2_1_0_1() { return cSupersComponentDeclIDTerminalRuleCall_2_1_0_1; }
 
-		//("with" supers+=[ComponentDecl])*
+		//("and" supers+=[ComponentDecl])*
 		public Group getGroup_2_2() { return cGroup_2_2; }
 
-		//"with"
-		public Keyword getWithKeyword_2_2_0() { return cWithKeyword_2_2_0; }
+		//"and"
+		public Keyword getAndKeyword_2_2_0() { return cAndKeyword_2_2_0; }
 
 		//supers+=[ComponentDecl]
 		public Assignment getSupersAssignment_2_2_1() { return cSupersAssignment_2_2_1; }
@@ -368,7 +448,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final CrossReference cSupersComponentDeclCrossReference_1_0_1_0 = (CrossReference)cSupersAssignment_1_0_1.eContents().get(0);
 		private final RuleCall cSupersComponentDeclIDTerminalRuleCall_1_0_1_0_1 = (RuleCall)cSupersComponentDeclCrossReference_1_0_1_0.eContents().get(1);
 		private final Group cGroup_1_0_2 = (Group)cGroup_1_0.eContents().get(2);
-		private final Keyword cWithKeyword_1_0_2_0 = (Keyword)cGroup_1_0_2.eContents().get(0);
+		private final Keyword cAndKeyword_1_0_2_0 = (Keyword)cGroup_1_0_2.eContents().get(0);
 		private final Assignment cSupersAssignment_1_0_2_1 = (Assignment)cGroup_1_0_2.eContents().get(1);
 		private final CrossReference cSupersComponentDeclCrossReference_1_0_2_1_0 = (CrossReference)cSupersAssignment_1_0_2_1.eContents().get(0);
 		private final RuleCall cSupersComponentDeclIDTerminalRuleCall_1_0_2_1_0_1 = (RuleCall)cSupersComponentDeclCrossReference_1_0_2_1_0.eContents().get(1);
@@ -384,11 +464,11 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Keyword cRightCurlyBracketKeyword_1_1_2 = (Keyword)cGroup_1_1.eContents().get(2);
 		
 		//SubMemberDecl:
-		//	name=ID (":" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")? | "{"
+		//	name=ID (":" supers+=[ComponentDecl] ("and" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")? | "{"
 		//	members+=MemberDecl* "}");
 		public ParserRule getRule() { return rule; }
 
-		//name=ID (":" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")? | "{"
+		//name=ID (":" supers+=[ComponentDecl] ("and" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")? | "{"
 		//members+=MemberDecl* "}")
 		public Group getGroup() { return cGroup; }
 
@@ -398,11 +478,11 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 
-		//":" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")? | "{" members+=MemberDecl*
+		//":" supers+=[ComponentDecl] ("and" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")? | "{" members+=MemberDecl*
 		//"}"
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
-		//":" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")?
+		//":" supers+=[ComponentDecl] ("and" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")?
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
 		//":"
@@ -417,11 +497,11 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//ID
 		public RuleCall getSupersComponentDeclIDTerminalRuleCall_1_0_1_0_1() { return cSupersComponentDeclIDTerminalRuleCall_1_0_1_0_1; }
 
-		//("with" supers+=[ComponentDecl])*
+		//("and" supers+=[ComponentDecl])*
 		public Group getGroup_1_0_2() { return cGroup_1_0_2; }
 
-		//"with"
-		public Keyword getWithKeyword_1_0_2_0() { return cWithKeyword_1_0_2_0; }
+		//"and"
+		public Keyword getAndKeyword_1_0_2_0() { return cAndKeyword_1_0_2_0; }
 
 		//supers+=[ComponentDecl]
 		public Assignment getSupersAssignment_1_0_2_1() { return cSupersAssignment_1_0_2_1; }
@@ -657,7 +737,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final CrossReference cSupersComponentDeclCrossReference_2_0 = (CrossReference)cSupersAssignment_2.eContents().get(0);
 		private final RuleCall cSupersComponentDeclIDTerminalRuleCall_2_0_1 = (RuleCall)cSupersComponentDeclCrossReference_2_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cWithKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cAndKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cSupersAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final CrossReference cSupersComponentDeclCrossReference_3_1_0 = (CrossReference)cSupersAssignment_3_1.eContents().get(0);
 		private final RuleCall cSupersComponentDeclIDTerminalRuleCall_3_1_0_1 = (RuleCall)cSupersComponentDeclCrossReference_3_1_0.eContents().get(1);
@@ -668,10 +748,10 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Keyword cRightCurlyBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		
 		//Device:
-		//	name=ID ":" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")?;
+		//	name=ID ":" supers+=[ComponentDecl] ("and" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID ":" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")?
+		//name=ID ":" supers+=[ComponentDecl] ("and" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")?
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -692,11 +772,11 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//ID
 		public RuleCall getSupersComponentDeclIDTerminalRuleCall_2_0_1() { return cSupersComponentDeclIDTerminalRuleCall_2_0_1; }
 
-		//("with" supers+=[ComponentDecl])*
+		//("and" supers+=[ComponentDecl])*
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"with"
-		public Keyword getWithKeyword_3_0() { return cWithKeyword_3_0; }
+		//"and"
+		public Keyword getAndKeyword_3_0() { return cAndKeyword_3_0; }
 
 		//supers+=[ComponentDecl]
 		public Assignment getSupersAssignment_3_1() { return cSupersAssignment_3_1; }
@@ -1546,7 +1626,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//TypeDecl:
-	//	"type" name=ID;
+	//	"type" name=ID ("includes" supers+=[TypeDecl] ("," supers+=[TypeDecl])*)? ("{" (elems+=LIT ("," elems+=LIT)*)? "}")?;
 	public TypeDeclElements getTypeDeclAccess() {
 		return (pTypeDecl != null) ? pTypeDecl : (pTypeDecl = new TypeDeclElements());
 	}
@@ -1556,7 +1636,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//ComponentDecl:
-	//	("component" {Component} | "instance" {Instance} | "app" {App}) name=ID ("extends" supers+=[ComponentDecl] ("with"
+	//	("component" {Component} | "device" {Device} | "app" {App}) name=ID ("includes" supers+=[ComponentDecl] ("and"
 	//	supers+=[ComponentDecl])*)? ("{" members+=MemberDecl* "}")? ("requires" "{" devices+=Device* "}")?;
 	public ComponentDeclElements getComponentDeclAccess() {
 		return (pComponentDecl != null) ? pComponentDecl : (pComponentDecl = new ComponentDeclElements());
@@ -1597,7 +1677,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//SubMemberDecl:
-	//	name=ID (":" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")? | "{"
+	//	name=ID (":" supers+=[ComponentDecl] ("and" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")? | "{"
 	//	members+=MemberDecl* "}");
 	public SubMemberDeclElements getSubMemberDeclAccess() {
 		return (pSubMemberDecl != null) ? pSubMemberDecl : (pSubMemberDecl = new SubMemberDeclElements());
@@ -1648,7 +1728,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//Device:
-	//	name=ID ":" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")?;
+	//	name=ID ":" supers+=[ComponentDecl] ("and" supers+=[ComponentDecl])* ("{" members+=MemberDecl* "}")?;
 	public DeviceElements getDeviceAccess() {
 		return (pDevice != null) ? pDevice : (pDevice = new DeviceElements());
 	}

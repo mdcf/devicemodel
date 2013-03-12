@@ -1,6 +1,6 @@
-component PulseOxMDS extends PulseOxMDSInv with PulseOxMDSAttributes with MDS
+component PulseOxMDS includes PulseOxMDSInv and PulseOxMDSAttributes and MDS
 
-component PulseOxMDSInv extends MDSInv {
+component PulseOxMDSInv includes MDSInv {
   inv 1..*  * : SpO2
   inv 1..*  * : PulseRate
   inv 0..1  * : Plethysmogram
@@ -12,16 +12,16 @@ component PulseOxMDSInv extends MDSInv {
 
 component PulseOxMDSAttributes { /* ... */}
 
-component SpO2 extends Numeric { /* ... */ }
+component SpO2 includes Numeric { /* ... */ }
 
-component PulseRate extends Numeric { /* ... */ }
+component PulseRate includes Numeric { /* ... */ }
 
-component Plethysmogram extends RealTimeSA { /* ... */ }
+component Plethysmogram includes RealTimeSA { /* ... */ }
 
-component PulsatileQuality extends Numeric { /* ... */ }
+component PulsatileQuality includes Numeric { /* ... */ }
 
-component DeviceSensorAnnunciation extends Enumeration { /* ... */ }
+component DeviceSensorAnnunciation includes Enumeration { /* ... */ }
 
-component PulsatileOccurence extends Enumeration { /* ... */ }
+component PulsatileOccurence includes Enumeration { /* ... */ }
 
-component PulsatileCharacteristic extends Enumeration { /* ... */ }
+component PulsatileCharacteristic includes Enumeration { /* ... */ }

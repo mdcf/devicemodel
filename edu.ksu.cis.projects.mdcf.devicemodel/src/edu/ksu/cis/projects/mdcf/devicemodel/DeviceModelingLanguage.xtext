@@ -8,14 +8,16 @@ Model:               decls+=Decl*;
 	
 Decl:                TypeDecl | ComponentDecl;
 
-TypeDecl:            'type' name=ID;
+TypeDecl:            'type' name=ID
+                      ( 'includes' supers+=[TypeDecl|ID] ( ',' supers+=[TypeDecl|ID] )* )?
+                      ( '{' ( elems+=LIT ( ',' elems+=LIT )* )? '}' )?;
                      
 ComponentDecl:       ( 'component' {Component}  
-                     | 'instance'  {Instance}  
+                     | 'device'    {Device}  
                      | 'app'       {App}       )
                      name=ID 
-                     ( 'extends' supers+=[ComponentDecl|ID] 
-                       ( 'with' supers+=[ComponentDecl|ID] )*
+                     ( 'includes' supers+=[ComponentDecl|ID] 
+                       ( 'and' supers+=[ComponentDecl|ID] )*
                      )? 
                      ( '{' members+=MemberDecl* '}' )?
                      ( 'requires' '{' devices+=Device* '}' )?;
@@ -29,7 +31,7 @@ AttrDecl:            modifier=Modifier attributeName=ID
 Modifier:            'const' | 'val' | 'var' | 'def';
 
 SubMemberDecl:       name=ID 
-                     ( ':' supers+=[ComponentDecl|ID] ( 'with' supers+=[ComponentDecl|ID] )* 
+                     ( ':' supers+=[ComponentDecl|ID] ( 'and' supers+=[ComponentDecl|ID] )* 
                        ( '{' members+=MemberDecl*  '}' )?
                      | '{' members+=MemberDecl*  '}' );
 
@@ -44,7 +46,7 @@ SubMemberMatch:      ( qNames+=ID '.' )* ( name=ID | any='*' );
 
 ConstraintNat:       {NumNatConstraint} num=NAT | {AnyNatConstraint} '*' ;                       
 
-Device:              name=ID ':' supers+=[ComponentDecl|ID] ( 'with' supers+=[ComponentDecl|ID] )* 
+Device:              name=ID ':' supers+=[ComponentDecl|ID] ( 'and' supers+=[ComponentDecl|ID] )* 
                        ( '{' members+=MemberDecl*  '}' )?;
 
 Type:                BasicType

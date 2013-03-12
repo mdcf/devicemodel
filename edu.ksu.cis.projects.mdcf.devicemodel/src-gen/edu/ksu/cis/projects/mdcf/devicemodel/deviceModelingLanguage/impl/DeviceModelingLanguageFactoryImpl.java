@@ -91,7 +91,6 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.SIMPLE_LIST_LITERAL: return createSimpleListLiteral();
       case DeviceModelingLanguagePackage.SIMPLE_SET_LITERAL: return createSimpleSetLiteral();
       case DeviceModelingLanguagePackage.COMPONENT: return createComponent();
-      case DeviceModelingLanguagePackage.INSTANCE: return createInstance();
       case DeviceModelingLanguagePackage.APP: return createApp();
       case DeviceModelingLanguagePackage.NUM_NAT_CONSTRAINT: return createNumNatConstraint();
       case DeviceModelingLanguagePackage.ANY_NAT_CONSTRAINT: return createAnyNatConstraint();
@@ -405,17 +404,6 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     ComponentImpl component = new ComponentImpl();
     return component;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Instance createInstance()
-  {
-    InstanceImpl instance = new InstanceImpl();
-    return instance;
   }
 
   /**

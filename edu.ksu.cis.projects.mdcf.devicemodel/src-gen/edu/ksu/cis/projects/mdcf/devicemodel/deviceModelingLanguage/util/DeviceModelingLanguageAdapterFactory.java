@@ -210,11 +210,6 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createComponentAdapter();
       }
       @Override
-      public Adapter caseInstance(Instance object)
-      {
-        return createInstanceAdapter();
-      }
-      @Override
       public Adapter caseApp(App object)
       {
         return createAppAdapter();
@@ -702,21 +697,6 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createComponentAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Instance <em>Instance</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Instance
-   * @generated
-   */
-  public Adapter createInstanceAdapter()
   {
     return null;
   }

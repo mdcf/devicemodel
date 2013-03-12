@@ -160,6 +160,8 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
       {
         Device device = (Device)theEObject;
         T result = caseDevice(device);
+        if (result == null) result = caseComponentDecl(device);
+        if (result == null) result = caseDecl(device);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -278,15 +280,6 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         T result = caseComponent(component);
         if (result == null) result = caseComponentDecl(component);
         if (result == null) result = caseDecl(component);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DeviceModelingLanguagePackage.INSTANCE:
-      {
-        Instance instance = (Instance)theEObject;
-        T result = caseInstance(instance);
-        if (result == null) result = caseComponentDecl(instance);
-        if (result == null) result = caseDecl(instance);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -834,22 +827,6 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseComponent(Component object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Instance</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Instance</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInstance(Instance object)
   {
     return null;
   }

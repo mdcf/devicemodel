@@ -266,15 +266,6 @@ public interface DeviceModelingLanguageFactory extends EFactory
   Component createComponent();
 
   /**
-   * Returns a new object of class '<em>Instance</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Instance</em>'.
-   * @generated
-   */
-  Instance createInstance();
-
-  /**
    * Returns a new object of class '<em>App</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

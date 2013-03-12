@@ -1,4 +1,4 @@
-component MDS extends MDSInv with MDSAttributes
+component MDS includes MDSInv and MDSAttributes
 
 component MDSInv {
   inv 0..*   * : Numeric
@@ -12,21 +12,21 @@ component MDSAttributes { /* ... */ }
 
 component Scanner { /* ... */ }
 
-component CfgScanner extends Scanner { /* ... */ }
+component CfgScanner includes Scanner { /* ... */ }
 
-component EpiCfgScanner extends CfgScanner { /* ... */ }
+component EpiCfgScanner includes CfgScanner { /* ... */ }
 
-component PeriCfgScammer extends CfgScanner { /* ... */ }
+component PeriCfgScammer includes CfgScanner { /* ... */ }
 
 component Metric { /* ... */ }
 
-component Numeric extends Metric { /* ... */ }
+component Numeric includes Metric { /* ... */ }
 
-component RealTimeSA extends Metric { /* ... */ }
+component RealTimeSA includes Metric { /* ... */ }
 
-component Enumeration extends Metric { /* ... */ }
+component Enumeration includes Metric { /* ... */ }
 
-component PMSegment extends Metric { /* ... */ }
+component PMSegment includes Metric { /* ... */ }
 
 component PMStore {
   inv 0..*   * : PMSegment
