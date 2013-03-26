@@ -59,15 +59,6 @@ public interface DeviceModelingLanguageFactory extends EFactory
   ComponentDecl createComponentDecl();
 
   /**
-   * Returns a new object of class '<em>Assignment</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Assignment</em>'.
-   * @generated
-   */
-  Assignment createAssignment();
-
-  /**
    * Returns a new object of class '<em>Member Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -93,6 +84,24 @@ public interface DeviceModelingLanguageFactory extends EFactory
    * @generated
    */
   SubMemberDecl createSubMemberDecl();
+
+  /**
+   * Returns a new object of class '<em>Assignment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Assignment</em>'.
+   * @generated
+   */
+  Assignment createAssignment();
+
+  /**
+   * Returns a new object of class '<em>Report</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Report</em>'.
+   * @generated
+   */
+  Report createReport();
 
   /**
    * Returns a new object of class '<em>Feature Type</em>'.
@@ -174,6 +183,33 @@ public interface DeviceModelingLanguageFactory extends EFactory
    * @generated
    */
   ConstraintExp createConstraintExp();
+
+  /**
+   * Returns a new object of class '<em>Report Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Report Decl</em>'.
+   * @generated
+   */
+  ReportDecl createReportDecl();
+
+  /**
+   * Returns a new object of class '<em>Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Param</em>'.
+   * @generated
+   */
+  Param createParam();
+
+  /**
+   * Returns a new object of class '<em>Report Member Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Report Member Decl</em>'.
+   * @generated
+   */
+  ReportMemberDecl createReportMemberDecl();
 
   /**
    * Returns a new object of class '<em>Attr Or Sub Member</em>'.

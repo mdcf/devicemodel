@@ -14,7 +14,7 @@ generate deviceModelingLanguage "http://http://mdcf.santos.cis.ksu.edu/devicemod
 
 Model:               decls+=Decl*;
 
-Decl:                TypeDecl | ComponentDecl;
+Decl:                TypeDecl | ComponentDecl | ReportDecl;
 
 TypeDecl:            'type' name=ID;
 
@@ -26,10 +26,9 @@ ComponentDecl:       ( 'component' {Component}
                        ( 'with' supers+=[ComponentDecl|ID] )*
                      )? 
                      ( '{' members+=MemberDecl* '}' )?
-                     ( 'requires' '{' devices+=Device* assigns+=Assignment* exp=Exp '}' )?;
+                     ( 'requires' '{' devices+=Device* assigns+=Assignment* exp=Exp '}' )?
+                     ( 'provides' '{' reports+=Report* '}')?;
                      
-Assignment:          name=ID ':=' exp=Exp;
-
 MemberDecl:          AttrDecl | SubMemberDecl | InvariantDecl;
 
 AttrDecl:            modifier=Modifier attributeName=ID 
@@ -41,6 +40,10 @@ Modifier:            'const' | 'val' | 'var' | 'def';
 SubMemberDecl:       name=ID 
                      ( ':' type=FeatureType
                      | '=' '{' members+=MemberDecl* '}' );
+
+Assignment:          name=ID ':=' exp=Exp;
+
+Report:              name=ID '(' args+=Exp ( ',' args+=Exp )+ ')';
 
 FeatureType:           BaseFeatureType
                      | 'Option' {OptionFeatureType} '[' base=BaseFeatureType ']'
@@ -75,6 +78,13 @@ Device:              name=ID ':' components+=[ComponentDecl|ID]
                        constraint=ConstraintExp?;
                        
 ConstraintExp:       'constraint' Exp;
+
+ReportDecl:          'report' name=ID '(' params+=Param ( ',' params+=Param )* ')' 
+                     '{' attrs+=ReportMemberDecl* '}';
+
+Param:               name=ID ':' type=BaseFeatureType;
+
+ReportMemberDecl:    name=ID '=' (bindingName+=[AttrOrSubMember|ID] '.')+ bindingName+=[AttrOrSubMember|ID];
 
 AttrOrSubMember:     AttrDecl | SubMemberDecl;
 

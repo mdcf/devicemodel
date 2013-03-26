@@ -68,10 +68,11 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.DECL: return createDecl();
       case DeviceModelingLanguagePackage.TYPE_DECL: return createTypeDecl();
       case DeviceModelingLanguagePackage.COMPONENT_DECL: return createComponentDecl();
-      case DeviceModelingLanguagePackage.ASSIGNMENT: return createAssignment();
       case DeviceModelingLanguagePackage.MEMBER_DECL: return createMemberDecl();
       case DeviceModelingLanguagePackage.ATTR_DECL: return createAttrDecl();
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL: return createSubMemberDecl();
+      case DeviceModelingLanguagePackage.ASSIGNMENT: return createAssignment();
+      case DeviceModelingLanguagePackage.REPORT: return createReport();
       case DeviceModelingLanguagePackage.FEATURE_TYPE: return createFeatureType();
       case DeviceModelingLanguagePackage.BASE_FEATURE_TYPE: return createBaseFeatureType();
       case DeviceModelingLanguagePackage.INVARIANT_DECL: return createInvariantDecl();
@@ -81,6 +82,9 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.CONSTRAINT_NAT: return createConstraintNat();
       case DeviceModelingLanguagePackage.DEVICE: return createDevice();
       case DeviceModelingLanguagePackage.CONSTRAINT_EXP: return createConstraintExp();
+      case DeviceModelingLanguagePackage.REPORT_DECL: return createReportDecl();
+      case DeviceModelingLanguagePackage.PARAM: return createParam();
+      case DeviceModelingLanguagePackage.REPORT_MEMBER_DECL: return createReportMemberDecl();
       case DeviceModelingLanguagePackage.ATTR_OR_SUB_MEMBER: return createAttrOrSubMember();
       case DeviceModelingLanguagePackage.EXP: return createExp();
       case DeviceModelingLanguagePackage.PRIMARY: return createPrimary();
@@ -176,17 +180,6 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public Assignment createAssignment()
-  {
-    AssignmentImpl assignment = new AssignmentImpl();
-    return assignment;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public MemberDecl createMemberDecl()
   {
     MemberDeclImpl memberDecl = new MemberDeclImpl();
@@ -213,6 +206,28 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     SubMemberDeclImpl subMemberDecl = new SubMemberDeclImpl();
     return subMemberDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Assignment createAssignment()
+  {
+    AssignmentImpl assignment = new AssignmentImpl();
+    return assignment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Report createReport()
+  {
+    ReportImpl report = new ReportImpl();
+    return report;
   }
 
   /**
@@ -312,6 +327,39 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     ConstraintExpImpl constraintExp = new ConstraintExpImpl();
     return constraintExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReportDecl createReportDecl()
+  {
+    ReportDeclImpl reportDecl = new ReportDeclImpl();
+    return reportDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Param createParam()
+  {
+    ParamImpl param = new ParamImpl();
+    return param;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReportMemberDecl createReportMemberDecl()
+  {
+    ReportMemberDeclImpl reportMemberDecl = new ReportMemberDeclImpl();
+    return reportMemberDecl;
   }
 
   /**

@@ -26,7 +26,11 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NumNatConstraint;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionFeatureType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Param;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.PrimaryExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Report;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ReportDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ReportMemberDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetLiteral;
@@ -227,11 +231,36 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 					return; 
 				}
 				else break;
+			case DeviceModelingLanguagePackage.PARAM:
+				if(context == grammarAccess.getParamRule()) {
+					sequence_Param(context, (Param) semanticObject); 
+					return; 
+				}
+				else break;
 			case DeviceModelingLanguagePackage.PRIMARY_EXP:
 				if(context == grammarAccess.getConstraintExpRule() ||
 				   context == grammarAccess.getExpRule() ||
 				   context == grammarAccess.getExpAccess().getAccessExpBaseAction_2_2_1()) {
 					sequence_Exp(context, (PrimaryExp) semanticObject); 
+					return; 
+				}
+				else break;
+			case DeviceModelingLanguagePackage.REPORT:
+				if(context == grammarAccess.getReportRule()) {
+					sequence_Report(context, (Report) semanticObject); 
+					return; 
+				}
+				else break;
+			case DeviceModelingLanguagePackage.REPORT_DECL:
+				if(context == grammarAccess.getDeclRule() ||
+				   context == grammarAccess.getReportDeclRule()) {
+					sequence_ReportDecl(context, (ReportDecl) semanticObject); 
+					return; 
+				}
+				else break;
+			case DeviceModelingLanguagePackage.REPORT_MEMBER_DECL:
+				if(context == grammarAccess.getReportMemberDeclRule()) {
+					sequence_ReportMemberDecl(context, (ReportMemberDecl) semanticObject); 
 					return; 
 				}
 				else break;
@@ -479,7 +508,13 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (supers+=[ComponentDecl|ID] supers+=[ComponentDecl|ID]*)? members+=MemberDecl* (devices+=Device* assigns+=Assignment* exp=Exp)?)
+	 *     (
+	 *         name=ID 
+	 *         (supers+=[ComponentDecl|ID] supers+=[ComponentDecl|ID]*)? 
+	 *         members+=MemberDecl* 
+	 *         (devices+=Device* assigns+=Assignment* exp=Exp)? 
+	 *         reports+=Report*
+	 *     )
 	 */
 	protected void sequence_ComponentDecl(EObject context, App semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -488,7 +523,13 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (supers+=[ComponentDecl|ID] supers+=[ComponentDecl|ID]*)? members+=MemberDecl* (devices+=Device* assigns+=Assignment* exp=Exp)?)
+	 *     (
+	 *         name=ID 
+	 *         (supers+=[ComponentDecl|ID] supers+=[ComponentDecl|ID]*)? 
+	 *         members+=MemberDecl* 
+	 *         (devices+=Device* assigns+=Assignment* exp=Exp)? 
+	 *         reports+=Report*
+	 *     )
 	 */
 	protected void sequence_ComponentDecl(EObject context, Component semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -497,7 +538,13 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (supers+=[ComponentDecl|ID] supers+=[ComponentDecl|ID]*)? members+=MemberDecl* (devices+=Device* assigns+=Assignment* exp=Exp)?)
+	 *     (
+	 *         name=ID 
+	 *         (supers+=[ComponentDecl|ID] supers+=[ComponentDecl|ID]*)? 
+	 *         members+=MemberDecl* 
+	 *         (devices+=Device* assigns+=Assignment* exp=Exp)? 
+	 *         reports+=Report*
+	 *     )
 	 */
 	protected void sequence_ComponentDecl(EObject context, Device semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -725,6 +772,25 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
+	 *     (name=ID type=BaseFeatureType)
+	 */
+	protected void sequence_Param(EObject context, Param semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DeviceModelingLanguagePackage.Literals.PARAM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceModelingLanguagePackage.Literals.PARAM__NAME));
+			if(transientValues.isValueTransient(semanticObject, DeviceModelingLanguagePackage.Literals.PARAM__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceModelingLanguagePackage.Literals.PARAM__TYPE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getParamAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getParamAccess().getTypeBaseFeatureTypeParserRuleCall_2_0(), semanticObject.getType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     lit=BasicLiteral
 	 */
 	protected void sequence_Primary(EObject context, LiteralExp semanticObject) {
@@ -752,6 +818,33 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getPrimaryAccess().getIdIDTerminalRuleCall_0_1_0(), semanticObject.getId());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID params+=Param params+=Param* attrs+=ReportMemberDecl*)
+	 */
+	protected void sequence_ReportDecl(EObject context, ReportDecl semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID bindingName+=[AttrOrSubMember|ID]+ bindingName+=[AttrOrSubMember|ID])
+	 */
+	protected void sequence_ReportMemberDecl(EObject context, ReportMemberDecl semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID args+=Exp args+=Exp+)
+	 */
+	protected void sequence_Report(EObject context, Report semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getDevices <em>Devices</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getAssigns <em>Assigns</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getExp <em>Exp</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getReports <em>Reports</em>}</li>
  * </ul>
  * </p>
  *
@@ -115,5 +116,21 @@ public interface ComponentDecl extends Decl
    * @generated
    */
   void setExp(Exp value);
+
+  /**
+   * Returns the value of the '<em><b>Reports</b></em>' containment reference list.
+   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Report}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Reports</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Reports</em>' containment reference list.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getComponentDecl_Reports()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Report> getReports();
 
 } // ComponentDecl
