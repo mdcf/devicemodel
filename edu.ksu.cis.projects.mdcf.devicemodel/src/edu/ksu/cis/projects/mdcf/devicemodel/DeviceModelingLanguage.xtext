@@ -77,7 +77,7 @@ Device:              name=ID ':' components+=[ComponentDecl|ID]
                        ( 'with' components+=[ComponentDecl|ID] )* 
                        constraint=ConstraintExp?;
                        
-ConstraintExp:       'constraint' Exp;
+ConstraintExp:       'constraint' cond=Exp;
 
 ReportDecl:          'report' name=ID '(' params+=Param ( ',' params+=Param )* ')' 
                      '{' attrs+=ReportMemberDecl* '}';

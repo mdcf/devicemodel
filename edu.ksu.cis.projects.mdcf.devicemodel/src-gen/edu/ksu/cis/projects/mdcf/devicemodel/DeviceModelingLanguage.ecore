@@ -82,7 +82,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" eType="#//ConstraintExp"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConstraintExp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintExp">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cond" eType="#//Exp" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReportDecl" eSuperTypes="#//Decl">
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
         eType="#//Param" containment="true"/>
@@ -100,7 +102,7 @@
         upperBound="-1" eType="#//AttrOrSubMember"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttrOrSubMember"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Exp" eSuperTypes="#//ConstraintExp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Exp"/>
   <eClassifiers xsi:type="ecore:EClass" name="Primary"/>
   <eClassifiers xsi:type="ecore:EClass" name="Type"/>
   <eClassifiers xsi:type="ecore:EClass" name="BaseType" eSuperTypes="#//Type">

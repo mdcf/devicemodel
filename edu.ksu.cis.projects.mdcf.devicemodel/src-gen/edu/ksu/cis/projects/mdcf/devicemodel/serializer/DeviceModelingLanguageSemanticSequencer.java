@@ -12,6 +12,7 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BinaryExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.EitherFeatureType;
@@ -72,8 +73,7 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == DeviceModelingLanguagePackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case DeviceModelingLanguagePackage.ACCESS_EXP:
-				if(context == grammarAccess.getConstraintExpRule() ||
-				   context == grammarAccess.getExpRule() ||
+				if(context == grammarAccess.getExpRule() ||
 				   context == grammarAccess.getExpAccess().getAccessExpBaseAction_2_2_1()) {
 					sequence_Exp(context, (AccessExp) semanticObject); 
 					return; 
@@ -128,8 +128,7 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 				}
 				else break;
 			case DeviceModelingLanguagePackage.BINARY_EXP:
-				if(context == grammarAccess.getConstraintExpRule() ||
-				   context == grammarAccess.getExpRule()) {
+				if(context == grammarAccess.getExpRule()) {
 					sequence_Exp(context, (BinaryExp) semanticObject); 
 					return; 
 				}
@@ -138,6 +137,12 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 				if(context == grammarAccess.getComponentDeclRule() ||
 				   context == grammarAccess.getDeclRule()) {
 					sequence_ComponentDecl(context, (Component) semanticObject); 
+					return; 
+				}
+				else break;
+			case DeviceModelingLanguagePackage.CONSTRAINT_EXP:
+				if(context == grammarAccess.getConstraintExpRule()) {
+					sequence_ConstraintExp(context, (ConstraintExp) semanticObject); 
 					return; 
 				}
 				else break;
@@ -238,8 +243,7 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 				}
 				else break;
 			case DeviceModelingLanguagePackage.PRIMARY_EXP:
-				if(context == grammarAccess.getConstraintExpRule() ||
-				   context == grammarAccess.getExpRule() ||
+				if(context == grammarAccess.getExpRule() ||
 				   context == grammarAccess.getExpAccess().getAccessExpBaseAction_2_2_1()) {
 					sequence_Exp(context, (PrimaryExp) semanticObject); 
 					return; 
@@ -388,8 +392,7 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 				}
 				else break;
 			case DeviceModelingLanguagePackage.UNARY_EXP:
-				if(context == grammarAccess.getConstraintExpRule() ||
-				   context == grammarAccess.getExpRule()) {
+				if(context == grammarAccess.getExpRule()) {
 					sequence_Exp(context, (UnaryExp) semanticObject); 
 					return; 
 				}
@@ -548,6 +551,22 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	 */
 	protected void sequence_ComponentDecl(EObject context, Device semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     cond=Exp
+	 */
+	protected void sequence_ConstraintExp(EObject context, ConstraintExp semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DeviceModelingLanguagePackage.Literals.CONSTRAINT_EXP__COND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceModelingLanguagePackage.Literals.CONSTRAINT_EXP__COND));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getConstraintExpAccess().getCondExpParserRuleCall_1_0(), semanticObject.getCond());
+		feeder.finish();
 	}
 	
 	

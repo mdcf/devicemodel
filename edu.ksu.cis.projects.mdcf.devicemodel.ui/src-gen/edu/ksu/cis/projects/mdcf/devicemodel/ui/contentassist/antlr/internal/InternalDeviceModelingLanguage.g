@@ -6219,9 +6219,9 @@ rule__ConstraintExp__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getConstraintExpAccess().getExpParserRuleCall_1()); }
-	ruleExp
-{ after(grammarAccess.getConstraintExpAccess().getExpParserRuleCall_1()); }
+{ before(grammarAccess.getConstraintExpAccess().getCondAssignment_1()); }
+(rule__ConstraintExp__CondAssignment_1)
+{ after(grammarAccess.getConstraintExpAccess().getCondAssignment_1()); }
 )
 
 ;
@@ -11406,6 +11406,21 @@ rule__Device__ConstraintAssignment_4
 (
 { before(grammarAccess.getDeviceAccess().getConstraintConstraintExpParserRuleCall_4_0()); }
 	ruleConstraintExp{ after(grammarAccess.getDeviceAccess().getConstraintConstraintExpParserRuleCall_4_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ConstraintExp__CondAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getConstraintExpAccess().getCondExpParserRuleCall_1_0()); }
+	ruleExp{ after(grammarAccess.getConstraintExpAccess().getCondExpParserRuleCall_1_0()); }
 )
 
 ;

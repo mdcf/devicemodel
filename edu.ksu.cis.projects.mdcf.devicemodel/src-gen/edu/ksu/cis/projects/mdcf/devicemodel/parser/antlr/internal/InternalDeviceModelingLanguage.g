@@ -1712,16 +1712,25 @@ ruleConstraintExp returns [EObject current=null]
     {
     	newLeafNode(otherlv_0, grammarAccess.getConstraintExpAccess().getConstraintKeyword_0());
     }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getConstraintExpAccess().getCondExpParserRuleCall_1_0()); 
+	    }
+		lv_cond_1_0=ruleExp		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getConstraintExpRule());
+	        }
+       		set(
+       			$current, 
+       			"cond",
+        		lv_cond_1_0, 
+        		"Exp");
+	        afterParserOrEnumRuleCall();
+	    }
 
-    { 
-        newCompositeNode(grammarAccess.getConstraintExpAccess().getExpParserRuleCall_1()); 
-    }
-    this_Exp_1=ruleExp
-    { 
-        $current = $this_Exp_1.current; 
-        afterParserOrEnumRuleCall();
-    }
 )
+))
 ;
 
 

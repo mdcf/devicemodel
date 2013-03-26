@@ -70,7 +70,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//Device/components"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//Device/constraint"/>
     </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//ConstraintExp"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//ConstraintExp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ConstraintExp/cond"/>
+    </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//ReportDecl">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ReportDecl/params"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ReportDecl/attrs"/>

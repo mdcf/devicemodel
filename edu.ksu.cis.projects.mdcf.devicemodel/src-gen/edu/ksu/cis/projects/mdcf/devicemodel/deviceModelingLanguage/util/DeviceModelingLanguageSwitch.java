@@ -245,7 +245,6 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
       {
         Exp exp = (Exp)theEObject;
         T result = caseExp(exp);
-        if (result == null) result = caseConstraintExp(exp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -436,7 +435,6 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         BinaryExp binaryExp = (BinaryExp)theEObject;
         T result = caseBinaryExp(binaryExp);
         if (result == null) result = caseExp(binaryExp);
-        if (result == null) result = caseConstraintExp(binaryExp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -445,7 +443,6 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         UnaryExp unaryExp = (UnaryExp)theEObject;
         T result = caseUnaryExp(unaryExp);
         if (result == null) result = caseExp(unaryExp);
-        if (result == null) result = caseConstraintExp(unaryExp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -454,7 +451,6 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         PrimaryExp primaryExp = (PrimaryExp)theEObject;
         T result = casePrimaryExp(primaryExp);
         if (result == null) result = caseExp(primaryExp);
-        if (result == null) result = caseConstraintExp(primaryExp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -463,7 +459,6 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         AccessExp accessExp = (AccessExp)theEObject;
         T result = caseAccessExp(accessExp);
         if (result == null) result = caseExp(accessExp);
-        if (result == null) result = caseConstraintExp(accessExp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

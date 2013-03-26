@@ -777,13 +777,22 @@ public interface DeviceModelingLanguagePackage extends EPackage
   int CONSTRAINT_EXP = 17;
 
   /**
+   * The feature id for the '<em><b>Cond</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRAINT_EXP__COND = 0;
+
+  /**
    * The number of structural features of the '<em>Constraint Exp</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONSTRAINT_EXP_FEATURE_COUNT = 0;
+  int CONSTRAINT_EXP_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ReportDeclImpl <em>Report Decl</em>}' class.
@@ -941,7 +950,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXP_FEATURE_COUNT = CONSTRAINT_EXP_FEATURE_COUNT + 0;
+  int EXP_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.PrimaryImpl <em>Primary</em>}' class.
@@ -2731,6 +2740,17 @@ public interface DeviceModelingLanguagePackage extends EPackage
   EClass getConstraintExp();
 
   /**
+   * Returns the meta object for the containment reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintExp#getCond <em>Cond</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Cond</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintExp#getCond()
+   * @see #getConstraintExp()
+   * @generated
+   */
+  EReference getConstraintExp_Cond();
+
+  /**
    * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ReportDecl <em>Report Decl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4123,6 +4143,14 @@ public interface DeviceModelingLanguagePackage extends EPackage
      * @generated
      */
     EClass CONSTRAINT_EXP = eINSTANCE.getConstraintExp();
+
+    /**
+     * The meta object literal for the '<em><b>Cond</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONSTRAINT_EXP__COND = eINSTANCE.getConstraintExp_Cond();
 
     /**
      * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ReportDeclImpl <em>Report Decl</em>}' class.

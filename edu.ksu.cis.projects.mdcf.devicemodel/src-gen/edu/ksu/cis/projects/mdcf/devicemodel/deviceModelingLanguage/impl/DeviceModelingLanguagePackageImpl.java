@@ -1084,6 +1084,16 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getConstraintExp_Cond()
+  {
+    return (EReference)constraintExpEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getReportDecl()
   {
     return reportDeclEClass;
@@ -2066,6 +2076,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     createEReference(deviceEClass, DEVICE__CONSTRAINT);
 
     constraintExpEClass = createEClass(CONSTRAINT_EXP);
+    createEReference(constraintExpEClass, CONSTRAINT_EXP__COND);
 
     reportDeclEClass = createEClass(REPORT_DECL);
     createEReference(reportDeclEClass, REPORT_DECL__PARAMS);
@@ -2242,7 +2253,6 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     generalInvariantDeclEClass.getESuperTypes().add(this.getInvariantDecl());
     deviceEClass.getESuperTypes().add(this.getComponentDecl());
     reportDeclEClass.getESuperTypes().add(this.getDecl());
-    expEClass.getESuperTypes().add(this.getConstraintExp());
     baseTypeEClass.getESuperTypes().add(this.getType());
     basicLiteralEClass.getESuperTypes().add(this.getLiteral());
     tupleLiteralEClass.getESuperTypes().add(this.getLiteral());
@@ -2347,6 +2357,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEReference(getDevice_Constraint(), this.getConstraintExp(), null, "constraint", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constraintExpEClass, ConstraintExp.class, "ConstraintExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConstraintExp_Cond(), this.getExp(), null, "cond", null, 0, 1, ConstraintExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(reportDeclEClass, ReportDecl.class, "ReportDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getReportDecl_Params(), this.getParam(), null, "params", null, 0, -1, ReportDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

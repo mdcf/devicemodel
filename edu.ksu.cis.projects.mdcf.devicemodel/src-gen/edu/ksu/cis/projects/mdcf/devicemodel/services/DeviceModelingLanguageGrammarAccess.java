@@ -1125,20 +1125,24 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstraintExp");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cConstraintKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cExpParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cCondAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCondExpParserRuleCall_1_0 = (RuleCall)cCondAssignment_1.eContents().get(0);
 		
 		//ConstraintExp:
-		//	"constraint" Exp;
+		//	"constraint" cond=Exp;
 		public ParserRule getRule() { return rule; }
 
-		//"constraint" Exp
+		//"constraint" cond=Exp
 		public Group getGroup() { return cGroup; }
 
 		//"constraint"
 		public Keyword getConstraintKeyword_0() { return cConstraintKeyword_0; }
 
+		//cond=Exp
+		public Assignment getCondAssignment_1() { return cCondAssignment_1; }
+
 		//Exp
-		public RuleCall getExpParserRuleCall_1() { return cExpParserRuleCall_1; }
+		public RuleCall getCondExpParserRuleCall_1_0() { return cCondExpParserRuleCall_1_0; }
 	}
 
 	public class ReportDeclElements extends AbstractParserRuleElementFinder {
@@ -2626,7 +2630,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//ConstraintExp:
-	//	"constraint" Exp;
+	//	"constraint" cond=Exp;
 	public ConstraintExpElements getConstraintExpAccess() {
 		return (pConstraintExp != null) ? pConstraintExp : (pConstraintExp = new ConstraintExpElements());
 	}

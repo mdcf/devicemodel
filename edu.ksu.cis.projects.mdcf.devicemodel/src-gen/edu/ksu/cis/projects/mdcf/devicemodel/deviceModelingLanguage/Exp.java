@@ -2,6 +2,7 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,6 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * @model
  * @generated
  */
-public interface Exp extends ConstraintExp
+public interface Exp extends EObject
 {
 } // Exp
