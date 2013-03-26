@@ -1,29 +1,37 @@
+/*
+Copyright (c) 2013 Robby, Kansas State University.        
+All rights reserved. This program and the accompanying materials      
+are made available under the terms of the Eclipse Public License v1.0 
+which accompanies this distribution, and is available at              
+http://www.eclipse.org/legal/epl-v10.html                             
+*/
+
 grammar edu.ksu.cis.projects.mdcf.devicemodel.DeviceModelingLanguage hidden(WS, ML_COMMENT, SL_COMMENT)
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-generate deviceModelingLanguage "http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage"
+generate deviceModelingLanguage "http://http://mdcf.santos.cis.ksu.edu/devicemodel/DeviceModelingLanguage"
 
 Model:               decls+=Decl*;
-	
+
 Decl:                TypeDecl | ComponentDecl;
 
-TypeDecl:            'type' name=ID
-                      ( 'includes' supers+=[TypeDecl|ID] ( ',' supers+=[TypeDecl|ID] )* )?
-                      ( '{' ( elems+=LIT ( ',' elems+=LIT )* )? '}' )?;
-                     
+TypeDecl:            'type' name=ID;
+
 ComponentDecl:       ( 'component' {Component}  
                      | 'device'    {Device}  
-                     | 'app'       {App}       )
+                     | 'app'       {App}       ) 
                      name=ID 
-                     ( 'includes' supers+=[ComponentDecl|ID] 
-                       ( 'and' supers+=[ComponentDecl|ID] )*
+                     ( 'extends' supers+=[ComponentDecl|ID] 
+                       ( 'with' supers+=[ComponentDecl|ID] )*
                      )? 
                      ( '{' members+=MemberDecl* '}' )?
-                     ( 'requires' '{' devices+=Device* '}' )?;
+                     ( 'requires' '{' devices+=Device* assigns+=Assignment* exp=Exp '}' )?;
                      
+Assignment:          name=ID ':=' exp=Exp;
+
 MemberDecl:          AttrDecl | SubMemberDecl | InvariantDecl;
-                     
+
 AttrDecl:            modifier=Modifier attributeName=ID 
 	                     ( ':' type=Type ( '=' literal=Literal )? 
 	                     | '=' literal=Literal );
@@ -31,99 +39,95 @@ AttrDecl:            modifier=Modifier attributeName=ID
 Modifier:            'const' | 'val' | 'var' | 'def';
 
 SubMemberDecl:       name=ID 
-                     ( ':' supers+=[ComponentDecl|ID] ( 'and' supers+=[ComponentDecl|ID] )* 
-                       ( '{' members+=MemberDecl*  '}' )?
-                     | '{' members+=MemberDecl*  '}' );
+                     ( ':' type=FeatureType
+                     | '=' '{' members+=MemberDecl* '}' );
 
-InvariantDecl:       MultiplicityInvariantDecl;
+FeatureType:           BaseFeatureType
+                     | 'Option' {OptionFeatureType} '[' base=BaseFeatureType ']'
+                     | 'Some'   {SomeFeatureType}   '[' base=BaseFeatureType ']'
+                       ( '=' '{' members+=MemberDecl* '}' )?
+                     | 'None'   {NoneFeatureType}   '[' base=BaseFeatureType ']'
+                     | 'Either' {EitherFeatureType} 
+                       '[' bases+=BaseFeatureType ( ',' bases+=BaseFeatureType )+ ']'
+                       ( '=' choice=NAT '{' members+=MemberDecl* '}' )?;
+
+BaseFeatureType:     components+=[ComponentDecl|ID] 
+                     ( 'with' components+=[ComponentDecl|ID] )*
+                     ( '=' '{' members+=MemberDecl* '}' )?;
+
+InvariantDecl:       MultiplicityInvariantDecl | GeneralInvariantDecl;
 
 MultiplicityInvariantDecl: 
-                     'inv' ( invName=ID ':' )? ( lo=ConstraintNat '..' hi=ConstraintNat ) 
+                     'inv' ( invName=ID ':' )? 
+                       ( lo=ConstraintNat '..' hi=ConstraintNat ) 
                        match=SubMemberMatch 
                        ( ':' type=[ComponentDecl|ID] )?;
+                       
+GeneralInvariantDecl:
+                     'inv' ( invName=ID ':' )? exp=Exp;
 
 SubMemberMatch:      ( qNames+=ID '.' )* ( name=ID | any='*' );
 
-ConstraintNat:       {NumNatConstraint} num=NAT | {AnyNatConstraint} '*' ;                       
+ConstraintNat:       {NumNatConstraint} num=NAT | {AnyNatConstraint} '*';                       
 
-Device:              name=ID ':' supers+=[ComponentDecl|ID] ( 'and' supers+=[ComponentDecl|ID] )* 
-                       ( '{' members+=MemberDecl*  '}' )?;
+Device:              name=ID ':' components+=[ComponentDecl|ID] 
+                       ( 'with' components+=[ComponentDecl|ID] )* 
+                       constraint=ConstraintExp?;
+                       
+ConstraintExp:       'constraint' Exp;
 
-Type:                BasicType
-                       ( 
-	                       ( {ListType.base=current} '[' ']'
-	                       | {SetType.base=current}  '{' '}' )+
-                         ( '?' {OptionType.base=current} 
-                         | '!' {SomeType.base=current}
-                         | '_' {NoneType.base=current}
-                         )?
-                       )?;
+AttrOrSubMember:     AttrDecl | SubMemberDecl;
 
-BasicType:           ( baseType=[TypeDecl|ID]
-                       | '<' {TupleType} elemTypes+=Type ( '*' elemTypes+=Type )+ '>')
-                     ( '?' {OptionType.base=current} 
-                     | '_' {NoneType.base=current}
-                     )?;
- 
-Literal:             BasicLiteral | TupleLiteral | ListLiteral | SetLiteral | OptionLiteral;
+Exp:                   '(' {BinaryExp} left=Exp op=BinaryOp right=Exp ')'
+                     | '(' {UnaryExp} op=UnaryOp  arg=Exp ')'
+                     | {PrimaryExp} primary=Primary 
+                       ( '.' {AccessExp.base=current} name=[AttrOrSubMember|ID] )*;
+
+Primary:               {NameExp} id=ID
+                     | {LiteralExp} lit=BasicLiteral;
+
+BinaryOp:            '==' | '!=' | '>='  | '<='  | '>' | '<' |
+                     '&&' | '||' | '==>' | '<==' | 
+                     '+'  | '-'  | '*'   | '/'   | '%';
+
+UnaryOp:             '+' | '-' | '!' | '^' | '~';
+
+Type:                  'Seq' {SeqType} '[' base=Type ']'
+                     | 'Set' {SetType} '[' base=Type ']'
+                     | BaseType;
+
+BaseType:              type=[TypeDecl|ID]
+                     | '<' {TupleType} elemTypes+=Type ( '*' elemTypes+=Type )+ '>'
+                     | 'Option' {OptionType} '[' base=Type ']'
+                     | 'Some'   {SomeType}   '[' base=Type ']'
+                     | 'None'   {NoneType}   '[' base=Type ']';
+
+Literal:             BasicLiteral | TupleLiteral | OptionLiteral | SeqLiteral | SetLiteral;
 
 BasicLiteral:        typeCons=[TypeDecl|ID] lit=LIT;
 
 TupleLiteral:        '<' {TupleLiteral} ( elems+=Literal ( ',' elems+=Literal)* )? '>';
 
-ListLiteral:         '[' basicType=BasicType ':' ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? ']';
+SeqLiteral:          '[' basicType=BaseType ':' ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? ']';
 
-SetLiteral:          '{' basicType=BasicType ':' ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? '}';
+SetLiteral:          '{' basicType=BaseType ':' ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? '}';
 
-OptionLiteral:         'none' {NoneLiteral} ':' type=Type
-                     | 'some' {SomeLiteral} lit=Literal;
+OptionLiteral:         'None' {NoneLiteral} '[' type=Type ']'
+                     | 'Some' {SomeLiteral} lit=Literal;
 
 SimpleLiteral:         SimpleBasicLiteral | SimpleTupleLiteral
-                     | SimpleListLiteral | SimpleSetLiteral | SimpleOptionLiteral;
+                     | SimpleSeqLiteral | SimpleSetLiteral | SimpleOptionLiteral;
 
 SimpleBasicLiteral:  lit=LIT;
 
 SimpleTupleLiteral:  '<' {SimpleTupleLiteral} ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? '>';
 
-SimpleOptionLiteral:   'none' {SimpleNoneLiteral}
-                     | 'some' {SimpleSomeLiteral} lit=SimpleLiteral;
+SimpleOptionLiteral:   'None' {SimpleNoneLiteral}
+                     | 'Some' {SimpleSomeLiteral} lit=SimpleLiteral;
 
-SimpleListLiteral:   '[' {SimpleListLiteral} ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? ']';
+SimpleSeqLiteral:    '[' {SimpleSeqLiteral} ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? ']';
 
 SimpleSetLiteral:    '{' {SimpleSetLiteral} ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? '}';
-
-//TypeDecl:            'type' name=ID;
-//                       ( 'include' supers+=[TypeDecl|ID] ( ',' supers+=[TypeDecl|ID] )* )?
-//                       ( '{' ( elems+=LIT ( ',' elems+=LIT )* )? '}' )?;
-//FeaturesDecl:        (complete='complete')? 'features' name=ID
-//                       ( 'include' supers+=[FeaturesDecl|ID] ( ',' supers+=[FeaturesDecl|ID] )* )?  
-//                       body=FeaturesBody;
-//
-//FeaturesBody:        {FeaturesBody} ( '{' features += FeatureDecl* '}' )?;
-//
-//FeatureDecl:         SubFeaturesDecl | InvariantDecl | AttrDecl;
-//
-//
-//SubFeaturesDecl:     ( qNames+=ID '.' )* name=ID type=SubFeaturesType;
-//
-//SubFeaturesType:       ':' {SubGroupTypeRef}  type=[FeaturesDecl|ID] 
-//                     | {SubGroupTypeAnon} 
-//                       ( 'include' supers+=[FeaturesDecl|ID] 
-//                            ( ',' supers+=[FeaturesDecl|ID] )*
-//                       )? 
-//                       '=' body=FeaturesBody;
-//
-//InvariantDecl:       MultiplicityInvariantDecl;
-//
-//MultiplicityInvariantDecl: 
-//                     'inv' ( invName=ID ':' )? ( lo=ConstraintNat '..' hi=ConstraintNat ) 
-//                       match=SubFeaturesMatch 
-//                       ( ':' type=[FeaturesDecl|ID] )?;
-//
-//SubFeaturesMatch:    {SubFeaturesMatch} ( distinct='distinct' )? 
-//                       ( qNames+=ID '.' )* ( name=ID | any='*' );
-//
-//ConstraintNat:       {NumNatConstraint} num=NAT | {AnyNatConstraint} '*' ;                       
 
 terminal ID:         '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

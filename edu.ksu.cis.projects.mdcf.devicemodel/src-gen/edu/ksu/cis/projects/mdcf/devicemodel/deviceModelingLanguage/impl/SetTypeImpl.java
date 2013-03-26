@@ -2,9 +2,9 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Type;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -37,7 +37,7 @@ public class SetTypeImpl extends TypeImpl implements SetType
    * @generated
    * @ordered
    */
-  protected BasicType base;
+  protected Type base;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class SetTypeImpl extends TypeImpl implements SetType
    * <!-- end-user-doc -->
    * @generated
    */
-  public BasicType getBase()
+  public Type getBase()
   {
     return base;
   }
@@ -75,9 +75,9 @@ public class SetTypeImpl extends TypeImpl implements SetType
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBase(BasicType newBase, NotificationChain msgs)
+  public NotificationChain basicSetBase(Type newBase, NotificationChain msgs)
   {
-    BasicType oldBase = base;
+    Type oldBase = base;
     base = newBase;
     if (eNotificationRequired())
     {
@@ -92,7 +92,7 @@ public class SetTypeImpl extends TypeImpl implements SetType
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBase(BasicType newBase)
+  public void setBase(Type newBase)
   {
     if (newBase != base)
     {
@@ -151,7 +151,7 @@ public class SetTypeImpl extends TypeImpl implements SetType
     switch (featureID)
     {
       case DeviceModelingLanguagePackage.SET_TYPE__BASE:
-        setBase((BasicType)newValue);
+        setBase((Type)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,7 +168,7 @@ public class SetTypeImpl extends TypeImpl implements SetType
     switch (featureID)
     {
       case DeviceModelingLanguagePackage.SET_TYPE__BASE:
-        setBase((BasicType)null);
+        setBase((Type)null);
         return;
     }
     super.eUnset(featureID);

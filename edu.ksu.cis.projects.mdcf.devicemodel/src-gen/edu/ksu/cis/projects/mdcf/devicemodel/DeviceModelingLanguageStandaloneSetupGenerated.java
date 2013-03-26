@@ -35,8 +35,8 @@ public class DeviceModelingLanguageStandaloneSetupGenerated implements ISetup {
 	}
 	
 	public void register(Injector injector) {
-	if (!EPackage.Registry.INSTANCE.containsKey("http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage")) {
-		EPackage.Registry.INSTANCE.put("http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage", edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage.eINSTANCE);
+	if (!EPackage.Registry.INSTANCE.containsKey("http://http://mdcf.santos.cis.ksu.edu/devicemodel/DeviceModelingLanguage")) {
+		EPackage.Registry.INSTANCE.put("http://http://mdcf.santos.cis.ksu.edu/devicemodel/DeviceModelingLanguage", edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage.eINSTANCE);
 	}
 
 		org.eclipse.xtext.resource.IResourceFactory resourceFactory = injector.getInstance(org.eclipse.xtext.resource.IResourceFactory.class);

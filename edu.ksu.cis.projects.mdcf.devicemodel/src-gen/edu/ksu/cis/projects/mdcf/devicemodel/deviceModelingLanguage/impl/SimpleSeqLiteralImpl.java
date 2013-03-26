@@ -3,8 +3,8 @@
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleListLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleSeqLiteral;
 
 import java.util.Collection;
 
@@ -20,18 +20,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Simple List Literal</b></em>'.
+ * An implementation of the model object '<em><b>Simple Seq Literal</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SimpleListLiteralImpl#getElems <em>Elems</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SimpleSeqLiteralImpl#getElems <em>Elems</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SimpleListLiteralImpl extends SimpleLiteralImpl implements SimpleListLiteral
+public class SimpleSeqLiteralImpl extends SimpleLiteralImpl implements SimpleSeqLiteral
 {
   /**
    * The cached value of the '{@link #getElems() <em>Elems</em>}' containment reference list.
@@ -48,7 +48,7 @@ public class SimpleListLiteralImpl extends SimpleLiteralImpl implements SimpleLi
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SimpleListLiteralImpl()
+  protected SimpleSeqLiteralImpl()
   {
     super();
   }
@@ -61,7 +61,7 @@ public class SimpleListLiteralImpl extends SimpleLiteralImpl implements SimpleLi
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.SIMPLE_LIST_LITERAL;
+    return DeviceModelingLanguagePackage.Literals.SIMPLE_SEQ_LITERAL;
   }
 
   /**
@@ -73,7 +73,7 @@ public class SimpleListLiteralImpl extends SimpleLiteralImpl implements SimpleLi
   {
     if (elems == null)
     {
-      elems = new EObjectContainmentEList<SimpleLiteral>(SimpleLiteral.class, this, DeviceModelingLanguagePackage.SIMPLE_LIST_LITERAL__ELEMS);
+      elems = new EObjectContainmentEList<SimpleLiteral>(SimpleLiteral.class, this, DeviceModelingLanguagePackage.SIMPLE_SEQ_LITERAL__ELEMS);
     }
     return elems;
   }
@@ -88,7 +88,7 @@ public class SimpleListLiteralImpl extends SimpleLiteralImpl implements SimpleLi
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SIMPLE_LIST_LITERAL__ELEMS:
+      case DeviceModelingLanguagePackage.SIMPLE_SEQ_LITERAL__ELEMS:
         return ((InternalEList<?>)getElems()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -104,7 +104,7 @@ public class SimpleListLiteralImpl extends SimpleLiteralImpl implements SimpleLi
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SIMPLE_LIST_LITERAL__ELEMS:
+      case DeviceModelingLanguagePackage.SIMPLE_SEQ_LITERAL__ELEMS:
         return getElems();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -121,7 +121,7 @@ public class SimpleListLiteralImpl extends SimpleLiteralImpl implements SimpleLi
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SIMPLE_LIST_LITERAL__ELEMS:
+      case DeviceModelingLanguagePackage.SIMPLE_SEQ_LITERAL__ELEMS:
         getElems().clear();
         getElems().addAll((Collection<? extends SimpleLiteral>)newValue);
         return;
@@ -139,7 +139,7 @@ public class SimpleListLiteralImpl extends SimpleLiteralImpl implements SimpleLi
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SIMPLE_LIST_LITERAL__ELEMS:
+      case DeviceModelingLanguagePackage.SIMPLE_SEQ_LITERAL__ELEMS:
         getElems().clear();
         return;
     }
@@ -156,10 +156,10 @@ public class SimpleListLiteralImpl extends SimpleLiteralImpl implements SimpleLi
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SIMPLE_LIST_LITERAL__ELEMS:
+      case DeviceModelingLanguagePackage.SIMPLE_SEQ_LITERAL__ELEMS:
         return elems != null && !elems.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //SimpleListLiteralImpl
+} //SimpleSeqLiteralImpl

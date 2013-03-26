@@ -2,8 +2,8 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberDecl;
 
@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -31,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubMemberDeclImpl#getName <em>Name</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubMemberDeclImpl#getSupers <em>Supers</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubMemberDeclImpl#getType <em>Type</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubMemberDeclImpl#getMembers <em>Members</em>}</li>
  * </ul>
  * </p>
@@ -61,14 +60,14 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSupers() <em>Supers</em>}' reference list.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSupers()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected EList<ComponentDecl> supers;
+  protected FeatureType type;
 
   /**
    * The cached value of the '{@link #getMembers() <em>Members</em>}' containment reference list.
@@ -129,13 +128,47 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ComponentDecl> getSupers()
+  public FeatureType getType()
   {
-    if (supers == null)
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetType(FeatureType newType, NotificationChain msgs)
+  {
+    FeatureType oldType = type;
+    type = newType;
+    if (eNotificationRequired())
     {
-      supers = new EObjectResolvingEList<ComponentDecl>(ComponentDecl.class, this, DeviceModelingLanguagePackage.SUB_MEMBER_DECL__SUPERS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return supers;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(FeatureType newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE, newType, newType));
   }
 
   /**
@@ -162,6 +195,8 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE:
+        return basicSetType(null, msgs);
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MEMBERS:
         return ((InternalEList<?>)getMembers()).basicRemove(otherEnd, msgs);
     }
@@ -180,8 +215,8 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
     {
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__NAME:
         return getName();
-      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__SUPERS:
-        return getSupers();
+      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE:
+        return getType();
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MEMBERS:
         return getMembers();
     }
@@ -202,9 +237,8 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__NAME:
         setName((String)newValue);
         return;
-      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__SUPERS:
-        getSupers().clear();
-        getSupers().addAll((Collection<? extends ComponentDecl>)newValue);
+      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE:
+        setType((FeatureType)newValue);
         return;
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MEMBERS:
         getMembers().clear();
@@ -227,8 +261,8 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__SUPERS:
-        getSupers().clear();
+      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE:
+        setType((FeatureType)null);
         return;
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MEMBERS:
         getMembers().clear();
@@ -249,8 +283,8 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
     {
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__SUPERS:
-        return supers != null && !supers.isEmpty();
+      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE:
+        return type != null;
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MEMBERS:
         return members != null && !members.isEmpty();
     }

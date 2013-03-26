@@ -19,7 +19,7 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * @model
  * @generated
  */
-public interface NoneType extends Type, BasicType
+public interface NoneType extends BaseType
 {
   /**
    * Returns the value of the '<em><b>Base</b></em>' containment reference.

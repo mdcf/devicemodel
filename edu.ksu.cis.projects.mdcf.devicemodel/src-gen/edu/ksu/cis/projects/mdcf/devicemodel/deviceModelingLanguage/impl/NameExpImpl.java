@@ -2,48 +2,56 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NameExp;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Basic Type</b></em>'.
+ * An implementation of the model object '<em><b>Name Exp</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.BasicTypeImpl#getBaseType <em>Base Type</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.NameExpImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class BasicTypeImpl extends TypeImpl implements BasicType
+public class NameExpImpl extends PrimaryImpl implements NameExp
 {
   /**
-   * The cached value of the '{@link #getBaseType() <em>Base Type</em>}' reference.
+   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBaseType()
+   * @see #getId()
    * @generated
    * @ordered
    */
-  protected TypeDecl baseType;
+  protected static final String ID_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getId()
+   * @generated
+   * @ordered
+   */
+  protected String id = ID_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected BasicTypeImpl()
+  protected NameExpImpl()
   {
     super();
   }
@@ -56,7 +64,7 @@ public class BasicTypeImpl extends TypeImpl implements BasicType
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.BASIC_TYPE;
+    return DeviceModelingLanguagePackage.Literals.NAME_EXP;
   }
 
   /**
@@ -64,19 +72,9 @@ public class BasicTypeImpl extends TypeImpl implements BasicType
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeDecl getBaseType()
+  public String getId()
   {
-    if (baseType != null && baseType.eIsProxy())
-    {
-      InternalEObject oldBaseType = (InternalEObject)baseType;
-      baseType = (TypeDecl)eResolveProxy(oldBaseType);
-      if (baseType != oldBaseType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeviceModelingLanguagePackage.BASIC_TYPE__BASE_TYPE, oldBaseType, baseType));
-      }
-    }
-    return baseType;
+    return id;
   }
 
   /**
@@ -84,22 +82,12 @@ public class BasicTypeImpl extends TypeImpl implements BasicType
    * <!-- end-user-doc -->
    * @generated
    */
-  public TypeDecl basicGetBaseType()
+  public void setId(String newId)
   {
-    return baseType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBaseType(TypeDecl newBaseType)
-  {
-    TypeDecl oldBaseType = baseType;
-    baseType = newBaseType;
+    String oldId = id;
+    id = newId;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.BASIC_TYPE__BASE_TYPE, oldBaseType, baseType));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.NAME_EXP__ID, oldId, id));
   }
 
   /**
@@ -112,9 +100,8 @@ public class BasicTypeImpl extends TypeImpl implements BasicType
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.BASIC_TYPE__BASE_TYPE:
-        if (resolve) return getBaseType();
-        return basicGetBaseType();
+      case DeviceModelingLanguagePackage.NAME_EXP__ID:
+        return getId();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -129,8 +116,8 @@ public class BasicTypeImpl extends TypeImpl implements BasicType
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.BASIC_TYPE__BASE_TYPE:
-        setBaseType((TypeDecl)newValue);
+      case DeviceModelingLanguagePackage.NAME_EXP__ID:
+        setId((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -146,8 +133,8 @@ public class BasicTypeImpl extends TypeImpl implements BasicType
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.BASIC_TYPE__BASE_TYPE:
-        setBaseType((TypeDecl)null);
+      case DeviceModelingLanguagePackage.NAME_EXP__ID:
+        setId(ID_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -163,10 +150,27 @@ public class BasicTypeImpl extends TypeImpl implements BasicType
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.BASIC_TYPE__BASE_TYPE:
-        return baseType != null;
+      case DeviceModelingLanguagePackage.NAME_EXP__ID:
+        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
     }
     return super.eIsSet(featureID);
   }
 
-} //BasicTypeImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (id: ");
+    result.append(id);
+    result.append(')');
+    return result.toString();
+  }
+
+} //NameExpImpl

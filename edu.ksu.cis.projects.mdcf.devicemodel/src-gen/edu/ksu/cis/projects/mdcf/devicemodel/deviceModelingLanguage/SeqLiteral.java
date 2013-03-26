@@ -6,22 +6,22 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>List Literal</b></em>'.
+ * A representation of the model object '<em><b>Seq Literal</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ListLiteral#getBasicType <em>Basic Type</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ListLiteral#getElems <em>Elems</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqLiteral#getBasicType <em>Basic Type</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqLiteral#getElems <em>Elems</em>}</li>
  * </ul>
  * </p>
  *
- * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getListLiteral()
+ * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSeqLiteral()
  * @model
  * @generated
  */
-public interface ListLiteral extends Literal
+public interface SeqLiteral extends Literal
 {
   /**
    * Returns the value of the '<em><b>Basic Type</b></em>' containment reference.
@@ -32,22 +32,22 @@ public interface ListLiteral extends Literal
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Basic Type</em>' containment reference.
-   * @see #setBasicType(BasicType)
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getListLiteral_BasicType()
+   * @see #setBasicType(BaseType)
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSeqLiteral_BasicType()
    * @model containment="true"
    * @generated
    */
-  BasicType getBasicType();
+  BaseType getBasicType();
 
   /**
-   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ListLiteral#getBasicType <em>Basic Type</em>}' containment reference.
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqLiteral#getBasicType <em>Basic Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Basic Type</em>' containment reference.
    * @see #getBasicType()
    * @generated
    */
-  void setBasicType(BasicType value);
+  void setBasicType(BaseType value);
 
   /**
    * Returns the value of the '<em><b>Elems</b></em>' containment reference list.
@@ -59,10 +59,10 @@ public interface ListLiteral extends Literal
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elems</em>' containment reference list.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getListLiteral_Elems()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSeqLiteral_Elems()
    * @model containment="true"
    * @generated
    */
   EList<SimpleLiteral> getElems();
 
-} // ListLiteral
+} // SeqLiteral

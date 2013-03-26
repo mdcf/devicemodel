@@ -2,7 +2,7 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleLiteral;
@@ -46,7 +46,7 @@ public class SetLiteralImpl extends LiteralImpl implements SetLiteral
    * @generated
    * @ordered
    */
-  protected BasicType basicType;
+  protected BaseType basicType;
 
   /**
    * The cached value of the '{@link #getElems() <em>Elems</em>}' containment reference list.
@@ -84,7 +84,7 @@ public class SetLiteralImpl extends LiteralImpl implements SetLiteral
    * <!-- end-user-doc -->
    * @generated
    */
-  public BasicType getBasicType()
+  public BaseType getBasicType()
   {
     return basicType;
   }
@@ -94,9 +94,9 @@ public class SetLiteralImpl extends LiteralImpl implements SetLiteral
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBasicType(BasicType newBasicType, NotificationChain msgs)
+  public NotificationChain basicSetBasicType(BaseType newBasicType, NotificationChain msgs)
   {
-    BasicType oldBasicType = basicType;
+    BaseType oldBasicType = basicType;
     basicType = newBasicType;
     if (eNotificationRequired())
     {
@@ -111,7 +111,7 @@ public class SetLiteralImpl extends LiteralImpl implements SetLiteral
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBasicType(BasicType newBasicType)
+  public void setBasicType(BaseType newBasicType)
   {
     if (newBasicType != basicType)
     {
@@ -189,7 +189,7 @@ public class SetLiteralImpl extends LiteralImpl implements SetLiteral
     switch (featureID)
     {
       case DeviceModelingLanguagePackage.SET_LITERAL__BASIC_TYPE:
-        setBasicType((BasicType)newValue);
+        setBasicType((BaseType)newValue);
         return;
       case DeviceModelingLanguagePackage.SET_LITERAL__ELEMS:
         getElems().clear();
@@ -210,7 +210,7 @@ public class SetLiteralImpl extends LiteralImpl implements SetLiteral
     switch (featureID)
     {
       case DeviceModelingLanguagePackage.SET_LITERAL__BASIC_TYPE:
-        setBasicType((BasicType)null);
+        setBasicType((BaseType)null);
         return;
       case DeviceModelingLanguagePackage.SET_LITERAL__ELEMS:
         getElems().clear();

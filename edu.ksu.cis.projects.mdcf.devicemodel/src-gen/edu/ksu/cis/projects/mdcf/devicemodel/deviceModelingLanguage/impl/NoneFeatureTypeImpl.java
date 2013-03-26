@@ -2,9 +2,9 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseFeatureType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ListType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneFeatureType;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -16,18 +16,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>List Type</b></em>'.
+ * An implementation of the model object '<em><b>None Feature Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ListTypeImpl#getBase <em>Base</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.NoneFeatureTypeImpl#getBase <em>Base</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ListTypeImpl extends TypeImpl implements ListType
+public class NoneFeatureTypeImpl extends FeatureTypeImpl implements NoneFeatureType
 {
   /**
    * The cached value of the '{@link #getBase() <em>Base</em>}' containment reference.
@@ -37,14 +37,14 @@ public class ListTypeImpl extends TypeImpl implements ListType
    * @generated
    * @ordered
    */
-  protected BasicType base;
+  protected BaseFeatureType base;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ListTypeImpl()
+  protected NoneFeatureTypeImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class ListTypeImpl extends TypeImpl implements ListType
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.LIST_TYPE;
+    return DeviceModelingLanguagePackage.Literals.NONE_FEATURE_TYPE;
   }
 
   /**
@@ -65,7 +65,7 @@ public class ListTypeImpl extends TypeImpl implements ListType
    * <!-- end-user-doc -->
    * @generated
    */
-  public BasicType getBase()
+  public BaseFeatureType getBase()
   {
     return base;
   }
@@ -75,13 +75,13 @@ public class ListTypeImpl extends TypeImpl implements ListType
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBase(BasicType newBase, NotificationChain msgs)
+  public NotificationChain basicSetBase(BaseFeatureType newBase, NotificationChain msgs)
   {
-    BasicType oldBase = base;
+    BaseFeatureType oldBase = base;
     base = newBase;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.LIST_TYPE__BASE, oldBase, newBase);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.NONE_FEATURE_TYPE__BASE, oldBase, newBase);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -92,20 +92,20 @@ public class ListTypeImpl extends TypeImpl implements ListType
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBase(BasicType newBase)
+  public void setBase(BaseFeatureType newBase)
   {
     if (newBase != base)
     {
       NotificationChain msgs = null;
       if (base != null)
-        msgs = ((InternalEObject)base).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.LIST_TYPE__BASE, null, msgs);
+        msgs = ((InternalEObject)base).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.NONE_FEATURE_TYPE__BASE, null, msgs);
       if (newBase != null)
-        msgs = ((InternalEObject)newBase).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.LIST_TYPE__BASE, null, msgs);
+        msgs = ((InternalEObject)newBase).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.NONE_FEATURE_TYPE__BASE, null, msgs);
       msgs = basicSetBase(newBase, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.LIST_TYPE__BASE, newBase, newBase));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.NONE_FEATURE_TYPE__BASE, newBase, newBase));
   }
 
   /**
@@ -118,7 +118,7 @@ public class ListTypeImpl extends TypeImpl implements ListType
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.LIST_TYPE__BASE:
+      case DeviceModelingLanguagePackage.NONE_FEATURE_TYPE__BASE:
         return basicSetBase(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -134,7 +134,7 @@ public class ListTypeImpl extends TypeImpl implements ListType
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.LIST_TYPE__BASE:
+      case DeviceModelingLanguagePackage.NONE_FEATURE_TYPE__BASE:
         return getBase();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -150,8 +150,8 @@ public class ListTypeImpl extends TypeImpl implements ListType
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.LIST_TYPE__BASE:
-        setBase((BasicType)newValue);
+      case DeviceModelingLanguagePackage.NONE_FEATURE_TYPE__BASE:
+        setBase((BaseFeatureType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -167,8 +167,8 @@ public class ListTypeImpl extends TypeImpl implements ListType
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.LIST_TYPE__BASE:
-        setBase((BasicType)null);
+      case DeviceModelingLanguagePackage.NONE_FEATURE_TYPE__BASE:
+        setBase((BaseFeatureType)null);
         return;
     }
     super.eUnset(featureID);
@@ -184,10 +184,10 @@ public class ListTypeImpl extends TypeImpl implements ListType
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.LIST_TYPE__BASE:
+      case DeviceModelingLanguagePackage.NONE_FEATURE_TYPE__BASE:
         return base != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //ListTypeImpl
+} //NoneFeatureTypeImpl

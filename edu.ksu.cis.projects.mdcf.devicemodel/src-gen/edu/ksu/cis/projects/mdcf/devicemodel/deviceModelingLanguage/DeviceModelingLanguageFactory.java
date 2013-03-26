@@ -59,6 +59,15 @@ public interface DeviceModelingLanguageFactory extends EFactory
   ComponentDecl createComponentDecl();
 
   /**
+   * Returns a new object of class '<em>Assignment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Assignment</em>'.
+   * @generated
+   */
+  Assignment createAssignment();
+
+  /**
    * Returns a new object of class '<em>Member Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -86,6 +95,24 @@ public interface DeviceModelingLanguageFactory extends EFactory
   SubMemberDecl createSubMemberDecl();
 
   /**
+   * Returns a new object of class '<em>Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature Type</em>'.
+   * @generated
+   */
+  FeatureType createFeatureType();
+
+  /**
+   * Returns a new object of class '<em>Base Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Base Feature Type</em>'.
+   * @generated
+   */
+  BaseFeatureType createBaseFeatureType();
+
+  /**
    * Returns a new object of class '<em>Invariant Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -102,6 +129,15 @@ public interface DeviceModelingLanguageFactory extends EFactory
    * @generated
    */
   MultiplicityInvariantDecl createMultiplicityInvariantDecl();
+
+  /**
+   * Returns a new object of class '<em>General Invariant Decl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>General Invariant Decl</em>'.
+   * @generated
+   */
+  GeneralInvariantDecl createGeneralInvariantDecl();
 
   /**
    * Returns a new object of class '<em>Sub Member Match</em>'.
@@ -131,6 +167,42 @@ public interface DeviceModelingLanguageFactory extends EFactory
   Device createDevice();
 
   /**
+   * Returns a new object of class '<em>Constraint Exp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Constraint Exp</em>'.
+   * @generated
+   */
+  ConstraintExp createConstraintExp();
+
+  /**
+   * Returns a new object of class '<em>Attr Or Sub Member</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Attr Or Sub Member</em>'.
+   * @generated
+   */
+  AttrOrSubMember createAttrOrSubMember();
+
+  /**
+   * Returns a new object of class '<em>Exp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Exp</em>'.
+   * @generated
+   */
+  Exp createExp();
+
+  /**
+   * Returns a new object of class '<em>Primary</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Primary</em>'.
+   * @generated
+   */
+  Primary createPrimary();
+
+  /**
    * Returns a new object of class '<em>Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -140,13 +212,13 @@ public interface DeviceModelingLanguageFactory extends EFactory
   Type createType();
 
   /**
-   * Returns a new object of class '<em>Basic Type</em>'.
+   * Returns a new object of class '<em>Base Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Basic Type</em>'.
+   * @return a new object of class '<em>Base Type</em>'.
    * @generated
    */
-  BasicType createBasicType();
+  BaseType createBaseType();
 
   /**
    * Returns a new object of class '<em>Literal</em>'.
@@ -176,13 +248,13 @@ public interface DeviceModelingLanguageFactory extends EFactory
   TupleLiteral createTupleLiteral();
 
   /**
-   * Returns a new object of class '<em>List Literal</em>'.
+   * Returns a new object of class '<em>Seq Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>List Literal</em>'.
+   * @return a new object of class '<em>Seq Literal</em>'.
    * @generated
    */
-  ListLiteral createListLiteral();
+  SeqLiteral createSeqLiteral();
 
   /**
    * Returns a new object of class '<em>Set Literal</em>'.
@@ -239,13 +311,13 @@ public interface DeviceModelingLanguageFactory extends EFactory
   SimpleOptionLiteral createSimpleOptionLiteral();
 
   /**
-   * Returns a new object of class '<em>Simple List Literal</em>'.
+   * Returns a new object of class '<em>Simple Seq Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Simple List Literal</em>'.
+   * @return a new object of class '<em>Simple Seq Literal</em>'.
    * @generated
    */
-  SimpleListLiteral createSimpleListLiteral();
+  SimpleSeqLiteral createSimpleSeqLiteral();
 
   /**
    * Returns a new object of class '<em>Simple Set Literal</em>'.
@@ -275,6 +347,42 @@ public interface DeviceModelingLanguageFactory extends EFactory
   App createApp();
 
   /**
+   * Returns a new object of class '<em>Option Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Option Feature Type</em>'.
+   * @generated
+   */
+  OptionFeatureType createOptionFeatureType();
+
+  /**
+   * Returns a new object of class '<em>Some Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Some Feature Type</em>'.
+   * @generated
+   */
+  SomeFeatureType createSomeFeatureType();
+
+  /**
+   * Returns a new object of class '<em>None Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>None Feature Type</em>'.
+   * @generated
+   */
+  NoneFeatureType createNoneFeatureType();
+
+  /**
+   * Returns a new object of class '<em>Either Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Either Feature Type</em>'.
+   * @generated
+   */
+  EitherFeatureType createEitherFeatureType();
+
+  /**
    * Returns a new object of class '<em>Num Nat Constraint</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -293,13 +401,67 @@ public interface DeviceModelingLanguageFactory extends EFactory
   AnyNatConstraint createAnyNatConstraint();
 
   /**
-   * Returns a new object of class '<em>List Type</em>'.
+   * Returns a new object of class '<em>Binary Exp</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>List Type</em>'.
+   * @return a new object of class '<em>Binary Exp</em>'.
    * @generated
    */
-  ListType createListType();
+  BinaryExp createBinaryExp();
+
+  /**
+   * Returns a new object of class '<em>Unary Exp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unary Exp</em>'.
+   * @generated
+   */
+  UnaryExp createUnaryExp();
+
+  /**
+   * Returns a new object of class '<em>Primary Exp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Primary Exp</em>'.
+   * @generated
+   */
+  PrimaryExp createPrimaryExp();
+
+  /**
+   * Returns a new object of class '<em>Access Exp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Access Exp</em>'.
+   * @generated
+   */
+  AccessExp createAccessExp();
+
+  /**
+   * Returns a new object of class '<em>Name Exp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Name Exp</em>'.
+   * @generated
+   */
+  NameExp createNameExp();
+
+  /**
+   * Returns a new object of class '<em>Literal Exp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Literal Exp</em>'.
+   * @generated
+   */
+  LiteralExp createLiteralExp();
+
+  /**
+   * Returns a new object of class '<em>Seq Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Seq Type</em>'.
+   * @generated
+   */
+  SeqType createSeqType();
 
   /**
    * Returns a new object of class '<em>Set Type</em>'.
@@ -309,6 +471,15 @@ public interface DeviceModelingLanguageFactory extends EFactory
    * @generated
    */
   SetType createSetType();
+
+  /**
+   * Returns a new object of class '<em>Tuple Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tuple Type</em>'.
+   * @generated
+   */
+  TupleType createTupleType();
 
   /**
    * Returns a new object of class '<em>Option Type</em>'.
@@ -336,15 +507,6 @@ public interface DeviceModelingLanguageFactory extends EFactory
    * @generated
    */
   NoneType createNoneType();
-
-  /**
-   * Returns a new object of class '<em>Tuple Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Tuple Type</em>'.
-   * @generated
-   */
-  TupleType createTupleType();
 
   /**
    * Returns a new object of class '<em>None Literal</em>'.

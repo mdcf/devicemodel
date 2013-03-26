@@ -30,12 +30,12 @@ public interface SetType extends Type
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Base</em>' containment reference.
-   * @see #setBase(BasicType)
+   * @see #setBase(Type)
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSetType_Base()
    * @model containment="true"
    * @generated
    */
-  BasicType getBase();
+  Type getBase();
 
   /**
    * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetType#getBase <em>Base</em>}' containment reference.
@@ -45,6 +45,6 @@ public interface SetType extends Type
    * @see #getBase()
    * @generated
    */
-  void setBase(BasicType value);
+  void setBase(Type value);
 
 } // SetType

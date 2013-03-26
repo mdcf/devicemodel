@@ -30,7 +30,7 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     try
     {
-      DeviceModelingLanguageFactory theDeviceModelingLanguageFactory = (DeviceModelingLanguageFactory)EPackage.Registry.INSTANCE.getEFactory("http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage"); 
+      DeviceModelingLanguageFactory theDeviceModelingLanguageFactory = (DeviceModelingLanguageFactory)EPackage.Registry.INSTANCE.getEFactory("http://http://mdcf.santos.cis.ksu.edu/devicemodel/DeviceModelingLanguage"); 
       if (theDeviceModelingLanguageFactory != null)
       {
         return theDeviceModelingLanguageFactory;
@@ -68,38 +68,56 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.DECL: return createDecl();
       case DeviceModelingLanguagePackage.TYPE_DECL: return createTypeDecl();
       case DeviceModelingLanguagePackage.COMPONENT_DECL: return createComponentDecl();
+      case DeviceModelingLanguagePackage.ASSIGNMENT: return createAssignment();
       case DeviceModelingLanguagePackage.MEMBER_DECL: return createMemberDecl();
       case DeviceModelingLanguagePackage.ATTR_DECL: return createAttrDecl();
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL: return createSubMemberDecl();
+      case DeviceModelingLanguagePackage.FEATURE_TYPE: return createFeatureType();
+      case DeviceModelingLanguagePackage.BASE_FEATURE_TYPE: return createBaseFeatureType();
       case DeviceModelingLanguagePackage.INVARIANT_DECL: return createInvariantDecl();
       case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL: return createMultiplicityInvariantDecl();
+      case DeviceModelingLanguagePackage.GENERAL_INVARIANT_DECL: return createGeneralInvariantDecl();
       case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH: return createSubMemberMatch();
       case DeviceModelingLanguagePackage.CONSTRAINT_NAT: return createConstraintNat();
       case DeviceModelingLanguagePackage.DEVICE: return createDevice();
+      case DeviceModelingLanguagePackage.CONSTRAINT_EXP: return createConstraintExp();
+      case DeviceModelingLanguagePackage.ATTR_OR_SUB_MEMBER: return createAttrOrSubMember();
+      case DeviceModelingLanguagePackage.EXP: return createExp();
+      case DeviceModelingLanguagePackage.PRIMARY: return createPrimary();
       case DeviceModelingLanguagePackage.TYPE: return createType();
-      case DeviceModelingLanguagePackage.BASIC_TYPE: return createBasicType();
+      case DeviceModelingLanguagePackage.BASE_TYPE: return createBaseType();
       case DeviceModelingLanguagePackage.LITERAL: return createLiteral();
       case DeviceModelingLanguagePackage.BASIC_LITERAL: return createBasicLiteral();
       case DeviceModelingLanguagePackage.TUPLE_LITERAL: return createTupleLiteral();
-      case DeviceModelingLanguagePackage.LIST_LITERAL: return createListLiteral();
+      case DeviceModelingLanguagePackage.SEQ_LITERAL: return createSeqLiteral();
       case DeviceModelingLanguagePackage.SET_LITERAL: return createSetLiteral();
       case DeviceModelingLanguagePackage.OPTION_LITERAL: return createOptionLiteral();
       case DeviceModelingLanguagePackage.SIMPLE_LITERAL: return createSimpleLiteral();
       case DeviceModelingLanguagePackage.SIMPLE_BASIC_LITERAL: return createSimpleBasicLiteral();
       case DeviceModelingLanguagePackage.SIMPLE_TUPLE_LITERAL: return createSimpleTupleLiteral();
       case DeviceModelingLanguagePackage.SIMPLE_OPTION_LITERAL: return createSimpleOptionLiteral();
-      case DeviceModelingLanguagePackage.SIMPLE_LIST_LITERAL: return createSimpleListLiteral();
+      case DeviceModelingLanguagePackage.SIMPLE_SEQ_LITERAL: return createSimpleSeqLiteral();
       case DeviceModelingLanguagePackage.SIMPLE_SET_LITERAL: return createSimpleSetLiteral();
       case DeviceModelingLanguagePackage.COMPONENT: return createComponent();
       case DeviceModelingLanguagePackage.APP: return createApp();
+      case DeviceModelingLanguagePackage.OPTION_FEATURE_TYPE: return createOptionFeatureType();
+      case DeviceModelingLanguagePackage.SOME_FEATURE_TYPE: return createSomeFeatureType();
+      case DeviceModelingLanguagePackage.NONE_FEATURE_TYPE: return createNoneFeatureType();
+      case DeviceModelingLanguagePackage.EITHER_FEATURE_TYPE: return createEitherFeatureType();
       case DeviceModelingLanguagePackage.NUM_NAT_CONSTRAINT: return createNumNatConstraint();
       case DeviceModelingLanguagePackage.ANY_NAT_CONSTRAINT: return createAnyNatConstraint();
-      case DeviceModelingLanguagePackage.LIST_TYPE: return createListType();
+      case DeviceModelingLanguagePackage.BINARY_EXP: return createBinaryExp();
+      case DeviceModelingLanguagePackage.UNARY_EXP: return createUnaryExp();
+      case DeviceModelingLanguagePackage.PRIMARY_EXP: return createPrimaryExp();
+      case DeviceModelingLanguagePackage.ACCESS_EXP: return createAccessExp();
+      case DeviceModelingLanguagePackage.NAME_EXP: return createNameExp();
+      case DeviceModelingLanguagePackage.LITERAL_EXP: return createLiteralExp();
+      case DeviceModelingLanguagePackage.SEQ_TYPE: return createSeqType();
       case DeviceModelingLanguagePackage.SET_TYPE: return createSetType();
+      case DeviceModelingLanguagePackage.TUPLE_TYPE: return createTupleType();
       case DeviceModelingLanguagePackage.OPTION_TYPE: return createOptionType();
       case DeviceModelingLanguagePackage.SOME_TYPE: return createSomeType();
       case DeviceModelingLanguagePackage.NONE_TYPE: return createNoneType();
-      case DeviceModelingLanguagePackage.TUPLE_TYPE: return createTupleType();
       case DeviceModelingLanguagePackage.NONE_LITERAL: return createNoneLiteral();
       case DeviceModelingLanguagePackage.SOME_LITERAL: return createSomeLiteral();
       case DeviceModelingLanguagePackage.SIMPLE_NONE_LITERAL: return createSimpleNoneLiteral();
@@ -158,6 +176,17 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public Assignment createAssignment()
+  {
+    AssignmentImpl assignment = new AssignmentImpl();
+    return assignment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public MemberDecl createMemberDecl()
   {
     MemberDeclImpl memberDecl = new MemberDeclImpl();
@@ -191,6 +220,28 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public FeatureType createFeatureType()
+  {
+    FeatureTypeImpl featureType = new FeatureTypeImpl();
+    return featureType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BaseFeatureType createBaseFeatureType()
+  {
+    BaseFeatureTypeImpl baseFeatureType = new BaseFeatureTypeImpl();
+    return baseFeatureType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public InvariantDecl createInvariantDecl()
   {
     InvariantDeclImpl invariantDecl = new InvariantDeclImpl();
@@ -206,6 +257,17 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     MultiplicityInvariantDeclImpl multiplicityInvariantDecl = new MultiplicityInvariantDeclImpl();
     return multiplicityInvariantDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GeneralInvariantDecl createGeneralInvariantDecl()
+  {
+    GeneralInvariantDeclImpl generalInvariantDecl = new GeneralInvariantDeclImpl();
+    return generalInvariantDecl;
   }
 
   /**
@@ -246,6 +308,50 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public ConstraintExp createConstraintExp()
+  {
+    ConstraintExpImpl constraintExp = new ConstraintExpImpl();
+    return constraintExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AttrOrSubMember createAttrOrSubMember()
+  {
+    AttrOrSubMemberImpl attrOrSubMember = new AttrOrSubMemberImpl();
+    return attrOrSubMember;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Exp createExp()
+  {
+    ExpImpl exp = new ExpImpl();
+    return exp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Primary createPrimary()
+  {
+    PrimaryImpl primary = new PrimaryImpl();
+    return primary;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Type createType()
   {
     TypeImpl type = new TypeImpl();
@@ -257,10 +363,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public BasicType createBasicType()
+  public BaseType createBaseType()
   {
-    BasicTypeImpl basicType = new BasicTypeImpl();
-    return basicType;
+    BaseTypeImpl baseType = new BaseTypeImpl();
+    return baseType;
   }
 
   /**
@@ -301,10 +407,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public ListLiteral createListLiteral()
+  public SeqLiteral createSeqLiteral()
   {
-    ListLiteralImpl listLiteral = new ListLiteralImpl();
-    return listLiteral;
+    SeqLiteralImpl seqLiteral = new SeqLiteralImpl();
+    return seqLiteral;
   }
 
   /**
@@ -378,10 +484,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public SimpleListLiteral createSimpleListLiteral()
+  public SimpleSeqLiteral createSimpleSeqLiteral()
   {
-    SimpleListLiteralImpl simpleListLiteral = new SimpleListLiteralImpl();
-    return simpleListLiteral;
+    SimpleSeqLiteralImpl simpleSeqLiteral = new SimpleSeqLiteralImpl();
+    return simpleSeqLiteral;
   }
 
   /**
@@ -422,6 +528,50 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public OptionFeatureType createOptionFeatureType()
+  {
+    OptionFeatureTypeImpl optionFeatureType = new OptionFeatureTypeImpl();
+    return optionFeatureType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SomeFeatureType createSomeFeatureType()
+  {
+    SomeFeatureTypeImpl someFeatureType = new SomeFeatureTypeImpl();
+    return someFeatureType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NoneFeatureType createNoneFeatureType()
+  {
+    NoneFeatureTypeImpl noneFeatureType = new NoneFeatureTypeImpl();
+    return noneFeatureType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EitherFeatureType createEitherFeatureType()
+  {
+    EitherFeatureTypeImpl eitherFeatureType = new EitherFeatureTypeImpl();
+    return eitherFeatureType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public NumNatConstraint createNumNatConstraint()
   {
     NumNatConstraintImpl numNatConstraint = new NumNatConstraintImpl();
@@ -444,10 +594,76 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public ListType createListType()
+  public BinaryExp createBinaryExp()
   {
-    ListTypeImpl listType = new ListTypeImpl();
-    return listType;
+    BinaryExpImpl binaryExp = new BinaryExpImpl();
+    return binaryExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UnaryExp createUnaryExp()
+  {
+    UnaryExpImpl unaryExp = new UnaryExpImpl();
+    return unaryExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PrimaryExp createPrimaryExp()
+  {
+    PrimaryExpImpl primaryExp = new PrimaryExpImpl();
+    return primaryExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AccessExp createAccessExp()
+  {
+    AccessExpImpl accessExp = new AccessExpImpl();
+    return accessExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NameExp createNameExp()
+  {
+    NameExpImpl nameExp = new NameExpImpl();
+    return nameExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LiteralExp createLiteralExp()
+  {
+    LiteralExpImpl literalExp = new LiteralExpImpl();
+    return literalExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SeqType createSeqType()
+  {
+    SeqTypeImpl seqType = new SeqTypeImpl();
+    return seqType;
   }
 
   /**
@@ -459,6 +675,17 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     SetTypeImpl setType = new SetTypeImpl();
     return setType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TupleType createTupleType()
+  {
+    TupleTypeImpl tupleType = new TupleTypeImpl();
+    return tupleType;
   }
 
   /**
@@ -492,17 +719,6 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     NoneTypeImpl noneType = new NoneTypeImpl();
     return noneType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TupleType createTupleType()
-  {
-    TupleTypeImpl tupleType = new TupleTypeImpl();
-    return tupleType;
   }
 
   /**

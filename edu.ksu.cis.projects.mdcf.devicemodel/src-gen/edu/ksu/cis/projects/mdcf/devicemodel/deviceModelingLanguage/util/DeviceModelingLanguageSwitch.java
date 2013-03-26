@@ -102,6 +102,13 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DeviceModelingLanguagePackage.ASSIGNMENT:
+      {
+        Assignment assignment = (Assignment)theEObject;
+        T result = caseAssignment(assignment);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DeviceModelingLanguagePackage.MEMBER_DECL:
       {
         MemberDecl memberDecl = (MemberDecl)theEObject;
@@ -114,6 +121,7 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         AttrDecl attrDecl = (AttrDecl)theEObject;
         T result = caseAttrDecl(attrDecl);
         if (result == null) result = caseMemberDecl(attrDecl);
+        if (result == null) result = caseAttrOrSubMember(attrDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -122,6 +130,22 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         SubMemberDecl subMemberDecl = (SubMemberDecl)theEObject;
         T result = caseSubMemberDecl(subMemberDecl);
         if (result == null) result = caseMemberDecl(subMemberDecl);
+        if (result == null) result = caseAttrOrSubMember(subMemberDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.FEATURE_TYPE:
+      {
+        FeatureType featureType = (FeatureType)theEObject;
+        T result = caseFeatureType(featureType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.BASE_FEATURE_TYPE:
+      {
+        BaseFeatureType baseFeatureType = (BaseFeatureType)theEObject;
+        T result = caseBaseFeatureType(baseFeatureType);
+        if (result == null) result = caseFeatureType(baseFeatureType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -139,6 +163,15 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         T result = caseMultiplicityInvariantDecl(multiplicityInvariantDecl);
         if (result == null) result = caseInvariantDecl(multiplicityInvariantDecl);
         if (result == null) result = caseMemberDecl(multiplicityInvariantDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.GENERAL_INVARIANT_DECL:
+      {
+        GeneralInvariantDecl generalInvariantDecl = (GeneralInvariantDecl)theEObject;
+        T result = caseGeneralInvariantDecl(generalInvariantDecl);
+        if (result == null) result = caseInvariantDecl(generalInvariantDecl);
+        if (result == null) result = caseMemberDecl(generalInvariantDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -165,6 +198,35 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DeviceModelingLanguagePackage.CONSTRAINT_EXP:
+      {
+        ConstraintExp constraintExp = (ConstraintExp)theEObject;
+        T result = caseConstraintExp(constraintExp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.ATTR_OR_SUB_MEMBER:
+      {
+        AttrOrSubMember attrOrSubMember = (AttrOrSubMember)theEObject;
+        T result = caseAttrOrSubMember(attrOrSubMember);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.EXP:
+      {
+        Exp exp = (Exp)theEObject;
+        T result = caseExp(exp);
+        if (result == null) result = caseConstraintExp(exp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.PRIMARY:
+      {
+        Primary primary = (Primary)theEObject;
+        T result = casePrimary(primary);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DeviceModelingLanguagePackage.TYPE:
       {
         Type type = (Type)theEObject;
@@ -172,11 +234,11 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.BASIC_TYPE:
+      case DeviceModelingLanguagePackage.BASE_TYPE:
       {
-        BasicType basicType = (BasicType)theEObject;
-        T result = caseBasicType(basicType);
-        if (result == null) result = caseType(basicType);
+        BaseType baseType = (BaseType)theEObject;
+        T result = caseBaseType(baseType);
+        if (result == null) result = caseType(baseType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -203,11 +265,11 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.LIST_LITERAL:
+      case DeviceModelingLanguagePackage.SEQ_LITERAL:
       {
-        ListLiteral listLiteral = (ListLiteral)theEObject;
-        T result = caseListLiteral(listLiteral);
-        if (result == null) result = caseLiteral(listLiteral);
+        SeqLiteral seqLiteral = (SeqLiteral)theEObject;
+        T result = caseSeqLiteral(seqLiteral);
+        if (result == null) result = caseLiteral(seqLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -258,11 +320,11 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.SIMPLE_LIST_LITERAL:
+      case DeviceModelingLanguagePackage.SIMPLE_SEQ_LITERAL:
       {
-        SimpleListLiteral simpleListLiteral = (SimpleListLiteral)theEObject;
-        T result = caseSimpleListLiteral(simpleListLiteral);
-        if (result == null) result = caseSimpleLiteral(simpleListLiteral);
+        SimpleSeqLiteral simpleSeqLiteral = (SimpleSeqLiteral)theEObject;
+        T result = caseSimpleSeqLiteral(simpleSeqLiteral);
+        if (result == null) result = caseSimpleLiteral(simpleSeqLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -292,6 +354,38 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DeviceModelingLanguagePackage.OPTION_FEATURE_TYPE:
+      {
+        OptionFeatureType optionFeatureType = (OptionFeatureType)theEObject;
+        T result = caseOptionFeatureType(optionFeatureType);
+        if (result == null) result = caseFeatureType(optionFeatureType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.SOME_FEATURE_TYPE:
+      {
+        SomeFeatureType someFeatureType = (SomeFeatureType)theEObject;
+        T result = caseSomeFeatureType(someFeatureType);
+        if (result == null) result = caseFeatureType(someFeatureType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.NONE_FEATURE_TYPE:
+      {
+        NoneFeatureType noneFeatureType = (NoneFeatureType)theEObject;
+        T result = caseNoneFeatureType(noneFeatureType);
+        if (result == null) result = caseFeatureType(noneFeatureType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.EITHER_FEATURE_TYPE:
+      {
+        EitherFeatureType eitherFeatureType = (EitherFeatureType)theEObject;
+        T result = caseEitherFeatureType(eitherFeatureType);
+        if (result == null) result = caseFeatureType(eitherFeatureType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DeviceModelingLanguagePackage.NUM_NAT_CONSTRAINT:
       {
         NumNatConstraint numNatConstraint = (NumNatConstraint)theEObject;
@@ -308,11 +402,63 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.LIST_TYPE:
+      case DeviceModelingLanguagePackage.BINARY_EXP:
       {
-        ListType listType = (ListType)theEObject;
-        T result = caseListType(listType);
-        if (result == null) result = caseType(listType);
+        BinaryExp binaryExp = (BinaryExp)theEObject;
+        T result = caseBinaryExp(binaryExp);
+        if (result == null) result = caseExp(binaryExp);
+        if (result == null) result = caseConstraintExp(binaryExp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.UNARY_EXP:
+      {
+        UnaryExp unaryExp = (UnaryExp)theEObject;
+        T result = caseUnaryExp(unaryExp);
+        if (result == null) result = caseExp(unaryExp);
+        if (result == null) result = caseConstraintExp(unaryExp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.PRIMARY_EXP:
+      {
+        PrimaryExp primaryExp = (PrimaryExp)theEObject;
+        T result = casePrimaryExp(primaryExp);
+        if (result == null) result = caseExp(primaryExp);
+        if (result == null) result = caseConstraintExp(primaryExp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.ACCESS_EXP:
+      {
+        AccessExp accessExp = (AccessExp)theEObject;
+        T result = caseAccessExp(accessExp);
+        if (result == null) result = caseExp(accessExp);
+        if (result == null) result = caseConstraintExp(accessExp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.NAME_EXP:
+      {
+        NameExp nameExp = (NameExp)theEObject;
+        T result = caseNameExp(nameExp);
+        if (result == null) result = casePrimary(nameExp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.LITERAL_EXP:
+      {
+        LiteralExp literalExp = (LiteralExp)theEObject;
+        T result = caseLiteralExp(literalExp);
+        if (result == null) result = casePrimary(literalExp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.SEQ_TYPE:
+      {
+        SeqType seqType = (SeqType)theEObject;
+        T result = caseSeqType(seqType);
+        if (result == null) result = caseType(seqType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -324,11 +470,20 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DeviceModelingLanguagePackage.TUPLE_TYPE:
+      {
+        TupleType tupleType = (TupleType)theEObject;
+        T result = caseTupleType(tupleType);
+        if (result == null) result = caseBaseType(tupleType);
+        if (result == null) result = caseType(tupleType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DeviceModelingLanguagePackage.OPTION_TYPE:
       {
         OptionType optionType = (OptionType)theEObject;
         T result = caseOptionType(optionType);
-        if (result == null) result = caseBasicType(optionType);
+        if (result == null) result = caseBaseType(optionType);
         if (result == null) result = caseType(optionType);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -337,6 +492,7 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
       {
         SomeType someType = (SomeType)theEObject;
         T result = caseSomeType(someType);
+        if (result == null) result = caseBaseType(someType);
         if (result == null) result = caseType(someType);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -345,17 +501,8 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
       {
         NoneType noneType = (NoneType)theEObject;
         T result = caseNoneType(noneType);
-        if (result == null) result = caseBasicType(noneType);
+        if (result == null) result = caseBaseType(noneType);
         if (result == null) result = caseType(noneType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DeviceModelingLanguagePackage.TUPLE_TYPE:
-      {
-        TupleType tupleType = (TupleType)theEObject;
-        T result = caseTupleType(tupleType);
-        if (result == null) result = caseBasicType(tupleType);
-        if (result == null) result = caseType(tupleType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -464,6 +611,22 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Assignment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Assignment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAssignment(Assignment object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Member Decl</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -512,6 +675,38 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Feature Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFeatureType(FeatureType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Base Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Base Feature Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBaseFeatureType(BaseFeatureType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Invariant Decl</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -539,6 +734,22 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMultiplicityInvariantDecl(MultiplicityInvariantDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>General Invariant Decl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>General Invariant Decl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGeneralInvariantDecl(GeneralInvariantDecl object)
   {
     return null;
   }
@@ -592,6 +803,70 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Constraint Exp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Constraint Exp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConstraintExp(ConstraintExp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Attr Or Sub Member</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Attr Or Sub Member</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAttrOrSubMember(AttrOrSubMember object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Exp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Exp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExp(Exp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Primary</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Primary</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrimary(Primary object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -608,17 +883,17 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Basic Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Base Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Basic Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Base Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBasicType(BasicType object)
+  public T caseBaseType(BaseType object)
   {
     return null;
   }
@@ -672,17 +947,17 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>List Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Seq Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>List Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Seq Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseListLiteral(ListLiteral object)
+  public T caseSeqLiteral(SeqLiteral object)
   {
     return null;
   }
@@ -784,17 +1059,17 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Simple List Literal</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Simple Seq Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Simple List Literal</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Simple Seq Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSimpleListLiteral(SimpleListLiteral object)
+  public T caseSimpleSeqLiteral(SimpleSeqLiteral object)
   {
     return null;
   }
@@ -848,6 +1123,70 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Option Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Option Feature Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOptionFeatureType(OptionFeatureType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Some Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Some Feature Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSomeFeatureType(SomeFeatureType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>None Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>None Feature Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNoneFeatureType(NoneFeatureType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Either Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Either Feature Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEitherFeatureType(EitherFeatureType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Num Nat Constraint</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -880,17 +1219,113 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>List Type</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Binary Exp</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>List Type</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Binary Exp</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseListType(ListType object)
+  public T caseBinaryExp(BinaryExp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Unary Exp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Unary Exp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnaryExp(UnaryExp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Primary Exp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Primary Exp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrimaryExp(PrimaryExp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Access Exp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Access Exp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAccessExp(AccessExp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Name Exp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Name Exp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNameExp(NameExp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Literal Exp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Literal Exp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLiteralExp(LiteralExp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Seq Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Seq Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSeqType(SeqType object)
   {
     return null;
   }
@@ -907,6 +1342,22 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSetType(SetType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Tuple Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tuple Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTupleType(TupleType object)
   {
     return null;
   }
@@ -955,22 +1406,6 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNoneType(NoneType object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Tuple Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Tuple Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTupleType(TupleType object)
   {
     return null;
   }

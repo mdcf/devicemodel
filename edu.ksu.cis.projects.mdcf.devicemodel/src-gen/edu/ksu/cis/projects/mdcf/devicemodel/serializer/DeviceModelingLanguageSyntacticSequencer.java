@@ -18,20 +18,16 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class DeviceModelingLanguageSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected DeviceModelingLanguageGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_BaseFeatureType___EqualsSignKeyword_2_0_LeftCurlyBracketKeyword_2_1_RightCurlyBracketKeyword_2_3__q;
 	protected AbstractElementAlias match_ComponentDecl___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q;
-	protected AbstractElementAlias match_ComponentDecl___RequiresKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q;
-	protected AbstractElementAlias match_Device___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q;
-	protected AbstractElementAlias match_SubMemberDecl___LeftCurlyBracketKeyword_1_0_3_0_RightCurlyBracketKeyword_1_0_3_2__q;
-	protected AbstractElementAlias match_TypeDecl___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q;
+	protected AbstractElementAlias match_FeatureType___EqualsSignKeyword_2_5_0_LeftCurlyBracketKeyword_2_5_1_RightCurlyBracketKeyword_2_5_3__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DeviceModelingLanguageGrammarAccess) access;
+		match_BaseFeatureType___EqualsSignKeyword_2_0_LeftCurlyBracketKeyword_2_1_RightCurlyBracketKeyword_2_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getBaseFeatureTypeAccess().getEqualsSignKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getBaseFeatureTypeAccess().getLeftCurlyBracketKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getBaseFeatureTypeAccess().getRightCurlyBracketKeyword_2_3()));
 		match_ComponentDecl___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getComponentDeclAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getComponentDeclAccess().getRightCurlyBracketKeyword_3_2()));
-		match_ComponentDecl___RequiresKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getComponentDeclAccess().getRequiresKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getComponentDeclAccess().getLeftCurlyBracketKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getComponentDeclAccess().getRightCurlyBracketKeyword_4_3()));
-		match_Device___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDeviceAccess().getLeftCurlyBracketKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getDeviceAccess().getRightCurlyBracketKeyword_4_2()));
-		match_SubMemberDecl___LeftCurlyBracketKeyword_1_0_3_0_RightCurlyBracketKeyword_1_0_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getSubMemberDeclAccess().getLeftCurlyBracketKeyword_1_0_3_0()), new TokenAlias(false, false, grammarAccess.getSubMemberDeclAccess().getRightCurlyBracketKeyword_1_0_3_2()));
-		match_TypeDecl___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTypeDeclAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getTypeDeclAccess().getRightCurlyBracketKeyword_3_2()));
+		match_FeatureType___EqualsSignKeyword_2_5_0_LeftCurlyBracketKeyword_2_5_1_RightCurlyBracketKeyword_2_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getFeatureTypeAccess().getEqualsSignKeyword_2_5_0()), new TokenAlias(false, false, grammarAccess.getFeatureTypeAccess().getLeftCurlyBracketKeyword_2_5_1()), new TokenAlias(false, false, grammarAccess.getFeatureTypeAccess().getRightCurlyBracketKeyword_2_5_3()));
 	}
 	
 	@Override
@@ -46,20 +42,24 @@ public class DeviceModelingLanguageSyntacticSequencer extends AbstractSyntacticS
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_ComponentDecl___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q.equals(syntax))
+			if(match_BaseFeatureType___EqualsSignKeyword_2_0_LeftCurlyBracketKeyword_2_1_RightCurlyBracketKeyword_2_3__q.equals(syntax))
+				emit_BaseFeatureType___EqualsSignKeyword_2_0_LeftCurlyBracketKeyword_2_1_RightCurlyBracketKeyword_2_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_ComponentDecl___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q.equals(syntax))
 				emit_ComponentDecl___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_ComponentDecl___RequiresKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q.equals(syntax))
-				emit_ComponentDecl___RequiresKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Device___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q.equals(syntax))
-				emit_Device___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_SubMemberDecl___LeftCurlyBracketKeyword_1_0_3_0_RightCurlyBracketKeyword_1_0_3_2__q.equals(syntax))
-				emit_SubMemberDecl___LeftCurlyBracketKeyword_1_0_3_0_RightCurlyBracketKeyword_1_0_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_TypeDecl___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q.equals(syntax))
-				emit_TypeDecl___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_FeatureType___EqualsSignKeyword_2_5_0_LeftCurlyBracketKeyword_2_5_1_RightCurlyBracketKeyword_2_5_3__q.equals(syntax))
+				emit_FeatureType___EqualsSignKeyword_2_5_0_LeftCurlyBracketKeyword_2_5_1_RightCurlyBracketKeyword_2_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Syntax:
+	 *     ('=' '{' '}')?
+	 */
+	protected void emit_BaseFeatureType___EqualsSignKeyword_2_0_LeftCurlyBracketKeyword_2_1_RightCurlyBracketKeyword_2_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Syntax:
 	 *     ('{' '}')?
@@ -70,33 +70,9 @@ public class DeviceModelingLanguageSyntacticSequencer extends AbstractSyntacticS
 	
 	/**
 	 * Syntax:
-	 *     ('requires' '{' '}')?
+	 *     ('=' '{' '}')?
 	 */
-	protected void emit_ComponentDecl___RequiresKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ('{' '}')?
-	 */
-	protected void emit_Device___LeftCurlyBracketKeyword_4_0_RightCurlyBracketKeyword_4_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ('{' '}')?
-	 */
-	protected void emit_SubMemberDecl___LeftCurlyBracketKeyword_1_0_3_0_RightCurlyBracketKeyword_1_0_3_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ('{' '}')?
-	 */
-	protected void emit_TypeDecl___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_FeatureType___EqualsSignKeyword_2_5_0_LeftCurlyBracketKeyword_2_5_1_RightCurlyBracketKeyword_2_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -5,7 +5,7 @@
 
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
-       uri = "http://mdcf.projects.cis.ksu.edu/devicemodel/DeviceModelingLanguage" 
+       uri = "http://http://mdcf.santos.cis.ksu.edu/devicemodel/DeviceModelingLanguage" 
        class = "edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage"
        genModel = "edu/ksu/cis/projects/mdcf/devicemodel/DeviceModelingLanguage.genmodel" /> 
 	

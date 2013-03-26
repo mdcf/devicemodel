@@ -32,12 +32,12 @@ public interface SetLiteral extends Literal
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Basic Type</em>' containment reference.
-   * @see #setBasicType(BasicType)
+   * @see #setBasicType(BaseType)
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSetLiteral_BasicType()
    * @model containment="true"
    * @generated
    */
-  BasicType getBasicType();
+  BaseType getBasicType();
 
   /**
    * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetLiteral#getBasicType <em>Basic Type</em>}' containment reference.
@@ -47,7 +47,7 @@ public interface SetLiteral extends Literal
    * @see #getBasicType()
    * @generated
    */
-  void setBasicType(BasicType value);
+  void setBasicType(BaseType value);
 
   /**
    * Returns the value of the '<em><b>Elems</b></em>' containment reference list.

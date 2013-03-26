@@ -6,21 +6,21 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Simple List Literal</b></em>'.
+ * A representation of the model object '<em><b>Simple Seq Literal</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleListLiteral#getElems <em>Elems</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleSeqLiteral#getElems <em>Elems</em>}</li>
  * </ul>
  * </p>
  *
- * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSimpleListLiteral()
+ * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSimpleSeqLiteral()
  * @model
  * @generated
  */
-public interface SimpleListLiteral extends SimpleLiteral
+public interface SimpleSeqLiteral extends SimpleLiteral
 {
   /**
    * Returns the value of the '<em><b>Elems</b></em>' containment reference list.
@@ -32,10 +32,10 @@ public interface SimpleListLiteral extends SimpleLiteral
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elems</em>' containment reference list.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSimpleListLiteral_Elems()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSimpleSeqLiteral_Elems()
    * @model containment="true"
    * @generated
    */
   EList<SimpleLiteral> getElems();
 
-} // SimpleListLiteral
+} // SimpleSeqLiteral

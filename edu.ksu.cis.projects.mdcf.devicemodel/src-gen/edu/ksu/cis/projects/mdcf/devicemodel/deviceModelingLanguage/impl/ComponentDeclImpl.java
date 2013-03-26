@@ -2,19 +2,24 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Assignment;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Exp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -30,6 +35,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getSupers <em>Supers</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getMembers <em>Members</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getDevices <em>Devices</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getAssigns <em>Assigns</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getExp <em>Exp</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +73,26 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
    * @ordered
    */
   protected EList<Device> devices;
+
+  /**
+   * The cached value of the '{@link #getAssigns() <em>Assigns</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAssigns()
+   * @generated
+   * @ordered
+   */
+  protected EList<Assignment> assigns;
+
+  /**
+   * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExp()
+   * @generated
+   * @ordered
+   */
+  protected Exp exp;
 
   /**
    * <!-- begin-user-doc -->
@@ -135,6 +162,68 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Assignment> getAssigns()
+  {
+    if (assigns == null)
+    {
+      assigns = new EObjectContainmentEList<Assignment>(Assignment.class, this, DeviceModelingLanguagePackage.COMPONENT_DECL__ASSIGNS);
+    }
+    return assigns;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Exp getExp()
+  {
+    return exp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExp(Exp newExp, NotificationChain msgs)
+  {
+    Exp oldExp = exp;
+    exp = newExp;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.COMPONENT_DECL__EXP, oldExp, newExp);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExp(Exp newExp)
+  {
+    if (newExp != exp)
+    {
+      NotificationChain msgs = null;
+      if (exp != null)
+        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.COMPONENT_DECL__EXP, null, msgs);
+      if (newExp != null)
+        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.COMPONENT_DECL__EXP, null, msgs);
+      msgs = basicSetExp(newExp, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.COMPONENT_DECL__EXP, newExp, newExp));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -144,6 +233,10 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
         return ((InternalEList<?>)getMembers()).basicRemove(otherEnd, msgs);
       case DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES:
         return ((InternalEList<?>)getDevices()).basicRemove(otherEnd, msgs);
+      case DeviceModelingLanguagePackage.COMPONENT_DECL__ASSIGNS:
+        return ((InternalEList<?>)getAssigns()).basicRemove(otherEnd, msgs);
+      case DeviceModelingLanguagePackage.COMPONENT_DECL__EXP:
+        return basicSetExp(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -164,6 +257,10 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
         return getMembers();
       case DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES:
         return getDevices();
+      case DeviceModelingLanguagePackage.COMPONENT_DECL__ASSIGNS:
+        return getAssigns();
+      case DeviceModelingLanguagePackage.COMPONENT_DECL__EXP:
+        return getExp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -191,6 +288,13 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
         getDevices().clear();
         getDevices().addAll((Collection<? extends Device>)newValue);
         return;
+      case DeviceModelingLanguagePackage.COMPONENT_DECL__ASSIGNS:
+        getAssigns().clear();
+        getAssigns().addAll((Collection<? extends Assignment>)newValue);
+        return;
+      case DeviceModelingLanguagePackage.COMPONENT_DECL__EXP:
+        setExp((Exp)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -214,6 +318,12 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
       case DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES:
         getDevices().clear();
         return;
+      case DeviceModelingLanguagePackage.COMPONENT_DECL__ASSIGNS:
+        getAssigns().clear();
+        return;
+      case DeviceModelingLanguagePackage.COMPONENT_DECL__EXP:
+        setExp((Exp)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -234,6 +344,10 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
         return members != null && !members.isEmpty();
       case DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES:
         return devices != null && !devices.isEmpty();
+      case DeviceModelingLanguagePackage.COMPONENT_DECL__ASSIGNS:
+        return assigns != null && !assigns.isEmpty();
+      case DeviceModelingLanguagePackage.COMPONENT_DECL__EXP:
+        return exp != null;
     }
     return super.eIsSet(featureID);
   }

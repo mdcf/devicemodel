@@ -5,21 +5,21 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>List Type</b></em>'.
+ * A representation of the model object '<em><b>None Feature Type</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ListType#getBase <em>Base</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneFeatureType#getBase <em>Base</em>}</li>
  * </ul>
  * </p>
  *
- * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getListType()
+ * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getNoneFeatureType()
  * @model
  * @generated
  */
-public interface ListType extends Type
+public interface NoneFeatureType extends FeatureType
 {
   /**
    * Returns the value of the '<em><b>Base</b></em>' containment reference.
@@ -30,21 +30,21 @@ public interface ListType extends Type
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Base</em>' containment reference.
-   * @see #setBase(BasicType)
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getListType_Base()
+   * @see #setBase(BaseFeatureType)
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getNoneFeatureType_Base()
    * @model containment="true"
    * @generated
    */
-  BasicType getBase();
+  BaseFeatureType getBase();
 
   /**
-   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ListType#getBase <em>Base</em>}' containment reference.
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneFeatureType#getBase <em>Base</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Base</em>' containment reference.
    * @see #getBase()
    * @generated
    */
-  void setBase(BasicType value);
+  void setBase(BaseFeatureType value);
 
-} // ListType
+} // NoneFeatureType

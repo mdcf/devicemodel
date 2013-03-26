@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface TupleType extends BasicType
+public interface TupleType extends BaseType
 {
   /**
    * Returns the value of the '<em><b>Elem Types</b></em>' containment reference list.

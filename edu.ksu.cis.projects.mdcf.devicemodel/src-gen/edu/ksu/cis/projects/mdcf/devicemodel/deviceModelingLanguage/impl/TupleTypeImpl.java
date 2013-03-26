@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class TupleTypeImpl extends BasicTypeImpl implements TupleType
+public class TupleTypeImpl extends BaseTypeImpl implements TupleType
 {
   /**
    * The cached value of the '{@link #getElemTypes() <em>Elem Types</em>}' containment reference list.

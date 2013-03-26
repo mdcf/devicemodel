@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantDeclImpl#getInvName <em>Inv Name</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantDeclImpl#getLo <em>Lo</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantDeclImpl#getHi <em>Hi</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantDeclImpl#getMatch <em>Match</em>}</li>
@@ -35,26 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements MultiplicityInvariantDecl
 {
-  /**
-   * The default value of the '{@link #getInvName() <em>Inv Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInvName()
-   * @generated
-   * @ordered
-   */
-  protected static final String INV_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getInvName() <em>Inv Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInvName()
-   * @generated
-   * @ordered
-   */
-  protected String invName = INV_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getLo() <em>Lo</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -114,29 +93,6 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
   protected EClass eStaticClass()
   {
     return DeviceModelingLanguagePackage.Literals.MULTIPLICITY_INVARIANT_DECL;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getInvName()
-  {
-    return invName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setInvName(String newInvName)
-  {
-    String oldInvName = invName;
-    invName = newInvName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__INV_NAME, oldInvName, invName));
   }
 
   /**
@@ -356,8 +312,6 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__INV_NAME:
-        return getInvName();
       case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__LO:
         return getLo();
       case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__HI:
@@ -381,9 +335,6 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__INV_NAME:
-        setInvName((String)newValue);
-        return;
       case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__LO:
         setLo((ConstraintNat)newValue);
         return;
@@ -410,9 +361,6 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__INV_NAME:
-        setInvName(INV_NAME_EDEFAULT);
-        return;
       case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__LO:
         setLo((ConstraintNat)null);
         return;
@@ -439,8 +387,6 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__INV_NAME:
-        return INV_NAME_EDEFAULT == null ? invName != null : !INV_NAME_EDEFAULT.equals(invName);
       case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__LO:
         return lo != null;
       case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__HI:
@@ -451,23 +397,6 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
         return type != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (invName: ");
-    result.append(invName);
-    result.append(')');
-    return result.toString();
   }
 
 } //MultiplicityInvariantDeclImpl

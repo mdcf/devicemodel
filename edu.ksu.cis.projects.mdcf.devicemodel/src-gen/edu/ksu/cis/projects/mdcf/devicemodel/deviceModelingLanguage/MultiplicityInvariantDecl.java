@@ -11,7 +11,6 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getInvName <em>Inv Name</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getLo <em>Lo</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getHi <em>Hi</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getMatch <em>Match</em>}</li>
@@ -25,32 +24,6 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  */
 public interface MultiplicityInvariantDecl extends InvariantDecl
 {
-  /**
-   * Returns the value of the '<em><b>Inv Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Inv Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Inv Name</em>' attribute.
-   * @see #setInvName(String)
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getMultiplicityInvariantDecl_InvName()
-   * @model
-   * @generated
-   */
-  String getInvName();
-
-  /**
-   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getInvName <em>Inv Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Inv Name</em>' attribute.
-   * @see #getInvName()
-   * @generated
-   */
-  void setInvName(String value);
-
   /**
    * Returns the value of the '<em><b>Lo</b></em>' containment reference.
    * <!-- begin-user-doc -->

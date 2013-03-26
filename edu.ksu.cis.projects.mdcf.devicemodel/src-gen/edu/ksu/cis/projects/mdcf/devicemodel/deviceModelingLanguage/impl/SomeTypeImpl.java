@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class SomeTypeImpl extends TypeImpl implements SomeType
+public class SomeTypeImpl extends BaseTypeImpl implements SomeType
 {
   /**
    * The cached value of the '{@link #getBase() <em>Base</em>}' containment reference.
