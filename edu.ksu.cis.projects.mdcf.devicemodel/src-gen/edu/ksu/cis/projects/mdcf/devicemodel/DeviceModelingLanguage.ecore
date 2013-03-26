@@ -57,7 +57,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="InvariantDecl" eSuperTypes="#//MemberDecl">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="invName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MultiplicityInvariantDecl" eSuperTypes="#//InvariantDecl">
+  <eClassifiers xsi:type="ecore:EClass" name="MultiplicityInvariant" eSuperTypes="#//InvariantDecl">
     <eStructuralFeatures xsi:type="ecore:EReference" name="lo" eType="#//ConstraintNat"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hi" eType="#//ConstraintNat"
@@ -66,7 +66,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ComponentDecl"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GeneralInvariantDecl" eSuperTypes="#//InvariantDecl">
+  <eClassifiers xsi:type="ecore:EClass" name="GeneralInvariant" eSuperTypes="#//InvariantDecl">
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Exp" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SubMemberMatch">
@@ -169,6 +169,18 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="choice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
         eType="#//MemberDecl" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SeqFeatureType" eSuperTypes="#//FeatureType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="#//BaseFeatureType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//BaseFeatureType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetFeatureType" eSuperTypes="#//FeatureType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="#//BaseFeatureType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//BaseFeatureType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumNatConstraint" eSuperTypes="#//ConstraintNat">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="num" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

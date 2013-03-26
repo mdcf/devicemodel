@@ -135,14 +135,14 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createInvariantDeclAdapter();
       }
       @Override
-      public Adapter caseMultiplicityInvariantDecl(MultiplicityInvariantDecl object)
+      public Adapter caseMultiplicityInvariant(MultiplicityInvariant object)
       {
-        return createMultiplicityInvariantDeclAdapter();
+        return createMultiplicityInvariantAdapter();
       }
       @Override
-      public Adapter caseGeneralInvariantDecl(GeneralInvariantDecl object)
+      public Adapter caseGeneralInvariant(GeneralInvariant object)
       {
-        return createGeneralInvariantDeclAdapter();
+        return createGeneralInvariantAdapter();
       }
       @Override
       public Adapter caseSubMemberMatch(SubMemberMatch object)
@@ -293,6 +293,16 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseEitherFeatureType(EitherFeatureType object)
       {
         return createEitherFeatureTypeAdapter();
+      }
+      @Override
+      public Adapter caseSeqFeatureType(SeqFeatureType object)
+      {
+        return createSeqFeatureTypeAdapter();
+      }
+      @Override
+      public Adapter caseSetFeatureType(SetFeatureType object)
+      {
+        return createSetFeatureTypeAdapter();
       }
       @Override
       public Adapter caseNumNatConstraint(NumNatConstraint object)
@@ -587,31 +597,31 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl <em>Multiplicity Invariant Decl</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant <em>Multiplicity Invariant</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant
    * @generated
    */
-  public Adapter createMultiplicityInvariantDeclAdapter()
+  public Adapter createMultiplicityInvariantAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvariantDecl <em>General Invariant Decl</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvariant <em>General Invariant</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvariantDecl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvariant
    * @generated
    */
-  public Adapter createGeneralInvariantDeclAdapter()
+  public Adapter createGeneralInvariantAdapter()
   {
     return null;
   }
@@ -1062,6 +1072,36 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEitherFeatureTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqFeatureType <em>Seq Feature Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqFeatureType
+   * @generated
+   */
+  public Adapter createSeqFeatureTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetFeatureType <em>Set Feature Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetFeatureType
+   * @generated
+   */
+  public Adapter createSetFeatureTypeAdapter()
   {
     return null;
   }

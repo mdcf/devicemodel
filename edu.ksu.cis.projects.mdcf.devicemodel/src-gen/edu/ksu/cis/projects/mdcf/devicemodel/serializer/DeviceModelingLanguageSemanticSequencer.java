@@ -16,10 +16,10 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintEx
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.EitherFeatureType;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvariantDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvariant;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.LiteralExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NameExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneFeatureType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneLiteral;
@@ -32,8 +32,10 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.PrimaryExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Report;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ReportDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ReportMemberDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqFeatureType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetFeatureType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleBasicLiteral;
@@ -163,11 +165,11 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 					return; 
 				}
 				else break;
-			case DeviceModelingLanguagePackage.GENERAL_INVARIANT_DECL:
-				if(context == grammarAccess.getGeneralInvariantDeclRule() ||
+			case DeviceModelingLanguagePackage.GENERAL_INVARIANT:
+				if(context == grammarAccess.getGeneralInvariantRule() ||
 				   context == grammarAccess.getInvariantDeclRule() ||
 				   context == grammarAccess.getMemberDeclRule()) {
-					sequence_GeneralInvariantDecl(context, (GeneralInvariantDecl) semanticObject); 
+					sequence_GeneralInvariant(context, (GeneralInvariant) semanticObject); 
 					return; 
 				}
 				else break;
@@ -183,11 +185,11 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 					return; 
 				}
 				else break;
-			case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL:
+			case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT:
 				if(context == grammarAccess.getInvariantDeclRule() ||
 				   context == grammarAccess.getMemberDeclRule() ||
-				   context == grammarAccess.getMultiplicityInvariantDeclRule()) {
-					sequence_MultiplicityInvariantDecl(context, (MultiplicityInvariantDecl) semanticObject); 
+				   context == grammarAccess.getMultiplicityInvariantRule()) {
+					sequence_MultiplicityInvariant(context, (MultiplicityInvariant) semanticObject); 
 					return; 
 				}
 				else break;
@@ -268,6 +270,12 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 					return; 
 				}
 				else break;
+			case DeviceModelingLanguagePackage.SEQ_FEATURE_TYPE:
+				if(context == grammarAccess.getFeatureTypeRule()) {
+					sequence_FeatureType(context, (SeqFeatureType) semanticObject); 
+					return; 
+				}
+				else break;
 			case DeviceModelingLanguagePackage.SEQ_LITERAL:
 				if(context == grammarAccess.getLiteralRule() ||
 				   context == grammarAccess.getSeqLiteralRule()) {
@@ -278,6 +286,12 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 			case DeviceModelingLanguagePackage.SEQ_TYPE:
 				if(context == grammarAccess.getTypeRule()) {
 					sequence_Type(context, (SeqType) semanticObject); 
+					return; 
+				}
+				else break;
+			case DeviceModelingLanguagePackage.SET_FEATURE_TYPE:
+				if(context == grammarAccess.getFeatureTypeRule()) {
+					sequence_FeatureType(context, (SetFeatureType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -723,6 +737,24 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
+	 *     (base=BaseFeatureType (elements+=BaseFeatureType elements+=BaseFeatureType*)?)
+	 */
+	protected void sequence_FeatureType(EObject context, SeqFeatureType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (base=BaseFeatureType (elements+=BaseFeatureType elements+=BaseFeatureType*)?)
+	 */
+	protected void sequence_FeatureType(EObject context, SetFeatureType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (base=BaseFeatureType members+=MemberDecl*)
 	 */
 	protected void sequence_FeatureType(EObject context, SomeFeatureType semanticObject) {
@@ -734,7 +766,7 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	 * Constraint:
 	 *     (invName=ID? exp=Exp)
 	 */
-	protected void sequence_GeneralInvariantDecl(EObject context, GeneralInvariantDecl semanticObject) {
+	protected void sequence_GeneralInvariant(EObject context, GeneralInvariant semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -752,7 +784,7 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	 * Constraint:
 	 *     (invName=ID? lo=ConstraintNat hi=ConstraintNat match=SubMemberMatch type=[ComponentDecl|ID]?)
 	 */
-	protected void sequence_MultiplicityInvariantDecl(EObject context, MultiplicityInvariantDecl semanticObject) {
+	protected void sequence_MultiplicityInvariant(EObject context, MultiplicityInvariant semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

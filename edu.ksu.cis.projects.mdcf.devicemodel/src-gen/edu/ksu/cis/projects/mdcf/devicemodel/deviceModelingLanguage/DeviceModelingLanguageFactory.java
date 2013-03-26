@@ -131,22 +131,22 @@ public interface DeviceModelingLanguageFactory extends EFactory
   InvariantDecl createInvariantDecl();
 
   /**
-   * Returns a new object of class '<em>Multiplicity Invariant Decl</em>'.
+   * Returns a new object of class '<em>Multiplicity Invariant</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Multiplicity Invariant Decl</em>'.
+   * @return a new object of class '<em>Multiplicity Invariant</em>'.
    * @generated
    */
-  MultiplicityInvariantDecl createMultiplicityInvariantDecl();
+  MultiplicityInvariant createMultiplicityInvariant();
 
   /**
-   * Returns a new object of class '<em>General Invariant Decl</em>'.
+   * Returns a new object of class '<em>General Invariant</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>General Invariant Decl</em>'.
+   * @return a new object of class '<em>General Invariant</em>'.
    * @generated
    */
-  GeneralInvariantDecl createGeneralInvariantDecl();
+  GeneralInvariant createGeneralInvariant();
 
   /**
    * Returns a new object of class '<em>Sub Member Match</em>'.
@@ -417,6 +417,24 @@ public interface DeviceModelingLanguageFactory extends EFactory
    * @generated
    */
   EitherFeatureType createEitherFeatureType();
+
+  /**
+   * Returns a new object of class '<em>Seq Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Seq Feature Type</em>'.
+   * @generated
+   */
+  SeqFeatureType createSeqFeatureType();
+
+  /**
+   * Returns a new object of class '<em>Set Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Set Feature Type</em>'.
+   * @generated
+   */
+  SetFeatureType createSetFeatureType();
 
   /**
    * Returns a new object of class '<em>Num Nat Constraint</em>'.

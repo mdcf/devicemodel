@@ -5,7 +5,7 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintNat;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberMatch;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -18,21 +18,21 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Multiplicity Invariant Decl</b></em>'.
+ * An implementation of the model object '<em><b>Multiplicity Invariant</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantDeclImpl#getLo <em>Lo</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantDeclImpl#getHi <em>Hi</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantDeclImpl#getMatch <em>Match</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantDeclImpl#getType <em>Type</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantImpl#getLo <em>Lo</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantImpl#getHi <em>Hi</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantImpl#getMatch <em>Match</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MultiplicityInvariantImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements MultiplicityInvariantDecl
+public class MultiplicityInvariantImpl extends InvariantDeclImpl implements MultiplicityInvariant
 {
   /**
    * The cached value of the '{@link #getLo() <em>Lo</em>}' containment reference.
@@ -79,7 +79,7 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  protected MultiplicityInvariantDeclImpl()
+  protected MultiplicityInvariantImpl()
   {
     super();
   }
@@ -92,7 +92,7 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.MULTIPLICITY_INVARIANT_DECL;
+    return DeviceModelingLanguagePackage.Literals.MULTIPLICITY_INVARIANT;
   }
 
   /**
@@ -116,7 +116,7 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
     lo = newLo;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__LO, oldLo, newLo);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__LO, oldLo, newLo);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -133,14 +133,14 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
     {
       NotificationChain msgs = null;
       if (lo != null)
-        msgs = ((InternalEObject)lo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__LO, null, msgs);
+        msgs = ((InternalEObject)lo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__LO, null, msgs);
       if (newLo != null)
-        msgs = ((InternalEObject)newLo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__LO, null, msgs);
+        msgs = ((InternalEObject)newLo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__LO, null, msgs);
       msgs = basicSetLo(newLo, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__LO, newLo, newLo));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__LO, newLo, newLo));
   }
 
   /**
@@ -164,7 +164,7 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
     hi = newHi;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__HI, oldHi, newHi);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__HI, oldHi, newHi);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -181,14 +181,14 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
     {
       NotificationChain msgs = null;
       if (hi != null)
-        msgs = ((InternalEObject)hi).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__HI, null, msgs);
+        msgs = ((InternalEObject)hi).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__HI, null, msgs);
       if (newHi != null)
-        msgs = ((InternalEObject)newHi).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__HI, null, msgs);
+        msgs = ((InternalEObject)newHi).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__HI, null, msgs);
       msgs = basicSetHi(newHi, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__HI, newHi, newHi));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__HI, newHi, newHi));
   }
 
   /**
@@ -212,7 +212,7 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
     match = newMatch;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__MATCH, oldMatch, newMatch);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__MATCH, oldMatch, newMatch);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -229,14 +229,14 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
     {
       NotificationChain msgs = null;
       if (match != null)
-        msgs = ((InternalEObject)match).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__MATCH, null, msgs);
+        msgs = ((InternalEObject)match).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__MATCH, null, msgs);
       if (newMatch != null)
-        msgs = ((InternalEObject)newMatch).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__MATCH, null, msgs);
+        msgs = ((InternalEObject)newMatch).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__MATCH, null, msgs);
       msgs = basicSetMatch(newMatch, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__MATCH, newMatch, newMatch));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__MATCH, newMatch, newMatch));
   }
 
   /**
@@ -253,7 +253,7 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
       if (type != oldType)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__TYPE, oldType, type));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__TYPE, oldType, type));
       }
     }
     return type;
@@ -279,7 +279,7 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
     ComponentDecl oldType = type;
     type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__TYPE, oldType, type));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__TYPE, oldType, type));
   }
 
   /**
@@ -292,11 +292,11 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__LO:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__LO:
         return basicSetLo(null, msgs);
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__HI:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__HI:
         return basicSetHi(null, msgs);
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__MATCH:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__MATCH:
         return basicSetMatch(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -312,13 +312,13 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__LO:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__LO:
         return getLo();
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__HI:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__HI:
         return getHi();
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__MATCH:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__MATCH:
         return getMatch();
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__TYPE:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__TYPE:
         if (resolve) return getType();
         return basicGetType();
     }
@@ -335,16 +335,16 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__LO:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__LO:
         setLo((ConstraintNat)newValue);
         return;
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__HI:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__HI:
         setHi((ConstraintNat)newValue);
         return;
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__MATCH:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__MATCH:
         setMatch((SubMemberMatch)newValue);
         return;
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__TYPE:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__TYPE:
         setType((ComponentDecl)newValue);
         return;
     }
@@ -361,16 +361,16 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__LO:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__LO:
         setLo((ConstraintNat)null);
         return;
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__HI:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__HI:
         setHi((ConstraintNat)null);
         return;
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__MATCH:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__MATCH:
         setMatch((SubMemberMatch)null);
         return;
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__TYPE:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__TYPE:
         setType((ComponentDecl)null);
         return;
     }
@@ -387,16 +387,16 @@ public class MultiplicityInvariantDeclImpl extends InvariantDeclImpl implements 
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__LO:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__LO:
         return lo != null;
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__HI:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__HI:
         return hi != null;
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__MATCH:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__MATCH:
         return match != null;
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL__TYPE:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__TYPE:
         return type != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //MultiplicityInvariantDeclImpl
+} //MultiplicityInvariantImpl

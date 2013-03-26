@@ -76,8 +76,8 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.FEATURE_TYPE: return createFeatureType();
       case DeviceModelingLanguagePackage.BASE_FEATURE_TYPE: return createBaseFeatureType();
       case DeviceModelingLanguagePackage.INVARIANT_DECL: return createInvariantDecl();
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL: return createMultiplicityInvariantDecl();
-      case DeviceModelingLanguagePackage.GENERAL_INVARIANT_DECL: return createGeneralInvariantDecl();
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT: return createMultiplicityInvariant();
+      case DeviceModelingLanguagePackage.GENERAL_INVARIANT: return createGeneralInvariant();
       case DeviceModelingLanguagePackage.SUB_MEMBER_MATCH: return createSubMemberMatch();
       case DeviceModelingLanguagePackage.CONSTRAINT_NAT: return createConstraintNat();
       case DeviceModelingLanguagePackage.DEVICE: return createDevice();
@@ -108,6 +108,8 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.SOME_FEATURE_TYPE: return createSomeFeatureType();
       case DeviceModelingLanguagePackage.NONE_FEATURE_TYPE: return createNoneFeatureType();
       case DeviceModelingLanguagePackage.EITHER_FEATURE_TYPE: return createEitherFeatureType();
+      case DeviceModelingLanguagePackage.SEQ_FEATURE_TYPE: return createSeqFeatureType();
+      case DeviceModelingLanguagePackage.SET_FEATURE_TYPE: return createSetFeatureType();
       case DeviceModelingLanguagePackage.NUM_NAT_CONSTRAINT: return createNumNatConstraint();
       case DeviceModelingLanguagePackage.ANY_NAT_CONSTRAINT: return createAnyNatConstraint();
       case DeviceModelingLanguagePackage.BINARY_EXP: return createBinaryExp();
@@ -268,10 +270,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public MultiplicityInvariantDecl createMultiplicityInvariantDecl()
+  public MultiplicityInvariant createMultiplicityInvariant()
   {
-    MultiplicityInvariantDeclImpl multiplicityInvariantDecl = new MultiplicityInvariantDeclImpl();
-    return multiplicityInvariantDecl;
+    MultiplicityInvariantImpl multiplicityInvariant = new MultiplicityInvariantImpl();
+    return multiplicityInvariant;
   }
 
   /**
@@ -279,10 +281,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public GeneralInvariantDecl createGeneralInvariantDecl()
+  public GeneralInvariant createGeneralInvariant()
   {
-    GeneralInvariantDeclImpl generalInvariantDecl = new GeneralInvariantDeclImpl();
-    return generalInvariantDecl;
+    GeneralInvariantImpl generalInvariant = new GeneralInvariantImpl();
+    return generalInvariant;
   }
 
   /**
@@ -613,6 +615,28 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     EitherFeatureTypeImpl eitherFeatureType = new EitherFeatureTypeImpl();
     return eitherFeatureType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SeqFeatureType createSeqFeatureType()
+  {
+    SeqFeatureTypeImpl seqFeatureType = new SeqFeatureTypeImpl();
+    return seqFeatureType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SetFeatureType createSetFeatureType()
+  {
+    SetFeatureTypeImpl setFeatureType = new SetFeatureTypeImpl();
+    return setFeatureType;
   }
 
   /**

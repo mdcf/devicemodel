@@ -164,21 +164,21 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT_DECL:
+      case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT:
       {
-        MultiplicityInvariantDecl multiplicityInvariantDecl = (MultiplicityInvariantDecl)theEObject;
-        T result = caseMultiplicityInvariantDecl(multiplicityInvariantDecl);
-        if (result == null) result = caseInvariantDecl(multiplicityInvariantDecl);
-        if (result == null) result = caseMemberDecl(multiplicityInvariantDecl);
+        MultiplicityInvariant multiplicityInvariant = (MultiplicityInvariant)theEObject;
+        T result = caseMultiplicityInvariant(multiplicityInvariant);
+        if (result == null) result = caseInvariantDecl(multiplicityInvariant);
+        if (result == null) result = caseMemberDecl(multiplicityInvariant);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.GENERAL_INVARIANT_DECL:
+      case DeviceModelingLanguagePackage.GENERAL_INVARIANT:
       {
-        GeneralInvariantDecl generalInvariantDecl = (GeneralInvariantDecl)theEObject;
-        T result = caseGeneralInvariantDecl(generalInvariantDecl);
-        if (result == null) result = caseInvariantDecl(generalInvariantDecl);
-        if (result == null) result = caseMemberDecl(generalInvariantDecl);
+        GeneralInvariant generalInvariant = (GeneralInvariant)theEObject;
+        T result = caseGeneralInvariant(generalInvariant);
+        if (result == null) result = caseInvariantDecl(generalInvariant);
+        if (result == null) result = caseMemberDecl(generalInvariant);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -411,6 +411,22 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         EitherFeatureType eitherFeatureType = (EitherFeatureType)theEObject;
         T result = caseEitherFeatureType(eitherFeatureType);
         if (result == null) result = caseFeatureType(eitherFeatureType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.SEQ_FEATURE_TYPE:
+      {
+        SeqFeatureType seqFeatureType = (SeqFeatureType)theEObject;
+        T result = caseSeqFeatureType(seqFeatureType);
+        if (result == null) result = caseFeatureType(seqFeatureType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.SET_FEATURE_TYPE:
+      {
+        SetFeatureType setFeatureType = (SetFeatureType)theEObject;
+        T result = caseSetFeatureType(setFeatureType);
+        if (result == null) result = caseFeatureType(setFeatureType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -763,33 +779,33 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Multiplicity Invariant Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Multiplicity Invariant</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Multiplicity Invariant Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Multiplicity Invariant</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseMultiplicityInvariantDecl(MultiplicityInvariantDecl object)
+  public T caseMultiplicityInvariant(MultiplicityInvariant object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>General Invariant Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>General Invariant</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>General Invariant Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>General Invariant</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGeneralInvariantDecl(GeneralInvariantDecl object)
+  public T caseGeneralInvariant(GeneralInvariant object)
   {
     return null;
   }
@@ -1270,6 +1286,38 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEitherFeatureType(EitherFeatureType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Seq Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Seq Feature Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSeqFeatureType(SeqFeatureType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Set Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Set Feature Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSetFeatureType(SetFeatureType object)
   {
     return null;
   }

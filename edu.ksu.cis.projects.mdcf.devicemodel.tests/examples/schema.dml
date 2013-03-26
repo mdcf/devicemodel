@@ -1,0 +1,115 @@
+type Any
+type Nat
+type Int
+type DeviceId
+type DeviceType
+type MeasurementType
+type Unit
+type String
+type Boolean
+
+component Range {
+  const min : Any
+  const max : Any
+}
+
+component IntRange extends Range {
+  const min : Int
+  const max : Int
+  
+  inv (min <= max)
+}
+
+component ICEDevice {
+  const id          : DeviceId
+  const ^type       : DeviceType
+  
+  model             : DeviceModel
+  
+  pysioParams       : Set[ICEPhysioParameter]
+}
+
+component ICEPhysioParameter {
+  const measurement : MeasurementType
+  const unit        : Unit
+  
+  range             : Range
+  
+  exchanges         : Set [DataExchange]
+  // inv {C}, {P}, {C, P}
+  
+  alarms            : Set [ICEAlarm] 
+}
+
+component DeviceModel {
+  const no : String 
+}
+
+component DataExchange {}
+
+component ProviderInitiated extends DataExchange {}
+
+component ClientInitiated extends DataExchange {
+  const maxRetrievalRatePerSecond : Nat 
+}
+
+component Periodic extends ProviderInitiated {}
+
+component Episodic extends ProviderInitiated {}
+
+component ICEAlarm {
+  
+}
+
+component RangeValueAlarm extends ICEAlarm with RangeSetting {
+}
+
+component TargetValueAlarm extends ICEAlarm with ValueSetting {
+  
+}
+
+component ValueChangeAlarm extends ICEAlarm {
+  
+}
+
+component ComplexAlarm extends ICEAlarm {
+  const cond : Boolean
+}
+
+component ICEDeviceSetting {
+  security : Option[ICESecurity]
+}
+
+component RangeSetting extends ICEDeviceSetting {
+  var min : Any
+  var max : Any
+  
+  inv (min <= max)
+}
+
+component IntRangeSetting extends RangeSetting {
+  var min : Int
+  var max : Int
+  
+  inv (min <= max)
+}
+
+component ValueSetting extends ICEDeviceSetting {
+  var value : Any
+}
+
+component ICEDeviceStatus {
+  security : Option[ICESecurity]
+  
+  alarms : Set[ICEAlarm]
+}
+
+component BatteryLevelStatus extends ICEDeviceStatus {
+  val level : Int
+  
+  inv ((Int'(0) <= level) && (level <= Int'(100)))
+}
+
+component ICESecurity {
+  
+}

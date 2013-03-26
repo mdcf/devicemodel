@@ -35,11 +35,15 @@ AttrDecl:            modifier=Modifier attributeName=ID
 	                     ( ':' type=Type ( '=' literal=Literal )? 
 	                     | '=' literal=Literal );
 
-Modifier:            'const' | 'val' | 'var' | 'def';
+Modifier:            'const' | 'val' | 'var' | 'override';
 
 SubMemberDecl:       name=ID 
                      ( ':' type=FeatureType
                      | '=' '{' members+=MemberDecl* '}' );
+//                     | '=' '[' type=BaseFeatureType ':'
+//                               ( seqelements+=BaseFeatureType ( ',' seqelements+=BaseFeatureType )* )? ']'
+//                     | '=' '{' type=BaseFeatureType ':'
+//                               ( setelements+=BaseFeatureType ( ',' setelements+=BaseFeatureType )* )? '}' );
 
 Assignment:          name=ID ':=' exp=Exp;
 
@@ -52,22 +56,25 @@ FeatureType:           BaseFeatureType
                      | 'None'   {NoneFeatureType}   '[' base=BaseFeatureType ']'
                      | 'Either' {EitherFeatureType} 
                        '[' bases+=BaseFeatureType ( ',' bases+=BaseFeatureType )+ ']'
-                       ( '=' choice=NAT '{' members+=MemberDecl* '}' )?;
+                       ( '=' choice=NAT '{' members+=MemberDecl* '}' )?
+                     | 'Seq' {SeqFeatureType} '[' base=BaseFeatureType ']'
+                       ( '=' '[' ( elements+=BaseFeatureType ( ',' elements+=BaseFeatureType )* )? ']')?
+                     | 'Set' {SetFeatureType} '[' base=BaseFeatureType ']' 
+                       ( '=' '{' ( elements+=BaseFeatureType ( ',' elements+=BaseFeatureType )* )? '}')?;
+                       
 
 BaseFeatureType:     components+=[ComponentDecl|ID] 
                      ( 'with' components+=[ComponentDecl|ID] )*
                      ( '=' '{' members+=MemberDecl* '}' )?;
 
-InvariantDecl:       MultiplicityInvariantDecl | GeneralInvariantDecl;
+InvariantDecl:       MultiplicityInvariant | GeneralInvariant;
 
-MultiplicityInvariantDecl: 
-                     'inv' ( invName=ID ':' )? 
-                       ( lo=ConstraintNat '..' hi=ConstraintNat ) 
-                       match=SubMemberMatch 
-                       ( ':' type=[ComponentDecl|ID] )?;
+MultiplicityInvariant: 'inv' ( invName=ID ':' )? 
+                     ( lo=ConstraintNat '..' hi=ConstraintNat ) 
+                     match=SubMemberMatch 
+                     ( ':' type=[ComponentDecl|ID] )?;
                        
-GeneralInvariantDecl:
-                     'inv' ( invName=ID ':' )? exp=Exp;
+GeneralInvariant:    'inv' ( invName=ID ':' )? exp=Exp;
 
 SubMemberMatch:      ( qNames+=ID '.' )* ( name=ID | any='*' );
 
@@ -141,7 +148,7 @@ SimpleSetLiteral:    '{' {SimpleSetLiteral} ( elems+=SimpleLiteral ( ',' elems+=
 
 terminal ID:         '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
-terminal LIT:        '(' -> ')';
+terminal LIT:        '\'' ( '(' -> ')' );
 terminal NAT:        '0' | ('1'..'9') ('0'..'9')*;
 
 terminal ML_COMMENT: '/*' -> '*/';

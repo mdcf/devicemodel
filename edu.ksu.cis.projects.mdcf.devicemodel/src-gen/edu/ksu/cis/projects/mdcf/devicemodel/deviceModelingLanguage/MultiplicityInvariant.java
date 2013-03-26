@@ -5,24 +5,24 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Multiplicity Invariant Decl</b></em>'.
+ * A representation of the model object '<em><b>Multiplicity Invariant</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getLo <em>Lo</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getHi <em>Hi</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getMatch <em>Match</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getType <em>Type</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant#getLo <em>Lo</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant#getHi <em>Hi</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant#getMatch <em>Match</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
- * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getMultiplicityInvariantDecl()
+ * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getMultiplicityInvariant()
  * @model
  * @generated
  */
-public interface MultiplicityInvariantDecl extends InvariantDecl
+public interface MultiplicityInvariant extends InvariantDecl
 {
   /**
    * Returns the value of the '<em><b>Lo</b></em>' containment reference.
@@ -34,14 +34,14 @@ public interface MultiplicityInvariantDecl extends InvariantDecl
    * <!-- end-user-doc -->
    * @return the value of the '<em>Lo</em>' containment reference.
    * @see #setLo(ConstraintNat)
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getMultiplicityInvariantDecl_Lo()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getMultiplicityInvariant_Lo()
    * @model containment="true"
    * @generated
    */
   ConstraintNat getLo();
 
   /**
-   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getLo <em>Lo</em>}' containment reference.
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant#getLo <em>Lo</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Lo</em>' containment reference.
@@ -60,14 +60,14 @@ public interface MultiplicityInvariantDecl extends InvariantDecl
    * <!-- end-user-doc -->
    * @return the value of the '<em>Hi</em>' containment reference.
    * @see #setHi(ConstraintNat)
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getMultiplicityInvariantDecl_Hi()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getMultiplicityInvariant_Hi()
    * @model containment="true"
    * @generated
    */
   ConstraintNat getHi();
 
   /**
-   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getHi <em>Hi</em>}' containment reference.
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant#getHi <em>Hi</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Hi</em>' containment reference.
@@ -86,14 +86,14 @@ public interface MultiplicityInvariantDecl extends InvariantDecl
    * <!-- end-user-doc -->
    * @return the value of the '<em>Match</em>' containment reference.
    * @see #setMatch(SubMemberMatch)
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getMultiplicityInvariantDecl_Match()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getMultiplicityInvariant_Match()
    * @model containment="true"
    * @generated
    */
   SubMemberMatch getMatch();
 
   /**
-   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getMatch <em>Match</em>}' containment reference.
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant#getMatch <em>Match</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Match</em>' containment reference.
@@ -112,14 +112,14 @@ public interface MultiplicityInvariantDecl extends InvariantDecl
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' reference.
    * @see #setType(ComponentDecl)
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getMultiplicityInvariantDecl_Type()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getMultiplicityInvariant_Type()
    * @model
    * @generated
    */
   ComponentDecl getType();
 
   /**
-   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariantDecl#getType <em>Type</em>}' reference.
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant#getType <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Type</em>' reference.
@@ -128,4 +128,4 @@ public interface MultiplicityInvariantDecl extends InvariantDecl
    */
   void setType(ComponentDecl value);
 
-} // MultiplicityInvariantDecl
+} // MultiplicityInvariant

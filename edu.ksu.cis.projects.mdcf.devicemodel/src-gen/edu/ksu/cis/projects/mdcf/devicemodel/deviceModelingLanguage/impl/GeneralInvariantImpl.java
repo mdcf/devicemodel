@@ -4,7 +4,7 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Exp;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvariantDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvariant;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -16,18 +16,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>General Invariant Decl</b></em>'.
+ * An implementation of the model object '<em><b>General Invariant</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.GeneralInvariantDeclImpl#getExp <em>Exp</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.GeneralInvariantImpl#getExp <em>Exp</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class GeneralInvariantDeclImpl extends InvariantDeclImpl implements GeneralInvariantDecl
+public class GeneralInvariantImpl extends InvariantDeclImpl implements GeneralInvariant
 {
   /**
    * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
@@ -44,7 +44,7 @@ public class GeneralInvariantDeclImpl extends InvariantDeclImpl implements Gener
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GeneralInvariantDeclImpl()
+  protected GeneralInvariantImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class GeneralInvariantDeclImpl extends InvariantDeclImpl implements Gener
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.GENERAL_INVARIANT_DECL;
+    return DeviceModelingLanguagePackage.Literals.GENERAL_INVARIANT;
   }
 
   /**
@@ -81,7 +81,7 @@ public class GeneralInvariantDeclImpl extends InvariantDeclImpl implements Gener
     exp = newExp;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.GENERAL_INVARIANT_DECL__EXP, oldExp, newExp);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.GENERAL_INVARIANT__EXP, oldExp, newExp);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -98,14 +98,14 @@ public class GeneralInvariantDeclImpl extends InvariantDeclImpl implements Gener
     {
       NotificationChain msgs = null;
       if (exp != null)
-        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.GENERAL_INVARIANT_DECL__EXP, null, msgs);
+        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.GENERAL_INVARIANT__EXP, null, msgs);
       if (newExp != null)
-        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.GENERAL_INVARIANT_DECL__EXP, null, msgs);
+        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.GENERAL_INVARIANT__EXP, null, msgs);
       msgs = basicSetExp(newExp, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.GENERAL_INVARIANT_DECL__EXP, newExp, newExp));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.GENERAL_INVARIANT__EXP, newExp, newExp));
   }
 
   /**
@@ -118,7 +118,7 @@ public class GeneralInvariantDeclImpl extends InvariantDeclImpl implements Gener
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.GENERAL_INVARIANT_DECL__EXP:
+      case DeviceModelingLanguagePackage.GENERAL_INVARIANT__EXP:
         return basicSetExp(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -134,7 +134,7 @@ public class GeneralInvariantDeclImpl extends InvariantDeclImpl implements Gener
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.GENERAL_INVARIANT_DECL__EXP:
+      case DeviceModelingLanguagePackage.GENERAL_INVARIANT__EXP:
         return getExp();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -150,7 +150,7 @@ public class GeneralInvariantDeclImpl extends InvariantDeclImpl implements Gener
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.GENERAL_INVARIANT_DECL__EXP:
+      case DeviceModelingLanguagePackage.GENERAL_INVARIANT__EXP:
         setExp((Exp)newValue);
         return;
     }
@@ -167,7 +167,7 @@ public class GeneralInvariantDeclImpl extends InvariantDeclImpl implements Gener
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.GENERAL_INVARIANT_DECL__EXP:
+      case DeviceModelingLanguagePackage.GENERAL_INVARIANT__EXP:
         setExp((Exp)null);
         return;
     }
@@ -184,10 +184,10 @@ public class GeneralInvariantDeclImpl extends InvariantDeclImpl implements Gener
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.GENERAL_INVARIANT_DECL__EXP:
+      case DeviceModelingLanguagePackage.GENERAL_INVARIANT__EXP:
         return exp != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //GeneralInvariantDeclImpl
+} //GeneralInvariantImpl

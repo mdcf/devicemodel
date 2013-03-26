@@ -51,14 +51,14 @@
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//InvariantDecl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//InvariantDecl/invName"/>
     </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//MultiplicityInvariantDecl">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//MultiplicityInvariantDecl/lo"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//MultiplicityInvariantDecl/hi"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//MultiplicityInvariantDecl/match"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//MultiplicityInvariantDecl/type"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//MultiplicityInvariant">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//MultiplicityInvariant/lo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//MultiplicityInvariant/hi"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//MultiplicityInvariant/match"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//MultiplicityInvariant/type"/>
     </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//GeneralInvariantDecl">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//GeneralInvariantDecl/exp"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//GeneralInvariant">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//GeneralInvariant/exp"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SubMemberMatch">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubMemberMatch/qNames"/>
@@ -139,6 +139,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//EitherFeatureType/bases"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//EitherFeatureType/choice"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//EitherFeatureType/members"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SeqFeatureType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SeqFeatureType/base"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SeqFeatureType/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SetFeatureType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SetFeatureType/base"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SetFeatureType/elements"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//NumNatConstraint">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//NumNatConstraint/num"/>
