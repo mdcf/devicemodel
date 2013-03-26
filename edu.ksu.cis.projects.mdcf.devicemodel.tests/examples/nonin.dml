@@ -1,0 +1,35 @@
+device NoninPulseOx extends ICEPulseOx {
+  override id = DeviceId '( Continua PO )
+  
+  model = {
+    override no = String'(Nonin Onyx II) 
+  } 
+  
+  pysioParams : Set[ICEPhysioParameter] = {
+    ICESpO2 = {
+      range : IntRange = {
+        override min = Int'(0)
+        override max = Int'(100)
+      }
+      exchanges : Set[DataExchange] = {
+        ClientInitiated = {
+          override maxRetrievalRatePerSecond = Nat'(15) 
+        }
+      }
+      alarms : Set[ICEAlarm] = {}
+    },
+    
+    ICEPulseRate = {
+      range : IntRange = {
+        override min = Int'(20)
+        override max = Int'(300)
+      }
+      exchanges : Set[DataExchange] = {
+        ClientInitiated = {
+          override maxRetrievalRatePerSecond = Nat'(5) 
+        }
+      }
+      alarms : Set[ICEAlarm] = {}
+    }
+  }
+}

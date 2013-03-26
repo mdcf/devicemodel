@@ -1,0 +1,45 @@
+device NellcorPulseOx extends ICEPulseOx {
+  override id = DeviceId '( Nellcor PO )
+  
+  model = {
+    override no = String'(Nellcor 2000) 
+  } 
+  
+  pysioParams : Set[ICEPhysioParameter] = {
+    ICESpO2 = {
+      range : IntRange = {
+        override min = Int'(0)
+        override max = Int'(100)
+      }
+      exchanges : Set[DataExchange] = {
+        ClientInitiated = {
+          override maxRetrievalRatePerSecond = Nat'(15) 
+        }
+      }
+      alarms : Set[ICEAlarm] = {
+        RangeValueAlarm with IntRangeSetting = {
+          override min = Int'(85)
+          override max = Int'(100)
+        }
+      }
+    },
+    
+    ICEPulseRate = {
+      range : IntRange = {
+        override min = Int'(20)
+        override max = Int'(300)
+      }
+      exchanges : Set[DataExchange] = {
+        ClientInitiated = {
+          override maxRetrievalRatePerSecond = Nat'(5) 
+        }
+      }
+      alarms : Set[ICEAlarm] = {
+        RangeValueAlarm with IntRangeSetting = {
+          override min = Int'(40)
+          override max = Int'(180)
+        }
+      }
+    }
+  }
+}
