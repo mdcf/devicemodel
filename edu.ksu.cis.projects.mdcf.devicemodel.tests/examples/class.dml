@@ -6,15 +6,15 @@ component ICEPulseOx extends ICEDevice {
 }
 
 component ICESpO2 extends ICEPhysioParameter {
-  override ppType = PhysioParameterType'(SpO2 Measurement) // from nomenclature
-  override unit            = Unit'(Percent)                // from nomenclature
+  override ppType = PhysioParameterType'(MDC_PULS_OXIM_SAT_O2)
+  override unit            = Unit'(MDC_DIM_PERCENT)
   
   // add exchanges
 }
 
 component ICEPulseRate extends ICEPhysioParameter {
-  override ppType = PhysioParameterType'(PulseRate Measurement) // from nomenclature
-  override unit        = Unit'(PulseRate Unit)                   // from nomenclature
+  override ppType = PhysioParameterType'(MDC_PULS_OXIM_PULS_RATE)
+  override unit        = Unit'(MDC_DIM_BEAT_PER_MIN)
 }
 
 component ICEBloodPressure extends ICEDevice {
@@ -24,9 +24,10 @@ component ICEBloodPressure extends ICEDevice {
 }
 
 component ICEBloodPressureParam extends ICEPhysioParameter {
-  override systolic    = PhysioParameterType'(BP Measurement S) // from nomenclature
-  override diastolic   = PhysioParameterType'(BP Measurement D) // from nomenclature
-  override unit        = Unit'(BP Unit)                   // from nomenclature
+  override systolic    = PhysioParameterType'(MDC_PRESS_BLD_NONINV_SYS)
+  override diastolic   = PhysioParameterType'(MDC_PRESS_BLD_NONINV_DIA)
+  override mean   = PhysioParameterType'(MDC_PRESS_BLD_NONINV_MEAN) 
+  override unit        = Unit'(MDC_DIM_MMHG)                   // from nomenclature
 }
 
 component ICEMultiMonitor extends ICEDevice {
