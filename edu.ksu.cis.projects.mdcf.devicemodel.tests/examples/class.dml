@@ -1,5 +1,5 @@
 component ICEPulseOx extends ICEDevice {
-  override ^type = DeviceType '(IEEE ... Pulse Ox)
+  override 'type = DeviceType '(IEEE ... Pulse Ox)
   
   inv 1..* pysioParams : ICESpO2
   inv 1..* pysioParams : ICEPulseRate
@@ -16,7 +16,7 @@ component ICEPulseRate extends ICEPhysioParameter {
 }
 
 component ICEBloodPressure extends ICEDevice {
-  override ^type = DeviceType '(IEEE ... Blood Pressure)
+  override 'type = DeviceType '(IEEE ... Blood Pressure)
 
   inv 1..* pysioParams : ICEBloodPressureParam
 }
@@ -28,7 +28,7 @@ component ICEBloodPressureParam extends ICEPhysioParameter {
 }
 
 component ICEMultiMonitor extends ICEDevice {
-  override ^type = DeviceType '(IEEE ... MultiMonitor)
+  override 'type = DeviceType '(IEEE ... MultiMonitor)
   
   inv 1..* pysioParams : ICESpO2
   inv 1..* pysioParams : ICEPulseRate

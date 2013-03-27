@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.OptionFeatureTypeImpl#getBase <em>Base</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.OptionFeatureTypeImpl#isNone <em>None</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +39,26 @@ public class OptionFeatureTypeImpl extends FeatureTypeImpl implements OptionFeat
    * @ordered
    */
   protected BaseFeatureType base;
+
+  /**
+   * The default value of the '{@link #isNone() <em>None</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNone()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean NONE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isNone() <em>None</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNone()
+   * @generated
+   * @ordered
+   */
+  protected boolean none = NONE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -113,6 +134,29 @@ public class OptionFeatureTypeImpl extends FeatureTypeImpl implements OptionFeat
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isNone()
+  {
+    return none;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNone(boolean newNone)
+  {
+    boolean oldNone = none;
+    none = newNone;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.OPTION_FEATURE_TYPE__NONE, oldNone, none));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -136,6 +180,8 @@ public class OptionFeatureTypeImpl extends FeatureTypeImpl implements OptionFeat
     {
       case DeviceModelingLanguagePackage.OPTION_FEATURE_TYPE__BASE:
         return getBase();
+      case DeviceModelingLanguagePackage.OPTION_FEATURE_TYPE__NONE:
+        return isNone();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -152,6 +198,9 @@ public class OptionFeatureTypeImpl extends FeatureTypeImpl implements OptionFeat
     {
       case DeviceModelingLanguagePackage.OPTION_FEATURE_TYPE__BASE:
         setBase((BaseFeatureType)newValue);
+        return;
+      case DeviceModelingLanguagePackage.OPTION_FEATURE_TYPE__NONE:
+        setNone((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,6 +219,9 @@ public class OptionFeatureTypeImpl extends FeatureTypeImpl implements OptionFeat
       case DeviceModelingLanguagePackage.OPTION_FEATURE_TYPE__BASE:
         setBase((BaseFeatureType)null);
         return;
+      case DeviceModelingLanguagePackage.OPTION_FEATURE_TYPE__NONE:
+        setNone(NONE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -186,8 +238,27 @@ public class OptionFeatureTypeImpl extends FeatureTypeImpl implements OptionFeat
     {
       case DeviceModelingLanguagePackage.OPTION_FEATURE_TYPE__BASE:
         return base != null;
+      case DeviceModelingLanguagePackage.OPTION_FEATURE_TYPE__NONE:
+        return none != NONE_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (none: ");
+    result.append(none);
+    result.append(')');
+    return result.toString();
   }
 
 } //OptionFeatureTypeImpl

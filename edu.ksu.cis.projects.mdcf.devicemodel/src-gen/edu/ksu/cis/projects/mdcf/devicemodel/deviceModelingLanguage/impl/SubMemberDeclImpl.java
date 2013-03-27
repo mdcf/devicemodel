@@ -4,23 +4,15 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureType;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberDecl;
-
-import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +23,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubMemberDeclImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubMemberDeclImpl#getType <em>Type</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubMemberDeclImpl#getMembers <em>Members</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,16 +59,6 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
    * @ordered
    */
   protected FeatureType type;
-
-  /**
-   * The cached value of the '{@link #getMembers() <em>Members</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMembers()
-   * @generated
-   * @ordered
-   */
-  protected EList<MemberDecl> members;
 
   /**
    * <!-- begin-user-doc -->
@@ -176,20 +157,6 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<MemberDecl> getMembers()
-  {
-    if (members == null)
-    {
-      members = new EObjectContainmentEList<MemberDecl>(MemberDecl.class, this, DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MEMBERS);
-    }
-    return members;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -197,8 +164,6 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
     {
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE:
         return basicSetType(null, msgs);
-      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MEMBERS:
-        return ((InternalEList<?>)getMembers()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -217,8 +182,6 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
         return getName();
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE:
         return getType();
-      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MEMBERS:
-        return getMembers();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -228,7 +191,6 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -239,10 +201,6 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
         return;
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE:
         setType((FeatureType)newValue);
-        return;
-      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MEMBERS:
-        getMembers().clear();
-        getMembers().addAll((Collection<? extends MemberDecl>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -264,9 +222,6 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE:
         setType((FeatureType)null);
         return;
-      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MEMBERS:
-        getMembers().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -285,8 +240,6 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE:
         return type != null;
-      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MEMBERS:
-        return members != null && !members.isEmpty();
     }
     return super.eIsSet(featureID);
   }

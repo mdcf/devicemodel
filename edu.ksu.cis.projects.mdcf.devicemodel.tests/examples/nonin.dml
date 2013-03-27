@@ -1,7 +1,7 @@
 device NoninPulseOx extends ICEPulseOx {
   override id = DeviceId '( Continua PO )
   
-  model = {
+  model : DeviceModel = {
     override no = String'(Nonin Onyx II) 
   } 
   

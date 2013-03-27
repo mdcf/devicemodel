@@ -3,7 +3,7 @@
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AccessExp;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrOrSubMember;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Accessor;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.PrimaryExp;
 
@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AccessExpImpl#getBase <em>Base</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AccessExpImpl#getName <em>Name</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AccessExpImpl#getAccessor <em>Accessor</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,14 +42,14 @@ public class AccessExpImpl extends ExpImpl implements AccessExp
   protected PrimaryExp base;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
+   * The cached value of the '{@link #getAccessor() <em>Accessor</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getAccessor()
    * @generated
    * @ordered
    */
-  protected AttrOrSubMember name;
+  protected Accessor accessor;
 
   /**
    * <!-- begin-user-doc -->
@@ -125,19 +125,19 @@ public class AccessExpImpl extends ExpImpl implements AccessExp
    * <!-- end-user-doc -->
    * @generated
    */
-  public AttrOrSubMember getName()
+  public Accessor getAccessor()
   {
-    if (name != null && name.eIsProxy())
+    if (accessor != null && accessor.eIsProxy())
     {
-      InternalEObject oldName = (InternalEObject)name;
-      name = (AttrOrSubMember)eResolveProxy(oldName);
-      if (name != oldName)
+      InternalEObject oldAccessor = (InternalEObject)accessor;
+      accessor = (Accessor)eResolveProxy(oldAccessor);
+      if (accessor != oldAccessor)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeviceModelingLanguagePackage.ACCESS_EXP__NAME, oldName, name));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeviceModelingLanguagePackage.ACCESS_EXP__ACCESSOR, oldAccessor, accessor));
       }
     }
-    return name;
+    return accessor;
   }
 
   /**
@@ -145,9 +145,9 @@ public class AccessExpImpl extends ExpImpl implements AccessExp
    * <!-- end-user-doc -->
    * @generated
    */
-  public AttrOrSubMember basicGetName()
+  public Accessor basicGetAccessor()
   {
-    return name;
+    return accessor;
   }
 
   /**
@@ -155,12 +155,12 @@ public class AccessExpImpl extends ExpImpl implements AccessExp
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(AttrOrSubMember newName)
+  public void setAccessor(Accessor newAccessor)
   {
-    AttrOrSubMember oldName = name;
-    name = newName;
+    Accessor oldAccessor = accessor;
+    accessor = newAccessor;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.ACCESS_EXP__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.ACCESS_EXP__ACCESSOR, oldAccessor, accessor));
   }
 
   /**
@@ -191,9 +191,9 @@ public class AccessExpImpl extends ExpImpl implements AccessExp
     {
       case DeviceModelingLanguagePackage.ACCESS_EXP__BASE:
         return getBase();
-      case DeviceModelingLanguagePackage.ACCESS_EXP__NAME:
-        if (resolve) return getName();
-        return basicGetName();
+      case DeviceModelingLanguagePackage.ACCESS_EXP__ACCESSOR:
+        if (resolve) return getAccessor();
+        return basicGetAccessor();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -211,8 +211,8 @@ public class AccessExpImpl extends ExpImpl implements AccessExp
       case DeviceModelingLanguagePackage.ACCESS_EXP__BASE:
         setBase((PrimaryExp)newValue);
         return;
-      case DeviceModelingLanguagePackage.ACCESS_EXP__NAME:
-        setName((AttrOrSubMember)newValue);
+      case DeviceModelingLanguagePackage.ACCESS_EXP__ACCESSOR:
+        setAccessor((Accessor)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -231,8 +231,8 @@ public class AccessExpImpl extends ExpImpl implements AccessExp
       case DeviceModelingLanguagePackage.ACCESS_EXP__BASE:
         setBase((PrimaryExp)null);
         return;
-      case DeviceModelingLanguagePackage.ACCESS_EXP__NAME:
-        setName((AttrOrSubMember)null);
+      case DeviceModelingLanguagePackage.ACCESS_EXP__ACCESSOR:
+        setAccessor((Accessor)null);
         return;
     }
     super.eUnset(featureID);
@@ -250,8 +250,8 @@ public class AccessExpImpl extends ExpImpl implements AccessExp
     {
       case DeviceModelingLanguagePackage.ACCESS_EXP__BASE:
         return base != null;
-      case DeviceModelingLanguagePackage.ACCESS_EXP__NAME:
-        return name != null;
+      case DeviceModelingLanguagePackage.ACCESS_EXP__ACCESSOR:
+        return accessor != null;
     }
     return super.eIsSet(featureID);
   }

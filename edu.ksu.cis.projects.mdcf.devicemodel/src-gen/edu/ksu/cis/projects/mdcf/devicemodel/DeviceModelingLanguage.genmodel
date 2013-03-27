@@ -14,14 +14,15 @@
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Decl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Decl/name"/>
     </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//TypeDecl"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//TypeDecl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//TypeDecl/supers"/>
+    </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//ComponentDecl">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ComponentDecl/supers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ComponentDecl/members"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ComponentDecl/devices"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ComponentDecl/assigns"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ComponentDecl/exp"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ComponentDecl/reports"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//MemberDecl"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//AttrDecl">
@@ -33,7 +34,6 @@
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SubMemberDecl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubMemberDecl/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SubMemberDecl/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SubMemberDecl/members"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Assignment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Assignment/name"/>
@@ -73,10 +73,6 @@
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//ConstraintExp">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ConstraintExp/cond"/>
     </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//ReportDecl">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ReportDecl/params"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ReportDecl/attrs"/>
-    </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Param">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Param/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//Param/type"/>
@@ -85,7 +81,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//ReportMemberDecl/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//ReportMemberDecl/bindingName"/>
     </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//AttrOrSubMember"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Accessor"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Exp"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Primary"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Type"/>
@@ -101,11 +97,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//TupleLiteral/elems"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SeqLiteral">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SeqLiteral/basicType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SeqLiteral/elementType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SeqLiteral/elems"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SetLiteral">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SetLiteral/basicType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SetLiteral/elementType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SetLiteral/elems"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//OptionLiteral"/>
@@ -127,13 +123,11 @@
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//App"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//OptionFeatureType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//OptionFeatureType/base"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//OptionFeatureType/none"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SomeFeatureType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SomeFeatureType/base"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SomeFeatureType/members"/>
-    </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//NoneFeatureType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//NoneFeatureType/base"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//EitherFeatureType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//EitherFeatureType/bases"/>
@@ -166,7 +160,7 @@
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//AccessExp">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//AccessExp/base"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//AccessExp/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//AccessExp/accessor"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//NameExp">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//NameExp/id"/>

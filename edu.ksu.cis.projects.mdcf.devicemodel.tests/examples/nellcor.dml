@@ -1,7 +1,7 @@
 device NellcorPulseOx extends ICEPulseOx {
   override id = DeviceId '( Nellcor PO )
   
-  model = {
+  model : DeviceModel = {
     override no = String'(Nellcor 2000) 
   } 
   

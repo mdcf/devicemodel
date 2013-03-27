@@ -2,7 +2,7 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrOrSubMember;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Accessor;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ReportMemberDecl;
 
@@ -63,7 +63,7 @@ public class ReportMemberDeclImpl extends MinimalEObjectImpl.Container implement
    * @generated
    * @ordered
    */
-  protected EList<AttrOrSubMember> bindingName;
+  protected EList<Accessor> bindingName;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,11 +114,11 @@ public class ReportMemberDeclImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<AttrOrSubMember> getBindingName()
+  public EList<Accessor> getBindingName()
   {
     if (bindingName == null)
     {
-      bindingName = new EObjectResolvingEList<AttrOrSubMember>(AttrOrSubMember.class, this, DeviceModelingLanguagePackage.REPORT_MEMBER_DECL__BINDING_NAME);
+      bindingName = new EObjectResolvingEList<Accessor>(Accessor.class, this, DeviceModelingLanguagePackage.REPORT_MEMBER_DECL__BINDING_NAME);
     }
     return bindingName;
   }
@@ -157,7 +157,7 @@ public class ReportMemberDeclImpl extends MinimalEObjectImpl.Container implement
         return;
       case DeviceModelingLanguagePackage.REPORT_MEMBER_DECL__BINDING_NAME:
         getBindingName().clear();
-        getBindingName().addAll((Collection<? extends AttrOrSubMember>)newValue);
+        getBindingName().addAll((Collection<? extends Accessor>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

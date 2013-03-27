@@ -2,10 +2,10 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Type;
 
 import java.util.Collection;
 
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SeqLiteralImpl#getBasicType <em>Basic Type</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SeqLiteralImpl#getElementType <em>Element Type</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SeqLiteralImpl#getElems <em>Elems</em>}</li>
  * </ul>
  * </p>
@@ -39,14 +39,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class SeqLiteralImpl extends LiteralImpl implements SeqLiteral
 {
   /**
-   * The cached value of the '{@link #getBasicType() <em>Basic Type</em>}' containment reference.
+   * The cached value of the '{@link #getElementType() <em>Element Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBasicType()
+   * @see #getElementType()
    * @generated
    * @ordered
    */
-  protected BaseType basicType;
+  protected Type elementType;
 
   /**
    * The cached value of the '{@link #getElems() <em>Elems</em>}' containment reference list.
@@ -84,9 +84,9 @@ public class SeqLiteralImpl extends LiteralImpl implements SeqLiteral
    * <!-- end-user-doc -->
    * @generated
    */
-  public BaseType getBasicType()
+  public Type getElementType()
   {
-    return basicType;
+    return elementType;
   }
 
   /**
@@ -94,13 +94,13 @@ public class SeqLiteralImpl extends LiteralImpl implements SeqLiteral
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBasicType(BaseType newBasicType, NotificationChain msgs)
+  public NotificationChain basicSetElementType(Type newElementType, NotificationChain msgs)
   {
-    BaseType oldBasicType = basicType;
-    basicType = newBasicType;
+    Type oldElementType = elementType;
+    elementType = newElementType;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SEQ_LITERAL__BASIC_TYPE, oldBasicType, newBasicType);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SEQ_LITERAL__ELEMENT_TYPE, oldElementType, newElementType);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -111,20 +111,20 @@ public class SeqLiteralImpl extends LiteralImpl implements SeqLiteral
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBasicType(BaseType newBasicType)
+  public void setElementType(Type newElementType)
   {
-    if (newBasicType != basicType)
+    if (newElementType != elementType)
     {
       NotificationChain msgs = null;
-      if (basicType != null)
-        msgs = ((InternalEObject)basicType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.SEQ_LITERAL__BASIC_TYPE, null, msgs);
-      if (newBasicType != null)
-        msgs = ((InternalEObject)newBasicType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.SEQ_LITERAL__BASIC_TYPE, null, msgs);
-      msgs = basicSetBasicType(newBasicType, msgs);
+      if (elementType != null)
+        msgs = ((InternalEObject)elementType).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.SEQ_LITERAL__ELEMENT_TYPE, null, msgs);
+      if (newElementType != null)
+        msgs = ((InternalEObject)newElementType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.SEQ_LITERAL__ELEMENT_TYPE, null, msgs);
+      msgs = basicSetElementType(newElementType, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SEQ_LITERAL__BASIC_TYPE, newBasicType, newBasicType));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SEQ_LITERAL__ELEMENT_TYPE, newElementType, newElementType));
   }
 
   /**
@@ -151,8 +151,8 @@ public class SeqLiteralImpl extends LiteralImpl implements SeqLiteral
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SEQ_LITERAL__BASIC_TYPE:
-        return basicSetBasicType(null, msgs);
+      case DeviceModelingLanguagePackage.SEQ_LITERAL__ELEMENT_TYPE:
+        return basicSetElementType(null, msgs);
       case DeviceModelingLanguagePackage.SEQ_LITERAL__ELEMS:
         return ((InternalEList<?>)getElems()).basicRemove(otherEnd, msgs);
     }
@@ -169,8 +169,8 @@ public class SeqLiteralImpl extends LiteralImpl implements SeqLiteral
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SEQ_LITERAL__BASIC_TYPE:
-        return getBasicType();
+      case DeviceModelingLanguagePackage.SEQ_LITERAL__ELEMENT_TYPE:
+        return getElementType();
       case DeviceModelingLanguagePackage.SEQ_LITERAL__ELEMS:
         return getElems();
     }
@@ -188,8 +188,8 @@ public class SeqLiteralImpl extends LiteralImpl implements SeqLiteral
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SEQ_LITERAL__BASIC_TYPE:
-        setBasicType((BaseType)newValue);
+      case DeviceModelingLanguagePackage.SEQ_LITERAL__ELEMENT_TYPE:
+        setElementType((Type)newValue);
         return;
       case DeviceModelingLanguagePackage.SEQ_LITERAL__ELEMS:
         getElems().clear();
@@ -209,8 +209,8 @@ public class SeqLiteralImpl extends LiteralImpl implements SeqLiteral
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SEQ_LITERAL__BASIC_TYPE:
-        setBasicType((BaseType)null);
+      case DeviceModelingLanguagePackage.SEQ_LITERAL__ELEMENT_TYPE:
+        setElementType((Type)null);
         return;
       case DeviceModelingLanguagePackage.SEQ_LITERAL__ELEMS:
         getElems().clear();
@@ -229,8 +229,8 @@ public class SeqLiteralImpl extends LiteralImpl implements SeqLiteral
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.SEQ_LITERAL__BASIC_TYPE:
-        return basicType != null;
+      case DeviceModelingLanguagePackage.SEQ_LITERAL__ELEMENT_TYPE:
+        return elementType != null;
       case DeviceModelingLanguagePackage.SEQ_LITERAL__ELEMS:
         return elems != null && !elems.isEmpty();
     }

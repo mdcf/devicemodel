@@ -14,9 +14,12 @@ generate deviceModelingLanguage "http://http://mdcf.santos.cis.ksu.edu/devicemod
 
 Model:               decls+=Decl*;
 
-Decl:                TypeDecl | ComponentDecl | ReportDecl;
+Decl:                TypeDecl | ComponentDecl;
 
-TypeDecl:            'type' name=ID;
+TypeDecl:            'type' name=ID
+                     ( 'extends' supers+=[TypeDecl|ID] 
+                       ( 'with' supers+=[TypeDecl|ID] )*
+                     )?;
 
 ComponentDecl:       ( 'component' {Component}  
                      | 'device'    {Device}  
@@ -26,8 +29,7 @@ ComponentDecl:       ( 'component' {Component}
                        ( 'with' supers+=[ComponentDecl|ID] )*
                      )? 
                      ( '{' members+=MemberDecl* '}' )?
-                     ( 'requires' '{' devices+=Device* assigns+=Assignment* exp=Exp '}' )?
-                     ( 'provides' '{' reports+=Report* '}')?;
+                     ( 'requires' '{' devices+=Device* assigns+=Assignment* exp=Exp '}' )?;
                      
 MemberDecl:          AttrDecl | SubMemberDecl | InvariantDecl;
 
@@ -37,23 +39,17 @@ AttrDecl:            modifier=Modifier attributeName=ID
 
 Modifier:            'const' | 'val' | 'var' | 'override';
 
-SubMemberDecl:       name=ID 
-                     ( ':' type=FeatureType
-                     | '=' '{' members+=MemberDecl* '}' );
-//                     | '=' '[' type=BaseFeatureType ':'
-//                               ( seqelements+=BaseFeatureType ( ',' seqelements+=BaseFeatureType )* )? ']'
-//                     | '=' '{' type=BaseFeatureType ':'
-//                               ( setelements+=BaseFeatureType ( ',' setelements+=BaseFeatureType )* )? '}' );
+SubMemberDecl:       name=ID ':' type=FeatureType;
 
-Assignment:          name=ID ':=' exp=Exp;
+Assignment:          name=ID '=' exp=Exp;
 
 Report:              name=ID '(' args+=Exp ( ',' args+=Exp )+ ')';
 
 FeatureType:           BaseFeatureType
                      | 'Option' {OptionFeatureType} '[' base=BaseFeatureType ']'
+                       ( '=' none?='None' )?
                      | 'Some'   {SomeFeatureType}   '[' base=BaseFeatureType ']'
                        ( '=' '{' members+=MemberDecl* '}' )?
-                     | 'None'   {NoneFeatureType}   '[' base=BaseFeatureType ']'
                      | 'Either' {EitherFeatureType} 
                        '[' bases+=BaseFeatureType ( ',' bases+=BaseFeatureType )+ ']'
                        ( '=' choice=NAT '{' members+=MemberDecl* '}' )?
@@ -86,19 +82,16 @@ Device:              name=ID ':' components+=[ComponentDecl|ID]
                        
 ConstraintExp:       'constraint' cond=Exp;
 
-ReportDecl:          'report' name=ID '(' params+=Param ( ',' params+=Param )* ')' 
-                     '{' attrs+=ReportMemberDecl* '}';
-
 Param:               name=ID ':' type=BaseFeatureType;
 
-ReportMemberDecl:    name=ID '=' (bindingName+=[AttrOrSubMember|ID] '.')+ bindingName+=[AttrOrSubMember|ID];
+ReportMemberDecl:    name=ID '=' (bindingName+=[Accessor|ID] '.')+ bindingName+=[Accessor|ID];
 
-AttrOrSubMember:     AttrDecl | SubMemberDecl;
+Accessor:            AttrDecl | SubMemberDecl;
 
 Exp:                   '(' {BinaryExp} left=Exp op=BinaryOp right=Exp ')'
                      | '(' {UnaryExp} op=UnaryOp  arg=Exp ')'
                      | {PrimaryExp} primary=Primary 
-                       ( '.' {AccessExp.base=current} name=[AttrOrSubMember|ID] )*;
+                       ( '.' {AccessExp.base=current} accessor=[Accessor|ID] )*;
 
 Primary:               {NameExp} id=ID
                      | {LiteralExp} lit=BasicLiteral;
@@ -112,7 +105,7 @@ UnaryOp:             '+' | '-' | '!' | '^' | '~';
 Type:                  'Seq' {SeqType} '[' base=Type ']'
                      | 'Set' {SetType} '[' base=Type ']'
                      | BaseType;
-
+                     
 BaseType:              type=[TypeDecl|ID]
                      | '<' {TupleType} elemTypes+=Type ( '*' elemTypes+=Type )+ '>'
                      | 'Option' {OptionType} '[' base=Type ']'
@@ -125,9 +118,11 @@ BasicLiteral:        typeCons=[TypeDecl|ID] lit=LIT;
 
 TupleLiteral:        '<' {TupleLiteral} ( elems+=Literal ( ',' elems+=Literal)* )? '>';
 
-SeqLiteral:          '[' basicType=BaseType ':' ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? ']';
+SeqLiteral:          'Seq' '[' elementType=Type ']' 
+                     '[' ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? ']';
 
-SetLiteral:          '{' basicType=BaseType ':' ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? '}';
+SetLiteral:          'Set' '[' elementType=Type']' 
+                     '{' ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? '}';
 
 OptionLiteral:         'None' {NoneLiteral} '[' type=Type ']'
                      | 'Some' {SomeLiteral} lit=Literal;
@@ -146,7 +141,7 @@ SimpleSeqLiteral:    '[' {SimpleSeqLiteral} ( elems+=SimpleLiteral ( ',' elems+=
 
 SimpleSetLiteral:    '{' {SimpleSetLiteral} ( elems+=SimpleLiteral ( ',' elems+=SimpleLiteral)* )? '}';
 
-terminal ID:         '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal ID:         '\''?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 terminal LIT:        '\'' ( '(' -> ')' );
 terminal NAT:        '0' | ('1'..'9') ('0'..'9')*;

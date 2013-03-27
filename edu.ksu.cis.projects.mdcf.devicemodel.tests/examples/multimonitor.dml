@@ -1,7 +1,7 @@
 device MultiMonitor extends ICEMultiMonitor {
   override id = DeviceId '( MultiMonitor )
   
-  model = {
+  model : DeviceModel = {
     override no = String'( MultiMonitorv) 
   } 
 

@@ -82,10 +82,9 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.CONSTRAINT_NAT: return createConstraintNat();
       case DeviceModelingLanguagePackage.DEVICE: return createDevice();
       case DeviceModelingLanguagePackage.CONSTRAINT_EXP: return createConstraintExp();
-      case DeviceModelingLanguagePackage.REPORT_DECL: return createReportDecl();
       case DeviceModelingLanguagePackage.PARAM: return createParam();
       case DeviceModelingLanguagePackage.REPORT_MEMBER_DECL: return createReportMemberDecl();
-      case DeviceModelingLanguagePackage.ATTR_OR_SUB_MEMBER: return createAttrOrSubMember();
+      case DeviceModelingLanguagePackage.ACCESSOR: return createAccessor();
       case DeviceModelingLanguagePackage.EXP: return createExp();
       case DeviceModelingLanguagePackage.PRIMARY: return createPrimary();
       case DeviceModelingLanguagePackage.TYPE: return createType();
@@ -106,7 +105,6 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.APP: return createApp();
       case DeviceModelingLanguagePackage.OPTION_FEATURE_TYPE: return createOptionFeatureType();
       case DeviceModelingLanguagePackage.SOME_FEATURE_TYPE: return createSomeFeatureType();
-      case DeviceModelingLanguagePackage.NONE_FEATURE_TYPE: return createNoneFeatureType();
       case DeviceModelingLanguagePackage.EITHER_FEATURE_TYPE: return createEitherFeatureType();
       case DeviceModelingLanguagePackage.SEQ_FEATURE_TYPE: return createSeqFeatureType();
       case DeviceModelingLanguagePackage.SET_FEATURE_TYPE: return createSetFeatureType();
@@ -336,17 +334,6 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReportDecl createReportDecl()
-  {
-    ReportDeclImpl reportDecl = new ReportDeclImpl();
-    return reportDecl;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Param createParam()
   {
     ParamImpl param = new ParamImpl();
@@ -369,10 +356,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public AttrOrSubMember createAttrOrSubMember()
+  public Accessor createAccessor()
   {
-    AttrOrSubMemberImpl attrOrSubMember = new AttrOrSubMemberImpl();
-    return attrOrSubMember;
+    AccessorImpl accessor = new AccessorImpl();
+    return accessor;
   }
 
   /**
@@ -593,17 +580,6 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     SomeFeatureTypeImpl someFeatureType = new SomeFeatureTypeImpl();
     return someFeatureType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NoneFeatureType createNoneFeatureType()
-  {
-    NoneFeatureTypeImpl noneFeatureType = new NoneFeatureTypeImpl();
-    return noneFeatureType;
   }
 
   /**

@@ -22,7 +22,7 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * @model
  * @generated
  */
-public interface AttrDecl extends MemberDecl, AttrOrSubMember
+public interface AttrDecl extends MemberDecl, Accessor
 {
   /**
    * Returns the value of the '<em><b>Modifier</b></em>' attribute.

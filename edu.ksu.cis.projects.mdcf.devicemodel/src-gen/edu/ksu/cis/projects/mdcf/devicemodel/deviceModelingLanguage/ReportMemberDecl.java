@@ -53,7 +53,7 @@ public interface ReportMemberDecl extends EObject
 
   /**
    * Returns the value of the '<em><b>Binding Name</b></em>' reference list.
-   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrOrSubMember}.
+   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Accessor}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Binding Name</em>' reference list isn't clear,
@@ -65,6 +65,6 @@ public interface ReportMemberDecl extends EObject
    * @model
    * @generated
    */
-  EList<AttrOrSubMember> getBindingName();
+  EList<Accessor> getBindingName();
 
 } // ReportMemberDecl

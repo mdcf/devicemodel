@@ -12,7 +12,7 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * The following features are supported:
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AccessExp#getBase <em>Base</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AccessExp#getName <em>Name</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AccessExp#getAccessor <em>Accessor</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,29 +49,29 @@ public interface AccessExp extends Exp
   void setBase(PrimaryExp value);
 
   /**
-   * Returns the value of the '<em><b>Name</b></em>' reference.
+   * Returns the value of the '<em><b>Accessor</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' reference isn't clear,
+   * If the meaning of the '<em>Accessor</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' reference.
-   * @see #setName(AttrOrSubMember)
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getAccessExp_Name()
+   * @return the value of the '<em>Accessor</em>' reference.
+   * @see #setAccessor(Accessor)
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getAccessExp_Accessor()
    * @model
    * @generated
    */
-  AttrOrSubMember getName();
+  Accessor getAccessor();
 
   /**
-   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AccessExp#getName <em>Name</em>}' reference.
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AccessExp#getAccessor <em>Accessor</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' reference.
-   * @see #getName()
+   * @param value the new value of the '<em>Accessor</em>' reference.
+   * @see #getAccessor()
    * @generated
    */
-  void setName(AttrOrSubMember value);
+  void setAccessor(Accessor value);
 
 } // AccessExp

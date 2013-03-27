@@ -12,6 +12,7 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * The following features are supported:
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionFeatureType#getBase <em>Base</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionFeatureType#isNone <em>None</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,5 +47,31 @@ public interface OptionFeatureType extends FeatureType
    * @generated
    */
   void setBase(BaseFeatureType value);
+
+  /**
+   * Returns the value of the '<em><b>None</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>None</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>None</em>' attribute.
+   * @see #setNone(boolean)
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getOptionFeatureType_None()
+   * @model
+   * @generated
+   */
+  boolean isNone();
+
+  /**
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionFeatureType#isNone <em>None</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>None</em>' attribute.
+   * @see #isNone()
+   * @generated
+   */
+  void setNone(boolean value);
 
 } // OptionFeatureType

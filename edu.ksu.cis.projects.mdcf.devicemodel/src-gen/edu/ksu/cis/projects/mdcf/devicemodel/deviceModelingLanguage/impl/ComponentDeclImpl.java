@@ -8,7 +8,6 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Exp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Report;
 
 import java.util.Collection;
 
@@ -38,7 +37,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getDevices <em>Devices</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getAssigns <em>Assigns</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getExp <em>Exp</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getReports <em>Reports</em>}</li>
  * </ul>
  * </p>
  *
@@ -95,16 +93,6 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
    * @ordered
    */
   protected Exp exp;
-
-  /**
-   * The cached value of the '{@link #getReports() <em>Reports</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getReports()
-   * @generated
-   * @ordered
-   */
-  protected EList<Report> reports;
 
   /**
    * <!-- begin-user-doc -->
@@ -236,20 +224,6 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Report> getReports()
-  {
-    if (reports == null)
-    {
-      reports = new EObjectContainmentEList<Report>(Report.class, this, DeviceModelingLanguagePackage.COMPONENT_DECL__REPORTS);
-    }
-    return reports;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -263,8 +237,6 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
         return ((InternalEList<?>)getAssigns()).basicRemove(otherEnd, msgs);
       case DeviceModelingLanguagePackage.COMPONENT_DECL__EXP:
         return basicSetExp(null, msgs);
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__REPORTS:
-        return ((InternalEList<?>)getReports()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -289,8 +261,6 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
         return getAssigns();
       case DeviceModelingLanguagePackage.COMPONENT_DECL__EXP:
         return getExp();
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__REPORTS:
-        return getReports();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -325,10 +295,6 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
       case DeviceModelingLanguagePackage.COMPONENT_DECL__EXP:
         setExp((Exp)newValue);
         return;
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__REPORTS:
-        getReports().clear();
-        getReports().addAll((Collection<? extends Report>)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -358,9 +324,6 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
       case DeviceModelingLanguagePackage.COMPONENT_DECL__EXP:
         setExp((Exp)null);
         return;
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__REPORTS:
-        getReports().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -385,8 +348,6 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
         return assigns != null && !assigns.isEmpty();
       case DeviceModelingLanguagePackage.COMPONENT_DECL__EXP:
         return exp != null;
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__REPORTS:
-        return reports != null && !reports.isEmpty();
     }
     return super.eIsSet(featureID);
   }

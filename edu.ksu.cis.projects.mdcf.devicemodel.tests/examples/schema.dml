@@ -1,7 +1,8 @@
 type Any
-type Nat
-type Int
-type DeviceId
+type Number
+type Int extends Number
+type Nat extends Int
+type DeviceId 
 type DeviceType
 type MeasurementType
 type Unit
@@ -9,20 +10,20 @@ type String
 type Boolean
 
 component Range {
-  const min : Any
-  const max : Any
+  const min : Number
+  const max : Number
+
+  inv (min <= max)
 }
 
 component IntRange extends Range {
   const min : Int
   const max : Int
-  
-  inv (min <= max)
 }
 
 component ICEDevice {
   const id          : DeviceId
-  const ^type       : DeviceType
+  const 'type       : DeviceType
   
   model             : DeviceModel
   
@@ -81,8 +82,8 @@ component ICEDeviceSetting {
 }
 
 component RangeSetting extends ICEDeviceSetting {
-  var min : Any
-  var max : Any
+  var min : Number
+  var max : Number
   
   inv (min <= max)
 }

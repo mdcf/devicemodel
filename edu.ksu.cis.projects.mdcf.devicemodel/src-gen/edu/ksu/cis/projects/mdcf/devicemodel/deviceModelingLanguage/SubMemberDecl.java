@@ -2,7 +2,6 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberDecl#getName <em>Name</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberDecl#getType <em>Type</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberDecl#getMembers <em>Members</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface SubMemberDecl extends MemberDecl, AttrOrSubMember
+public interface SubMemberDecl extends MemberDecl, Accessor
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -75,21 +73,5 @@ public interface SubMemberDecl extends MemberDecl, AttrOrSubMember
    * @generated
    */
   void setType(FeatureType value);
-
-  /**
-   * Returns the value of the '<em><b>Members</b></em>' containment reference list.
-   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Members</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Members</em>' containment reference list.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getSubMemberDecl_Members()
-   * @model containment="true"
-   * @generated
-   */
-  EList<MemberDecl> getMembers();
 
 } // SubMemberDecl

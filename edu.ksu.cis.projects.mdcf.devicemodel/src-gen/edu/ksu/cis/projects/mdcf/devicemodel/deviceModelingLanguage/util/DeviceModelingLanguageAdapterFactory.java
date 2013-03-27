@@ -165,11 +165,6 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createConstraintExpAdapter();
       }
       @Override
-      public Adapter caseReportDecl(ReportDecl object)
-      {
-        return createReportDeclAdapter();
-      }
-      @Override
       public Adapter caseParam(Param object)
       {
         return createParamAdapter();
@@ -180,9 +175,9 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createReportMemberDeclAdapter();
       }
       @Override
-      public Adapter caseAttrOrSubMember(AttrOrSubMember object)
+      public Adapter caseAccessor(Accessor object)
       {
-        return createAttrOrSubMemberAdapter();
+        return createAccessorAdapter();
       }
       @Override
       public Adapter caseExp(Exp object)
@@ -283,11 +278,6 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseSomeFeatureType(SomeFeatureType object)
       {
         return createSomeFeatureTypeAdapter();
-      }
-      @Override
-      public Adapter caseNoneFeatureType(NoneFeatureType object)
-      {
-        return createNoneFeatureTypeAdapter();
       }
       @Override
       public Adapter caseEitherFeatureType(EitherFeatureType object)
@@ -687,21 +677,6 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ReportDecl <em>Report Decl</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ReportDecl
-   * @generated
-   */
-  public Adapter createReportDeclAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Param <em>Param</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -732,16 +707,16 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrOrSubMember <em>Attr Or Sub Member</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Accessor <em>Accessor</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrOrSubMember
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Accessor
    * @generated
    */
-  public Adapter createAttrOrSubMemberAdapter()
+  public Adapter createAccessorAdapter()
   {
     return null;
   }
@@ -1042,21 +1017,6 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSomeFeatureTypeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneFeatureType <em>None Feature Type</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneFeatureType
-   * @generated
-   */
-  public Adapter createNoneFeatureTypeAdapter()
   {
     return null;
   }

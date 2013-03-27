@@ -185,15 +185,6 @@ public interface DeviceModelingLanguageFactory extends EFactory
   ConstraintExp createConstraintExp();
 
   /**
-   * Returns a new object of class '<em>Report Decl</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Report Decl</em>'.
-   * @generated
-   */
-  ReportDecl createReportDecl();
-
-  /**
    * Returns a new object of class '<em>Param</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -212,13 +203,13 @@ public interface DeviceModelingLanguageFactory extends EFactory
   ReportMemberDecl createReportMemberDecl();
 
   /**
-   * Returns a new object of class '<em>Attr Or Sub Member</em>'.
+   * Returns a new object of class '<em>Accessor</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Attr Or Sub Member</em>'.
+   * @return a new object of class '<em>Accessor</em>'.
    * @generated
    */
-  AttrOrSubMember createAttrOrSubMember();
+  Accessor createAccessor();
 
   /**
    * Returns a new object of class '<em>Exp</em>'.
@@ -399,15 +390,6 @@ public interface DeviceModelingLanguageFactory extends EFactory
    * @generated
    */
   SomeFeatureType createSomeFeatureType();
-
-  /**
-   * Returns a new object of class '<em>None Feature Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>None Feature Type</em>'.
-   * @generated
-   */
-  NoneFeatureType createNoneFeatureType();
 
   /**
    * Returns a new object of class '<em>Either Feature Type</em>'.

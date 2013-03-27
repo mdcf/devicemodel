@@ -3,11 +3,11 @@
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AccessExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Accessor;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AnyNatConstraint;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.App;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Assignment;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrOrSubMember;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseFeatureType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicLiteral;
@@ -31,7 +31,6 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NameExp;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneFeatureType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NumNatConstraint;
@@ -42,7 +41,6 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Param;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Primary;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.PrimaryExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Report;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ReportDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ReportMemberDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqFeatureType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqLiteral;
@@ -215,13 +213,6 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass reportDeclEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass paramEClass = null;
 
   /**
@@ -236,7 +227,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass attrOrSubMemberEClass = null;
+  private EClass accessorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -377,13 +368,6 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * @generated
    */
   private EClass someFeatureTypeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass noneFeatureTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -650,6 +634,16 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getTypeDecl_Supers()
+  {
+    return (EReference)typeDeclEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getComponentDecl()
   {
     return componentDeclEClass;
@@ -703,16 +697,6 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
   public EReference getComponentDecl_Exp()
   {
     return (EReference)componentDeclEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getComponentDecl_Reports()
-  {
-    return (EReference)componentDeclEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -803,16 +787,6 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
   public EReference getSubMemberDecl_Type()
   {
     return (EReference)subMemberDeclEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSubMemberDecl_Members()
-  {
-    return (EReference)subMemberDeclEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1110,36 +1084,6 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getReportDecl()
-  {
-    return reportDeclEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getReportDecl_Params()
-  {
-    return (EReference)reportDeclEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getReportDecl_Attrs()
-  {
-    return (EReference)reportDeclEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getParam()
   {
     return paramEClass;
@@ -1200,9 +1144,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAttrOrSubMember()
+  public EClass getAccessor()
   {
-    return attrOrSubMemberEClass;
+    return accessorEClass;
   }
 
   /**
@@ -1330,7 +1274,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSeqLiteral_BasicType()
+  public EReference getSeqLiteral_ElementType()
   {
     return (EReference)seqLiteralEClass.getEStructuralFeatures().get(0);
   }
@@ -1360,7 +1304,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSetLiteral_BasicType()
+  public EReference getSetLiteral_ElementType()
   {
     return (EReference)setLiteralEClass.getEStructuralFeatures().get(0);
   }
@@ -1530,6 +1474,16 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getOptionFeatureType_None()
+  {
+    return (EAttribute)optionFeatureTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSomeFeatureType()
   {
     return someFeatureTypeEClass;
@@ -1553,26 +1507,6 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
   public EReference getSomeFeatureType_Members()
   {
     return (EReference)someFeatureTypeEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getNoneFeatureType()
-  {
-    return noneFeatureTypeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getNoneFeatureType_Base()
-  {
-    return (EReference)noneFeatureTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1820,7 +1754,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAccessExp_Name()
+  public EReference getAccessExp_Accessor()
   {
     return (EReference)accessExpEClass.getEStructuralFeatures().get(1);
   }
@@ -2092,6 +2026,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     createEAttribute(declEClass, DECL__NAME);
 
     typeDeclEClass = createEClass(TYPE_DECL);
+    createEReference(typeDeclEClass, TYPE_DECL__SUPERS);
 
     componentDeclEClass = createEClass(COMPONENT_DECL);
     createEReference(componentDeclEClass, COMPONENT_DECL__SUPERS);
@@ -2099,7 +2034,6 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     createEReference(componentDeclEClass, COMPONENT_DECL__DEVICES);
     createEReference(componentDeclEClass, COMPONENT_DECL__ASSIGNS);
     createEReference(componentDeclEClass, COMPONENT_DECL__EXP);
-    createEReference(componentDeclEClass, COMPONENT_DECL__REPORTS);
 
     memberDeclEClass = createEClass(MEMBER_DECL);
 
@@ -2112,7 +2046,6 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     subMemberDeclEClass = createEClass(SUB_MEMBER_DECL);
     createEAttribute(subMemberDeclEClass, SUB_MEMBER_DECL__NAME);
     createEReference(subMemberDeclEClass, SUB_MEMBER_DECL__TYPE);
-    createEReference(subMemberDeclEClass, SUB_MEMBER_DECL__MEMBERS);
 
     assignmentEClass = createEClass(ASSIGNMENT);
     createEAttribute(assignmentEClass, ASSIGNMENT__NAME);
@@ -2154,10 +2087,6 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     constraintExpEClass = createEClass(CONSTRAINT_EXP);
     createEReference(constraintExpEClass, CONSTRAINT_EXP__COND);
 
-    reportDeclEClass = createEClass(REPORT_DECL);
-    createEReference(reportDeclEClass, REPORT_DECL__PARAMS);
-    createEReference(reportDeclEClass, REPORT_DECL__ATTRS);
-
     paramEClass = createEClass(PARAM);
     createEAttribute(paramEClass, PARAM__NAME);
     createEReference(paramEClass, PARAM__TYPE);
@@ -2166,7 +2095,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     createEAttribute(reportMemberDeclEClass, REPORT_MEMBER_DECL__NAME);
     createEReference(reportMemberDeclEClass, REPORT_MEMBER_DECL__BINDING_NAME);
 
-    attrOrSubMemberEClass = createEClass(ATTR_OR_SUB_MEMBER);
+    accessorEClass = createEClass(ACCESSOR);
 
     expEClass = createEClass(EXP);
 
@@ -2187,11 +2116,11 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     createEReference(tupleLiteralEClass, TUPLE_LITERAL__ELEMS);
 
     seqLiteralEClass = createEClass(SEQ_LITERAL);
-    createEReference(seqLiteralEClass, SEQ_LITERAL__BASIC_TYPE);
+    createEReference(seqLiteralEClass, SEQ_LITERAL__ELEMENT_TYPE);
     createEReference(seqLiteralEClass, SEQ_LITERAL__ELEMS);
 
     setLiteralEClass = createEClass(SET_LITERAL);
-    createEReference(setLiteralEClass, SET_LITERAL__BASIC_TYPE);
+    createEReference(setLiteralEClass, SET_LITERAL__ELEMENT_TYPE);
     createEReference(setLiteralEClass, SET_LITERAL__ELEMS);
 
     optionLiteralEClass = createEClass(OPTION_LITERAL);
@@ -2218,13 +2147,11 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
 
     optionFeatureTypeEClass = createEClass(OPTION_FEATURE_TYPE);
     createEReference(optionFeatureTypeEClass, OPTION_FEATURE_TYPE__BASE);
+    createEAttribute(optionFeatureTypeEClass, OPTION_FEATURE_TYPE__NONE);
 
     someFeatureTypeEClass = createEClass(SOME_FEATURE_TYPE);
     createEReference(someFeatureTypeEClass, SOME_FEATURE_TYPE__BASE);
     createEReference(someFeatureTypeEClass, SOME_FEATURE_TYPE__MEMBERS);
-
-    noneFeatureTypeEClass = createEClass(NONE_FEATURE_TYPE);
-    createEReference(noneFeatureTypeEClass, NONE_FEATURE_TYPE__BASE);
 
     eitherFeatureTypeEClass = createEClass(EITHER_FEATURE_TYPE);
     createEReference(eitherFeatureTypeEClass, EITHER_FEATURE_TYPE__BASES);
@@ -2258,7 +2185,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
 
     accessExpEClass = createEClass(ACCESS_EXP);
     createEReference(accessExpEClass, ACCESS_EXP__BASE);
-    createEReference(accessExpEClass, ACCESS_EXP__NAME);
+    createEReference(accessExpEClass, ACCESS_EXP__ACCESSOR);
 
     nameExpEClass = createEClass(NAME_EXP);
     createEAttribute(nameExpEClass, NAME_EXP__ID);
@@ -2328,15 +2255,14 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     typeDeclEClass.getESuperTypes().add(this.getDecl());
     componentDeclEClass.getESuperTypes().add(this.getDecl());
     attrDeclEClass.getESuperTypes().add(this.getMemberDecl());
-    attrDeclEClass.getESuperTypes().add(this.getAttrOrSubMember());
+    attrDeclEClass.getESuperTypes().add(this.getAccessor());
     subMemberDeclEClass.getESuperTypes().add(this.getMemberDecl());
-    subMemberDeclEClass.getESuperTypes().add(this.getAttrOrSubMember());
+    subMemberDeclEClass.getESuperTypes().add(this.getAccessor());
     baseFeatureTypeEClass.getESuperTypes().add(this.getFeatureType());
     invariantDeclEClass.getESuperTypes().add(this.getMemberDecl());
     multiplicityInvariantEClass.getESuperTypes().add(this.getInvariantDecl());
     generalInvariantEClass.getESuperTypes().add(this.getInvariantDecl());
     deviceEClass.getESuperTypes().add(this.getComponentDecl());
-    reportDeclEClass.getESuperTypes().add(this.getDecl());
     baseTypeEClass.getESuperTypes().add(this.getType());
     basicLiteralEClass.getESuperTypes().add(this.getLiteral());
     tupleLiteralEClass.getESuperTypes().add(this.getLiteral());
@@ -2352,7 +2278,6 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     appEClass.getESuperTypes().add(this.getComponentDecl());
     optionFeatureTypeEClass.getESuperTypes().add(this.getFeatureType());
     someFeatureTypeEClass.getESuperTypes().add(this.getFeatureType());
-    noneFeatureTypeEClass.getESuperTypes().add(this.getFeatureType());
     eitherFeatureTypeEClass.getESuperTypes().add(this.getFeatureType());
     seqFeatureTypeEClass.getESuperTypes().add(this.getFeatureType());
     setFeatureTypeEClass.getESuperTypes().add(this.getFeatureType());
@@ -2383,6 +2308,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEAttribute(getDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, Decl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeDeclEClass, TypeDecl.class, "TypeDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTypeDecl_Supers(), this.getTypeDecl(), null, "supers", null, 0, -1, TypeDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentDeclEClass, ComponentDecl.class, "ComponentDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComponentDecl_Supers(), this.getComponentDecl(), null, "supers", null, 0, -1, ComponentDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2390,7 +2316,6 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEReference(getComponentDecl_Devices(), this.getDevice(), null, "devices", null, 0, -1, ComponentDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponentDecl_Assigns(), this.getAssignment(), null, "assigns", null, 0, -1, ComponentDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponentDecl_Exp(), this.getExp(), null, "exp", null, 0, 1, ComponentDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponentDecl_Reports(), this.getReport(), null, "reports", null, 0, -1, ComponentDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(memberDeclEClass, MemberDecl.class, "MemberDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2403,7 +2328,6 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEClass(subMemberDeclEClass, SubMemberDecl.class, "SubMemberDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSubMemberDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, SubMemberDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSubMemberDecl_Type(), this.getFeatureType(), null, "type", null, 0, 1, SubMemberDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSubMemberDecl_Members(), this.getMemberDecl(), null, "members", null, 0, -1, SubMemberDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(assignmentEClass, Assignment.class, "Assignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAssignment_Name(), ecorePackage.getEString(), "name", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2445,19 +2369,15 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEClass(constraintExpEClass, ConstraintExp.class, "ConstraintExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getConstraintExp_Cond(), this.getExp(), null, "cond", null, 0, 1, ConstraintExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(reportDeclEClass, ReportDecl.class, "ReportDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReportDecl_Params(), this.getParam(), null, "params", null, 0, -1, ReportDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReportDecl_Attrs(), this.getReportMemberDecl(), null, "attrs", null, 0, -1, ReportDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(paramEClass, Param.class, "Param", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getParam_Type(), this.getBaseFeatureType(), null, "type", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(reportMemberDeclEClass, ReportMemberDecl.class, "ReportMemberDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getReportMemberDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, ReportMemberDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReportMemberDecl_BindingName(), this.getAttrOrSubMember(), null, "bindingName", null, 0, -1, ReportMemberDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReportMemberDecl_BindingName(), this.getAccessor(), null, "bindingName", null, 0, -1, ReportMemberDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(attrOrSubMemberEClass, AttrOrSubMember.class, "AttrOrSubMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(accessorEClass, Accessor.class, "Accessor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(expEClass, Exp.class, "Exp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2478,11 +2398,11 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEReference(getTupleLiteral_Elems(), this.getLiteral(), null, "elems", null, 0, -1, TupleLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(seqLiteralEClass, SeqLiteral.class, "SeqLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSeqLiteral_BasicType(), this.getBaseType(), null, "basicType", null, 0, 1, SeqLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSeqLiteral_ElementType(), this.getType(), null, "elementType", null, 0, 1, SeqLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSeqLiteral_Elems(), this.getSimpleLiteral(), null, "elems", null, 0, -1, SeqLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(setLiteralEClass, SetLiteral.class, "SetLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSetLiteral_BasicType(), this.getBaseType(), null, "basicType", null, 0, 1, SetLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSetLiteral_ElementType(), this.getType(), null, "elementType", null, 0, 1, SetLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSetLiteral_Elems(), this.getSimpleLiteral(), null, "elems", null, 0, -1, SetLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(optionLiteralEClass, OptionLiteral.class, "OptionLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2509,13 +2429,11 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
 
     initEClass(optionFeatureTypeEClass, OptionFeatureType.class, "OptionFeatureType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOptionFeatureType_Base(), this.getBaseFeatureType(), null, "base", null, 0, 1, OptionFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOptionFeatureType_None(), ecorePackage.getEBoolean(), "none", null, 0, 1, OptionFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(someFeatureTypeEClass, SomeFeatureType.class, "SomeFeatureType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSomeFeatureType_Base(), this.getBaseFeatureType(), null, "base", null, 0, 1, SomeFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSomeFeatureType_Members(), this.getMemberDecl(), null, "members", null, 0, -1, SomeFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(noneFeatureTypeEClass, NoneFeatureType.class, "NoneFeatureType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNoneFeatureType_Base(), this.getBaseFeatureType(), null, "base", null, 0, 1, NoneFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eitherFeatureTypeEClass, EitherFeatureType.class, "EitherFeatureType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEitherFeatureType_Bases(), this.getBaseFeatureType(), null, "bases", null, 0, -1, EitherFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2549,7 +2467,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
 
     initEClass(accessExpEClass, AccessExp.class, "AccessExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAccessExp_Base(), this.getPrimaryExp(), null, "base", null, 0, 1, AccessExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAccessExp_Name(), this.getAttrOrSubMember(), null, "name", null, 0, 1, AccessExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAccessExp_Accessor(), this.getAccessor(), null, "accessor", null, 0, 1, AccessExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nameExpEClass, NameExp.class, "NameExp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNameExp_Id(), ecorePackage.getEString(), "id", null, 0, 1, NameExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
