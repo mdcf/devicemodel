@@ -27,7 +27,7 @@ component ICEBloodPressureParam extends ICEPhysioParameter {
   override systolic    = PhysioParameterType'(MDC_PRESS_BLD_NONINV_SYS)
   override diastolic   = PhysioParameterType'(MDC_PRESS_BLD_NONINV_DIA)
   override mean   = PhysioParameterType'(MDC_PRESS_BLD_NONINV_MEAN) 
-  override unit        = Unit'(MDC_DIM_MMHG)                   // from nomenclature
+  override unit        = Unit'(MDC_DIM_MMHG)
 }
 
 component ICEMultiMonitor extends ICEDevice {
