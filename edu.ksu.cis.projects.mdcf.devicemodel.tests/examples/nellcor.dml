@@ -15,6 +15,7 @@ device NellcorPulseOx extends ICEPulseOx {
         ClientInitiated = {
           override maxRetrievalRatePerSecond = Nat'(15) 
         }
+        // add Periodic Exchange
       }
       alarms : Set[ICEAlarm] = {
         RangeValueAlarm with IntRangeSetting = {
