@@ -1,0 +1,92 @@
+// query 1: 
+//   - request a PulseOx with ClientInitiated exchange
+//   - establish stronger constraints on min/max SpO2 and PR
+//   - specify a more lax property on the min interval between requests from the app to the device
+//
+// some section of the app will require names for the devices and and then specify the characteristics of a device
+// myPO : MyReqPulseOx
+
+component MyReqPulseOx extends ICEPulseOx {
+  pysioParams       : Set[ICEPhysioParameter] = {
+  
+      ICESpO2 = {
+      range : IntRange = {
+        override min = Int'([SpO2min])
+        override max = Int'([SpO2max])
+        // where SpO2min < 40 and SpO2max == 100
+        // alternatively, the constraint can be stated directly on the field names
+      }
+      // query for a pulse ox that supports a client initiated exchange.  We will be fetch at most once per second.
+      exchanges : Set[DataExchange] = {
+        ClientInitiated = {
+          // where maxRetrievalRatePerSecond == Nat'(1)
+        }
+      }
+    },
+    
+    ICEPulseRate = {
+      range : IntRange = {
+      // where min <= 30 and max >= 200
+      }
+      exchanges : Set[DataExchange] = {
+        ClientInitiated = {
+          // where maxRetrievalRatePerSecond == Nat'(1)
+        }
+      }
+    }
+  }
+}
+
+// query 2: 
+//   - request a period SpO2 data stream, specify the period
+//   - establish stronger constraints on min/max SpO2 and PR
+//   - specify a more lax property on the min interval between requests from the app to the device
+//
+// some section of the app will require names for the devices and and then specify the characteristics of a device
+// myPO : MyReqPulseOx
+
+component MySpO2 extends ICESpO2 {
+      // query for a pulse ox that supports a client initiated exchange.  We will be fetch at most once per second.
+      exchanges : Set[DataExchange] = {
+        Periodic = {
+          // specify that the period is once per second
+        }
+      }
+    }
+ 
+
+// query 2: 
+//   - request a period SpO2 data stream, specify the period
+//   - establish stronger constraints on min/max SpO2 and PR
+//   - specify a more lax property on the min interval between requests from the app to the device
+//
+// some section of the app will require names for the devices and and then specify the characteristics of a device
+// myPO : MyReqPulseOx
+
+component MySpO2 extends ICESpO2 {
+      // query for a pulse ox that supports a periodic exchange for SpO2 at a rate of once per second.
+      exchanges : Set[DataExchange] = {
+        Periodic = {
+          // specify that the period is once per second
+        }
+      }
+    }
+ 
+// query 2: 
+//   - request a period SpO2 data stream, specify the period
+//   - establish stronger constraints on min/max SpO2 and PR
+//   - specify a more lax property on the min interval between requests from the app to the device
+//
+// some section of the app will require names for the devices and and then specify the characteristics of a device
+// myPO : MyReqPulseOx
+
+component MyPR extends ICEPulseRate {
+      // query for a pulse ox that supports a periodic exchange for SpO2 at a rate of once per second.
+      exchanges : Set[DataExchange] = {
+        Periodic = {
+          // specify that the period is once per second
+        }
+      }
+    }
+ 
+
