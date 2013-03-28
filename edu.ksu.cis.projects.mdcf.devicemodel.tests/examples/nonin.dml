@@ -16,7 +16,7 @@ device NoninPulseOx extends ICEPulseOx {
           override maxRetrievalRatePerSecond = Nat'(15) 
         }
       }
-      alarms : Set[ICEAlarm] = {}
+      alarms : Set[ICEAlert] = {}
     },
     
     ICEPulseRate = {
@@ -29,7 +29,7 @@ device NoninPulseOx extends ICEPulseOx {
           override maxRetrievalRatePerSecond = Nat'(5) 
         }
       }
-      alarms : Set[ICEAlarm] = {}
+      alarms : Set[ICEAlert] = {}
     }
   }
 }

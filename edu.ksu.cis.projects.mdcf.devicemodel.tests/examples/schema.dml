@@ -1,5 +1,6 @@
 type Any
 type Number
+type Time
 type Int extends Number
 type Nat extends Int
 type DeviceId 
@@ -8,6 +9,8 @@ type PhysioParameterType
 type Unit
 type String
 type Boolean
+
+type MeasurementStatus
 
 component Range {
   const min : Number
@@ -21,6 +24,7 @@ component IntRange extends Range {
   const max : Int
 }
 
+
 component ICEDevice {
   const id          : DeviceId  // UUID/GUID
   const 'type       : DeviceType // 11073 Nomenclature
@@ -29,7 +33,7 @@ component ICEDevice {
   
   pysioParams       : Set[ICEPhysioParameter]
   
-  // alarms on two or more physio params
+  // alerts on two or more physio params
   
   // ... etc
 }
@@ -42,10 +46,13 @@ component ICEPhysioParameter {
   
   range                 : Range
   
+  parmValueStructure    : Metric //attribute that expresses the structure of the value of this parameter. (numeric, rt-sa, and etc.)
+  								 //it can also express context information. (e.g. time stamp) 
+  
   exchanges             : Set[DataExchange]
   // inv {C}, {P}, {C, P}
   
-  alarms                : Set[ICEAlarm] 
+  alerts                : Set[ICEAlert] 
 }
 
 component DeviceModel { // manufacture model
@@ -71,22 +78,22 @@ component Episodic extends ProviderInitiated {
   // 
 }
 
-component ICEAlarm {
+component ICEAlert {
   
 }
 
-component RangeValueAlarm extends ICEAlarm with RangeSetting {
+component RangeValueAlert extends ICEAlert with RangeSetting {
 }
 
-component TargetValueAlarm extends ICEAlarm with ValueSetting {
+component TargetValueAlert extends ICEAlert with ValueSetting {
   
 }
 
-component ValueChangeAlarm extends ICEAlarm {
+component ValueChangeAlert extends ICEAlert {
   
 }
 
-component ComplexAlarm extends ICEAlarm {
+component ComplexAlert extends ICEAlert {
   const cond : Boolean
 }
 
@@ -115,7 +122,7 @@ component ValueSetting extends ICEDeviceSetting {
 component ICEDeviceStatus {
   security : Option[ICESecurity]
   
-  alarms : Set[ICEAlarm]
+  alerts : Set[ICEAlert]
 }
 
 component BatteryLevelStatus extends ICEDeviceStatus {
@@ -127,3 +134,37 @@ component BatteryLevelStatus extends ICEDeviceStatus {
 component ICESecurity {
   // read/write acl
 }
+
+component Metric {
+}
+
+component MetricAttribute {
+	
+}
+
+component MetricTimeStampAttributes extends MetricAttribute{
+	val sec       : Int
+	val min       : Int
+	val hour      : Int
+	val mday      : Int
+	val mon       : Int
+	val year      : Int
+	val wday      : Int
+	val yday      : Int
+	val isdst     : Int
+}
+
+component StatusAttributes extends MetricAttribute{
+	val status    : MeasurementStatus //wanted to express an enum but not sure how to do it
+}
+
+component SingleValueNumeric extends Metric {
+  val value       : Number
+  attributes      : Set[MetricAttribute] //I wonder whether this can also mean no attributes
+}
+
+component ArrayValueNumeric extends Metric {
+  val values      : Seq[Number]
+  attributes      : Set[MetricAttribute]
+}
+

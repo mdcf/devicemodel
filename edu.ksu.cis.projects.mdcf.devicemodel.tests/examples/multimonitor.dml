@@ -16,8 +16,8 @@ device MultiMonitor extends ICEMultiMonitor {
           override maxRetrievalRatePerSecond = Nat'(15) 
         }
       }
-      alarms : Set[ICEAlarm] = {
-        RangeValueAlarm with IntRangeSetting = {
+      alarms : Set[ICEAlert] = {
+        RangeValueAlert with IntRangeSetting = {
           override min = Int'(85)
           override max = Int'(100)
         }
@@ -34,8 +34,8 @@ device MultiMonitor extends ICEMultiMonitor {
           override maxRetrievalRatePerSecond = Nat'(5) 
         }
       }
-      alarms : Set[ICEAlarm] = {
-        RangeValueAlarm with IntRangeSetting = {
+      alarms : Set[ICEAlert] = {
+        RangeValueAlert with IntRangeSetting = {
           override min = Int'(40)
           override max = Int'(180)
         }
@@ -52,8 +52,8 @@ device MultiMonitor extends ICEMultiMonitor {
           override maxRetrievalRatePerSecond = Nat'(5) 
         }
       }
-      alarms : Set[ICEAlarm] = {
-        RangeValueAlarm with IntRangeSetting = {
+      alarms : Set[ICEAlert] = {
+        RangeValueAlert with IntRangeSetting = {
           override min = Int'(40)
           override max = Int'(180)
         }
