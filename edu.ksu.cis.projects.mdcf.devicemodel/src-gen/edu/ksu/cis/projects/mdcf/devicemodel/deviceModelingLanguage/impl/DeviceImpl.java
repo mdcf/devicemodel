@@ -2,10 +2,10 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl;
 
 import java.util.Collection;
 
@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class DeviceImpl extends ComponentDeclImpl implements Device
+public class DeviceImpl extends FeatureDeclImpl implements Device
 {
   /**
    * The cached value of the '{@link #getComponents() <em>Components</em>}' reference list.
@@ -45,7 +45,7 @@ public class DeviceImpl extends ComponentDeclImpl implements Device
    * @generated
    * @ordered
    */
-  protected EList<ComponentDecl> components;
+  protected EList<FeatureDecl> components;
 
   /**
    * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' containment reference.
@@ -83,11 +83,11 @@ public class DeviceImpl extends ComponentDeclImpl implements Device
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ComponentDecl> getComponents()
+  public EList<FeatureDecl> getComponents()
   {
     if (components == null)
     {
-      components = new EObjectResolvingEList<ComponentDecl>(ComponentDecl.class, this, DeviceModelingLanguagePackage.DEVICE__COMPONENTS);
+      components = new EObjectResolvingEList<FeatureDecl>(FeatureDecl.class, this, DeviceModelingLanguagePackage.DEVICE__COMPONENTS);
     }
     return components;
   }
@@ -187,7 +187,7 @@ public class DeviceImpl extends ComponentDeclImpl implements Device
     {
       case DeviceModelingLanguagePackage.DEVICE__COMPONENTS:
         getComponents().clear();
-        getComponents().addAll((Collection<? extends ComponentDecl>)newValue);
+        getComponents().addAll((Collection<? extends FeatureDecl>)newValue);
         return;
       case DeviceModelingLanguagePackage.DEVICE__CONSTRAINT:
         setConstraint((ConstraintExp)newValue);

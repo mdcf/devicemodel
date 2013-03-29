@@ -14,20 +14,20 @@ generate deviceModelingLanguage "http://http://mdcf.santos.cis.ksu.edu/devicemod
 
 Model:               (schema?='Schema' | class?='Class' | instance?='Instance')? decls+=Decl*;
 
-Decl:                TypeDecl | ComponentDecl;
+Decl:                TypeDecl | FeatureDecl;
 
 TypeDecl:            'type' name=ID
                      ( 'extends' supers+=[TypeDecl|ID] 
                        ( 'with' supers+=[TypeDecl|ID] )*
                      )?;
 
-ComponentDecl:       ( 'feature' {Component} (schema?='schema' | class?='class')?   
-                     | 'data'      {Data}  
-                     | 'device'    {Device}  
-                     | 'app'       {App}       ) 
+FeatureDecl:       ( 'feature' {Feature} (schema?='schema' | class?='class')?   
+                     | 'data'    {Data}  
+                     | 'device'  {Device}  
+                     | 'app'     {App}       ) 
                      name=ID 
-                     ( 'extends' supers+=[ComponentDecl|ID] 
-                       ( 'with' supers+=[ComponentDecl|ID] )*
+                     ( 'extends' supers+=[FeatureDecl|ID] 
+                       ( 'with' supers+=[FeatureDecl|ID] )*
                      )? 
                      ( '{' members+=MemberDecl* '}' )?
                      ( 'requires' '{' devices+=Device* assigns+=Assignment* exp=Exp '}' )?;
@@ -69,8 +69,8 @@ FeatureType:           BaseFeatureType
                        ( '=' '{' ( elements+=BaseFeatureType ( ',' elements+=BaseFeatureType )* )? '}')?;
                        
 
-BaseFeatureType:     components+=[ComponentDecl|ID] 
-                     ( 'with' components+=[ComponentDecl|ID] )*
+BaseFeatureType:     components+=[FeatureDecl|ID] 
+                     ( 'with' components+=[FeatureDecl|ID] )*
                      ( '=' '{' members+=MemberDecl* '}' )?;
 
 InvariantDecl:       MultiplicityInvariant | GeneralInvariant;
@@ -78,7 +78,7 @@ InvariantDecl:       MultiplicityInvariant | GeneralInvariant;
 MultiplicityInvariant: 'inv' ( invName=ID ':' )? 
                      ( lo=ConstraintNat '..' hi=ConstraintNat ) 
                      match=SubMemberMatch 
-                     ( ':' type=[ComponentDecl|ID] )?;
+                     ( ':' type=[FeatureDecl|ID] )?;
                        
 GeneralInvariant:    'inv' ( invName=ID ':' )? exp=Exp;
 
@@ -86,8 +86,8 @@ SubMemberMatch:      ( qNames+=ID '.' )* ( name=ID | any='*' );
 
 ConstraintNat:       {NumNatConstraint} num=NAT | {AnyNatConstraint} '*';                       
 
-Device:              name=ID ':' components+=[ComponentDecl|ID] 
-                       ( 'with' components+=[ComponentDecl|ID] )* 
+Device:              name=ID ':' components+=[FeatureDecl|ID] 
+                       ( 'with' components+=[FeatureDecl|ID] )* 
                        constraint=ConstraintExp?;
                        
 ConstraintExp:       'constraint' cond=Exp;

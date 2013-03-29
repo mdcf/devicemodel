@@ -16,9 +16,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="supers" unique="false"
         upperBound="-1" eType="#//TypeDecl"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComponentDecl" eSuperTypes="#//Decl">
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureDecl" eSuperTypes="#//Decl">
     <eStructuralFeatures xsi:type="ecore:EReference" name="supers" unique="false"
-        upperBound="-1" eType="#//ComponentDecl"/>
+        upperBound="-1" eType="#//FeatureDecl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
         eType="#//MemberDecl" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="devices" upperBound="-1"
@@ -57,7 +57,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="FeatureType"/>
   <eClassifiers xsi:type="ecore:EClass" name="BaseFeatureType" eSuperTypes="#//FeatureType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" unique="false"
-        upperBound="-1" eType="#//ComponentDecl"/>
+        upperBound="-1" eType="#//FeatureDecl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
         eType="#//MemberDecl" containment="true"/>
   </eClassifiers>
@@ -71,7 +71,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="match" eType="#//SubMemberMatch"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ComponentDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//FeatureDecl"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GeneralInvariant" eSuperTypes="#//InvariantDecl">
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Exp" containment="true"/>
@@ -83,9 +83,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="any" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstraintNat"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="#//ComponentDecl">
+  <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="#//FeatureDecl">
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" unique="false"
-        upperBound="-1" eType="#//ComponentDecl"/>
+        upperBound="-1" eType="#//FeatureDecl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" eType="#//ConstraintExp"
         containment="true"/>
   </eClassifiers>
@@ -148,12 +148,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elems" upperBound="-1"
         eType="#//SimpleLiteral" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//ComponentDecl">
+  <eClassifiers xsi:type="ecore:EClass" name="Feature" eSuperTypes="#//FeatureDecl">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="schema" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Data" eSuperTypes="#//ComponentDecl #//MModifier"/>
-  <eClassifiers xsi:type="ecore:EClass" name="App" eSuperTypes="#//ComponentDecl"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Data" eSuperTypes="#//FeatureDecl #//MModifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="App" eSuperTypes="#//FeatureDecl"/>
   <eClassifiers xsi:type="ecore:EClass" name="Const" eSuperTypes="#//Modifier #//MModifier">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="schema" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

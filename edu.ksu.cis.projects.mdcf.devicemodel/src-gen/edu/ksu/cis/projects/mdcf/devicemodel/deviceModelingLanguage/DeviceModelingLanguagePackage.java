@@ -177,14 +177,14 @@ public interface DeviceModelingLanguagePackage extends EPackage
   int TYPE_DECL_FEATURE_COUNT = DECL_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl <em>Component Decl</em>}' class.
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureDeclImpl <em>Feature Decl</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getComponentDecl()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureDeclImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getFeatureDecl()
    * @generated
    */
-  int COMPONENT_DECL = 3;
+  int FEATURE_DECL = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -193,7 +193,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_DECL__NAME = DECL__NAME;
+  int FEATURE_DECL__NAME = DECL__NAME;
 
   /**
    * The feature id for the '<em><b>Supers</b></em>' reference list.
@@ -202,7 +202,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_DECL__SUPERS = DECL_FEATURE_COUNT + 0;
+  int FEATURE_DECL__SUPERS = DECL_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Members</b></em>' containment reference list.
@@ -211,7 +211,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_DECL__MEMBERS = DECL_FEATURE_COUNT + 1;
+  int FEATURE_DECL__MEMBERS = DECL_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Devices</b></em>' containment reference list.
@@ -220,7 +220,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_DECL__DEVICES = DECL_FEATURE_COUNT + 2;
+  int FEATURE_DECL__DEVICES = DECL_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Assigns</b></em>' containment reference list.
@@ -229,7 +229,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_DECL__ASSIGNS = DECL_FEATURE_COUNT + 3;
+  int FEATURE_DECL__ASSIGNS = DECL_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -238,16 +238,16 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_DECL__EXP = DECL_FEATURE_COUNT + 4;
+  int FEATURE_DECL__EXP = DECL_FEATURE_COUNT + 4;
 
   /**
-   * The number of structural features of the '<em>Component Decl</em>' class.
+   * The number of structural features of the '<em>Feature Decl</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_DECL_FEATURE_COUNT = DECL_FEATURE_COUNT + 5;
+  int FEATURE_DECL_FEATURE_COUNT = DECL_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MemberDeclImpl <em>Member Decl</em>}' class.
@@ -748,7 +748,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEVICE__NAME = COMPONENT_DECL__NAME;
+  int DEVICE__NAME = FEATURE_DECL__NAME;
 
   /**
    * The feature id for the '<em><b>Supers</b></em>' reference list.
@@ -757,7 +757,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEVICE__SUPERS = COMPONENT_DECL__SUPERS;
+  int DEVICE__SUPERS = FEATURE_DECL__SUPERS;
 
   /**
    * The feature id for the '<em><b>Members</b></em>' containment reference list.
@@ -766,7 +766,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEVICE__MEMBERS = COMPONENT_DECL__MEMBERS;
+  int DEVICE__MEMBERS = FEATURE_DECL__MEMBERS;
 
   /**
    * The feature id for the '<em><b>Devices</b></em>' containment reference list.
@@ -775,7 +775,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEVICE__DEVICES = COMPONENT_DECL__DEVICES;
+  int DEVICE__DEVICES = FEATURE_DECL__DEVICES;
 
   /**
    * The feature id for the '<em><b>Assigns</b></em>' containment reference list.
@@ -784,7 +784,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEVICE__ASSIGNS = COMPONENT_DECL__ASSIGNS;
+  int DEVICE__ASSIGNS = FEATURE_DECL__ASSIGNS;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -793,7 +793,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEVICE__EXP = COMPONENT_DECL__EXP;
+  int DEVICE__EXP = FEATURE_DECL__EXP;
 
   /**
    * The feature id for the '<em><b>Components</b></em>' reference list.
@@ -802,7 +802,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEVICE__COMPONENTS = COMPONENT_DECL_FEATURE_COUNT + 0;
+  int DEVICE__COMPONENTS = FEATURE_DECL_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Constraint</b></em>' containment reference.
@@ -811,7 +811,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEVICE__CONSTRAINT = COMPONENT_DECL_FEATURE_COUNT + 1;
+  int DEVICE__CONSTRAINT = FEATURE_DECL_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Device</em>' class.
@@ -820,7 +820,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEVICE_FEATURE_COUNT = COMPONENT_DECL_FEATURE_COUNT + 2;
+  int DEVICE_FEATURE_COUNT = FEATURE_DECL_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ConstraintExpImpl <em>Constraint Exp</em>}' class.
@@ -1356,14 +1356,14 @@ public interface DeviceModelingLanguagePackage extends EPackage
   int SIMPLE_SET_LITERAL_FEATURE_COUNT = SIMPLE_LITERAL_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentImpl <em>Component</em>}' class.
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureImpl <em>Feature</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentImpl
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getComponent()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getFeature()
    * @generated
    */
-  int COMPONENT = 39;
+  int FEATURE = 39;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1372,7 +1372,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT__NAME = COMPONENT_DECL__NAME;
+  int FEATURE__NAME = FEATURE_DECL__NAME;
 
   /**
    * The feature id for the '<em><b>Supers</b></em>' reference list.
@@ -1381,7 +1381,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT__SUPERS = COMPONENT_DECL__SUPERS;
+  int FEATURE__SUPERS = FEATURE_DECL__SUPERS;
 
   /**
    * The feature id for the '<em><b>Members</b></em>' containment reference list.
@@ -1390,7 +1390,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT__MEMBERS = COMPONENT_DECL__MEMBERS;
+  int FEATURE__MEMBERS = FEATURE_DECL__MEMBERS;
 
   /**
    * The feature id for the '<em><b>Devices</b></em>' containment reference list.
@@ -1399,7 +1399,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT__DEVICES = COMPONENT_DECL__DEVICES;
+  int FEATURE__DEVICES = FEATURE_DECL__DEVICES;
 
   /**
    * The feature id for the '<em><b>Assigns</b></em>' containment reference list.
@@ -1408,7 +1408,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT__ASSIGNS = COMPONENT_DECL__ASSIGNS;
+  int FEATURE__ASSIGNS = FEATURE_DECL__ASSIGNS;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -1417,7 +1417,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT__EXP = COMPONENT_DECL__EXP;
+  int FEATURE__EXP = FEATURE_DECL__EXP;
 
   /**
    * The feature id for the '<em><b>Schema</b></em>' attribute.
@@ -1426,7 +1426,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT__SCHEMA = COMPONENT_DECL_FEATURE_COUNT + 0;
+  int FEATURE__SCHEMA = FEATURE_DECL_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -1435,16 +1435,16 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT__CLASS = COMPONENT_DECL_FEATURE_COUNT + 1;
+  int FEATURE__CLASS = FEATURE_DECL_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Component</em>' class.
+   * The number of structural features of the '<em>Feature</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_FEATURE_COUNT = COMPONENT_DECL_FEATURE_COUNT + 2;
+  int FEATURE_FEATURE_COUNT = FEATURE_DECL_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DataImpl <em>Data</em>}' class.
@@ -1463,7 +1463,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA__NAME = COMPONENT_DECL__NAME;
+  int DATA__NAME = FEATURE_DECL__NAME;
 
   /**
    * The feature id for the '<em><b>Supers</b></em>' reference list.
@@ -1472,7 +1472,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA__SUPERS = COMPONENT_DECL__SUPERS;
+  int DATA__SUPERS = FEATURE_DECL__SUPERS;
 
   /**
    * The feature id for the '<em><b>Members</b></em>' containment reference list.
@@ -1481,7 +1481,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA__MEMBERS = COMPONENT_DECL__MEMBERS;
+  int DATA__MEMBERS = FEATURE_DECL__MEMBERS;
 
   /**
    * The feature id for the '<em><b>Devices</b></em>' containment reference list.
@@ -1490,7 +1490,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA__DEVICES = COMPONENT_DECL__DEVICES;
+  int DATA__DEVICES = FEATURE_DECL__DEVICES;
 
   /**
    * The feature id for the '<em><b>Assigns</b></em>' containment reference list.
@@ -1499,7 +1499,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA__ASSIGNS = COMPONENT_DECL__ASSIGNS;
+  int DATA__ASSIGNS = FEATURE_DECL__ASSIGNS;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -1508,7 +1508,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA__EXP = COMPONENT_DECL__EXP;
+  int DATA__EXP = FEATURE_DECL__EXP;
 
   /**
    * The number of structural features of the '<em>Data</em>' class.
@@ -1517,7 +1517,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_FEATURE_COUNT = COMPONENT_DECL_FEATURE_COUNT + 0;
+  int DATA_FEATURE_COUNT = FEATURE_DECL_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AppImpl <em>App</em>}' class.
@@ -1536,7 +1536,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int APP__NAME = COMPONENT_DECL__NAME;
+  int APP__NAME = FEATURE_DECL__NAME;
 
   /**
    * The feature id for the '<em><b>Supers</b></em>' reference list.
@@ -1545,7 +1545,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int APP__SUPERS = COMPONENT_DECL__SUPERS;
+  int APP__SUPERS = FEATURE_DECL__SUPERS;
 
   /**
    * The feature id for the '<em><b>Members</b></em>' containment reference list.
@@ -1554,7 +1554,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int APP__MEMBERS = COMPONENT_DECL__MEMBERS;
+  int APP__MEMBERS = FEATURE_DECL__MEMBERS;
 
   /**
    * The feature id for the '<em><b>Devices</b></em>' containment reference list.
@@ -1563,7 +1563,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int APP__DEVICES = COMPONENT_DECL__DEVICES;
+  int APP__DEVICES = FEATURE_DECL__DEVICES;
 
   /**
    * The feature id for the '<em><b>Assigns</b></em>' containment reference list.
@@ -1572,7 +1572,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int APP__ASSIGNS = COMPONENT_DECL__ASSIGNS;
+  int APP__ASSIGNS = FEATURE_DECL__ASSIGNS;
 
   /**
    * The feature id for the '<em><b>Exp</b></em>' containment reference.
@@ -1581,7 +1581,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int APP__EXP = COMPONENT_DECL__EXP;
+  int APP__EXP = FEATURE_DECL__EXP;
 
   /**
    * The number of structural features of the '<em>App</em>' class.
@@ -1590,7 +1590,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int APP_FEATURE_COUNT = COMPONENT_DECL_FEATURE_COUNT + 0;
+  int APP_FEATURE_COUNT = FEATURE_DECL_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ConstImpl <em>Const</em>}' class.
@@ -2536,69 +2536,69 @@ public interface DeviceModelingLanguagePackage extends EPackage
   EReference getTypeDecl_Supers();
 
   /**
-   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl <em>Component Decl</em>}'.
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl <em>Feature Decl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Component Decl</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl
+   * @return the meta object for class '<em>Feature Decl</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl
    * @generated
    */
-  EClass getComponentDecl();
+  EClass getFeatureDecl();
 
   /**
-   * Returns the meta object for the reference list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getSupers <em>Supers</em>}'.
+   * Returns the meta object for the reference list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getSupers <em>Supers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Supers</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getSupers()
-   * @see #getComponentDecl()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getSupers()
+   * @see #getFeatureDecl()
    * @generated
    */
-  EReference getComponentDecl_Supers();
+  EReference getFeatureDecl_Supers();
 
   /**
-   * Returns the meta object for the containment reference list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getMembers <em>Members</em>}'.
+   * Returns the meta object for the containment reference list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getMembers <em>Members</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Members</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getMembers()
-   * @see #getComponentDecl()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getMembers()
+   * @see #getFeatureDecl()
    * @generated
    */
-  EReference getComponentDecl_Members();
+  EReference getFeatureDecl_Members();
 
   /**
-   * Returns the meta object for the containment reference list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getDevices <em>Devices</em>}'.
+   * Returns the meta object for the containment reference list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getDevices <em>Devices</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Devices</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getDevices()
-   * @see #getComponentDecl()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getDevices()
+   * @see #getFeatureDecl()
    * @generated
    */
-  EReference getComponentDecl_Devices();
+  EReference getFeatureDecl_Devices();
 
   /**
-   * Returns the meta object for the containment reference list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getAssigns <em>Assigns</em>}'.
+   * Returns the meta object for the containment reference list '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getAssigns <em>Assigns</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Assigns</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getAssigns()
-   * @see #getComponentDecl()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getAssigns()
+   * @see #getFeatureDecl()
    * @generated
    */
-  EReference getComponentDecl_Assigns();
+  EReference getFeatureDecl_Assigns();
 
   /**
-   * Returns the meta object for the containment reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getExp <em>Exp</em>}'.
+   * Returns the meta object for the containment reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getExp <em>Exp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Exp</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getExp()
-   * @see #getComponentDecl()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getExp()
+   * @see #getFeatureDecl()
    * @generated
    */
-  EReference getComponentDecl_Exp();
+  EReference getFeatureDecl_Exp();
 
   /**
    * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl <em>Member Decl</em>}'.
@@ -3402,36 +3402,36 @@ public interface DeviceModelingLanguagePackage extends EPackage
   EReference getSimpleSetLiteral_Elems();
 
   /**
-   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component <em>Component</em>}'.
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Feature <em>Feature</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Component</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component
+   * @return the meta object for class '<em>Feature</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Feature
    * @generated
    */
-  EClass getComponent();
+  EClass getFeature();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component#isSchema <em>Schema</em>}'.
+   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Feature#isSchema <em>Schema</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Schema</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component#isSchema()
-   * @see #getComponent()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Feature#isSchema()
+   * @see #getFeature()
    * @generated
    */
-  EAttribute getComponent_Schema();
+  EAttribute getFeature_Schema();
 
   /**
-   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component#isClass <em>Class</em>}'.
+   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Feature#isClass <em>Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Class</em>'.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component#isClass()
-   * @see #getComponent()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Feature#isClass()
+   * @see #getFeature()
    * @generated
    */
-  EAttribute getComponent_Class();
+  EAttribute getFeature_Class();
 
   /**
    * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Data <em>Data</em>}'.
@@ -4188,14 +4188,14 @@ public interface DeviceModelingLanguagePackage extends EPackage
     EReference TYPE_DECL__SUPERS = eINSTANCE.getTypeDecl_Supers();
 
     /**
-     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl <em>Component Decl</em>}' class.
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureDeclImpl <em>Feature Decl</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getComponentDecl()
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureDeclImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getFeatureDecl()
      * @generated
      */
-    EClass COMPONENT_DECL = eINSTANCE.getComponentDecl();
+    EClass FEATURE_DECL = eINSTANCE.getFeatureDecl();
 
     /**
      * The meta object literal for the '<em><b>Supers</b></em>' reference list feature.
@@ -4203,7 +4203,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT_DECL__SUPERS = eINSTANCE.getComponentDecl_Supers();
+    EReference FEATURE_DECL__SUPERS = eINSTANCE.getFeatureDecl_Supers();
 
     /**
      * The meta object literal for the '<em><b>Members</b></em>' containment reference list feature.
@@ -4211,7 +4211,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT_DECL__MEMBERS = eINSTANCE.getComponentDecl_Members();
+    EReference FEATURE_DECL__MEMBERS = eINSTANCE.getFeatureDecl_Members();
 
     /**
      * The meta object literal for the '<em><b>Devices</b></em>' containment reference list feature.
@@ -4219,7 +4219,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT_DECL__DEVICES = eINSTANCE.getComponentDecl_Devices();
+    EReference FEATURE_DECL__DEVICES = eINSTANCE.getFeatureDecl_Devices();
 
     /**
      * The meta object literal for the '<em><b>Assigns</b></em>' containment reference list feature.
@@ -4227,7 +4227,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT_DECL__ASSIGNS = eINSTANCE.getComponentDecl_Assigns();
+    EReference FEATURE_DECL__ASSIGNS = eINSTANCE.getFeatureDecl_Assigns();
 
     /**
      * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
@@ -4235,7 +4235,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT_DECL__EXP = eINSTANCE.getComponentDecl_Exp();
+    EReference FEATURE_DECL__EXP = eINSTANCE.getFeatureDecl_Exp();
 
     /**
      * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MemberDeclImpl <em>Member Decl</em>}' class.
@@ -4916,14 +4916,14 @@ public interface DeviceModelingLanguagePackage extends EPackage
     EReference SIMPLE_SET_LITERAL__ELEMS = eINSTANCE.getSimpleSetLiteral_Elems();
 
     /**
-     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentImpl <em>Component</em>}' class.
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureImpl <em>Feature</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentImpl
-     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getComponent()
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getFeature()
      * @generated
      */
-    EClass COMPONENT = eINSTANCE.getComponent();
+    EClass FEATURE = eINSTANCE.getFeature();
 
     /**
      * The meta object literal for the '<em><b>Schema</b></em>' attribute feature.
@@ -4931,7 +4931,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COMPONENT__SCHEMA = eINSTANCE.getComponent_Schema();
+    EAttribute FEATURE__SCHEMA = eINSTANCE.getFeature_Schema();
 
     /**
      * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
@@ -4939,7 +4939,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COMPONENT__CLASS = eINSTANCE.getComponent_Class();
+    EAttribute FEATURE__CLASS = eINSTANCE.getFeature_Class();
 
     /**
      * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DataImpl <em>Data</em>}' class.

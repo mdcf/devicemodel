@@ -70,20 +70,20 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Decl");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cTypeDeclParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cComponentDeclParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cFeatureDeclParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Decl:
-		//	TypeDecl | ComponentDecl;
+		//	TypeDecl | FeatureDecl;
 		public ParserRule getRule() { return rule; }
 
-		//TypeDecl | ComponentDecl
+		//TypeDecl | FeatureDecl
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//TypeDecl
 		public RuleCall getTypeDeclParserRuleCall_0() { return cTypeDeclParserRuleCall_0; }
 
-		//ComponentDecl
-		public RuleCall getComponentDeclParserRuleCall_1() { return cComponentDeclParserRuleCall_1; }
+		//FeatureDecl
+		public RuleCall getFeatureDeclParserRuleCall_1() { return cFeatureDeclParserRuleCall_1; }
 	}
 
 	public class TypeDeclElements extends AbstractParserRuleElementFinder {
@@ -150,13 +150,13 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		public RuleCall getSupersTypeDeclIDTerminalRuleCall_2_2_1_0_1() { return cSupersTypeDeclIDTerminalRuleCall_2_2_1_0_1; }
 	}
 
-	public class ComponentDeclElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ComponentDecl");
+	public class FeatureDeclElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FeatureDecl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final Group cGroup_0_0 = (Group)cAlternatives_0.eContents().get(0);
 		private final Keyword cFeatureKeyword_0_0_0 = (Keyword)cGroup_0_0.eContents().get(0);
-		private final Action cComponentAction_0_0_1 = (Action)cGroup_0_0.eContents().get(1);
+		private final Action cFeatureAction_0_0_1 = (Action)cGroup_0_0.eContents().get(1);
 		private final Alternatives cAlternatives_0_0_2 = (Alternatives)cGroup_0_0.eContents().get(2);
 		private final Assignment cSchemaAssignment_0_0_2_0 = (Assignment)cAlternatives_0_0_2.eContents().get(0);
 		private final Keyword cSchemaSchemaKeyword_0_0_2_0_0 = (Keyword)cSchemaAssignment_0_0_2_0.eContents().get(0);
@@ -176,13 +176,13 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cExtendsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cSupersAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cSupersComponentDeclCrossReference_2_1_0 = (CrossReference)cSupersAssignment_2_1.eContents().get(0);
-		private final RuleCall cSupersComponentDeclIDTerminalRuleCall_2_1_0_1 = (RuleCall)cSupersComponentDeclCrossReference_2_1_0.eContents().get(1);
+		private final CrossReference cSupersFeatureDeclCrossReference_2_1_0 = (CrossReference)cSupersAssignment_2_1.eContents().get(0);
+		private final RuleCall cSupersFeatureDeclIDTerminalRuleCall_2_1_0_1 = (RuleCall)cSupersFeatureDeclCrossReference_2_1_0.eContents().get(1);
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cWithKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cSupersAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final CrossReference cSupersComponentDeclCrossReference_2_2_1_0 = (CrossReference)cSupersAssignment_2_2_1.eContents().get(0);
-		private final RuleCall cSupersComponentDeclIDTerminalRuleCall_2_2_1_0_1 = (RuleCall)cSupersComponentDeclCrossReference_2_2_1_0.eContents().get(1);
+		private final CrossReference cSupersFeatureDeclCrossReference_2_2_1_0 = (CrossReference)cSupersAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cSupersFeatureDeclIDTerminalRuleCall_2_2_1_0_1 = (RuleCall)cSupersFeatureDeclCrossReference_2_2_1_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cMembersAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
@@ -199,28 +199,28 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final RuleCall cExpExpParserRuleCall_4_4_0 = (RuleCall)cExpAssignment_4_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4_5 = (Keyword)cGroup_4.eContents().get(5);
 		
-		//ComponentDecl:
-		//	("feature" {Component} (schema?="schema" | class?="class")? | "data" {Data} | "device" {Device} | "app" {App}) name=ID
-		//	("extends" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])*)? ("{" members+=MemberDecl* "}")? ("requires" "{"
+		//FeatureDecl:
+		//	("feature" {Feature} (schema?="schema" | class?="class")? | "data" {Data} | "device" {Device} | "app" {App}) name=ID
+		//	("extends" supers+=[FeatureDecl] ("with" supers+=[FeatureDecl])*)? ("{" members+=MemberDecl* "}")? ("requires" "{"
 		//	devices+=Device* assigns+=Assignment* exp=Exp "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//("feature" {Component} (schema?="schema" | class?="class")? | "data" {Data} | "device" {Device} | "app" {App}) name=ID
-		//("extends" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])*)? ("{" members+=MemberDecl* "}")? ("requires" "{"
+		//("feature" {Feature} (schema?="schema" | class?="class")? | "data" {Data} | "device" {Device} | "app" {App}) name=ID
+		//("extends" supers+=[FeatureDecl] ("with" supers+=[FeatureDecl])*)? ("{" members+=MemberDecl* "}")? ("requires" "{"
 		//devices+=Device* assigns+=Assignment* exp=Exp "}")?
 		public Group getGroup() { return cGroup; }
 
-		//"feature" {Component} (schema?="schema" | class?="class")? | "data" {Data} | "device" {Device} | "app" {App}
+		//"feature" {Feature} (schema?="schema" | class?="class")? | "data" {Data} | "device" {Device} | "app" {App}
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
-		//"feature" {Component} (schema?="schema" | class?="class")?
+		//"feature" {Feature} (schema?="schema" | class?="class")?
 		public Group getGroup_0_0() { return cGroup_0_0; }
 
 		//"feature"
 		public Keyword getFeatureKeyword_0_0_0() { return cFeatureKeyword_0_0_0; }
 
-		//{Component}
-		public Action getComponentAction_0_0_1() { return cComponentAction_0_0_1; }
+		//{Feature}
+		public Action getFeatureAction_0_0_1() { return cFeatureAction_0_0_1; }
 
 		//(schema?="schema" | class?="class")?
 		public Alternatives getAlternatives_0_0_2() { return cAlternatives_0_0_2; }
@@ -270,35 +270,35 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
-		//("extends" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])*)?
+		//("extends" supers+=[FeatureDecl] ("with" supers+=[FeatureDecl])*)?
 		public Group getGroup_2() { return cGroup_2; }
 
 		//"extends"
 		public Keyword getExtendsKeyword_2_0() { return cExtendsKeyword_2_0; }
 
-		//supers+=[ComponentDecl]
+		//supers+=[FeatureDecl]
 		public Assignment getSupersAssignment_2_1() { return cSupersAssignment_2_1; }
 
-		//[ComponentDecl]
-		public CrossReference getSupersComponentDeclCrossReference_2_1_0() { return cSupersComponentDeclCrossReference_2_1_0; }
+		//[FeatureDecl]
+		public CrossReference getSupersFeatureDeclCrossReference_2_1_0() { return cSupersFeatureDeclCrossReference_2_1_0; }
 
 		//ID
-		public RuleCall getSupersComponentDeclIDTerminalRuleCall_2_1_0_1() { return cSupersComponentDeclIDTerminalRuleCall_2_1_0_1; }
+		public RuleCall getSupersFeatureDeclIDTerminalRuleCall_2_1_0_1() { return cSupersFeatureDeclIDTerminalRuleCall_2_1_0_1; }
 
-		//("with" supers+=[ComponentDecl])*
+		//("with" supers+=[FeatureDecl])*
 		public Group getGroup_2_2() { return cGroup_2_2; }
 
 		//"with"
 		public Keyword getWithKeyword_2_2_0() { return cWithKeyword_2_2_0; }
 
-		//supers+=[ComponentDecl]
+		//supers+=[FeatureDecl]
 		public Assignment getSupersAssignment_2_2_1() { return cSupersAssignment_2_2_1; }
 
-		//[ComponentDecl]
-		public CrossReference getSupersComponentDeclCrossReference_2_2_1_0() { return cSupersComponentDeclCrossReference_2_2_1_0; }
+		//[FeatureDecl]
+		public CrossReference getSupersFeatureDeclCrossReference_2_2_1_0() { return cSupersFeatureDeclCrossReference_2_2_1_0; }
 
 		//ID
-		public RuleCall getSupersComponentDeclIDTerminalRuleCall_2_2_1_0_1() { return cSupersComponentDeclIDTerminalRuleCall_2_2_1_0_1; }
+		public RuleCall getSupersFeatureDeclIDTerminalRuleCall_2_2_1_0_1() { return cSupersFeatureDeclIDTerminalRuleCall_2_2_1_0_1; }
 
 		//("{" members+=MemberDecl* "}")?
 		public Group getGroup_3() { return cGroup_3; }
@@ -1096,13 +1096,13 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BaseFeatureType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cComponentsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cComponentsComponentDeclCrossReference_0_0 = (CrossReference)cComponentsAssignment_0.eContents().get(0);
-		private final RuleCall cComponentsComponentDeclIDTerminalRuleCall_0_0_1 = (RuleCall)cComponentsComponentDeclCrossReference_0_0.eContents().get(1);
+		private final CrossReference cComponentsFeatureDeclCrossReference_0_0 = (CrossReference)cComponentsAssignment_0.eContents().get(0);
+		private final RuleCall cComponentsFeatureDeclIDTerminalRuleCall_0_0_1 = (RuleCall)cComponentsFeatureDeclCrossReference_0_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cWithKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cComponentsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final CrossReference cComponentsComponentDeclCrossReference_1_1_0 = (CrossReference)cComponentsAssignment_1_1.eContents().get(0);
-		private final RuleCall cComponentsComponentDeclIDTerminalRuleCall_1_1_0_1 = (RuleCall)cComponentsComponentDeclCrossReference_1_1_0.eContents().get(1);
+		private final CrossReference cComponentsFeatureDeclCrossReference_1_1_0 = (CrossReference)cComponentsAssignment_1_1.eContents().get(0);
+		private final RuleCall cComponentsFeatureDeclIDTerminalRuleCall_1_1_0_1 = (RuleCall)cComponentsFeatureDeclCrossReference_1_1_0.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cEqualsSignKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
@@ -1111,35 +1111,35 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Keyword cRightCurlyBracketKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
 		
 		//BaseFeatureType:
-		//	components+=[ComponentDecl] ("with" components+=[ComponentDecl])* ("=" "{" members+=MemberDecl* "}")?;
+		//	components+=[FeatureDecl] ("with" components+=[FeatureDecl])* ("=" "{" members+=MemberDecl* "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//components+=[ComponentDecl] ("with" components+=[ComponentDecl])* ("=" "{" members+=MemberDecl* "}")?
+		//components+=[FeatureDecl] ("with" components+=[FeatureDecl])* ("=" "{" members+=MemberDecl* "}")?
 		public Group getGroup() { return cGroup; }
 
-		//components+=[ComponentDecl]
+		//components+=[FeatureDecl]
 		public Assignment getComponentsAssignment_0() { return cComponentsAssignment_0; }
 
-		//[ComponentDecl]
-		public CrossReference getComponentsComponentDeclCrossReference_0_0() { return cComponentsComponentDeclCrossReference_0_0; }
+		//[FeatureDecl]
+		public CrossReference getComponentsFeatureDeclCrossReference_0_0() { return cComponentsFeatureDeclCrossReference_0_0; }
 
 		//ID
-		public RuleCall getComponentsComponentDeclIDTerminalRuleCall_0_0_1() { return cComponentsComponentDeclIDTerminalRuleCall_0_0_1; }
+		public RuleCall getComponentsFeatureDeclIDTerminalRuleCall_0_0_1() { return cComponentsFeatureDeclIDTerminalRuleCall_0_0_1; }
 
-		//("with" components+=[ComponentDecl])*
+		//("with" components+=[FeatureDecl])*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"with"
 		public Keyword getWithKeyword_1_0() { return cWithKeyword_1_0; }
 
-		//components+=[ComponentDecl]
+		//components+=[FeatureDecl]
 		public Assignment getComponentsAssignment_1_1() { return cComponentsAssignment_1_1; }
 
-		//[ComponentDecl]
-		public CrossReference getComponentsComponentDeclCrossReference_1_1_0() { return cComponentsComponentDeclCrossReference_1_1_0; }
+		//[FeatureDecl]
+		public CrossReference getComponentsFeatureDeclCrossReference_1_1_0() { return cComponentsFeatureDeclCrossReference_1_1_0; }
 
 		//ID
-		public RuleCall getComponentsComponentDeclIDTerminalRuleCall_1_1_0_1() { return cComponentsComponentDeclIDTerminalRuleCall_1_1_0_1; }
+		public RuleCall getComponentsFeatureDeclIDTerminalRuleCall_1_1_0_1() { return cComponentsFeatureDeclIDTerminalRuleCall_1_1_0_1; }
 
 		//("=" "{" members+=MemberDecl* "}")?
 		public Group getGroup_2() { return cGroup_2; }
@@ -1199,14 +1199,14 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cColonKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cTypeAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cTypeComponentDeclCrossReference_4_1_0 = (CrossReference)cTypeAssignment_4_1.eContents().get(0);
-		private final RuleCall cTypeComponentDeclIDTerminalRuleCall_4_1_0_1 = (RuleCall)cTypeComponentDeclCrossReference_4_1_0.eContents().get(1);
+		private final CrossReference cTypeFeatureDeclCrossReference_4_1_0 = (CrossReference)cTypeAssignment_4_1.eContents().get(0);
+		private final RuleCall cTypeFeatureDeclIDTerminalRuleCall_4_1_0_1 = (RuleCall)cTypeFeatureDeclCrossReference_4_1_0.eContents().get(1);
 		
 		//MultiplicityInvariant:
-		//	"inv" (invName=ID ":")? (lo=ConstraintNat ".." hi=ConstraintNat) match=SubMemberMatch (":" type=[ComponentDecl])?;
+		//	"inv" (invName=ID ":")? (lo=ConstraintNat ".." hi=ConstraintNat) match=SubMemberMatch (":" type=[FeatureDecl])?;
 		public ParserRule getRule() { return rule; }
 
-		//"inv" (invName=ID ":")? (lo=ConstraintNat ".." hi=ConstraintNat) match=SubMemberMatch (":" type=[ComponentDecl])?
+		//"inv" (invName=ID ":")? (lo=ConstraintNat ".." hi=ConstraintNat) match=SubMemberMatch (":" type=[FeatureDecl])?
 		public Group getGroup() { return cGroup; }
 
 		//"inv"
@@ -1248,20 +1248,20 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//SubMemberMatch
 		public RuleCall getMatchSubMemberMatchParserRuleCall_3_0() { return cMatchSubMemberMatchParserRuleCall_3_0; }
 
-		//(":" type=[ComponentDecl])?
+		//(":" type=[FeatureDecl])?
 		public Group getGroup_4() { return cGroup_4; }
 
 		//":"
 		public Keyword getColonKeyword_4_0() { return cColonKeyword_4_0; }
 
-		//type=[ComponentDecl]
+		//type=[FeatureDecl]
 		public Assignment getTypeAssignment_4_1() { return cTypeAssignment_4_1; }
 
-		//[ComponentDecl]
-		public CrossReference getTypeComponentDeclCrossReference_4_1_0() { return cTypeComponentDeclCrossReference_4_1_0; }
+		//[FeatureDecl]
+		public CrossReference getTypeFeatureDeclCrossReference_4_1_0() { return cTypeFeatureDeclCrossReference_4_1_0; }
 
 		//ID
-		public RuleCall getTypeComponentDeclIDTerminalRuleCall_4_1_0_1() { return cTypeComponentDeclIDTerminalRuleCall_4_1_0_1; }
+		public RuleCall getTypeFeatureDeclIDTerminalRuleCall_4_1_0_1() { return cTypeFeatureDeclIDTerminalRuleCall_4_1_0_1; }
 	}
 
 	public class GeneralInvariantElements extends AbstractParserRuleElementFinder {
@@ -1399,21 +1399,21 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cComponentsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cComponentsComponentDeclCrossReference_2_0 = (CrossReference)cComponentsAssignment_2.eContents().get(0);
-		private final RuleCall cComponentsComponentDeclIDTerminalRuleCall_2_0_1 = (RuleCall)cComponentsComponentDeclCrossReference_2_0.eContents().get(1);
+		private final CrossReference cComponentsFeatureDeclCrossReference_2_0 = (CrossReference)cComponentsAssignment_2.eContents().get(0);
+		private final RuleCall cComponentsFeatureDeclIDTerminalRuleCall_2_0_1 = (RuleCall)cComponentsFeatureDeclCrossReference_2_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cWithKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cComponentsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cComponentsComponentDeclCrossReference_3_1_0 = (CrossReference)cComponentsAssignment_3_1.eContents().get(0);
-		private final RuleCall cComponentsComponentDeclIDTerminalRuleCall_3_1_0_1 = (RuleCall)cComponentsComponentDeclCrossReference_3_1_0.eContents().get(1);
+		private final CrossReference cComponentsFeatureDeclCrossReference_3_1_0 = (CrossReference)cComponentsAssignment_3_1.eContents().get(0);
+		private final RuleCall cComponentsFeatureDeclIDTerminalRuleCall_3_1_0_1 = (RuleCall)cComponentsFeatureDeclCrossReference_3_1_0.eContents().get(1);
 		private final Assignment cConstraintAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cConstraintConstraintExpParserRuleCall_4_0 = (RuleCall)cConstraintAssignment_4.eContents().get(0);
 		
 		//Device:
-		//	name=ID ":" components+=[ComponentDecl] ("with" components+=[ComponentDecl])* constraint=ConstraintExp?;
+		//	name=ID ":" components+=[FeatureDecl] ("with" components+=[FeatureDecl])* constraint=ConstraintExp?;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID ":" components+=[ComponentDecl] ("with" components+=[ComponentDecl])* constraint=ConstraintExp?
+		//name=ID ":" components+=[FeatureDecl] ("with" components+=[FeatureDecl])* constraint=ConstraintExp?
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -1425,29 +1425,29 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 
-		//components+=[ComponentDecl]
+		//components+=[FeatureDecl]
 		public Assignment getComponentsAssignment_2() { return cComponentsAssignment_2; }
 
-		//[ComponentDecl]
-		public CrossReference getComponentsComponentDeclCrossReference_2_0() { return cComponentsComponentDeclCrossReference_2_0; }
+		//[FeatureDecl]
+		public CrossReference getComponentsFeatureDeclCrossReference_2_0() { return cComponentsFeatureDeclCrossReference_2_0; }
 
 		//ID
-		public RuleCall getComponentsComponentDeclIDTerminalRuleCall_2_0_1() { return cComponentsComponentDeclIDTerminalRuleCall_2_0_1; }
+		public RuleCall getComponentsFeatureDeclIDTerminalRuleCall_2_0_1() { return cComponentsFeatureDeclIDTerminalRuleCall_2_0_1; }
 
-		//("with" components+=[ComponentDecl])*
+		//("with" components+=[FeatureDecl])*
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"with"
 		public Keyword getWithKeyword_3_0() { return cWithKeyword_3_0; }
 
-		//components+=[ComponentDecl]
+		//components+=[FeatureDecl]
 		public Assignment getComponentsAssignment_3_1() { return cComponentsAssignment_3_1; }
 
-		//[ComponentDecl]
-		public CrossReference getComponentsComponentDeclCrossReference_3_1_0() { return cComponentsComponentDeclCrossReference_3_1_0; }
+		//[FeatureDecl]
+		public CrossReference getComponentsFeatureDeclCrossReference_3_1_0() { return cComponentsFeatureDeclCrossReference_3_1_0; }
 
 		//ID
-		public RuleCall getComponentsComponentDeclIDTerminalRuleCall_3_1_0_1() { return cComponentsComponentDeclIDTerminalRuleCall_3_1_0_1; }
+		public RuleCall getComponentsFeatureDeclIDTerminalRuleCall_3_1_0_1() { return cComponentsFeatureDeclIDTerminalRuleCall_3_1_0_1; }
 
 		//constraint=ConstraintExp?
 		public Assignment getConstraintAssignment_4() { return cConstraintAssignment_4; }
@@ -2648,7 +2648,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	private ModelElements pModel;
 	private DeclElements pDecl;
 	private TypeDeclElements pTypeDecl;
-	private ComponentDeclElements pComponentDecl;
+	private FeatureDeclElements pFeatureDecl;
 	private MemberDeclElements pMemberDecl;
 	private AttrDeclElements pAttrDecl;
 	private ModifierElements pModifier;
@@ -2734,7 +2734,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//Decl:
-	//	TypeDecl | ComponentDecl;
+	//	TypeDecl | FeatureDecl;
 	public DeclElements getDeclAccess() {
 		return (pDecl != null) ? pDecl : (pDecl = new DeclElements());
 	}
@@ -2753,16 +2753,16 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		return getTypeDeclAccess().getRule();
 	}
 
-	//ComponentDecl:
-	//	("feature" {Component} (schema?="schema" | class?="class")? | "data" {Data} | "device" {Device} | "app" {App}) name=ID
-	//	("extends" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])*)? ("{" members+=MemberDecl* "}")? ("requires" "{"
+	//FeatureDecl:
+	//	("feature" {Feature} (schema?="schema" | class?="class")? | "data" {Data} | "device" {Device} | "app" {App}) name=ID
+	//	("extends" supers+=[FeatureDecl] ("with" supers+=[FeatureDecl])*)? ("{" members+=MemberDecl* "}")? ("requires" "{"
 	//	devices+=Device* assigns+=Assignment* exp=Exp "}")?;
-	public ComponentDeclElements getComponentDeclAccess() {
-		return (pComponentDecl != null) ? pComponentDecl : (pComponentDecl = new ComponentDeclElements());
+	public FeatureDeclElements getFeatureDeclAccess() {
+		return (pFeatureDecl != null) ? pFeatureDecl : (pFeatureDecl = new FeatureDeclElements());
 	}
 	
-	public ParserRule getComponentDeclRule() {
-		return getComponentDeclAccess().getRule();
+	public ParserRule getFeatureDeclRule() {
+		return getFeatureDeclAccess().getRule();
 	}
 
 	//MemberDecl:
@@ -2852,7 +2852,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//BaseFeatureType:
-	//	components+=[ComponentDecl] ("with" components+=[ComponentDecl])* ("=" "{" members+=MemberDecl* "}")?;
+	//	components+=[FeatureDecl] ("with" components+=[FeatureDecl])* ("=" "{" members+=MemberDecl* "}")?;
 	public BaseFeatureTypeElements getBaseFeatureTypeAccess() {
 		return (pBaseFeatureType != null) ? pBaseFeatureType : (pBaseFeatureType = new BaseFeatureTypeElements());
 	}
@@ -2872,7 +2872,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//MultiplicityInvariant:
-	//	"inv" (invName=ID ":")? (lo=ConstraintNat ".." hi=ConstraintNat) match=SubMemberMatch (":" type=[ComponentDecl])?;
+	//	"inv" (invName=ID ":")? (lo=ConstraintNat ".." hi=ConstraintNat) match=SubMemberMatch (":" type=[FeatureDecl])?;
 	public MultiplicityInvariantElements getMultiplicityInvariantAccess() {
 		return (pMultiplicityInvariant != null) ? pMultiplicityInvariant : (pMultiplicityInvariant = new MultiplicityInvariantElements());
 	}
@@ -2912,7 +2912,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//Device:
-	//	name=ID ":" components+=[ComponentDecl] ("with" components+=[ComponentDecl])* constraint=ConstraintExp?;
+	//	name=ID ":" components+=[FeatureDecl] ("with" components+=[FeatureDecl])* constraint=ConstraintExp?;
 	public DeviceElements getDeviceAccess() {
 		return (pDevice != null) ? pDevice : (pDevice = new DeviceElements());
 	}

@@ -12,8 +12,6 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseFeatureT
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BinaryExp;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintNat;
@@ -23,6 +21,8 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.EitherFeatureType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Exp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Feature;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvariant;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.InvariantDecl;
@@ -158,9 +158,9 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createTypeDeclAdapter();
       }
       @Override
-      public Adapter caseComponentDecl(ComponentDecl object)
+      public Adapter caseFeatureDecl(FeatureDecl object)
       {
-        return createComponentDeclAdapter();
+        return createFeatureDeclAdapter();
       }
       @Override
       public Adapter caseMemberDecl(MemberDecl object)
@@ -338,9 +338,9 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
         return createSimpleSetLiteralAdapter();
       }
       @Override
-      public Adapter caseComponent(Component object)
+      public Adapter caseFeature(Feature object)
       {
-        return createComponentAdapter();
+        return createFeatureAdapter();
       }
       @Override
       public Adapter caseData(Data object)
@@ -555,16 +555,16 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl <em>Component Decl</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl <em>Feature Decl</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl
    * @generated
    */
-  public Adapter createComponentDeclAdapter()
+  public Adapter createFeatureDeclAdapter()
   {
     return null;
   }
@@ -1095,16 +1095,16 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component <em>Component</em>}'.
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Feature <em>Feature</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Feature
    * @generated
    */
-  public Adapter createComponentAdapter()
+  public Adapter createFeatureAdapter()
   {
     return null;
   }

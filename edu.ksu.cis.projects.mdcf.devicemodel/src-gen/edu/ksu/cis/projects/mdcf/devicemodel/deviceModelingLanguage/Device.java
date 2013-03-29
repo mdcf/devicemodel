@@ -21,11 +21,11 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Device extends ComponentDecl
+public interface Device extends FeatureDecl
 {
   /**
    * Returns the value of the '<em><b>Components</b></em>' reference list.
-   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl}.
+   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Components</em>' reference list isn't clear,
@@ -37,7 +37,7 @@ public interface Device extends ComponentDecl
    * @model
    * @generated
    */
-  EList<ComponentDecl> getComponents();
+  EList<FeatureDecl> getComponents();
 
   /**
    * Returns the value of the '<em><b>Constraint</b></em>' containment reference.

@@ -6,29 +6,29 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Component Decl</b></em>'.
+ * A representation of the model object '<em><b>Feature Decl</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getSupers <em>Supers</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getMembers <em>Members</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getDevices <em>Devices</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getAssigns <em>Assigns</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getExp <em>Exp</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getSupers <em>Supers</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getMembers <em>Members</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getDevices <em>Devices</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getAssigns <em>Assigns</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getExp <em>Exp</em>}</li>
  * </ul>
  * </p>
  *
- * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getComponentDecl()
+ * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getFeatureDecl()
  * @model
  * @generated
  */
-public interface ComponentDecl extends Decl
+public interface FeatureDecl extends Decl
 {
   /**
    * Returns the value of the '<em><b>Supers</b></em>' reference list.
-   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl}.
+   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Supers</em>' reference list isn't clear,
@@ -36,11 +36,11 @@ public interface ComponentDecl extends Decl
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Supers</em>' reference list.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getComponentDecl_Supers()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getFeatureDecl_Supers()
    * @model
    * @generated
    */
-  EList<ComponentDecl> getSupers();
+  EList<FeatureDecl> getSupers();
 
   /**
    * Returns the value of the '<em><b>Members</b></em>' containment reference list.
@@ -52,7 +52,7 @@ public interface ComponentDecl extends Decl
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Members</em>' containment reference list.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getComponentDecl_Members()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getFeatureDecl_Members()
    * @model containment="true"
    * @generated
    */
@@ -68,7 +68,7 @@ public interface ComponentDecl extends Decl
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Devices</em>' containment reference list.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getComponentDecl_Devices()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getFeatureDecl_Devices()
    * @model containment="true"
    * @generated
    */
@@ -84,7 +84,7 @@ public interface ComponentDecl extends Decl
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Assigns</em>' containment reference list.
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getComponentDecl_Assigns()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getFeatureDecl_Assigns()
    * @model containment="true"
    * @generated
    */
@@ -100,14 +100,14 @@ public interface ComponentDecl extends Decl
    * <!-- end-user-doc -->
    * @return the value of the '<em>Exp</em>' containment reference.
    * @see #setExp(Exp)
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getComponentDecl_Exp()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getFeatureDecl_Exp()
    * @model containment="true"
    * @generated
    */
   Exp getExp();
 
   /**
-   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl#getExp <em>Exp</em>}' containment reference.
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl#getExp <em>Exp</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Exp</em>' containment reference.
@@ -116,4 +116,4 @@ public interface ComponentDecl extends Decl
    */
   void setExp(Exp value);
 
-} // ComponentDecl
+} // FeatureDecl

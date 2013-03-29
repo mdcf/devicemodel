@@ -359,21 +359,21 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
     // $ANTLR end "ruleTypeDecl"
 
 
-    // $ANTLR start "entryRuleComponentDecl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:144:1: entryRuleComponentDecl : ruleComponentDecl EOF ;
-    public final void entryRuleComponentDecl() throws RecognitionException {
+    // $ANTLR start "entryRuleFeatureDecl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:144:1: entryRuleFeatureDecl : ruleFeatureDecl EOF ;
+    public final void entryRuleFeatureDecl() throws RecognitionException {
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:145:1: ( ruleComponentDecl EOF )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:146:1: ruleComponentDecl EOF
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:145:1: ( ruleFeatureDecl EOF )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:146:1: ruleFeatureDecl EOF
             {
-             before(grammarAccess.getComponentDeclRule()); 
-            pushFollow(FOLLOW_ruleComponentDecl_in_entryRuleComponentDecl241);
-            ruleComponentDecl();
+             before(grammarAccess.getFeatureDeclRule()); 
+            pushFollow(FOLLOW_ruleFeatureDecl_in_entryRuleFeatureDecl241);
+            ruleFeatureDecl();
 
             state._fsp--;
 
-             after(grammarAccess.getComponentDeclRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleComponentDecl248); 
+             after(grammarAccess.getFeatureDeclRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFeatureDecl248); 
 
             }
 
@@ -386,35 +386,35 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "entryRuleComponentDecl"
+    // $ANTLR end "entryRuleFeatureDecl"
 
 
-    // $ANTLR start "ruleComponentDecl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:153:1: ruleComponentDecl : ( ( rule__ComponentDecl__Group__0 ) ) ;
-    public final void ruleComponentDecl() throws RecognitionException {
+    // $ANTLR start "ruleFeatureDecl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:153:1: ruleFeatureDecl : ( ( rule__FeatureDecl__Group__0 ) ) ;
+    public final void ruleFeatureDecl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:157:2: ( ( ( rule__ComponentDecl__Group__0 ) ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:158:1: ( ( rule__ComponentDecl__Group__0 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:157:2: ( ( ( rule__FeatureDecl__Group__0 ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:158:1: ( ( rule__FeatureDecl__Group__0 ) )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:158:1: ( ( rule__ComponentDecl__Group__0 ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:159:1: ( rule__ComponentDecl__Group__0 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:158:1: ( ( rule__FeatureDecl__Group__0 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:159:1: ( rule__FeatureDecl__Group__0 )
             {
-             before(grammarAccess.getComponentDeclAccess().getGroup()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:160:1: ( rule__ComponentDecl__Group__0 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:160:2: rule__ComponentDecl__Group__0
+             before(grammarAccess.getFeatureDeclAccess().getGroup()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:160:1: ( rule__FeatureDecl__Group__0 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:160:2: rule__FeatureDecl__Group__0
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group__0_in_ruleComponentDecl274);
-            rule__ComponentDecl__Group__0();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group__0_in_ruleFeatureDecl274);
+            rule__FeatureDecl__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getComponentDeclAccess().getGroup()); 
+             after(grammarAccess.getFeatureDeclAccess().getGroup()); 
 
             }
 
@@ -433,7 +433,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "ruleComponentDecl"
+    // $ANTLR end "ruleFeatureDecl"
 
 
     // $ANTLR start "entryRuleMemberDecl"
@@ -3103,13 +3103,13 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__Decl__Alternatives"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1132:1: rule__Decl__Alternatives : ( ( ruleTypeDecl ) | ( ruleComponentDecl ) );
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1132:1: rule__Decl__Alternatives : ( ( ruleTypeDecl ) | ( ruleFeatureDecl ) );
     public final void rule__Decl__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1136:1: ( ( ruleTypeDecl ) | ( ruleComponentDecl ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1136:1: ( ( ruleTypeDecl ) | ( ruleFeatureDecl ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -3146,18 +3146,18 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1143:6: ( ruleComponentDecl )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1143:6: ( ruleFeatureDecl )
                     {
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1143:6: ( ruleComponentDecl )
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1144:1: ruleComponentDecl
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1143:6: ( ruleFeatureDecl )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1144:1: ruleFeatureDecl
                     {
-                     before(grammarAccess.getDeclAccess().getComponentDeclParserRuleCall_1()); 
-                    pushFollow(FOLLOW_ruleComponentDecl_in_rule__Decl__Alternatives2384);
-                    ruleComponentDecl();
+                     before(grammarAccess.getDeclAccess().getFeatureDeclParserRuleCall_1()); 
+                    pushFollow(FOLLOW_ruleFeatureDecl_in_rule__Decl__Alternatives2384);
+                    ruleFeatureDecl();
 
                     state._fsp--;
 
-                     after(grammarAccess.getDeclAccess().getComponentDeclParserRuleCall_1()); 
+                     after(grammarAccess.getDeclAccess().getFeatureDeclParserRuleCall_1()); 
 
                     }
 
@@ -3181,14 +3181,14 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
     // $ANTLR end "rule__Decl__Alternatives"
 
 
-    // $ANTLR start "rule__ComponentDecl__Alternatives_0"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1154:1: rule__ComponentDecl__Alternatives_0 : ( ( ( rule__ComponentDecl__Group_0_0__0 ) ) | ( ( rule__ComponentDecl__Group_0_1__0 ) ) | ( ( rule__ComponentDecl__Group_0_2__0 ) ) | ( ( rule__ComponentDecl__Group_0_3__0 ) ) );
-    public final void rule__ComponentDecl__Alternatives_0() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Alternatives_0"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1154:1: rule__FeatureDecl__Alternatives_0 : ( ( ( rule__FeatureDecl__Group_0_0__0 ) ) | ( ( rule__FeatureDecl__Group_0_1__0 ) ) | ( ( rule__FeatureDecl__Group_0_2__0 ) ) | ( ( rule__FeatureDecl__Group_0_3__0 ) ) );
+    public final void rule__FeatureDecl__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1158:1: ( ( ( rule__ComponentDecl__Group_0_0__0 ) ) | ( ( rule__ComponentDecl__Group_0_1__0 ) ) | ( ( rule__ComponentDecl__Group_0_2__0 ) ) | ( ( rule__ComponentDecl__Group_0_3__0 ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1158:1: ( ( ( rule__FeatureDecl__Group_0_0__0 ) ) | ( ( rule__FeatureDecl__Group_0_1__0 ) ) | ( ( rule__FeatureDecl__Group_0_2__0 ) ) | ( ( rule__FeatureDecl__Group_0_3__0 ) ) )
             int alt3=4;
             switch ( input.LA(1) ) {
             case 31:
@@ -3220,24 +3220,24 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
 
             switch (alt3) {
                 case 1 :
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1159:1: ( ( rule__ComponentDecl__Group_0_0__0 ) )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1159:1: ( ( rule__FeatureDecl__Group_0_0__0 ) )
                     {
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1159:1: ( ( rule__ComponentDecl__Group_0_0__0 ) )
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1160:1: ( rule__ComponentDecl__Group_0_0__0 )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1159:1: ( ( rule__FeatureDecl__Group_0_0__0 ) )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1160:1: ( rule__FeatureDecl__Group_0_0__0 )
                     {
-                     before(grammarAccess.getComponentDeclAccess().getGroup_0_0()); 
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1161:1: ( rule__ComponentDecl__Group_0_0__0 )
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1161:2: rule__ComponentDecl__Group_0_0__0
+                     before(grammarAccess.getFeatureDeclAccess().getGroup_0_0()); 
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1161:1: ( rule__FeatureDecl__Group_0_0__0 )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1161:2: rule__FeatureDecl__Group_0_0__0
                     {
-                    pushFollow(FOLLOW_rule__ComponentDecl__Group_0_0__0_in_rule__ComponentDecl__Alternatives_02416);
-                    rule__ComponentDecl__Group_0_0__0();
+                    pushFollow(FOLLOW_rule__FeatureDecl__Group_0_0__0_in_rule__FeatureDecl__Alternatives_02416);
+                    rule__FeatureDecl__Group_0_0__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getComponentDeclAccess().getGroup_0_0()); 
+                     after(grammarAccess.getFeatureDeclAccess().getGroup_0_0()); 
 
                     }
 
@@ -3245,24 +3245,24 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1165:6: ( ( rule__ComponentDecl__Group_0_1__0 ) )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1165:6: ( ( rule__FeatureDecl__Group_0_1__0 ) )
                     {
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1165:6: ( ( rule__ComponentDecl__Group_0_1__0 ) )
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1166:1: ( rule__ComponentDecl__Group_0_1__0 )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1165:6: ( ( rule__FeatureDecl__Group_0_1__0 ) )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1166:1: ( rule__FeatureDecl__Group_0_1__0 )
                     {
-                     before(grammarAccess.getComponentDeclAccess().getGroup_0_1()); 
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1167:1: ( rule__ComponentDecl__Group_0_1__0 )
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1167:2: rule__ComponentDecl__Group_0_1__0
+                     before(grammarAccess.getFeatureDeclAccess().getGroup_0_1()); 
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1167:1: ( rule__FeatureDecl__Group_0_1__0 )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1167:2: rule__FeatureDecl__Group_0_1__0
                     {
-                    pushFollow(FOLLOW_rule__ComponentDecl__Group_0_1__0_in_rule__ComponentDecl__Alternatives_02434);
-                    rule__ComponentDecl__Group_0_1__0();
+                    pushFollow(FOLLOW_rule__FeatureDecl__Group_0_1__0_in_rule__FeatureDecl__Alternatives_02434);
+                    rule__FeatureDecl__Group_0_1__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getComponentDeclAccess().getGroup_0_1()); 
+                     after(grammarAccess.getFeatureDeclAccess().getGroup_0_1()); 
 
                     }
 
@@ -3270,24 +3270,24 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
                     }
                     break;
                 case 3 :
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1171:6: ( ( rule__ComponentDecl__Group_0_2__0 ) )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1171:6: ( ( rule__FeatureDecl__Group_0_2__0 ) )
                     {
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1171:6: ( ( rule__ComponentDecl__Group_0_2__0 ) )
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1172:1: ( rule__ComponentDecl__Group_0_2__0 )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1171:6: ( ( rule__FeatureDecl__Group_0_2__0 ) )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1172:1: ( rule__FeatureDecl__Group_0_2__0 )
                     {
-                     before(grammarAccess.getComponentDeclAccess().getGroup_0_2()); 
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1173:1: ( rule__ComponentDecl__Group_0_2__0 )
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1173:2: rule__ComponentDecl__Group_0_2__0
+                     before(grammarAccess.getFeatureDeclAccess().getGroup_0_2()); 
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1173:1: ( rule__FeatureDecl__Group_0_2__0 )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1173:2: rule__FeatureDecl__Group_0_2__0
                     {
-                    pushFollow(FOLLOW_rule__ComponentDecl__Group_0_2__0_in_rule__ComponentDecl__Alternatives_02452);
-                    rule__ComponentDecl__Group_0_2__0();
+                    pushFollow(FOLLOW_rule__FeatureDecl__Group_0_2__0_in_rule__FeatureDecl__Alternatives_02452);
+                    rule__FeatureDecl__Group_0_2__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getComponentDeclAccess().getGroup_0_2()); 
+                     after(grammarAccess.getFeatureDeclAccess().getGroup_0_2()); 
 
                     }
 
@@ -3295,24 +3295,24 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
                     }
                     break;
                 case 4 :
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1177:6: ( ( rule__ComponentDecl__Group_0_3__0 ) )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1177:6: ( ( rule__FeatureDecl__Group_0_3__0 ) )
                     {
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1177:6: ( ( rule__ComponentDecl__Group_0_3__0 ) )
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1178:1: ( rule__ComponentDecl__Group_0_3__0 )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1177:6: ( ( rule__FeatureDecl__Group_0_3__0 ) )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1178:1: ( rule__FeatureDecl__Group_0_3__0 )
                     {
-                     before(grammarAccess.getComponentDeclAccess().getGroup_0_3()); 
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1179:1: ( rule__ComponentDecl__Group_0_3__0 )
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1179:2: rule__ComponentDecl__Group_0_3__0
+                     before(grammarAccess.getFeatureDeclAccess().getGroup_0_3()); 
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1179:1: ( rule__FeatureDecl__Group_0_3__0 )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1179:2: rule__FeatureDecl__Group_0_3__0
                     {
-                    pushFollow(FOLLOW_rule__ComponentDecl__Group_0_3__0_in_rule__ComponentDecl__Alternatives_02470);
-                    rule__ComponentDecl__Group_0_3__0();
+                    pushFollow(FOLLOW_rule__FeatureDecl__Group_0_3__0_in_rule__FeatureDecl__Alternatives_02470);
+                    rule__FeatureDecl__Group_0_3__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getComponentDeclAccess().getGroup_0_3()); 
+                     after(grammarAccess.getFeatureDeclAccess().getGroup_0_3()); 
 
                     }
 
@@ -3333,17 +3333,17 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Alternatives_0"
+    // $ANTLR end "rule__FeatureDecl__Alternatives_0"
 
 
-    // $ANTLR start "rule__ComponentDecl__Alternatives_0_0_2"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1188:1: rule__ComponentDecl__Alternatives_0_0_2 : ( ( ( rule__ComponentDecl__SchemaAssignment_0_0_2_0 ) ) | ( ( rule__ComponentDecl__ClassAssignment_0_0_2_1 ) ) );
-    public final void rule__ComponentDecl__Alternatives_0_0_2() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Alternatives_0_0_2"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1188:1: rule__FeatureDecl__Alternatives_0_0_2 : ( ( ( rule__FeatureDecl__SchemaAssignment_0_0_2_0 ) ) | ( ( rule__FeatureDecl__ClassAssignment_0_0_2_1 ) ) );
+    public final void rule__FeatureDecl__Alternatives_0_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1192:1: ( ( ( rule__ComponentDecl__SchemaAssignment_0_0_2_0 ) ) | ( ( rule__ComponentDecl__ClassAssignment_0_0_2_1 ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1192:1: ( ( ( rule__FeatureDecl__SchemaAssignment_0_0_2_0 ) ) | ( ( rule__FeatureDecl__ClassAssignment_0_0_2_1 ) ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -3361,24 +3361,24 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             }
             switch (alt4) {
                 case 1 :
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1193:1: ( ( rule__ComponentDecl__SchemaAssignment_0_0_2_0 ) )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1193:1: ( ( rule__FeatureDecl__SchemaAssignment_0_0_2_0 ) )
                     {
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1193:1: ( ( rule__ComponentDecl__SchemaAssignment_0_0_2_0 ) )
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1194:1: ( rule__ComponentDecl__SchemaAssignment_0_0_2_0 )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1193:1: ( ( rule__FeatureDecl__SchemaAssignment_0_0_2_0 ) )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1194:1: ( rule__FeatureDecl__SchemaAssignment_0_0_2_0 )
                     {
-                     before(grammarAccess.getComponentDeclAccess().getSchemaAssignment_0_0_2_0()); 
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1195:1: ( rule__ComponentDecl__SchemaAssignment_0_0_2_0 )
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1195:2: rule__ComponentDecl__SchemaAssignment_0_0_2_0
+                     before(grammarAccess.getFeatureDeclAccess().getSchemaAssignment_0_0_2_0()); 
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1195:1: ( rule__FeatureDecl__SchemaAssignment_0_0_2_0 )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1195:2: rule__FeatureDecl__SchemaAssignment_0_0_2_0
                     {
-                    pushFollow(FOLLOW_rule__ComponentDecl__SchemaAssignment_0_0_2_0_in_rule__ComponentDecl__Alternatives_0_0_22503);
-                    rule__ComponentDecl__SchemaAssignment_0_0_2_0();
+                    pushFollow(FOLLOW_rule__FeatureDecl__SchemaAssignment_0_0_2_0_in_rule__FeatureDecl__Alternatives_0_0_22503);
+                    rule__FeatureDecl__SchemaAssignment_0_0_2_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getComponentDeclAccess().getSchemaAssignment_0_0_2_0()); 
+                     after(grammarAccess.getFeatureDeclAccess().getSchemaAssignment_0_0_2_0()); 
 
                     }
 
@@ -3386,24 +3386,24 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
                     }
                     break;
                 case 2 :
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1199:6: ( ( rule__ComponentDecl__ClassAssignment_0_0_2_1 ) )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1199:6: ( ( rule__FeatureDecl__ClassAssignment_0_0_2_1 ) )
                     {
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1199:6: ( ( rule__ComponentDecl__ClassAssignment_0_0_2_1 ) )
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1200:1: ( rule__ComponentDecl__ClassAssignment_0_0_2_1 )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1199:6: ( ( rule__FeatureDecl__ClassAssignment_0_0_2_1 ) )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1200:1: ( rule__FeatureDecl__ClassAssignment_0_0_2_1 )
                     {
-                     before(grammarAccess.getComponentDeclAccess().getClassAssignment_0_0_2_1()); 
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1201:1: ( rule__ComponentDecl__ClassAssignment_0_0_2_1 )
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1201:2: rule__ComponentDecl__ClassAssignment_0_0_2_1
+                     before(grammarAccess.getFeatureDeclAccess().getClassAssignment_0_0_2_1()); 
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1201:1: ( rule__FeatureDecl__ClassAssignment_0_0_2_1 )
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:1201:2: rule__FeatureDecl__ClassAssignment_0_0_2_1
                     {
-                    pushFollow(FOLLOW_rule__ComponentDecl__ClassAssignment_0_0_2_1_in_rule__ComponentDecl__Alternatives_0_0_22521);
-                    rule__ComponentDecl__ClassAssignment_0_0_2_1();
+                    pushFollow(FOLLOW_rule__FeatureDecl__ClassAssignment_0_0_2_1_in_rule__FeatureDecl__Alternatives_0_0_22521);
+                    rule__FeatureDecl__ClassAssignment_0_0_2_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getComponentDeclAccess().getClassAssignment_0_0_2_1()); 
+                     after(grammarAccess.getFeatureDeclAccess().getClassAssignment_0_0_2_1()); 
 
                     }
 
@@ -3424,7 +3424,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Alternatives_0_0_2"
+    // $ANTLR end "rule__FeatureDecl__Alternatives_0_0_2"
 
 
     // $ANTLR start "rule__MemberDecl__Alternatives"
@@ -7031,23 +7031,23 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
     // $ANTLR end "rule__TypeDecl__Group_2_2__1__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group__0"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2227:1: rule__ComponentDecl__Group__0 : rule__ComponentDecl__Group__0__Impl rule__ComponentDecl__Group__1 ;
-    public final void rule__ComponentDecl__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group__0"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2227:1: rule__FeatureDecl__Group__0 : rule__FeatureDecl__Group__0__Impl rule__FeatureDecl__Group__1 ;
+    public final void rule__FeatureDecl__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2231:1: ( rule__ComponentDecl__Group__0__Impl rule__ComponentDecl__Group__1 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2232:2: rule__ComponentDecl__Group__0__Impl rule__ComponentDecl__Group__1
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2231:1: ( rule__FeatureDecl__Group__0__Impl rule__FeatureDecl__Group__1 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2232:2: rule__FeatureDecl__Group__0__Impl rule__FeatureDecl__Group__1
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group__0__Impl_in_rule__ComponentDecl__Group__04880);
-            rule__ComponentDecl__Group__0__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group__0__Impl_in_rule__FeatureDecl__Group__04880);
+            rule__FeatureDecl__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group__1_in_rule__ComponentDecl__Group__04883);
-            rule__ComponentDecl__Group__1();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group__1_in_rule__FeatureDecl__Group__04883);
+            rule__FeatureDecl__Group__1();
 
             state._fsp--;
 
@@ -7066,35 +7066,35 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group__0"
+    // $ANTLR end "rule__FeatureDecl__Group__0"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group__0__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2239:1: rule__ComponentDecl__Group__0__Impl : ( ( rule__ComponentDecl__Alternatives_0 ) ) ;
-    public final void rule__ComponentDecl__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group__0__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2239:1: rule__FeatureDecl__Group__0__Impl : ( ( rule__FeatureDecl__Alternatives_0 ) ) ;
+    public final void rule__FeatureDecl__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2243:1: ( ( ( rule__ComponentDecl__Alternatives_0 ) ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2244:1: ( ( rule__ComponentDecl__Alternatives_0 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2243:1: ( ( ( rule__FeatureDecl__Alternatives_0 ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2244:1: ( ( rule__FeatureDecl__Alternatives_0 ) )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2244:1: ( ( rule__ComponentDecl__Alternatives_0 ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2245:1: ( rule__ComponentDecl__Alternatives_0 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2244:1: ( ( rule__FeatureDecl__Alternatives_0 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2245:1: ( rule__FeatureDecl__Alternatives_0 )
             {
-             before(grammarAccess.getComponentDeclAccess().getAlternatives_0()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2246:1: ( rule__ComponentDecl__Alternatives_0 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2246:2: rule__ComponentDecl__Alternatives_0
+             before(grammarAccess.getFeatureDeclAccess().getAlternatives_0()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2246:1: ( rule__FeatureDecl__Alternatives_0 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2246:2: rule__FeatureDecl__Alternatives_0
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Alternatives_0_in_rule__ComponentDecl__Group__0__Impl4910);
-            rule__ComponentDecl__Alternatives_0();
+            pushFollow(FOLLOW_rule__FeatureDecl__Alternatives_0_in_rule__FeatureDecl__Group__0__Impl4910);
+            rule__FeatureDecl__Alternatives_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getComponentDeclAccess().getAlternatives_0()); 
+             after(grammarAccess.getFeatureDeclAccess().getAlternatives_0()); 
 
             }
 
@@ -7113,26 +7113,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group__0__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group__0__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group__1"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2256:1: rule__ComponentDecl__Group__1 : rule__ComponentDecl__Group__1__Impl rule__ComponentDecl__Group__2 ;
-    public final void rule__ComponentDecl__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group__1"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2256:1: rule__FeatureDecl__Group__1 : rule__FeatureDecl__Group__1__Impl rule__FeatureDecl__Group__2 ;
+    public final void rule__FeatureDecl__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2260:1: ( rule__ComponentDecl__Group__1__Impl rule__ComponentDecl__Group__2 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2261:2: rule__ComponentDecl__Group__1__Impl rule__ComponentDecl__Group__2
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2260:1: ( rule__FeatureDecl__Group__1__Impl rule__FeatureDecl__Group__2 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2261:2: rule__FeatureDecl__Group__1__Impl rule__FeatureDecl__Group__2
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group__1__Impl_in_rule__ComponentDecl__Group__14940);
-            rule__ComponentDecl__Group__1__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group__1__Impl_in_rule__FeatureDecl__Group__14940);
+            rule__FeatureDecl__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group__2_in_rule__ComponentDecl__Group__14943);
-            rule__ComponentDecl__Group__2();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group__2_in_rule__FeatureDecl__Group__14943);
+            rule__FeatureDecl__Group__2();
 
             state._fsp--;
 
@@ -7151,35 +7151,35 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group__1"
+    // $ANTLR end "rule__FeatureDecl__Group__1"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group__1__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2268:1: rule__ComponentDecl__Group__1__Impl : ( ( rule__ComponentDecl__NameAssignment_1 ) ) ;
-    public final void rule__ComponentDecl__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group__1__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2268:1: rule__FeatureDecl__Group__1__Impl : ( ( rule__FeatureDecl__NameAssignment_1 ) ) ;
+    public final void rule__FeatureDecl__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2272:1: ( ( ( rule__ComponentDecl__NameAssignment_1 ) ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2273:1: ( ( rule__ComponentDecl__NameAssignment_1 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2272:1: ( ( ( rule__FeatureDecl__NameAssignment_1 ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2273:1: ( ( rule__FeatureDecl__NameAssignment_1 ) )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2273:1: ( ( rule__ComponentDecl__NameAssignment_1 ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2274:1: ( rule__ComponentDecl__NameAssignment_1 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2273:1: ( ( rule__FeatureDecl__NameAssignment_1 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2274:1: ( rule__FeatureDecl__NameAssignment_1 )
             {
-             before(grammarAccess.getComponentDeclAccess().getNameAssignment_1()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2275:1: ( rule__ComponentDecl__NameAssignment_1 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2275:2: rule__ComponentDecl__NameAssignment_1
+             before(grammarAccess.getFeatureDeclAccess().getNameAssignment_1()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2275:1: ( rule__FeatureDecl__NameAssignment_1 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2275:2: rule__FeatureDecl__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__NameAssignment_1_in_rule__ComponentDecl__Group__1__Impl4970);
-            rule__ComponentDecl__NameAssignment_1();
+            pushFollow(FOLLOW_rule__FeatureDecl__NameAssignment_1_in_rule__FeatureDecl__Group__1__Impl4970);
+            rule__FeatureDecl__NameAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getComponentDeclAccess().getNameAssignment_1()); 
+             after(grammarAccess.getFeatureDeclAccess().getNameAssignment_1()); 
 
             }
 
@@ -7198,26 +7198,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group__1__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group__1__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group__2"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2285:1: rule__ComponentDecl__Group__2 : rule__ComponentDecl__Group__2__Impl rule__ComponentDecl__Group__3 ;
-    public final void rule__ComponentDecl__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group__2"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2285:1: rule__FeatureDecl__Group__2 : rule__FeatureDecl__Group__2__Impl rule__FeatureDecl__Group__3 ;
+    public final void rule__FeatureDecl__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2289:1: ( rule__ComponentDecl__Group__2__Impl rule__ComponentDecl__Group__3 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2290:2: rule__ComponentDecl__Group__2__Impl rule__ComponentDecl__Group__3
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2289:1: ( rule__FeatureDecl__Group__2__Impl rule__FeatureDecl__Group__3 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2290:2: rule__FeatureDecl__Group__2__Impl rule__FeatureDecl__Group__3
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group__2__Impl_in_rule__ComponentDecl__Group__25000);
-            rule__ComponentDecl__Group__2__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group__2__Impl_in_rule__FeatureDecl__Group__25000);
+            rule__FeatureDecl__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group__3_in_rule__ComponentDecl__Group__25003);
-            rule__ComponentDecl__Group__3();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group__3_in_rule__FeatureDecl__Group__25003);
+            rule__FeatureDecl__Group__3();
 
             state._fsp--;
 
@@ -7236,24 +7236,24 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group__2"
+    // $ANTLR end "rule__FeatureDecl__Group__2"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group__2__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2297:1: rule__ComponentDecl__Group__2__Impl : ( ( rule__ComponentDecl__Group_2__0 )? ) ;
-    public final void rule__ComponentDecl__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group__2__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2297:1: rule__FeatureDecl__Group__2__Impl : ( ( rule__FeatureDecl__Group_2__0 )? ) ;
+    public final void rule__FeatureDecl__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2301:1: ( ( ( rule__ComponentDecl__Group_2__0 )? ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2302:1: ( ( rule__ComponentDecl__Group_2__0 )? )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2301:1: ( ( ( rule__FeatureDecl__Group_2__0 )? ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2302:1: ( ( rule__FeatureDecl__Group_2__0 )? )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2302:1: ( ( rule__ComponentDecl__Group_2__0 )? )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2303:1: ( rule__ComponentDecl__Group_2__0 )?
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2302:1: ( ( rule__FeatureDecl__Group_2__0 )? )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2303:1: ( rule__FeatureDecl__Group_2__0 )?
             {
-             before(grammarAccess.getComponentDeclAccess().getGroup_2()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2304:1: ( rule__ComponentDecl__Group_2__0 )?
+             before(grammarAccess.getFeatureDeclAccess().getGroup_2()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2304:1: ( rule__FeatureDecl__Group_2__0 )?
             int alt29=2;
             int LA29_0 = input.LA(1);
 
@@ -7262,10 +7262,10 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             }
             switch (alt29) {
                 case 1 :
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2304:2: rule__ComponentDecl__Group_2__0
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2304:2: rule__FeatureDecl__Group_2__0
                     {
-                    pushFollow(FOLLOW_rule__ComponentDecl__Group_2__0_in_rule__ComponentDecl__Group__2__Impl5030);
-                    rule__ComponentDecl__Group_2__0();
+                    pushFollow(FOLLOW_rule__FeatureDecl__Group_2__0_in_rule__FeatureDecl__Group__2__Impl5030);
+                    rule__FeatureDecl__Group_2__0();
 
                     state._fsp--;
 
@@ -7275,7 +7275,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
 
             }
 
-             after(grammarAccess.getComponentDeclAccess().getGroup_2()); 
+             after(grammarAccess.getFeatureDeclAccess().getGroup_2()); 
 
             }
 
@@ -7294,26 +7294,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group__2__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group__2__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group__3"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2314:1: rule__ComponentDecl__Group__3 : rule__ComponentDecl__Group__3__Impl rule__ComponentDecl__Group__4 ;
-    public final void rule__ComponentDecl__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group__3"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2314:1: rule__FeatureDecl__Group__3 : rule__FeatureDecl__Group__3__Impl rule__FeatureDecl__Group__4 ;
+    public final void rule__FeatureDecl__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2318:1: ( rule__ComponentDecl__Group__3__Impl rule__ComponentDecl__Group__4 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2319:2: rule__ComponentDecl__Group__3__Impl rule__ComponentDecl__Group__4
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2318:1: ( rule__FeatureDecl__Group__3__Impl rule__FeatureDecl__Group__4 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2319:2: rule__FeatureDecl__Group__3__Impl rule__FeatureDecl__Group__4
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group__3__Impl_in_rule__ComponentDecl__Group__35061);
-            rule__ComponentDecl__Group__3__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group__3__Impl_in_rule__FeatureDecl__Group__35061);
+            rule__FeatureDecl__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group__4_in_rule__ComponentDecl__Group__35064);
-            rule__ComponentDecl__Group__4();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group__4_in_rule__FeatureDecl__Group__35064);
+            rule__FeatureDecl__Group__4();
 
             state._fsp--;
 
@@ -7332,24 +7332,24 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group__3"
+    // $ANTLR end "rule__FeatureDecl__Group__3"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group__3__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2326:1: rule__ComponentDecl__Group__3__Impl : ( ( rule__ComponentDecl__Group_3__0 )? ) ;
-    public final void rule__ComponentDecl__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group__3__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2326:1: rule__FeatureDecl__Group__3__Impl : ( ( rule__FeatureDecl__Group_3__0 )? ) ;
+    public final void rule__FeatureDecl__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2330:1: ( ( ( rule__ComponentDecl__Group_3__0 )? ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2331:1: ( ( rule__ComponentDecl__Group_3__0 )? )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2330:1: ( ( ( rule__FeatureDecl__Group_3__0 )? ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2331:1: ( ( rule__FeatureDecl__Group_3__0 )? )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2331:1: ( ( rule__ComponentDecl__Group_3__0 )? )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2332:1: ( rule__ComponentDecl__Group_3__0 )?
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2331:1: ( ( rule__FeatureDecl__Group_3__0 )? )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2332:1: ( rule__FeatureDecl__Group_3__0 )?
             {
-             before(grammarAccess.getComponentDeclAccess().getGroup_3()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2333:1: ( rule__ComponentDecl__Group_3__0 )?
+             before(grammarAccess.getFeatureDeclAccess().getGroup_3()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2333:1: ( rule__FeatureDecl__Group_3__0 )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -7358,10 +7358,10 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             }
             switch (alt30) {
                 case 1 :
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2333:2: rule__ComponentDecl__Group_3__0
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2333:2: rule__FeatureDecl__Group_3__0
                     {
-                    pushFollow(FOLLOW_rule__ComponentDecl__Group_3__0_in_rule__ComponentDecl__Group__3__Impl5091);
-                    rule__ComponentDecl__Group_3__0();
+                    pushFollow(FOLLOW_rule__FeatureDecl__Group_3__0_in_rule__FeatureDecl__Group__3__Impl5091);
+                    rule__FeatureDecl__Group_3__0();
 
                     state._fsp--;
 
@@ -7371,7 +7371,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
 
             }
 
-             after(grammarAccess.getComponentDeclAccess().getGroup_3()); 
+             after(grammarAccess.getFeatureDeclAccess().getGroup_3()); 
 
             }
 
@@ -7390,21 +7390,21 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group__3__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group__3__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group__4"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2343:1: rule__ComponentDecl__Group__4 : rule__ComponentDecl__Group__4__Impl ;
-    public final void rule__ComponentDecl__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group__4"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2343:1: rule__FeatureDecl__Group__4 : rule__FeatureDecl__Group__4__Impl ;
+    public final void rule__FeatureDecl__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2347:1: ( rule__ComponentDecl__Group__4__Impl )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2348:2: rule__ComponentDecl__Group__4__Impl
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2347:1: ( rule__FeatureDecl__Group__4__Impl )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2348:2: rule__FeatureDecl__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group__4__Impl_in_rule__ComponentDecl__Group__45122);
-            rule__ComponentDecl__Group__4__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group__4__Impl_in_rule__FeatureDecl__Group__45122);
+            rule__FeatureDecl__Group__4__Impl();
 
             state._fsp--;
 
@@ -7423,24 +7423,24 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group__4"
+    // $ANTLR end "rule__FeatureDecl__Group__4"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group__4__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2354:1: rule__ComponentDecl__Group__4__Impl : ( ( rule__ComponentDecl__Group_4__0 )? ) ;
-    public final void rule__ComponentDecl__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group__4__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2354:1: rule__FeatureDecl__Group__4__Impl : ( ( rule__FeatureDecl__Group_4__0 )? ) ;
+    public final void rule__FeatureDecl__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2358:1: ( ( ( rule__ComponentDecl__Group_4__0 )? ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2359:1: ( ( rule__ComponentDecl__Group_4__0 )? )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2358:1: ( ( ( rule__FeatureDecl__Group_4__0 )? ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2359:1: ( ( rule__FeatureDecl__Group_4__0 )? )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2359:1: ( ( rule__ComponentDecl__Group_4__0 )? )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2360:1: ( rule__ComponentDecl__Group_4__0 )?
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2359:1: ( ( rule__FeatureDecl__Group_4__0 )? )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2360:1: ( rule__FeatureDecl__Group_4__0 )?
             {
-             before(grammarAccess.getComponentDeclAccess().getGroup_4()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2361:1: ( rule__ComponentDecl__Group_4__0 )?
+             before(grammarAccess.getFeatureDeclAccess().getGroup_4()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2361:1: ( rule__FeatureDecl__Group_4__0 )?
             int alt31=2;
             int LA31_0 = input.LA(1);
 
@@ -7449,10 +7449,10 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             }
             switch (alt31) {
                 case 1 :
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2361:2: rule__ComponentDecl__Group_4__0
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2361:2: rule__FeatureDecl__Group_4__0
                     {
-                    pushFollow(FOLLOW_rule__ComponentDecl__Group_4__0_in_rule__ComponentDecl__Group__4__Impl5149);
-                    rule__ComponentDecl__Group_4__0();
+                    pushFollow(FOLLOW_rule__FeatureDecl__Group_4__0_in_rule__FeatureDecl__Group__4__Impl5149);
+                    rule__FeatureDecl__Group_4__0();
 
                     state._fsp--;
 
@@ -7462,7 +7462,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
 
             }
 
-             after(grammarAccess.getComponentDeclAccess().getGroup_4()); 
+             after(grammarAccess.getFeatureDeclAccess().getGroup_4()); 
 
             }
 
@@ -7481,26 +7481,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group__4__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group__4__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_0__0"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2381:1: rule__ComponentDecl__Group_0_0__0 : rule__ComponentDecl__Group_0_0__0__Impl rule__ComponentDecl__Group_0_0__1 ;
-    public final void rule__ComponentDecl__Group_0_0__0() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_0__0"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2381:1: rule__FeatureDecl__Group_0_0__0 : rule__FeatureDecl__Group_0_0__0__Impl rule__FeatureDecl__Group_0_0__1 ;
+    public final void rule__FeatureDecl__Group_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2385:1: ( rule__ComponentDecl__Group_0_0__0__Impl rule__ComponentDecl__Group_0_0__1 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2386:2: rule__ComponentDecl__Group_0_0__0__Impl rule__ComponentDecl__Group_0_0__1
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2385:1: ( rule__FeatureDecl__Group_0_0__0__Impl rule__FeatureDecl__Group_0_0__1 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2386:2: rule__FeatureDecl__Group_0_0__0__Impl rule__FeatureDecl__Group_0_0__1
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_0_0__0__Impl_in_rule__ComponentDecl__Group_0_0__05190);
-            rule__ComponentDecl__Group_0_0__0__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_0_0__0__Impl_in_rule__FeatureDecl__Group_0_0__05190);
+            rule__FeatureDecl__Group_0_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_0_0__1_in_rule__ComponentDecl__Group_0_0__05193);
-            rule__ComponentDecl__Group_0_0__1();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_0_0__1_in_rule__FeatureDecl__Group_0_0__05193);
+            rule__FeatureDecl__Group_0_0__1();
 
             state._fsp--;
 
@@ -7519,12 +7519,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_0__0"
+    // $ANTLR end "rule__FeatureDecl__Group_0_0__0"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_0__0__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2393:1: rule__ComponentDecl__Group_0_0__0__Impl : ( 'feature' ) ;
-    public final void rule__ComponentDecl__Group_0_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_0__0__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2393:1: rule__FeatureDecl__Group_0_0__0__Impl : ( 'feature' ) ;
+    public final void rule__FeatureDecl__Group_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -7535,9 +7535,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2398:1: ( 'feature' )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2399:1: 'feature'
             {
-             before(grammarAccess.getComponentDeclAccess().getFeatureKeyword_0_0_0()); 
-            match(input,31,FOLLOW_31_in_rule__ComponentDecl__Group_0_0__0__Impl5221); 
-             after(grammarAccess.getComponentDeclAccess().getFeatureKeyword_0_0_0()); 
+             before(grammarAccess.getFeatureDeclAccess().getFeatureKeyword_0_0_0()); 
+            match(input,31,FOLLOW_31_in_rule__FeatureDecl__Group_0_0__0__Impl5221); 
+             after(grammarAccess.getFeatureDeclAccess().getFeatureKeyword_0_0_0()); 
 
             }
 
@@ -7556,26 +7556,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_0__0__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_0_0__0__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_0__1"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2412:1: rule__ComponentDecl__Group_0_0__1 : rule__ComponentDecl__Group_0_0__1__Impl rule__ComponentDecl__Group_0_0__2 ;
-    public final void rule__ComponentDecl__Group_0_0__1() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_0__1"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2412:1: rule__FeatureDecl__Group_0_0__1 : rule__FeatureDecl__Group_0_0__1__Impl rule__FeatureDecl__Group_0_0__2 ;
+    public final void rule__FeatureDecl__Group_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2416:1: ( rule__ComponentDecl__Group_0_0__1__Impl rule__ComponentDecl__Group_0_0__2 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2417:2: rule__ComponentDecl__Group_0_0__1__Impl rule__ComponentDecl__Group_0_0__2
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2416:1: ( rule__FeatureDecl__Group_0_0__1__Impl rule__FeatureDecl__Group_0_0__2 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2417:2: rule__FeatureDecl__Group_0_0__1__Impl rule__FeatureDecl__Group_0_0__2
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_0_0__1__Impl_in_rule__ComponentDecl__Group_0_0__15252);
-            rule__ComponentDecl__Group_0_0__1__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_0_0__1__Impl_in_rule__FeatureDecl__Group_0_0__15252);
+            rule__FeatureDecl__Group_0_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_0_0__2_in_rule__ComponentDecl__Group_0_0__15255);
-            rule__ComponentDecl__Group_0_0__2();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_0_0__2_in_rule__FeatureDecl__Group_0_0__15255);
+            rule__FeatureDecl__Group_0_0__2();
 
             state._fsp--;
 
@@ -7594,12 +7594,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_0__1"
+    // $ANTLR end "rule__FeatureDecl__Group_0_0__1"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_0__1__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2424:1: rule__ComponentDecl__Group_0_0__1__Impl : ( () ) ;
-    public final void rule__ComponentDecl__Group_0_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_0__1__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2424:1: rule__FeatureDecl__Group_0_0__1__Impl : ( () ) ;
+    public final void rule__FeatureDecl__Group_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -7610,13 +7610,13 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2429:1: ( () )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2430:1: ()
             {
-             before(grammarAccess.getComponentDeclAccess().getComponentAction_0_0_1()); 
+             before(grammarAccess.getFeatureDeclAccess().getFeatureAction_0_0_1()); 
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2431:1: ()
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2433:1: 
             {
             }
 
-             after(grammarAccess.getComponentDeclAccess().getComponentAction_0_0_1()); 
+             after(grammarAccess.getFeatureDeclAccess().getFeatureAction_0_0_1()); 
 
             }
 
@@ -7631,21 +7631,21 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_0__1__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_0_0__1__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_0__2"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2443:1: rule__ComponentDecl__Group_0_0__2 : rule__ComponentDecl__Group_0_0__2__Impl ;
-    public final void rule__ComponentDecl__Group_0_0__2() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_0__2"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2443:1: rule__FeatureDecl__Group_0_0__2 : rule__FeatureDecl__Group_0_0__2__Impl ;
+    public final void rule__FeatureDecl__Group_0_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2447:1: ( rule__ComponentDecl__Group_0_0__2__Impl )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2448:2: rule__ComponentDecl__Group_0_0__2__Impl
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2447:1: ( rule__FeatureDecl__Group_0_0__2__Impl )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2448:2: rule__FeatureDecl__Group_0_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_0_0__2__Impl_in_rule__ComponentDecl__Group_0_0__25313);
-            rule__ComponentDecl__Group_0_0__2__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_0_0__2__Impl_in_rule__FeatureDecl__Group_0_0__25313);
+            rule__FeatureDecl__Group_0_0__2__Impl();
 
             state._fsp--;
 
@@ -7664,24 +7664,24 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_0__2"
+    // $ANTLR end "rule__FeatureDecl__Group_0_0__2"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_0__2__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2454:1: rule__ComponentDecl__Group_0_0__2__Impl : ( ( rule__ComponentDecl__Alternatives_0_0_2 )? ) ;
-    public final void rule__ComponentDecl__Group_0_0__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_0__2__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2454:1: rule__FeatureDecl__Group_0_0__2__Impl : ( ( rule__FeatureDecl__Alternatives_0_0_2 )? ) ;
+    public final void rule__FeatureDecl__Group_0_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2458:1: ( ( ( rule__ComponentDecl__Alternatives_0_0_2 )? ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2459:1: ( ( rule__ComponentDecl__Alternatives_0_0_2 )? )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2458:1: ( ( ( rule__FeatureDecl__Alternatives_0_0_2 )? ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2459:1: ( ( rule__FeatureDecl__Alternatives_0_0_2 )? )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2459:1: ( ( rule__ComponentDecl__Alternatives_0_0_2 )? )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2460:1: ( rule__ComponentDecl__Alternatives_0_0_2 )?
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2459:1: ( ( rule__FeatureDecl__Alternatives_0_0_2 )? )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2460:1: ( rule__FeatureDecl__Alternatives_0_0_2 )?
             {
-             before(grammarAccess.getComponentDeclAccess().getAlternatives_0_0_2()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2461:1: ( rule__ComponentDecl__Alternatives_0_0_2 )?
+             before(grammarAccess.getFeatureDeclAccess().getAlternatives_0_0_2()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2461:1: ( rule__FeatureDecl__Alternatives_0_0_2 )?
             int alt32=2;
             int LA32_0 = input.LA(1);
 
@@ -7690,10 +7690,10 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             }
             switch (alt32) {
                 case 1 :
-                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2461:2: rule__ComponentDecl__Alternatives_0_0_2
+                    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2461:2: rule__FeatureDecl__Alternatives_0_0_2
                     {
-                    pushFollow(FOLLOW_rule__ComponentDecl__Alternatives_0_0_2_in_rule__ComponentDecl__Group_0_0__2__Impl5340);
-                    rule__ComponentDecl__Alternatives_0_0_2();
+                    pushFollow(FOLLOW_rule__FeatureDecl__Alternatives_0_0_2_in_rule__FeatureDecl__Group_0_0__2__Impl5340);
+                    rule__FeatureDecl__Alternatives_0_0_2();
 
                     state._fsp--;
 
@@ -7703,7 +7703,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
 
             }
 
-             after(grammarAccess.getComponentDeclAccess().getAlternatives_0_0_2()); 
+             after(grammarAccess.getFeatureDeclAccess().getAlternatives_0_0_2()); 
 
             }
 
@@ -7722,26 +7722,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_0__2__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_0_0__2__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_1__0"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2477:1: rule__ComponentDecl__Group_0_1__0 : rule__ComponentDecl__Group_0_1__0__Impl rule__ComponentDecl__Group_0_1__1 ;
-    public final void rule__ComponentDecl__Group_0_1__0() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_1__0"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2477:1: rule__FeatureDecl__Group_0_1__0 : rule__FeatureDecl__Group_0_1__0__Impl rule__FeatureDecl__Group_0_1__1 ;
+    public final void rule__FeatureDecl__Group_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2481:1: ( rule__ComponentDecl__Group_0_1__0__Impl rule__ComponentDecl__Group_0_1__1 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2482:2: rule__ComponentDecl__Group_0_1__0__Impl rule__ComponentDecl__Group_0_1__1
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2481:1: ( rule__FeatureDecl__Group_0_1__0__Impl rule__FeatureDecl__Group_0_1__1 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2482:2: rule__FeatureDecl__Group_0_1__0__Impl rule__FeatureDecl__Group_0_1__1
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_0_1__0__Impl_in_rule__ComponentDecl__Group_0_1__05377);
-            rule__ComponentDecl__Group_0_1__0__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_0_1__0__Impl_in_rule__FeatureDecl__Group_0_1__05377);
+            rule__FeatureDecl__Group_0_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_0_1__1_in_rule__ComponentDecl__Group_0_1__05380);
-            rule__ComponentDecl__Group_0_1__1();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_0_1__1_in_rule__FeatureDecl__Group_0_1__05380);
+            rule__FeatureDecl__Group_0_1__1();
 
             state._fsp--;
 
@@ -7760,12 +7760,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_1__0"
+    // $ANTLR end "rule__FeatureDecl__Group_0_1__0"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_1__0__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2489:1: rule__ComponentDecl__Group_0_1__0__Impl : ( 'data' ) ;
-    public final void rule__ComponentDecl__Group_0_1__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_1__0__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2489:1: rule__FeatureDecl__Group_0_1__0__Impl : ( 'data' ) ;
+    public final void rule__FeatureDecl__Group_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -7776,9 +7776,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2494:1: ( 'data' )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2495:1: 'data'
             {
-             before(grammarAccess.getComponentDeclAccess().getDataKeyword_0_1_0()); 
-            match(input,32,FOLLOW_32_in_rule__ComponentDecl__Group_0_1__0__Impl5408); 
-             after(grammarAccess.getComponentDeclAccess().getDataKeyword_0_1_0()); 
+             before(grammarAccess.getFeatureDeclAccess().getDataKeyword_0_1_0()); 
+            match(input,32,FOLLOW_32_in_rule__FeatureDecl__Group_0_1__0__Impl5408); 
+             after(grammarAccess.getFeatureDeclAccess().getDataKeyword_0_1_0()); 
 
             }
 
@@ -7797,21 +7797,21 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_1__0__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_0_1__0__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_1__1"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2508:1: rule__ComponentDecl__Group_0_1__1 : rule__ComponentDecl__Group_0_1__1__Impl ;
-    public final void rule__ComponentDecl__Group_0_1__1() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_1__1"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2508:1: rule__FeatureDecl__Group_0_1__1 : rule__FeatureDecl__Group_0_1__1__Impl ;
+    public final void rule__FeatureDecl__Group_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2512:1: ( rule__ComponentDecl__Group_0_1__1__Impl )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2513:2: rule__ComponentDecl__Group_0_1__1__Impl
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2512:1: ( rule__FeatureDecl__Group_0_1__1__Impl )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2513:2: rule__FeatureDecl__Group_0_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_0_1__1__Impl_in_rule__ComponentDecl__Group_0_1__15439);
-            rule__ComponentDecl__Group_0_1__1__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_0_1__1__Impl_in_rule__FeatureDecl__Group_0_1__15439);
+            rule__FeatureDecl__Group_0_1__1__Impl();
 
             state._fsp--;
 
@@ -7830,12 +7830,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_1__1"
+    // $ANTLR end "rule__FeatureDecl__Group_0_1__1"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_1__1__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2519:1: rule__ComponentDecl__Group_0_1__1__Impl : ( () ) ;
-    public final void rule__ComponentDecl__Group_0_1__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_1__1__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2519:1: rule__FeatureDecl__Group_0_1__1__Impl : ( () ) ;
+    public final void rule__FeatureDecl__Group_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -7846,13 +7846,13 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2524:1: ( () )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2525:1: ()
             {
-             before(grammarAccess.getComponentDeclAccess().getDataAction_0_1_1()); 
+             before(grammarAccess.getFeatureDeclAccess().getDataAction_0_1_1()); 
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2526:1: ()
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2528:1: 
             {
             }
 
-             after(grammarAccess.getComponentDeclAccess().getDataAction_0_1_1()); 
+             after(grammarAccess.getFeatureDeclAccess().getDataAction_0_1_1()); 
 
             }
 
@@ -7867,26 +7867,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_1__1__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_0_1__1__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_2__0"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2542:1: rule__ComponentDecl__Group_0_2__0 : rule__ComponentDecl__Group_0_2__0__Impl rule__ComponentDecl__Group_0_2__1 ;
-    public final void rule__ComponentDecl__Group_0_2__0() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_2__0"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2542:1: rule__FeatureDecl__Group_0_2__0 : rule__FeatureDecl__Group_0_2__0__Impl rule__FeatureDecl__Group_0_2__1 ;
+    public final void rule__FeatureDecl__Group_0_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2546:1: ( rule__ComponentDecl__Group_0_2__0__Impl rule__ComponentDecl__Group_0_2__1 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2547:2: rule__ComponentDecl__Group_0_2__0__Impl rule__ComponentDecl__Group_0_2__1
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2546:1: ( rule__FeatureDecl__Group_0_2__0__Impl rule__FeatureDecl__Group_0_2__1 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2547:2: rule__FeatureDecl__Group_0_2__0__Impl rule__FeatureDecl__Group_0_2__1
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_0_2__0__Impl_in_rule__ComponentDecl__Group_0_2__05501);
-            rule__ComponentDecl__Group_0_2__0__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_0_2__0__Impl_in_rule__FeatureDecl__Group_0_2__05501);
+            rule__FeatureDecl__Group_0_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_0_2__1_in_rule__ComponentDecl__Group_0_2__05504);
-            rule__ComponentDecl__Group_0_2__1();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_0_2__1_in_rule__FeatureDecl__Group_0_2__05504);
+            rule__FeatureDecl__Group_0_2__1();
 
             state._fsp--;
 
@@ -7905,12 +7905,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_2__0"
+    // $ANTLR end "rule__FeatureDecl__Group_0_2__0"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_2__0__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2554:1: rule__ComponentDecl__Group_0_2__0__Impl : ( 'device' ) ;
-    public final void rule__ComponentDecl__Group_0_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_2__0__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2554:1: rule__FeatureDecl__Group_0_2__0__Impl : ( 'device' ) ;
+    public final void rule__FeatureDecl__Group_0_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -7921,9 +7921,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2559:1: ( 'device' )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2560:1: 'device'
             {
-             before(grammarAccess.getComponentDeclAccess().getDeviceKeyword_0_2_0()); 
-            match(input,33,FOLLOW_33_in_rule__ComponentDecl__Group_0_2__0__Impl5532); 
-             after(grammarAccess.getComponentDeclAccess().getDeviceKeyword_0_2_0()); 
+             before(grammarAccess.getFeatureDeclAccess().getDeviceKeyword_0_2_0()); 
+            match(input,33,FOLLOW_33_in_rule__FeatureDecl__Group_0_2__0__Impl5532); 
+             after(grammarAccess.getFeatureDeclAccess().getDeviceKeyword_0_2_0()); 
 
             }
 
@@ -7942,21 +7942,21 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_2__0__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_0_2__0__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_2__1"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2573:1: rule__ComponentDecl__Group_0_2__1 : rule__ComponentDecl__Group_0_2__1__Impl ;
-    public final void rule__ComponentDecl__Group_0_2__1() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_2__1"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2573:1: rule__FeatureDecl__Group_0_2__1 : rule__FeatureDecl__Group_0_2__1__Impl ;
+    public final void rule__FeatureDecl__Group_0_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2577:1: ( rule__ComponentDecl__Group_0_2__1__Impl )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2578:2: rule__ComponentDecl__Group_0_2__1__Impl
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2577:1: ( rule__FeatureDecl__Group_0_2__1__Impl )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2578:2: rule__FeatureDecl__Group_0_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_0_2__1__Impl_in_rule__ComponentDecl__Group_0_2__15563);
-            rule__ComponentDecl__Group_0_2__1__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_0_2__1__Impl_in_rule__FeatureDecl__Group_0_2__15563);
+            rule__FeatureDecl__Group_0_2__1__Impl();
 
             state._fsp--;
 
@@ -7975,12 +7975,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_2__1"
+    // $ANTLR end "rule__FeatureDecl__Group_0_2__1"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_2__1__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2584:1: rule__ComponentDecl__Group_0_2__1__Impl : ( () ) ;
-    public final void rule__ComponentDecl__Group_0_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_2__1__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2584:1: rule__FeatureDecl__Group_0_2__1__Impl : ( () ) ;
+    public final void rule__FeatureDecl__Group_0_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -7991,13 +7991,13 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2589:1: ( () )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2590:1: ()
             {
-             before(grammarAccess.getComponentDeclAccess().getDeviceAction_0_2_1()); 
+             before(grammarAccess.getFeatureDeclAccess().getDeviceAction_0_2_1()); 
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2591:1: ()
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2593:1: 
             {
             }
 
-             after(grammarAccess.getComponentDeclAccess().getDeviceAction_0_2_1()); 
+             after(grammarAccess.getFeatureDeclAccess().getDeviceAction_0_2_1()); 
 
             }
 
@@ -8012,26 +8012,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_2__1__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_0_2__1__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_3__0"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2607:1: rule__ComponentDecl__Group_0_3__0 : rule__ComponentDecl__Group_0_3__0__Impl rule__ComponentDecl__Group_0_3__1 ;
-    public final void rule__ComponentDecl__Group_0_3__0() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_3__0"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2607:1: rule__FeatureDecl__Group_0_3__0 : rule__FeatureDecl__Group_0_3__0__Impl rule__FeatureDecl__Group_0_3__1 ;
+    public final void rule__FeatureDecl__Group_0_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2611:1: ( rule__ComponentDecl__Group_0_3__0__Impl rule__ComponentDecl__Group_0_3__1 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2612:2: rule__ComponentDecl__Group_0_3__0__Impl rule__ComponentDecl__Group_0_3__1
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2611:1: ( rule__FeatureDecl__Group_0_3__0__Impl rule__FeatureDecl__Group_0_3__1 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2612:2: rule__FeatureDecl__Group_0_3__0__Impl rule__FeatureDecl__Group_0_3__1
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_0_3__0__Impl_in_rule__ComponentDecl__Group_0_3__05625);
-            rule__ComponentDecl__Group_0_3__0__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_0_3__0__Impl_in_rule__FeatureDecl__Group_0_3__05625);
+            rule__FeatureDecl__Group_0_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_0_3__1_in_rule__ComponentDecl__Group_0_3__05628);
-            rule__ComponentDecl__Group_0_3__1();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_0_3__1_in_rule__FeatureDecl__Group_0_3__05628);
+            rule__FeatureDecl__Group_0_3__1();
 
             state._fsp--;
 
@@ -8050,12 +8050,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_3__0"
+    // $ANTLR end "rule__FeatureDecl__Group_0_3__0"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_3__0__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2619:1: rule__ComponentDecl__Group_0_3__0__Impl : ( 'app' ) ;
-    public final void rule__ComponentDecl__Group_0_3__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_3__0__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2619:1: rule__FeatureDecl__Group_0_3__0__Impl : ( 'app' ) ;
+    public final void rule__FeatureDecl__Group_0_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -8066,9 +8066,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2624:1: ( 'app' )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2625:1: 'app'
             {
-             before(grammarAccess.getComponentDeclAccess().getAppKeyword_0_3_0()); 
-            match(input,34,FOLLOW_34_in_rule__ComponentDecl__Group_0_3__0__Impl5656); 
-             after(grammarAccess.getComponentDeclAccess().getAppKeyword_0_3_0()); 
+             before(grammarAccess.getFeatureDeclAccess().getAppKeyword_0_3_0()); 
+            match(input,34,FOLLOW_34_in_rule__FeatureDecl__Group_0_3__0__Impl5656); 
+             after(grammarAccess.getFeatureDeclAccess().getAppKeyword_0_3_0()); 
 
             }
 
@@ -8087,21 +8087,21 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_3__0__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_0_3__0__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_3__1"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2638:1: rule__ComponentDecl__Group_0_3__1 : rule__ComponentDecl__Group_0_3__1__Impl ;
-    public final void rule__ComponentDecl__Group_0_3__1() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_3__1"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2638:1: rule__FeatureDecl__Group_0_3__1 : rule__FeatureDecl__Group_0_3__1__Impl ;
+    public final void rule__FeatureDecl__Group_0_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2642:1: ( rule__ComponentDecl__Group_0_3__1__Impl )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2643:2: rule__ComponentDecl__Group_0_3__1__Impl
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2642:1: ( rule__FeatureDecl__Group_0_3__1__Impl )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2643:2: rule__FeatureDecl__Group_0_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_0_3__1__Impl_in_rule__ComponentDecl__Group_0_3__15687);
-            rule__ComponentDecl__Group_0_3__1__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_0_3__1__Impl_in_rule__FeatureDecl__Group_0_3__15687);
+            rule__FeatureDecl__Group_0_3__1__Impl();
 
             state._fsp--;
 
@@ -8120,12 +8120,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_3__1"
+    // $ANTLR end "rule__FeatureDecl__Group_0_3__1"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_0_3__1__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2649:1: rule__ComponentDecl__Group_0_3__1__Impl : ( () ) ;
-    public final void rule__ComponentDecl__Group_0_3__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_0_3__1__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2649:1: rule__FeatureDecl__Group_0_3__1__Impl : ( () ) ;
+    public final void rule__FeatureDecl__Group_0_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -8136,13 +8136,13 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2654:1: ( () )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2655:1: ()
             {
-             before(grammarAccess.getComponentDeclAccess().getAppAction_0_3_1()); 
+             before(grammarAccess.getFeatureDeclAccess().getAppAction_0_3_1()); 
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2656:1: ()
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2658:1: 
             {
             }
 
-             after(grammarAccess.getComponentDeclAccess().getAppAction_0_3_1()); 
+             after(grammarAccess.getFeatureDeclAccess().getAppAction_0_3_1()); 
 
             }
 
@@ -8157,26 +8157,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_0_3__1__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_0_3__1__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_2__0"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2672:1: rule__ComponentDecl__Group_2__0 : rule__ComponentDecl__Group_2__0__Impl rule__ComponentDecl__Group_2__1 ;
-    public final void rule__ComponentDecl__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_2__0"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2672:1: rule__FeatureDecl__Group_2__0 : rule__FeatureDecl__Group_2__0__Impl rule__FeatureDecl__Group_2__1 ;
+    public final void rule__FeatureDecl__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2676:1: ( rule__ComponentDecl__Group_2__0__Impl rule__ComponentDecl__Group_2__1 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2677:2: rule__ComponentDecl__Group_2__0__Impl rule__ComponentDecl__Group_2__1
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2676:1: ( rule__FeatureDecl__Group_2__0__Impl rule__FeatureDecl__Group_2__1 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2677:2: rule__FeatureDecl__Group_2__0__Impl rule__FeatureDecl__Group_2__1
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_2__0__Impl_in_rule__ComponentDecl__Group_2__05749);
-            rule__ComponentDecl__Group_2__0__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_2__0__Impl_in_rule__FeatureDecl__Group_2__05749);
+            rule__FeatureDecl__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_2__1_in_rule__ComponentDecl__Group_2__05752);
-            rule__ComponentDecl__Group_2__1();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_2__1_in_rule__FeatureDecl__Group_2__05752);
+            rule__FeatureDecl__Group_2__1();
 
             state._fsp--;
 
@@ -8195,12 +8195,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_2__0"
+    // $ANTLR end "rule__FeatureDecl__Group_2__0"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_2__0__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2684:1: rule__ComponentDecl__Group_2__0__Impl : ( 'extends' ) ;
-    public final void rule__ComponentDecl__Group_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_2__0__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2684:1: rule__FeatureDecl__Group_2__0__Impl : ( 'extends' ) ;
+    public final void rule__FeatureDecl__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -8211,9 +8211,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2689:1: ( 'extends' )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2690:1: 'extends'
             {
-             before(grammarAccess.getComponentDeclAccess().getExtendsKeyword_2_0()); 
-            match(input,29,FOLLOW_29_in_rule__ComponentDecl__Group_2__0__Impl5780); 
-             after(grammarAccess.getComponentDeclAccess().getExtendsKeyword_2_0()); 
+             before(grammarAccess.getFeatureDeclAccess().getExtendsKeyword_2_0()); 
+            match(input,29,FOLLOW_29_in_rule__FeatureDecl__Group_2__0__Impl5780); 
+             after(grammarAccess.getFeatureDeclAccess().getExtendsKeyword_2_0()); 
 
             }
 
@@ -8232,106 +8232,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_2__0__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_2__0__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_2__1"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2703:1: rule__ComponentDecl__Group_2__1 : rule__ComponentDecl__Group_2__1__Impl rule__ComponentDecl__Group_2__2 ;
-    public final void rule__ComponentDecl__Group_2__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2707:1: ( rule__ComponentDecl__Group_2__1__Impl rule__ComponentDecl__Group_2__2 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2708:2: rule__ComponentDecl__Group_2__1__Impl rule__ComponentDecl__Group_2__2
-            {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_2__1__Impl_in_rule__ComponentDecl__Group_2__15811);
-            rule__ComponentDecl__Group_2__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_2__2_in_rule__ComponentDecl__Group_2__15814);
-            rule__ComponentDecl__Group_2__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ComponentDecl__Group_2__1"
-
-
-    // $ANTLR start "rule__ComponentDecl__Group_2__1__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2715:1: rule__ComponentDecl__Group_2__1__Impl : ( ( rule__ComponentDecl__SupersAssignment_2_1 ) ) ;
-    public final void rule__ComponentDecl__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_2__1"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2703:1: rule__FeatureDecl__Group_2__1 : rule__FeatureDecl__Group_2__1__Impl rule__FeatureDecl__Group_2__2 ;
+    public final void rule__FeatureDecl__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2719:1: ( ( ( rule__ComponentDecl__SupersAssignment_2_1 ) ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2720:1: ( ( rule__ComponentDecl__SupersAssignment_2_1 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2707:1: ( rule__FeatureDecl__Group_2__1__Impl rule__FeatureDecl__Group_2__2 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2708:2: rule__FeatureDecl__Group_2__1__Impl rule__FeatureDecl__Group_2__2
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2720:1: ( ( rule__ComponentDecl__SupersAssignment_2_1 ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2721:1: ( rule__ComponentDecl__SupersAssignment_2_1 )
-            {
-             before(grammarAccess.getComponentDeclAccess().getSupersAssignment_2_1()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2722:1: ( rule__ComponentDecl__SupersAssignment_2_1 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2722:2: rule__ComponentDecl__SupersAssignment_2_1
-            {
-            pushFollow(FOLLOW_rule__ComponentDecl__SupersAssignment_2_1_in_rule__ComponentDecl__Group_2__1__Impl5841);
-            rule__ComponentDecl__SupersAssignment_2_1();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_2__1__Impl_in_rule__FeatureDecl__Group_2__15811);
+            rule__FeatureDecl__Group_2__1__Impl();
 
             state._fsp--;
 
-
-            }
-
-             after(grammarAccess.getComponentDeclAccess().getSupersAssignment_2_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ComponentDecl__Group_2__1__Impl"
-
-
-    // $ANTLR start "rule__ComponentDecl__Group_2__2"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2732:1: rule__ComponentDecl__Group_2__2 : rule__ComponentDecl__Group_2__2__Impl ;
-    public final void rule__ComponentDecl__Group_2__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2736:1: ( rule__ComponentDecl__Group_2__2__Impl )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2737:2: rule__ComponentDecl__Group_2__2__Impl
-            {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_2__2__Impl_in_rule__ComponentDecl__Group_2__25871);
-            rule__ComponentDecl__Group_2__2__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_2__2_in_rule__FeatureDecl__Group_2__15814);
+            rule__FeatureDecl__Group_2__2();
 
             state._fsp--;
 
@@ -8350,24 +8270,104 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_2__2"
+    // $ANTLR end "rule__FeatureDecl__Group_2__1"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_2__2__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2743:1: rule__ComponentDecl__Group_2__2__Impl : ( ( rule__ComponentDecl__Group_2_2__0 )* ) ;
-    public final void rule__ComponentDecl__Group_2__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_2__1__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2715:1: rule__FeatureDecl__Group_2__1__Impl : ( ( rule__FeatureDecl__SupersAssignment_2_1 ) ) ;
+    public final void rule__FeatureDecl__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2747:1: ( ( ( rule__ComponentDecl__Group_2_2__0 )* ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2748:1: ( ( rule__ComponentDecl__Group_2_2__0 )* )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2719:1: ( ( ( rule__FeatureDecl__SupersAssignment_2_1 ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2720:1: ( ( rule__FeatureDecl__SupersAssignment_2_1 ) )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2748:1: ( ( rule__ComponentDecl__Group_2_2__0 )* )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2749:1: ( rule__ComponentDecl__Group_2_2__0 )*
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2720:1: ( ( rule__FeatureDecl__SupersAssignment_2_1 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2721:1: ( rule__FeatureDecl__SupersAssignment_2_1 )
             {
-             before(grammarAccess.getComponentDeclAccess().getGroup_2_2()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2750:1: ( rule__ComponentDecl__Group_2_2__0 )*
+             before(grammarAccess.getFeatureDeclAccess().getSupersAssignment_2_1()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2722:1: ( rule__FeatureDecl__SupersAssignment_2_1 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2722:2: rule__FeatureDecl__SupersAssignment_2_1
+            {
+            pushFollow(FOLLOW_rule__FeatureDecl__SupersAssignment_2_1_in_rule__FeatureDecl__Group_2__1__Impl5841);
+            rule__FeatureDecl__SupersAssignment_2_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFeatureDeclAccess().getSupersAssignment_2_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FeatureDecl__Group_2__1__Impl"
+
+
+    // $ANTLR start "rule__FeatureDecl__Group_2__2"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2732:1: rule__FeatureDecl__Group_2__2 : rule__FeatureDecl__Group_2__2__Impl ;
+    public final void rule__FeatureDecl__Group_2__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2736:1: ( rule__FeatureDecl__Group_2__2__Impl )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2737:2: rule__FeatureDecl__Group_2__2__Impl
+            {
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_2__2__Impl_in_rule__FeatureDecl__Group_2__25871);
+            rule__FeatureDecl__Group_2__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FeatureDecl__Group_2__2"
+
+
+    // $ANTLR start "rule__FeatureDecl__Group_2__2__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2743:1: rule__FeatureDecl__Group_2__2__Impl : ( ( rule__FeatureDecl__Group_2_2__0 )* ) ;
+    public final void rule__FeatureDecl__Group_2__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2747:1: ( ( ( rule__FeatureDecl__Group_2_2__0 )* ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2748:1: ( ( rule__FeatureDecl__Group_2_2__0 )* )
+            {
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2748:1: ( ( rule__FeatureDecl__Group_2_2__0 )* )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2749:1: ( rule__FeatureDecl__Group_2_2__0 )*
+            {
+             before(grammarAccess.getFeatureDeclAccess().getGroup_2_2()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2750:1: ( rule__FeatureDecl__Group_2_2__0 )*
             loop33:
             do {
                 int alt33=2;
@@ -8380,10 +8380,10 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
 
                 switch (alt33) {
             	case 1 :
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2750:2: rule__ComponentDecl__Group_2_2__0
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2750:2: rule__FeatureDecl__Group_2_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__ComponentDecl__Group_2_2__0_in_rule__ComponentDecl__Group_2__2__Impl5898);
-            	    rule__ComponentDecl__Group_2_2__0();
+            	    pushFollow(FOLLOW_rule__FeatureDecl__Group_2_2__0_in_rule__FeatureDecl__Group_2__2__Impl5898);
+            	    rule__FeatureDecl__Group_2_2__0();
 
             	    state._fsp--;
 
@@ -8396,7 +8396,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
                 }
             } while (true);
 
-             after(grammarAccess.getComponentDeclAccess().getGroup_2_2()); 
+             after(grammarAccess.getFeatureDeclAccess().getGroup_2_2()); 
 
             }
 
@@ -8415,26 +8415,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_2__2__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_2__2__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_2_2__0"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2766:1: rule__ComponentDecl__Group_2_2__0 : rule__ComponentDecl__Group_2_2__0__Impl rule__ComponentDecl__Group_2_2__1 ;
-    public final void rule__ComponentDecl__Group_2_2__0() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_2_2__0"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2766:1: rule__FeatureDecl__Group_2_2__0 : rule__FeatureDecl__Group_2_2__0__Impl rule__FeatureDecl__Group_2_2__1 ;
+    public final void rule__FeatureDecl__Group_2_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2770:1: ( rule__ComponentDecl__Group_2_2__0__Impl rule__ComponentDecl__Group_2_2__1 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2771:2: rule__ComponentDecl__Group_2_2__0__Impl rule__ComponentDecl__Group_2_2__1
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2770:1: ( rule__FeatureDecl__Group_2_2__0__Impl rule__FeatureDecl__Group_2_2__1 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2771:2: rule__FeatureDecl__Group_2_2__0__Impl rule__FeatureDecl__Group_2_2__1
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_2_2__0__Impl_in_rule__ComponentDecl__Group_2_2__05935);
-            rule__ComponentDecl__Group_2_2__0__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_2_2__0__Impl_in_rule__FeatureDecl__Group_2_2__05935);
+            rule__FeatureDecl__Group_2_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_2_2__1_in_rule__ComponentDecl__Group_2_2__05938);
-            rule__ComponentDecl__Group_2_2__1();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_2_2__1_in_rule__FeatureDecl__Group_2_2__05938);
+            rule__FeatureDecl__Group_2_2__1();
 
             state._fsp--;
 
@@ -8453,12 +8453,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_2_2__0"
+    // $ANTLR end "rule__FeatureDecl__Group_2_2__0"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_2_2__0__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2778:1: rule__ComponentDecl__Group_2_2__0__Impl : ( 'with' ) ;
-    public final void rule__ComponentDecl__Group_2_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_2_2__0__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2778:1: rule__FeatureDecl__Group_2_2__0__Impl : ( 'with' ) ;
+    public final void rule__FeatureDecl__Group_2_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -8469,9 +8469,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2783:1: ( 'with' )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2784:1: 'with'
             {
-             before(grammarAccess.getComponentDeclAccess().getWithKeyword_2_2_0()); 
-            match(input,30,FOLLOW_30_in_rule__ComponentDecl__Group_2_2__0__Impl5966); 
-             after(grammarAccess.getComponentDeclAccess().getWithKeyword_2_2_0()); 
+             before(grammarAccess.getFeatureDeclAccess().getWithKeyword_2_2_0()); 
+            match(input,30,FOLLOW_30_in_rule__FeatureDecl__Group_2_2__0__Impl5966); 
+             after(grammarAccess.getFeatureDeclAccess().getWithKeyword_2_2_0()); 
 
             }
 
@@ -8490,21 +8490,21 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_2_2__0__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_2_2__0__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_2_2__1"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2797:1: rule__ComponentDecl__Group_2_2__1 : rule__ComponentDecl__Group_2_2__1__Impl ;
-    public final void rule__ComponentDecl__Group_2_2__1() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_2_2__1"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2797:1: rule__FeatureDecl__Group_2_2__1 : rule__FeatureDecl__Group_2_2__1__Impl ;
+    public final void rule__FeatureDecl__Group_2_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2801:1: ( rule__ComponentDecl__Group_2_2__1__Impl )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2802:2: rule__ComponentDecl__Group_2_2__1__Impl
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2801:1: ( rule__FeatureDecl__Group_2_2__1__Impl )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2802:2: rule__FeatureDecl__Group_2_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_2_2__1__Impl_in_rule__ComponentDecl__Group_2_2__15997);
-            rule__ComponentDecl__Group_2_2__1__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_2_2__1__Impl_in_rule__FeatureDecl__Group_2_2__15997);
+            rule__FeatureDecl__Group_2_2__1__Impl();
 
             state._fsp--;
 
@@ -8523,35 +8523,35 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_2_2__1"
+    // $ANTLR end "rule__FeatureDecl__Group_2_2__1"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_2_2__1__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2808:1: rule__ComponentDecl__Group_2_2__1__Impl : ( ( rule__ComponentDecl__SupersAssignment_2_2_1 ) ) ;
-    public final void rule__ComponentDecl__Group_2_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_2_2__1__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2808:1: rule__FeatureDecl__Group_2_2__1__Impl : ( ( rule__FeatureDecl__SupersAssignment_2_2_1 ) ) ;
+    public final void rule__FeatureDecl__Group_2_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2812:1: ( ( ( rule__ComponentDecl__SupersAssignment_2_2_1 ) ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2813:1: ( ( rule__ComponentDecl__SupersAssignment_2_2_1 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2812:1: ( ( ( rule__FeatureDecl__SupersAssignment_2_2_1 ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2813:1: ( ( rule__FeatureDecl__SupersAssignment_2_2_1 ) )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2813:1: ( ( rule__ComponentDecl__SupersAssignment_2_2_1 ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2814:1: ( rule__ComponentDecl__SupersAssignment_2_2_1 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2813:1: ( ( rule__FeatureDecl__SupersAssignment_2_2_1 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2814:1: ( rule__FeatureDecl__SupersAssignment_2_2_1 )
             {
-             before(grammarAccess.getComponentDeclAccess().getSupersAssignment_2_2_1()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2815:1: ( rule__ComponentDecl__SupersAssignment_2_2_1 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2815:2: rule__ComponentDecl__SupersAssignment_2_2_1
+             before(grammarAccess.getFeatureDeclAccess().getSupersAssignment_2_2_1()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2815:1: ( rule__FeatureDecl__SupersAssignment_2_2_1 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2815:2: rule__FeatureDecl__SupersAssignment_2_2_1
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__SupersAssignment_2_2_1_in_rule__ComponentDecl__Group_2_2__1__Impl6024);
-            rule__ComponentDecl__SupersAssignment_2_2_1();
+            pushFollow(FOLLOW_rule__FeatureDecl__SupersAssignment_2_2_1_in_rule__FeatureDecl__Group_2_2__1__Impl6024);
+            rule__FeatureDecl__SupersAssignment_2_2_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getComponentDeclAccess().getSupersAssignment_2_2_1()); 
+             after(grammarAccess.getFeatureDeclAccess().getSupersAssignment_2_2_1()); 
 
             }
 
@@ -8570,26 +8570,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_2_2__1__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_2_2__1__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_3__0"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2829:1: rule__ComponentDecl__Group_3__0 : rule__ComponentDecl__Group_3__0__Impl rule__ComponentDecl__Group_3__1 ;
-    public final void rule__ComponentDecl__Group_3__0() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_3__0"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2829:1: rule__FeatureDecl__Group_3__0 : rule__FeatureDecl__Group_3__0__Impl rule__FeatureDecl__Group_3__1 ;
+    public final void rule__FeatureDecl__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2833:1: ( rule__ComponentDecl__Group_3__0__Impl rule__ComponentDecl__Group_3__1 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2834:2: rule__ComponentDecl__Group_3__0__Impl rule__ComponentDecl__Group_3__1
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2833:1: ( rule__FeatureDecl__Group_3__0__Impl rule__FeatureDecl__Group_3__1 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2834:2: rule__FeatureDecl__Group_3__0__Impl rule__FeatureDecl__Group_3__1
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_3__0__Impl_in_rule__ComponentDecl__Group_3__06058);
-            rule__ComponentDecl__Group_3__0__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_3__0__Impl_in_rule__FeatureDecl__Group_3__06058);
+            rule__FeatureDecl__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_3__1_in_rule__ComponentDecl__Group_3__06061);
-            rule__ComponentDecl__Group_3__1();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_3__1_in_rule__FeatureDecl__Group_3__06061);
+            rule__FeatureDecl__Group_3__1();
 
             state._fsp--;
 
@@ -8608,12 +8608,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_3__0"
+    // $ANTLR end "rule__FeatureDecl__Group_3__0"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_3__0__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2841:1: rule__ComponentDecl__Group_3__0__Impl : ( '{' ) ;
-    public final void rule__ComponentDecl__Group_3__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_3__0__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2841:1: rule__FeatureDecl__Group_3__0__Impl : ( '{' ) ;
+    public final void rule__FeatureDecl__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -8624,9 +8624,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2846:1: ( '{' )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2847:1: '{'
             {
-             before(grammarAccess.getComponentDeclAccess().getLeftCurlyBracketKeyword_3_0()); 
-            match(input,35,FOLLOW_35_in_rule__ComponentDecl__Group_3__0__Impl6089); 
-             after(grammarAccess.getComponentDeclAccess().getLeftCurlyBracketKeyword_3_0()); 
+             before(grammarAccess.getFeatureDeclAccess().getLeftCurlyBracketKeyword_3_0()); 
+            match(input,35,FOLLOW_35_in_rule__FeatureDecl__Group_3__0__Impl6089); 
+             after(grammarAccess.getFeatureDeclAccess().getLeftCurlyBracketKeyword_3_0()); 
 
             }
 
@@ -8645,26 +8645,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_3__0__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_3__0__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_3__1"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2860:1: rule__ComponentDecl__Group_3__1 : rule__ComponentDecl__Group_3__1__Impl rule__ComponentDecl__Group_3__2 ;
-    public final void rule__ComponentDecl__Group_3__1() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_3__1"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2860:1: rule__FeatureDecl__Group_3__1 : rule__FeatureDecl__Group_3__1__Impl rule__FeatureDecl__Group_3__2 ;
+    public final void rule__FeatureDecl__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2864:1: ( rule__ComponentDecl__Group_3__1__Impl rule__ComponentDecl__Group_3__2 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2865:2: rule__ComponentDecl__Group_3__1__Impl rule__ComponentDecl__Group_3__2
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2864:1: ( rule__FeatureDecl__Group_3__1__Impl rule__FeatureDecl__Group_3__2 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2865:2: rule__FeatureDecl__Group_3__1__Impl rule__FeatureDecl__Group_3__2
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_3__1__Impl_in_rule__ComponentDecl__Group_3__16120);
-            rule__ComponentDecl__Group_3__1__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_3__1__Impl_in_rule__FeatureDecl__Group_3__16120);
+            rule__FeatureDecl__Group_3__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_3__2_in_rule__ComponentDecl__Group_3__16123);
-            rule__ComponentDecl__Group_3__2();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_3__2_in_rule__FeatureDecl__Group_3__16123);
+            rule__FeatureDecl__Group_3__2();
 
             state._fsp--;
 
@@ -8683,24 +8683,24 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_3__1"
+    // $ANTLR end "rule__FeatureDecl__Group_3__1"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_3__1__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2872:1: rule__ComponentDecl__Group_3__1__Impl : ( ( rule__ComponentDecl__MembersAssignment_3_1 )* ) ;
-    public final void rule__ComponentDecl__Group_3__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_3__1__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2872:1: rule__FeatureDecl__Group_3__1__Impl : ( ( rule__FeatureDecl__MembersAssignment_3_1 )* ) ;
+    public final void rule__FeatureDecl__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2876:1: ( ( ( rule__ComponentDecl__MembersAssignment_3_1 )* ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2877:1: ( ( rule__ComponentDecl__MembersAssignment_3_1 )* )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2876:1: ( ( ( rule__FeatureDecl__MembersAssignment_3_1 )* ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2877:1: ( ( rule__FeatureDecl__MembersAssignment_3_1 )* )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2877:1: ( ( rule__ComponentDecl__MembersAssignment_3_1 )* )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2878:1: ( rule__ComponentDecl__MembersAssignment_3_1 )*
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2877:1: ( ( rule__FeatureDecl__MembersAssignment_3_1 )* )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2878:1: ( rule__FeatureDecl__MembersAssignment_3_1 )*
             {
-             before(grammarAccess.getComponentDeclAccess().getMembersAssignment_3_1()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2879:1: ( rule__ComponentDecl__MembersAssignment_3_1 )*
+             before(grammarAccess.getFeatureDeclAccess().getMembersAssignment_3_1()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2879:1: ( rule__FeatureDecl__MembersAssignment_3_1 )*
             loop34:
             do {
                 int alt34=2;
@@ -8713,10 +8713,10 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
 
                 switch (alt34) {
             	case 1 :
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2879:2: rule__ComponentDecl__MembersAssignment_3_1
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2879:2: rule__FeatureDecl__MembersAssignment_3_1
             	    {
-            	    pushFollow(FOLLOW_rule__ComponentDecl__MembersAssignment_3_1_in_rule__ComponentDecl__Group_3__1__Impl6150);
-            	    rule__ComponentDecl__MembersAssignment_3_1();
+            	    pushFollow(FOLLOW_rule__FeatureDecl__MembersAssignment_3_1_in_rule__FeatureDecl__Group_3__1__Impl6150);
+            	    rule__FeatureDecl__MembersAssignment_3_1();
 
             	    state._fsp--;
 
@@ -8729,7 +8729,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
                 }
             } while (true);
 
-             after(grammarAccess.getComponentDeclAccess().getMembersAssignment_3_1()); 
+             after(grammarAccess.getFeatureDeclAccess().getMembersAssignment_3_1()); 
 
             }
 
@@ -8748,21 +8748,21 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_3__1__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_3__1__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_3__2"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2889:1: rule__ComponentDecl__Group_3__2 : rule__ComponentDecl__Group_3__2__Impl ;
-    public final void rule__ComponentDecl__Group_3__2() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_3__2"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2889:1: rule__FeatureDecl__Group_3__2 : rule__FeatureDecl__Group_3__2__Impl ;
+    public final void rule__FeatureDecl__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2893:1: ( rule__ComponentDecl__Group_3__2__Impl )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2894:2: rule__ComponentDecl__Group_3__2__Impl
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2893:1: ( rule__FeatureDecl__Group_3__2__Impl )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2894:2: rule__FeatureDecl__Group_3__2__Impl
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_3__2__Impl_in_rule__ComponentDecl__Group_3__26181);
-            rule__ComponentDecl__Group_3__2__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_3__2__Impl_in_rule__FeatureDecl__Group_3__26181);
+            rule__FeatureDecl__Group_3__2__Impl();
 
             state._fsp--;
 
@@ -8781,12 +8781,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_3__2"
+    // $ANTLR end "rule__FeatureDecl__Group_3__2"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_3__2__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2900:1: rule__ComponentDecl__Group_3__2__Impl : ( '}' ) ;
-    public final void rule__ComponentDecl__Group_3__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_3__2__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2900:1: rule__FeatureDecl__Group_3__2__Impl : ( '}' ) ;
+    public final void rule__FeatureDecl__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -8797,9 +8797,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2905:1: ( '}' )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2906:1: '}'
             {
-             before(grammarAccess.getComponentDeclAccess().getRightCurlyBracketKeyword_3_2()); 
-            match(input,36,FOLLOW_36_in_rule__ComponentDecl__Group_3__2__Impl6209); 
-             after(grammarAccess.getComponentDeclAccess().getRightCurlyBracketKeyword_3_2()); 
+             before(grammarAccess.getFeatureDeclAccess().getRightCurlyBracketKeyword_3_2()); 
+            match(input,36,FOLLOW_36_in_rule__FeatureDecl__Group_3__2__Impl6209); 
+             after(grammarAccess.getFeatureDeclAccess().getRightCurlyBracketKeyword_3_2()); 
 
             }
 
@@ -8818,26 +8818,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_3__2__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_3__2__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_4__0"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2925:1: rule__ComponentDecl__Group_4__0 : rule__ComponentDecl__Group_4__0__Impl rule__ComponentDecl__Group_4__1 ;
-    public final void rule__ComponentDecl__Group_4__0() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_4__0"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2925:1: rule__FeatureDecl__Group_4__0 : rule__FeatureDecl__Group_4__0__Impl rule__FeatureDecl__Group_4__1 ;
+    public final void rule__FeatureDecl__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2929:1: ( rule__ComponentDecl__Group_4__0__Impl rule__ComponentDecl__Group_4__1 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2930:2: rule__ComponentDecl__Group_4__0__Impl rule__ComponentDecl__Group_4__1
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2929:1: ( rule__FeatureDecl__Group_4__0__Impl rule__FeatureDecl__Group_4__1 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2930:2: rule__FeatureDecl__Group_4__0__Impl rule__FeatureDecl__Group_4__1
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_4__0__Impl_in_rule__ComponentDecl__Group_4__06246);
-            rule__ComponentDecl__Group_4__0__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_4__0__Impl_in_rule__FeatureDecl__Group_4__06246);
+            rule__FeatureDecl__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_4__1_in_rule__ComponentDecl__Group_4__06249);
-            rule__ComponentDecl__Group_4__1();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_4__1_in_rule__FeatureDecl__Group_4__06249);
+            rule__FeatureDecl__Group_4__1();
 
             state._fsp--;
 
@@ -8856,12 +8856,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_4__0"
+    // $ANTLR end "rule__FeatureDecl__Group_4__0"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_4__0__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2937:1: rule__ComponentDecl__Group_4__0__Impl : ( 'requires' ) ;
-    public final void rule__ComponentDecl__Group_4__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_4__0__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2937:1: rule__FeatureDecl__Group_4__0__Impl : ( 'requires' ) ;
+    public final void rule__FeatureDecl__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -8872,9 +8872,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2942:1: ( 'requires' )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2943:1: 'requires'
             {
-             before(grammarAccess.getComponentDeclAccess().getRequiresKeyword_4_0()); 
-            match(input,37,FOLLOW_37_in_rule__ComponentDecl__Group_4__0__Impl6277); 
-             after(grammarAccess.getComponentDeclAccess().getRequiresKeyword_4_0()); 
+             before(grammarAccess.getFeatureDeclAccess().getRequiresKeyword_4_0()); 
+            match(input,37,FOLLOW_37_in_rule__FeatureDecl__Group_4__0__Impl6277); 
+             after(grammarAccess.getFeatureDeclAccess().getRequiresKeyword_4_0()); 
 
             }
 
@@ -8893,26 +8893,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_4__0__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_4__0__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_4__1"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2956:1: rule__ComponentDecl__Group_4__1 : rule__ComponentDecl__Group_4__1__Impl rule__ComponentDecl__Group_4__2 ;
-    public final void rule__ComponentDecl__Group_4__1() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_4__1"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2956:1: rule__FeatureDecl__Group_4__1 : rule__FeatureDecl__Group_4__1__Impl rule__FeatureDecl__Group_4__2 ;
+    public final void rule__FeatureDecl__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2960:1: ( rule__ComponentDecl__Group_4__1__Impl rule__ComponentDecl__Group_4__2 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2961:2: rule__ComponentDecl__Group_4__1__Impl rule__ComponentDecl__Group_4__2
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2960:1: ( rule__FeatureDecl__Group_4__1__Impl rule__FeatureDecl__Group_4__2 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2961:2: rule__FeatureDecl__Group_4__1__Impl rule__FeatureDecl__Group_4__2
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_4__1__Impl_in_rule__ComponentDecl__Group_4__16308);
-            rule__ComponentDecl__Group_4__1__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_4__1__Impl_in_rule__FeatureDecl__Group_4__16308);
+            rule__FeatureDecl__Group_4__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_4__2_in_rule__ComponentDecl__Group_4__16311);
-            rule__ComponentDecl__Group_4__2();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_4__2_in_rule__FeatureDecl__Group_4__16311);
+            rule__FeatureDecl__Group_4__2();
 
             state._fsp--;
 
@@ -8931,12 +8931,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_4__1"
+    // $ANTLR end "rule__FeatureDecl__Group_4__1"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_4__1__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2968:1: rule__ComponentDecl__Group_4__1__Impl : ( '{' ) ;
-    public final void rule__ComponentDecl__Group_4__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_4__1__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2968:1: rule__FeatureDecl__Group_4__1__Impl : ( '{' ) ;
+    public final void rule__FeatureDecl__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -8947,9 +8947,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2973:1: ( '{' )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2974:1: '{'
             {
-             before(grammarAccess.getComponentDeclAccess().getLeftCurlyBracketKeyword_4_1()); 
-            match(input,35,FOLLOW_35_in_rule__ComponentDecl__Group_4__1__Impl6339); 
-             after(grammarAccess.getComponentDeclAccess().getLeftCurlyBracketKeyword_4_1()); 
+             before(grammarAccess.getFeatureDeclAccess().getLeftCurlyBracketKeyword_4_1()); 
+            match(input,35,FOLLOW_35_in_rule__FeatureDecl__Group_4__1__Impl6339); 
+             after(grammarAccess.getFeatureDeclAccess().getLeftCurlyBracketKeyword_4_1()); 
 
             }
 
@@ -8968,26 +8968,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_4__1__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_4__1__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_4__2"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2987:1: rule__ComponentDecl__Group_4__2 : rule__ComponentDecl__Group_4__2__Impl rule__ComponentDecl__Group_4__3 ;
-    public final void rule__ComponentDecl__Group_4__2() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_4__2"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2987:1: rule__FeatureDecl__Group_4__2 : rule__FeatureDecl__Group_4__2__Impl rule__FeatureDecl__Group_4__3 ;
+    public final void rule__FeatureDecl__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2991:1: ( rule__ComponentDecl__Group_4__2__Impl rule__ComponentDecl__Group_4__3 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2992:2: rule__ComponentDecl__Group_4__2__Impl rule__ComponentDecl__Group_4__3
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2991:1: ( rule__FeatureDecl__Group_4__2__Impl rule__FeatureDecl__Group_4__3 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2992:2: rule__FeatureDecl__Group_4__2__Impl rule__FeatureDecl__Group_4__3
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_4__2__Impl_in_rule__ComponentDecl__Group_4__26370);
-            rule__ComponentDecl__Group_4__2__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_4__2__Impl_in_rule__FeatureDecl__Group_4__26370);
+            rule__FeatureDecl__Group_4__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_4__3_in_rule__ComponentDecl__Group_4__26373);
-            rule__ComponentDecl__Group_4__3();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_4__3_in_rule__FeatureDecl__Group_4__26373);
+            rule__FeatureDecl__Group_4__3();
 
             state._fsp--;
 
@@ -9006,24 +9006,24 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_4__2"
+    // $ANTLR end "rule__FeatureDecl__Group_4__2"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_4__2__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2999:1: rule__ComponentDecl__Group_4__2__Impl : ( ( rule__ComponentDecl__DevicesAssignment_4_2 )* ) ;
-    public final void rule__ComponentDecl__Group_4__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_4__2__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2999:1: rule__FeatureDecl__Group_4__2__Impl : ( ( rule__FeatureDecl__DevicesAssignment_4_2 )* ) ;
+    public final void rule__FeatureDecl__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3003:1: ( ( ( rule__ComponentDecl__DevicesAssignment_4_2 )* ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3004:1: ( ( rule__ComponentDecl__DevicesAssignment_4_2 )* )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3003:1: ( ( ( rule__FeatureDecl__DevicesAssignment_4_2 )* ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3004:1: ( ( rule__FeatureDecl__DevicesAssignment_4_2 )* )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3004:1: ( ( rule__ComponentDecl__DevicesAssignment_4_2 )* )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3005:1: ( rule__ComponentDecl__DevicesAssignment_4_2 )*
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3004:1: ( ( rule__FeatureDecl__DevicesAssignment_4_2 )* )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3005:1: ( rule__FeatureDecl__DevicesAssignment_4_2 )*
             {
-             before(grammarAccess.getComponentDeclAccess().getDevicesAssignment_4_2()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3006:1: ( rule__ComponentDecl__DevicesAssignment_4_2 )*
+             before(grammarAccess.getFeatureDeclAccess().getDevicesAssignment_4_2()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3006:1: ( rule__FeatureDecl__DevicesAssignment_4_2 )*
             loop35:
             do {
                 int alt35=2;
@@ -9042,10 +9042,10 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
 
                 switch (alt35) {
             	case 1 :
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3006:2: rule__ComponentDecl__DevicesAssignment_4_2
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3006:2: rule__FeatureDecl__DevicesAssignment_4_2
             	    {
-            	    pushFollow(FOLLOW_rule__ComponentDecl__DevicesAssignment_4_2_in_rule__ComponentDecl__Group_4__2__Impl6400);
-            	    rule__ComponentDecl__DevicesAssignment_4_2();
+            	    pushFollow(FOLLOW_rule__FeatureDecl__DevicesAssignment_4_2_in_rule__FeatureDecl__Group_4__2__Impl6400);
+            	    rule__FeatureDecl__DevicesAssignment_4_2();
 
             	    state._fsp--;
 
@@ -9058,7 +9058,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
                 }
             } while (true);
 
-             after(grammarAccess.getComponentDeclAccess().getDevicesAssignment_4_2()); 
+             after(grammarAccess.getFeatureDeclAccess().getDevicesAssignment_4_2()); 
 
             }
 
@@ -9077,26 +9077,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_4__2__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_4__2__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_4__3"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3016:1: rule__ComponentDecl__Group_4__3 : rule__ComponentDecl__Group_4__3__Impl rule__ComponentDecl__Group_4__4 ;
-    public final void rule__ComponentDecl__Group_4__3() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_4__3"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3016:1: rule__FeatureDecl__Group_4__3 : rule__FeatureDecl__Group_4__3__Impl rule__FeatureDecl__Group_4__4 ;
+    public final void rule__FeatureDecl__Group_4__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3020:1: ( rule__ComponentDecl__Group_4__3__Impl rule__ComponentDecl__Group_4__4 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3021:2: rule__ComponentDecl__Group_4__3__Impl rule__ComponentDecl__Group_4__4
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3020:1: ( rule__FeatureDecl__Group_4__3__Impl rule__FeatureDecl__Group_4__4 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3021:2: rule__FeatureDecl__Group_4__3__Impl rule__FeatureDecl__Group_4__4
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_4__3__Impl_in_rule__ComponentDecl__Group_4__36431);
-            rule__ComponentDecl__Group_4__3__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_4__3__Impl_in_rule__FeatureDecl__Group_4__36431);
+            rule__FeatureDecl__Group_4__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_4__4_in_rule__ComponentDecl__Group_4__36434);
-            rule__ComponentDecl__Group_4__4();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_4__4_in_rule__FeatureDecl__Group_4__36434);
+            rule__FeatureDecl__Group_4__4();
 
             state._fsp--;
 
@@ -9115,24 +9115,24 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_4__3"
+    // $ANTLR end "rule__FeatureDecl__Group_4__3"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_4__3__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3028:1: rule__ComponentDecl__Group_4__3__Impl : ( ( rule__ComponentDecl__AssignsAssignment_4_3 )* ) ;
-    public final void rule__ComponentDecl__Group_4__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_4__3__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3028:1: rule__FeatureDecl__Group_4__3__Impl : ( ( rule__FeatureDecl__AssignsAssignment_4_3 )* ) ;
+    public final void rule__FeatureDecl__Group_4__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3032:1: ( ( ( rule__ComponentDecl__AssignsAssignment_4_3 )* ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3033:1: ( ( rule__ComponentDecl__AssignsAssignment_4_3 )* )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3032:1: ( ( ( rule__FeatureDecl__AssignsAssignment_4_3 )* ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3033:1: ( ( rule__FeatureDecl__AssignsAssignment_4_3 )* )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3033:1: ( ( rule__ComponentDecl__AssignsAssignment_4_3 )* )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3034:1: ( rule__ComponentDecl__AssignsAssignment_4_3 )*
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3033:1: ( ( rule__FeatureDecl__AssignsAssignment_4_3 )* )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3034:1: ( rule__FeatureDecl__AssignsAssignment_4_3 )*
             {
-             before(grammarAccess.getComponentDeclAccess().getAssignsAssignment_4_3()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3035:1: ( rule__ComponentDecl__AssignsAssignment_4_3 )*
+             before(grammarAccess.getFeatureDeclAccess().getAssignsAssignment_4_3()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3035:1: ( rule__FeatureDecl__AssignsAssignment_4_3 )*
             loop36:
             do {
                 int alt36=2;
@@ -9151,10 +9151,10 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
 
                 switch (alt36) {
             	case 1 :
-            	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3035:2: rule__ComponentDecl__AssignsAssignment_4_3
+            	    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3035:2: rule__FeatureDecl__AssignsAssignment_4_3
             	    {
-            	    pushFollow(FOLLOW_rule__ComponentDecl__AssignsAssignment_4_3_in_rule__ComponentDecl__Group_4__3__Impl6461);
-            	    rule__ComponentDecl__AssignsAssignment_4_3();
+            	    pushFollow(FOLLOW_rule__FeatureDecl__AssignsAssignment_4_3_in_rule__FeatureDecl__Group_4__3__Impl6461);
+            	    rule__FeatureDecl__AssignsAssignment_4_3();
 
             	    state._fsp--;
 
@@ -9167,7 +9167,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
                 }
             } while (true);
 
-             after(grammarAccess.getComponentDeclAccess().getAssignsAssignment_4_3()); 
+             after(grammarAccess.getFeatureDeclAccess().getAssignsAssignment_4_3()); 
 
             }
 
@@ -9186,26 +9186,26 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_4__3__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_4__3__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_4__4"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3045:1: rule__ComponentDecl__Group_4__4 : rule__ComponentDecl__Group_4__4__Impl rule__ComponentDecl__Group_4__5 ;
-    public final void rule__ComponentDecl__Group_4__4() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_4__4"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3045:1: rule__FeatureDecl__Group_4__4 : rule__FeatureDecl__Group_4__4__Impl rule__FeatureDecl__Group_4__5 ;
+    public final void rule__FeatureDecl__Group_4__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3049:1: ( rule__ComponentDecl__Group_4__4__Impl rule__ComponentDecl__Group_4__5 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3050:2: rule__ComponentDecl__Group_4__4__Impl rule__ComponentDecl__Group_4__5
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3049:1: ( rule__FeatureDecl__Group_4__4__Impl rule__FeatureDecl__Group_4__5 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3050:2: rule__FeatureDecl__Group_4__4__Impl rule__FeatureDecl__Group_4__5
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_4__4__Impl_in_rule__ComponentDecl__Group_4__46492);
-            rule__ComponentDecl__Group_4__4__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_4__4__Impl_in_rule__FeatureDecl__Group_4__46492);
+            rule__FeatureDecl__Group_4__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_4__5_in_rule__ComponentDecl__Group_4__46495);
-            rule__ComponentDecl__Group_4__5();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_4__5_in_rule__FeatureDecl__Group_4__46495);
+            rule__FeatureDecl__Group_4__5();
 
             state._fsp--;
 
@@ -9224,35 +9224,35 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_4__4"
+    // $ANTLR end "rule__FeatureDecl__Group_4__4"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_4__4__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3057:1: rule__ComponentDecl__Group_4__4__Impl : ( ( rule__ComponentDecl__ExpAssignment_4_4 ) ) ;
-    public final void rule__ComponentDecl__Group_4__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_4__4__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3057:1: rule__FeatureDecl__Group_4__4__Impl : ( ( rule__FeatureDecl__ExpAssignment_4_4 ) ) ;
+    public final void rule__FeatureDecl__Group_4__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3061:1: ( ( ( rule__ComponentDecl__ExpAssignment_4_4 ) ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3062:1: ( ( rule__ComponentDecl__ExpAssignment_4_4 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3061:1: ( ( ( rule__FeatureDecl__ExpAssignment_4_4 ) ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3062:1: ( ( rule__FeatureDecl__ExpAssignment_4_4 ) )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3062:1: ( ( rule__ComponentDecl__ExpAssignment_4_4 ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3063:1: ( rule__ComponentDecl__ExpAssignment_4_4 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3062:1: ( ( rule__FeatureDecl__ExpAssignment_4_4 ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3063:1: ( rule__FeatureDecl__ExpAssignment_4_4 )
             {
-             before(grammarAccess.getComponentDeclAccess().getExpAssignment_4_4()); 
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3064:1: ( rule__ComponentDecl__ExpAssignment_4_4 )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3064:2: rule__ComponentDecl__ExpAssignment_4_4
+             before(grammarAccess.getFeatureDeclAccess().getExpAssignment_4_4()); 
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3064:1: ( rule__FeatureDecl__ExpAssignment_4_4 )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3064:2: rule__FeatureDecl__ExpAssignment_4_4
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__ExpAssignment_4_4_in_rule__ComponentDecl__Group_4__4__Impl6522);
-            rule__ComponentDecl__ExpAssignment_4_4();
+            pushFollow(FOLLOW_rule__FeatureDecl__ExpAssignment_4_4_in_rule__FeatureDecl__Group_4__4__Impl6522);
+            rule__FeatureDecl__ExpAssignment_4_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getComponentDeclAccess().getExpAssignment_4_4()); 
+             after(grammarAccess.getFeatureDeclAccess().getExpAssignment_4_4()); 
 
             }
 
@@ -9271,21 +9271,21 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_4__4__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_4__4__Impl"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_4__5"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3074:1: rule__ComponentDecl__Group_4__5 : rule__ComponentDecl__Group_4__5__Impl ;
-    public final void rule__ComponentDecl__Group_4__5() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_4__5"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3074:1: rule__FeatureDecl__Group_4__5 : rule__FeatureDecl__Group_4__5__Impl ;
+    public final void rule__FeatureDecl__Group_4__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3078:1: ( rule__ComponentDecl__Group_4__5__Impl )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3079:2: rule__ComponentDecl__Group_4__5__Impl
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3078:1: ( rule__FeatureDecl__Group_4__5__Impl )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3079:2: rule__FeatureDecl__Group_4__5__Impl
             {
-            pushFollow(FOLLOW_rule__ComponentDecl__Group_4__5__Impl_in_rule__ComponentDecl__Group_4__56552);
-            rule__ComponentDecl__Group_4__5__Impl();
+            pushFollow(FOLLOW_rule__FeatureDecl__Group_4__5__Impl_in_rule__FeatureDecl__Group_4__56552);
+            rule__FeatureDecl__Group_4__5__Impl();
 
             state._fsp--;
 
@@ -9304,12 +9304,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_4__5"
+    // $ANTLR end "rule__FeatureDecl__Group_4__5"
 
 
-    // $ANTLR start "rule__ComponentDecl__Group_4__5__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3085:1: rule__ComponentDecl__Group_4__5__Impl : ( '}' ) ;
-    public final void rule__ComponentDecl__Group_4__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__Group_4__5__Impl"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3085:1: rule__FeatureDecl__Group_4__5__Impl : ( '}' ) ;
+    public final void rule__FeatureDecl__Group_4__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -9320,9 +9320,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3090:1: ( '}' )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:3091:1: '}'
             {
-             before(grammarAccess.getComponentDeclAccess().getRightCurlyBracketKeyword_4_5()); 
-            match(input,36,FOLLOW_36_in_rule__ComponentDecl__Group_4__5__Impl6580); 
-             after(grammarAccess.getComponentDeclAccess().getRightCurlyBracketKeyword_4_5()); 
+             before(grammarAccess.getFeatureDeclAccess().getRightCurlyBracketKeyword_4_5()); 
+            match(input,36,FOLLOW_36_in_rule__FeatureDecl__Group_4__5__Impl6580); 
+             after(grammarAccess.getFeatureDeclAccess().getRightCurlyBracketKeyword_4_5()); 
 
             }
 
@@ -9341,7 +9341,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__Group_4__5__Impl"
+    // $ANTLR end "rule__FeatureDecl__Group_4__5__Impl"
 
 
     // $ANTLR start "rule__AttrDecl__Group__0"
@@ -30625,9 +30625,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
     // $ANTLR end "rule__TypeDecl__SupersAssignment_2_2_1"
 
 
-    // $ANTLR start "rule__ComponentDecl__SchemaAssignment_0_0_2_0"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11611:1: rule__ComponentDecl__SchemaAssignment_0_0_2_0 : ( ( 'schema' ) ) ;
-    public final void rule__ComponentDecl__SchemaAssignment_0_0_2_0() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__SchemaAssignment_0_0_2_0"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11611:1: rule__FeatureDecl__SchemaAssignment_0_0_2_0 : ( ( 'schema' ) ) ;
+    public final void rule__FeatureDecl__SchemaAssignment_0_0_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -30638,17 +30638,17 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11616:1: ( ( 'schema' ) )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11617:1: ( 'schema' )
             {
-             before(grammarAccess.getComponentDeclAccess().getSchemaSchemaKeyword_0_0_2_0_0()); 
+             before(grammarAccess.getFeatureDeclAccess().getSchemaSchemaKeyword_0_0_2_0_0()); 
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11618:1: ( 'schema' )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11619:1: 'schema'
             {
-             before(grammarAccess.getComponentDeclAccess().getSchemaSchemaKeyword_0_0_2_0_0()); 
-            match(input,67,FOLLOW_67_in_rule__ComponentDecl__SchemaAssignment_0_0_2_023241); 
-             after(grammarAccess.getComponentDeclAccess().getSchemaSchemaKeyword_0_0_2_0_0()); 
+             before(grammarAccess.getFeatureDeclAccess().getSchemaSchemaKeyword_0_0_2_0_0()); 
+            match(input,67,FOLLOW_67_in_rule__FeatureDecl__SchemaAssignment_0_0_2_023241); 
+             after(grammarAccess.getFeatureDeclAccess().getSchemaSchemaKeyword_0_0_2_0_0()); 
 
             }
 
-             after(grammarAccess.getComponentDeclAccess().getSchemaSchemaKeyword_0_0_2_0_0()); 
+             after(grammarAccess.getFeatureDeclAccess().getSchemaSchemaKeyword_0_0_2_0_0()); 
 
             }
 
@@ -30667,12 +30667,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__SchemaAssignment_0_0_2_0"
+    // $ANTLR end "rule__FeatureDecl__SchemaAssignment_0_0_2_0"
 
 
-    // $ANTLR start "rule__ComponentDecl__ClassAssignment_0_0_2_1"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11634:1: rule__ComponentDecl__ClassAssignment_0_0_2_1 : ( ( 'class' ) ) ;
-    public final void rule__ComponentDecl__ClassAssignment_0_0_2_1() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__ClassAssignment_0_0_2_1"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11634:1: rule__FeatureDecl__ClassAssignment_0_0_2_1 : ( ( 'class' ) ) ;
+    public final void rule__FeatureDecl__ClassAssignment_0_0_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -30683,17 +30683,17 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11639:1: ( ( 'class' ) )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11640:1: ( 'class' )
             {
-             before(grammarAccess.getComponentDeclAccess().getClassClassKeyword_0_0_2_1_0()); 
+             before(grammarAccess.getFeatureDeclAccess().getClassClassKeyword_0_0_2_1_0()); 
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11641:1: ( 'class' )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11642:1: 'class'
             {
-             before(grammarAccess.getComponentDeclAccess().getClassClassKeyword_0_0_2_1_0()); 
-            match(input,68,FOLLOW_68_in_rule__ComponentDecl__ClassAssignment_0_0_2_123285); 
-             after(grammarAccess.getComponentDeclAccess().getClassClassKeyword_0_0_2_1_0()); 
+             before(grammarAccess.getFeatureDeclAccess().getClassClassKeyword_0_0_2_1_0()); 
+            match(input,68,FOLLOW_68_in_rule__FeatureDecl__ClassAssignment_0_0_2_123285); 
+             after(grammarAccess.getFeatureDeclAccess().getClassClassKeyword_0_0_2_1_0()); 
 
             }
 
-             after(grammarAccess.getComponentDeclAccess().getClassClassKeyword_0_0_2_1_0()); 
+             after(grammarAccess.getFeatureDeclAccess().getClassClassKeyword_0_0_2_1_0()); 
 
             }
 
@@ -30712,12 +30712,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__ClassAssignment_0_0_2_1"
+    // $ANTLR end "rule__FeatureDecl__ClassAssignment_0_0_2_1"
 
 
-    // $ANTLR start "rule__ComponentDecl__NameAssignment_1"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11657:1: rule__ComponentDecl__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__ComponentDecl__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__NameAssignment_1"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11657:1: rule__FeatureDecl__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__FeatureDecl__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -30728,9 +30728,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11662:1: ( RULE_ID )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11663:1: RULE_ID
             {
-             before(grammarAccess.getComponentDeclAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ComponentDecl__NameAssignment_123324); 
-             after(grammarAccess.getComponentDeclAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getFeatureDeclAccess().getNameIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FeatureDecl__NameAssignment_123324); 
+             after(grammarAccess.getFeatureDeclAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -30749,12 +30749,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__NameAssignment_1"
+    // $ANTLR end "rule__FeatureDecl__NameAssignment_1"
 
 
-    // $ANTLR start "rule__ComponentDecl__SupersAssignment_2_1"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11672:1: rule__ComponentDecl__SupersAssignment_2_1 : ( ( RULE_ID ) ) ;
-    public final void rule__ComponentDecl__SupersAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__SupersAssignment_2_1"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11672:1: rule__FeatureDecl__SupersAssignment_2_1 : ( ( RULE_ID ) ) ;
+    public final void rule__FeatureDecl__SupersAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -30765,17 +30765,17 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11677:1: ( ( RULE_ID ) )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11678:1: ( RULE_ID )
             {
-             before(grammarAccess.getComponentDeclAccess().getSupersComponentDeclCrossReference_2_1_0()); 
+             before(grammarAccess.getFeatureDeclAccess().getSupersFeatureDeclCrossReference_2_1_0()); 
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11679:1: ( RULE_ID )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11680:1: RULE_ID
             {
-             before(grammarAccess.getComponentDeclAccess().getSupersComponentDeclIDTerminalRuleCall_2_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ComponentDecl__SupersAssignment_2_123359); 
-             after(grammarAccess.getComponentDeclAccess().getSupersComponentDeclIDTerminalRuleCall_2_1_0_1()); 
+             before(grammarAccess.getFeatureDeclAccess().getSupersFeatureDeclIDTerminalRuleCall_2_1_0_1()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FeatureDecl__SupersAssignment_2_123359); 
+             after(grammarAccess.getFeatureDeclAccess().getSupersFeatureDeclIDTerminalRuleCall_2_1_0_1()); 
 
             }
 
-             after(grammarAccess.getComponentDeclAccess().getSupersComponentDeclCrossReference_2_1_0()); 
+             after(grammarAccess.getFeatureDeclAccess().getSupersFeatureDeclCrossReference_2_1_0()); 
 
             }
 
@@ -30794,12 +30794,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__SupersAssignment_2_1"
+    // $ANTLR end "rule__FeatureDecl__SupersAssignment_2_1"
 
 
-    // $ANTLR start "rule__ComponentDecl__SupersAssignment_2_2_1"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11691:1: rule__ComponentDecl__SupersAssignment_2_2_1 : ( ( RULE_ID ) ) ;
-    public final void rule__ComponentDecl__SupersAssignment_2_2_1() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__SupersAssignment_2_2_1"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11691:1: rule__FeatureDecl__SupersAssignment_2_2_1 : ( ( RULE_ID ) ) ;
+    public final void rule__FeatureDecl__SupersAssignment_2_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -30810,17 +30810,17 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11696:1: ( ( RULE_ID ) )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11697:1: ( RULE_ID )
             {
-             before(grammarAccess.getComponentDeclAccess().getSupersComponentDeclCrossReference_2_2_1_0()); 
+             before(grammarAccess.getFeatureDeclAccess().getSupersFeatureDeclCrossReference_2_2_1_0()); 
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11698:1: ( RULE_ID )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11699:1: RULE_ID
             {
-             before(grammarAccess.getComponentDeclAccess().getSupersComponentDeclIDTerminalRuleCall_2_2_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ComponentDecl__SupersAssignment_2_2_123398); 
-             after(grammarAccess.getComponentDeclAccess().getSupersComponentDeclIDTerminalRuleCall_2_2_1_0_1()); 
+             before(grammarAccess.getFeatureDeclAccess().getSupersFeatureDeclIDTerminalRuleCall_2_2_1_0_1()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FeatureDecl__SupersAssignment_2_2_123398); 
+             after(grammarAccess.getFeatureDeclAccess().getSupersFeatureDeclIDTerminalRuleCall_2_2_1_0_1()); 
 
             }
 
-             after(grammarAccess.getComponentDeclAccess().getSupersComponentDeclCrossReference_2_2_1_0()); 
+             after(grammarAccess.getFeatureDeclAccess().getSupersFeatureDeclCrossReference_2_2_1_0()); 
 
             }
 
@@ -30839,12 +30839,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__SupersAssignment_2_2_1"
+    // $ANTLR end "rule__FeatureDecl__SupersAssignment_2_2_1"
 
 
-    // $ANTLR start "rule__ComponentDecl__MembersAssignment_3_1"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11710:1: rule__ComponentDecl__MembersAssignment_3_1 : ( ruleMemberDecl ) ;
-    public final void rule__ComponentDecl__MembersAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__MembersAssignment_3_1"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11710:1: rule__FeatureDecl__MembersAssignment_3_1 : ( ruleMemberDecl ) ;
+    public final void rule__FeatureDecl__MembersAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -30855,13 +30855,13 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11715:1: ( ruleMemberDecl )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11716:1: ruleMemberDecl
             {
-             before(grammarAccess.getComponentDeclAccess().getMembersMemberDeclParserRuleCall_3_1_0()); 
-            pushFollow(FOLLOW_ruleMemberDecl_in_rule__ComponentDecl__MembersAssignment_3_123433);
+             before(grammarAccess.getFeatureDeclAccess().getMembersMemberDeclParserRuleCall_3_1_0()); 
+            pushFollow(FOLLOW_ruleMemberDecl_in_rule__FeatureDecl__MembersAssignment_3_123433);
             ruleMemberDecl();
 
             state._fsp--;
 
-             after(grammarAccess.getComponentDeclAccess().getMembersMemberDeclParserRuleCall_3_1_0()); 
+             after(grammarAccess.getFeatureDeclAccess().getMembersMemberDeclParserRuleCall_3_1_0()); 
 
             }
 
@@ -30880,12 +30880,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__MembersAssignment_3_1"
+    // $ANTLR end "rule__FeatureDecl__MembersAssignment_3_1"
 
 
-    // $ANTLR start "rule__ComponentDecl__DevicesAssignment_4_2"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11725:1: rule__ComponentDecl__DevicesAssignment_4_2 : ( ruleDevice ) ;
-    public final void rule__ComponentDecl__DevicesAssignment_4_2() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__DevicesAssignment_4_2"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11725:1: rule__FeatureDecl__DevicesAssignment_4_2 : ( ruleDevice ) ;
+    public final void rule__FeatureDecl__DevicesAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -30896,13 +30896,13 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11730:1: ( ruleDevice )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11731:1: ruleDevice
             {
-             before(grammarAccess.getComponentDeclAccess().getDevicesDeviceParserRuleCall_4_2_0()); 
-            pushFollow(FOLLOW_ruleDevice_in_rule__ComponentDecl__DevicesAssignment_4_223464);
+             before(grammarAccess.getFeatureDeclAccess().getDevicesDeviceParserRuleCall_4_2_0()); 
+            pushFollow(FOLLOW_ruleDevice_in_rule__FeatureDecl__DevicesAssignment_4_223464);
             ruleDevice();
 
             state._fsp--;
 
-             after(grammarAccess.getComponentDeclAccess().getDevicesDeviceParserRuleCall_4_2_0()); 
+             after(grammarAccess.getFeatureDeclAccess().getDevicesDeviceParserRuleCall_4_2_0()); 
 
             }
 
@@ -30921,12 +30921,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__DevicesAssignment_4_2"
+    // $ANTLR end "rule__FeatureDecl__DevicesAssignment_4_2"
 
 
-    // $ANTLR start "rule__ComponentDecl__AssignsAssignment_4_3"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11740:1: rule__ComponentDecl__AssignsAssignment_4_3 : ( ruleAssignment ) ;
-    public final void rule__ComponentDecl__AssignsAssignment_4_3() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__AssignsAssignment_4_3"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11740:1: rule__FeatureDecl__AssignsAssignment_4_3 : ( ruleAssignment ) ;
+    public final void rule__FeatureDecl__AssignsAssignment_4_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -30937,13 +30937,13 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11745:1: ( ruleAssignment )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11746:1: ruleAssignment
             {
-             before(grammarAccess.getComponentDeclAccess().getAssignsAssignmentParserRuleCall_4_3_0()); 
-            pushFollow(FOLLOW_ruleAssignment_in_rule__ComponentDecl__AssignsAssignment_4_323495);
+             before(grammarAccess.getFeatureDeclAccess().getAssignsAssignmentParserRuleCall_4_3_0()); 
+            pushFollow(FOLLOW_ruleAssignment_in_rule__FeatureDecl__AssignsAssignment_4_323495);
             ruleAssignment();
 
             state._fsp--;
 
-             after(grammarAccess.getComponentDeclAccess().getAssignsAssignmentParserRuleCall_4_3_0()); 
+             after(grammarAccess.getFeatureDeclAccess().getAssignsAssignmentParserRuleCall_4_3_0()); 
 
             }
 
@@ -30962,12 +30962,12 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__AssignsAssignment_4_3"
+    // $ANTLR end "rule__FeatureDecl__AssignsAssignment_4_3"
 
 
-    // $ANTLR start "rule__ComponentDecl__ExpAssignment_4_4"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11755:1: rule__ComponentDecl__ExpAssignment_4_4 : ( ruleExp ) ;
-    public final void rule__ComponentDecl__ExpAssignment_4_4() throws RecognitionException {
+    // $ANTLR start "rule__FeatureDecl__ExpAssignment_4_4"
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11755:1: rule__FeatureDecl__ExpAssignment_4_4 : ( ruleExp ) ;
+    public final void rule__FeatureDecl__ExpAssignment_4_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -30978,13 +30978,13 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11760:1: ( ruleExp )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:11761:1: ruleExp
             {
-             before(grammarAccess.getComponentDeclAccess().getExpExpParserRuleCall_4_4_0()); 
-            pushFollow(FOLLOW_ruleExp_in_rule__ComponentDecl__ExpAssignment_4_423526);
+             before(grammarAccess.getFeatureDeclAccess().getExpExpParserRuleCall_4_4_0()); 
+            pushFollow(FOLLOW_ruleExp_in_rule__FeatureDecl__ExpAssignment_4_423526);
             ruleExp();
 
             state._fsp--;
 
-             after(grammarAccess.getComponentDeclAccess().getExpExpParserRuleCall_4_4_0()); 
+             after(grammarAccess.getFeatureDeclAccess().getExpExpParserRuleCall_4_4_0()); 
 
             }
 
@@ -31003,7 +31003,7 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
         }
         return ;
     }
-    // $ANTLR end "rule__ComponentDecl__ExpAssignment_4_4"
+    // $ANTLR end "rule__FeatureDecl__ExpAssignment_4_4"
 
 
     // $ANTLR start "rule__AttrDecl__ModifierAssignment_0"
@@ -32171,17 +32171,17 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12238:1: ( ( RULE_ID ) )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12239:1: ( RULE_ID )
             {
-             before(grammarAccess.getBaseFeatureTypeAccess().getComponentsComponentDeclCrossReference_0_0()); 
+             before(grammarAccess.getBaseFeatureTypeAccess().getComponentsFeatureDeclCrossReference_0_0()); 
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12240:1: ( RULE_ID )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12241:1: RULE_ID
             {
-             before(grammarAccess.getBaseFeatureTypeAccess().getComponentsComponentDeclIDTerminalRuleCall_0_0_1()); 
+             before(grammarAccess.getBaseFeatureTypeAccess().getComponentsFeatureDeclIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__BaseFeatureType__ComponentsAssignment_024497); 
-             after(grammarAccess.getBaseFeatureTypeAccess().getComponentsComponentDeclIDTerminalRuleCall_0_0_1()); 
+             after(grammarAccess.getBaseFeatureTypeAccess().getComponentsFeatureDeclIDTerminalRuleCall_0_0_1()); 
 
             }
 
-             after(grammarAccess.getBaseFeatureTypeAccess().getComponentsComponentDeclCrossReference_0_0()); 
+             after(grammarAccess.getBaseFeatureTypeAccess().getComponentsFeatureDeclCrossReference_0_0()); 
 
             }
 
@@ -32216,17 +32216,17 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12257:1: ( ( RULE_ID ) )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12258:1: ( RULE_ID )
             {
-             before(grammarAccess.getBaseFeatureTypeAccess().getComponentsComponentDeclCrossReference_1_1_0()); 
+             before(grammarAccess.getBaseFeatureTypeAccess().getComponentsFeatureDeclCrossReference_1_1_0()); 
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12259:1: ( RULE_ID )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12260:1: RULE_ID
             {
-             before(grammarAccess.getBaseFeatureTypeAccess().getComponentsComponentDeclIDTerminalRuleCall_1_1_0_1()); 
+             before(grammarAccess.getBaseFeatureTypeAccess().getComponentsFeatureDeclIDTerminalRuleCall_1_1_0_1()); 
             match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__BaseFeatureType__ComponentsAssignment_1_124536); 
-             after(grammarAccess.getBaseFeatureTypeAccess().getComponentsComponentDeclIDTerminalRuleCall_1_1_0_1()); 
+             after(grammarAccess.getBaseFeatureTypeAccess().getComponentsFeatureDeclIDTerminalRuleCall_1_1_0_1()); 
 
             }
 
-             after(grammarAccess.getBaseFeatureTypeAccess().getComponentsComponentDeclCrossReference_1_1_0()); 
+             after(grammarAccess.getBaseFeatureTypeAccess().getComponentsFeatureDeclCrossReference_1_1_0()); 
 
             }
 
@@ -32462,17 +32462,17 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12351:1: ( ( RULE_ID ) )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12352:1: ( RULE_ID )
             {
-             before(grammarAccess.getMultiplicityInvariantAccess().getTypeComponentDeclCrossReference_4_1_0()); 
+             before(grammarAccess.getMultiplicityInvariantAccess().getTypeFeatureDeclCrossReference_4_1_0()); 
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12353:1: ( RULE_ID )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12354:1: RULE_ID
             {
-             before(grammarAccess.getMultiplicityInvariantAccess().getTypeComponentDeclIDTerminalRuleCall_4_1_0_1()); 
+             before(grammarAccess.getMultiplicityInvariantAccess().getTypeFeatureDeclIDTerminalRuleCall_4_1_0_1()); 
             match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__MultiplicityInvariant__TypeAssignment_4_124730); 
-             after(grammarAccess.getMultiplicityInvariantAccess().getTypeComponentDeclIDTerminalRuleCall_4_1_0_1()); 
+             after(grammarAccess.getMultiplicityInvariantAccess().getTypeFeatureDeclIDTerminalRuleCall_4_1_0_1()); 
 
             }
 
-             after(grammarAccess.getMultiplicityInvariantAccess().getTypeComponentDeclCrossReference_4_1_0()); 
+             after(grammarAccess.getMultiplicityInvariantAccess().getTypeFeatureDeclCrossReference_4_1_0()); 
 
             }
 
@@ -32778,17 +32778,17 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12483:1: ( ( RULE_ID ) )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12484:1: ( RULE_ID )
             {
-             before(grammarAccess.getDeviceAccess().getComponentsComponentDeclCrossReference_2_0()); 
+             before(grammarAccess.getDeviceAccess().getComponentsFeatureDeclCrossReference_2_0()); 
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12485:1: ( RULE_ID )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12486:1: RULE_ID
             {
-             before(grammarAccess.getDeviceAccess().getComponentsComponentDeclIDTerminalRuleCall_2_0_1()); 
+             before(grammarAccess.getDeviceAccess().getComponentsFeatureDeclIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Device__ComponentsAssignment_224999); 
-             after(grammarAccess.getDeviceAccess().getComponentsComponentDeclIDTerminalRuleCall_2_0_1()); 
+             after(grammarAccess.getDeviceAccess().getComponentsFeatureDeclIDTerminalRuleCall_2_0_1()); 
 
             }
 
-             after(grammarAccess.getDeviceAccess().getComponentsComponentDeclCrossReference_2_0()); 
+             after(grammarAccess.getDeviceAccess().getComponentsFeatureDeclCrossReference_2_0()); 
 
             }
 
@@ -32823,17 +32823,17 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12502:1: ( ( RULE_ID ) )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12503:1: ( RULE_ID )
             {
-             before(grammarAccess.getDeviceAccess().getComponentsComponentDeclCrossReference_3_1_0()); 
+             before(grammarAccess.getDeviceAccess().getComponentsFeatureDeclCrossReference_3_1_0()); 
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12504:1: ( RULE_ID )
             // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:12505:1: RULE_ID
             {
-             before(grammarAccess.getDeviceAccess().getComponentsComponentDeclIDTerminalRuleCall_3_1_0_1()); 
+             before(grammarAccess.getDeviceAccess().getComponentsFeatureDeclIDTerminalRuleCall_3_1_0_1()); 
             match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Device__ComponentsAssignment_3_125038); 
-             after(grammarAccess.getDeviceAccess().getComponentsComponentDeclIDTerminalRuleCall_3_1_0_1()); 
+             after(grammarAccess.getDeviceAccess().getComponentsFeatureDeclIDTerminalRuleCall_3_1_0_1()); 
 
             }
 
-             after(grammarAccess.getDeviceAccess().getComponentsComponentDeclCrossReference_3_1_0()); 
+             after(grammarAccess.getDeviceAccess().getComponentsFeatureDeclCrossReference_3_1_0()); 
 
             }
 
@@ -34467,9 +34467,9 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
     public static final BitSet FOLLOW_ruleTypeDecl_in_entryRuleTypeDecl181 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTypeDecl188 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TypeDecl__Group__0_in_ruleTypeDecl214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComponentDecl_in_entryRuleComponentDecl241 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleComponentDecl248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group__0_in_ruleComponentDecl274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeatureDecl_in_entryRuleFeatureDecl241 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFeatureDecl248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group__0_in_ruleFeatureDecl274 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMemberDecl_in_entryRuleMemberDecl301 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMemberDecl308 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__MemberDecl__Alternatives_in_ruleMemberDecl334 = new BitSet(new long[]{0x0000000000000002L});
@@ -34573,13 +34573,13 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
     public static final BitSet FOLLOW_rule__Model__ClassAssignment_0_1_in_rule__Model__Alternatives_02316 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Model__InstanceAssignment_0_2_in_rule__Model__Alternatives_02334 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTypeDecl_in_rule__Decl__Alternatives2367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComponentDecl_in_rule__Decl__Alternatives2384 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_0__0_in_rule__ComponentDecl__Alternatives_02416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_1__0_in_rule__ComponentDecl__Alternatives_02434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_2__0_in_rule__ComponentDecl__Alternatives_02452 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_3__0_in_rule__ComponentDecl__Alternatives_02470 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__SchemaAssignment_0_0_2_0_in_rule__ComponentDecl__Alternatives_0_0_22503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__ClassAssignment_0_0_2_1_in_rule__ComponentDecl__Alternatives_0_0_22521 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeatureDecl_in_rule__Decl__Alternatives2384 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_0__0_in_rule__FeatureDecl__Alternatives_02416 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_1__0_in_rule__FeatureDecl__Alternatives_02434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_2__0_in_rule__FeatureDecl__Alternatives_02452 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_3__0_in_rule__FeatureDecl__Alternatives_02470 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__SchemaAssignment_0_0_2_0_in_rule__FeatureDecl__Alternatives_0_0_22503 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__ClassAssignment_0_0_2_1_in_rule__FeatureDecl__Alternatives_0_0_22521 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAttrDecl_in_rule__MemberDecl__Alternatives2554 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSubMemberDecl_in_rule__MemberDecl__Alternatives2571 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInvariantDecl_in_rule__MemberDecl__Alternatives2588 = new BitSet(new long[]{0x0000000000000002L});
@@ -34683,77 +34683,77 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
     public static final BitSet FOLLOW_30_in_rule__TypeDecl__Group_2_2__0__Impl4788 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TypeDecl__Group_2_2__1__Impl_in_rule__TypeDecl__Group_2_2__14819 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TypeDecl__SupersAssignment_2_2_1_in_rule__TypeDecl__Group_2_2__1__Impl4846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group__0__Impl_in_rule__ComponentDecl__Group__04880 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group__1_in_rule__ComponentDecl__Group__04883 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Alternatives_0_in_rule__ComponentDecl__Group__0__Impl4910 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group__1__Impl_in_rule__ComponentDecl__Group__14940 = new BitSet(new long[]{0x0000002820000000L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group__2_in_rule__ComponentDecl__Group__14943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__NameAssignment_1_in_rule__ComponentDecl__Group__1__Impl4970 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group__2__Impl_in_rule__ComponentDecl__Group__25000 = new BitSet(new long[]{0x0000002820000000L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group__3_in_rule__ComponentDecl__Group__25003 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_2__0_in_rule__ComponentDecl__Group__2__Impl5030 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group__3__Impl_in_rule__ComponentDecl__Group__35061 = new BitSet(new long[]{0x0000002820000000L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group__4_in_rule__ComponentDecl__Group__35064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_3__0_in_rule__ComponentDecl__Group__3__Impl5091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group__4__Impl_in_rule__ComponentDecl__Group__45122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_4__0_in_rule__ComponentDecl__Group__4__Impl5149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_0__0__Impl_in_rule__ComponentDecl__Group_0_0__05190 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000018L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_0__1_in_rule__ComponentDecl__Group_0_0__05193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__ComponentDecl__Group_0_0__0__Impl5221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_0__1__Impl_in_rule__ComponentDecl__Group_0_0__15252 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000018L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_0__2_in_rule__ComponentDecl__Group_0_0__15255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_0__2__Impl_in_rule__ComponentDecl__Group_0_0__25313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Alternatives_0_0_2_in_rule__ComponentDecl__Group_0_0__2__Impl5340 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_1__0__Impl_in_rule__ComponentDecl__Group_0_1__05377 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_1__1_in_rule__ComponentDecl__Group_0_1__05380 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__ComponentDecl__Group_0_1__0__Impl5408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_1__1__Impl_in_rule__ComponentDecl__Group_0_1__15439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_2__0__Impl_in_rule__ComponentDecl__Group_0_2__05501 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_2__1_in_rule__ComponentDecl__Group_0_2__05504 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__ComponentDecl__Group_0_2__0__Impl5532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_2__1__Impl_in_rule__ComponentDecl__Group_0_2__15563 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_3__0__Impl_in_rule__ComponentDecl__Group_0_3__05625 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_3__1_in_rule__ComponentDecl__Group_0_3__05628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__ComponentDecl__Group_0_3__0__Impl5656 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_0_3__1__Impl_in_rule__ComponentDecl__Group_0_3__15687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_2__0__Impl_in_rule__ComponentDecl__Group_2__05749 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_2__1_in_rule__ComponentDecl__Group_2__05752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__ComponentDecl__Group_2__0__Impl5780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_2__1__Impl_in_rule__ComponentDecl__Group_2__15811 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_2__2_in_rule__ComponentDecl__Group_2__15814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__SupersAssignment_2_1_in_rule__ComponentDecl__Group_2__1__Impl5841 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_2__2__Impl_in_rule__ComponentDecl__Group_2__25871 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_2_2__0_in_rule__ComponentDecl__Group_2__2__Impl5898 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_2_2__0__Impl_in_rule__ComponentDecl__Group_2_2__05935 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_2_2__1_in_rule__ComponentDecl__Group_2_2__05938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__ComponentDecl__Group_2_2__0__Impl5966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_2_2__1__Impl_in_rule__ComponentDecl__Group_2_2__15997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__SupersAssignment_2_2_1_in_rule__ComponentDecl__Group_2_2__1__Impl6024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_3__0__Impl_in_rule__ComponentDecl__Group_3__06058 = new BitSet(new long[]{0x0201FF1000000010L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_3__1_in_rule__ComponentDecl__Group_3__06061 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__ComponentDecl__Group_3__0__Impl6089 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_3__1__Impl_in_rule__ComponentDecl__Group_3__16120 = new BitSet(new long[]{0x0201FF1000000010L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_3__2_in_rule__ComponentDecl__Group_3__16123 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__MembersAssignment_3_1_in_rule__ComponentDecl__Group_3__1__Impl6150 = new BitSet(new long[]{0x0201FF0000000012L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_3__2__Impl_in_rule__ComponentDecl__Group_3__26181 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__ComponentDecl__Group_3__2__Impl6209 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_4__0__Impl_in_rule__ComponentDecl__Group_4__06246 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_4__1_in_rule__ComponentDecl__Group_4__06249 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__ComponentDecl__Group_4__0__Impl6277 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_4__1__Impl_in_rule__ComponentDecl__Group_4__16308 = new BitSet(new long[]{0x2000000000000010L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_4__2_in_rule__ComponentDecl__Group_4__16311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__ComponentDecl__Group_4__1__Impl6339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_4__2__Impl_in_rule__ComponentDecl__Group_4__26370 = new BitSet(new long[]{0x2000000000000010L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_4__3_in_rule__ComponentDecl__Group_4__26373 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__DevicesAssignment_4_2_in_rule__ComponentDecl__Group_4__2__Impl6400 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_4__3__Impl_in_rule__ComponentDecl__Group_4__36431 = new BitSet(new long[]{0x2000000000000010L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_4__4_in_rule__ComponentDecl__Group_4__36434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__AssignsAssignment_4_3_in_rule__ComponentDecl__Group_4__3__Impl6461 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_4__4__Impl_in_rule__ComponentDecl__Group_4__46492 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_4__5_in_rule__ComponentDecl__Group_4__46495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__ExpAssignment_4_4_in_rule__ComponentDecl__Group_4__4__Impl6522 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ComponentDecl__Group_4__5__Impl_in_rule__ComponentDecl__Group_4__56552 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__ComponentDecl__Group_4__5__Impl6580 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group__0__Impl_in_rule__FeatureDecl__Group__04880 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group__1_in_rule__FeatureDecl__Group__04883 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Alternatives_0_in_rule__FeatureDecl__Group__0__Impl4910 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group__1__Impl_in_rule__FeatureDecl__Group__14940 = new BitSet(new long[]{0x0000002820000000L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group__2_in_rule__FeatureDecl__Group__14943 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__NameAssignment_1_in_rule__FeatureDecl__Group__1__Impl4970 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group__2__Impl_in_rule__FeatureDecl__Group__25000 = new BitSet(new long[]{0x0000002820000000L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group__3_in_rule__FeatureDecl__Group__25003 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_2__0_in_rule__FeatureDecl__Group__2__Impl5030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group__3__Impl_in_rule__FeatureDecl__Group__35061 = new BitSet(new long[]{0x0000002820000000L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group__4_in_rule__FeatureDecl__Group__35064 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_3__0_in_rule__FeatureDecl__Group__3__Impl5091 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group__4__Impl_in_rule__FeatureDecl__Group__45122 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_4__0_in_rule__FeatureDecl__Group__4__Impl5149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_0__0__Impl_in_rule__FeatureDecl__Group_0_0__05190 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000018L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_0__1_in_rule__FeatureDecl__Group_0_0__05193 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__FeatureDecl__Group_0_0__0__Impl5221 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_0__1__Impl_in_rule__FeatureDecl__Group_0_0__15252 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000018L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_0__2_in_rule__FeatureDecl__Group_0_0__15255 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_0__2__Impl_in_rule__FeatureDecl__Group_0_0__25313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Alternatives_0_0_2_in_rule__FeatureDecl__Group_0_0__2__Impl5340 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_1__0__Impl_in_rule__FeatureDecl__Group_0_1__05377 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_1__1_in_rule__FeatureDecl__Group_0_1__05380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__FeatureDecl__Group_0_1__0__Impl5408 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_1__1__Impl_in_rule__FeatureDecl__Group_0_1__15439 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_2__0__Impl_in_rule__FeatureDecl__Group_0_2__05501 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_2__1_in_rule__FeatureDecl__Group_0_2__05504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__FeatureDecl__Group_0_2__0__Impl5532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_2__1__Impl_in_rule__FeatureDecl__Group_0_2__15563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_3__0__Impl_in_rule__FeatureDecl__Group_0_3__05625 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_3__1_in_rule__FeatureDecl__Group_0_3__05628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__FeatureDecl__Group_0_3__0__Impl5656 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_0_3__1__Impl_in_rule__FeatureDecl__Group_0_3__15687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_2__0__Impl_in_rule__FeatureDecl__Group_2__05749 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_2__1_in_rule__FeatureDecl__Group_2__05752 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__FeatureDecl__Group_2__0__Impl5780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_2__1__Impl_in_rule__FeatureDecl__Group_2__15811 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_2__2_in_rule__FeatureDecl__Group_2__15814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__SupersAssignment_2_1_in_rule__FeatureDecl__Group_2__1__Impl5841 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_2__2__Impl_in_rule__FeatureDecl__Group_2__25871 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_2_2__0_in_rule__FeatureDecl__Group_2__2__Impl5898 = new BitSet(new long[]{0x0000000040000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_2_2__0__Impl_in_rule__FeatureDecl__Group_2_2__05935 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_2_2__1_in_rule__FeatureDecl__Group_2_2__05938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__FeatureDecl__Group_2_2__0__Impl5966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_2_2__1__Impl_in_rule__FeatureDecl__Group_2_2__15997 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__SupersAssignment_2_2_1_in_rule__FeatureDecl__Group_2_2__1__Impl6024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_3__0__Impl_in_rule__FeatureDecl__Group_3__06058 = new BitSet(new long[]{0x0201FF1000000010L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_3__1_in_rule__FeatureDecl__Group_3__06061 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__FeatureDecl__Group_3__0__Impl6089 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_3__1__Impl_in_rule__FeatureDecl__Group_3__16120 = new BitSet(new long[]{0x0201FF1000000010L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_3__2_in_rule__FeatureDecl__Group_3__16123 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__MembersAssignment_3_1_in_rule__FeatureDecl__Group_3__1__Impl6150 = new BitSet(new long[]{0x0201FF0000000012L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_3__2__Impl_in_rule__FeatureDecl__Group_3__26181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__FeatureDecl__Group_3__2__Impl6209 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_4__0__Impl_in_rule__FeatureDecl__Group_4__06246 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_4__1_in_rule__FeatureDecl__Group_4__06249 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__FeatureDecl__Group_4__0__Impl6277 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_4__1__Impl_in_rule__FeatureDecl__Group_4__16308 = new BitSet(new long[]{0x2000000000000010L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_4__2_in_rule__FeatureDecl__Group_4__16311 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__FeatureDecl__Group_4__1__Impl6339 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_4__2__Impl_in_rule__FeatureDecl__Group_4__26370 = new BitSet(new long[]{0x2000000000000010L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_4__3_in_rule__FeatureDecl__Group_4__26373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__DevicesAssignment_4_2_in_rule__FeatureDecl__Group_4__2__Impl6400 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_4__3__Impl_in_rule__FeatureDecl__Group_4__36431 = new BitSet(new long[]{0x2000000000000010L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_4__4_in_rule__FeatureDecl__Group_4__36434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__AssignsAssignment_4_3_in_rule__FeatureDecl__Group_4__3__Impl6461 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_4__4__Impl_in_rule__FeatureDecl__Group_4__46492 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_4__5_in_rule__FeatureDecl__Group_4__46495 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__ExpAssignment_4_4_in_rule__FeatureDecl__Group_4__4__Impl6522 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FeatureDecl__Group_4__5__Impl_in_rule__FeatureDecl__Group_4__56552 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__FeatureDecl__Group_4__5__Impl6580 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AttrDecl__Group__0__Impl_in_rule__AttrDecl__Group__06623 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__AttrDecl__Group__1_in_rule__AttrDecl__Group__06626 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AttrDecl__ModifierAssignment_0_in_rule__AttrDecl__Group__0__Impl6653 = new BitSet(new long[]{0x0000000000000002L});
@@ -35431,15 +35431,15 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
     public static final BitSet FOLLOW_RULE_ID_in_rule__TypeDecl__NameAssignment_123127 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__TypeDecl__SupersAssignment_2_123162 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__TypeDecl__SupersAssignment_2_2_123201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_67_in_rule__ComponentDecl__SchemaAssignment_0_0_2_023241 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_68_in_rule__ComponentDecl__ClassAssignment_0_0_2_123285 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ComponentDecl__NameAssignment_123324 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ComponentDecl__SupersAssignment_2_123359 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ComponentDecl__SupersAssignment_2_2_123398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMemberDecl_in_rule__ComponentDecl__MembersAssignment_3_123433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDevice_in_rule__ComponentDecl__DevicesAssignment_4_223464 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAssignment_in_rule__ComponentDecl__AssignsAssignment_4_323495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExp_in_rule__ComponentDecl__ExpAssignment_4_423526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_67_in_rule__FeatureDecl__SchemaAssignment_0_0_2_023241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_68_in_rule__FeatureDecl__ClassAssignment_0_0_2_123285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__FeatureDecl__NameAssignment_123324 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__FeatureDecl__SupersAssignment_2_123359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__FeatureDecl__SupersAssignment_2_2_123398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMemberDecl_in_rule__FeatureDecl__MembersAssignment_3_123433 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDevice_in_rule__FeatureDecl__DevicesAssignment_4_223464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAssignment_in_rule__FeatureDecl__AssignsAssignment_4_323495 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExp_in_rule__FeatureDecl__ExpAssignment_4_423526 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleModifier_in_rule__AttrDecl__ModifierAssignment_023557 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__AttrDecl__AttributeNameAssignment_123588 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleType_in_rule__AttrDecl__TypeAssignment_2_0_123619 = new BitSet(new long[]{0x0000000000000002L});

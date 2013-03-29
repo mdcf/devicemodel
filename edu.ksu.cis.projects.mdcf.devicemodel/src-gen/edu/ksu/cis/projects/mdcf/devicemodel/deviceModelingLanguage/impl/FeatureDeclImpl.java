@@ -3,10 +3,10 @@
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Assignment;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Exp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl;
 
 import java.util.Collection;
@@ -27,22 +27,22 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Component Decl</b></em>'.
+ * An implementation of the model object '<em><b>Feature Decl</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getSupers <em>Supers</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getMembers <em>Members</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getDevices <em>Devices</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getAssigns <em>Assigns</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentDeclImpl#getExp <em>Exp</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureDeclImpl#getSupers <em>Supers</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureDeclImpl#getMembers <em>Members</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureDeclImpl#getDevices <em>Devices</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureDeclImpl#getAssigns <em>Assigns</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureDeclImpl#getExp <em>Exp</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
+public class FeatureDeclImpl extends DeclImpl implements FeatureDecl
 {
   /**
    * The cached value of the '{@link #getSupers() <em>Supers</em>}' reference list.
@@ -52,7 +52,7 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
    * @generated
    * @ordered
    */
-  protected EList<ComponentDecl> supers;
+  protected EList<FeatureDecl> supers;
 
   /**
    * The cached value of the '{@link #getMembers() <em>Members</em>}' containment reference list.
@@ -99,7 +99,7 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ComponentDeclImpl()
+  protected FeatureDeclImpl()
   {
     super();
   }
@@ -112,7 +112,7 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.COMPONENT_DECL;
+    return DeviceModelingLanguagePackage.Literals.FEATURE_DECL;
   }
 
   /**
@@ -120,11 +120,11 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ComponentDecl> getSupers()
+  public EList<FeatureDecl> getSupers()
   {
     if (supers == null)
     {
-      supers = new EObjectResolvingEList<ComponentDecl>(ComponentDecl.class, this, DeviceModelingLanguagePackage.COMPONENT_DECL__SUPERS);
+      supers = new EObjectResolvingEList<FeatureDecl>(FeatureDecl.class, this, DeviceModelingLanguagePackage.FEATURE_DECL__SUPERS);
     }
     return supers;
   }
@@ -138,7 +138,7 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   {
     if (members == null)
     {
-      members = new EObjectContainmentEList<MemberDecl>(MemberDecl.class, this, DeviceModelingLanguagePackage.COMPONENT_DECL__MEMBERS);
+      members = new EObjectContainmentEList<MemberDecl>(MemberDecl.class, this, DeviceModelingLanguagePackage.FEATURE_DECL__MEMBERS);
     }
     return members;
   }
@@ -152,7 +152,7 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   {
     if (devices == null)
     {
-      devices = new EObjectContainmentEList<Device>(Device.class, this, DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES);
+      devices = new EObjectContainmentEList<Device>(Device.class, this, DeviceModelingLanguagePackage.FEATURE_DECL__DEVICES);
     }
     return devices;
   }
@@ -166,7 +166,7 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   {
     if (assigns == null)
     {
-      assigns = new EObjectContainmentEList<Assignment>(Assignment.class, this, DeviceModelingLanguagePackage.COMPONENT_DECL__ASSIGNS);
+      assigns = new EObjectContainmentEList<Assignment>(Assignment.class, this, DeviceModelingLanguagePackage.FEATURE_DECL__ASSIGNS);
     }
     return assigns;
   }
@@ -192,7 +192,7 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
     exp = newExp;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.COMPONENT_DECL__EXP, oldExp, newExp);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.FEATURE_DECL__EXP, oldExp, newExp);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -209,14 +209,14 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
     {
       NotificationChain msgs = null;
       if (exp != null)
-        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.COMPONENT_DECL__EXP, null, msgs);
+        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.FEATURE_DECL__EXP, null, msgs);
       if (newExp != null)
-        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.COMPONENT_DECL__EXP, null, msgs);
+        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.FEATURE_DECL__EXP, null, msgs);
       msgs = basicSetExp(newExp, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.COMPONENT_DECL__EXP, newExp, newExp));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.FEATURE_DECL__EXP, newExp, newExp));
   }
 
   /**
@@ -229,13 +229,13 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__MEMBERS:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__MEMBERS:
         return ((InternalEList<?>)getMembers()).basicRemove(otherEnd, msgs);
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__DEVICES:
         return ((InternalEList<?>)getDevices()).basicRemove(otherEnd, msgs);
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__ASSIGNS:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__ASSIGNS:
         return ((InternalEList<?>)getAssigns()).basicRemove(otherEnd, msgs);
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__EXP:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__EXP:
         return basicSetExp(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -251,15 +251,15 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__SUPERS:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__SUPERS:
         return getSupers();
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__MEMBERS:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__MEMBERS:
         return getMembers();
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__DEVICES:
         return getDevices();
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__ASSIGNS:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__ASSIGNS:
         return getAssigns();
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__EXP:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__EXP:
         return getExp();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -276,23 +276,23 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__SUPERS:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__SUPERS:
         getSupers().clear();
-        getSupers().addAll((Collection<? extends ComponentDecl>)newValue);
+        getSupers().addAll((Collection<? extends FeatureDecl>)newValue);
         return;
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__MEMBERS:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__MEMBERS:
         getMembers().clear();
         getMembers().addAll((Collection<? extends MemberDecl>)newValue);
         return;
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__DEVICES:
         getDevices().clear();
         getDevices().addAll((Collection<? extends Device>)newValue);
         return;
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__ASSIGNS:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__ASSIGNS:
         getAssigns().clear();
         getAssigns().addAll((Collection<? extends Assignment>)newValue);
         return;
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__EXP:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__EXP:
         setExp((Exp)newValue);
         return;
     }
@@ -309,19 +309,19 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__SUPERS:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__SUPERS:
         getSupers().clear();
         return;
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__MEMBERS:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__MEMBERS:
         getMembers().clear();
         return;
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__DEVICES:
         getDevices().clear();
         return;
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__ASSIGNS:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__ASSIGNS:
         getAssigns().clear();
         return;
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__EXP:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__EXP:
         setExp((Exp)null);
         return;
     }
@@ -338,18 +338,18 @@ public class ComponentDeclImpl extends DeclImpl implements ComponentDecl
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__SUPERS:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__SUPERS:
         return supers != null && !supers.isEmpty();
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__MEMBERS:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__MEMBERS:
         return members != null && !members.isEmpty();
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__DEVICES:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__DEVICES:
         return devices != null && !devices.isEmpty();
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__ASSIGNS:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__ASSIGNS:
         return assigns != null && !assigns.isEmpty();
-      case DeviceModelingLanguagePackage.COMPONENT_DECL__EXP:
+      case DeviceModelingLanguagePackage.FEATURE_DECL__EXP:
         return exp != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //ComponentDeclImpl
+} //FeatureDeclImpl

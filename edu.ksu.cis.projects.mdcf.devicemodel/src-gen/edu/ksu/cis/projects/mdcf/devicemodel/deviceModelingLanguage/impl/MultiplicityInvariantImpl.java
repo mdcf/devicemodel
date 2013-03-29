@@ -2,9 +2,9 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintNat;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberMatch;
 
@@ -72,7 +72,7 @@ public class MultiplicityInvariantImpl extends InvariantDeclImpl implements Mult
    * @generated
    * @ordered
    */
-  protected ComponentDecl type;
+  protected FeatureDecl type;
 
   /**
    * <!-- begin-user-doc -->
@@ -244,12 +244,12 @@ public class MultiplicityInvariantImpl extends InvariantDeclImpl implements Mult
    * <!-- end-user-doc -->
    * @generated
    */
-  public ComponentDecl getType()
+  public FeatureDecl getType()
   {
     if (type != null && type.eIsProxy())
     {
       InternalEObject oldType = (InternalEObject)type;
-      type = (ComponentDecl)eResolveProxy(oldType);
+      type = (FeatureDecl)eResolveProxy(oldType);
       if (type != oldType)
       {
         if (eNotificationRequired())
@@ -264,7 +264,7 @@ public class MultiplicityInvariantImpl extends InvariantDeclImpl implements Mult
    * <!-- end-user-doc -->
    * @generated
    */
-  public ComponentDecl basicGetType()
+  public FeatureDecl basicGetType()
   {
     return type;
   }
@@ -274,9 +274,9 @@ public class MultiplicityInvariantImpl extends InvariantDeclImpl implements Mult
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(ComponentDecl newType)
+  public void setType(FeatureDecl newType)
   {
-    ComponentDecl oldType = type;
+    FeatureDecl oldType = type;
     type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__TYPE, oldType, type));
@@ -345,7 +345,7 @@ public class MultiplicityInvariantImpl extends InvariantDeclImpl implements Mult
         setMatch((SubMemberMatch)newValue);
         return;
       case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__TYPE:
-        setType((ComponentDecl)newValue);
+        setType((FeatureDecl)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -371,7 +371,7 @@ public class MultiplicityInvariantImpl extends InvariantDeclImpl implements Mult
         setMatch((SubMemberMatch)null);
         return;
       case DeviceModelingLanguagePackage.MULTIPLICITY_INVARIANT__TYPE:
-        setType((ComponentDecl)null);
+        setType((FeatureDecl)null);
         return;
     }
     super.eUnset(featureID);

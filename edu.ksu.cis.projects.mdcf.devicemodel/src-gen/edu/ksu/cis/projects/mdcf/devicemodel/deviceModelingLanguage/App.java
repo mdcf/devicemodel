@@ -13,6 +13,6 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * @model
  * @generated
  */
-public interface App extends ComponentDecl
+public interface App extends FeatureDecl
 {
 } // App

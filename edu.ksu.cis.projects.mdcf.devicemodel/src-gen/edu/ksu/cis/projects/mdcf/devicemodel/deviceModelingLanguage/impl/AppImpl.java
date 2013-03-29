@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class AppImpl extends ComponentDeclImpl implements App
+public class AppImpl extends FeatureDeclImpl implements App
 {
   /**
    * <!-- begin-user-doc -->

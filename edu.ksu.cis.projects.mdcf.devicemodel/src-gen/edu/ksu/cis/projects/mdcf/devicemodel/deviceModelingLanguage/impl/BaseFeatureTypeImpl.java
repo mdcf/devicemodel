@@ -3,8 +3,8 @@
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseFeatureType;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl;
 
 import java.util.Collection;
@@ -44,7 +44,7 @@ public class BaseFeatureTypeImpl extends FeatureTypeImpl implements BaseFeatureT
    * @generated
    * @ordered
    */
-  protected EList<ComponentDecl> components;
+  protected EList<FeatureDecl> components;
 
   /**
    * The cached value of the '{@link #getMembers() <em>Members</em>}' containment reference list.
@@ -82,11 +82,11 @@ public class BaseFeatureTypeImpl extends FeatureTypeImpl implements BaseFeatureT
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ComponentDecl> getComponents()
+  public EList<FeatureDecl> getComponents()
   {
     if (components == null)
     {
-      components = new EObjectResolvingEList<ComponentDecl>(ComponentDecl.class, this, DeviceModelingLanguagePackage.BASE_FEATURE_TYPE__COMPONENTS);
+      components = new EObjectResolvingEList<FeatureDecl>(FeatureDecl.class, this, DeviceModelingLanguagePackage.BASE_FEATURE_TYPE__COMPONENTS);
     }
     return components;
   }
@@ -152,7 +152,7 @@ public class BaseFeatureTypeImpl extends FeatureTypeImpl implements BaseFeatureT
     {
       case DeviceModelingLanguagePackage.BASE_FEATURE_TYPE__COMPONENTS:
         getComponents().clear();
-        getComponents().addAll((Collection<? extends ComponentDecl>)newValue);
+        getComponents().addAll((Collection<? extends FeatureDecl>)newValue);
         return;
       case DeviceModelingLanguagePackage.BASE_FEATURE_TYPE__MEMBERS:
         getMembers().clear();

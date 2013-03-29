@@ -12,8 +12,6 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseFeatureT
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BinaryExp;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintNat;
@@ -24,6 +22,8 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModeli
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.EitherFeatureType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Exp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Feature;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvariant;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.InvariantDecl;
@@ -136,7 +136,7 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.MODEL: return createModel();
       case DeviceModelingLanguagePackage.DECL: return createDecl();
       case DeviceModelingLanguagePackage.TYPE_DECL: return createTypeDecl();
-      case DeviceModelingLanguagePackage.COMPONENT_DECL: return createComponentDecl();
+      case DeviceModelingLanguagePackage.FEATURE_DECL: return createFeatureDecl();
       case DeviceModelingLanguagePackage.MEMBER_DECL: return createMemberDecl();
       case DeviceModelingLanguagePackage.ATTR_DECL: return createAttrDecl();
       case DeviceModelingLanguagePackage.MODIFIER: return createModifier();
@@ -172,7 +172,7 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.SIMPLE_OPTION_LITERAL: return createSimpleOptionLiteral();
       case DeviceModelingLanguagePackage.SIMPLE_SEQ_LITERAL: return createSimpleSeqLiteral();
       case DeviceModelingLanguagePackage.SIMPLE_SET_LITERAL: return createSimpleSetLiteral();
-      case DeviceModelingLanguagePackage.COMPONENT: return createComponent();
+      case DeviceModelingLanguagePackage.FEATURE: return createFeature();
       case DeviceModelingLanguagePackage.DATA: return createData();
       case DeviceModelingLanguagePackage.APP: return createApp();
       case DeviceModelingLanguagePackage.CONST: return createConst();
@@ -245,10 +245,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public ComponentDecl createComponentDecl()
+  public FeatureDecl createFeatureDecl()
   {
-    ComponentDeclImpl componentDecl = new ComponentDeclImpl();
-    return componentDecl;
+    FeatureDeclImpl featureDecl = new FeatureDeclImpl();
+    return featureDecl;
   }
 
   /**
@@ -641,10 +641,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public Component createComponent()
+  public Feature createFeature()
   {
-    ComponentImpl component = new ComponentImpl();
-    return component;
+    FeatureImpl feature = new FeatureImpl();
+    return feature;
   }
 
   /**

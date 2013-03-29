@@ -50,13 +50,13 @@ public interface DeviceModelingLanguageFactory extends EFactory
   TypeDecl createTypeDecl();
 
   /**
-   * Returns a new object of class '<em>Component Decl</em>'.
+   * Returns a new object of class '<em>Feature Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Component Decl</em>'.
+   * @return a new object of class '<em>Feature Decl</em>'.
    * @generated
    */
-  ComponentDecl createComponentDecl();
+  FeatureDecl createFeatureDecl();
 
   /**
    * Returns a new object of class '<em>Member Decl</em>'.
@@ -374,13 +374,13 @@ public interface DeviceModelingLanguageFactory extends EFactory
   SimpleSetLiteral createSimpleSetLiteral();
 
   /**
-   * Returns a new object of class '<em>Component</em>'.
+   * Returns a new object of class '<em>Feature</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Component</em>'.
+   * @return a new object of class '<em>Feature</em>'.
    * @generated
    */
-  Component createComponent();
+  Feature createFeature();
 
   /**
    * Returns a new object of class '<em>Data</em>'.

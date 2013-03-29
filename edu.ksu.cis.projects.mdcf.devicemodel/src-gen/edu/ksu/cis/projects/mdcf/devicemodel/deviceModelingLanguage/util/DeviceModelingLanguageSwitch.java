@@ -12,8 +12,6 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseFeatureT
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicLiteral;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BinaryExp;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component;
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintNat;
@@ -23,6 +21,8 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.EitherFeatureType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Exp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Feature;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvariant;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.InvariantDecl;
@@ -162,11 +162,11 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.COMPONENT_DECL:
+      case DeviceModelingLanguagePackage.FEATURE_DECL:
       {
-        ComponentDecl componentDecl = (ComponentDecl)theEObject;
-        T result = caseComponentDecl(componentDecl);
-        if (result == null) result = caseDecl(componentDecl);
+        FeatureDecl featureDecl = (FeatureDecl)theEObject;
+        T result = caseFeatureDecl(featureDecl);
+        if (result == null) result = caseDecl(featureDecl);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -282,7 +282,7 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
       {
         Device device = (Device)theEObject;
         T result = caseDevice(device);
-        if (result == null) result = caseComponentDecl(device);
+        if (result == null) result = caseFeatureDecl(device);
         if (result == null) result = caseDecl(device);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -438,12 +438,12 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DeviceModelingLanguagePackage.COMPONENT:
+      case DeviceModelingLanguagePackage.FEATURE:
       {
-        Component component = (Component)theEObject;
-        T result = caseComponent(component);
-        if (result == null) result = caseComponentDecl(component);
-        if (result == null) result = caseDecl(component);
+        Feature feature = (Feature)theEObject;
+        T result = caseFeature(feature);
+        if (result == null) result = caseFeatureDecl(feature);
+        if (result == null) result = caseDecl(feature);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -451,7 +451,7 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
       {
         Data data = (Data)theEObject;
         T result = caseData(data);
-        if (result == null) result = caseComponentDecl(data);
+        if (result == null) result = caseFeatureDecl(data);
         if (result == null) result = caseMModifier(data);
         if (result == null) result = caseDecl(data);
         if (result == null) result = defaultCase(theEObject);
@@ -461,7 +461,7 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
       {
         App app = (App)theEObject;
         T result = caseApp(app);
-        if (result == null) result = caseComponentDecl(app);
+        if (result == null) result = caseFeatureDecl(app);
         if (result == null) result = caseDecl(app);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -747,17 +747,17 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Component Decl</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Feature Decl</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Component Decl</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Feature Decl</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseComponentDecl(ComponentDecl object)
+  public T caseFeatureDecl(FeatureDecl object)
   {
     return null;
   }
@@ -1323,17 +1323,17 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Feature</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Component</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Feature</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseComponent(Component object)
+  public T caseFeature(Feature object)
   {
     return null;
   }

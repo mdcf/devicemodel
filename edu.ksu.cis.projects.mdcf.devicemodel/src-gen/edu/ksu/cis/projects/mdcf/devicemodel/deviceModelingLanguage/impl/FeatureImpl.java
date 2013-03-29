@@ -2,8 +2,8 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Feature;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -13,19 +13,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Component</b></em>'.
+ * An implementation of the model object '<em><b>Feature</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentImpl#isSchema <em>Schema</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ComponentImpl#isClass <em>Class</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureImpl#isSchema <em>Schema</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureImpl#isClass <em>Class</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ComponentImpl extends ComponentDeclImpl implements Component
+public class FeatureImpl extends FeatureDeclImpl implements Feature
 {
   /**
    * The default value of the '{@link #isSchema() <em>Schema</em>}' attribute.
@@ -72,7 +72,7 @@ public class ComponentImpl extends ComponentDeclImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ComponentImpl()
+  protected FeatureImpl()
   {
     super();
   }
@@ -85,7 +85,7 @@ public class ComponentImpl extends ComponentDeclImpl implements Component
   @Override
   protected EClass eStaticClass()
   {
-    return DeviceModelingLanguagePackage.Literals.COMPONENT;
+    return DeviceModelingLanguagePackage.Literals.FEATURE;
   }
 
   /**
@@ -108,7 +108,7 @@ public class ComponentImpl extends ComponentDeclImpl implements Component
     boolean oldSchema = schema;
     schema = newSchema;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.COMPONENT__SCHEMA, oldSchema, schema));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.FEATURE__SCHEMA, oldSchema, schema));
   }
 
   /**
@@ -131,7 +131,7 @@ public class ComponentImpl extends ComponentDeclImpl implements Component
     boolean oldClass = class_;
     class_ = newClass;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.COMPONENT__CLASS, oldClass, class_));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.FEATURE__CLASS, oldClass, class_));
   }
 
   /**
@@ -144,9 +144,9 @@ public class ComponentImpl extends ComponentDeclImpl implements Component
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.COMPONENT__SCHEMA:
+      case DeviceModelingLanguagePackage.FEATURE__SCHEMA:
         return isSchema();
-      case DeviceModelingLanguagePackage.COMPONENT__CLASS:
+      case DeviceModelingLanguagePackage.FEATURE__CLASS:
         return isClass();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -162,10 +162,10 @@ public class ComponentImpl extends ComponentDeclImpl implements Component
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.COMPONENT__SCHEMA:
+      case DeviceModelingLanguagePackage.FEATURE__SCHEMA:
         setSchema((Boolean)newValue);
         return;
-      case DeviceModelingLanguagePackage.COMPONENT__CLASS:
+      case DeviceModelingLanguagePackage.FEATURE__CLASS:
         setClass((Boolean)newValue);
         return;
     }
@@ -182,10 +182,10 @@ public class ComponentImpl extends ComponentDeclImpl implements Component
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.COMPONENT__SCHEMA:
+      case DeviceModelingLanguagePackage.FEATURE__SCHEMA:
         setSchema(SCHEMA_EDEFAULT);
         return;
-      case DeviceModelingLanguagePackage.COMPONENT__CLASS:
+      case DeviceModelingLanguagePackage.FEATURE__CLASS:
         setClass(CLASS_EDEFAULT);
         return;
     }
@@ -202,9 +202,9 @@ public class ComponentImpl extends ComponentDeclImpl implements Component
   {
     switch (featureID)
     {
-      case DeviceModelingLanguagePackage.COMPONENT__SCHEMA:
+      case DeviceModelingLanguagePackage.FEATURE__SCHEMA:
         return schema != SCHEMA_EDEFAULT;
-      case DeviceModelingLanguagePackage.COMPONENT__CLASS:
+      case DeviceModelingLanguagePackage.FEATURE__CLASS:
         return class_ != CLASS_EDEFAULT;
     }
     return super.eIsSet(featureID);
@@ -229,4 +229,4 @@ public class ComponentImpl extends ComponentDeclImpl implements Component
     return result.toString();
   }
 
-} //ComponentImpl
+} //FeatureImpl

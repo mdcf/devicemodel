@@ -111,12 +111,12 @@ public interface MultiplicityInvariant extends InvariantDecl
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' reference.
-   * @see #setType(ComponentDecl)
+   * @see #setType(FeatureDecl)
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getMultiplicityInvariant_Type()
    * @model
    * @generated
    */
-  ComponentDecl getType();
+  FeatureDecl getType();
 
   /**
    * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant#getType <em>Type</em>}' reference.
@@ -126,6 +126,6 @@ public interface MultiplicityInvariant extends InvariantDecl
    * @see #getType()
    * @generated
    */
-  void setType(ComponentDecl value);
+  void setType(FeatureDecl value);
 
 } // MultiplicityInvariant

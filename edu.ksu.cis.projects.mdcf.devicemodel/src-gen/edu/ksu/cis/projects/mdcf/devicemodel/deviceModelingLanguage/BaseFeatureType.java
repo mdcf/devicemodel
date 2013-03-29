@@ -25,7 +25,7 @@ public interface BaseFeatureType extends FeatureType
 {
   /**
    * Returns the value of the '<em><b>Components</b></em>' reference list.
-   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl}.
+   * The list contents are of type {@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureDecl}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Components</em>' reference list isn't clear,
@@ -37,7 +37,7 @@ public interface BaseFeatureType extends FeatureType
    * @model
    * @generated
    */
-  EList<ComponentDecl> getComponents();
+  EList<FeatureDecl> getComponents();
 
   /**
    * Returns the value of the '<em><b>Members</b></em>' containment reference list.

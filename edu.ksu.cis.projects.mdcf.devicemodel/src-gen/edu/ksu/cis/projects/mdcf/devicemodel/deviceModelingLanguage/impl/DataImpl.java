@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class DataImpl extends ComponentDeclImpl implements Data
+public class DataImpl extends FeatureDeclImpl implements Data
 {
   /**
    * <!-- begin-user-doc -->
