@@ -163,11 +163,14 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Assignment cClassAssignment_0_0_2_1 = (Assignment)cAlternatives_0_0_2.eContents().get(1);
 		private final Keyword cClassClassKeyword_0_0_2_1_0 = (Keyword)cClassAssignment_0_0_2_1.eContents().get(0);
 		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
-		private final Keyword cDeviceKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
-		private final Action cDeviceAction_0_1_1 = (Action)cGroup_0_1.eContents().get(1);
+		private final Keyword cDataKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
+		private final Action cDataAction_0_1_1 = (Action)cGroup_0_1.eContents().get(1);
 		private final Group cGroup_0_2 = (Group)cAlternatives_0.eContents().get(2);
-		private final Keyword cAppKeyword_0_2_0 = (Keyword)cGroup_0_2.eContents().get(0);
-		private final Action cAppAction_0_2_1 = (Action)cGroup_0_2.eContents().get(1);
+		private final Keyword cDeviceKeyword_0_2_0 = (Keyword)cGroup_0_2.eContents().get(0);
+		private final Action cDeviceAction_0_2_1 = (Action)cGroup_0_2.eContents().get(1);
+		private final Group cGroup_0_3 = (Group)cAlternatives_0.eContents().get(3);
+		private final Keyword cAppKeyword_0_3_0 = (Keyword)cGroup_0_3.eContents().get(0);
+		private final Action cAppAction_0_3_1 = (Action)cGroup_0_3.eContents().get(1);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
@@ -197,17 +200,17 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Keyword cRightCurlyBracketKeyword_4_5 = (Keyword)cGroup_4.eContents().get(5);
 		
 		//ComponentDecl:
-		//	("component" {Component} (schema?="schema" | class?="class")? | "device" {Device} | "app" {App}) name=ID ("extends"
-		//	supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])*)? ("{" members+=MemberDecl* "}")? ("requires" "{"
-		//	devices+=Device* assigns+=Assignment* exp=Exp "}")?;
+		//	("component" {Component} (schema?="schema" | class?="class")? | "data" {Data} | "device" {Device} | "app" {App})
+		//	name=ID ("extends" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])*)? ("{" members+=MemberDecl* "}")?
+		//	("requires" "{" devices+=Device* assigns+=Assignment* exp=Exp "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//("component" {Component} (schema?="schema" | class?="class")? | "device" {Device} | "app" {App}) name=ID ("extends"
-		//supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])*)? ("{" members+=MemberDecl* "}")? ("requires" "{"
+		//("component" {Component} (schema?="schema" | class?="class")? | "data" {Data} | "device" {Device} | "app" {App}) name=ID
+		//("extends" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])*)? ("{" members+=MemberDecl* "}")? ("requires" "{"
 		//devices+=Device* assigns+=Assignment* exp=Exp "}")?
 		public Group getGroup() { return cGroup; }
 
-		//"component" {Component} (schema?="schema" | class?="class")? | "device" {Device} | "app" {App}
+		//"component" {Component} (schema?="schema" | class?="class")? | "data" {Data} | "device" {Device} | "app" {App}
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//"component" {Component} (schema?="schema" | class?="class")?
@@ -234,23 +237,32 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//"class"
 		public Keyword getClassClassKeyword_0_0_2_1_0() { return cClassClassKeyword_0_0_2_1_0; }
 
-		//"device" {Device}
+		//"data" {Data}
 		public Group getGroup_0_1() { return cGroup_0_1; }
 
-		//"device"
-		public Keyword getDeviceKeyword_0_1_0() { return cDeviceKeyword_0_1_0; }
+		//"data"
+		public Keyword getDataKeyword_0_1_0() { return cDataKeyword_0_1_0; }
 
-		//{Device}
-		public Action getDeviceAction_0_1_1() { return cDeviceAction_0_1_1; }
+		//{Data}
+		public Action getDataAction_0_1_1() { return cDataAction_0_1_1; }
 
-		//"app" {App}
+		//"device" {Device}
 		public Group getGroup_0_2() { return cGroup_0_2; }
 
+		//"device"
+		public Keyword getDeviceKeyword_0_2_0() { return cDeviceKeyword_0_2_0; }
+
+		//{Device}
+		public Action getDeviceAction_0_2_1() { return cDeviceAction_0_2_1; }
+
+		//"app" {App}
+		public Group getGroup_0_3() { return cGroup_0_3; }
+
 		//"app"
-		public Keyword getAppKeyword_0_2_0() { return cAppKeyword_0_2_0; }
+		public Keyword getAppKeyword_0_3_0() { return cAppKeyword_0_3_0; }
 
 		//{App}
-		public Action getAppAction_0_2_1() { return cAppAction_0_2_1; }
+		public Action getAppAction_0_3_1() { return cAppAction_0_3_1; }
 
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -2640,9 +2652,9 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//ComponentDecl:
-	//	("component" {Component} (schema?="schema" | class?="class")? | "device" {Device} | "app" {App}) name=ID ("extends"
-	//	supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])*)? ("{" members+=MemberDecl* "}")? ("requires" "{"
-	//	devices+=Device* assigns+=Assignment* exp=Exp "}")?;
+	//	("component" {Component} (schema?="schema" | class?="class")? | "data" {Data} | "device" {Device} | "app" {App})
+	//	name=ID ("extends" supers+=[ComponentDecl] ("with" supers+=[ComponentDecl])*)? ("{" members+=MemberDecl* "}")?
+	//	("requires" "{" devices+=Device* assigns+=Assignment* exp=Exp "}")?;
 	public ComponentDeclElements getComponentDeclAccess() {
 		return (pComponentDecl != null) ? pComponentDecl : (pComponentDecl = new ComponentDeclElements());
 	}

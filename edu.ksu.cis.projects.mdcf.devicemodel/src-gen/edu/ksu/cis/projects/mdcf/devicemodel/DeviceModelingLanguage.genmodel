@@ -127,6 +127,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Component/schema"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Component/class"/>
     </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Data"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//App"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Const">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Const/schema"/>

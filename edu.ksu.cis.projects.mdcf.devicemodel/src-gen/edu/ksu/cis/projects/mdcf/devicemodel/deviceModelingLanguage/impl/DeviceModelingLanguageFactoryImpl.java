@@ -17,6 +17,7 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDec
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintNat;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Data;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Decl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguageFactory;
@@ -170,6 +171,7 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.SIMPLE_SEQ_LITERAL: return createSimpleSeqLiteral();
       case DeviceModelingLanguagePackage.SIMPLE_SET_LITERAL: return createSimpleSetLiteral();
       case DeviceModelingLanguagePackage.COMPONENT: return createComponent();
+      case DeviceModelingLanguagePackage.DATA: return createData();
       case DeviceModelingLanguagePackage.APP: return createApp();
       case DeviceModelingLanguagePackage.CONST: return createConst();
       case DeviceModelingLanguagePackage.VAL: return createVal();
@@ -630,6 +632,17 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     ComponentImpl component = new ComponentImpl();
     return component;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Data createData()
+  {
+    DataImpl data = new DataImpl();
+    return data;
   }
 
   /**

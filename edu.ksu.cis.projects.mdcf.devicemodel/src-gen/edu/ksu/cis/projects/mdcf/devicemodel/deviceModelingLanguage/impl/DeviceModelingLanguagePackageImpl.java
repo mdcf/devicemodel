@@ -17,6 +17,7 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDec
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintNat;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Data;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Decl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguageFactory;
@@ -358,6 +359,13 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * @generated
    */
   private EClass componentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1543,6 +1551,16 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getData()
+  {
+    return dataEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getApp()
   {
     return appEClass;
@@ -2309,6 +2327,8 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     createEAttribute(componentEClass, COMPONENT__SCHEMA);
     createEAttribute(componentEClass, COMPONENT__CLASS);
 
+    dataEClass = createEClass(DATA);
+
     appEClass = createEClass(APP);
 
     constEClass = createEClass(CONST);
@@ -2451,6 +2471,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     simpleSeqLiteralEClass.getESuperTypes().add(this.getSimpleLiteral());
     simpleSetLiteralEClass.getESuperTypes().add(this.getSimpleLiteral());
     componentEClass.getESuperTypes().add(this.getComponentDecl());
+    dataEClass.getESuperTypes().add(this.getComponentDecl());
     appEClass.getESuperTypes().add(this.getComponentDecl());
     constEClass.getESuperTypes().add(this.getModifier());
     valEClass.getESuperTypes().add(this.getModifier());
@@ -2611,6 +2632,8 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComponent_Schema(), ecorePackage.getEBoolean(), "schema", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getComponent_Class(), ecorePackage.getEBoolean(), "class", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(appEClass, App.class, "App", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -17,6 +17,7 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDec
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintNat;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Data;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Decl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
@@ -435,6 +436,15 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         T result = caseComponent(component);
         if (result == null) result = caseComponentDecl(component);
         if (result == null) result = caseDecl(component);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.DATA:
+      {
+        Data data = (Data)theEObject;
+        T result = caseData(data);
+        if (result == null) result = caseComponentDecl(data);
+        if (result == null) result = caseDecl(data);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1295,6 +1305,22 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseComponent(Component object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseData(Data object)
   {
     return null;
   }

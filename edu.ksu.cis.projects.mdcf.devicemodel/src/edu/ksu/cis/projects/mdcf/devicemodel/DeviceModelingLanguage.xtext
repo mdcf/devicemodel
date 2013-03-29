@@ -22,6 +22,7 @@ TypeDecl:            'type' name=ID
                      )?;
 
 ComponentDecl:       ( 'component' {Component} (schema?='schema' | class?='class')?   
+                     | 'data'      {Data}  
                      | 'device'    {Device}  
                      | 'app'       {App}       ) 
                      name=ID 

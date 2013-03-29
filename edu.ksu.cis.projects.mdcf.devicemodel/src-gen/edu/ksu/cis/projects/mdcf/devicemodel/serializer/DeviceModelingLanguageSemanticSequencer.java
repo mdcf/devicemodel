@@ -14,6 +14,7 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BinaryExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Data;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.EitherFeatureType;
@@ -152,6 +153,13 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 			case DeviceModelingLanguagePackage.CONSTRAINT_EXP:
 				if(context == grammarAccess.getConstraintExpRule()) {
 					sequence_ConstraintExp(context, (ConstraintExp) semanticObject); 
+					return; 
+				}
+				else break;
+			case DeviceModelingLanguagePackage.DATA:
+				if(context == grammarAccess.getComponentDeclRule() ||
+				   context == grammarAccess.getDeclRule()) {
+					sequence_ComponentDecl(context, (Data) semanticObject); 
 					return; 
 				}
 				else break;
@@ -555,6 +563,15 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	 *     )
 	 */
 	protected void sequence_ComponentDecl(EObject context, Component semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID (supers+=[ComponentDecl|ID] supers+=[ComponentDecl|ID]*)? members+=MemberDecl* (devices+=Device* assigns+=Assignment* exp=Exp)?)
+	 */
+	protected void sequence_ComponentDecl(EObject context, Data semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
