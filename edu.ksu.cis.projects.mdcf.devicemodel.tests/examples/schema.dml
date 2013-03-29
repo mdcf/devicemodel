@@ -1,39 +1,357 @@
-component ICEPulseOx extends ICEDevice {
-  override 'type = DeviceType '(IEEE ... Pulse Ox)
+// Notes for Robby:
+// It seems like we might want to declare each attribute as either const, val, or var
+// Any information that should be the same for all devices of a certain class should get specified as
+// a class const
+
+//=======================================================================================================
+//  B a s e    T y p e s 
+//=======================================================================================================
+
+type Any
+type Number
+type Time
+type Int extends Number
+type Nat extends Int
+type DeviceId 
+type IEEEDeviceType
+type IEEEPhysioParameterType
+type IEEEUnit
+type String
+type Boolean
+type MeasurementStatus
+
+//=======================================================================================================
+//  C o m p o u n d    T y p e s 
+//=======================================================================================================
+
+
+component Range {
+  const min : Number
+  const max : Number
+
+  inv (min <= max)
+}
+
+component IntRange extends Range {
+  const min : Int
+  const max : Int
+}
+
+component NatRange extends Range {
+  const min : Nat
+  const max : Nat
+}
+
+//=======================================================================================================
+//  I C E   P r i m a r y     S c h e m a s 
+//=======================================================================================================
+
+// === I C E   D e v i c e  ===
+
+component ICEDevice {
+  // instance attribute
+  const id          : DeviceId  // UUID/GUID
+  // class attribute
+  const 'type       : IEEEDeviceType // 11073 Nomenclature
   
-  inv 1..* pysioParams : ICESpO2
-  inv 1..* pysioParams : ICEPulseRate
+  // information about the manfacturer make / model of the device
+  manufacturerModel    : ICEManufacturerModel
+  // physiological parameters provided for the device
+    // cardinality constraint: set may be empty
+  physioParams       : Set[ICEPhysioParameter]
+  // device level alarms / alerts
+  // cardinality constraint: set may be empty
+  alerts             : Set[ICEAlert]
+
+  // ... etc
 }
 
-component ICESpO2 extends ICEPhysioParameter {
-  override ppType = PhysioParameterType'(MDC_PULS_OXIM_SAT_O2)
-  override unit            = Unit'(MDC_DIM_PERCENT)
+// === I C E   M a n u f a c t u r e r    I n f o r m a t i o n ===
+
+component ICEManufacturerModel { 
+  // instance constant, indicates the manufacturer model number of the device
+  const modelNumber : String 
+  // read-only setting on the device.  This might also be specified as an instance constant, but Eugene
+  // argued that we may change the software version without change the device model.  In such a situation,
+  // the value should not be constant.
+  val versionNumber : String
+  // security credentials used to authenticate the device when it associates to the ICE.
+  credentials : Set[ICESecurity] // credentials
+}
+
+// === I C E   P h y s i o l o g i c a l    P a r a m e t e r  ===
+
+component ICEPhysioParameter {
+  // class constant
+  const physioParameterType : IEEEPhysioParameterType // Nomenclature
+  // class constant
+  const unit                : IEEEUnit  // Nomenclature
+
+  parameterValueStructure    : Metric //attribute that expresses the structure of the value of this parameter. (numeric, rt-sa, and etc.)
+  								 //it can also express context information. (e.g. time stamp) 
+
+  // cardinality constraint: set must have a least one element drawn from ClientInitiated or Periodic
+  exchanges             : Set[ICEDataExchange]
+
+  // alarms/alerts associated with this physiological parameter
+  // cardinality constraint: set may be empty -- alerts are optional.
+  alerts                : Set[ICEAlert] 
   
-  // add exchanges
+  // Questions:
+  //   - where should the ICE settings go that might configure properties of this parameter.  It seems like inside of this structure itself
+  //     might be the appropriate place.
+  //   - where should the security settings go?  If settings go in this structure, then we might be in a position where we have to specify
+  //     security properties for both things we read and things we write.
 }
 
-component ICEPulseRate extends ICEPhysioParameter {
-  override ppType = PhysioParameterType'(MDC_PULS_OXIM_PULS_RATE)
-  override unit        = Unit'(MDC_DIM_BEAT_PER_MIN)
+// === I C E    D a t a    E x c h a n g e    P a t t e r n s ===
+
+// Data exchanges specify that patterns of interaction between clients and providers of device model
+// when moving a value from the provider to a client (e.g., reading a value provided by a device)
+//
+
+component ICEDataExchange {} // roughly corresponds to QUIC transactions
+
+component ProviderInitiated extends ICEDataExchange {}
+
+component ClientInitiated extends ICEDataExchange {
+  // instance const, most likely, but might be a class constant.
+  // Specifies the maximum rate (in terms of requests per second) at which client can request a value from a device 
+  const class maxRetrievalRate : Nat 
 }
 
-component ICEBloodPressure extends ICEDevice {
-  override 'type = DeviceType '(IEEE ... Blood Pressure)
-
-  inv 1..* pysioParams : ICEBloodPressureParam
+component Periodic extends ProviderInitiated {
+  // instance const, most likely, but might be a class constant
+  // The provider will publish at a rate between the upper/lower bounds of IntRange per Rate_Unit
+  // Note: This structure matches AADL's Communication_Properties::Output_Rate (and Input_Rate)
+  // For simplicity, for earlier versions of this work, we might want to assume Rate_Unit is standardized to
+  // PerSecond and Rate_Distribution to Fixed.
+  Const Class rateRange : NatRange  //
+  // instance const, most likely, but might be a class constant
+  // Rate_Unit => PerSecond
+  // instance const, most likely, but might be a class constant
+  // Rate_Distribution => Fixed
 }
 
-component ICEBloodPressureParam extends ICEPhysioParameter {
-  override systolic    = PhysioParameterType'(MDC_PRESS_BLD_NONINV_SYS)
-  override diastolic   = PhysioParameterType'(MDC_PRESS_BLD_NONINV_DIA)
-  override mean   = PhysioParameterType'(MDC_PRESS_BLD_NONINV_MEAN) 
-  override unit        = Unit'(MDC_DIM_MMHG)
+component Episodic extends ProviderInitiated {
+  // instance const, most likely, but might be a class constant.
+  // Specifies the maximum rate (in terms of requests per second) at which the provider may publish a value
+  const class maxPublishRate : Nat 
 }
 
-component ICEMultiMonitor extends ICEDevice {
-  override 'type = DeviceType '(IEEE ... MultiMonitor)
+//=======================================================================================================
+//  I C E   M e t r i c    H i e r a r c h y    (adapted from 11073)
+//=======================================================================================================
+
+// From 11073 DIM documentation
+// The Metric object is the base class for all objects representing direct and derived, quantitative and 
+// qualitative biosignal measurement, status, and context data.
+// Specializations of the Metric object are provided to deal with common representations 
+// (e.g., single values, array data, status indications) and presentations (e.g., on a display) of measurement data.
+// As a base class, the Metric object cannot be instantiated.
+
+component ICEMetric {
+}
+
+// Not sure we need the extra level of indirection provided by this declaration -- JMH
+component MetricAttribute {
+	
+}
+
+component MetricTimeStampAttributes extends MetricAttribute{
+	val sec       : Int
+	val min       : Int
+	val hour      : Int
+	val mday      : Int
+	val mon       : Int
+	val year      : Int
+	val wday      : Int
+	val yday      : Int
+	val isdst     : Int
+}
+
+component StatusAttributes extends MetricAttribute{
+	val status    : MeasurementStatus //wanted to express an enum but not sure how to do it
+}
+
+// --- quote From 11073 DIM ---
+// The Numeric object represents numerical measurements and status information, e.g., amplitude measures, counters.
+// Example: A heart rate measurement is represented by a Numeric object.
+//
+// NOTE-A: compound Numeric object is defined as an efficient model, for example, for arterial blood pressure, 
+// which usually has three associated values (i.e., systolic, diastolic, mean). The availability of multiple values in a single 
+// Numeric (or other Metric) object can be indicated in a special structure attribute in the Metric object.
+// --- end quote ---
+//
+// The last remark above indicates that we need to consider how we will represent compound data.  The above example sounds like
+// a record or tuple, but more info is needed.
+//
+
+// MySpO2 : ICEPhysioParameter
+//  ClientInitiated
+//  
+// ObsValue  mySpO2.get (  )
   
-  inv 1..* pysioParams : ICESpO2
-  inv 1..* pysioParams : ICEPulseRate
-  inv 1..* pysioParams : ICEBloodPressureParam
+component Numeric extends Metric {
+  // note: you should be able to declare this to be a "val" to indicate this are things to read
+  Data observedValue : ObsValue   // Analogous to NuObsValue in 11073 Numeric (see p. 56 of DIM spec)
+  // Do we want to allow this high degree of polymorphism on the attributes? 
+  // Why not name them directly and avoid the use of the "Set"? -- JMH
+  attributes      : Set[MetricAttribute]   // Note: attributes mentioned here would be static (contrast with attributes mentioned in obs val context)
+  // place holder for eventual capability for specifying an invariant on the value.
+  range           : Range
 }
+
+data ICEMessageContext {
+	val measurementTaken : ICETimeStamp
+	val messageConstructed : ICETimeStamp
+}
+
+// Analogous to NuObsValue type on p. 57 of DIM spec.   Note that the NuObsValue structure includes other information
+// like the nomenclature tags for the physiological parameter and units.  But we don't see a need to report those at
+// run-time because that info is already included in the meta-data.
+// This component type expresses the structure of the message reporting on this physiological parameter, and would be 
+// expressed using something like CORBA IDL
+data ObsValue extends ICEMessageContext  {
+  val value : Any             // The actual represent of number to be reported 
+  // add time stamp 
+ /* val */ context : ObsValueContext  // structure to describe format of other attributes reported at run-time
+}
+
+// this would contain time stamp and other information accompanying the parameter
+// Is this where information analogous to the 11073 MeasurementStatus record goes? (see p. 55 of DIM spec) 
+component ObsValueContext  
+{}
+
+// --- quote From 11073 DIM ---
+// The Sample Array object is the base class for metrics that have a graphical, curve type presentation and, 
+// therefore, have their observation values reported as arrays of data points by communicating systems.
+// As a base class, the Sample Array object cannot be instantiated.
+// --- end quote ---
+
+component SampleArray extends Metric {
+  val values      : Seq[Number]
+  attributes      : Set[MetricAttribute]
+}
+
+// --- quote From 11073 DIM ---
+// The Real Time Sample Array object is a sample array that represents a real-time continuous waveform. 
+// As such, it has special requirements in communicating systems, e.g., processing power, low latency, high band- width. 
+// Therefore, it requires the definition of a specialized object.
+//
+// Example: An electrocardiogram (ECG) real-time wave is represented as a Real Time Sample Array object.
+// --- end quote ---
+
+component RealTimeSA extends SampleArray {
+  // implementation to be completed		
+}
+
+// --- quote From 11073 DIM ---
+// The Time Sample Array object is a sample array that represents noncontinuous waveforms (i.e., a wave snip- pet). 
+// Within a single observation (i.e., a single array of sample values), samples are equidistant in time.
+//
+// Example: Software for ST segment analysis may use the Time Sample Array object to represent snippets of 
+// ECG real-time waves that contain only a single QRS complex. Within this wave snippet, the software can locate the 
+// ST measurement points. It generates a new snippet, for example, every 15 s.
+// --- end quote ---
+
+component TimeSA extends SampleArray {
+  val values      : Seq[Number]
+  attributes      : Set[MetricAttribute]
+  // implementation to be completed	
+}
+
+// --- quote From 11073 DIM ---
+// The Distribution Sample Array object is a sample array that represents linear value distributions in the form of 
+// arrays containing scaled sample values. The index of a value within an observation array denotes a spatial value, 
+// not a time point.
+//
+// Example: An electroencephalogram (EEG) application may use a Fourier transformation to derive a frequency distribution 
+// (i.e., a spectrum) from the EEG signal. It then uses the Distribution Sample Array object to represent that spectrum in the MDIB.
+// --- end quote ---
+component DistributionSA extends SampleArray {
+  // implementation to be completed	
+}
+
+//=======================================================================================================
+//  I C E   A l e r t     H i e r a r c h y
+//
+//  Note: An alert structure could be patterned after 11073, but we have not assessed the usefulness of that yet.
+//  A very simple alert structure is given below.    
+//=======================================================================================================
+
+component ICEAlert {
+  
+}
+
+component RangeValueAlert extends ICEAlert with RangeSetting {
+}
+
+component TargetValueAlert extends ICEAlert with ValueSetting {
+  
+}
+
+component ValueChangeAlert extends ICEAlert {
+  
+}
+
+component ComplexAlert extends ICEAlert {
+  const cond : Boolean
+}
+
+
+//=======================================================================================================
+//  I C E   D e v i c e    S e t t i n g
+//
+//  Defines settings on the provider that may be read or written by the client.
+//=======================================================================================================
+
+component ICEDeviceSetting {
+  security : Option[ICESecurity]
+}
+
+
+component RangeSetting extends ICEDeviceSetting {
+  var min : Number
+  var max : Number
+  
+  inv (min <= max)
+}
+
+component IntRangeSetting extends RangeSetting {
+  var min : Int
+  var max : Int
+  
+  inv (min <= max)
+}
+
+component ValueSetting extends ICEDeviceSetting {
+  var value : Any
+}
+
+//=======================================================================================================
+//  I C E   D e v i c e    S t a t u s   
+//
+//  Defines values on the device that are part of the device's state, and thus may vary during association.
+//  Such values may be read or written by the client.
+//=======================================================================================================
+
+component ICEDeviceStatus {
+  security : Option[ICESecurity]
+  
+  alerts : Set[ICEAlert]
+}
+
+// Not sure if this should be defined as a schema.  This seems to me to be an example of a status value that
+// would be introduced at the class level.
+component BatteryLevelStatus extends ICEDeviceStatus {
+  val level : Int
+  
+  inv ((Int'(0) <= level) && (level <= Int'(100)))
+}
+
+component ICESecurity {
+  // read/write acl
+}
+
+
