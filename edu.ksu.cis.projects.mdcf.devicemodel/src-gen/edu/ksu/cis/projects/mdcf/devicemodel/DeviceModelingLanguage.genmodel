@@ -128,12 +128,14 @@
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Feature">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Feature/schema"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Feature/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Feature/instance"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Data"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//App"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Const">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Const/schema"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Const/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Const/instance"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Val"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Var"/>

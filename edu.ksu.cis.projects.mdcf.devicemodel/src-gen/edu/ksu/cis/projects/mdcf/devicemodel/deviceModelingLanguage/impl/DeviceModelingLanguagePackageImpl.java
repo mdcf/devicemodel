@@ -1579,6 +1579,16 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getFeature_Instance()
+  {
+    return (EAttribute)featureEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getData()
   {
     return dataEClass;
@@ -1622,6 +1632,16 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
   public EAttribute getConst_Class()
   {
     return (EAttribute)constEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConst_Instance()
+  {
+    return (EAttribute)constEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2357,6 +2377,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     featureEClass = createEClass(FEATURE);
     createEAttribute(featureEClass, FEATURE__SCHEMA);
     createEAttribute(featureEClass, FEATURE__CLASS);
+    createEAttribute(featureEClass, FEATURE__INSTANCE);
 
     dataEClass = createEClass(DATA);
 
@@ -2365,6 +2386,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     constEClass = createEClass(CONST);
     createEAttribute(constEClass, CONST__SCHEMA);
     createEAttribute(constEClass, CONST__CLASS);
+    createEAttribute(constEClass, CONST__INSTANCE);
 
     valEClass = createEClass(VAL);
 
@@ -2671,6 +2693,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFeature_Schema(), ecorePackage.getEBoolean(), "schema", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFeature_Class(), ecorePackage.getEBoolean(), "class", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFeature_Instance(), ecorePackage.getEBoolean(), "instance", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2679,6 +2702,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEClass(constEClass, Const.class, "Const", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getConst_Schema(), ecorePackage.getEBoolean(), "schema", null, 0, 1, Const.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getConst_Class(), ecorePackage.getEBoolean(), "class", null, 0, 1, Const.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConst_Instance(), ecorePackage.getEBoolean(), "instance", null, 0, 1, Const.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(valEClass, Val.class, "Val", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

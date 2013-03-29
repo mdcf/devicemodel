@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ConstImpl#isSchema <em>Schema</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ConstImpl#isClass <em>Class</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ConstImpl#isInstance <em>Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +67,26 @@ public class ConstImpl extends ModifierImpl implements Const
    * @ordered
    */
   protected boolean class_ = CLASS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isInstance() <em>Instance</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isInstance()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean INSTANCE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isInstance() <em>Instance</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isInstance()
+   * @generated
+   * @ordered
+   */
+  protected boolean instance = INSTANCE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -139,6 +160,29 @@ public class ConstImpl extends ModifierImpl implements Const
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isInstance()
+  {
+    return instance;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setInstance(boolean newInstance)
+  {
+    boolean oldInstance = instance;
+    instance = newInstance;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.CONST__INSTANCE, oldInstance, instance));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -148,6 +192,8 @@ public class ConstImpl extends ModifierImpl implements Const
         return isSchema();
       case DeviceModelingLanguagePackage.CONST__CLASS:
         return isClass();
+      case DeviceModelingLanguagePackage.CONST__INSTANCE:
+        return isInstance();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -167,6 +213,9 @@ public class ConstImpl extends ModifierImpl implements Const
         return;
       case DeviceModelingLanguagePackage.CONST__CLASS:
         setClass((Boolean)newValue);
+        return;
+      case DeviceModelingLanguagePackage.CONST__INSTANCE:
+        setInstance((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -188,6 +237,9 @@ public class ConstImpl extends ModifierImpl implements Const
       case DeviceModelingLanguagePackage.CONST__CLASS:
         setClass(CLASS_EDEFAULT);
         return;
+      case DeviceModelingLanguagePackage.CONST__INSTANCE:
+        setInstance(INSTANCE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -206,6 +258,8 @@ public class ConstImpl extends ModifierImpl implements Const
         return schema != SCHEMA_EDEFAULT;
       case DeviceModelingLanguagePackage.CONST__CLASS:
         return class_ != CLASS_EDEFAULT;
+      case DeviceModelingLanguagePackage.CONST__INSTANCE:
+        return instance != INSTANCE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -225,6 +279,8 @@ public class ConstImpl extends ModifierImpl implements Const
     result.append(schema);
     result.append(", class: ");
     result.append(class_);
+    result.append(", instance: ");
+    result.append(instance);
     result.append(')');
     return result.toString();
   }

@@ -89,6 +89,9 @@
             <elements xsi:type="xtext:Assignment" feature="class" operator="?=">
               <terminal xsi:type="xtext:Keyword" value="class"/>
             </elements>
+            <elements xsi:type="xtext:Assignment" feature="instance" operator="?=">
+              <terminal xsi:type="xtext:Keyword" value="instance"/>
+            </elements>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group">
@@ -226,6 +229,9 @@
           <elements xsi:type="xtext:Assignment" feature="class" operator="?=">
             <terminal xsi:type="xtext:Keyword" value="class"/>
           </elements>
+          <elements xsi:type="xtext:Assignment" feature="instance" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="instance"/>
+          </elements>
         </elements>
       </elements>
       <elements xsi:type="xtext:Group">
@@ -289,6 +295,9 @@
           </elements>
           <elements xsi:type="xtext:Assignment" feature="class" operator="?=">
             <terminal xsi:type="xtext:Keyword" value="Class"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="instance" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="Instance"/>
           </elements>
         </elements>
       </elements>

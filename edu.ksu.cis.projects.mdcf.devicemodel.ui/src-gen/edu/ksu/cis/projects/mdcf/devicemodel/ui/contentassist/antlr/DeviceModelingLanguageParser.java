@@ -171,6 +171,7 @@ public class DeviceModelingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeDeclAccess().getSupersAssignment_2_2_1(), "rule__TypeDecl__SupersAssignment_2_2_1");
 					put(grammarAccess.getFeatureDeclAccess().getSchemaAssignment_0_0_2_0(), "rule__FeatureDecl__SchemaAssignment_0_0_2_0");
 					put(grammarAccess.getFeatureDeclAccess().getClassAssignment_0_0_2_1(), "rule__FeatureDecl__ClassAssignment_0_0_2_1");
+					put(grammarAccess.getFeatureDeclAccess().getInstanceAssignment_0_0_2_2(), "rule__FeatureDecl__InstanceAssignment_0_0_2_2");
 					put(grammarAccess.getFeatureDeclAccess().getNameAssignment_1(), "rule__FeatureDecl__NameAssignment_1");
 					put(grammarAccess.getFeatureDeclAccess().getSupersAssignment_2_1(), "rule__FeatureDecl__SupersAssignment_2_1");
 					put(grammarAccess.getFeatureDeclAccess().getSupersAssignment_2_2_1(), "rule__FeatureDecl__SupersAssignment_2_2_1");
@@ -185,11 +186,13 @@ public class DeviceModelingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAttrDeclAccess().getLiteralAssignment_2_1_1(), "rule__AttrDecl__LiteralAssignment_2_1_1");
 					put(grammarAccess.getModifierAccess().getSchemaAssignment_0_2_0(), "rule__Modifier__SchemaAssignment_0_2_0");
 					put(grammarAccess.getModifierAccess().getClassAssignment_0_2_1(), "rule__Modifier__ClassAssignment_0_2_1");
+					put(grammarAccess.getModifierAccess().getInstanceAssignment_0_2_2(), "rule__Modifier__InstanceAssignment_0_2_2");
 					put(grammarAccess.getSubMemberDeclAccess().getModifierAssignment_0(), "rule__SubMemberDecl__ModifierAssignment_0");
 					put(grammarAccess.getSubMemberDeclAccess().getNameAssignment_1(), "rule__SubMemberDecl__NameAssignment_1");
 					put(grammarAccess.getSubMemberDeclAccess().getTypeAssignment_3(), "rule__SubMemberDecl__TypeAssignment_3");
 					put(grammarAccess.getMModifierAccess().getSchemaAssignment_0_2_0(), "rule__MModifier__SchemaAssignment_0_2_0");
 					put(grammarAccess.getMModifierAccess().getClassAssignment_0_2_1(), "rule__MModifier__ClassAssignment_0_2_1");
+					put(grammarAccess.getMModifierAccess().getInstanceAssignment_0_2_2(), "rule__MModifier__InstanceAssignment_0_2_2");
 					put(grammarAccess.getAssignmentAccess().getNameAssignment_0(), "rule__Assignment__NameAssignment_0");
 					put(grammarAccess.getAssignmentAccess().getExpAssignment_2(), "rule__Assignment__ExpAssignment_2");
 					put(grammarAccess.getReportAccess().getNameAssignment_0(), "rule__Report__NameAssignment_0");

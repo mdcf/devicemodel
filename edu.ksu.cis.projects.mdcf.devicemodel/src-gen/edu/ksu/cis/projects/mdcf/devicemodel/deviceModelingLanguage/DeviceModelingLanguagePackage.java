@@ -1438,13 +1438,22 @@ public interface DeviceModelingLanguagePackage extends EPackage
   int FEATURE__CLASS = FEATURE_DECL_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Instance</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE__INSTANCE = FEATURE_DECL_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Feature</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE_FEATURE_COUNT = FEATURE_DECL_FEATURE_COUNT + 2;
+  int FEATURE_FEATURE_COUNT = FEATURE_DECL_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DataImpl <em>Data</em>}' class.
@@ -1621,13 +1630,22 @@ public interface DeviceModelingLanguagePackage extends EPackage
   int CONST__CLASS = MODIFIER_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Instance</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONST__INSTANCE = MODIFIER_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Const</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONST_FEATURE_COUNT = MODIFIER_FEATURE_COUNT + 2;
+  int CONST_FEATURE_COUNT = MODIFIER_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ValImpl <em>Val</em>}' class.
@@ -3434,6 +3452,17 @@ public interface DeviceModelingLanguagePackage extends EPackage
   EAttribute getFeature_Class();
 
   /**
+   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Feature#isInstance <em>Instance</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Instance</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Feature#isInstance()
+   * @see #getFeature()
+   * @generated
+   */
+  EAttribute getFeature_Instance();
+
+  /**
    * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Data <em>Data</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3484,6 +3513,17 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    */
   EAttribute getConst_Class();
+
+  /**
+   * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const#isInstance <em>Instance</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Instance</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const#isInstance()
+   * @see #getConst()
+   * @generated
+   */
+  EAttribute getConst_Instance();
 
   /**
    * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Val <em>Val</em>}'.
@@ -4942,6 +4982,14 @@ public interface DeviceModelingLanguagePackage extends EPackage
     EAttribute FEATURE__CLASS = eINSTANCE.getFeature_Class();
 
     /**
+     * The meta object literal for the '<em><b>Instance</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FEATURE__INSTANCE = eINSTANCE.getFeature_Instance();
+
+    /**
      * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DataImpl <em>Data</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4986,6 +5034,14 @@ public interface DeviceModelingLanguagePackage extends EPackage
      * @generated
      */
     EAttribute CONST__CLASS = eINSTANCE.getConst_Class();
+
+    /**
+     * The meta object literal for the '<em><b>Instance</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONST__INSTANCE = eINSTANCE.getConst_Instance();
 
     /**
      * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ValImpl <em>Val</em>}' class.

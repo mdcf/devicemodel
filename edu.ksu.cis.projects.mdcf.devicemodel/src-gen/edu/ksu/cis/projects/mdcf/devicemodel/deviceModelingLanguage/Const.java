@@ -13,6 +13,7 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const#isSchema <em>Schema</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const#isClass <em>Class</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const#isInstance <em>Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,5 +74,31 @@ public interface Const extends Modifier, MModifier
    * @generated
    */
   void setClass(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Instance</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Instance</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Instance</em>' attribute.
+   * @see #setInstance(boolean)
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getConst_Instance()
+   * @model
+   * @generated
+   */
+  boolean isInstance();
+
+  /**
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const#isInstance <em>Instance</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Instance</em>' attribute.
+   * @see #isInstance()
+   * @generated
+   */
+  void setInstance(boolean value);
 
 } // Const

@@ -21,7 +21,7 @@ TypeDecl:            'type' name=ID
                        ( 'with' supers+=[TypeDecl|ID] )*
                      )?;
 
-FeatureDecl:       ( 'feature' {Feature} (schema?='schema' | class?='class')?   
+FeatureDecl:       ( 'feature' {Feature} (schema?='schema' | class?='class' | instance?='instance')?   
                      | 'data'    {Data}  
                      | 'device'  {Device}  
                      | 'app'     {App}       ) 
@@ -38,14 +38,14 @@ AttrDecl:            modifier=Modifier attributeName=ID
 	                     ( ':' type=Type ( '=' literal=Literal )? 
 	                     | '=' literal=Literal );
 
-Modifier:              'const' {Const} (schema?='schema' | class?='class')? 
+Modifier:              'const' {Const} (schema?='schema' | class?='class' | instance?='instance')? 
                      | 'val'   {Val} 
                      | 'var'   {Var}
                      | 'override' {Override};
 
 SubMemberDecl:       ( modifier=MModifier )? name=ID ':' type=FeatureType;
 
-MModifier:             'Const'    {Const} (schema?='Schema' | class?='Class')? 
+MModifier:             'Const'    {Const} (schema?='Schema' | class?='Class' | instance?='Instance')? 
                      | 'Val'      {Val} 
                      | 'Var'      {Var}
                      | 'Override' {Override}
