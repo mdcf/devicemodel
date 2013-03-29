@@ -45,6 +45,8 @@ public class DeviceModelingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAttrDeclAccess().getAlternatives_2(), "rule__AttrDecl__Alternatives_2");
 					put(grammarAccess.getModifierAccess().getAlternatives(), "rule__Modifier__Alternatives");
 					put(grammarAccess.getModifierAccess().getAlternatives_0_2(), "rule__Modifier__Alternatives_0_2");
+					put(grammarAccess.getMModifierAccess().getAlternatives(), "rule__MModifier__Alternatives");
+					put(grammarAccess.getMModifierAccess().getAlternatives_0_2(), "rule__MModifier__Alternatives_0_2");
 					put(grammarAccess.getFeatureTypeAccess().getAlternatives(), "rule__FeatureType__Alternatives");
 					put(grammarAccess.getInvariantDeclAccess().getAlternatives(), "rule__InvariantDecl__Alternatives");
 					put(grammarAccess.getSubMemberMatchAccess().getAlternatives_1(), "rule__SubMemberMatch__Alternatives_1");
@@ -82,6 +84,10 @@ public class DeviceModelingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModifierAccess().getGroup_2(), "rule__Modifier__Group_2__0");
 					put(grammarAccess.getModifierAccess().getGroup_3(), "rule__Modifier__Group_3__0");
 					put(grammarAccess.getSubMemberDeclAccess().getGroup(), "rule__SubMemberDecl__Group__0");
+					put(grammarAccess.getMModifierAccess().getGroup_0(), "rule__MModifier__Group_0__0");
+					put(grammarAccess.getMModifierAccess().getGroup_1(), "rule__MModifier__Group_1__0");
+					put(grammarAccess.getMModifierAccess().getGroup_2(), "rule__MModifier__Group_2__0");
+					put(grammarAccess.getMModifierAccess().getGroup_3(), "rule__MModifier__Group_3__0");
 					put(grammarAccess.getAssignmentAccess().getGroup(), "rule__Assignment__Group__0");
 					put(grammarAccess.getReportAccess().getGroup(), "rule__Report__Group__0");
 					put(grammarAccess.getReportAccess().getGroup_3(), "rule__Report__Group_3__0");
@@ -178,8 +184,11 @@ public class DeviceModelingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAttrDeclAccess().getLiteralAssignment_2_1_1(), "rule__AttrDecl__LiteralAssignment_2_1_1");
 					put(grammarAccess.getModifierAccess().getSchemaAssignment_0_2_0(), "rule__Modifier__SchemaAssignment_0_2_0");
 					put(grammarAccess.getModifierAccess().getClassAssignment_0_2_1(), "rule__Modifier__ClassAssignment_0_2_1");
-					put(grammarAccess.getSubMemberDeclAccess().getNameAssignment_0(), "rule__SubMemberDecl__NameAssignment_0");
-					put(grammarAccess.getSubMemberDeclAccess().getTypeAssignment_2(), "rule__SubMemberDecl__TypeAssignment_2");
+					put(grammarAccess.getSubMemberDeclAccess().getModifierAssignment_0(), "rule__SubMemberDecl__ModifierAssignment_0");
+					put(grammarAccess.getSubMemberDeclAccess().getNameAssignment_1(), "rule__SubMemberDecl__NameAssignment_1");
+					put(grammarAccess.getSubMemberDeclAccess().getTypeAssignment_3(), "rule__SubMemberDecl__TypeAssignment_3");
+					put(grammarAccess.getMModifierAccess().getSchemaAssignment_0_2_0(), "rule__MModifier__SchemaAssignment_0_2_0");
+					put(grammarAccess.getMModifierAccess().getClassAssignment_0_2_1(), "rule__MModifier__ClassAssignment_0_2_1");
 					put(grammarAccess.getAssignmentAccess().getNameAssignment_0(), "rule__Assignment__NameAssignment_0");
 					put(grammarAccess.getAssignmentAccess().getExpAssignment_2(), "rule__Assignment__ExpAssignment_2");
 					put(grammarAccess.getReportAccess().getNameAssignment_0(), "rule__Report__NameAssignment_0");

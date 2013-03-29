@@ -29,6 +29,7 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvar
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.InvariantDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Literal;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.LiteralExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MModifier;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Modifier;
@@ -140,6 +141,7 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.ATTR_DECL: return createAttrDecl();
       case DeviceModelingLanguagePackage.MODIFIER: return createModifier();
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL: return createSubMemberDecl();
+      case DeviceModelingLanguagePackage.MMODIFIER: return createMModifier();
       case DeviceModelingLanguagePackage.ASSIGNMENT: return createAssignment();
       case DeviceModelingLanguagePackage.REPORT: return createReport();
       case DeviceModelingLanguagePackage.FEATURE_TYPE: return createFeatureType();
@@ -291,6 +293,17 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     SubMemberDeclImpl subMemberDecl = new SubMemberDeclImpl();
     return subMemberDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MModifier createMModifier()
+  {
+    MModifierImpl mModifier = new MModifierImpl();
+    return mModifier;
   }
 
   /**

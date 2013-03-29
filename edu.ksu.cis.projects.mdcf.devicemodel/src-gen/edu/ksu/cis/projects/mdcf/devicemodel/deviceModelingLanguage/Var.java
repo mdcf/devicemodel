@@ -13,6 +13,6 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * @model
  * @generated
  */
-public interface Var extends Modifier
+public interface Var extends Modifier, MModifier
 {
 } // Var

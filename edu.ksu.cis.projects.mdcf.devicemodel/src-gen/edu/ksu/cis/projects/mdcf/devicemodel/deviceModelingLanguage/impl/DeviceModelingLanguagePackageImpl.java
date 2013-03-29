@@ -29,6 +29,7 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvar
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.InvariantDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Literal;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.LiteralExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MModifier;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Modifier;
@@ -142,6 +143,13 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * @generated
    */
   private EClass subMemberDeclEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass mModifierEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -861,9 +869,19 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getSubMemberDecl_Modifier()
+  {
+    return (EReference)subMemberDeclEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getSubMemberDecl_Name()
   {
-    return (EAttribute)subMemberDeclEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)subMemberDeclEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -873,7 +891,17 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    */
   public EReference getSubMemberDecl_Type()
   {
-    return (EReference)subMemberDeclEClass.getEStructuralFeatures().get(1);
+    return (EReference)subMemberDeclEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMModifier()
+  {
+    return mModifierEClass;
   }
 
   /**
@@ -2226,8 +2254,11 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     modifierEClass = createEClass(MODIFIER);
 
     subMemberDeclEClass = createEClass(SUB_MEMBER_DECL);
+    createEReference(subMemberDeclEClass, SUB_MEMBER_DECL__MODIFIER);
     createEAttribute(subMemberDeclEClass, SUB_MEMBER_DECL__NAME);
     createEReference(subMemberDeclEClass, SUB_MEMBER_DECL__TYPE);
+
+    mModifierEClass = createEClass(MMODIFIER);
 
     assignmentEClass = createEClass(ASSIGNMENT);
     createEAttribute(assignmentEClass, ASSIGNMENT__NAME);
@@ -2474,9 +2505,13 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     dataEClass.getESuperTypes().add(this.getComponentDecl());
     appEClass.getESuperTypes().add(this.getComponentDecl());
     constEClass.getESuperTypes().add(this.getModifier());
+    constEClass.getESuperTypes().add(this.getMModifier());
     valEClass.getESuperTypes().add(this.getModifier());
+    valEClass.getESuperTypes().add(this.getMModifier());
     varEClass.getESuperTypes().add(this.getModifier());
+    varEClass.getESuperTypes().add(this.getMModifier());
     overrideEClass.getESuperTypes().add(this.getModifier());
+    overrideEClass.getESuperTypes().add(this.getMModifier());
     optionFeatureTypeEClass.getESuperTypes().add(this.getFeatureType());
     someFeatureTypeEClass.getESuperTypes().add(this.getFeatureType());
     eitherFeatureTypeEClass.getESuperTypes().add(this.getFeatureType());
@@ -2532,8 +2567,11 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEClass(modifierEClass, Modifier.class, "Modifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(subMemberDeclEClass, SubMemberDecl.class, "SubMemberDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSubMemberDecl_Modifier(), this.getMModifier(), null, "modifier", null, 0, 1, SubMemberDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSubMemberDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, SubMemberDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSubMemberDecl_Type(), this.getFeatureType(), null, "type", null, 0, 1, SubMemberDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(mModifierEClass, MModifier.class, "MModifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(assignmentEClass, Assignment.class, "Assignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAssignment_Name(), ecorePackage.getEString(), "name", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -533,33 +533,121 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	public class SubMemberDeclElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SubMemberDecl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeFeatureTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final Assignment cModifierAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cModifierMModifierParserRuleCall_0_0 = (RuleCall)cModifierAssignment_0.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTypeFeatureTypeParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
 		
 		//SubMemberDecl:
-		//	name=ID ":" type=FeatureType;
+		//	modifier=MModifier name=ID ":" type=FeatureType;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID ":" type=FeatureType
+		//modifier=MModifier name=ID ":" type=FeatureType
 		public Group getGroup() { return cGroup; }
 
+		//modifier=MModifier
+		public Assignment getModifierAssignment_0() { return cModifierAssignment_0; }
+
+		//MModifier
+		public RuleCall getModifierMModifierParserRuleCall_0_0() { return cModifierMModifierParserRuleCall_0_0; }
+
 		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//":"
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//type=FeatureType
-		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
 
 		//FeatureType
-		public RuleCall getTypeFeatureTypeParserRuleCall_2_0() { return cTypeFeatureTypeParserRuleCall_2_0; }
+		public RuleCall getTypeFeatureTypeParserRuleCall_3_0() { return cTypeFeatureTypeParserRuleCall_3_0; }
+	}
+
+	public class MModifierElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MModifier");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cConstKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Action cConstAction_0_1 = (Action)cGroup_0.eContents().get(1);
+		private final Alternatives cAlternatives_0_2 = (Alternatives)cGroup_0.eContents().get(2);
+		private final Assignment cSchemaAssignment_0_2_0 = (Assignment)cAlternatives_0_2.eContents().get(0);
+		private final Keyword cSchemaSchemaKeyword_0_2_0_0 = (Keyword)cSchemaAssignment_0_2_0.eContents().get(0);
+		private final Assignment cClassAssignment_0_2_1 = (Assignment)cAlternatives_0_2.eContents().get(1);
+		private final Keyword cClassClassKeyword_0_2_1_0 = (Keyword)cClassAssignment_0_2_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cValKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Action cValAction_1_1 = (Action)cGroup_1.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cVarKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Action cVarAction_2_1 = (Action)cGroup_2.eContents().get(1);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Keyword cOverrideKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Action cOverrideAction_3_1 = (Action)cGroup_3.eContents().get(1);
+		
+		//MModifier:
+		//	"Const" {Const} (schema?="Schema" | class?="Class")? | "Val" {Val} | "Var" {Var} | "Override" {Override};
+		public ParserRule getRule() { return rule; }
+
+		//"Const" {Const} (schema?="Schema" | class?="Class")? | "Val" {Val} | "Var" {Var} | "Override" {Override}
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"Const" {Const} (schema?="Schema" | class?="Class")?
+		public Group getGroup_0() { return cGroup_0; }
+
+		//"Const"
+		public Keyword getConstKeyword_0_0() { return cConstKeyword_0_0; }
+
+		//{Const}
+		public Action getConstAction_0_1() { return cConstAction_0_1; }
+
+		//(schema?="Schema" | class?="Class")?
+		public Alternatives getAlternatives_0_2() { return cAlternatives_0_2; }
+
+		//schema?="Schema"
+		public Assignment getSchemaAssignment_0_2_0() { return cSchemaAssignment_0_2_0; }
+
+		//"Schema"
+		public Keyword getSchemaSchemaKeyword_0_2_0_0() { return cSchemaSchemaKeyword_0_2_0_0; }
+
+		//class?="Class"
+		public Assignment getClassAssignment_0_2_1() { return cClassAssignment_0_2_1; }
+
+		//"Class"
+		public Keyword getClassClassKeyword_0_2_1_0() { return cClassClassKeyword_0_2_1_0; }
+
+		//"Val" {Val}
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"Val"
+		public Keyword getValKeyword_1_0() { return cValKeyword_1_0; }
+
+		//{Val}
+		public Action getValAction_1_1() { return cValAction_1_1; }
+
+		//"Var" {Var}
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"Var"
+		public Keyword getVarKeyword_2_0() { return cVarKeyword_2_0; }
+
+		//{Var}
+		public Action getVarAction_2_1() { return cVarAction_2_1; }
+
+		//"Override" {Override}
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"Override"
+		public Keyword getOverrideKeyword_3_0() { return cOverrideKeyword_3_0; }
+
+		//{Override}
+		public Action getOverrideAction_3_1() { return cOverrideAction_3_1; }
 	}
 
 	public class AssignmentElements extends AbstractParserRuleElementFinder {
@@ -2552,6 +2640,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	private AttrDeclElements pAttrDecl;
 	private ModifierElements pModifier;
 	private SubMemberDeclElements pSubMemberDecl;
+	private MModifierElements pMModifier;
 	private AssignmentElements pAssignment;
 	private ReportElements pReport;
 	private FeatureTypeElements pFeatureType;
@@ -2694,13 +2783,23 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//SubMemberDecl:
-	//	name=ID ":" type=FeatureType;
+	//	modifier=MModifier name=ID ":" type=FeatureType;
 	public SubMemberDeclElements getSubMemberDeclAccess() {
 		return (pSubMemberDecl != null) ? pSubMemberDecl : (pSubMemberDecl = new SubMemberDeclElements());
 	}
 	
 	public ParserRule getSubMemberDeclRule() {
 		return getSubMemberDeclAccess().getRule();
+	}
+
+	//MModifier:
+	//	"Const" {Const} (schema?="Schema" | class?="Class")? | "Val" {Val} | "Var" {Var} | "Override" {Override};
+	public MModifierElements getMModifierAccess() {
+		return (pMModifier != null) ? pMModifier : (pMModifier = new MModifierElements());
+	}
+	
+	public ParserRule getMModifierRule() {
+		return getMModifierAccess().getRule();
 	}
 
 	//Assignment:

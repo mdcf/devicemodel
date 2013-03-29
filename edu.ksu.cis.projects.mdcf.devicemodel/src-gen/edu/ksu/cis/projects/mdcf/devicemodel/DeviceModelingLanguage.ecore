@@ -38,10 +38,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Modifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="SubMemberDecl" eSuperTypes="#//MemberDecl #//Accessor">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modifier" eType="#//MModifier"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//FeatureType"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MModifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="Assignment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Exp" containment="true"/>
@@ -151,13 +154,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Data" eSuperTypes="#//ComponentDecl"/>
   <eClassifiers xsi:type="ecore:EClass" name="App" eSuperTypes="#//ComponentDecl"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Const" eSuperTypes="#//Modifier">
+  <eClassifiers xsi:type="ecore:EClass" name="Const" eSuperTypes="#//Modifier #//MModifier">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="schema" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Val" eSuperTypes="#//Modifier"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Var" eSuperTypes="#//Modifier"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Override" eSuperTypes="#//Modifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Val" eSuperTypes="#//Modifier #//MModifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Var" eSuperTypes="#//Modifier #//MModifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Override" eSuperTypes="#//Modifier #//MModifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="OptionFeatureType" eSuperTypes="#//FeatureType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="#//BaseFeatureType"
         containment="true"/>

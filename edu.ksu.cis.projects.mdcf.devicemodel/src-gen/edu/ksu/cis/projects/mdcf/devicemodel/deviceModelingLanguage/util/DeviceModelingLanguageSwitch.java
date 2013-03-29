@@ -28,6 +28,7 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvar
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.InvariantDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Literal;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.LiteralExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MModifier;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Modifier;
@@ -198,6 +199,13 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         T result = caseSubMemberDecl(subMemberDecl);
         if (result == null) result = caseMemberDecl(subMemberDecl);
         if (result == null) result = caseAccessor(subMemberDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.MMODIFIER:
+      {
+        MModifier mModifier = (MModifier)theEObject;
+        T result = caseMModifier(mModifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -462,6 +470,7 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         Const const_ = (Const)theEObject;
         T result = caseConst(const_);
         if (result == null) result = caseModifier(const_);
+        if (result == null) result = caseMModifier(const_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -470,6 +479,7 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         Val val = (Val)theEObject;
         T result = caseVal(val);
         if (result == null) result = caseModifier(val);
+        if (result == null) result = caseMModifier(val);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -478,6 +488,7 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         Var var = (Var)theEObject;
         T result = caseVar(var);
         if (result == null) result = caseModifier(var);
+        if (result == null) result = caseMModifier(var);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -486,6 +497,7 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Override override = (edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Override)theEObject;
         T result = caseOverride(override);
         if (result == null) result = caseModifier(override);
+        if (result == null) result = caseMModifier(override);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -809,6 +821,22 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSubMemberDecl(SubMemberDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>MModifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>MModifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMModifier(MModifier object)
   {
     return null;
   }

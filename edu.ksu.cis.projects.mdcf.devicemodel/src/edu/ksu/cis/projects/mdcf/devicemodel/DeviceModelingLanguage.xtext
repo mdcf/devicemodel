@@ -44,7 +44,13 @@ Modifier:              'const' {Const} (schema?='schema' | class?='class')?
                      | 'override' {Override}
 ;
 
-SubMemberDecl:       name=ID ':' type=FeatureType;
+SubMemberDecl:       modifier=MModifier name=ID ':' type=FeatureType;
+
+MModifier:             'Const'    {Const} (schema?='Schema' | class?='Class')? 
+                     | 'Val'      {Val} 
+                     | 'Var'      {Var}
+                     | 'Override' {Override}
+;
 
 Assignment:          name=ID '=' exp=Exp;
 

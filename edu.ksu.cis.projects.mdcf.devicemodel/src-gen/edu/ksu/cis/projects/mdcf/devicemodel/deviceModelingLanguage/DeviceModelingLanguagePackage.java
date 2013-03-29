@@ -353,13 +353,22 @@ public interface DeviceModelingLanguagePackage extends EPackage
   int SUB_MEMBER_DECL = 7;
 
   /**
+   * The feature id for the '<em><b>Modifier</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_MEMBER_DECL__MODIFIER = MEMBER_DECL_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUB_MEMBER_DECL__NAME = MEMBER_DECL_FEATURE_COUNT + 0;
+  int SUB_MEMBER_DECL__NAME = MEMBER_DECL_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -368,7 +377,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_MEMBER_DECL__TYPE = MEMBER_DECL_FEATURE_COUNT + 1;
+  int SUB_MEMBER_DECL__TYPE = MEMBER_DECL_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Sub Member Decl</em>' class.
@@ -377,7 +386,26 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_MEMBER_DECL_FEATURE_COUNT = MEMBER_DECL_FEATURE_COUNT + 2;
+  int SUB_MEMBER_DECL_FEATURE_COUNT = MEMBER_DECL_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MModifierImpl <em>MModifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MModifierImpl
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getMModifier()
+   * @generated
+   */
+  int MMODIFIER = 8;
+
+  /**
+   * The number of structural features of the '<em>MModifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MMODIFIER_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AssignmentImpl <em>Assignment</em>}' class.
@@ -387,7 +415,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getAssignment()
    * @generated
    */
-  int ASSIGNMENT = 8;
+  int ASSIGNMENT = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -424,7 +452,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getReport()
    * @generated
    */
-  int REPORT = 9;
+  int REPORT = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -461,7 +489,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getFeatureType()
    * @generated
    */
-  int FEATURE_TYPE = 10;
+  int FEATURE_TYPE = 11;
 
   /**
    * The number of structural features of the '<em>Feature Type</em>' class.
@@ -480,7 +508,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getBaseFeatureType()
    * @generated
    */
-  int BASE_FEATURE_TYPE = 11;
+  int BASE_FEATURE_TYPE = 12;
 
   /**
    * The feature id for the '<em><b>Components</b></em>' reference list.
@@ -517,7 +545,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getInvariantDecl()
    * @generated
    */
-  int INVARIANT_DECL = 12;
+  int INVARIANT_DECL = 13;
 
   /**
    * The feature id for the '<em><b>Inv Name</b></em>' attribute.
@@ -545,7 +573,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getMultiplicityInvariant()
    * @generated
    */
-  int MULTIPLICITY_INVARIANT = 13;
+  int MULTIPLICITY_INVARIANT = 14;
 
   /**
    * The feature id for the '<em><b>Inv Name</b></em>' attribute.
@@ -609,7 +637,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getGeneralInvariant()
    * @generated
    */
-  int GENERAL_INVARIANT = 14;
+  int GENERAL_INVARIANT = 15;
 
   /**
    * The feature id for the '<em><b>Inv Name</b></em>' attribute.
@@ -646,7 +674,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSubMemberMatch()
    * @generated
    */
-  int SUB_MEMBER_MATCH = 15;
+  int SUB_MEMBER_MATCH = 16;
 
   /**
    * The feature id for the '<em><b>QNames</b></em>' attribute list.
@@ -692,7 +720,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getConstraintNat()
    * @generated
    */
-  int CONSTRAINT_NAT = 16;
+  int CONSTRAINT_NAT = 17;
 
   /**
    * The number of structural features of the '<em>Constraint Nat</em>' class.
@@ -711,7 +739,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getDevice()
    * @generated
    */
-  int DEVICE = 17;
+  int DEVICE = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -802,7 +830,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getConstraintExp()
    * @generated
    */
-  int CONSTRAINT_EXP = 18;
+  int CONSTRAINT_EXP = 19;
 
   /**
    * The feature id for the '<em><b>Cond</b></em>' containment reference.
@@ -830,7 +858,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getParam()
    * @generated
    */
-  int PARAM = 19;
+  int PARAM = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -867,7 +895,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getReportMemberDecl()
    * @generated
    */
-  int REPORT_MEMBER_DECL = 20;
+  int REPORT_MEMBER_DECL = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -904,7 +932,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getAccessor()
    * @generated
    */
-  int ACCESSOR = 21;
+  int ACCESSOR = 22;
 
   /**
    * The number of structural features of the '<em>Accessor</em>' class.
@@ -923,7 +951,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getExp()
    * @generated
    */
-  int EXP = 22;
+  int EXP = 23;
 
   /**
    * The number of structural features of the '<em>Exp</em>' class.
@@ -942,7 +970,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getPrimary()
    * @generated
    */
-  int PRIMARY = 23;
+  int PRIMARY = 24;
 
   /**
    * The number of structural features of the '<em>Primary</em>' class.
@@ -961,7 +989,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getType()
    * @generated
    */
-  int TYPE = 24;
+  int TYPE = 25;
 
   /**
    * The number of structural features of the '<em>Type</em>' class.
@@ -980,7 +1008,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getBaseType()
    * @generated
    */
-  int BASE_TYPE = 25;
+  int BASE_TYPE = 26;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1008,7 +1036,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getLiteral()
    * @generated
    */
-  int LITERAL = 26;
+  int LITERAL = 27;
 
   /**
    * The number of structural features of the '<em>Literal</em>' class.
@@ -1027,7 +1055,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getBasicLiteral()
    * @generated
    */
-  int BASIC_LITERAL = 27;
+  int BASIC_LITERAL = 28;
 
   /**
    * The feature id for the '<em><b>Type Cons</b></em>' reference.
@@ -1064,7 +1092,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getTupleLiteral()
    * @generated
    */
-  int TUPLE_LITERAL = 28;
+  int TUPLE_LITERAL = 29;
 
   /**
    * The feature id for the '<em><b>Elems</b></em>' containment reference list.
@@ -1092,7 +1120,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSeqLiteral()
    * @generated
    */
-  int SEQ_LITERAL = 29;
+  int SEQ_LITERAL = 30;
 
   /**
    * The feature id for the '<em><b>Element Type</b></em>' containment reference.
@@ -1129,7 +1157,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSetLiteral()
    * @generated
    */
-  int SET_LITERAL = 30;
+  int SET_LITERAL = 31;
 
   /**
    * The feature id for the '<em><b>Element Type</b></em>' containment reference.
@@ -1166,7 +1194,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getOptionLiteral()
    * @generated
    */
-  int OPTION_LITERAL = 31;
+  int OPTION_LITERAL = 32;
 
   /**
    * The number of structural features of the '<em>Option Literal</em>' class.
@@ -1185,7 +1213,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSimpleLiteral()
    * @generated
    */
-  int SIMPLE_LITERAL = 32;
+  int SIMPLE_LITERAL = 33;
 
   /**
    * The number of structural features of the '<em>Simple Literal</em>' class.
@@ -1204,7 +1232,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSimpleBasicLiteral()
    * @generated
    */
-  int SIMPLE_BASIC_LITERAL = 33;
+  int SIMPLE_BASIC_LITERAL = 34;
 
   /**
    * The feature id for the '<em><b>Lit</b></em>' attribute.
@@ -1232,7 +1260,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSimpleTupleLiteral()
    * @generated
    */
-  int SIMPLE_TUPLE_LITERAL = 34;
+  int SIMPLE_TUPLE_LITERAL = 35;
 
   /**
    * The feature id for the '<em><b>Elems</b></em>' containment reference list.
@@ -1260,7 +1288,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSimpleOptionLiteral()
    * @generated
    */
-  int SIMPLE_OPTION_LITERAL = 35;
+  int SIMPLE_OPTION_LITERAL = 36;
 
   /**
    * The number of structural features of the '<em>Simple Option Literal</em>' class.
@@ -1279,7 +1307,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSimpleSeqLiteral()
    * @generated
    */
-  int SIMPLE_SEQ_LITERAL = 36;
+  int SIMPLE_SEQ_LITERAL = 37;
 
   /**
    * The feature id for the '<em><b>Elems</b></em>' containment reference list.
@@ -1307,7 +1335,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSimpleSetLiteral()
    * @generated
    */
-  int SIMPLE_SET_LITERAL = 37;
+  int SIMPLE_SET_LITERAL = 38;
 
   /**
    * The feature id for the '<em><b>Elems</b></em>' containment reference list.
@@ -1335,7 +1363,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getComponent()
    * @generated
    */
-  int COMPONENT = 38;
+  int COMPONENT = 39;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1426,7 +1454,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getData()
    * @generated
    */
-  int DATA = 39;
+  int DATA = 40;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1499,7 +1527,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getApp()
    * @generated
    */
-  int APP = 40;
+  int APP = 41;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1572,7 +1600,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getConst()
    * @generated
    */
-  int CONST = 41;
+  int CONST = 42;
 
   /**
    * The feature id for the '<em><b>Schema</b></em>' attribute.
@@ -1609,7 +1637,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getVal()
    * @generated
    */
-  int VAL = 42;
+  int VAL = 43;
 
   /**
    * The number of structural features of the '<em>Val</em>' class.
@@ -1628,7 +1656,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getVar()
    * @generated
    */
-  int VAR = 43;
+  int VAR = 44;
 
   /**
    * The number of structural features of the '<em>Var</em>' class.
@@ -1647,7 +1675,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getOverride()
    * @generated
    */
-  int OVERRIDE = 44;
+  int OVERRIDE = 45;
 
   /**
    * The number of structural features of the '<em>Override</em>' class.
@@ -1666,7 +1694,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getOptionFeatureType()
    * @generated
    */
-  int OPTION_FEATURE_TYPE = 45;
+  int OPTION_FEATURE_TYPE = 46;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -1703,7 +1731,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSomeFeatureType()
    * @generated
    */
-  int SOME_FEATURE_TYPE = 46;
+  int SOME_FEATURE_TYPE = 47;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -1740,7 +1768,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getEitherFeatureType()
    * @generated
    */
-  int EITHER_FEATURE_TYPE = 47;
+  int EITHER_FEATURE_TYPE = 48;
 
   /**
    * The feature id for the '<em><b>Bases</b></em>' containment reference list.
@@ -1786,7 +1814,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSeqFeatureType()
    * @generated
    */
-  int SEQ_FEATURE_TYPE = 48;
+  int SEQ_FEATURE_TYPE = 49;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -1823,7 +1851,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSetFeatureType()
    * @generated
    */
-  int SET_FEATURE_TYPE = 49;
+  int SET_FEATURE_TYPE = 50;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -1860,7 +1888,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getNumNatConstraint()
    * @generated
    */
-  int NUM_NAT_CONSTRAINT = 50;
+  int NUM_NAT_CONSTRAINT = 51;
 
   /**
    * The feature id for the '<em><b>Num</b></em>' attribute.
@@ -1888,7 +1916,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getAnyNatConstraint()
    * @generated
    */
-  int ANY_NAT_CONSTRAINT = 51;
+  int ANY_NAT_CONSTRAINT = 52;
 
   /**
    * The number of structural features of the '<em>Any Nat Constraint</em>' class.
@@ -1907,7 +1935,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getBinaryExp()
    * @generated
    */
-  int BINARY_EXP = 52;
+  int BINARY_EXP = 53;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1953,7 +1981,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getUnaryExp()
    * @generated
    */
-  int UNARY_EXP = 53;
+  int UNARY_EXP = 54;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1990,7 +2018,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getPrimaryExp()
    * @generated
    */
-  int PRIMARY_EXP = 54;
+  int PRIMARY_EXP = 55;
 
   /**
    * The feature id for the '<em><b>Primary</b></em>' containment reference.
@@ -2018,7 +2046,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getAccessExp()
    * @generated
    */
-  int ACCESS_EXP = 55;
+  int ACCESS_EXP = 56;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -2055,7 +2083,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getNameExp()
    * @generated
    */
-  int NAME_EXP = 56;
+  int NAME_EXP = 57;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2083,7 +2111,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getLiteralExp()
    * @generated
    */
-  int LITERAL_EXP = 57;
+  int LITERAL_EXP = 58;
 
   /**
    * The feature id for the '<em><b>Lit</b></em>' containment reference.
@@ -2111,7 +2139,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSeqType()
    * @generated
    */
-  int SEQ_TYPE = 58;
+  int SEQ_TYPE = 59;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -2139,7 +2167,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSetType()
    * @generated
    */
-  int SET_TYPE = 59;
+  int SET_TYPE = 60;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' containment reference.
@@ -2167,7 +2195,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getTupleType()
    * @generated
    */
-  int TUPLE_TYPE = 60;
+  int TUPLE_TYPE = 61;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -2204,7 +2232,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getOptionType()
    * @generated
    */
-  int OPTION_TYPE = 61;
+  int OPTION_TYPE = 62;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -2241,7 +2269,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSomeType()
    * @generated
    */
-  int SOME_TYPE = 62;
+  int SOME_TYPE = 63;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -2278,7 +2306,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getNoneType()
    * @generated
    */
-  int NONE_TYPE = 63;
+  int NONE_TYPE = 64;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -2315,7 +2343,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getNoneLiteral()
    * @generated
    */
-  int NONE_LITERAL = 64;
+  int NONE_LITERAL = 65;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2343,7 +2371,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSomeLiteral()
    * @generated
    */
-  int SOME_LITERAL = 65;
+  int SOME_LITERAL = 66;
 
   /**
    * The feature id for the '<em><b>Lit</b></em>' containment reference.
@@ -2371,7 +2399,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSimpleNoneLiteral()
    * @generated
    */
-  int SIMPLE_NONE_LITERAL = 66;
+  int SIMPLE_NONE_LITERAL = 67;
 
   /**
    * The number of structural features of the '<em>Simple None Literal</em>' class.
@@ -2390,7 +2418,7 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getSimpleSomeLiteral()
    * @generated
    */
-  int SIMPLE_SOME_LITERAL = 67;
+  int SIMPLE_SOME_LITERAL = 68;
 
   /**
    * The feature id for the '<em><b>Lit</b></em>' containment reference.
@@ -2657,6 +2685,17 @@ public interface DeviceModelingLanguagePackage extends EPackage
   EClass getSubMemberDecl();
 
   /**
+   * Returns the meta object for the containment reference '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberDecl#getModifier <em>Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Modifier</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberDecl#getModifier()
+   * @see #getSubMemberDecl()
+   * @generated
+   */
+  EReference getSubMemberDecl_Modifier();
+
+  /**
    * Returns the meta object for the attribute '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberDecl#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2677,6 +2716,16 @@ public interface DeviceModelingLanguagePackage extends EPackage
    * @generated
    */
   EReference getSubMemberDecl_Type();
+
+  /**
+   * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MModifier <em>MModifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>MModifier</em>'.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MModifier
+   * @generated
+   */
+  EClass getMModifier();
 
   /**
    * Returns the meta object for class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Assignment <em>Assignment</em>}'.
@@ -4261,6 +4310,14 @@ public interface DeviceModelingLanguagePackage extends EPackage
     EClass SUB_MEMBER_DECL = eINSTANCE.getSubMemberDecl();
 
     /**
+     * The meta object literal for the '<em><b>Modifier</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUB_MEMBER_DECL__MODIFIER = eINSTANCE.getSubMemberDecl_Modifier();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4275,6 +4332,16 @@ public interface DeviceModelingLanguagePackage extends EPackage
      * @generated
      */
     EReference SUB_MEMBER_DECL__TYPE = eINSTANCE.getSubMemberDecl_Type();
+
+    /**
+     * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MModifierImpl <em>MModifier</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.MModifierImpl
+     * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.DeviceModelingLanguagePackageImpl#getMModifier()
+     * @generated
+     */
+    EClass MMODIFIER = eINSTANCE.getMModifier();
 
     /**
      * The meta object literal for the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.AssignmentImpl <em>Assignment</em>}' class.

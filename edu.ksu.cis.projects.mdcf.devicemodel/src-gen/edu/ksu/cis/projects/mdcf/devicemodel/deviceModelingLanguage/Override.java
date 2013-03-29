@@ -13,6 +13,6 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * @model
  * @generated
  */
-public interface Override extends Modifier
+public interface Override extends Modifier, MModifier
 {
 } // Override

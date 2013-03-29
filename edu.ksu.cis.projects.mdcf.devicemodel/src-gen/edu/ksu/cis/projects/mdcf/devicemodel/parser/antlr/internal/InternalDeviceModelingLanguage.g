@@ -790,9 +790,27 @@ ruleSubMemberDecl returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_name_0_0=RULE_ID
+		{ 
+	        newCompositeNode(grammarAccess.getSubMemberDeclAccess().getModifierMModifierParserRuleCall_0_0()); 
+	    }
+		lv_modifier_0_0=ruleMModifier		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSubMemberDeclRule());
+	        }
+       		set(
+       			$current, 
+       			"modifier",
+        		lv_modifier_0_0, 
+        		"MModifier");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getSubMemberDeclAccess().getNameIDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getSubMemberDeclAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -801,34 +819,129 @@ ruleSubMemberDecl returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_0_0, 
+        		lv_name_1_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_1=':' 
+)	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getSubMemberDeclAccess().getColonKeyword_1());
+    	newLeafNode(otherlv_2, grammarAccess.getSubMemberDeclAccess().getColonKeyword_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSubMemberDeclAccess().getTypeFeatureTypeParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getSubMemberDeclAccess().getTypeFeatureTypeParserRuleCall_3_0()); 
 	    }
-		lv_type_2_0=ruleFeatureType		{
+		lv_type_3_0=ruleFeatureType		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSubMemberDeclRule());
 	        }
        		set(
        			$current, 
        			"type",
-        		lv_type_2_0, 
+        		lv_type_3_0, 
         		"FeatureType");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 ))
+;
+
+
+
+
+
+// Entry rule entryRuleMModifier
+entryRuleMModifier returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMModifierRule()); }
+	 iv_ruleMModifier=ruleMModifier 
+	 { $current=$iv_ruleMModifier.current; } 
+	 EOF 
+;
+
+// Rule MModifier
+ruleMModifier returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((	otherlv_0='Const' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getMModifierAccess().getConstKeyword_0_0());
+    }
+(
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getMModifierAccess().getConstAction_0_1(),
+            $current);
+    }
+)((
+(
+		lv_schema_2_0=	'Schema' 
+    {
+        newLeafNode(lv_schema_2_0, grammarAccess.getMModifierAccess().getSchemaSchemaKeyword_0_2_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMModifierRule());
+	        }
+       		setWithLastConsumed($current, "schema", true, "Schema");
+	    }
+
+)
+)
+    |(
+(
+		lv_class_3_0=	'Class' 
+    {
+        newLeafNode(lv_class_3_0, grammarAccess.getMModifierAccess().getClassClassKeyword_0_2_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMModifierRule());
+	        }
+       		setWithLastConsumed($current, "class", true, "Class");
+	    }
+
+)
+))?)
+    |(	otherlv_4='Val' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getMModifierAccess().getValKeyword_1_0());
+    }
+(
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getMModifierAccess().getValAction_1_1(),
+            $current);
+    }
+))
+    |(	otherlv_6='Var' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getMModifierAccess().getVarKeyword_2_0());
+    }
+(
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getMModifierAccess().getVarAction_2_1(),
+            $current);
+    }
+))
+    |(	otherlv_8='Override' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getMModifierAccess().getOverrideKeyword_3_0());
+    }
+(
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getMModifierAccess().getOverrideAction_3_1(),
+            $current);
+    }
+)))
 ;
 
 

@@ -36,9 +36,11 @@
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Modifier"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SubMemberDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SubMemberDecl/modifier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubMemberDecl/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SubMemberDecl/type"/>
     </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//MModifier"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Assignment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Assignment/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//Assignment/exp"/>

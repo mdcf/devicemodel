@@ -95,6 +95,15 @@ public interface DeviceModelingLanguageFactory extends EFactory
   SubMemberDecl createSubMemberDecl();
 
   /**
+   * Returns a new object of class '<em>MModifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>MModifier</em>'.
+   * @generated
+   */
+  MModifier createMModifier();
+
+  /**
    * Returns a new object of class '<em>Assignment</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

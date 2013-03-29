@@ -28,6 +28,7 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvar
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.InvariantDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Literal;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.LiteralExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MModifier;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Modifier;
@@ -180,6 +181,11 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
       public Adapter caseSubMemberDecl(SubMemberDecl object)
       {
         return createSubMemberDeclAdapter();
+      }
+      @Override
+      public Adapter caseMModifier(MModifier object)
+      {
+        return createMModifierAdapter();
       }
       @Override
       public Adapter caseAssignment(Assignment object)
@@ -619,6 +625,21 @@ public class DeviceModelingLanguageAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSubMemberDeclAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MModifier <em>MModifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MModifier
+   * @generated
+   */
+  public Adapter createMModifierAdapter()
   {
     return null;
   }

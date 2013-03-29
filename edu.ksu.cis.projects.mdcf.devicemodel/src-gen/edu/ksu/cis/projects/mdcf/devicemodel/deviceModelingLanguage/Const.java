@@ -20,7 +20,7 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * @model
  * @generated
  */
-public interface Const extends Modifier
+public interface Const extends Modifier, MModifier
 {
   /**
    * Returns the value of the '<em><b>Schema</b></em>' attribute.
