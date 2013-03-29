@@ -12,7 +12,7 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 generate deviceModelingLanguage "http://http://mdcf.santos.cis.ksu.edu/devicemodel/DeviceModelingLanguage"
 
-Model:               (schema?='Schema' | class?='Class' | instance?='Instance')? decls+=Decl*;
+Model:               (schema?='Schema' | class?='Class' | product?='Product')? decls+=Decl*;
 
 Decl:                TypeDecl | FeatureDecl;
 
@@ -21,7 +21,7 @@ TypeDecl:            'type' name=ID
                        ( 'with' supers+=[TypeDecl|ID] )*
                      )?;
 
-FeatureDecl:       ( 'feature' {Feature} (schema?='schema' | class?='class' | instance?='instance')?   
+FeatureDecl:       ( 'feature' {Feature} (schema?='schema' | class?='class' | product?='product')?   
                      | 'data'    {Data}  
                      | 'device'  {Device}  
                      | 'app'     {App}       ) 
@@ -38,14 +38,14 @@ AttrDecl:            modifier=Modifier attributeName=ID
 	                     ( ':' type=Type ( '=' literal=Literal )? 
 	                     | '=' literal=Literal );
 
-Modifier:              'const' {Const} (schema?='schema' | class?='class' | instance?='instance')? 
+Modifier:              'const' {Const} (schema?='schema' | class?='class' | product?='product' | instance?='instance')? 
                      | 'val'   {Val} 
                      | 'var'   {Var}
                      | 'override' {Override};
 
 SubMemberDecl:       ( modifier=MModifier )? name=ID ':' type=FeatureType;
 
-MModifier:             'Const'    {Const} (schema?='Schema' | class?='Class' | instance?='Instance')? 
+MModifier:             'Const'    {Const} (schema?='Schema' | class?='Class' | product?='Product' | instance?='Instance')? 
                      | 'Val'      {Val} 
                      | 'Var'      {Var}
                      | 'Override' {Override}

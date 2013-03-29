@@ -710,7 +710,7 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	/**
 	 * Constraint:
 	 *     (
-	 *         (schema?='schema' | class?='class' | instance?='instance')? 
+	 *         (schema?='schema' | class?='class' | product?='product')? 
 	 *         name=ID 
 	 *         (supers+=[FeatureDecl|ID] supers+=[FeatureDecl|ID]*)? 
 	 *         members+=MemberDecl* 
@@ -778,7 +778,7 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     ((schema?='Schema' | class?='Class' | instance?='Instance')?)
+	 *     ((schema?='Schema' | class?='Class' | product?='Product' | instance?='Instance')?)
 	 */
 	protected void sequence_MModifier(EObject context, Const semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -823,7 +823,7 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     ((schema?='Schema' | class?='Class' | instance?='Instance')? decls+=Decl*)
+	 *     ((schema?='Schema' | class?='Class' | product?='Product')? decls+=Decl*)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -832,7 +832,7 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     ((schema?='schema' | class?='class' | instance?='instance')?)
+	 *     ((schema?='schema' | class?='class' | product?='product' | instance?='instance')?)
 	 */
 	protected void sequence_Modifier(EObject context, Const semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

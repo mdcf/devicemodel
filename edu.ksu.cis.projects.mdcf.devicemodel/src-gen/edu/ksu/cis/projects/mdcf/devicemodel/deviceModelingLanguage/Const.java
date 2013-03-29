@@ -13,6 +13,7 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const#isSchema <em>Schema</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const#isClass <em>Class</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const#isProduct <em>Product</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const#isInstance <em>Instance</em>}</li>
  * </ul>
  * </p>
@@ -74,6 +75,32 @@ public interface Const extends Modifier, MModifier
    * @generated
    */
   void setClass(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Product</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Product</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Product</em>' attribute.
+   * @see #setProduct(boolean)
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getConst_Product()
+   * @model
+   * @generated
+   */
+  boolean isProduct();
+
+  /**
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const#isProduct <em>Product</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Product</em>' attribute.
+   * @see #isProduct()
+   * @generated
+   */
+  void setProduct(boolean value);
 
   /**
    * Returns the value of the '<em><b>Instance</b></em>' attribute.

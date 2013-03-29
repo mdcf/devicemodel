@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ConstImpl#isSchema <em>Schema</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ConstImpl#isClass <em>Class</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ConstImpl#isProduct <em>Product</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ConstImpl#isInstance <em>Instance</em>}</li>
  * </ul>
  * </p>
@@ -67,6 +68,26 @@ public class ConstImpl extends ModifierImpl implements Const
    * @ordered
    */
   protected boolean class_ = CLASS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isProduct() <em>Product</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isProduct()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean PRODUCT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isProduct() <em>Product</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isProduct()
+   * @generated
+   * @ordered
+   */
+  protected boolean product = PRODUCT_EDEFAULT;
 
   /**
    * The default value of the '{@link #isInstance() <em>Instance</em>}' attribute.
@@ -160,6 +181,29 @@ public class ConstImpl extends ModifierImpl implements Const
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isProduct()
+  {
+    return product;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setProduct(boolean newProduct)
+  {
+    boolean oldProduct = product;
+    product = newProduct;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.CONST__PRODUCT, oldProduct, product));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public boolean isInstance()
   {
     return instance;
@@ -192,6 +236,8 @@ public class ConstImpl extends ModifierImpl implements Const
         return isSchema();
       case DeviceModelingLanguagePackage.CONST__CLASS:
         return isClass();
+      case DeviceModelingLanguagePackage.CONST__PRODUCT:
+        return isProduct();
       case DeviceModelingLanguagePackage.CONST__INSTANCE:
         return isInstance();
     }
@@ -213,6 +259,9 @@ public class ConstImpl extends ModifierImpl implements Const
         return;
       case DeviceModelingLanguagePackage.CONST__CLASS:
         setClass((Boolean)newValue);
+        return;
+      case DeviceModelingLanguagePackage.CONST__PRODUCT:
+        setProduct((Boolean)newValue);
         return;
       case DeviceModelingLanguagePackage.CONST__INSTANCE:
         setInstance((Boolean)newValue);
@@ -237,6 +286,9 @@ public class ConstImpl extends ModifierImpl implements Const
       case DeviceModelingLanguagePackage.CONST__CLASS:
         setClass(CLASS_EDEFAULT);
         return;
+      case DeviceModelingLanguagePackage.CONST__PRODUCT:
+        setProduct(PRODUCT_EDEFAULT);
+        return;
       case DeviceModelingLanguagePackage.CONST__INSTANCE:
         setInstance(INSTANCE_EDEFAULT);
         return;
@@ -258,6 +310,8 @@ public class ConstImpl extends ModifierImpl implements Const
         return schema != SCHEMA_EDEFAULT;
       case DeviceModelingLanguagePackage.CONST__CLASS:
         return class_ != CLASS_EDEFAULT;
+      case DeviceModelingLanguagePackage.CONST__PRODUCT:
+        return product != PRODUCT_EDEFAULT;
       case DeviceModelingLanguagePackage.CONST__INSTANCE:
         return instance != INSTANCE_EDEFAULT;
     }
@@ -279,6 +333,8 @@ public class ConstImpl extends ModifierImpl implements Const
     result.append(schema);
     result.append(", class: ");
     result.append(class_);
+    result.append(", product: ");
+    result.append(product);
     result.append(", instance: ");
     result.append(instance);
     result.append(')');

@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ModelImpl#isSchema <em>Schema</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ModelImpl#isClass <em>Class</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ModelImpl#isInstance <em>Instance</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ModelImpl#isProduct <em>Product</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.ModelImpl#getDecls <em>Decls</em>}</li>
  * </ul>
  * </p>
@@ -81,24 +81,24 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   protected boolean class_ = CLASS_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isInstance() <em>Instance</em>}' attribute.
+   * The default value of the '{@link #isProduct() <em>Product</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isInstance()
+   * @see #isProduct()
    * @generated
    * @ordered
    */
-  protected static final boolean INSTANCE_EDEFAULT = false;
+  protected static final boolean PRODUCT_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isInstance() <em>Instance</em>}' attribute.
+   * The cached value of the '{@link #isProduct() <em>Product</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isInstance()
+   * @see #isProduct()
    * @generated
    * @ordered
    */
-  protected boolean instance = INSTANCE_EDEFAULT;
+  protected boolean product = PRODUCT_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getDecls() <em>Decls</em>}' containment reference list.
@@ -182,9 +182,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isInstance()
+  public boolean isProduct()
   {
-    return instance;
+    return product;
   }
 
   /**
@@ -192,12 +192,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInstance(boolean newInstance)
+  public void setProduct(boolean newProduct)
   {
-    boolean oldInstance = instance;
-    instance = newInstance;
+    boolean oldProduct = product;
+    product = newProduct;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MODEL__INSTANCE, oldInstance, instance));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.MODEL__PRODUCT, oldProduct, product));
   }
 
   /**
@@ -244,8 +244,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return isSchema();
       case DeviceModelingLanguagePackage.MODEL__CLASS:
         return isClass();
-      case DeviceModelingLanguagePackage.MODEL__INSTANCE:
-        return isInstance();
+      case DeviceModelingLanguagePackage.MODEL__PRODUCT:
+        return isProduct();
       case DeviceModelingLanguagePackage.MODEL__DECLS:
         return getDecls();
     }
@@ -269,8 +269,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case DeviceModelingLanguagePackage.MODEL__CLASS:
         setClass((Boolean)newValue);
         return;
-      case DeviceModelingLanguagePackage.MODEL__INSTANCE:
-        setInstance((Boolean)newValue);
+      case DeviceModelingLanguagePackage.MODEL__PRODUCT:
+        setProduct((Boolean)newValue);
         return;
       case DeviceModelingLanguagePackage.MODEL__DECLS:
         getDecls().clear();
@@ -296,8 +296,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case DeviceModelingLanguagePackage.MODEL__CLASS:
         setClass(CLASS_EDEFAULT);
         return;
-      case DeviceModelingLanguagePackage.MODEL__INSTANCE:
-        setInstance(INSTANCE_EDEFAULT);
+      case DeviceModelingLanguagePackage.MODEL__PRODUCT:
+        setProduct(PRODUCT_EDEFAULT);
         return;
       case DeviceModelingLanguagePackage.MODEL__DECLS:
         getDecls().clear();
@@ -320,8 +320,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return schema != SCHEMA_EDEFAULT;
       case DeviceModelingLanguagePackage.MODEL__CLASS:
         return class_ != CLASS_EDEFAULT;
-      case DeviceModelingLanguagePackage.MODEL__INSTANCE:
-        return instance != INSTANCE_EDEFAULT;
+      case DeviceModelingLanguagePackage.MODEL__PRODUCT:
+        return product != PRODUCT_EDEFAULT;
       case DeviceModelingLanguagePackage.MODEL__DECLS:
         return decls != null && !decls.isEmpty();
     }
@@ -343,8 +343,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     result.append(schema);
     result.append(", class: ");
     result.append(class_);
-    result.append(", instance: ");
-    result.append(instance);
+    result.append(", product: ");
+    result.append(product);
     result.append(')');
     return result.toString();
   }

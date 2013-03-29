@@ -11,7 +11,7 @@
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Model">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Model/schema"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Model/class"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Model/instance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Model/product"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//Model/decls"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Decl">
@@ -128,13 +128,14 @@
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Feature">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Feature/schema"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Feature/class"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Feature/instance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Feature/product"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Data"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//App"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Const">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Const/schema"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Const/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Const/product"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Const/instance"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Val"/>

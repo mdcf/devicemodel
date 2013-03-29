@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureImpl#isSchema <em>Schema</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureImpl#isClass <em>Class</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureImpl#isInstance <em>Instance</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.FeatureImpl#isProduct <em>Product</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,24 +69,24 @@ public class FeatureImpl extends FeatureDeclImpl implements Feature
   protected boolean class_ = CLASS_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isInstance() <em>Instance</em>}' attribute.
+   * The default value of the '{@link #isProduct() <em>Product</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isInstance()
+   * @see #isProduct()
    * @generated
    * @ordered
    */
-  protected static final boolean INSTANCE_EDEFAULT = false;
+  protected static final boolean PRODUCT_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isInstance() <em>Instance</em>}' attribute.
+   * The cached value of the '{@link #isProduct() <em>Product</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isInstance()
+   * @see #isProduct()
    * @generated
    * @ordered
    */
-  protected boolean instance = INSTANCE_EDEFAULT;
+  protected boolean product = PRODUCT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -160,9 +160,9 @@ public class FeatureImpl extends FeatureDeclImpl implements Feature
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isInstance()
+  public boolean isProduct()
   {
-    return instance;
+    return product;
   }
 
   /**
@@ -170,12 +170,12 @@ public class FeatureImpl extends FeatureDeclImpl implements Feature
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInstance(boolean newInstance)
+  public void setProduct(boolean newProduct)
   {
-    boolean oldInstance = instance;
-    instance = newInstance;
+    boolean oldProduct = product;
+    product = newProduct;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.FEATURE__INSTANCE, oldInstance, instance));
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.FEATURE__PRODUCT, oldProduct, product));
   }
 
   /**
@@ -192,8 +192,8 @@ public class FeatureImpl extends FeatureDeclImpl implements Feature
         return isSchema();
       case DeviceModelingLanguagePackage.FEATURE__CLASS:
         return isClass();
-      case DeviceModelingLanguagePackage.FEATURE__INSTANCE:
-        return isInstance();
+      case DeviceModelingLanguagePackage.FEATURE__PRODUCT:
+        return isProduct();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -214,8 +214,8 @@ public class FeatureImpl extends FeatureDeclImpl implements Feature
       case DeviceModelingLanguagePackage.FEATURE__CLASS:
         setClass((Boolean)newValue);
         return;
-      case DeviceModelingLanguagePackage.FEATURE__INSTANCE:
-        setInstance((Boolean)newValue);
+      case DeviceModelingLanguagePackage.FEATURE__PRODUCT:
+        setProduct((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -237,8 +237,8 @@ public class FeatureImpl extends FeatureDeclImpl implements Feature
       case DeviceModelingLanguagePackage.FEATURE__CLASS:
         setClass(CLASS_EDEFAULT);
         return;
-      case DeviceModelingLanguagePackage.FEATURE__INSTANCE:
-        setInstance(INSTANCE_EDEFAULT);
+      case DeviceModelingLanguagePackage.FEATURE__PRODUCT:
+        setProduct(PRODUCT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -258,8 +258,8 @@ public class FeatureImpl extends FeatureDeclImpl implements Feature
         return schema != SCHEMA_EDEFAULT;
       case DeviceModelingLanguagePackage.FEATURE__CLASS:
         return class_ != CLASS_EDEFAULT;
-      case DeviceModelingLanguagePackage.FEATURE__INSTANCE:
-        return instance != INSTANCE_EDEFAULT;
+      case DeviceModelingLanguagePackage.FEATURE__PRODUCT:
+        return product != PRODUCT_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -279,8 +279,8 @@ public class FeatureImpl extends FeatureDeclImpl implements Feature
     result.append(schema);
     result.append(", class: ");
     result.append(class_);
-    result.append(", instance: ");
-    result.append(instance);
+    result.append(", product: ");
+    result.append(product);
     result.append(')');
     return result.toString();
   }

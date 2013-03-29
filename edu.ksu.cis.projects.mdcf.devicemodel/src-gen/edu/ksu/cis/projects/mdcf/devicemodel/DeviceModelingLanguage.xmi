@@ -18,8 +18,8 @@
         <elements xsi:type="xtext:Assignment" feature="class" operator="?=">
           <terminal xsi:type="xtext:Keyword" value="Class"/>
         </elements>
-        <elements xsi:type="xtext:Assignment" feature="instance" operator="?=">
-          <terminal xsi:type="xtext:Keyword" value="Instance"/>
+        <elements xsi:type="xtext:Assignment" feature="product" operator="?=">
+          <terminal xsi:type="xtext:Keyword" value="Product"/>
         </elements>
       </elements>
       <elements xsi:type="xtext:Assignment" cardinality="*" feature="decls" operator="+=">
@@ -89,8 +89,8 @@
             <elements xsi:type="xtext:Assignment" feature="class" operator="?=">
               <terminal xsi:type="xtext:Keyword" value="class"/>
             </elements>
-            <elements xsi:type="xtext:Assignment" feature="instance" operator="?=">
-              <terminal xsi:type="xtext:Keyword" value="instance"/>
+            <elements xsi:type="xtext:Assignment" feature="product" operator="?=">
+              <terminal xsi:type="xtext:Keyword" value="product"/>
             </elements>
           </elements>
         </elements>
@@ -229,6 +229,9 @@
           <elements xsi:type="xtext:Assignment" feature="class" operator="?=">
             <terminal xsi:type="xtext:Keyword" value="class"/>
           </elements>
+          <elements xsi:type="xtext:Assignment" feature="product" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="product"/>
+          </elements>
           <elements xsi:type="xtext:Assignment" feature="instance" operator="?=">
             <terminal xsi:type="xtext:Keyword" value="instance"/>
           </elements>
@@ -295,6 +298,9 @@
           </elements>
           <elements xsi:type="xtext:Assignment" feature="class" operator="?=">
             <terminal xsi:type="xtext:Keyword" value="Class"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="product" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="Product"/>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="instance" operator="?=">
             <terminal xsi:type="xtext:Keyword" value="Instance"/>

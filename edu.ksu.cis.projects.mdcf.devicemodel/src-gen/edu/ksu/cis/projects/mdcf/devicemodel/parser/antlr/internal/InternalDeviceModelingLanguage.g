@@ -111,16 +111,16 @@ ruleModel returns [EObject current=null]
 )
     |(
 (
-		lv_instance_2_0=	'Instance' 
+		lv_product_2_0=	'Product' 
     {
-        newLeafNode(lv_instance_2_0, grammarAccess.getModelAccess().getInstanceInstanceKeyword_0_2_0());
+        newLeafNode(lv_product_2_0, grammarAccess.getModelAccess().getProductProductKeyword_0_2_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getModelRule());
 	        }
-       		setWithLastConsumed($current, "instance", true, "Instance");
+       		setWithLastConsumed($current, "product", true, "Product");
 	    }
 
 )
@@ -324,16 +324,16 @@ ruleFeatureDecl returns [EObject current=null]
 )
     |(
 (
-		lv_instance_4_0=	'instance' 
+		lv_product_4_0=	'product' 
     {
-        newLeafNode(lv_instance_4_0, grammarAccess.getFeatureDeclAccess().getInstanceInstanceKeyword_0_0_2_2_0());
+        newLeafNode(lv_product_4_0, grammarAccess.getFeatureDeclAccess().getProductProductKeyword_0_0_2_2_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getFeatureDeclRule());
 	        }
-       		setWithLastConsumed($current, "instance", true, "instance");
+       		setWithLastConsumed($current, "product", true, "product");
 	    }
 
 )
@@ -753,9 +753,25 @@ ruleModifier returns [EObject current=null]
 )
     |(
 (
-		lv_instance_4_0=	'instance' 
+		lv_product_4_0=	'product' 
     {
-        newLeafNode(lv_instance_4_0, grammarAccess.getModifierAccess().getInstanceInstanceKeyword_0_2_2_0());
+        newLeafNode(lv_product_4_0, grammarAccess.getModifierAccess().getProductProductKeyword_0_2_2_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getModifierRule());
+	        }
+       		setWithLastConsumed($current, "product", true, "product");
+	    }
+
+)
+)
+    |(
+(
+		lv_instance_5_0=	'instance' 
+    {
+        newLeafNode(lv_instance_5_0, grammarAccess.getModifierAccess().getInstanceInstanceKeyword_0_2_3_0());
     }
  
 	    {
@@ -767,9 +783,9 @@ ruleModifier returns [EObject current=null]
 
 )
 ))?)
-    |(	otherlv_5='val' 
+    |(	otherlv_6='val' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getModifierAccess().getValKeyword_1_0());
+    	newLeafNode(otherlv_6, grammarAccess.getModifierAccess().getValKeyword_1_0());
     }
 (
     {
@@ -778,9 +794,9 @@ ruleModifier returns [EObject current=null]
             $current);
     }
 ))
-    |(	otherlv_7='var' 
+    |(	otherlv_8='var' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getModifierAccess().getVarKeyword_2_0());
+    	newLeafNode(otherlv_8, grammarAccess.getModifierAccess().getVarKeyword_2_0());
     }
 (
     {
@@ -789,9 +805,9 @@ ruleModifier returns [EObject current=null]
             $current);
     }
 ))
-    |(	otherlv_9='override' 
+    |(	otherlv_10='override' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getModifierAccess().getOverrideKeyword_3_0());
+    	newLeafNode(otherlv_10, grammarAccess.getModifierAccess().getOverrideKeyword_3_0());
     }
 (
     {
@@ -943,9 +959,25 @@ ruleMModifier returns [EObject current=null]
 )
     |(
 (
-		lv_instance_4_0=	'Instance' 
+		lv_product_4_0=	'Product' 
     {
-        newLeafNode(lv_instance_4_0, grammarAccess.getMModifierAccess().getInstanceInstanceKeyword_0_2_2_0());
+        newLeafNode(lv_product_4_0, grammarAccess.getMModifierAccess().getProductProductKeyword_0_2_2_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMModifierRule());
+	        }
+       		setWithLastConsumed($current, "product", true, "Product");
+	    }
+
+)
+)
+    |(
+(
+		lv_instance_5_0=	'Instance' 
+    {
+        newLeafNode(lv_instance_5_0, grammarAccess.getMModifierAccess().getInstanceInstanceKeyword_0_2_3_0());
     }
  
 	    {
@@ -957,9 +989,9 @@ ruleMModifier returns [EObject current=null]
 
 )
 ))?)
-    |(	otherlv_5='Val' 
+    |(	otherlv_6='Val' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getMModifierAccess().getValKeyword_1_0());
+    	newLeafNode(otherlv_6, grammarAccess.getMModifierAccess().getValKeyword_1_0());
     }
 (
     {
@@ -968,9 +1000,9 @@ ruleMModifier returns [EObject current=null]
             $current);
     }
 ))
-    |(	otherlv_7='Var' 
+    |(	otherlv_8='Var' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getMModifierAccess().getVarKeyword_2_0());
+    	newLeafNode(otherlv_8, grammarAccess.getMModifierAccess().getVarKeyword_2_0());
     }
 (
     {
@@ -979,9 +1011,9 @@ ruleMModifier returns [EObject current=null]
             $current);
     }
 ))
-    |(	otherlv_9='Override' 
+    |(	otherlv_10='Override' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getMModifierAccess().getOverrideKeyword_3_0());
+    	newLeafNode(otherlv_10, grammarAccess.getMModifierAccess().getOverrideKeyword_3_0());
     }
 (
     {
@@ -990,9 +1022,9 @@ ruleMModifier returns [EObject current=null]
             $current);
     }
 ))
-    |(	otherlv_11='Data' 
+    |(	otherlv_12='Data' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getMModifierAccess().getDataKeyword_4_0());
+    	newLeafNode(otherlv_12, grammarAccess.getMModifierAccess().getDataKeyword_4_0());
     }
 (
     {

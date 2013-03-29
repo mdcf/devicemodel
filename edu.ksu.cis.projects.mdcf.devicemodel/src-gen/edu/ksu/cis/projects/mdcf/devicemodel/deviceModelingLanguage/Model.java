@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model#isSchema <em>Schema</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model#isClass <em>Class</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model#isInstance <em>Instance</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model#isProduct <em>Product</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model#getDecls <em>Decls</em>}</li>
  * </ul>
  * </p>
@@ -80,30 +80,30 @@ public interface Model extends EObject
   void setClass(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Instance</b></em>' attribute.
+   * Returns the value of the '<em><b>Product</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Instance</em>' attribute isn't clear,
+   * If the meaning of the '<em>Product</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Instance</em>' attribute.
-   * @see #setInstance(boolean)
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getModel_Instance()
+   * @return the value of the '<em>Product</em>' attribute.
+   * @see #setProduct(boolean)
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getModel_Product()
    * @model
    * @generated
    */
-  boolean isInstance();
+  boolean isProduct();
 
   /**
-   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model#isInstance <em>Instance</em>}' attribute.
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model#isProduct <em>Product</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Instance</em>' attribute.
-   * @see #isInstance()
+   * @param value the new value of the '<em>Product</em>' attribute.
+   * @see #isProduct()
    * @generated
    */
-  void setInstance(boolean value);
+  void setProduct(boolean value);
 
   /**
    * Returns the value of the '<em><b>Decls</b></em>' containment reference list.

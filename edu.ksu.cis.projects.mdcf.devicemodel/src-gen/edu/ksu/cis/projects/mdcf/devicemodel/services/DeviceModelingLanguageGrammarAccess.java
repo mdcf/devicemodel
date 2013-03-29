@@ -26,19 +26,19 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Keyword cSchemaSchemaKeyword_0_0_0 = (Keyword)cSchemaAssignment_0_0.eContents().get(0);
 		private final Assignment cClassAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
 		private final Keyword cClassClassKeyword_0_1_0 = (Keyword)cClassAssignment_0_1.eContents().get(0);
-		private final Assignment cInstanceAssignment_0_2 = (Assignment)cAlternatives_0.eContents().get(2);
-		private final Keyword cInstanceInstanceKeyword_0_2_0 = (Keyword)cInstanceAssignment_0_2.eContents().get(0);
+		private final Assignment cProductAssignment_0_2 = (Assignment)cAlternatives_0.eContents().get(2);
+		private final Keyword cProductProductKeyword_0_2_0 = (Keyword)cProductAssignment_0_2.eContents().get(0);
 		private final Assignment cDeclsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cDeclsDeclParserRuleCall_1_0 = (RuleCall)cDeclsAssignment_1.eContents().get(0);
 		
 		//Model:
-		//	(schema?="Schema" | class?="Class" | instance?="Instance")? decls+=Decl*;
+		//	(schema?="Schema" | class?="Class" | product?="Product")? decls+=Decl*;
 		public ParserRule getRule() { return rule; }
 
-		//(schema?="Schema" | class?="Class" | instance?="Instance")? decls+=Decl*
+		//(schema?="Schema" | class?="Class" | product?="Product")? decls+=Decl*
 		public Group getGroup() { return cGroup; }
 
-		//(schema?="Schema" | class?="Class" | instance?="Instance")?
+		//(schema?="Schema" | class?="Class" | product?="Product")?
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//schema?="Schema"
@@ -53,11 +53,11 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//"Class"
 		public Keyword getClassClassKeyword_0_1_0() { return cClassClassKeyword_0_1_0; }
 
-		//instance?="Instance"
-		public Assignment getInstanceAssignment_0_2() { return cInstanceAssignment_0_2; }
+		//product?="Product"
+		public Assignment getProductAssignment_0_2() { return cProductAssignment_0_2; }
 
-		//"Instance"
-		public Keyword getInstanceInstanceKeyword_0_2_0() { return cInstanceInstanceKeyword_0_2_0; }
+		//"Product"
+		public Keyword getProductProductKeyword_0_2_0() { return cProductProductKeyword_0_2_0; }
 
 		//decls+=Decl*
 		public Assignment getDeclsAssignment_1() { return cDeclsAssignment_1; }
@@ -162,8 +162,8 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Keyword cSchemaSchemaKeyword_0_0_2_0_0 = (Keyword)cSchemaAssignment_0_0_2_0.eContents().get(0);
 		private final Assignment cClassAssignment_0_0_2_1 = (Assignment)cAlternatives_0_0_2.eContents().get(1);
 		private final Keyword cClassClassKeyword_0_0_2_1_0 = (Keyword)cClassAssignment_0_0_2_1.eContents().get(0);
-		private final Assignment cInstanceAssignment_0_0_2_2 = (Assignment)cAlternatives_0_0_2.eContents().get(2);
-		private final Keyword cInstanceInstanceKeyword_0_0_2_2_0 = (Keyword)cInstanceAssignment_0_0_2_2.eContents().get(0);
+		private final Assignment cProductAssignment_0_0_2_2 = (Assignment)cAlternatives_0_0_2.eContents().get(2);
+		private final Keyword cProductProductKeyword_0_0_2_2_0 = (Keyword)cProductAssignment_0_0_2_2.eContents().get(0);
 		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
 		private final Keyword cDataKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
 		private final Action cDataAction_0_1_1 = (Action)cGroup_0_1.eContents().get(1);
@@ -202,21 +202,21 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Keyword cRightCurlyBracketKeyword_4_5 = (Keyword)cGroup_4.eContents().get(5);
 		
 		//FeatureDecl:
-		//	("feature" {Feature} (schema?="schema" | class?="class" | instance?="instance")? | "data" {Data} | "device" {Device} |
+		//	("feature" {Feature} (schema?="schema" | class?="class" | product?="product")? | "data" {Data} | "device" {Device} |
 		//	"app" {App}) name=ID ("extends" supers+=[FeatureDecl] ("with" supers+=[FeatureDecl])*)? ("{" members+=MemberDecl*
 		//	"}")? ("requires" "{" devices+=Device* assigns+=Assignment* exp=Exp "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//("feature" {Feature} (schema?="schema" | class?="class" | instance?="instance")? | "data" {Data} | "device" {Device} |
+		//("feature" {Feature} (schema?="schema" | class?="class" | product?="product")? | "data" {Data} | "device" {Device} |
 		//"app" {App}) name=ID ("extends" supers+=[FeatureDecl] ("with" supers+=[FeatureDecl])*)? ("{" members+=MemberDecl* "}")?
 		//("requires" "{" devices+=Device* assigns+=Assignment* exp=Exp "}")?
 		public Group getGroup() { return cGroup; }
 
-		//"feature" {Feature} (schema?="schema" | class?="class" | instance?="instance")? | "data" {Data} | "device" {Device} |
+		//"feature" {Feature} (schema?="schema" | class?="class" | product?="product")? | "data" {Data} | "device" {Device} |
 		//"app" {App}
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
-		//"feature" {Feature} (schema?="schema" | class?="class" | instance?="instance")?
+		//"feature" {Feature} (schema?="schema" | class?="class" | product?="product")?
 		public Group getGroup_0_0() { return cGroup_0_0; }
 
 		//"feature"
@@ -225,7 +225,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//{Feature}
 		public Action getFeatureAction_0_0_1() { return cFeatureAction_0_0_1; }
 
-		//(schema?="schema" | class?="class" | instance?="instance")?
+		//(schema?="schema" | class?="class" | product?="product")?
 		public Alternatives getAlternatives_0_0_2() { return cAlternatives_0_0_2; }
 
 		//schema?="schema"
@@ -240,11 +240,11 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//"class"
 		public Keyword getClassClassKeyword_0_0_2_1_0() { return cClassClassKeyword_0_0_2_1_0; }
 
-		//instance?="instance"
-		public Assignment getInstanceAssignment_0_0_2_2() { return cInstanceAssignment_0_0_2_2; }
+		//product?="product"
+		public Assignment getProductAssignment_0_0_2_2() { return cProductAssignment_0_0_2_2; }
 
-		//"instance"
-		public Keyword getInstanceInstanceKeyword_0_0_2_2_0() { return cInstanceInstanceKeyword_0_0_2_2_0; }
+		//"product"
+		public Keyword getProductProductKeyword_0_0_2_2_0() { return cProductProductKeyword_0_0_2_2_0; }
 
 		//"data" {Data}
 		public Group getGroup_0_1() { return cGroup_0_1; }
@@ -470,8 +470,10 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Keyword cSchemaSchemaKeyword_0_2_0_0 = (Keyword)cSchemaAssignment_0_2_0.eContents().get(0);
 		private final Assignment cClassAssignment_0_2_1 = (Assignment)cAlternatives_0_2.eContents().get(1);
 		private final Keyword cClassClassKeyword_0_2_1_0 = (Keyword)cClassAssignment_0_2_1.eContents().get(0);
-		private final Assignment cInstanceAssignment_0_2_2 = (Assignment)cAlternatives_0_2.eContents().get(2);
-		private final Keyword cInstanceInstanceKeyword_0_2_2_0 = (Keyword)cInstanceAssignment_0_2_2.eContents().get(0);
+		private final Assignment cProductAssignment_0_2_2 = (Assignment)cAlternatives_0_2.eContents().get(2);
+		private final Keyword cProductProductKeyword_0_2_2_0 = (Keyword)cProductAssignment_0_2_2.eContents().get(0);
+		private final Assignment cInstanceAssignment_0_2_3 = (Assignment)cAlternatives_0_2.eContents().get(3);
+		private final Keyword cInstanceInstanceKeyword_0_2_3_0 = (Keyword)cInstanceAssignment_0_2_3.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cValKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Action cValAction_1_1 = (Action)cGroup_1.eContents().get(1);
@@ -483,15 +485,15 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Action cOverrideAction_3_1 = (Action)cGroup_3.eContents().get(1);
 		
 		//Modifier:
-		//	"const" {Const} (schema?="schema" | class?="class" | instance?="instance")? | "val" {Val} | "var" {Var} | "override"
-		//	{Override};
+		//	"const" {Const} (schema?="schema" | class?="class" | product?="product" | instance?="instance")? | "val" {Val} | "var"
+		//	{Var} | "override" {Override};
 		public ParserRule getRule() { return rule; }
 
-		//"const" {Const} (schema?="schema" | class?="class" | instance?="instance")? | "val" {Val} | "var" {Var} | "override"
-		//{Override}
+		//"const" {Const} (schema?="schema" | class?="class" | product?="product" | instance?="instance")? | "val" {Val} | "var"
+		//{Var} | "override" {Override}
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"const" {Const} (schema?="schema" | class?="class" | instance?="instance")?
+		//"const" {Const} (schema?="schema" | class?="class" | product?="product" | instance?="instance")?
 		public Group getGroup_0() { return cGroup_0; }
 
 		//"const"
@@ -500,7 +502,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//{Const}
 		public Action getConstAction_0_1() { return cConstAction_0_1; }
 
-		//(schema?="schema" | class?="class" | instance?="instance")?
+		//(schema?="schema" | class?="class" | product?="product" | instance?="instance")?
 		public Alternatives getAlternatives_0_2() { return cAlternatives_0_2; }
 
 		//schema?="schema"
@@ -515,11 +517,17 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//"class"
 		public Keyword getClassClassKeyword_0_2_1_0() { return cClassClassKeyword_0_2_1_0; }
 
+		//product?="product"
+		public Assignment getProductAssignment_0_2_2() { return cProductAssignment_0_2_2; }
+
+		//"product"
+		public Keyword getProductProductKeyword_0_2_2_0() { return cProductProductKeyword_0_2_2_0; }
+
 		//instance?="instance"
-		public Assignment getInstanceAssignment_0_2_2() { return cInstanceAssignment_0_2_2; }
+		public Assignment getInstanceAssignment_0_2_3() { return cInstanceAssignment_0_2_3; }
 
 		//"instance"
-		public Keyword getInstanceInstanceKeyword_0_2_2_0() { return cInstanceInstanceKeyword_0_2_2_0; }
+		public Keyword getInstanceInstanceKeyword_0_2_3_0() { return cInstanceInstanceKeyword_0_2_3_0; }
 
 		//"val" {Val}
 		public Group getGroup_1() { return cGroup_1; }
@@ -600,8 +608,10 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Keyword cSchemaSchemaKeyword_0_2_0_0 = (Keyword)cSchemaAssignment_0_2_0.eContents().get(0);
 		private final Assignment cClassAssignment_0_2_1 = (Assignment)cAlternatives_0_2.eContents().get(1);
 		private final Keyword cClassClassKeyword_0_2_1_0 = (Keyword)cClassAssignment_0_2_1.eContents().get(0);
-		private final Assignment cInstanceAssignment_0_2_2 = (Assignment)cAlternatives_0_2.eContents().get(2);
-		private final Keyword cInstanceInstanceKeyword_0_2_2_0 = (Keyword)cInstanceAssignment_0_2_2.eContents().get(0);
+		private final Assignment cProductAssignment_0_2_2 = (Assignment)cAlternatives_0_2.eContents().get(2);
+		private final Keyword cProductProductKeyword_0_2_2_0 = (Keyword)cProductAssignment_0_2_2.eContents().get(0);
+		private final Assignment cInstanceAssignment_0_2_3 = (Assignment)cAlternatives_0_2.eContents().get(3);
+		private final Keyword cInstanceInstanceKeyword_0_2_3_0 = (Keyword)cInstanceAssignment_0_2_3.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cValKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Action cValAction_1_1 = (Action)cGroup_1.eContents().get(1);
@@ -616,15 +626,15 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Action cDataAction_4_1 = (Action)cGroup_4.eContents().get(1);
 		
 		//MModifier:
-		//	"Const" {Const} (schema?="Schema" | class?="Class" | instance?="Instance")? | "Val" {Val} | "Var" {Var} | "Override"
-		//	{Override} | "Data" {Data};
+		//	"Const" {Const} (schema?="Schema" | class?="Class" | product?="Product" | instance?="Instance")? | "Val" {Val} | "Var"
+		//	{Var} | "Override" {Override} | "Data" {Data};
 		public ParserRule getRule() { return rule; }
 
-		//"Const" {Const} (schema?="Schema" | class?="Class" | instance?="Instance")? | "Val" {Val} | "Var" {Var} | "Override"
-		//{Override} | "Data" {Data}
+		//"Const" {Const} (schema?="Schema" | class?="Class" | product?="Product" | instance?="Instance")? | "Val" {Val} | "Var"
+		//{Var} | "Override" {Override} | "Data" {Data}
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"Const" {Const} (schema?="Schema" | class?="Class" | instance?="Instance")?
+		//"Const" {Const} (schema?="Schema" | class?="Class" | product?="Product" | instance?="Instance")?
 		public Group getGroup_0() { return cGroup_0; }
 
 		//"Const"
@@ -633,7 +643,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//{Const}
 		public Action getConstAction_0_1() { return cConstAction_0_1; }
 
-		//(schema?="Schema" | class?="Class" | instance?="Instance")?
+		//(schema?="Schema" | class?="Class" | product?="Product" | instance?="Instance")?
 		public Alternatives getAlternatives_0_2() { return cAlternatives_0_2; }
 
 		//schema?="Schema"
@@ -648,11 +658,17 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		//"Class"
 		public Keyword getClassClassKeyword_0_2_1_0() { return cClassClassKeyword_0_2_1_0; }
 
+		//product?="Product"
+		public Assignment getProductAssignment_0_2_2() { return cProductAssignment_0_2_2; }
+
+		//"Product"
+		public Keyword getProductProductKeyword_0_2_2_0() { return cProductProductKeyword_0_2_2_0; }
+
 		//instance?="Instance"
-		public Assignment getInstanceAssignment_0_2_2() { return cInstanceAssignment_0_2_2; }
+		public Assignment getInstanceAssignment_0_2_3() { return cInstanceAssignment_0_2_3; }
 
 		//"Instance"
-		public Keyword getInstanceInstanceKeyword_0_2_2_0() { return cInstanceInstanceKeyword_0_2_2_0; }
+		public Keyword getInstanceInstanceKeyword_0_2_3_0() { return cInstanceInstanceKeyword_0_2_3_0; }
 
 		//"Val" {Val}
 		public Group getGroup_1() { return cGroup_1; }
@@ -2752,7 +2768,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 
 	
 	//Model:
-	//	(schema?="Schema" | class?="Class" | instance?="Instance")? decls+=Decl*;
+	//	(schema?="Schema" | class?="Class" | product?="Product")? decls+=Decl*;
 	public ModelElements getModelAccess() {
 		return (pModel != null) ? pModel : (pModel = new ModelElements());
 	}
@@ -2782,7 +2798,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//FeatureDecl:
-	//	("feature" {Feature} (schema?="schema" | class?="class" | instance?="instance")? | "data" {Data} | "device" {Device} |
+	//	("feature" {Feature} (schema?="schema" | class?="class" | product?="product")? | "data" {Data} | "device" {Device} |
 	//	"app" {App}) name=ID ("extends" supers+=[FeatureDecl] ("with" supers+=[FeatureDecl])*)? ("{" members+=MemberDecl*
 	//	"}")? ("requires" "{" devices+=Device* assigns+=Assignment* exp=Exp "}")?;
 	public FeatureDeclElements getFeatureDeclAccess() {
@@ -2814,8 +2830,8 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//Modifier:
-	//	"const" {Const} (schema?="schema" | class?="class" | instance?="instance")? | "val" {Val} | "var" {Var} | "override"
-	//	{Override};
+	//	"const" {Const} (schema?="schema" | class?="class" | product?="product" | instance?="instance")? | "val" {Val} | "var"
+	//	{Var} | "override" {Override};
 	public ModifierElements getModifierAccess() {
 		return (pModifier != null) ? pModifier : (pModifier = new ModifierElements());
 	}
@@ -2835,8 +2851,8 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//MModifier:
-	//	"Const" {Const} (schema?="Schema" | class?="Class" | instance?="Instance")? | "Val" {Val} | "Var" {Var} | "Override"
-	//	{Override} | "Data" {Data};
+	//	"Const" {Const} (schema?="Schema" | class?="Class" | product?="Product" | instance?="Instance")? | "Val" {Val} | "Var"
+	//	{Var} | "Override" {Override} | "Data" {Data};
 	public MModifierElements getMModifierAccess() {
 		return (pMModifier != null) ? pMModifier : (pMModifier = new MModifierElements());
 	}
