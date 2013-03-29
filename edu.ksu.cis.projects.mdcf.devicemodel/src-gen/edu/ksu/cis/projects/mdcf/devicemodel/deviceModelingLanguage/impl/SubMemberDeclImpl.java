@@ -4,6 +4,7 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MModifier;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberDecl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubMemberDeclImpl#getModifier <em>Modifier</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubMemberDeclImpl#getName <em>Name</em>}</li>
  *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl.SubMemberDeclImpl#getType <em>Type</em>}</li>
  * </ul>
@@ -30,6 +32,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
 {
+  /**
+   * The cached value of the '{@link #getModifier() <em>Modifier</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getModifier()
+   * @generated
+   * @ordered
+   */
+  protected MModifier modifier;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -79,6 +91,54 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
   protected EClass eStaticClass()
   {
     return DeviceModelingLanguagePackage.Literals.SUB_MEMBER_DECL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MModifier getModifier()
+  {
+    return modifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetModifier(MModifier newModifier, NotificationChain msgs)
+  {
+    MModifier oldModifier = modifier;
+    modifier = newModifier;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MODIFIER, oldModifier, newModifier);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setModifier(MModifier newModifier)
+  {
+    if (newModifier != modifier)
+    {
+      NotificationChain msgs = null;
+      if (modifier != null)
+        msgs = ((InternalEObject)modifier).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MODIFIER, null, msgs);
+      if (newModifier != null)
+        msgs = ((InternalEObject)newModifier).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MODIFIER, null, msgs);
+      msgs = basicSetModifier(newModifier, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MODIFIER, newModifier, newModifier));
   }
 
   /**
@@ -162,6 +222,8 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MODIFIER:
+        return basicSetModifier(null, msgs);
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE:
         return basicSetType(null, msgs);
     }
@@ -178,6 +240,8 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MODIFIER:
+        return getModifier();
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__NAME:
         return getName();
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE:
@@ -196,6 +260,9 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MODIFIER:
+        setModifier((MModifier)newValue);
+        return;
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__NAME:
         setName((String)newValue);
         return;
@@ -216,6 +283,9 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MODIFIER:
+        setModifier((MModifier)null);
+        return;
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -236,6 +306,8 @@ public class SubMemberDeclImpl extends MemberDeclImpl implements SubMemberDecl
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__MODIFIER:
+        return modifier != null;
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL__TYPE:

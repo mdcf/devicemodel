@@ -2,7 +2,75 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.util;
 
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.*;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AccessExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Accessor;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AnyNatConstraint;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.App;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Assignment;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseFeatureType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BinaryExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintNat;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Data;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Decl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.EitherFeatureType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Exp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvariant;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.InvariantDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Literal;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.LiteralExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MModifier;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Modifier;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NameExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NumNatConstraint;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionFeatureType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Param;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Primary;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.PrimaryExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Report;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ReportMemberDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqFeatureType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetFeatureType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleBasicLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleNoneLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleOptionLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleSeqLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleSetLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleSomeLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleTupleLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SomeFeatureType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SomeLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SomeType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberMatch;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TupleLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TupleType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Type;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.UnaryExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Val;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Var;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -118,12 +186,26 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DeviceModelingLanguagePackage.MODIFIER:
+      {
+        Modifier modifier = (Modifier)theEObject;
+        T result = caseModifier(modifier);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL:
       {
         SubMemberDecl subMemberDecl = (SubMemberDecl)theEObject;
         T result = caseSubMemberDecl(subMemberDecl);
         if (result == null) result = caseMemberDecl(subMemberDecl);
         if (result == null) result = caseAccessor(subMemberDecl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.MMODIFIER:
+      {
+        MModifier mModifier = (MModifier)theEObject;
+        T result = caseMModifier(mModifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -365,12 +447,57 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DeviceModelingLanguagePackage.DATA:
+      {
+        Data data = (Data)theEObject;
+        T result = caseData(data);
+        if (result == null) result = caseComponentDecl(data);
+        if (result == null) result = caseDecl(data);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DeviceModelingLanguagePackage.APP:
       {
         App app = (App)theEObject;
         T result = caseApp(app);
         if (result == null) result = caseComponentDecl(app);
         if (result == null) result = caseDecl(app);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.CONST:
+      {
+        Const const_ = (Const)theEObject;
+        T result = caseConst(const_);
+        if (result == null) result = caseModifier(const_);
+        if (result == null) result = caseMModifier(const_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.VAL:
+      {
+        Val val = (Val)theEObject;
+        T result = caseVal(val);
+        if (result == null) result = caseModifier(val);
+        if (result == null) result = caseMModifier(val);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.VAR:
+      {
+        Var var = (Var)theEObject;
+        T result = caseVar(var);
+        if (result == null) result = caseModifier(var);
+        if (result == null) result = caseMModifier(var);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DeviceModelingLanguagePackage.OVERRIDE:
+      {
+        edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Override override = (edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Override)theEObject;
+        T result = caseOverride(override);
+        if (result == null) result = caseModifier(override);
+        if (result == null) result = caseMModifier(override);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -667,6 +794,22 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Modifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseModifier(Modifier object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Sub Member Decl</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -678,6 +821,22 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSubMemberDecl(SubMemberDecl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>MModifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>MModifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMModifier(MModifier object)
   {
     return null;
   }
@@ -1179,6 +1338,22 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Data</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseData(Data object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>App</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1190,6 +1365,70 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseApp(App object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Const</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Const</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConst(Const object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Val</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Val</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVal(Val object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Var</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Var</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVar(Var object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Override</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Override</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOverride(edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Override object)
   {
     return null;
   }
