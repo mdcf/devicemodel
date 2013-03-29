@@ -9,6 +9,9 @@
   <genPackages prefix="DeviceModelingLanguage" basePackage="edu.ksu.cis.projects.mdcf.devicemodel"
       disposableProviderFactory="true" ecorePackage="DeviceModelingLanguage.ecore#/">
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Model/schema"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Model/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Model/instance"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//Model/decls"/>
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Decl">
@@ -26,11 +29,12 @@
     </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//MemberDecl"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//AttrDecl">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//AttrDecl/modifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//AttrDecl/modifier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//AttrDecl/attributeName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//AttrDecl/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//AttrDecl/literal"/>
     </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Modifier"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SubMemberDecl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//SubMemberDecl/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SubMemberDecl/type"/>
@@ -119,8 +123,18 @@
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//SimpleSetLiteral">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//SimpleSetLiteral/elems"/>
     </genClasses>
-    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Component"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Component/schema"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Component/class"/>
+    </genClasses>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//App"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Const">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Const/schema"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//Const/class"/>
+    </genClasses>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Val"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Var"/>
+    <genClasses ecoreClass="DeviceModelingLanguage.ecore#//Override"/>
     <genClasses ecoreClass="DeviceModelingLanguage.ecore#//OptionFeatureType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DeviceModelingLanguage.ecore#//OptionFeatureType/base"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DeviceModelingLanguage.ecore#//OptionFeatureType/none"/>

@@ -5,22 +5,22 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Component</b></em>'.
+ * A representation of the model object '<em><b>Const</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component#isSchema <em>Schema</em>}</li>
- *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component#isClass <em>Class</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const#isSchema <em>Schema</em>}</li>
+ *   <li>{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const#isClass <em>Class</em>}</li>
  * </ul>
  * </p>
  *
- * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getComponent()
+ * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getConst()
  * @model
  * @generated
  */
-public interface Component extends ComponentDecl
+public interface Const extends Modifier
 {
   /**
    * Returns the value of the '<em><b>Schema</b></em>' attribute.
@@ -32,14 +32,14 @@ public interface Component extends ComponentDecl
    * <!-- end-user-doc -->
    * @return the value of the '<em>Schema</em>' attribute.
    * @see #setSchema(boolean)
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getComponent_Schema()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getConst_Schema()
    * @model
    * @generated
    */
   boolean isSchema();
 
   /**
-   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component#isSchema <em>Schema</em>}' attribute.
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const#isSchema <em>Schema</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Schema</em>' attribute.
@@ -58,14 +58,14 @@ public interface Component extends ComponentDecl
    * <!-- end-user-doc -->
    * @return the value of the '<em>Class</em>' attribute.
    * @see #setClass(boolean)
-   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getComponent_Class()
+   * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getConst_Class()
    * @model
    * @generated
    */
   boolean isClass();
 
   /**
-   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component#isClass <em>Class</em>}' attribute.
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const#isClass <em>Class</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Class</em>' attribute.
@@ -74,4 +74,4 @@ public interface Component extends ComponentDecl
    */
   void setClass(boolean value);
 
-} // Component
+} // Const

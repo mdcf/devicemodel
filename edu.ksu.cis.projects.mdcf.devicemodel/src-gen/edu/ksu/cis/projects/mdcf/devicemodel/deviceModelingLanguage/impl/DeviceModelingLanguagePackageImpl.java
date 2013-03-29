@@ -14,6 +14,7 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicLiteral
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BinaryExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintNat;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Decl;
@@ -29,6 +30,7 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Literal;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.LiteralExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Modifier;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NameExp;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneLiteral;
@@ -66,6 +68,8 @@ import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TupleType;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Type;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.UnaryExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Val;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Var;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -123,6 +127,13 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * @generated
    */
   private EClass attrDeclEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass modifierEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -354,6 +365,34 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * @generated
    */
   private EClass appEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass constEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass valEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass varEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass overrideEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -594,9 +633,39 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getModel_Schema()
+  {
+    return (EAttribute)modelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getModel_Class()
+  {
+    return (EAttribute)modelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getModel_Instance()
+  {
+    return (EAttribute)modelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getModel_Decls()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+    return (EReference)modelEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -724,9 +793,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAttrDecl_Modifier()
+  public EReference getAttrDecl_Modifier()
   {
-    return (EAttribute)attrDeclEClass.getEStructuralFeatures().get(0);
+    return (EReference)attrDeclEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -757,6 +826,16 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
   public EReference getAttrDecl_Literal()
   {
     return (EReference)attrDeclEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getModifier()
+  {
+    return modifierEClass;
   }
 
   /**
@@ -1444,9 +1523,89 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getComponent_Schema()
+  {
+    return (EAttribute)componentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getComponent_Class()
+  {
+    return (EAttribute)componentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getApp()
   {
     return appEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getConst()
+  {
+    return constEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConst_Schema()
+  {
+    return (EAttribute)constEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConst_Class()
+  {
+    return (EAttribute)constEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVal()
+  {
+    return valEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVar()
+  {
+    return varEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOverride()
+  {
+    return overrideEClass;
   }
 
   /**
@@ -2020,6 +2179,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
+    createEAttribute(modelEClass, MODEL__SCHEMA);
+    createEAttribute(modelEClass, MODEL__CLASS);
+    createEAttribute(modelEClass, MODEL__INSTANCE);
     createEReference(modelEClass, MODEL__DECLS);
 
     declEClass = createEClass(DECL);
@@ -2038,10 +2200,12 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     memberDeclEClass = createEClass(MEMBER_DECL);
 
     attrDeclEClass = createEClass(ATTR_DECL);
-    createEAttribute(attrDeclEClass, ATTR_DECL__MODIFIER);
+    createEReference(attrDeclEClass, ATTR_DECL__MODIFIER);
     createEAttribute(attrDeclEClass, ATTR_DECL__ATTRIBUTE_NAME);
     createEReference(attrDeclEClass, ATTR_DECL__TYPE);
     createEReference(attrDeclEClass, ATTR_DECL__LITERAL);
+
+    modifierEClass = createEClass(MODIFIER);
 
     subMemberDeclEClass = createEClass(SUB_MEMBER_DECL);
     createEAttribute(subMemberDeclEClass, SUB_MEMBER_DECL__NAME);
@@ -2142,8 +2306,20 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     createEReference(simpleSetLiteralEClass, SIMPLE_SET_LITERAL__ELEMS);
 
     componentEClass = createEClass(COMPONENT);
+    createEAttribute(componentEClass, COMPONENT__SCHEMA);
+    createEAttribute(componentEClass, COMPONENT__CLASS);
 
     appEClass = createEClass(APP);
+
+    constEClass = createEClass(CONST);
+    createEAttribute(constEClass, CONST__SCHEMA);
+    createEAttribute(constEClass, CONST__CLASS);
+
+    valEClass = createEClass(VAL);
+
+    varEClass = createEClass(VAR);
+
+    overrideEClass = createEClass(OVERRIDE);
 
     optionFeatureTypeEClass = createEClass(OPTION_FEATURE_TYPE);
     createEReference(optionFeatureTypeEClass, OPTION_FEATURE_TYPE__BASE);
@@ -2276,6 +2452,10 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     simpleSetLiteralEClass.getESuperTypes().add(this.getSimpleLiteral());
     componentEClass.getESuperTypes().add(this.getComponentDecl());
     appEClass.getESuperTypes().add(this.getComponentDecl());
+    constEClass.getESuperTypes().add(this.getModifier());
+    valEClass.getESuperTypes().add(this.getModifier());
+    varEClass.getESuperTypes().add(this.getModifier());
+    overrideEClass.getESuperTypes().add(this.getModifier());
     optionFeatureTypeEClass.getESuperTypes().add(this.getFeatureType());
     someFeatureTypeEClass.getESuperTypes().add(this.getFeatureType());
     eitherFeatureTypeEClass.getESuperTypes().add(this.getFeatureType());
@@ -2302,6 +2482,9 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getModel_Schema(), ecorePackage.getEBoolean(), "schema", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getModel_Class(), ecorePackage.getEBoolean(), "class", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getModel_Instance(), ecorePackage.getEBoolean(), "instance", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Decls(), this.getDecl(), null, "decls", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(declEClass, Decl.class, "Decl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2320,10 +2503,12 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEClass(memberDeclEClass, MemberDecl.class, "MemberDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(attrDeclEClass, AttrDecl.class, "AttrDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttrDecl_Modifier(), ecorePackage.getEString(), "modifier", null, 0, 1, AttrDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttrDecl_Modifier(), this.getModifier(), null, "modifier", null, 0, 1, AttrDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttrDecl_AttributeName(), ecorePackage.getEString(), "attributeName", null, 0, 1, AttrDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAttrDecl_Type(), this.getType(), null, "type", null, 0, 1, AttrDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAttrDecl_Literal(), this.getLiteral(), null, "literal", null, 0, 1, AttrDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(modifierEClass, Modifier.class, "Modifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(subMemberDeclEClass, SubMemberDecl.class, "SubMemberDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSubMemberDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, SubMemberDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2424,8 +2609,20 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     initEReference(getSimpleSetLiteral_Elems(), this.getSimpleLiteral(), null, "elems", null, 0, -1, SimpleSetLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getComponent_Schema(), ecorePackage.getEBoolean(), "schema", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComponent_Class(), ecorePackage.getEBoolean(), "class", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(appEClass, App.class, "App", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(constEClass, Const.class, "Const", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getConst_Schema(), ecorePackage.getEBoolean(), "schema", null, 0, 1, Const.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConst_Class(), ecorePackage.getEBoolean(), "class", null, 0, 1, Const.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(valEClass, Val.class, "Val", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(varEClass, Var.class, "Var", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(overrideEClass, edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Override.class, "Override", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(optionFeatureTypeEClass, OptionFeatureType.class, "OptionFeatureType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOptionFeatureType_Base(), this.getBaseFeatureType(), null, "base", null, 0, 1, OptionFeatureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

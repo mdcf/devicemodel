@@ -2,7 +2,74 @@
  */
 package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 
-import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.*;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AccessExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Accessor;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AnyNatConstraint;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.App;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Assignment;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseFeatureType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BaseType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BasicLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.BinaryExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Component;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ComponentDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Const;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ConstraintNat;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Decl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Device;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguageFactory;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.EitherFeatureType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Exp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.FeatureType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.GeneralInvariant;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.InvariantDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Literal;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.LiteralExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MemberDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Model;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Modifier;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.MultiplicityInvariant;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NameExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NoneType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.NumNatConstraint;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionFeatureType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.OptionType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Param;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Primary;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.PrimaryExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Report;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.ReportMemberDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqFeatureType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SeqType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetFeatureType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SetType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleBasicLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleNoneLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleOptionLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleSeqLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleSetLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleSomeLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SimpleTupleLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SomeFeatureType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SomeLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SomeType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.SubMemberMatch;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TupleLiteral;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TupleType;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Type;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.TypeDecl;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.UnaryExp;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Val;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Var;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -70,6 +137,7 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.COMPONENT_DECL: return createComponentDecl();
       case DeviceModelingLanguagePackage.MEMBER_DECL: return createMemberDecl();
       case DeviceModelingLanguagePackage.ATTR_DECL: return createAttrDecl();
+      case DeviceModelingLanguagePackage.MODIFIER: return createModifier();
       case DeviceModelingLanguagePackage.SUB_MEMBER_DECL: return createSubMemberDecl();
       case DeviceModelingLanguagePackage.ASSIGNMENT: return createAssignment();
       case DeviceModelingLanguagePackage.REPORT: return createReport();
@@ -103,6 +171,10 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
       case DeviceModelingLanguagePackage.SIMPLE_SET_LITERAL: return createSimpleSetLiteral();
       case DeviceModelingLanguagePackage.COMPONENT: return createComponent();
       case DeviceModelingLanguagePackage.APP: return createApp();
+      case DeviceModelingLanguagePackage.CONST: return createConst();
+      case DeviceModelingLanguagePackage.VAL: return createVal();
+      case DeviceModelingLanguagePackage.VAR: return createVar();
+      case DeviceModelingLanguagePackage.OVERRIDE: return createOverride();
       case DeviceModelingLanguagePackage.OPTION_FEATURE_TYPE: return createOptionFeatureType();
       case DeviceModelingLanguagePackage.SOME_FEATURE_TYPE: return createSomeFeatureType();
       case DeviceModelingLanguagePackage.EITHER_FEATURE_TYPE: return createEitherFeatureType();
@@ -195,6 +267,17 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     AttrDeclImpl attrDecl = new AttrDeclImpl();
     return attrDecl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Modifier createModifier()
+  {
+    ModifierImpl modifier = new ModifierImpl();
+    return modifier;
   }
 
   /**
@@ -558,6 +641,50 @@ public class DeviceModelingLanguageFactoryImpl extends EFactoryImpl implements D
   {
     AppImpl app = new AppImpl();
     return app;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Const createConst()
+  {
+    ConstImpl const_ = new ConstImpl();
+    return const_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Val createVal()
+  {
+    ValImpl val = new ValImpl();
+    return val;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Var createVar()
+  {
+    VarImpl var = new VarImpl();
+    return var;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Override createOverride()
+  {
+    OverrideImpl override = new OverrideImpl();
+    return override;
   }
 
   /**

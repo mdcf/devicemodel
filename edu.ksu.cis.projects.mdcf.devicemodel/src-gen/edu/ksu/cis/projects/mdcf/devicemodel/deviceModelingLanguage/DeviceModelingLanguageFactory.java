@@ -77,6 +77,15 @@ public interface DeviceModelingLanguageFactory extends EFactory
   AttrDecl createAttrDecl();
 
   /**
+   * Returns a new object of class '<em>Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Modifier</em>'.
+   * @generated
+   */
+  Modifier createModifier();
+
+  /**
    * Returns a new object of class '<em>Sub Member Decl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -372,6 +381,42 @@ public interface DeviceModelingLanguageFactory extends EFactory
    * @generated
    */
   App createApp();
+
+  /**
+   * Returns a new object of class '<em>Const</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Const</em>'.
+   * @generated
+   */
+  Const createConst();
+
+  /**
+   * Returns a new object of class '<em>Val</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Val</em>'.
+   * @generated
+   */
+  Val createVal();
+
+  /**
+   * Returns a new object of class '<em>Var</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Var</em>'.
+   * @generated
+   */
+  Var createVar();
+
+  /**
+   * Returns a new object of class '<em>Override</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Override</em>'.
+   * @generated
+   */
+  Override createOverride();
 
   /**
    * Returns a new object of class '<em>Option Feature Type</em>'.

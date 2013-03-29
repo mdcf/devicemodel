@@ -5,6 +5,7 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.impl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Literal;
+import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Modifier;
 import edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Type;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -34,24 +35,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class AttrDeclImpl extends MemberDeclImpl implements AttrDecl
 {
   /**
-   * The default value of the '{@link #getModifier() <em>Modifier</em>}' attribute.
+   * The cached value of the '{@link #getModifier() <em>Modifier</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getModifier()
    * @generated
    * @ordered
    */
-  protected static final String MODIFIER_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getModifier() <em>Modifier</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getModifier()
-   * @generated
-   * @ordered
-   */
-  protected String modifier = MODIFIER_EDEFAULT;
+  protected Modifier modifier;
 
   /**
    * The default value of the '{@link #getAttributeName() <em>Attribute Name</em>}' attribute.
@@ -119,7 +110,7 @@ public class AttrDeclImpl extends MemberDeclImpl implements AttrDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getModifier()
+  public Modifier getModifier()
   {
     return modifier;
   }
@@ -129,12 +120,37 @@ public class AttrDeclImpl extends MemberDeclImpl implements AttrDecl
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setModifier(String newModifier)
+  public NotificationChain basicSetModifier(Modifier newModifier, NotificationChain msgs)
   {
-    String oldModifier = modifier;
+    Modifier oldModifier = modifier;
     modifier = newModifier;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.ATTR_DECL__MODIFIER, oldModifier, modifier));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.ATTR_DECL__MODIFIER, oldModifier, newModifier);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setModifier(Modifier newModifier)
+  {
+    if (newModifier != modifier)
+    {
+      NotificationChain msgs = null;
+      if (modifier != null)
+        msgs = ((InternalEObject)modifier).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.ATTR_DECL__MODIFIER, null, msgs);
+      if (newModifier != null)
+        msgs = ((InternalEObject)newModifier).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeviceModelingLanguagePackage.ATTR_DECL__MODIFIER, null, msgs);
+      msgs = basicSetModifier(newModifier, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DeviceModelingLanguagePackage.ATTR_DECL__MODIFIER, newModifier, newModifier));
   }
 
   /**
@@ -266,6 +282,8 @@ public class AttrDeclImpl extends MemberDeclImpl implements AttrDecl
   {
     switch (featureID)
     {
+      case DeviceModelingLanguagePackage.ATTR_DECL__MODIFIER:
+        return basicSetModifier(null, msgs);
       case DeviceModelingLanguagePackage.ATTR_DECL__TYPE:
         return basicSetType(null, msgs);
       case DeviceModelingLanguagePackage.ATTR_DECL__LITERAL:
@@ -307,7 +325,7 @@ public class AttrDeclImpl extends MemberDeclImpl implements AttrDecl
     switch (featureID)
     {
       case DeviceModelingLanguagePackage.ATTR_DECL__MODIFIER:
-        setModifier((String)newValue);
+        setModifier((Modifier)newValue);
         return;
       case DeviceModelingLanguagePackage.ATTR_DECL__ATTRIBUTE_NAME:
         setAttributeName((String)newValue);
@@ -333,7 +351,7 @@ public class AttrDeclImpl extends MemberDeclImpl implements AttrDecl
     switch (featureID)
     {
       case DeviceModelingLanguagePackage.ATTR_DECL__MODIFIER:
-        setModifier(MODIFIER_EDEFAULT);
+        setModifier((Modifier)null);
         return;
       case DeviceModelingLanguagePackage.ATTR_DECL__ATTRIBUTE_NAME:
         setAttributeName(ATTRIBUTE_NAME_EDEFAULT);
@@ -359,7 +377,7 @@ public class AttrDeclImpl extends MemberDeclImpl implements AttrDecl
     switch (featureID)
     {
       case DeviceModelingLanguagePackage.ATTR_DECL__MODIFIER:
-        return MODIFIER_EDEFAULT == null ? modifier != null : !MODIFIER_EDEFAULT.equals(modifier);
+        return modifier != null;
       case DeviceModelingLanguagePackage.ATTR_DECL__ATTRIBUTE_NAME:
         return ATTRIBUTE_NAME_EDEFAULT == null ? attributeName != null : !ATTRIBUTE_NAME_EDEFAULT.equals(attributeName);
       case DeviceModelingLanguagePackage.ATTR_DECL__TYPE:
@@ -381,9 +399,7 @@ public class AttrDeclImpl extends MemberDeclImpl implements AttrDecl
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (modifier: ");
-    result.append(modifier);
-    result.append(", attributeName: ");
+    result.append(" (attributeName: ");
     result.append(attributeName);
     result.append(')');
     return result.toString();

@@ -25,30 +25,30 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
 public interface AttrDecl extends MemberDecl, Accessor
 {
   /**
-   * Returns the value of the '<em><b>Modifier</b></em>' attribute.
+   * Returns the value of the '<em><b>Modifier</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Modifier</em>' attribute isn't clear,
+   * If the meaning of the '<em>Modifier</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Modifier</em>' attribute.
-   * @see #setModifier(String)
+   * @return the value of the '<em>Modifier</em>' containment reference.
+   * @see #setModifier(Modifier)
    * @see edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.DeviceModelingLanguagePackage#getAttrDecl_Modifier()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getModifier();
+  Modifier getModifier();
 
   /**
-   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl#getModifier <em>Modifier</em>}' attribute.
+   * Sets the value of the '{@link edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.AttrDecl#getModifier <em>Modifier</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Modifier</em>' attribute.
+   * @param value the new value of the '<em>Modifier</em>' containment reference.
    * @see #getModifier()
    * @generated
    */
-  void setModifier(String value);
+  void setModifier(Modifier value);
 
   /**
    * Returns the value of the '<em><b>Attribute Name</b></em>' attribute.
