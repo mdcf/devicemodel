@@ -5,10 +5,13 @@ type Int extends Number
 type Nat extends Int
 type DeviceId 
 type DeviceType
+type Type
 type PhysioParameterType
 type Unit
 type String
 type Boolean
+type Certificate                          //Eugene
+type X590Certificate extends Certificate  //Eugene
 
 type MeasurementStatus
 
@@ -16,7 +19,7 @@ component Range {
   const min : Number
   const max : Number
 
-  inv (min <= max)
+  invar (min <= max) //Eugene -- unilaterally changed inv to invar
 }
 
 component IntRange extends Range {
@@ -26,21 +29,27 @@ component IntRange extends Range {
 
 
 component ICEDevice {
-  const id          : DeviceId  // UUID/GUID
-  const 'type       : DeviceType // 11073 Nomenclature
+  const id            : ICEDeviceIdentity //Eugene
+
+  //Eugene -- the following have been moved to ICEDeviceIdentity
+  //const id          : DeviceId   // UUID/GUID
+  //const 'type       : DeviceType // 11073 Nomenclature
+
+  //manufacturer      : DeviceManufacturer //Eugene
+  //model             : DeviceModel
   
-  model             : DeviceModel
+  pysioParams         : Set[ICEPhysioParameter]
   
-  pysioParams       : Set[ICEPhysioParameter]
-  
+  indentedUse         : Set[ICEPhysioParameter] //Eugene -- future-proofing, e.g. must bind to at least these parameters, otherwise device not being used as intended. Of course app can be actively stupid and throw some of the data away even though it receives it, but there's only so much we can do. This may catch enough stupid errors to be worthwhile.
+
   // alerts on two or more physio params
   
   // ... etc
 }
 
 component ICEPhysioParameter {
-  const ppType : PhysioParameterType // Nomenclature
-  const unit            : Unit  // Nomenclature
+  const ppType          : PhysioParameterType  // Nomenclature
+  const unit            : Unit                 // Nomenclature
   
   // add primitive report incl. measurement type
   
@@ -50,19 +59,22 @@ component ICEPhysioParameter {
   								 //it can also express context information. (e.g. time stamp) 
   
   exchanges             : Set[DataExchange]
-  // inv {C}, {P}, {C, P}
+  // invar {C}, {P}, {C, P}
   
-  alerts                : Set[ICEAlert] 
+  alerts                : Set[ICEAlert]
+  
+  security				: ICESecurityProperty //Eugene
 }
 
 component DeviceModel { // manufacture model
-  const no : String 
-  val version : String
+  const no            : String 
+  val version         : String // e.g. firmware revision -- subject for debate whether this should be const
+  const manufacturer  : DeviceManufacturer //Eugene
   
-  securityParams : Set[ICESecurity] // credentials
+  //securityParams : Set[ICESecurity] //credentials // Eugene -- credentials have been moved elsewhere
 }
 
-component DataExchange {} // QUIC
+component DataExchange {} // QUIC-like in some sense
 
 component ProviderInitiated extends DataExchange {}
 
@@ -79,7 +91,8 @@ component Episodic extends ProviderInitiated {
 }
 
 component ICEAlert {
-  
+  security  : ICESecurityProperty //Eugene -- who can see the alert, so only read permission applies
+  // ... etc
 }
 
 component RangeValueAlert extends ICEAlert with RangeSetting {
@@ -98,21 +111,21 @@ component ComplexAlert extends ICEAlert {
 }
 
 component ICEDeviceSetting {
-  security : Option[ICESecurity]
+  //security : Option[ICESecurity] //Eugene -- not clear if needed here
 }
 
 component RangeSetting extends ICEDeviceSetting {
   var min : Number
   var max : Number
   
-  inv (min <= max)
+  invar (min <= max)
 }
 
 component IntRangeSetting extends RangeSetting {
   var min : Int
   var max : Int
   
-  inv (min <= max)
+  invar (min <= max)
 }
 
 component ValueSetting extends ICEDeviceSetting {
@@ -120,19 +133,15 @@ component ValueSetting extends ICEDeviceSetting {
 }
 
 component ICEDeviceStatus {
-  security : Option[ICESecurity]
-  
+  //security : Option[ICESecurity] //Eugene -- why is this here?
+
   alerts : Set[ICEAlert]
 }
 
 component BatteryLevelStatus extends ICEDeviceStatus {
   val level : Int
   
-  inv ((Int'(0) <= level) && (level <= Int'(100)))
-}
-
-component ICESecurity {
-  // read/write acl
+  invar ((Int'(0) <= level) && (level <= Int'(100)))
 }
 
 component Metric {
@@ -168,3 +177,84 @@ component ArrayValueNumeric extends Metric {
   attributes      : Set[MetricAttribute]
 }
 
+
+// SECURITY STUFF //
+
+component ICESecurityProperty { //Eugene -- rough cut
+  // read/write ACL, but for now just basic properties
+  val canRead            : Boolean
+  val canWrite           : Boolean
+  val canWriteExclusive  : Boolean
+  var canChange          : Option[Set[IceIdentity]] //defined as var to allow for configuration
+
+  invar (canWriteExclusive iff canWrite) // Eugene -- I'm sure it's the wrong syntax
+}
+
+component ICEIdentity { //Eugene -- rough cut
+  const id                : Id         // UUID/GUID
+  const 'type             : Type       // Device, doctor, nurse, app, etc.
+  const credentials       : ICESecurityCredentials
+}
+
+component ICEDeviceIdentity extends ICEIdentity { //Eugene -- rough cut
+  override id             : DeviceId   // UUID/GUID
+  override 'type          : DeviceType // 11073 Nomenclature
+
+  model                   : DeviceModel //Eugene
+}
+
+component ICEAppIdentity extends ICEDeviceIdentity { //Eugene -- rough cut
+  override id             : AppId   // UUID/GUID
+  override 'type          : AppType // Nomenclature -- probably not 11073
+}
+
+component ICEClinicianIdentity extends ICEIdentity { //Eugene -- rough cut
+  override id             : ClinicianId        // UUID/GUID
+  override 'type          : Set[ClinicianRole] //Eugene
+
+  const affiliation       : Set[ICEFacilityIdentity] //Eugene
+  
+  invar (ICESecurityCredentials.identity in affiliation) //Eugene -- syntax almost definitely wrong
+}
+
+component ICEFacilityIdentity extends ICEIdentity { //Eugene -- rough cut
+  override id             : FacilityId        // UUID/GUID
+  override 'type          : Set[FacilityType] //Eugene -- hospital, clinic, home care, etc.
+}
+
+component ICESecurityCredentials { //Eugene -- rough cut
+  const identity                   : ICEIdentity //should be something which extends ICEIdentity
+  const rootcertificate            : Option[RootCertificate] //Certifier
+}
+
+component ICEDeviceSecurityCredentials extends ICESecurityCredentials { //Eugene -- rough cut
+  const manufacturercertificate    : Option[ManufacturerCertificate]  //Manufacturer's certification
+    const devicemodelcertificate   : Option[DeviceModelCertificate]   //Device model certification from certifier in RootCertificate
+  const deviceinstancecertificate  : DeviceInstanceCertificate        //Device physical instance certificate signed by the manufacturer in ManufacturerCertificate
+
+  invar (devicemodelcertificate.model == deviceinstancecertificate.model) //Eugene -- syntax almost definitely wrong
+  invar (manufacturercertificate.manufacturer == devicemodelcertificate.manufacturer == deviceinstancecertificate.manufacturer) //Eugene -- syntax almost definitely wrong
+}
+
+component Certificate { //Eugene -- rough cut
+  const certificate  : X590Certificate
+}
+
+component RootCertificate extends Certificate {  //Eugene -- rough cut
+  const certificate  : X590Certificate
+}
+
+component ManufacturerCertificate extends Certificate {  //Eugene -- rough cut
+  const certificate  : X590Certificate
+  manufacturer       : DeviceManufacturer
+}
+
+component DeviceModelCertificate extends Certificate {  //Eugene -- rough cut
+  const certificate  : X590Certificate
+  model              : DeviceModel
+}
+
+component DeviceInstanceCertificate extends Certificate {  //Eugene -- rough cut
+  const certificate  : X590Certificate
+  const model        : DeviceModel
+}
