@@ -1,7 +1,7 @@
 device MultiMonitor extends ICEMultiMonitor {
   override id = DeviceId '( MultiMonitor )
   
-  model : DeviceModel = {
+  model : ICEManufacturerModel = {
     override no = String'( MultiMonitorv) 
   } 
 
@@ -11,7 +11,7 @@ device MultiMonitor extends ICEMultiMonitor {
         override min = Int'(0)
         override max = Int'(100)
       }
-      exchanges : Set[DataExchange] = {
+      exchanges : Set[ICEDataExchange] = {
         ClientInitiated = {
           override maxRetrievalRatePerSecond = Nat'(15) 
         }
@@ -29,7 +29,7 @@ device MultiMonitor extends ICEMultiMonitor {
         override min = Int'(20)
         override max = Int'(300)
       }
-      exchanges : Set[DataExchange] = {
+      exchanges : Set[ICEDataExchange] = {
         ClientInitiated = {
           override maxRetrievalRatePerSecond = Nat'(5) 
         }
@@ -47,7 +47,7 @@ device MultiMonitor extends ICEMultiMonitor {
         override min = Int'(20)
         override max = Int'(300)
       }
-      exchanges : Set[DataExchange] = {
+      exchanges : Set[ICEDataExchange] = {
         ClientInitiated = {
           override maxRetrievalRatePerSecond = Nat'(5) 
         }

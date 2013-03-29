@@ -7,6 +7,8 @@
 //  B a s e    T y p e s 
 //=======================================================================================================
 
+Schema
+
 type Any
 type Number
 type Time
@@ -19,25 +21,26 @@ type IEEEUnit
 type String
 type Boolean
 type MeasurementStatus
+type ICETimeStamp
 
 //=======================================================================================================
 //  C o m p o u n d    T y p e s 
 //=======================================================================================================
 
 
-component Range {
+feature Range {
   const min : Number
   const max : Number
 
   inv (min <= max)
 }
 
-component IntRange extends Range {
+feature IntRange extends Range {
   const min : Int
   const max : Int
 }
 
-component NatRange extends Range {
+feature NatRange extends Range {
   const min : Nat
   const max : Nat
 }
@@ -48,17 +51,15 @@ component NatRange extends Range {
 
 // === I C E   D e v i c e  ===
 
-component ICEDevice {
-  // instance attribute
-  const id          : DeviceId  // UUID/GUID
-  // class attribute
-  const 'type       : IEEEDeviceType // 11073 Nomenclature
+feature ICEDevice {
+  const instance id          : DeviceId  // UUID/GUID
+  const class 'type          : IEEEDeviceType // 11073 Nomenclature
   
   // information about the manfacturer make / model of the device
-  manufacturerModel    : ICEManufacturerModel
+  manufacturerModel : ICEManufacturerModel
   // physiological parameters provided for the device
     // cardinality constraint: set may be empty
-  physioParams       : Set[ICEPhysioParameter]
+  physioParams      : Set[ICEPhysioParameter]
   // device level alarms / alerts
   // cardinality constraint: set may be empty
   alerts             : Set[ICEAlert]
@@ -68,7 +69,7 @@ component ICEDevice {
 
 // === I C E   M a n u f a c t u r e r    I n f o r m a t i o n ===
 
-component ICEManufacturerModel { 
+feature ICEManufacturerModel { 
   // instance constant, indicates the manufacturer model number of the device
   const modelNumber : String 
   // read-only setting on the device.  This might also be specified as an instance constant, but Eugene
@@ -81,13 +82,13 @@ component ICEManufacturerModel {
 
 // === I C E   P h y s i o l o g i c a l    P a r a m e t e r  ===
 
-component ICEPhysioParameter {
+feature ICEPhysioParameter {
   // class constant
   const physioParameterType : IEEEPhysioParameterType // Nomenclature
   // class constant
   const unit                : IEEEUnit  // Nomenclature
 
-  parameterValueStructure    : Metric //attribute that expresses the structure of the value of this parameter. (numeric, rt-sa, and etc.)
+  parameterValueStructure    : ICEMetric //attribute that expresses the structure of the value of this parameter. (numeric, rt-sa, and etc.)
   								 //it can also express context information. (e.g. time stamp) 
 
   // cardinality constraint: set must have a least one element drawn from ClientInitiated or Periodic
@@ -110,17 +111,17 @@ component ICEPhysioParameter {
 // when moving a value from the provider to a client (e.g., reading a value provided by a device)
 //
 
-component ICEDataExchange {} // roughly corresponds to QUIC transactions
+feature ICEDataExchange {} // roughly corresponds to QUIC transactions
 
-component ProviderInitiated extends ICEDataExchange {}
+feature ProviderInitiated extends ICEDataExchange {}
 
-component ClientInitiated extends ICEDataExchange {
+feature ClientInitiated extends ICEDataExchange {
   // instance const, most likely, but might be a class constant.
   // Specifies the maximum rate (in terms of requests per second) at which client can request a value from a device 
   const class maxRetrievalRate : Nat 
 }
 
-component Periodic extends ProviderInitiated {
+feature Periodic extends ProviderInitiated {
   // instance const, most likely, but might be a class constant
   // The provider will publish at a rate between the upper/lower bounds of IntRange per Rate_Unit
   // Note: This structure matches AADL's Communication_Properties::Output_Rate (and Input_Rate)
@@ -133,7 +134,7 @@ component Periodic extends ProviderInitiated {
   // Rate_Distribution => Fixed
 }
 
-component Episodic extends ProviderInitiated {
+feature Episodic extends ProviderInitiated {
   // instance const, most likely, but might be a class constant.
   // Specifies the maximum rate (in terms of requests per second) at which the provider may publish a value
   const class maxPublishRate : Nat 
@@ -150,15 +151,15 @@ component Episodic extends ProviderInitiated {
 // (e.g., single values, array data, status indications) and presentations (e.g., on a display) of measurement data.
 // As a base class, the Metric object cannot be instantiated.
 
-component ICEMetric {
+feature ICEMetric {
 }
 
 // Not sure we need the extra level of indirection provided by this declaration -- JMH
-component MetricAttribute {
+feature MetricAttribute {
 	
 }
 
-component MetricTimeStampAttributes extends MetricAttribute{
+feature MetricTimeStampAttributes extends MetricAttribute{
 	val sec       : Int
 	val min       : Int
 	val hour      : Int
@@ -170,7 +171,7 @@ component MetricTimeStampAttributes extends MetricAttribute{
 	val isdst     : Int
 }
 
-component StatusAttributes extends MetricAttribute{
+feature StatusAttributes extends MetricAttribute{
 	val status    : MeasurementStatus //wanted to express an enum but not sure how to do it
 }
 
@@ -192,7 +193,7 @@ component StatusAttributes extends MetricAttribute{
 //  
 // ObsValue  mySpO2.get (  )
   
-component Numeric extends Metric {
+feature Numeric extends ICEMetric {
   // note: you should be able to declare this to be a "val" to indicate this are things to read
   Data observedValue : ObsValue   // Analogous to NuObsValue in 11073 Numeric (see p. 56 of DIM spec)
   // Do we want to allow this high degree of polymorphism on the attributes? 
@@ -203,16 +204,16 @@ component Numeric extends Metric {
 }
 
 data ICEMessageContext {
-	val measurementTaken : ICETimeStamp
 	val messageConstructed : ICETimeStamp
 }
 
 // Analogous to NuObsValue type on p. 57 of DIM spec.   Note that the NuObsValue structure includes other information
 // like the nomenclature tags for the physiological parameter and units.  But we don't see a need to report those at
 // run-time because that info is already included in the meta-data.
-// This component type expresses the structure of the message reporting on this physiological parameter, and would be 
+// This feature type expresses the structure of the message reporting on this physiological parameter, and would be 
 // expressed using something like CORBA IDL
 data ObsValue extends ICEMessageContext  {
+  val measurementTaken : ICETimeStamp
   val value : Any             // The actual represent of number to be reported 
   // add time stamp 
  /* val */ context : ObsValueContext  // structure to describe format of other attributes reported at run-time
@@ -220,7 +221,7 @@ data ObsValue extends ICEMessageContext  {
 
 // this would contain time stamp and other information accompanying the parameter
 // Is this where information analogous to the 11073 MeasurementStatus record goes? (see p. 55 of DIM spec) 
-component ObsValueContext  
+feature ObsValueContext  
 {}
 
 // --- quote From 11073 DIM ---
@@ -229,7 +230,7 @@ component ObsValueContext
 // As a base class, the Sample Array object cannot be instantiated.
 // --- end quote ---
 
-component SampleArray extends Metric {
+feature SampleArray extends ICEMetric {
   val values      : Seq[Number]
   attributes      : Set[MetricAttribute]
 }
@@ -242,7 +243,7 @@ component SampleArray extends Metric {
 // Example: An electrocardiogram (ECG) real-time wave is represented as a Real Time Sample Array object.
 // --- end quote ---
 
-component RealTimeSA extends SampleArray {
+feature RealTimeSA extends SampleArray {
   // implementation to be completed		
 }
 
@@ -255,7 +256,7 @@ component RealTimeSA extends SampleArray {
 // ST measurement points. It generates a new snippet, for example, every 15 s.
 // --- end quote ---
 
-component TimeSA extends SampleArray {
+feature TimeSA extends SampleArray {
   val values      : Seq[Number]
   attributes      : Set[MetricAttribute]
   // implementation to be completed	
@@ -269,7 +270,7 @@ component TimeSA extends SampleArray {
 // Example: An electroencephalogram (EEG) application may use a Fourier transformation to derive a frequency distribution 
 // (i.e., a spectrum) from the EEG signal. It then uses the Distribution Sample Array object to represent that spectrum in the MDIB.
 // --- end quote ---
-component DistributionSA extends SampleArray {
+feature DistributionSA extends SampleArray {
   // implementation to be completed	
 }
 
@@ -280,22 +281,22 @@ component DistributionSA extends SampleArray {
 //  A very simple alert structure is given below.    
 //=======================================================================================================
 
-component ICEAlert {
+feature ICEAlert {
   
 }
 
-component RangeValueAlert extends ICEAlert with RangeSetting {
+feature RangeValueAlert extends ICEAlert with RangeSetting {
 }
 
-component TargetValueAlert extends ICEAlert with ValueSetting {
+feature TargetValueAlert extends ICEAlert with ValueSetting {
   
 }
 
-component ValueChangeAlert extends ICEAlert {
+feature ValueChangeAlert extends ICEAlert {
   
 }
 
-component ComplexAlert extends ICEAlert {
+feature ComplexAlert extends ICEAlert {
   const cond : Boolean
 }
 
@@ -306,26 +307,26 @@ component ComplexAlert extends ICEAlert {
 //  Defines settings on the provider that may be read or written by the client.
 //=======================================================================================================
 
-component ICEDeviceSetting {
+feature ICEDeviceSetting {
   security : Option[ICESecurity]
 }
 
 
-component RangeSetting extends ICEDeviceSetting {
+feature RangeSetting extends ICEDeviceSetting {
   var min : Number
   var max : Number
   
   inv (min <= max)
 }
 
-component IntRangeSetting extends RangeSetting {
+feature IntRangeSetting extends RangeSetting {
   var min : Int
   var max : Int
   
   inv (min <= max)
 }
 
-component ValueSetting extends ICEDeviceSetting {
+feature ValueSetting extends ICEDeviceSetting {
   var value : Any
 }
 
@@ -336,7 +337,7 @@ component ValueSetting extends ICEDeviceSetting {
 //  Such values may be read or written by the client.
 //=======================================================================================================
 
-component ICEDeviceStatus {
+feature ICEDeviceStatus {
   security : Option[ICESecurity]
   
   alerts : Set[ICEAlert]
@@ -344,13 +345,13 @@ component ICEDeviceStatus {
 
 // Not sure if this should be defined as a schema.  This seems to me to be an example of a status value that
 // would be introduced at the class level.
-component BatteryLevelStatus extends ICEDeviceStatus {
+feature BatteryLevelStatus extends ICEDeviceStatus {
   val level : Int
   
   inv ((Int'(0) <= level) && (level <= Int'(100)))
 }
 
-component ICESecurity {
+feature ICESecurity {
   // read/write acl
 }
 
