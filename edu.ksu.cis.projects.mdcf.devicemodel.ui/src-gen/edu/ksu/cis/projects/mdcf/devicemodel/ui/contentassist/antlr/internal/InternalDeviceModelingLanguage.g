@@ -2396,11 +2396,11 @@ rule__ComponentDecl__Group_0_0__0__Impl
     }
 :
 (
-{ before(grammarAccess.getComponentDeclAccess().getComponentKeyword_0_0_0()); }
+{ before(grammarAccess.getComponentDeclAccess().getFeatureKeyword_0_0_0()); }
 
-	'component' 
+	'feature' 
 
-{ after(grammarAccess.getComponentDeclAccess().getComponentKeyword_0_0_0()); }
+{ after(grammarAccess.getComponentDeclAccess().getFeatureKeyword_0_0_0()); }
 )
 
 ;

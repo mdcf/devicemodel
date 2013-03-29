@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDeviceModelingLanguageParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_NAT", "RULE_LIT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'&&'", "'||'", "'==>'", "'<=='", "'+'", "'-'", "'*'", "'/'", "'%'", "'!'", "'^'", "'~'", "'type'", "'extends'", "'with'", "'component'", "'data'", "'device'", "'app'", "'{'", "'}'", "'requires'", "':'", "'='", "'const'", "'val'", "'var'", "'override'", "'Const'", "'Val'", "'Var'", "'Override'", "'Data'", "'Option'", "'['", "']'", "'Some'", "'Either'", "','", "'Seq'", "'Set'", "'inv'", "'..'", "'.'", "'constraint'", "'('", "')'", "'None'", "'Schema'", "'Class'", "'Instance'", "'schema'", "'class'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_NAT", "RULE_LIT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'&&'", "'||'", "'==>'", "'<=='", "'+'", "'-'", "'*'", "'/'", "'%'", "'!'", "'^'", "'~'", "'type'", "'extends'", "'with'", "'feature'", "'data'", "'device'", "'app'", "'{'", "'}'", "'requires'", "':'", "'='", "'const'", "'val'", "'var'", "'override'", "'Const'", "'Val'", "'Var'", "'Override'", "'Data'", "'Option'", "'['", "']'", "'Some'", "'Either'", "','", "'Seq'", "'Set'", "'inv'", "'..'", "'.'", "'constraint'", "'('", "')'", "'None'", "'Schema'", "'Class'", "'Instance'", "'schema'", "'class'"
     };
     public static final int T__68=68;
     public static final int RULE_ID=4;
@@ -7523,21 +7523,21 @@ public class InternalDeviceModelingLanguageParser extends AbstractInternalConten
 
 
     // $ANTLR start "rule__ComponentDecl__Group_0_0__0__Impl"
-    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2393:1: rule__ComponentDecl__Group_0_0__0__Impl : ( 'component' ) ;
+    // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2393:1: rule__ComponentDecl__Group_0_0__0__Impl : ( 'feature' ) ;
     public final void rule__ComponentDecl__Group_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2397:1: ( ( 'component' ) )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2398:1: ( 'component' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2397:1: ( ( 'feature' ) )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2398:1: ( 'feature' )
             {
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2398:1: ( 'component' )
-            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2399:1: 'component'
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2398:1: ( 'feature' )
+            // ../edu.ksu.cis.projects.mdcf.devicemodel.ui/src-gen/edu/ksu/cis/projects/mdcf/devicemodel/ui/contentassist/antlr/internal/InternalDeviceModelingLanguage.g:2399:1: 'feature'
             {
-             before(grammarAccess.getComponentDeclAccess().getComponentKeyword_0_0_0()); 
+             before(grammarAccess.getComponentDeclAccess().getFeatureKeyword_0_0_0()); 
             match(input,31,FOLLOW_31_in_rule__ComponentDecl__Group_0_0__0__Impl5221); 
-             after(grammarAccess.getComponentDeclAccess().getComponentKeyword_0_0_0()); 
+             after(grammarAccess.getComponentDeclAccess().getFeatureKeyword_0_0_0()); 
 
             }
 

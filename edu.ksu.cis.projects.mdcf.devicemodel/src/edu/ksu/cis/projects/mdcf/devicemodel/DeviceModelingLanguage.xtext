@@ -21,7 +21,7 @@ TypeDecl:            'type' name=ID
                        ( 'with' supers+=[TypeDecl|ID] )*
                      )?;
 
-ComponentDecl:       ( 'component' {Component} (schema?='schema' | class?='class')?   
+ComponentDecl:       ( 'feature' {Component} (schema?='schema' | class?='class')?   
                      | 'data'      {Data}  
                      | 'device'    {Device}  
                      | 'app'       {App}       ) 

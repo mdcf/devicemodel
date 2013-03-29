@@ -88,6 +88,7 @@ RULE_WS=9
 'Const'=31
 'Data'=35
 'var'=29
+'feature'=16
 'device'=20
 '==>'=60
 ':'=25
@@ -120,5 +121,4 @@ RULE_WS=9
 'Instance'=12
 '['=37
 '*'=48
-'component'=16
 'schema'=17

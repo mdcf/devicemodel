@@ -280,9 +280,9 @@ ruleComponentDecl returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(((	otherlv_0='component' 
+(((	otherlv_0='feature' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getComponentDeclAccess().getComponentKeyword_0_0_0());
+    	newLeafNode(otherlv_0, grammarAccess.getComponentDeclAccess().getFeatureKeyword_0_0_0());
     }
 (
     {
