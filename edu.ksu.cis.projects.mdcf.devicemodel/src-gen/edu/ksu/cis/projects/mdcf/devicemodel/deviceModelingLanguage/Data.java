@@ -13,6 +13,6 @@ package edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage;
  * @model
  * @generated
  */
-public interface Data extends ComponentDecl
+public interface Data extends ComponentDecl, MModifier
 {
 } // Data

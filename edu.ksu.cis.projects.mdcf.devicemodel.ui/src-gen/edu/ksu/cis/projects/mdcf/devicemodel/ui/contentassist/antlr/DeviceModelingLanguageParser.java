@@ -88,6 +88,7 @@ public class DeviceModelingLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMModifierAccess().getGroup_1(), "rule__MModifier__Group_1__0");
 					put(grammarAccess.getMModifierAccess().getGroup_2(), "rule__MModifier__Group_2__0");
 					put(grammarAccess.getMModifierAccess().getGroup_3(), "rule__MModifier__Group_3__0");
+					put(grammarAccess.getMModifierAccess().getGroup_4(), "rule__MModifier__Group_4__0");
 					put(grammarAccess.getAssignmentAccess().getGroup(), "rule__Assignment__Group__0");
 					put(grammarAccess.getReportAccess().getGroup(), "rule__Report__Group__0");
 					put(grammarAccess.getReportAccess().getGroup_3(), "rule__Report__Group_3__0");

@@ -2503,6 +2503,7 @@ public class DeviceModelingLanguagePackageImpl extends EPackageImpl implements D
     simpleSetLiteralEClass.getESuperTypes().add(this.getSimpleLiteral());
     componentEClass.getESuperTypes().add(this.getComponentDecl());
     dataEClass.getESuperTypes().add(this.getComponentDecl());
+    dataEClass.getESuperTypes().add(this.getMModifier());
     appEClass.getESuperTypes().add(this.getComponentDecl());
     constEClass.getESuperTypes().add(this.getModifier());
     constEClass.getESuperTypes().add(this.getMModifier());

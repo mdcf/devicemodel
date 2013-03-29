@@ -806,7 +806,7 @@ ruleSubMemberDecl returns [EObject current=null]
 	    }
 
 )
-)(
+)?(
 (
 		lv_name_1_0=RULE_ID
 		{
@@ -939,6 +939,17 @@ ruleMModifier returns [EObject current=null]
     {
         $current = forceCreateModelElement(
             grammarAccess.getMModifierAccess().getOverrideAction_3_1(),
+            $current);
+    }
+))
+    |(	otherlv_10='Data' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getMModifierAccess().getDataKeyword_4_0());
+    }
+(
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getMModifierAccess().getDataAction_4_1(),
             $current);
     }
 )))

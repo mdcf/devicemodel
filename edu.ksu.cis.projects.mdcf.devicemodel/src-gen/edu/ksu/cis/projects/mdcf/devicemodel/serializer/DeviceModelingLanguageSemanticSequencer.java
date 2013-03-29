@@ -166,6 +166,10 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 					sequence_ComponentDecl(context, (Data) semanticObject); 
 					return; 
 				}
+				else if(context == grammarAccess.getMModifierRule()) {
+					sequence_MModifier(context, (Data) semanticObject); 
+					return; 
+				}
 				else break;
 			case DeviceModelingLanguagePackage.DEVICE:
 				if(context == grammarAccess.getComponentDeclRule() ||
@@ -783,6 +787,15 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
+	 *     {Data}
+	 */
+	protected void sequence_MModifier(EObject context, Data semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     {Override}
 	 */
 	protected void sequence_MModifier_Modifier(EObject context, edu.ksu.cis.projects.mdcf.devicemodel.deviceModelingLanguage.Override semanticObject) {
@@ -1024,23 +1037,10 @@ public class DeviceModelingLanguageSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (modifier=MModifier name=ID type=FeatureType)
+	 *     (modifier=MModifier? name=ID type=FeatureType)
 	 */
 	protected void sequence_SubMemberDecl(EObject context, SubMemberDecl semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DeviceModelingLanguagePackage.Literals.SUB_MEMBER_DECL__MODIFIER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceModelingLanguagePackage.Literals.SUB_MEMBER_DECL__MODIFIER));
-			if(transientValues.isValueTransient(semanticObject, DeviceModelingLanguagePackage.Literals.SUB_MEMBER_DECL__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceModelingLanguagePackage.Literals.SUB_MEMBER_DECL__NAME));
-			if(transientValues.isValueTransient(semanticObject, DeviceModelingLanguagePackage.Literals.SUB_MEMBER_DECL__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DeviceModelingLanguagePackage.Literals.SUB_MEMBER_DECL__TYPE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSubMemberDeclAccess().getModifierMModifierParserRuleCall_0_0(), semanticObject.getModifier());
-		feeder.accept(grammarAccess.getSubMemberDeclAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSubMemberDeclAccess().getTypeFeatureTypeParserRuleCall_3_0(), semanticObject.getType());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

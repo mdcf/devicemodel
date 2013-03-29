@@ -452,6 +452,7 @@ public class DeviceModelingLanguageSwitch<T> extends Switch<T>
         Data data = (Data)theEObject;
         T result = caseData(data);
         if (result == null) result = caseComponentDecl(data);
+        if (result == null) result = caseMModifier(data);
         if (result == null) result = caseDecl(data);
         if (result == null) result = defaultCase(theEObject);
         return result;

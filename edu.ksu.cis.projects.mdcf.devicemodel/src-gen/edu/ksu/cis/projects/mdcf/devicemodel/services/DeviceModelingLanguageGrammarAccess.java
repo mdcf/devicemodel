@@ -542,13 +542,13 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final RuleCall cTypeFeatureTypeParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
 		
 		//SubMemberDecl:
-		//	modifier=MModifier name=ID ":" type=FeatureType;
+		//	modifier=MModifier? name=ID ":" type=FeatureType;
 		public ParserRule getRule() { return rule; }
 
-		//modifier=MModifier name=ID ":" type=FeatureType
+		//modifier=MModifier? name=ID ":" type=FeatureType
 		public Group getGroup() { return cGroup; }
 
-		//modifier=MModifier
+		//modifier=MModifier?
 		public Assignment getModifierAssignment_0() { return cModifierAssignment_0; }
 
 		//MModifier
@@ -590,12 +590,16 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
 		private final Keyword cOverrideKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Action cOverrideAction_3_1 = (Action)cGroup_3.eContents().get(1);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Keyword cDataKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Action cDataAction_4_1 = (Action)cGroup_4.eContents().get(1);
 		
 		//MModifier:
-		//	"Const" {Const} (schema?="Schema" | class?="Class")? | "Val" {Val} | "Var" {Var} | "Override" {Override};
+		//	"Const" {Const} (schema?="Schema" | class?="Class")? | "Val" {Val} | "Var" {Var} | "Override" {Override} | "Data"
+		//	{Data};
 		public ParserRule getRule() { return rule; }
 
-		//"Const" {Const} (schema?="Schema" | class?="Class")? | "Val" {Val} | "Var" {Var} | "Override" {Override}
+		//"Const" {Const} (schema?="Schema" | class?="Class")? | "Val" {Val} | "Var" {Var} | "Override" {Override} | "Data" {Data}
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"Const" {Const} (schema?="Schema" | class?="Class")?
@@ -648,6 +652,15 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 
 		//{Override}
 		public Action getOverrideAction_3_1() { return cOverrideAction_3_1; }
+
+		//"Data" {Data}
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"Data"
+		public Keyword getDataKeyword_4_0() { return cDataKeyword_4_0; }
+
+		//{Data}
+		public Action getDataAction_4_1() { return cDataAction_4_1; }
 	}
 
 	public class AssignmentElements extends AbstractParserRuleElementFinder {
@@ -2783,7 +2796,7 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//SubMemberDecl:
-	//	modifier=MModifier name=ID ":" type=FeatureType;
+	//	modifier=MModifier? name=ID ":" type=FeatureType;
 	public SubMemberDeclElements getSubMemberDeclAccess() {
 		return (pSubMemberDecl != null) ? pSubMemberDecl : (pSubMemberDecl = new SubMemberDeclElements());
 	}
@@ -2793,7 +2806,8 @@ public class DeviceModelingLanguageGrammarAccess extends AbstractGrammarElementF
 	}
 
 	//MModifier:
-	//	"Const" {Const} (schema?="Schema" | class?="Class")? | "Val" {Val} | "Var" {Var} | "Override" {Override};
+	//	"Const" {Const} (schema?="Schema" | class?="Class")? | "Val" {Val} | "Var" {Var} | "Override" {Override} | "Data"
+	//	{Data};
 	public MModifierElements getMModifierAccess() {
 		return (pMModifier != null) ? pMModifier : (pMModifier = new MModifierElements());
 	}
