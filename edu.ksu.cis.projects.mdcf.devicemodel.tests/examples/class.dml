@@ -1,7 +1,6 @@
 component ICEPulseOx extends ICEDevice {
-  //override 'type = DeviceType '(IEEE ... Pulse Ox) //Eugene
-  override 'type = ICEDeviceIdentity.DeviceType '(IEEE ... Pulse Ox) //Eugene -- is dot the correct notation here?
-
+  override 'type = DeviceType '(IEEE ... Pulse Ox)
+  
   inv 1..* pysioParams : ICESpO2
   inv 1..* pysioParams : ICEPulseRate
 }
@@ -27,13 +26,12 @@ component ICEBloodPressure extends ICEDevice {
 component ICEBloodPressureParam extends ICEPhysioParameter {
   override systolic    = PhysioParameterType'(MDC_PRESS_BLD_NONINV_SYS)
   override diastolic   = PhysioParameterType'(MDC_PRESS_BLD_NONINV_DIA)
-  override mean        = PhysioParameterType'(MDC_PRESS_BLD_NONINV_MEAN) 
+  override mean   = PhysioParameterType'(MDC_PRESS_BLD_NONINV_MEAN) 
   override unit        = Unit'(MDC_DIM_MMHG)
 }
 
 component ICEMultiMonitor extends ICEDevice {
-  //override 'type = DeviceType '(IEEE ... MultiMonitor) //Eugene
-  override 'type = ICEDeviceIdentity.DeviceType '(IEEE ... MultiMonitor) //Eugene -- is dot the correct notation here?
+  override 'type = DeviceType '(IEEE ... MultiMonitor)
   
   inv 1..* pysioParams : ICESpO2
   inv 1..* pysioParams : ICEPulseRate
