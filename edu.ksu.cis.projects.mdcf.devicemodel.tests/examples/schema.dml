@@ -56,7 +56,7 @@ feature ICEDevice {
   const class 'type          : IEEEDeviceType // 11073 Nomenclature
   
   // information about the manfacturer make / model of the device
-  manufacturerModel : ICEManufacturerModel
+  Const Product manufacturerModel : ICEManufacturerModel
   // physiological parameters provided for the device
     // cardinality constraint: set may be empty
   physioParams      : Set[ICEPhysioParameter]
@@ -71,7 +71,7 @@ feature ICEDevice {
 
 feature ICEManufacturerModel { 
   // instance constant, indicates the manufacturer model number of the device
-  const modelNumber : String 
+  const product modelNumber : String 
   // read-only setting on the device.  This might also be specified as an instance constant, but Eugene
   // argued that we may change the software version without change the device model.  In such a situation,
   // the value should not be constant.
@@ -84,13 +84,12 @@ feature ICEManufacturerModel {
 
 feature ICEPhysioParameter {
   // class constant
-  const physioParameterType : IEEEPhysioParameterType // Nomenclature
+  const class physioParameterType : IEEEPhysioParameterType // Nomenclature
   // class constant
-  const unit                : IEEEUnit  // Nomenclature
+  const class unit                : IEEEUnit  // Nomenclature
 
-  parameterValueStructure    : ICEMetric //attribute that expresses the structure of the value of this parameter. (numeric, rt-sa, and etc.)
+  Const Product parameterValueStructure    : ICEMetric //attribute that expresses the structure of the value of this parameter. (numeric, rt-sa, and etc.)
   								 //it can also express context information. (e.g. time stamp) 
-
   // cardinality constraint: set must have a least one element drawn from ClientInitiated or Periodic
   exchanges             : Set[ICEDataExchange]
 
@@ -122,12 +121,11 @@ feature ClientInitiated extends ICEDataExchange {
 }
 
 feature Periodic extends ProviderInitiated {
-  // instance const, most likely, but might be a class constant
   // The provider will publish at a rate between the upper/lower bounds of IntRange per Rate_Unit
   // Note: This structure matches AADL's Communication_Properties::Output_Rate (and Input_Rate)
   // For simplicity, for earlier versions of this work, we might want to assume Rate_Unit is standardized to
   // PerSecond and Rate_Distribution to Fixed.
-  Const Class rateRange : NatRange  //
+  Const Product rateRange : NatRange  //
   // instance const, most likely, but might be a class constant
   // Rate_Unit => PerSecond
   // instance const, most likely, but might be a class constant
@@ -135,9 +133,8 @@ feature Periodic extends ProviderInitiated {
 }
 
 feature Episodic extends ProviderInitiated {
-  // instance const, most likely, but might be a class constant.
   // Specifies the maximum rate (in terms of requests per second) at which the provider may publish a value
-  const class maxPublishRate : Nat 
+  const product maxPublishRate : Nat 
 }
 
 //=======================================================================================================
@@ -155,11 +152,10 @@ feature ICEMetric {
 }
 
 // Not sure we need the extra level of indirection provided by this declaration -- JMH
-feature MetricAttribute {
-	
+data MetricAttribute {
 }
 
-feature MetricTimeStampAttributes extends MetricAttribute{
+data MetricTimeStampAttributes extends MetricAttribute{
 	val sec       : Int
 	val min       : Int
 	val hour      : Int
@@ -188,11 +184,6 @@ feature StatusAttributes extends MetricAttribute{
 // a record or tuple, but more info is needed.
 //
 
-// MySpO2 : ICEPhysioParameter
-//  ClientInitiated
-//  
-// ObsValue  mySpO2.get (  )
-  
 feature Numeric extends ICEMetric {
   // note: you should be able to declare this to be a "val" to indicate this are things to read
   Data observedValue : ObsValue   // Analogous to NuObsValue in 11073 Numeric (see p. 56 of DIM spec)

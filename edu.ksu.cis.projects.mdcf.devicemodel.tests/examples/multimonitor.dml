@@ -1,3 +1,5 @@
+Product
+
 device MultiMonitor extends ICEMultiMonitor {
   override id = DeviceId '( MultiMonitor )
   
