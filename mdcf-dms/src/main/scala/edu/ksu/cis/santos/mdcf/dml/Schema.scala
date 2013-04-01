@@ -247,6 +247,7 @@ trait IntRangeSetting extends RangeSetting {
 
 @Schema
 trait ValueSetting extends ICEDeviceSetting {
+  @Settable
   val value : Any
 }
 
