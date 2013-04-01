@@ -18,9 +18,7 @@ class NoninPulseOx extends ICEPulseOx {
 
   override val manufacturerModel = new ICEManufacturerModel {
     override val modelNumber = String("Nonin Onyx II")
-
     override val versionNumber = String("XX.YY.ZZ")
-
     override val credentials = Set[ICESecurity]()
   }
 
@@ -56,5 +54,4 @@ class NoninPulseOx extends ICEPulseOx {
       override val alerts = Set[ICEAlert]()
     }
   )
-
 }

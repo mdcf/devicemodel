@@ -18,9 +18,7 @@ class NellcordPulseOx extends ICEPulseOx {
 
   override val manufacturerModel = new ICEManufacturerModel {
     override val modelNumber = String("Nellcor 2000")
-
     override val versionNumber = String("XX.YY.ZZ")
-
     override val credentials = Set[ICESecurity]()
   }
 
@@ -48,7 +46,6 @@ class NellcordPulseOx extends ICEPulseOx {
         new RangeValueAlert with IntRangeSetting {
           override val min = Int(85)
           override val max = Int(100)
-
           override val security = None
         }
       )
@@ -70,11 +67,9 @@ class NellcordPulseOx extends ICEPulseOx {
         new RangeValueAlert with IntRangeSetting {
           override val min = Int(40)
           override val max = Int(180)
-
           override val security = None
         }
       )
     }
   )
-
 }

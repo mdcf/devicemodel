@@ -12,11 +12,11 @@ import edu.ksu.cis.santos.mdcf.dml.annotation._
 import edu.ksu.cis.santos.mdcf.dml.annotation.ConstMode._
 import Prelude._
 
-
 object DeviceId {
   def apply(s : java.lang.String) : DeviceId = DeviceIdImpl(s)
 
-  case class DeviceIdImpl(value : java.lang.String) extends Prelude.AbstractString with DeviceId
+  case class DeviceIdImpl(value : java.lang.String)
+    extends AbstractString with DeviceId
 }
 
 trait DeviceId extends String
@@ -24,7 +24,8 @@ trait DeviceId extends String
 object IEEEDeviceType {
   def apply(s : java.lang.String) : IEEEDeviceType = IEEEDeviceTypeImpl(s)
 
-  case class IEEEDeviceTypeImpl(value : java.lang.String) extends Prelude.AbstractString with IEEEDeviceType
+  case class IEEEDeviceTypeImpl(value : java.lang.String)
+    extends AbstractString with IEEEDeviceType
 }
 
 trait IEEEDeviceType extends String
@@ -32,7 +33,8 @@ trait IEEEDeviceType extends String
 object IEEEPhysioParameterType {
   def apply(s : java.lang.String) : IEEEPhysioParameterType = IEEEPhysioParameterTypeImpl(s)
 
-  case class IEEEPhysioParameterTypeImpl(value : java.lang.String) extends Prelude.AbstractString with IEEEPhysioParameterType
+  case class IEEEPhysioParameterTypeImpl(value : java.lang.String)
+    extends AbstractString with IEEEPhysioParameterType
 }
 
 trait IEEEPhysioParameterType extends String
@@ -40,14 +42,16 @@ trait IEEEPhysioParameterType extends String
 object IEEEUnit {
   def apply(s : java.lang.String) : IEEEUnit = IEEEUnitImpl(s)
 
-  case class IEEEUnitImpl(value : java.lang.String) extends Prelude.AbstractString with IEEEUnit
+  case class IEEEUnitImpl(value : java.lang.String)
+    extends AbstractString with IEEEUnit
 }
 
 trait IEEEUnit extends String
 
 object ICETimeStamp {
   def apply(s : java.lang.String) : ICETimeStamp = ICETimeStampImpl(s)
-  case class ICETimeStampImpl(value : java.lang.String) extends Prelude.AbstractString with ICETimeStamp
+  case class ICETimeStampImpl(value : java.lang.String)
+    extends AbstractString with ICETimeStamp
 }
 
 trait ICETimeStamp extends String
