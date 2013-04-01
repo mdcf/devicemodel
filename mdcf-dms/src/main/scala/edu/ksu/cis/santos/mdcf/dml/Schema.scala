@@ -229,7 +229,10 @@ trait ICEDeviceSetting {
 
 @Schema
 trait RangeSetting extends ICEDeviceSetting {
+  @Settable
   val min : Number
+  
+  @Settable
   val max : Number
 
   @Inv
