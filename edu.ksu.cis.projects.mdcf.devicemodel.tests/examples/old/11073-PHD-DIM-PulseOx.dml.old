@@ -1,0 +1,27 @@
+features PulseOxMDS include PulseOxMDSInv, PulseOxMDSAttributes, MDS
+
+features PulseOxMDSInv include MDSInv {
+  inv 1..*  num.sp02.*      : SpO2
+  inv 1..*  num.pulserate.* : PulseRate
+  inv 0..1  rtsa.pleth.*    : Plethysmogram
+  inv 0..2  num.pulsaq.*    : PulsatileQuality
+  inv 0..1  enum.dsa.*      : DeviceSensorAnnunciation
+  inv 0..1  enum.po.*       : PulsatileOccurence
+  inv 0..1  enum.pc.*       : PulsatileCharacteristic
+}
+
+features PulseOxMDSAttributes { /* ... */}
+
+features SpO2 include Numeric { /* ... */ }
+
+features PulseRate include Numeric { /* ... */ }
+
+features Plethysmogram include RealTimeSA { /* ... */ }
+
+features PulsatileQuality include Numeric { /* ... */ }
+
+features DeviceSensorAnnunciation include Enumeration { /* ... */ }
+
+features PulsatileOccurence include Enumeration { /* ... */ }
+
+features PulsatileCharacteristic include Enumeration { /* ... */ }

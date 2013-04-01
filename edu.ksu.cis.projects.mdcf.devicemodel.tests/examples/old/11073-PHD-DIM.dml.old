@@ -1,0 +1,33 @@
+features MDS include MDSInv, MDSAttributes
+
+features MDSInv {
+  inv 0..*           num.*  : Numeric
+  inv 0..*           rtsa.* : RealTimeSA
+  inv 0..*           enum.* : Enumeration
+  inv 0..*           pms.*  : PMStore
+  inv 0..*  distinct *      : Scanner
+}
+
+features MDSAttributes { /* ... */ }
+
+features Scanner { /* ... */ }
+
+features CfgScanner include Scanner { /* ... */ }
+
+features EpiCfgScanner include CfgScanner { /* ... */ }
+
+features PeriCfgScammer include CfgScanner { /* ... */ }
+
+features Metric { /* ... */ }
+
+features Numeric include Metric { /* ... */ }
+
+features RealTimeSA include Metric { /* ... */ }
+
+features Enumeration include Metric { /* ... */ }
+
+features PMSegment include Metric { /* ... */ }
+
+features PMStore {
+  inv 0..*  pmseg.* : PMSegment
+}

@@ -1,0 +1,91 @@
+// Type Extension (native) Declarations
+type Nat
+type String
+type SemanticCategory
+type DateTime
+type Periodicity
+
+// A typed literal is defined as any character in between parentheses (...), disallow nesting
+// - e.g., Nat ( 23 )
+// - the literal type constructor gives a clue on how to parse the content and
+//   such processing is defined outside of the model as extensions
+// - leading and trailing whitespaces between the parentheses are ignored
+
+type S11073 { // literal set
+	( MDC_DEV_SPEC_PROFILE_PULS_OXIM ),
+	( MDC_DIM_BEAT_PER_MIN           )
+}
+
+type MY_S11073 include S11073 { //  include means "copy-and-paste"
+	( MDC_DIM_BEAT_PER_SEC           )
+}
+
+// A feature group defines a structural type (no type recursion/cycle allowed)
+// structural sub-typing can be easily defined including attribute modifiers (sans value, even constant ones)
+features PulseOximeterICEMAN { // ICEMAN style
+  // notes:
+  // - const modifier = constant attribute
+  // - val modifier   = read only attribute (value might change overtime)
+  // - var modifier   = writable (and readable) attribute 
+  // - def modifier   = define a value for previously declared attribute
+  const protocolName      = String             ( N560                )
+  const manufacturer      = String             ( Nellcor             )
+  const deviceID          = String             ( N-560               )
+  const deviceCode        = String             ( Oximeter            )
+  const complianceLevel   = Nat                ( 0                   )
+  const semantics         = SemanticCategory   ( SNOMED;ICEMAN       )
+     
+  // sub-feature group whose type StatusMonitor is defined below
+  deviceHealth.DeviceStatusMonitor : StatusMonitor
+     
+  inv 2..* sensor.*   // structural invariant: at least two sensors sub-features 
+     
+  // sub-feature group whose type is directly defined (anonymous)
+  sensor.FingerSensor = {
+    val location          = String             ( finger              )
+           
+    metric.PulseAmplitude = {
+      val value           : Nat // only type spec without value
+      val units           = String             ( unitless            )
+                 
+      timedTrigger.ReportPulseAmplitude include TimedTrigger = {
+        def status        = String             ( Off                 )
+        def triggerSource = Nat                ( 1036                )
+        def timeInterval  = Nat                ( 2000                )
+      }
+    }
+  }
+}
+
+features TimedTrigger {
+  val status              : String
+  val triggerSource       : Nat
+  val timeInterval        : Nat
+}
+ 
+features StatusMonitor {
+  val status              = String               ( Disconnected        )
+  val dateTime            = DateTime             ( 2002-05-30T09:00:00 )
+  val powerStatus         = String               ( onBattery           )
+  val batteryLevel        = Nat                  ( 67                  )
+}
+ 
+features PulseOximeterYUJIN { // Yu Jin's style
+  const deviceID          = String             ( N-560                )
+  const deviceTypeNomen   = S11073             ( MDC_DEV_SPEC_PROFILE_PULS_OXIM )
+ 
+  measurement.PulseRate = {
+      const unitNomenclature
+                          = S11073             ( MDC_DIM_BEAT_PER_MIN )
+      const range         = < Nat(20), Nat(250) > // tuple literal
+     
+      var reportPeriodicity = Periodicity        ( Periodic             )
+ 
+      val someSet         = { Nat : (1), (2), (3) }         // set of nats literal
+      val someList        = [ Nat : (1), (2), (3) ]         // list of nats literal
+      val someSetOfList   = { Nat : [ (1), (2) ], [ (3) ] } // set of list of nats literal
+      val opt1            : Nat?                            // nat option type
+      val opt2            = none : Nat?                     // nat none literal
+      val opt3            = some Nat(1)                     // some nat literal
+  }
+}
