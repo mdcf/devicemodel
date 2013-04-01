@@ -21,7 +21,7 @@ trait Range {
   val max : Number
 
   @Inv
-  def `min is less than or equal to max` = min <= max
+  def `min is less than or equal to max` : Boolean = min <= max
 }
 
 @Schema
@@ -229,11 +229,14 @@ trait ICEDeviceSetting {
 
 @Schema
 trait RangeSetting extends ICEDeviceSetting {
+  @Settable
   val min : Number
+  
+  @Settable
   val max : Number
 
   @Inv
-  def `min is less than or equal to max` = min <= max
+  def `min is less than or equal to max` : Boolean = min <= max
 }
 
 @Schema
@@ -244,6 +247,7 @@ trait IntRangeSetting extends RangeSetting {
 
 @Schema
 trait ValueSetting extends ICEDeviceSetting {
+  @Settable
   val value : Any
 }
 
@@ -266,7 +270,7 @@ trait BatteryLevelStatus extends ICEDeviceStatus {
   val level : Int
 
   @Inv
-  def `level is 1..100` = 0 <= level && level <= 100
+  def `level is in 1..100` : Boolean = 0 <= level && level <= 100
 }
 
 @Schema

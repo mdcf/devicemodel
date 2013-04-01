@@ -22,7 +22,7 @@ trait ICEPulseOx extends ICEDevice {
 
   @Inv
   def `At least one Pulse Rate param` : Boolean =
-    physioParams.filter(_.isInstanceOf[ICEPulseRate]).size >= 1
+    physioParams.exists(_.isInstanceOf[ICEPulseRate]) // a different way to express the inv
 }
 
 @Class
@@ -50,7 +50,9 @@ trait ICEBloodPressure extends ICEDevice {
 trait ICEBloodPressureParam extends ICEPhysioParameter {
   val systolic = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_SYS")
   val diastolic = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_DIA")
-  val physioParameterType = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_MEAN")
+  
+  val physioParameterType = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_MEAN") 
+  // mean is used here, but we need composite of ICEPhysioParameter
   
   override val unit = IEEEUnit("MDC_DIM_MMHG")
 }
@@ -69,6 +71,6 @@ trait ICEMultiMonitor extends ICEDevice {
 
   @Inv
   def `At least one Blood Pressure param` : Boolean =
-    physioParams.filter(_.isInstanceOf[ICEPulseRate]).size >= 1
+    physioParams.filter(_.isInstanceOf[ICEBloodPressure]).size >= 1
 }
 
