@@ -6,11 +6,11 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dml
+package edu.ksu.cis.santos.mdcf.dms
 
-import edu.ksu.cis.santos.mdcf.dml.annotation._
-import edu.ksu.cis.santos.mdcf.dml.annotation.ConstMode._
-import edu.ksu.cis.santos.mdcf.dml.prelude.Prelude._
+import edu.ksu.cis.santos.mdcf.dms.annotation._
+import edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode._
+import edu.ksu.cis.santos.mdcf.dms.prelude.Prelude._
 
 object DeviceId {
   def apply(s : java.lang.String) : DeviceId = DeviceIdImpl(s)

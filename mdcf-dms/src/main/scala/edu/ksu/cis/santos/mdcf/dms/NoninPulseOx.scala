@@ -6,18 +6,18 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dml
+package edu.ksu.cis.santos.mdcf.dms
 
-import edu.ksu.cis.santos.mdcf.dml.annotation._
-import edu.ksu.cis.santos.mdcf.dml.annotation.ConstMode._
-import edu.ksu.cis.santos.mdcf.dml.prelude.Prelude._
+import edu.ksu.cis.santos.mdcf.dms.annotation._
+import edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode._
+import edu.ksu.cis.santos.mdcf.dms.prelude.Prelude._
 
 @Product
-class NellcordPulseOx extends ICEPulseOx {
-  override val id = DeviceId("Nellcor PO")
+class NoninPulseOx extends ICEPulseOx {
+  override val id = DeviceId("Continua PO")
 
   override val manufacturerModel = new ICEManufacturerModel {
-    override val modelNumber = String("Nellcor 2000")
+    override val modelNumber = String("Nonin Onyx II")
     override val versionNumber = String("XX.YY.ZZ")
     override val credentials = Set[ICESecurity]()
   }
@@ -33,22 +33,10 @@ class NellcordPulseOx extends ICEPulseOx {
       override val exchanges = Set[ICEDataExchange](
         new ClientInitiated {
           override val maxRetrievalRatePerSecond = Nat(15)
-        },
-        new Periodic {
-          override val rateRange = new NatRange {
-            override val min = Nat(0)
-            override val max = Nat(100)
-          }
         }
       )
 
-      override val alerts = Set[ICEAlert](
-        new RangeValueAlert with IntRangeSetting {
-          override val min = Int(85)
-          override val max = Int(100)
-          override val security = None
-        }
-      )
+      override val alerts = Set[ICEAlert]()
     },
 
     new ICEPulseRate {
@@ -63,13 +51,7 @@ class NellcordPulseOx extends ICEPulseOx {
         }
       )
 
-      override val alerts = Set[ICEAlert](
-        new RangeValueAlert with IntRangeSetting {
-          override val min = Int(40)
-          override val max = Int(180)
-          override val security = None
-        }
-      )
+      override val alerts = Set[ICEAlert]()
     }
   )
 }

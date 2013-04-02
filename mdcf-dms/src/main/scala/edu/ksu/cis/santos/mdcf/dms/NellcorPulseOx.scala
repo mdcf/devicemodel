@@ -6,18 +6,18 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dml
+package edu.ksu.cis.santos.mdcf.dms
 
-import edu.ksu.cis.santos.mdcf.dml.annotation._
-import edu.ksu.cis.santos.mdcf.dml.annotation.ConstMode._
-import edu.ksu.cis.santos.mdcf.dml.prelude.Prelude._
+import edu.ksu.cis.santos.mdcf.dms.annotation._
+import edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode._
+import edu.ksu.cis.santos.mdcf.dms.prelude.Prelude._
 
 @Product
-class MultiMonitor extends ICEMultiMonitor {
-  override val id = DeviceId("MultiMonitor")
+class NellcordPulseOx extends ICEPulseOx {
+  override val id = DeviceId("Nellcor PO")
 
   override val manufacturerModel = new ICEManufacturerModel {
-    override val modelNumber = String("MultiMonitor")
+    override val modelNumber = String("Nellcor 2000")
     override val versionNumber = String("XX.YY.ZZ")
     override val credentials = Set[ICESecurity]()
   }
@@ -63,25 +63,6 @@ class MultiMonitor extends ICEMultiMonitor {
         }
       )
 
-      override val alerts = Set[ICEAlert](
-        new RangeValueAlert with IntRangeSetting {
-          override val min = Int(40)
-          override val max = Int(180)
-          override val security = None
-        }
-      )
-    },
-
-    new ICEBloodPressureParam {
-      override val range = new IntRange {
-        override val min = Int(20)
-        override val max = Int(300)
-      }
-      override val exchanges = Set[ICEDataExchange](
-        new ClientInitiated {
-          override val maxRetrievalRatePerSecond = Nat(5)
-        }
-      )
       override val alerts = Set[ICEAlert](
         new RangeValueAlert with IntRangeSetting {
           override val min = Int(40)

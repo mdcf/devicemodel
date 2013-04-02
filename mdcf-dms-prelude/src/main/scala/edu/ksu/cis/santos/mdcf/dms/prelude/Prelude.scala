@@ -6,9 +6,9 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dml.prelude
+package edu.ksu.cis.santos.mdcf.dms.prelude
 
-import edu.ksu.cis.santos.mdcf.dml.annotation._
+import edu.ksu.cis.santos.mdcf.dms.annotation._
 import scala.reflect.runtime.{ universe => ru }
 
 object Prelude {
