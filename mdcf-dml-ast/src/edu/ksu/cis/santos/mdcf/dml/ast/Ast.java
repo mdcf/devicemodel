@@ -39,10 +39,6 @@ public class Ast {
     return new BasicType(name, supers);
   }
 
-  public static Binding Binding(final NamedType type, final String name) {
-    return new Binding(type, name);
-  }
-
   public static Device Device(final String name, final List<Member> members) {
     return new Device(name, members);
   }
@@ -99,8 +95,8 @@ public class Ast {
   }
 
   public static Requirement Requirement(final String name,
-      final List<Binding> bindings, final List<Invariant> invariants) {
-    return new Requirement(name, bindings, invariants);
+      final List<Invariant> invariants) {
+    return new Requirement(name, invariants);
   }
 
   public static SeqInit SeqInit(final List<Initialization> inits) {
