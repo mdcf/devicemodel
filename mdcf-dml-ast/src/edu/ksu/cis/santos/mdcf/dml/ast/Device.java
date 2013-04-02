@@ -23,4 +23,9 @@ public final class Device extends Feature {
   protected Object[] getChildren() {
     return new Object[] { this.name, this.members };
   }
+
+  @Override
+  protected boolean visit(final Ast.IVisitor visitor) {
+    return visitor.visitDevice(this);
+  }
 }

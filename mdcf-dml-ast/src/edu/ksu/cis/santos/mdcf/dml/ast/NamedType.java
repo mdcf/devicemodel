@@ -22,4 +22,9 @@ public final class NamedType extends Type {
   protected Object[] getChildren() {
     return new Object[] { this.name };
   }
+
+  @Override
+  protected boolean visit(final Ast.IVisitor visitor) {
+    return visitor.visitNamedType(this);
+  }
 }

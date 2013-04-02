@@ -23,4 +23,9 @@ public final class Invariant extends Member {
   protected Object[] getChildren() {
     return new Object[] { this.name, this.predicate };
   }
+
+  @Override
+  protected boolean visit(final Ast.IVisitor visitor) {
+    return visitor.visitInvariant(this);
+  }
 }

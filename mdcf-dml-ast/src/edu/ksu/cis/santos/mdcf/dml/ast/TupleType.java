@@ -8,7 +8,7 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dml.ast;
 
-import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.List;
+import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.list;
 
 import java.util.List;
 
@@ -19,11 +19,16 @@ public final class TupleType extends Type {
   public final List<Type> elementTypes;
 
   public TupleType(final List<Type> elementTypes) {
-    this.elementTypes = List(elementTypes);
+    this.elementTypes = list(elementTypes);
   }
 
   @Override
   protected Object[] getChildren() {
     return new Object[] { this.elementTypes };
+  }
+
+  @Override
+  protected boolean visit(final Ast.IVisitor visitor) {
+    return visitor.visitTupleType(this);
   }
 }

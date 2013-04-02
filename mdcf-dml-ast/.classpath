@@ -4,5 +4,10 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/guava.jar" sourcepath="lib/guava-src.zip"/>
 	<classpathentry kind="lib" path="lib/jsr305.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3.jar" sourcepath="lib/commons-lang3-src.zip"/>
+	<classpathentry kind="lib" path="lib/xmlpull.jar"/>
+	<classpathentry kind="lib" path="lib/xpp3_min.jar" sourcepath="lib/xpp3_min-src.zip"/>
+	<classpathentry kind="lib" path="lib/xstream.jar" sourcepath="lib/xstream-src.zip"/>
+	<classpathentry kind="lib" path="lib/jettison.jar" sourcepath="lib/jettison-src.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

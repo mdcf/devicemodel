@@ -8,7 +8,7 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dml.ast;
 
-import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.List;
+import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.list;
 
 import java.util.List;
 
@@ -19,11 +19,16 @@ public final class Model extends AstNode {
   public final List<Declaration> declarations;
 
   public Model(final List<Declaration> declarations) {
-    this.declarations = List(declarations);
+    this.declarations = list(declarations);
   }
 
   @Override
   protected Object[] getChildren() {
     return new Object[] { this.declarations };
+  }
+
+  @Override
+  protected boolean visit(final Ast.IVisitor visitor) {
+    return visitor.visitModel(this);
   }
 }

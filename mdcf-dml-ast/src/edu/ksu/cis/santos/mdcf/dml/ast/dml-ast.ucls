@@ -3,7 +3,7 @@
   realizations="false" associations="false" dependencies="false" nesting-relationships="false">  
   <class id="1" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Invariant" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Invariant.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2221" y="751"/>    
+    <position height="69" width="151" x="2278" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.SetType" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/SetType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="762" y="751"/>    
+    <position height="69" width="130" x="829" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Attribute" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Attribute.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1948" y="760"/>    
+    <position height="105" width="316" x="1922" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Feature" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Feature.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="546" y="751"/>    
+    <position height="87" width="222" x="567" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.SeqInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/SeqInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2422" y="751"/>    
+    <position height="69" width="170" x="2469" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Requirement" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Requirement.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-20" y="751"/>    
+    <position height="69" width="220" x="41" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.SetInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/SetInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2630" y="751"/>    
+    <position height="69" width="166" x="2679" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.EitherInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/EitherInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2834" y="760"/>    
+    <position height="87" width="163" x="2885" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -75,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Declaration" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Declaration.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="499" y="624"/>    
+    <position height="51" width="102" x="567" y="578"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -84,7 +84,7 @@
   </class>  
   <class id="10" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.App" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/App.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="310" y="869"/>    
+    <position height="51" width="169" x="358" y="1570"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.EitherType" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/EitherType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="947" y="751"/>    
+    <position height="69" width="161" x="999" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -102,7 +102,7 @@
   </class>  
   <class id="12" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.AstNode" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/AstNode.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1299" y="119"/>    
+    <position height="105" width="122" x="1409" y="37"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -111,7 +111,7 @@
   </class>  
   <class id="13" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Member" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Member.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1845" y="624"/>    
+    <position height="51" width="95" x="1922" y="578"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -120,7 +120,7 @@
   </class>  
   <class id="14" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.TupleType" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/TupleType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1152" y="751"/>    
+    <position height="69" width="169" x="1200" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -129,7 +129,7 @@
   </class>  
   <class id="15" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Type" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Type.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1268" y="615"/>    
+    <position height="33" width="58" x="1409" y="578"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -138,7 +138,7 @@
   </class>  
   <enumeration id="16" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Attribute.Modifier" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Attribute.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1867" y="941"/>    
+    <position height="213" width="154" x="1922" y="1570"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -147,7 +147,7 @@
   </enumeration>  
   <class id="17" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.SomeInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/SomeInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3029" y="751"/>    
+    <position height="69" width="147" x="3088" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -156,7 +156,7 @@
   </class>  
   <class id="18" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Model" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Model.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="969" y="625"/>    
+    <position height="69" width="195" x="1174" y="578"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -165,7 +165,7 @@
   </class>  
   <class id="19" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.OptionType" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/OptionType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1342" y="751"/>    
+    <position height="69" width="130" x="1409" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -174,7 +174,7 @@
   </class>  
   <class id="20" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Device" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Device.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="527" y="869"/>    
+    <position height="51" width="185" x="567" y="1570"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -183,7 +183,7 @@
   </class>  
   <class id="21" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.BasicInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/BasicInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3199" y="751"/>    
+    <position height="69" width="112" x="3275" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -192,7 +192,7 @@
   </class>  
   <class id="22" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.TupleInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/TupleInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3384" y="751"/>    
+    <position height="69" width="179" x="3427" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -201,7 +201,7 @@
   </class>  
   <enumeration id="23" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Feature.Level" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Feature.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="723" y="914"/>    
+    <position height="141" width="127" x="792" y="1570"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -210,7 +210,7 @@
   </enumeration>  
   <class id="24" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.SeqType" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/SeqType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1512" y="751"/>    
+    <position height="69" width="130" x="1579" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -219,7 +219,7 @@
   </class>  
   <class id="25" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.NoneInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/NoneInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3555" y="742"/>    
+    <position height="51" width="82" x="3646" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -228,7 +228,7 @@
   </class>  
   <class id="26" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Ast" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Ast.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="80" y="258"/>    
+    <position height="501" width="363" x="3853" y="37"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -237,7 +237,7 @@
   </class>  
   <class id="27" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.BasicType" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/BasicType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="282" y="751"/>    
+    <position height="69" width="226" x="301" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -246,7 +246,7 @@
   </class>  
   <class id="28" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Initialization" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Initialization.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3010" y="615"/>    
+    <position height="33" width="108" x="3088" y="578"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -255,7 +255,7 @@
   </class>  
   <class id="29" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.FeatureInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/FeatureInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3756" y="760"/>    
+    <position height="87" width="240" x="3768" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -264,131 +264,167 @@
   </class>  
   <class id="30" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.NamedType" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/NamedType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1683" y="751"/>    
+    <position height="69" width="133" x="1749" y="1101"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
-  <generalization id="31">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="13"/>  
-  </generalization>  
-  <generalization id="32">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="12"/>  
-  </generalization>  
-  <generalization id="33">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <generalization id="34">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
+  <class id="31" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Ast.AbstractVisitor" project="mdcf-dml-ast" 
+    file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Ast.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="483" width="245" x="3782" y="578"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
+      <attributes public="true" package="false" protected="false" private="false"/>      
+      <operations public="true" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <interface id="32" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Ast.IVisitor" project="mdcf-dml-ast" 
+    file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Ast.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="429" width="245" x="4048" y="1101"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
+      <attributes public="true" package="false" protected="false" private="false"/>      
+      <operations public="true" package="false" protected="false" private="false"/>    
+    </display>  
+  </interface>  
+  <class id="33" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Ast.XStreamer" project="mdcf-dml-ast" 
+    file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Ast.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="285" width="209" x="3533" y="578"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
+      <attributes public="true" package="false" protected="false" private="false"/>      
+      <operations public="true" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <nesting id="34">    
+    <bendpoint x="4057" y="578"/>    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="32"/>  
+  </nesting>  
   <generalization id="35">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="9"/>  
-  </generalization>  
-  <generalization id="36">    
-    <end type="SOURCE" refId="17"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <generalization id="37">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="12"/>  
-  </generalization>  
-  <generalization id="38">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="12"/>  
-  </generalization>  
-  <generalization id="39">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="13"/>  
-  </generalization>  
-  <generalization id="40">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <generalization id="41">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="15"/>  
   </generalization>  
-  <generalization id="42">    
-    <end type="SOURCE" refId="29"/>    
+  <generalization id="36">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <generalization id="37">    
+    <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="28"/>  
   </generalization>  
-  <generalization id="43">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <generalization id="44">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
-  <generalization id="45">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="9"/>  
-  </generalization>  
-  <generalization id="46">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
-  <generalization id="47">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <generalization id="48">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <generalization id="49">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
-  <generalization id="50">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="28"/>  
-  </generalization>  
-  <generalization id="51">    
+  <generalization id="38">    
     <end type="SOURCE" refId="13"/>    
     <end type="TARGET" refId="12"/>  
   </generalization>  
-  <generalization id="52">    
+  <generalization id="39">    
     <end type="SOURCE" refId="27"/>    
     <end type="TARGET" refId="9"/>  
   </generalization>  
+  <generalization id="40">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <generalization id="41">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <generalization id="42">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <generalization id="43">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
+  <nesting id="44">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="23"/>  
+  </nesting>  
+  <generalization id="45">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
+  <generalization id="46">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <generalization id="47">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <generalization id="48">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="49">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
+  <nesting id="50">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="31"/>  
+  </nesting>  
+  <generalization id="51">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <nesting id="52">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="16"/>  
+  </nesting>  
   <generalization id="53">    
     <end type="SOURCE" refId="18"/>    
     <end type="TARGET" refId="12"/>  
   </generalization>  
-  <association id="54">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="55" name="level"/>      
-      <multiplicity id="56" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="23" navigable="true"/>    
-    <display labels="false" multiplicity="false"/>  
-  </association>  
-  <association id="57">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="58" name="modifier"/>      
-      <multiplicity id="59" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="false" multiplicity="false"/>  
-  </association>  
-  <generalization id="60">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="15"/>  
-  </generalization>  
-  <generalization id="61">    
+  <generalization id="54">    
     <end type="SOURCE" refId="21"/>    
     <end type="TARGET" refId="28"/>  
   </generalization>  
+  <realization id="55">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="32"/>  
+  </realization>  
+  <generalization id="56">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <generalization id="57">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <nesting id="58">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="33"/>  
+  </nesting>  
+  <generalization id="59">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="60">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <generalization id="61">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
   <generalization id="62">    
-    <end type="SOURCE" refId="7"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <generalization id="63">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <generalization id="64">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
+  <generalization id="65">    
+    <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="28"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 

@@ -22,4 +22,9 @@ public final class SetType extends Type {
   protected Object[] getChildren() {
     return new Object[] { this.elementType };
   }
+
+  @Override
+  protected boolean visit(final Ast.IVisitor visitor) {
+    return visitor.visitSetType(this);
+  }
 }

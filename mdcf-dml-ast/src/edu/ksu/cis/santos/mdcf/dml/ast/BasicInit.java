@@ -22,4 +22,9 @@ public final class BasicInit extends Initialization {
   protected Object[] getChildren() {
     return new Object[] { this.value };
   }
+
+  @Override
+  protected boolean visit(final Ast.IVisitor visitor) {
+    return visitor.visitBasicInit(this);
+  }
 }

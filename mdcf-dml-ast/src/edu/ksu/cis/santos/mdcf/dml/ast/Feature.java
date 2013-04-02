@@ -8,7 +8,7 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dml.ast;
 
-import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.List;
+import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.list;
 
 import java.util.List;
 
@@ -28,11 +28,16 @@ public class Feature extends Declaration {
       final List<Member> members) {
     super(name);
     this.level = level;
-    this.members = List(members);
+    this.members = list(members);
   }
 
   @Override
   protected Object[] getChildren() {
     return new Object[] { this.level, this.name, this.members };
+  }
+
+  @Override
+  protected boolean visit(final Ast.IVisitor visitor) {
+    return visitor.visitFeature(this);
   }
 }

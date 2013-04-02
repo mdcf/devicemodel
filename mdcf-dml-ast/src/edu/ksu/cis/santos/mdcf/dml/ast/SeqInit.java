@@ -8,7 +8,7 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dml.ast;
 
-import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.List;
+import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.list;
 
 import java.util.List;
 
@@ -19,11 +19,16 @@ public final class SeqInit extends Initialization {
   public final List<Initialization> inits;
 
   public SeqInit(final List<Initialization> inits) {
-    this.inits = List(inits);
+    this.inits = list(inits);
   }
 
   @Override
   protected Object[] getChildren() {
     return new Object[] { this.inits };
+  }
+
+  @Override
+  protected boolean visit(final Ast.IVisitor visitor) {
+    return visitor.visitSeqInit(this);
   }
 }

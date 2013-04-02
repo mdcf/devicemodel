@@ -24,4 +24,9 @@ public final class EitherInit extends Initialization {
   protected Object[] getChildren() {
     return new Object[] { this.index, this.init };
   }
+
+  @Override
+  protected boolean visit(final Ast.IVisitor visitor) {
+    return visitor.visitEitherInit(this);
+  }
 }

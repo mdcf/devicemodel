@@ -20,4 +20,9 @@ public final class NoneInit extends Initialization {
   protected Object[] getChildren() {
     return new Object[] {};
   }
+
+  @Override
+  protected boolean visit(final Ast.IVisitor visitor) {
+    return visitor.visitNoneInit(this);
+  }
 }

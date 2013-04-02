@@ -8,7 +8,7 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dml.ast;
 
-import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.List;
+import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.list;
 
 import java.util.List;
 
@@ -21,11 +21,16 @@ public final class FeatureInit extends Initialization {
 
   public FeatureInit(final NamedType type, final List<Attribute> attributes) {
     this.type = type;
-    this.attributes = List(attributes);
+    this.attributes = list(attributes);
   }
 
   @Override
   protected Object[] getChildren() {
     return new Object[] { this.type, this.attributes };
+  }
+
+  @Override
+  protected boolean visit(final Ast.IVisitor visitor) {
+    return visitor.visitFeatureInit(this);
   }
 }

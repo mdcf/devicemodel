@@ -15,7 +15,7 @@ import com.google.common.base.Optional;
  */
 public final class Attribute extends Member {
   public static enum Modifier {
-    None, Settable, Data, Override, ConstSchema, ConstClass, ConstProduct, ConstInstance
+    None, Settable, Data, Override, Const, ConstSchema, ConstClass, ConstProduct, ConstInstance
   }
 
   public final Modifier modifier;
@@ -34,5 +34,10 @@ public final class Attribute extends Member {
   @Override
   protected Object[] getChildren() {
     return new Object[] { this.modifier, this.type, this.name, this.init };
+  }
+
+  @Override
+  protected boolean visit(final Ast.IVisitor visitor) {
+    return visitor.visitAttribute(this);
   }
 }

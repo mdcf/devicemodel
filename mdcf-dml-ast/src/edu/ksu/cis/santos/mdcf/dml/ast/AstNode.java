@@ -11,6 +11,10 @@ package edu.ksu.cis.santos.mdcf.dml.ast;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
+import com.google.common.base.Optional;
+
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
@@ -68,8 +72,24 @@ public abstract class AstNode {
         }
       }
       sb.append(')');
+    } else if (o instanceof Optional) {
+      final Optional<?> opt = (Optional<?>) o;
+      if (opt.isPresent()) {
+        sb.append("Some(");
+        toStringHelper(sb, opt.get());
+        sb.append(')');
+      } else {
+        sb.append("None");
+      }
+    } else if (o instanceof String) {
+      final String s = (String) o;
+      sb.append('"');
+      sb.append(StringEscapeUtils.escapeJava(s));
+      sb.append('"');
     } else {
       sb.append(o);
     }
   }
+
+  protected abstract boolean visit(Ast.IVisitor visitor);
 }

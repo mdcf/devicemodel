@@ -8,7 +8,7 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dml.ast;
 
-import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.List;
+import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.list;
 
 import java.util.List;
 
@@ -20,11 +20,16 @@ public final class Requirement extends Declaration {
 
   public Requirement(final String name, final List<Invariant> invariants) {
     super(name);
-    this.invariants = List(invariants);
+    this.invariants = list(invariants);
   }
 
   @Override
   protected Object[] getChildren() {
     return new Object[] { this.name, this.invariants };
+  }
+
+  @Override
+  protected boolean visit(final Ast.IVisitor visitor) {
+    return visitor.visitRequirement(this);
   }
 }
