@@ -20,7 +20,7 @@ public abstract class AstNode {
   public Object[] children() {
     Object[] result = null;
     if ((this.children == null) || ((result = this.children.get()) == null)) {
-      result = children();
+      result = getChildren();
       this.children = new WeakReference<Object[]>(result);
     }
     return result;
