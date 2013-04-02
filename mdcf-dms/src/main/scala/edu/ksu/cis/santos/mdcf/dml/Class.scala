@@ -20,13 +20,13 @@ trait ICEPulseOx extends ICEDevice {
 object ICEPulseOx {
   @Inv
   val `At least one SpO2 param` : Predicate[ICEPulseOx] =
-    cond { po =>
+    pred { po =>
       po.physioParams.filter(_.isInstanceOf[ICESpO2]).size >= 1
     }
 
   @Inv
   val `At least one Pulse Rate param` : Predicate[ICEPulseOx] =
-    cond { po =>
+    pred { po =>
       po.physioParams.exists(_.isInstanceOf[ICEPulseRate]) // a different way to express the inv
     }
 }
@@ -51,7 +51,7 @@ trait ICEBloodPressure extends ICEDevice {
 object ICEBloodPressure {
   @Inv
   val `At least one Blood Pressure param` : Predicate[ICEBloodPressure] =
-    cond { bp =>
+    pred { bp =>
       bp.physioParams.exists(_.isInstanceOf[ICEPulseRate])
     }
 }
@@ -75,19 +75,19 @@ trait ICEMultiMonitor extends ICEDevice {
 object ICEMultiMonitor {
   @Inv
   val `At least one SpO2 param` : Predicate[ICEMultiMonitor] =
-    cond { mm =>
+    pred { mm =>
       mm.physioParams.exists(_.isInstanceOf[ICESpO2])
     }
 
   @Inv
   val `At least one Pulse Rate param` : Predicate[ICEMultiMonitor] =
-    cond { mm =>
+    pred { mm =>
       mm.physioParams.exists(_.isInstanceOf[ICEPulseRate])
     }
 
   @Inv
   val `At least one Blood Pressure param` : Predicate[ICEMultiMonitor] =
-    cond { mm =>
+    pred { mm =>
       mm.physioParams.exists(_.isInstanceOf[ICEBloodPressure])
     }
 }

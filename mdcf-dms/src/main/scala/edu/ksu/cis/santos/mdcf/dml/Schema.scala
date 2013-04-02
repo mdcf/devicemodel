@@ -24,7 +24,7 @@ trait Range {
 object Range {
   @Inv
   val `min is less than or equal to max` : Predicate[Range] =
-    cond { r =>
+    pred { r =>
       r.min <= r.max
     }
 }
@@ -244,7 +244,7 @@ trait RangeSetting extends ICEDeviceSetting {
 object RangeSetting {
   @Inv
   val `min is less than or equal to max` : Predicate[RangeSetting] =
-    cond { r =>
+    pred { r =>
       r.min <= r.max
     }
 }

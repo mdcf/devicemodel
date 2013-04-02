@@ -218,9 +218,9 @@ object Prelude {
   import scala.reflect.macros.Context
   import scala.language.experimental.macros
 
-  def cond[T](cond : T) = macro Prelude.condImpl[T]
+  def pred[T](cond : T) = macro Prelude.predImpl[T]
 
-  def condImpl[T : c.WeakTypeTag](c : Context)(
+  def predImpl[T : c.WeakTypeTag](c : Context)(
     cond : c.Expr[T]) : c.Expr[scala.reflect.runtime.universe.Expr[T]] = {
     import c.universe._
 
