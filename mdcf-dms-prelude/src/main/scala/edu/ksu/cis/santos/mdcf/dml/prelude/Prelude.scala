@@ -9,10 +9,11 @@ http://www.eclipse.org/legal/epl-v10.html
 package edu.ksu.cis.santos.mdcf.dml.prelude
 
 import edu.ksu.cis.santos.mdcf.dml.annotation._
+import scala.reflect.runtime.{ universe => ru }
 
 object Prelude {
 
-  type Predicate[T] = scala.reflect.runtime.universe.Expr[T => Prelude.Boolean]
+  type Predicate[T] = ru.Expr[T => Boolean]
 
   trait Any extends Immutable {
     def ==(o : Any) : Boolean
@@ -214,20 +215,17 @@ object Prelude {
       }
     def !=(o : Any) : Boolean = !(this == o)
   }
-  
-  import scala.reflect.macros.Context
+
   import scala.language.experimental.macros
 
-  def pred[T](cond : T) = macro Prelude.predImpl[T]
+  def pred[T](p : T => Boolean) : Predicate[T] = macro Prelude.predImpl[T]
 
-  def predImpl[T : c.WeakTypeTag](c : Context)(
-    cond : c.Expr[T]) : c.Expr[scala.reflect.runtime.universe.Expr[T]] = {
+  def predImpl[T : c.WeakTypeTag](c : scala.reflect.macros.Context)(
+    p : c.Expr[T => Boolean]) : c.Expr[Predicate[T]] = {
     import c.universe._
 
-    val t = (reify { scala.reflect.runtime.universe.reify {} }).tree
-    val Apply(rt, _) = t
+    val Apply(rt, _) = (reify { ru.reify {} }).tree
 
-    c.Expr[scala.reflect.runtime.universe.Expr[T]](Apply(rt, List(cond.tree)))
+    c.Expr[Predicate[T]](Apply(rt, List(p.tree)))
   }
-
 }
