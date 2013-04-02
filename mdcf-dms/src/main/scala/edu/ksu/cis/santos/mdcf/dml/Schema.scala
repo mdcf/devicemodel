@@ -10,7 +10,7 @@ package edu.ksu.cis.santos.mdcf.dml
 
 import edu.ksu.cis.santos.mdcf.dml.annotation._
 import edu.ksu.cis.santos.mdcf.dml.annotation.ConstMode._
-import Prelude._
+import edu.ksu.cis.santos.mdcf.dml.prelude.Prelude._
 
 @Schema
 trait Range {
@@ -19,9 +19,14 @@ trait Range {
 
   @Const
   val max : Number
+}
 
+object Range {
   @Inv
-  def `min is less than or equal to max` : Boolean = min <= max
+  val `min is less than or equal to max` : Predicate[Range] =
+    cond { r =>
+      r.min <= r.max
+    }
 }
 
 @Schema
@@ -231,12 +236,17 @@ trait ICEDeviceSetting {
 trait RangeSetting extends ICEDeviceSetting {
   @Settable
   val min : Number
-  
+
   @Settable
   val max : Number
+}
 
+object RangeSetting {
   @Inv
-  def `min is less than or equal to max` : Boolean = min <= max
+  val `min is less than or equal to max` : Predicate[RangeSetting] =
+    cond { r =>
+      r.min <= r.max
+    }
 }
 
 @Schema

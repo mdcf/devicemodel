@@ -10,7 +10,7 @@ package edu.ksu.cis.santos.mdcf.dml
 
 import edu.ksu.cis.santos.mdcf.dml.annotation._
 import edu.ksu.cis.santos.mdcf.dml.annotation.ConstMode._
-import Prelude._
+import edu.ksu.cis.santos.mdcf.dml.prelude.Prelude._
 
 @Product
 class NoninPulseOx extends ICEPulseOx {

@@ -10,24 +10,29 @@ package edu.ksu.cis.santos.mdcf.dml
 
 import edu.ksu.cis.santos.mdcf.dml.annotation._
 import edu.ksu.cis.santos.mdcf.dml.annotation.ConstMode._
-import Prelude._
+import edu.ksu.cis.santos.mdcf.dml.prelude.Prelude._
 
-@Req
-class MyReqPulseOx(po : ICEPulseOx) {
+object MyReqPulseOx {
 
-  def `(SpO2's min < 40 and SpO2's max == 100)` : Boolean =
-    po.physioParams.exists(
-      _ match {
-        case spo2 : ICESpO2 => spo2.range.min < 40 && spo2.range.max == 100
-        case _              => false
-      }
-    )
+  @Req
+  val `(SpO2's min < 40 and SpO2's max == 100)` : Predicate[ICEPulseOx] =
+    cond { po =>
+      po.physioParams.exists(
+        _ match {
+          case spo2 : ICESpO2 => spo2.range.min < 40 && spo2.range.max == 100
+          case _              => false
+        }
+      )
+    }
 
-  def `PulseRate's min <= 30 and PulseRate's max >= 200` : Boolean =
-    po.physioParams.exists(
-      _ match {
-        case pr : ICEPulseRate => pr.range.min <= 30 && pr.range.max >= 200
-        case _                 => false
-      }
-    )
+  @Req
+  val `PulseRate's min <= 30 and PulseRate's max >= 200` : Predicate[ICEPulseOx] =
+    cond { po =>
+      po.physioParams.exists(
+        _ match {
+          case pr : ICEPulseRate => pr.range.min <= 30 && pr.range.max >= 200
+          case _                 => false
+        }
+      )
+    }
 }

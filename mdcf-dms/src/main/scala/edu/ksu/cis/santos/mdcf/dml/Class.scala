@@ -10,19 +10,25 @@ package edu.ksu.cis.santos.mdcf.dml
 
 import edu.ksu.cis.santos.mdcf.dml.annotation._
 import edu.ksu.cis.santos.mdcf.dml.annotation.ConstMode._
-import Prelude._
+import edu.ksu.cis.santos.mdcf.dml.prelude.Prelude._
 
 @Class
 trait ICEPulseOx extends ICEDevice {
   override val `type` = IEEEDeviceType("IEEE ... Pulse Ox")
+}
+
+object ICEPulseOx {
+  @Inv
+  val `At least one SpO2 param` : Predicate[ICEPulseOx] =
+    cond { po =>
+      po.physioParams.filter(_.isInstanceOf[ICESpO2]).size >= 1
+    }
 
   @Inv
-  def `At least one SpO2 param` : Boolean =
-    physioParams.filter(_.isInstanceOf[ICESpO2]).size >= 1
-
-  @Inv
-  def `At least one Pulse Rate param` : Boolean =
-    physioParams.exists(_.isInstanceOf[ICEPulseRate]) // a different way to express the inv
+  val `At least one Pulse Rate param` : Predicate[ICEPulseOx] =
+    cond { po =>
+      po.physioParams.exists(_.isInstanceOf[ICEPulseRate]) // a different way to express the inv
+    }
 }
 
 @Class
@@ -40,37 +46,48 @@ trait ICEPulseRate extends ICEPhysioParameter {
 @Class
 trait ICEBloodPressure extends ICEDevice {
   override val `type` = IEEEDeviceType("IEEE ... Blood Pressure")
+}
 
+object ICEBloodPressure {
   @Inv
-  def `At least one Blood Pressure param` : Boolean =
-    physioParams.filter(_.isInstanceOf[ICEPulseRate]).size >= 1
+  val `At least one Blood Pressure param` : Predicate[ICEBloodPressure] =
+    cond { bp =>
+      bp.physioParams.exists(_.isInstanceOf[ICEPulseRate])
+    }
 }
 
 @Class
 trait ICEBloodPressureParam extends ICEPhysioParameter {
   val systolic = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_SYS")
   val diastolic = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_DIA")
-  
-  val physioParameterType = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_MEAN") 
+
+  val physioParameterType = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_MEAN")
   // mean is used here, but we need composite of ICEPhysioParameter
-  
+
   override val unit = IEEEUnit("MDC_DIM_MMHG")
 }
 
 @Class
 trait ICEMultiMonitor extends ICEDevice {
   override val `type` = IEEEDeviceType("IEEE ... MultiMonitor")
-  
-  @Inv
-  def `At least one SpO2 param` : Boolean =
-    physioParams.filter(_.isInstanceOf[ICESpO2]).size >= 1
-
-  @Inv
-  def `At least one Pulse Rate param` : Boolean =
-    physioParams.filter(_.isInstanceOf[ICEPulseRate]).size >= 1
-
-  @Inv
-  def `At least one Blood Pressure param` : Boolean =
-    physioParams.filter(_.isInstanceOf[ICEBloodPressure]).size >= 1
 }
 
+object ICEMultiMonitor {
+  @Inv
+  val `At least one SpO2 param` : Predicate[ICEMultiMonitor] =
+    cond { mm =>
+      mm.physioParams.exists(_.isInstanceOf[ICESpO2])
+    }
+
+  @Inv
+  val `At least one Pulse Rate param` : Predicate[ICEMultiMonitor] =
+    cond { mm =>
+      mm.physioParams.exists(_.isInstanceOf[ICEPulseRate])
+    }
+
+  @Inv
+  val `At least one Blood Pressure param` : Predicate[ICEMultiMonitor] =
+    cond { mm =>
+      mm.physioParams.exists(_.isInstanceOf[ICEBloodPressure])
+    }
+}

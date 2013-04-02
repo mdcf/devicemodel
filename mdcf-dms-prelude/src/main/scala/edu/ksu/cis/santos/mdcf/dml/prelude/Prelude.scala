@@ -6,11 +6,13 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dml
+package edu.ksu.cis.santos.mdcf.dml.prelude
 
 import edu.ksu.cis.santos.mdcf.dml.annotation._
 
 object Prelude {
+
+  type Predicate[T] = scala.reflect.runtime.universe.Expr[T => Prelude.Boolean]
 
   trait Any extends Immutable {
     def ==(o : Any) : Boolean
@@ -28,9 +30,9 @@ object Prelude {
   }
 
   object Boolean {
-    
+
     def apply(b : scala.Boolean) = if (b) True else False
-    
+
     object True extends AbstractBoolean { def value = true }
     object False extends AbstractBoolean { def value = false }
   }
@@ -141,7 +143,7 @@ object Prelude {
 
   abstract class AbstractInt extends Int {
     import Boolean._
-    
+
     def ==(o : Any) : Boolean = this == o
     def !=(o : Any) : Boolean = this != o
     def <(o : Number) : Boolean =
@@ -168,7 +170,7 @@ object Prelude {
 
   sealed abstract class AbstractBoolean extends Boolean {
     import Boolean._
-    
+
     def unary_! : Boolean =
       this match {
         case True  => False
@@ -204,7 +206,7 @@ object Prelude {
 
   abstract class AbstractString extends String {
     import Boolean._
-    
+
     def ==(o : Any) : Boolean =
       o match {
         case o : String => value == o.value
@@ -212,4 +214,20 @@ object Prelude {
       }
     def !=(o : Any) : Boolean = !(this == o)
   }
+  
+  import scala.reflect.macros.Context
+  import scala.language.experimental.macros
+
+  def cond[T](cond : T) = macro Prelude.condImpl[T]
+
+  def condImpl[T : c.WeakTypeTag](c : Context)(
+    cond : c.Expr[T]) : c.Expr[scala.reflect.runtime.universe.Expr[T]] = {
+    import c.universe._
+
+    val t = (reify { scala.reflect.runtime.universe.reify {} }).tree
+    val Apply(rt, _) = t
+
+    c.Expr[scala.reflect.runtime.universe.Expr[T]](Apply(rt, List(cond.tree)))
+  }
+
 }
