@@ -14,7 +14,7 @@ package edu.ksu.cis.santos.mdcf.dml.ast;
 public abstract class Declaration extends AstNode {
   public final String name;
 
-  public Declaration(final String name) {
+  Declaration(final String name) {
     this.name = name.intern();
   }
 }
