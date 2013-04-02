@@ -17,7 +17,7 @@ object MyReqPulseOx {
 
   @Inv
   val `(SpO2's min < 40 and SpO2's max == 100)` : Predicate[ICEPulseOx] =
-    pred { po =>
+    pred { po : ICEPulseOx =>
       po.physioParams.exists(
         _ match {
           case spo2 : ICESpO2 => spo2.range.min < 40 && spo2.range.max == 100
@@ -28,7 +28,7 @@ object MyReqPulseOx {
 
   @Inv
   val `PulseRate's min <= 30 and PulseRate's max >= 200` : Predicate[ICEPulseOx] =
-    pred { po =>
+    pred { po : ICEPulseOx =>
       po.physioParams.exists(
         _ match {
           case pr : ICEPulseRate => pr.range.min <= 30 && pr.range.max >= 200
