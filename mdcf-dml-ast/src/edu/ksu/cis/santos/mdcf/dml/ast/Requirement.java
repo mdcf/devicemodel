@@ -8,7 +8,7 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dml.ast;
 
-import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.list;
+import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.List;
 
 import java.util.List;
 
@@ -22,8 +22,8 @@ public final class Requirement extends Declaration {
   public Requirement(final String name, final List<Binding> bindings,
       final List<Invariant> invariants) {
     super(name);
-    this.bindings = list(bindings);
-    this.invariants = list(invariants);
+    this.bindings = List(bindings);
+    this.invariants = List(invariants);
   }
 
   @Override

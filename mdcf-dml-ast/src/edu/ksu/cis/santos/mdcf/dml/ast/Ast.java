@@ -21,9 +21,6 @@ import edu.ksu.cis.santos.mdcf.dml.ast.Feature.Level;
  */
 public class Ast {
 
-  private Ast() {
-  }
-
   public static App App(final String name, final List<Member> members) {
     return new App(name, members);
   }
@@ -72,7 +69,7 @@ public class Ast {
     return new Invariant(name, predicate);
   }
 
-  public static <T> List<T> list(final Iterable<T> ts) {
+  public static <T> List<T> List(final Iterable<T> ts) {
     if (ts instanceof ImmutableList) {
       return (ImmutableList<T>) ts;
     } else {
@@ -81,7 +78,7 @@ public class Ast {
   }
 
   @SafeVarargs
-  public static <T> List<T> list(final T... ts) {
+  public static <T> List<T> List(final T... ts) {
     return ImmutableList.<T> builder().add(ts).build();
   }
 
@@ -132,5 +129,8 @@ public class Ast {
 
   public static TupleType TupleType(final List<Type> elementTypes) {
     return new TupleType(elementTypes);
+  }
+
+  private Ast() {
   }
 }

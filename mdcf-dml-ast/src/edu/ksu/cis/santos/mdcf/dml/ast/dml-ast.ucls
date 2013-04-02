@@ -3,406 +3,406 @@
   realizations="false" associations="false" dependencies="false" nesting-relationships="false">  
   <class id="1" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Invariant" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Invariant.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="722" y="903"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="151" x="2358" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="2" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.SetType" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/SetType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1275" y="903"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="130" x="909" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="3" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Attribute" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Attribute.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="999" y="921"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="87" width="316" x="2002" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="4" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Feature" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Feature.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="493" y="912"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="222" x="647" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="5" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.SeqInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/SeqInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2480" y="903"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="170" x="2549" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="6" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Requirement" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Requirement.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-73" y="912"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="87" width="298" x="43" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="7" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.SetInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/SetInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2891" y="903"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="166" x="2759" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="8" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.EitherInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/EitherInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2686" y="912"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="87" width="163" x="2965" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="9" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Binding" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Binding.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="129" y="756"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="-1" width="-1" x="401" y="602"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="10" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Declaration" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Declaration.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="460" y="747"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="129" x="647" y="560"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="11" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.App" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/App.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="240" y="1067"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="51" width="169" x="438" y="814"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="12" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.EitherType" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/EitherType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1474" y="903"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="161" x="1079" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="13" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.AstNode" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/AstNode.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="919" y="213"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="105" width="122" x="1450" y="37"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="14" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Member" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Member.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="919" y="747"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="111" x="2002" y="560"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="15" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.TupleType" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/TupleType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1679" y="903"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="169" x="1280" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="16" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Type" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Type.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1673" y="738"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="51" width="61" x="1450" y="560"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <enumeration id="17" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Attribute.Modifier" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Attribute.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1007" y="1108"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="195" width="154" x="2002" y="814"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </enumeration>  
   <class id="18" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.SomeInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/SomeInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3092" y="903"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="147" x="3168" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="19" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Model" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Model.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="703" y="747"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="-1" width="-1" x="1181" y="595"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="20" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.OptionType" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/OptionType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1882" y="903"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="130" x="1489" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="21" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Device" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Device.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="697" y="1068"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="51" width="185" x="647" y="814"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="22" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.BasicInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/BasicInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3289" y="903"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="112" x="3355" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="23" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.TupleInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/TupleInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3497" y="903"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="179" x="3507" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <enumeration id="24" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Feature.Level" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Feature.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="487" y="1069"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="141" width="127" x="872" y="814"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </enumeration>  
   <class id="25" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.SeqType" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/SeqType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2079" y="903"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="130" x="1659" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="26" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.NoneInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/NoneInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3705" y="894"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="51" width="82" x="3726" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="27" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Ast" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Ast.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="204" y="285"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="-1" width="-1" x="213" y="292"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="28" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.BasicType" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/BasicType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="245" y="903"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="226" x="381" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="29" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Initialization" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/Initialization.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3092" y="738"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="51" width="108" x="3168" y="560"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="30" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.FeatureInit" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/FeatureInit.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3944" y="912"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="87" width="240" x="3848" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <class id="31" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.NamedType" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/edu/ksu/cis/santos/mdcf/dml/ast/NamedType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2276" y="903"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
+    <position height="69" width="133" x="1829" y="687"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
   <generalization id="32">    
-    <end type="SOURCE" refId="15"/>    
+    <end type="SOURCE" refId="25"/>    
     <end type="TARGET" refId="16"/>  
   </generalization>  
   <generalization id="33">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="4"/>  
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="16"/>  
   </generalization>  
   <generalization id="34">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="29"/>  
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="10"/>  
   </generalization>  
   <generalization id="35">    
-    <end type="SOURCE" refId="7"/>    
+    <end type="SOURCE" refId="30"/>    
     <end type="TARGET" refId="29"/>  
   </generalization>  
   <generalization id="36">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="29"/>  
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="10"/>  
   </generalization>  
   <generalization id="37">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="29"/>  
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="13"/>  
   </generalization>  
   <generalization id="38">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="10"/>  
   </generalization>  
   <generalization id="39">    
-    <end type="SOURCE" refId="5"/>    
+    <end type="SOURCE" refId="26"/>    
     <end type="TARGET" refId="29"/>  
   </generalization>  
   <generalization id="40">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="14"/>  
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="4"/>  
   </generalization>  
   <generalization id="41">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="16"/>  
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="29"/>  
   </generalization>  
   <generalization id="42">    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="13"/>  
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="29"/>  
   </generalization>  
   <generalization id="43">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="13"/>  
-  </generalization>  
-  <generalization id="44">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="14"/>  
-  </generalization>  
-  <generalization id="45">    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="13"/>  
   </generalization>  
-  <generalization id="46">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="29"/>  
+  <generalization id="44">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="13"/>  
   </generalization>  
-  <generalization id="47">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="29"/>  
-  </generalization>  
-  <association id="48">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="49" name="level"/>      
-      <multiplicity id="50" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="24" navigable="true"/>    
-    <display labels="false" multiplicity="false"/>  
-  </association>  
-  <generalization id="51">    
+  <generalization id="45">    
     <end type="SOURCE" refId="14"/>    
     <end type="TARGET" refId="13"/>  
   </generalization>  
-  <generalization id="52">    
+  <generalization id="46">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="29"/>  
+  </generalization>  
+  <generalization id="47">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="29"/>  
+  </generalization>  
+  <generalization id="48">    
     <end type="SOURCE" refId="31"/>    
     <end type="TARGET" refId="16"/>  
   </generalization>  
-  <association id="53">    
+  <generalization id="49">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <generalization id="50">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="29"/>  
+  </generalization>  
+  <generalization id="51">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="52">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="54" name="modifier"/>      
-      <multiplicity id="55" minimum="0" maximum="1"/>    
+      <attribute id="53" name="modifier"/>      
+      <multiplicity id="54" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="17" navigable="true"/>    
     <display labels="false" multiplicity="false"/>  
   </association>  
-  <generalization id="56">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="13"/>  
+  <generalization id="55">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="14"/>  
   </generalization>  
-  <generalization id="57">    
+  <generalization id="56">    
     <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="13"/>  
   </generalization>  
-  <generalization id="58">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="16"/>  
+  <generalization id="57">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="29"/>  
   </generalization>  
-  <generalization id="59">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="16"/>  
-  </generalization>  
-  <generalization id="60">    
+  <association id="58">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="59" name="level"/>      
+      <multiplicity id="60" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="false" multiplicity="false"/>  
+  </association>  
+  <generalization id="61">    
     <end type="SOURCE" refId="20"/>    
     <end type="TARGET" refId="16"/>  
   </generalization>  
-  <generalization id="61">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
   <generalization id="62">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="10"/>  
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="16"/>  
   </generalization>  
   <generalization id="63">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="29"/>  
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="16"/>  
   </generalization>  
   <generalization id="64">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="10"/>  
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="13"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
     accessors="true" visibility="true">    
