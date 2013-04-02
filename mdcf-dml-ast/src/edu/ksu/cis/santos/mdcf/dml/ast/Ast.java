@@ -21,6 +21,9 @@ import edu.ksu.cis.santos.mdcf.dml.ast.Feature.Level;
  */
 public class Ast {
 
+  private Ast() {
+  }
+
   public static App App(final String name, final List<Member> members) {
     return new App(name, members);
   }

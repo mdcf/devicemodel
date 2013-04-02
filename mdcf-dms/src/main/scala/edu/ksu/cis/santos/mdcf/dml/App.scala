@@ -12,9 +12,10 @@ import edu.ksu.cis.santos.mdcf.dml.annotation._
 import edu.ksu.cis.santos.mdcf.dml.annotation.ConstMode._
 import edu.ksu.cis.santos.mdcf.dml.prelude.Prelude._
 
+@Req
 object MyReqPulseOx {
 
-  @Req
+  @Inv
   val `(SpO2's min < 40 and SpO2's max == 100)` : Predicate[ICEPulseOx] =
     pred { po =>
       po.physioParams.exists(
@@ -25,7 +26,7 @@ object MyReqPulseOx {
       )
     }
 
-  @Req
+  @Inv
   val `PulseRate's min <= 30 and PulseRate's max >= 200` : Predicate[ICEPulseOx] =
     pred { po =>
       po.physioParams.exists(
