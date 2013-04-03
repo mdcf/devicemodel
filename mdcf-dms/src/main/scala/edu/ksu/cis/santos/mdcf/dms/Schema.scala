@@ -10,7 +10,7 @@ package edu.ksu.cis.santos.mdcf.dms
 
 import edu.ksu.cis.santos.mdcf.dms.annotation._
 import edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode._
-import edu.ksu.cis.santos.mdcf.dms.prelude.Prelude._
+import edu.ksu.cis.santos.mdcf.dms.prelude._
 
 @Schema
 trait Range {
