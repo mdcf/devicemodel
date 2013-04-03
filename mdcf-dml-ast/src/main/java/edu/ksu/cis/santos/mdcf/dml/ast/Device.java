@@ -17,7 +17,7 @@ public final class Device extends Feature {
 
   public Device(final String name, final List<NamedType> supers,
       final List<Member> members) {
-    super(FeatureLevel.Product, name, supers, members);
+    super(FeatureModifier.Product, name, supers, members);
   }
 
   @Override

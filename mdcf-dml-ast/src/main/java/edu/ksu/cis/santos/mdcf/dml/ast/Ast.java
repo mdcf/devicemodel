@@ -60,11 +60,6 @@ public class Ast {
     }
 
     @Override
-    public boolean visitApp(final App node) {
-      return defaultCase(node);
-    }
-
-    @Override
     public boolean visitAttribute(final Attribute node) {
       return defaultCase(node);
     }
@@ -171,8 +166,6 @@ public class Ast {
   }
 
   public static interface IVisitor {
-    boolean visitApp(App node);
-
     boolean visitAttribute(Attribute node);
 
     boolean visitBasicInit(BasicInit node);
@@ -380,11 +373,6 @@ public class Ast {
     }
   }
 
-  public static App app(final String name, final List<NamedType> supers,
-      final List<Member> members) {
-    return new App(name, supers, members);
-  }
-
   public static Attribute attribute(final AttributeModifier modifier,
       final Type type, final String name, final Optional<Initialization> init) {
     return new Attribute(modifier, type, name, init);
@@ -412,7 +400,7 @@ public class Ast {
     return new EitherType(choiceTypes);
   }
 
-  public static Feature feature(final FeatureLevel level, final String name,
+  public static Feature feature(final FeatureModifier level, final String name,
       final List<NamedType> supers, final List<Member> members) {
     return new Feature(level, name, supers, members);
   }

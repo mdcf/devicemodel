@@ -6,18 +6,18 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dms
+package edu.ksu.cis.santos.mdcf.dms.example
 
 import edu.ksu.cis.santos.mdcf.dms.annotation._
 import edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode._
 import edu.ksu.cis.santos.mdcf.dms.prelude._
 
-@Product
-class NoninPulseOx extends ICEPulseOx {
-  override val id = DeviceId("Continua PO")
+@Device
+class MultiMonitor extends ICEMultiMonitor {
+  override val id = DeviceId("MultiMonitor")
 
   override val manufacturerModel = new ICEManufacturerModel {
-    override val modelNumber = String("Nonin Onyx II")
+    override val modelNumber = String("MultiMonitor")
     override val versionNumber = String("XX.YY.ZZ")
     override val credentials = Set[ICESecurity]()
   }
@@ -33,10 +33,22 @@ class NoninPulseOx extends ICEPulseOx {
       override val exchanges = Set[ICEDataExchange](
         new ClientInitiated {
           override val maxRetrievalRatePerSecond = Nat(15)
+        },
+        new Periodic {
+          override val rateRange = new NatRange {
+            override val min = Nat(0)
+            override val max = Nat(100)
+          }
         }
       )
 
-      override val alerts = Set[ICEAlert]()
+      override val alerts = Set[ICEAlert](
+        new RangeValueAlert with IntRangeSetting {
+          override val min = Int(85)
+          override val max = Int(100)
+          override val security = None
+        }
+      )
     },
 
     new ICEPulseRate {
@@ -51,7 +63,32 @@ class NoninPulseOx extends ICEPulseOx {
         }
       )
 
-      override val alerts = Set[ICEAlert]()
+      override val alerts = Set[ICEAlert](
+        new RangeValueAlert with IntRangeSetting {
+          override val min = Int(40)
+          override val max = Int(180)
+          override val security = None
+        }
+      )
+    },
+
+    new ICEBloodPressureParam {
+      override val range = new IntRange {
+        override val min = Int(20)
+        override val max = Int(300)
+      }
+      override val exchanges = Set[ICEDataExchange](
+        new ClientInitiated {
+          override val maxRetrievalRatePerSecond = Nat(5)
+        }
+      )
+      override val alerts = Set[ICEAlert](
+        new RangeValueAlert with IntRangeSetting {
+          override val min = Int(40)
+          override val max = Int(180)
+          override val security = None
+        }
+      )
     }
   )
 }

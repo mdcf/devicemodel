@@ -12,8 +12,6 @@ import scala.reflect.runtime.{ universe => ru }
 
 import org.sireum.util.math._
 
-import edu.ksu.cis.santos.mdcf.dms.annotation._
-
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
@@ -177,10 +175,7 @@ package object prelude {
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
-  trait Nat extends Int {
-    @Inv
-    def `value is non-negative` = value >= 0
-  }
+  trait Nat extends Int
 
   type Set[T] = scala.collection.immutable.Set[T]
   type Seq[T] = scala.collection.immutable.Seq[T]

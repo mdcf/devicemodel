@@ -6,7 +6,7 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dms
+package edu.ksu.cis.santos.mdcf.dms.example
 
 import edu.ksu.cis.santos.mdcf.dms.annotation._
 import edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode._

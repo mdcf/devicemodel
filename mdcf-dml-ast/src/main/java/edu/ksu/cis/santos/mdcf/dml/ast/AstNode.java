@@ -88,6 +88,11 @@ public abstract class AstNode {
       sb.append('"');
       sb.append(StringEscapeUtils.escapeJava(s));
       sb.append('"');
+    } else if (o instanceof Enum) {
+      final Enum<?> e = (Enum<?>) o;
+      sb.append(e.getClass().getSimpleName());
+      sb.append('.');
+      sb.append(e.toString());
     } else {
       sb.append(o);
     }

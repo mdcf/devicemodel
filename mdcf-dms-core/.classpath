@@ -6,5 +6,8 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dml-ast"/>
 	<classpathentry kind="lib" path="/mdcf-dml-ast/lib/apfloat.jar" sourcepath="/mdcf-dml-ast/lib/apfloat-src.zip"/>
+	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_COMPILER_CONTAINER"/>
+	<classpathentry kind="lib" path="/mdcf-dml-ast/lib/guava.jar" sourcepath="/mdcf-dml-ast/lib/guava-src.zip"/>
+	<classpathentry kind="lib" path="/mdcf-dml-ast/lib/jsr305.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
