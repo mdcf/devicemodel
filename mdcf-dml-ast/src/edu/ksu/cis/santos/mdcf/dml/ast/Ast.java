@@ -220,28 +220,40 @@ public class Ast {
   }
 
   public static class XStreamer {
-    public static Object fromJson(final InputStream is) {
-      return xstream(false).fromXML(is);
+    public static <T> T fromJson(final InputStream is) {
+      @SuppressWarnings("unchecked")
+      final T result = (T) xstream(false).fromXML(is);
+      return result;
     }
 
-    public static Object fromJson(final Reader r) {
-      return xstream(false).fromXML(r);
+    public static <T> T fromJson(final Reader r) {
+      @SuppressWarnings("unchecked")
+      final T result = (T) xstream(false).fromXML(r);
+      return result;
     }
 
-    public static Object fromJson(final String s) {
-      return xstream(false).fromXML(s);
+    public static <T> T fromJson(final String s) {
+      @SuppressWarnings("unchecked")
+      final T result = (T) xstream(false).fromXML(s);
+      return result;
     }
 
-    public static Object fromXml(final InputStream is) {
-      return xstream(true).fromXML(is);
+    public static <T> T fromXml(final InputStream is) {
+      @SuppressWarnings("unchecked")
+      final T result = (T) xstream(true).fromXML(is);
+      return result;
     }
 
-    public static Object fromXml(final Reader r) {
-      return xstream(true).fromXML(r);
+    public static <T> T fromXml(final Reader r) {
+      @SuppressWarnings("unchecked")
+      final T result = (T) xstream(true).fromXML(r);
+      return result;
     }
 
-    public static Object fromXml(final String s) {
-      return xstream(true).fromXML(s);
+    public static <T> T fromXml(final String s) {
+      @SuppressWarnings("unchecked")
+      final T result = (T) xstream(true).fromXML(s);
+      return result;
     }
 
     public static String toJson(final Object o) {
@@ -362,6 +374,9 @@ public class Ast {
         }
       });
       return result;
+    }
+
+    private XStreamer() {
     }
   }
 

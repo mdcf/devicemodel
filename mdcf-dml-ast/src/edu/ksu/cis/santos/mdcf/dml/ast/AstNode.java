@@ -32,7 +32,7 @@ public abstract class AstNode {
 
   protected abstract Object[] getChildren();
 
-  public <T extends AstNode> T make(final Object[] args) {
+  public final <T extends AstNode> T make(final Object[] args) {
     try {
       @SuppressWarnings("unchecked")
       final T result = (T) getClass().getDeclaredConstructors()[0]
@@ -44,14 +44,14 @@ public abstract class AstNode {
   }
 
   @Override
-  public String toString() {
+  public final String toString() {
     final StringBuilder sb = new StringBuilder();
     sb.append(getClass().getSimpleName());
     sb.append('(');
     final Object[] children = children();
     final int len = children.length;
     for (int i = 0; i < len; i++) {
-      toStringHelper(sb, children[i]);
+      toString(sb, children[i]);
       if (i != (len - 1)) {
         sb.append(", ");
       }
@@ -60,13 +60,13 @@ public abstract class AstNode {
     return sb.toString();
   }
 
-  private void toStringHelper(final StringBuilder sb, final Object o) {
+  private void toString(final StringBuilder sb, final Object o) {
     if (o instanceof List) {
       final List<?> l = (List<?>) o;
       sb.append("List(");
       final int size = l.size();
       for (int i = 0; i < size; i++) {
-        toStringHelper(sb, l.get(i));
+        toString(sb, l.get(i));
         if (i != (size - 1)) {
           sb.append(", ");
         }
@@ -76,7 +76,7 @@ public abstract class AstNode {
       final Optional<?> opt = (Optional<?>) o;
       if (opt.isPresent()) {
         sb.append("Some(");
-        toStringHelper(sb, opt.get());
+        toString(sb, opt.get());
         sb.append(')');
       } else {
         sb.append("None");

@@ -13,6 +13,5 @@ package edu.ksu.cis.santos.mdcf.dml.ast;
  */
 public abstract class Type extends AstNode {
   Type() {
-
   }
 }
