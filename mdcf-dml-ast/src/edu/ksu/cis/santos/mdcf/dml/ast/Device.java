@@ -15,8 +15,9 @@ import java.util.List;
  */
 public final class Device extends Feature {
 
-  public Device(final String name, final List<Member> members) {
-    super(Feature.Level.Product, name, members);
+  public Device(final String name, final List<NamedType> supers,
+      final List<Member> members) {
+    super(Feature.Level.Product, name, supers, members);
   }
 
   @Override

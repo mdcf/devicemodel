@@ -15,12 +15,13 @@ import java.util.List;
  */
 public final class App extends Feature {
 
-  public App(final String name, final List<Member> members) {
-    super(Feature.Level.Product, name, members);
+  public App(final String name, final List<NamedType> supers,
+      final List<Member> members) {
+    super(Feature.Level.Product, name, supers, members);
   }
 
   @Override
   protected Object[] getChildren() {
-    return new Object[] { this.name, this.members };
+    return new Object[] { this.name, this.supers, this.members };
   }
 }

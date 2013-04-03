@@ -22,18 +22,21 @@ public class Feature extends Declaration {
 
   public final Level level;
 
+  public final List<NamedType> supers;
+
   public final List<Member> members;
 
   public Feature(final Level level, final String name,
-      final List<Member> members) {
+      final List<NamedType> supers, final List<Member> members) {
     super(name);
     this.level = level;
+    this.supers = list(supers);
     this.members = list(members);
   }
 
   @Override
   protected Object[] getChildren() {
-    return new Object[] { this.level, this.name, this.members };
+    return new Object[] { this.level, this.name, this.supers, this.members };
   }
 
   @Override

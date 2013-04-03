@@ -365,8 +365,9 @@ public class Ast {
     }
   }
 
-  public static App app(final String name, final List<Member> members) {
-    return new App(name, members);
+  public static App app(final String name, final List<NamedType> supers,
+      final List<Member> members) {
+    return new App(name, supers, members);
   }
 
   public static Attribute attribute(final Modifier modifier, final Type type,
@@ -383,8 +384,9 @@ public class Ast {
     return new BasicType(name, supers);
   }
 
-  public static Device device(final String name, final List<Member> members) {
-    return new Device(name, members);
+  public static Device device(final String name, final List<NamedType> supers,
+      final List<Member> members) {
+    return new Device(name, supers, members);
   }
 
   public static EitherInit eitherInit(final int index, final Initialization init) {
@@ -396,8 +398,8 @@ public class Ast {
   }
 
   public static Feature feature(final Level level, final String name,
-      final List<Member> members) {
-    return new Feature(level, name, members);
+      final List<NamedType> supers, final List<Member> members) {
+    return new Feature(level, name, supers, members);
   }
 
   public static FeatureInit featureInit(final NamedType type,
