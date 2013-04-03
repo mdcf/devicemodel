@@ -304,8 +304,8 @@ public class Ast {
       result.alias("tupleType", TupleType.class);
       result.alias("some", Optional.of(new Object()).getClass());
       result.alias("none", Optional.absent().getClass());
-      result.alias("empty", ImmutableList.of().getClass());
-      result.alias("one", ImmutableList.of(new Object()).getClass());
+      result.alias("ilist", ImmutableList.of().getClass());
+      result.alias("ilist", ImmutableList.of(new Object()).getClass());
       result.alias("ilist", ImmutableList.of(new Object(), new Object())
           .getClass());
       result.registerConverter(new Converter() {
