@@ -28,6 +28,7 @@ object Prelude {
 
   trait String extends Any {
     def value : java.lang.String
+    override def toString = value.toString
   }
 
   object Boolean {
@@ -49,6 +50,7 @@ object Prelude {
     def ||&(o : Boolean) : Boolean
     def ===>(o : Boolean) : Boolean
     def <===(o : Boolean) : Boolean
+    override def toString = value.toString
   }
 
   trait Number extends Any {
@@ -92,6 +94,7 @@ object Prelude {
   }
   trait Int extends Number {
     def value : scala.Int
+    final override def toString = value.toString
   }
 
   object Nat {
