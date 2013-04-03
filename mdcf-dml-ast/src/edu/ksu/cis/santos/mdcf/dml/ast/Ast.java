@@ -217,64 +217,67 @@ public class Ast {
   }
 
   public static class XStreamer {
+    private static final XStream XML = xstream(true);
+    private static final XStream JSON = xstream(false);
+
     public static <T> T fromJson(final InputStream is) {
       @SuppressWarnings("unchecked")
-      final T result = (T) xstream(false).fromXML(is);
+      final T result = (T) XStreamer.JSON.fromXML(is);
       return result;
     }
 
     public static <T> T fromJson(final Reader r) {
       @SuppressWarnings("unchecked")
-      final T result = (T) xstream(false).fromXML(r);
+      final T result = (T) XStreamer.JSON.fromXML(r);
       return result;
     }
 
     public static <T> T fromJson(final String s) {
       @SuppressWarnings("unchecked")
-      final T result = (T) xstream(false).fromXML(s);
+      final T result = (T) XStreamer.JSON.fromXML(s);
       return result;
     }
 
     public static <T> T fromXml(final InputStream is) {
       @SuppressWarnings("unchecked")
-      final T result = (T) xstream(true).fromXML(is);
+      final T result = (T) XStreamer.XML.fromXML(is);
       return result;
     }
 
     public static <T> T fromXml(final Reader r) {
       @SuppressWarnings("unchecked")
-      final T result = (T) xstream(true).fromXML(r);
+      final T result = (T) XStreamer.XML.fromXML(r);
       return result;
     }
 
     public static <T> T fromXml(final String s) {
       @SuppressWarnings("unchecked")
-      final T result = (T) xstream(true).fromXML(s);
+      final T result = (T) XStreamer.XML.fromXML(s);
       return result;
     }
 
     public static String toJson(final Object o) {
-      return xstream(false).toXML(o);
+      return XStreamer.JSON.toXML(o);
     }
 
     public static void toJson(final Object o, final OutputStream os) {
-      xstream(false).toXML(o, os);
+      XStreamer.JSON.toXML(o, os);
     }
 
     public static void toJson(final Object o, final Writer w) {
-      xstream(false).toXML(o, w);
+      XStreamer.JSON.toXML(o, w);
     }
 
     public static String toXml(final Object o) {
-      return xstream(true).toXML(o);
+      return XStreamer.XML.toXML(o);
     }
 
     public static void toXml(final Object o, final OutputStream os) {
-      xstream(true).toXML(o, os);
+      XStreamer.XML.toXML(o, os);
     }
 
     public static void toXml(final Object o, final Writer w) {
-      xstream(true).toXML(o, w);
+      XStreamer.XML.toXML(o, w);
     }
 
     public static XStream xstream(final boolean isXml) {
