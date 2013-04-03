@@ -17,7 +17,7 @@ public final class App extends Feature {
 
   public App(final String name, final List<NamedType> supers,
       final List<Member> members) {
-    super(Feature.Level.Product, name, supers, members);
+    super(FeatureLevel.Product, name, supers, members);
   }
 
   @Override

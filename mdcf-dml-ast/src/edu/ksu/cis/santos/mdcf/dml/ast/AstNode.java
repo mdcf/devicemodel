@@ -46,7 +46,9 @@ public abstract class AstNode {
   @Override
   public final String toString() {
     final StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName());
+    final String name = getClass().getSimpleName();
+    sb.append(Character.toLowerCase(name.charAt(0)));
+    sb.append(name.substring(1));
     sb.append('(');
     final Object[] children = children();
     final int len = children.length;
@@ -63,7 +65,7 @@ public abstract class AstNode {
   private void toString(final StringBuilder sb, final Object o) {
     if (o instanceof List) {
       final List<?> l = (List<?>) o;
-      sb.append("List(");
+      sb.append("list(");
       final int size = l.size();
       for (int i = 0; i < size; i++) {
         toString(sb, l.get(i));
@@ -75,11 +77,11 @@ public abstract class AstNode {
     } else if (o instanceof Optional) {
       final Optional<?> opt = (Optional<?>) o;
       if (opt.isPresent()) {
-        sb.append("Some(");
+        sb.append("some(");
         toString(sb, opt.get());
         sb.append(')');
       } else {
-        sb.append("None");
+        sb.append("none()");
       }
     } else if (o instanceof String) {
       final String s = (String) o;

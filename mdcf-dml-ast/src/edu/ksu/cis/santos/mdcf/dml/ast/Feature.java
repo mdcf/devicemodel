@@ -16,17 +16,13 @@ import java.util.List;
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public class Feature extends Declaration {
-  public static enum Level {
-    Schema, Class, Product, Instance, Unspecified
-  }
-
-  public final Level level;
+  public final FeatureLevel level;
 
   public final List<NamedType> supers;
 
   public final List<Member> members;
 
-  public Feature(final Level level, final String name,
+  public Feature(final FeatureLevel level, final String name,
       final List<NamedType> supers, final List<Member> members) {
     super(name);
     this.level = level;

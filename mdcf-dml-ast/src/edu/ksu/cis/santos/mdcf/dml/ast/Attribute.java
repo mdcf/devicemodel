@@ -14,17 +14,13 @@ import com.google.common.base.Optional;
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public final class Attribute extends Member {
-  public static enum Modifier {
-    None, Settable, Data, Override, Const, ConstSchema, ConstClass, ConstProduct, ConstInstance
-  }
-
-  public final Modifier modifier;
+  public final AttributeModifier modifier;
   public final Type type;
 
   public final Optional<Initialization> init;
 
-  public Attribute(final Modifier modifier, final Type type, final String name,
-      final Optional<Initialization> init) {
+  public Attribute(final AttributeModifier modifier, final Type type,
+      final String name, final Optional<Initialization> init) {
     super(name);
     this.modifier = modifier;
     this.type = type;

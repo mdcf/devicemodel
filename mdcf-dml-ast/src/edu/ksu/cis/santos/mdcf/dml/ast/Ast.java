@@ -27,9 +27,6 @@ import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
 import com.thoughtworks.xstream.io.xml.Xpp3Driver;
 
-import edu.ksu.cis.santos.mdcf.dml.ast.Attribute.Modifier;
-import edu.ksu.cis.santos.mdcf.dml.ast.Feature.Level;
-
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
@@ -385,8 +382,8 @@ public class Ast {
     return new App(name, supers, members);
   }
 
-  public static Attribute attribute(final Modifier modifier, final Type type,
-      final String name, final Optional<Initialization> init) {
+  public static Attribute attribute(final AttributeModifier modifier,
+      final Type type, final String name, final Optional<Initialization> init) {
     return new Attribute(modifier, type, name, init);
   }
 
@@ -412,7 +409,7 @@ public class Ast {
     return new EitherType(choiceTypes);
   }
 
-  public static Feature feature(final Level level, final String name,
+  public static Feature feature(final FeatureLevel level, final String name,
       final List<NamedType> supers, final List<Member> members) {
     return new Feature(level, name, supers, members);
   }
