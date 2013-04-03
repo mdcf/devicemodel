@@ -44,7 +44,7 @@ public abstract class AstNode {
   }
 
   @Override
-  public final String toString() {
+  public String toString() {
     final StringBuilder sb = new StringBuilder();
     final String name = getClass().getSimpleName();
     sb.append(Character.toLowerCase(name.charAt(0)));
