@@ -373,8 +373,10 @@ public class Ast {
     }
   }
 
-  public static Attribute attribute(final AttributeModifier modifier, final Type type,
-      final String name, final Optional<Initialization> init) {
+  private static final String PRELUDE_PACKAGE = "edu.ksu.cis.santos.mdcf.dms.prelude.package$";
+
+  public static Attribute attribute(final AttributeModifier modifier,
+      final Type type, final String name, final Optional<Initialization> init) {
     return new Attribute(modifier, type, name, init);
   }
 
@@ -432,7 +434,11 @@ public class Ast {
   }
 
   public static NamedType namedType(final String name) {
-    return new NamedType(name);
+    if (name.startsWith(Ast.PRELUDE_PACKAGE)) {
+      return new NamedType(name.substring(Ast.PRELUDE_PACKAGE.length()));
+    } else {
+      return new NamedType(name);
+    }
   }
 
   public static <T> Optional<T> none() {

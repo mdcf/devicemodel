@@ -54,7 +54,7 @@ object ModelExtractor {
     val tipe = Reflection.getTypeOfClass(clazz)
     val ts = tipe.typeSymbol
 
-    val isBasicType = clazz.isAssignableFrom(classOf[prelude.Any])
+    val isBasicType = classOf[prelude.Any].isAssignableFrom(clazz)
     val name = clazz.getName
     var isDevice = false
     var featureModifier = FeatureModifier.Unspecified
@@ -119,7 +119,7 @@ object ModelExtractor {
     var isInvariant = false
     var attributeModifier = AttributeModifier.None
 
-    if (symbol.isOverride)
+    if (symbol.isOverride || symbol.isAbstractOverride)
       attributeModifier = AttributeModifier.Override
     else
       for (a <- symbol.annotations.map(Reflection.annotation))
@@ -161,18 +161,22 @@ object ModelExtractor {
       }
     } else if (isCompanion) {
       None
-    } else if (symbol.isMethod || symbol.isClass) {
-      None
-    } else {
+    } else if (symbol.isTerm && (symbol.asTerm.isVal || symbol.asTerm.isGetter)) {
       val (attributeType, attributeInit) = extractAttributeTypeInit(symbol)
       val result = attribute(attributeModifier, attributeType, name, attributeInit)
       Some(result)
+    } else {
+      None
     }
   }
 
   def extractAttributeTypeInit(symbol : Symbol) : (ast.Type, Optional[Initialization]) = {
     val tipe = symbol.typeSignature
-    val attributeType = extractType(tipe)
+    val attributeType =
+      tipe match {
+        case mt : NullaryMethodType => extractType(mt.resultType)
+        case _                      => extractType(tipe)
+      }
     (attributeType, none()) // TODO
   }
 
