@@ -8,13 +8,13 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dms.example
 
-import edu.ksu.cis.santos.mdcf.dms.annotation._
+import edu.ksu.cis.santos.mdcf.dms._
 import edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode._
 import edu.ksu.cis.santos.mdcf.dms.prelude._
 
 @Class
 trait ICEPulseOx extends ICEDevice {
-  override val `type` = IEEEDeviceType("IEEE ... Pulse Ox")
+  final override val `type` = IEEEDeviceType("IEEE ... Pulse Ox")
 }
 
 object ICEPulseOx {

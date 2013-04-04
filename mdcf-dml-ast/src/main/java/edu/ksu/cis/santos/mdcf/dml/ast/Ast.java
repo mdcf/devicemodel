@@ -373,8 +373,8 @@ public class Ast {
     }
   }
 
-  public static Attribute attribute(final AttributeModifier modifier,
-      final Type type, final String name, final Optional<Initialization> init) {
+  public static Attribute attribute(final AttributeModifier modifier, final Type type,
+      final String name, final Optional<Initialization> init) {
     return new Attribute(modifier, type, name, init);
   }
 

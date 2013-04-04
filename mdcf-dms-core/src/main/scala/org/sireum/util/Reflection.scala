@@ -8,11 +8,22 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package org.sireum.util
 
+import java.io.File
+import java.net.URLClassLoader
+
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 object Reflection {
   import scala.reflect.runtime.universe._
+
+  val classLoader = {
+    val classpaths = System.getProperty("java.class.path").split(File.pathSeparatorChar)
+    val urls = classpaths.map(new File(_).toURI.toURL)
+    new URLClassLoader(urls)
+  }
+
+  val mirror = runtimeMirror(classLoader)
 
   val booleanType = typeOf[Boolean]
   val charType = typeOf[Character]
@@ -26,7 +37,7 @@ object Reflection {
   val stringType = typeOf[String]
 
   def eval[T](expr : String,
-              m : Mirror = scala.reflect.runtime.currentMirror) = {
+              m : Mirror = mirror) = {
     import scala.tools.reflect.ToolBox
 
     val tb = m.mkToolBox()
@@ -34,7 +45,7 @@ object Reflection {
   }
 
   def evalExpr[T](expr : Expr[T],
-                  m : Mirror = scala.reflect.runtime.currentMirror) = {
+                  m : Mirror = mirror) = {
 
     import scala.tools.reflect.ToolBox
 
@@ -43,7 +54,7 @@ object Reflection {
   }
 
   def parse(expr : String,
-            m : Mirror = scala.reflect.runtime.currentMirror) : Tree = {
+            m : Mirror = mirror) : Tree = {
     import scala.tools.reflect.ToolBox
 
     val tb = m.mkToolBox()
@@ -51,7 +62,7 @@ object Reflection {
   }
 
   def ast(expr : String,
-          m : Mirror = scala.reflect.runtime.currentMirror) : Tree = {
+          m : Mirror = mirror) : Tree = {
     import scala.tools.reflect.ToolBox
 
     val tb = m.mkToolBox()
@@ -59,22 +70,26 @@ object Reflection {
   }
 
   def reify[T](expr : String,
-               m : Mirror = scala.reflect.runtime.currentMirror) : T = {
+               m : Mirror = mirror) : T = {
     import scala.tools.reflect.ToolBox
 
     eval[T](s"{ import scala.reflect.runtime.universe._; reify { $expr } }", m)
   }
 
   @inline
-  def mirror[T](t : T) : Mirror = mirror(t.getClass)
-
-  @inline
-  def mirror[T](c : Class[T]) : Mirror = runtimeMirror(c.getClassLoader)
-
-  @inline
   def classMirror(c : Class[_]) : ClassMirror = {
-    val m = mirror(c)
-    m.reflectClass(m.classSymbol(c))
+    mirror.reflectClass(mirror.classSymbol(c))
+  }
+
+  @inline
+  def companion[T](c : Class[T]) : Option[(Symbol, Any)] = {
+    val classSymbol = mirror.classSymbol(c)
+    val companionSymbol = classSymbol.companionSymbol
+    if (companionSymbol.isModule) {
+      val moduleSymbol = companionSymbol.asModule
+      val moduleMirror = mirror.reflectModule(moduleSymbol)
+      Some((companionSymbol, moduleMirror.instance))
+    } else None
   }
 
   @inline
@@ -85,17 +100,17 @@ object Reflection {
 
   @inline
   def getType(o : Any) : Type = {
-    val os = mirror(o).reflect(o).symbol
+    val os = mirror.reflect(o).symbol
     os.asType.toType
   }
 
   @inline
   def getTypeOfClass(c : Class[_]) : Type =
-    mirror(c).classSymbol(c).toType
+    mirror.classSymbol(c).toType
 
   @inline
   def getClassOfType(t : Type) : Class[_] =
-    scala.reflect.runtime.currentMirror.runtimeClass(t.typeSymbol.asClass)
+    mirror.runtimeClass(t.typeSymbol.asClass)
 
   def annotation(
     a : scala.reflect.runtime.universe.Annotation) : Annotation = {
@@ -116,15 +131,14 @@ object Reflection {
   }
 
   private def annArgument(arg : JavaArgument) : Any = {
-    import scala.reflect.runtime.currentMirror
     arg match {
       case ArrayArgument(a) =>
         a.map(annArgument)
       case LiteralArgument(Constant(v : Type)) =>
-        currentMirror.runtimeClass(v)
+        mirror.runtimeClass(v)
       case LiteralArgument(Constant(v : Symbol)) =>
         val c = v.owner.asClass
-        currentMirror.runtimeClass(c).
+        mirror.runtimeClass(c).
           getDeclaredField(v.name.toString).get(null)
       case LiteralArgument(Constant(v)) =>
         v

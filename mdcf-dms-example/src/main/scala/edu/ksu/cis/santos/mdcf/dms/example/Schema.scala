@@ -8,7 +8,7 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dms.example
 
-import edu.ksu.cis.santos.mdcf.dms.annotation._
+import edu.ksu.cis.santos.mdcf.dms._
 import edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode._
 import edu.ksu.cis.santos.mdcf.dms.prelude._
 
@@ -279,8 +279,13 @@ trait ICEDeviceStatus {
 trait BatteryLevelStatus extends ICEDeviceStatus {
   val level : Int
 
+}
+
+object BatteryLevelStatus {
   @Inv
-  def `level is in 1..100` : Boolean = 0 <= level && level <= 100
+  val `level is in 1..100` : Predicate[BatteryLevelStatus] = pred {
+    bls : BatteryLevelStatus => 0 <= bls.level && bls.level <= 100
+  } 
 }
 
 @Schema
