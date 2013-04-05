@@ -10,6 +10,8 @@ package org.sireum.util
 
 import java.io.File
 import java.net.URLClassLoader
+import java.lang.reflect.InvocationHandler
+import java.lang.reflect.Proxy
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
@@ -82,13 +84,17 @@ object Reflection {
   }
 
   @inline
-  def companion[T](c : Class[T]) : Option[(Symbol, Any)] = {
+  def companion[T](
+    c : Class[T], processAnnotations : Boolean) : Option[(Symbol, Any, ISeq[Annotation])] = {
     val classSymbol = mirror.classSymbol(c)
     val companionSymbol = classSymbol.companionSymbol
     if (companionSymbol.isModule) {
       val moduleSymbol = companionSymbol.asModule
       val moduleMirror = mirror.reflectModule(moduleSymbol)
-      Some((companionSymbol, moduleMirror.instance))
+      Some((companionSymbol, moduleMirror.instance,
+        if (processAnnotations)
+          moduleSymbol.annotations.toVector.map(annotation)
+        else ivectorEmpty))
     } else None
   }
 
@@ -111,6 +117,67 @@ object Reflection {
   @inline
   def getClassOfType(t : Type) : Class[_] =
     mirror.runtimeClass(t.typeSymbol.asClass)
+
+  def classInits(tipe : Type, obj : Any,
+                 includeInherited : Boolean) : IMap[String, Object] = {
+    var result = imapEmpty[String, Object]
+    for (
+      d <- (if (includeInherited) tipe.members else tipe.declarations) // 
+      if d.isTerm && (d.asTerm.isVal || d.asTerm.isVar)
+    ) {
+      val name = d.name.decoded.trim
+      val im = Reflection.mirror.reflect(obj)
+      val value = im.reflectField(d.asTerm).get.asInstanceOf[Object]
+      result += (name -> value)
+    }
+    result
+  }
+
+  def traitInits(clazz : Class[_]) : IMap[String, Object] = {
+    var cl = clazz.getClassLoader
+    if (cl == null) {
+      cl = ClassLoader.getSystemClassLoader
+    }
+
+    var init : Option[java.lang.reflect.Method] = None
+    try {
+      for (m <- cl.loadClass(clazz.getName + "$class").getMethods if init.isEmpty)
+        if (m.getName == "$init$")
+          init = Some(m)
+    } catch {
+      case e : Exception =>
+    }
+
+    if (init.isEmpty) return imapEmpty
+
+    val encodedToDecodedSetterNameMap = mmapEmpty[String, String]
+
+    for (m <- clazz.getDeclaredMethods()) {
+      val setterPrefix = clazz.getName.replace('.', '$') + "$_setter_$"
+      val encoded = m.getName
+      if (encoded.startsWith(setterPrefix)) {
+        val decoded = encoded.substring(setterPrefix.length, encoded.length - 4)
+        encodedToDecodedSetterNameMap(encoded) = decoded
+      }
+    }
+
+    var result = imapEmpty[String, Object]
+
+    init.get.invoke(null, Proxy.newProxyInstance(cl, Array[Class[_]](clazz),
+      new InvocationHandler {
+        def invoke(proxy : Object,
+                   method : java.lang.reflect.Method,
+                   args : Array[Object]) = {
+          encodedToDecodedSetterNameMap.get(method.getName) match {
+            case Some(decodedName) => result += (decodedName -> args(0))
+            case _                 =>
+          }
+          null
+        }
+      }))
+
+    result
+  }
 
   def annotation(
     a : scala.reflect.runtime.universe.Annotation) : Annotation = {

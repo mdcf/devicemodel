@@ -9,8 +9,6 @@ http://www.eclipse.org/legal/epl-v10.html
 package edu.ksu.cis.santos.mdcf.dms.example
 
 import edu.ksu.cis.santos.mdcf.dms._
-import edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode._
-import edu.ksu.cis.santos.mdcf.dms.prelude._
 
 @Device
 class NoninPulseOx extends ICEPulseOx {

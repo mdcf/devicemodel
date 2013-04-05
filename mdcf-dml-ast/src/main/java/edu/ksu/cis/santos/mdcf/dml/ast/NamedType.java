@@ -12,10 +12,16 @@ package edu.ksu.cis.santos.mdcf.dml.ast;
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public final class NamedType extends Type {
+  private static final String DMS_PACKAGE = "edu.ksu.cis.santos.mdcf.dms.package$";
+
   public final String name;
 
   public NamedType(final String name) {
-    this.name = name.intern();
+    if (name.startsWith(NamedType.DMS_PACKAGE)) {
+      this.name = name.substring(NamedType.DMS_PACKAGE.length());
+    } else {
+      this.name = name.intern();
+    }
   }
 
   @Override

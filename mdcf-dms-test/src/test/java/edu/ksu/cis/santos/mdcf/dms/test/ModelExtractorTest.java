@@ -11,7 +11,6 @@ public class ModelExtractorTest {
   @Test
   public void testExample() {
     Model m = ModelExtractor.extractModel(
-        getClass().getClassLoader(),
         new String[] { "edu.ksu.cis.santos.mdcf.dms.example" });
     System.out.println(Ast.XStreamer.toXml(m));
   }

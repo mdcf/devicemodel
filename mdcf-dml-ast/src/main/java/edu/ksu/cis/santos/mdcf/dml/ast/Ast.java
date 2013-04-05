@@ -304,6 +304,7 @@ public class Ast {
       result.alias("ilist", ImmutableList.of(new Object()).getClass());
       result.alias("ilist", ImmutableList.of(new Object(), new Object())
           .getClass());
+      result.aliasPackage("exp", "scala.reflect.api");
       result.registerConverter(new Converter() {
 
         @Override
@@ -373,8 +374,6 @@ public class Ast {
     }
   }
 
-  private static final String PRELUDE_PACKAGE = "edu.ksu.cis.santos.mdcf.dms.prelude.package$";
-
   public static Attribute attribute(final AttributeModifier modifier,
       final Type type, final String name, final Optional<Initialization> init) {
     return new Attribute(modifier, type, name, init);
@@ -434,11 +433,7 @@ public class Ast {
   }
 
   public static NamedType namedType(final String name) {
-    if (name.startsWith(Ast.PRELUDE_PACKAGE)) {
-      return new NamedType(name.substring(Ast.PRELUDE_PACKAGE.length()));
-    } else {
-      return new NamedType(name);
-    }
+    return new NamedType(name);
   }
 
   public static <T> Optional<T> none() {
