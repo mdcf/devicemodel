@@ -6,11 +6,21 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dms.example
+package edu.ksu.cis.santos.mdcf.dms.example.device
 
 import edu.ksu.cis.santos.mdcf.dms._
+import edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated
+import edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert
+import edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange
+import edu.ksu.cis.santos.mdcf.dms.example.schema.ICEManufacturerModel
+import edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter
+import edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx
+import edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate
+import edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity
+import edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2
+import edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange
+import edu.ksu.cis.santos.mdcf.dms.example.DeviceId
 
-@Device
 class NoninPulseOx extends ICEPulseOx {
   override val id = DeviceId("Continua PO")
 

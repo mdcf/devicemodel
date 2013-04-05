@@ -41,7 +41,7 @@ package object dms {
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
-  abstract class BasicType extends Any {
+  trait BasicType extends Any {
     def ==(o : Any) : Boolean
     def !=(o : Any) : Boolean
     def asString : java.lang.String
@@ -51,7 +51,7 @@ package object dms {
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
-  abstract class Feature extends Any
+  trait Feature extends Any
 
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>

@@ -6,11 +6,12 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dms.example
+package edu.ksu.cis.santos.mdcf.dms.example.requirement
 
 import edu.ksu.cis.santos.mdcf.dms._
+import edu.ksu.cis.santos.mdcf.dms.example.clas._
+import edu.ksu.cis.santos.mdcf.dms.example.schema._
 
-@Req
 object MyReqPulseOx {
 
   @Inv

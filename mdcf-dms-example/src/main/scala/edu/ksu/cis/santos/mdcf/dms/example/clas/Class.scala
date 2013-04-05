@@ -6,11 +6,13 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dms.example
+package edu.ksu.cis.santos.mdcf.dms.example.clas
 
 import edu.ksu.cis.santos.mdcf.dms._
+import edu.ksu.cis.santos.mdcf.dms.example._
+import edu.ksu.cis.santos.mdcf.dms.example.schema._
+import edu.ksu.cis.santos.mdcf.dms.example.schema._
 
-@Class
 trait ICEPulseOx extends ICEDevice {
   final override val `type` = IEEEDeviceType("IEEE ... Pulse Ox")
 }
@@ -29,19 +31,16 @@ object ICEPulseOx {
     }
 }
 
-@Class
 trait ICESpO2 extends ICEPhysioParameter {
   override val physioParameterType = IEEEPhysioParameterType("MDC_PULS_OXIM_SAT_O2")
   override val unit = IEEEUnit("MDC_DIM_PERCENT")
 }
 
-@Class
 trait ICEPulseRate extends ICEPhysioParameter {
   override val physioParameterType = IEEEPhysioParameterType("MDC_PULS_OXIM_PULS_RATE")
   override val unit = IEEEUnit("MDC_DIM_BEAT_PER_MIN")
 }
 
-@Class
 trait ICEBloodPressure extends ICEDevice {
   override val `type` = IEEEDeviceType("IEEE ... Blood Pressure")
 }
@@ -54,7 +53,6 @@ object ICEBloodPressure {
     }
 }
 
-@Class
 trait ICEBloodPressureParam extends ICEPhysioParameter {
   val systolic = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_SYS")
   val diastolic = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_DIA")
@@ -65,7 +63,6 @@ trait ICEBloodPressureParam extends ICEPhysioParameter {
   override val unit = IEEEUnit("MDC_DIM_MMHG")
 }
 
-@Class
 trait ICEMultiMonitor extends ICEDevice {
   override val `type` = IEEEDeviceType("IEEE ... MultiMonitor")
 }

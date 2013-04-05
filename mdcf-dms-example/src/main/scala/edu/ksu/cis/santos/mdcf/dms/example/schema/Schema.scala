@@ -6,12 +6,16 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dms.example
+package edu.ksu.cis.santos.mdcf.dms.example.schema
 
 import edu.ksu.cis.santos.mdcf.dms._
+import edu.ksu.cis.santos.mdcf.dms.example.DeviceId
+import edu.ksu.cis.santos.mdcf.dms.example.ICETimeStamp
+import edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType
+import edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType
+import edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit
 
-@Schema
-trait Range {
+trait Range extends Feature {
   @Const
   val min : Number
 
@@ -27,13 +31,11 @@ object Range {
     }
 }
 
-@Schema
 trait IntRange extends Range {
   override val min : Int
   override val max : Int
 }
 
-@Schema
 trait NatRange extends Range {
   override val min : Nat
   override val max : Nat
@@ -45,8 +47,7 @@ trait NatRange extends Range {
 
 // === I C E   D e v i c e  ===
 
-@Schema
-trait ICEDevice {
+trait ICEDevice extends Feature {
   @Const(INSTANCE)
   val id : DeviceId
 
@@ -60,8 +61,7 @@ trait ICEDevice {
 
 // === I C E   M a n u f a c t u r e r    I n f o r m a t i o n ===
 
-@Schema
-trait ICEManufacturerModel {
+trait ICEManufacturerModel extends Feature {
   @Const(PRODUCT)
   val modelNumber : String
 
@@ -72,8 +72,7 @@ trait ICEManufacturerModel {
 
 // === I C E   P h y s i o l o g i c a l    P a r a m e t e r  ===
 
-@Schema
-trait ICEPhysioParameter {
+trait ICEPhysioParameter extends Feature {
   @Const(CLASS)
   val physioParameterType : IEEEPhysioParameterType
 
@@ -90,25 +89,20 @@ trait ICEPhysioParameter {
 
 // === I C E    D a t a    E x c h a n g e    P a t t e r n s ===
 
-@Schema
-trait ICEDataExchange
+trait ICEDataExchange extends Feature
 
-@Schema
 trait ProviderInitiated extends ICEDataExchange
 
-@Schema
 trait Periodic extends ProviderInitiated {
   @Const(PRODUCT)
   val rateRange : NatRange
 }
 
-@Schema
 trait Episodic extends ProviderInitiated {
   @Const(PRODUCT)
   val maxPublishRate : Nat
 }
 
-@Schema
 trait ClientInitiated extends ICEDataExchange {
   @Const(CLASS)
   val maxRetrievalRatePerSecond : Nat
@@ -118,15 +112,12 @@ trait ClientInitiated extends ICEDataExchange {
 //  I C E   M e t r i c    H i e r a r c h y    (adapted from 11073)
 //=======================================================================================================
 
-@Schema
-trait ICEMetric {
+trait ICEMetric extends Feature {
 }
 
-@Schema
 @Data
-trait MetricAttribute
+trait MetricAttribute extends Feature
 
-@Schema
 @Data
 trait MetricTimeStampAttributes extends MetricAttribute {
   val sec : Int
@@ -140,7 +131,6 @@ trait MetricTimeStampAttributes extends MetricAttribute {
   val isdst : Int
 }
 
-@Schema
 trait StatusAttributes extends MetricAttribute {
   // val status    : MeasurementStatus // wanted to express an enum but not sure how to do it
 }
@@ -156,13 +146,11 @@ trait Numeric extends ICEMetric {
   val range : Range
 }
 
-@Schema
 @Data
-trait ICEMessageContext {
+trait ICEMessageContext extends Feature {
   val messageConstructed : ICETimeStamp
 }
 
-@Schema
 @Data
 trait ObsValue extends ICEMessageContext {
   val measurementTaken : ICETimeStamp
@@ -170,27 +158,22 @@ trait ObsValue extends ICEMessageContext {
   val context : ObsValueContext
 }
 
-@Schema
-trait ObsValueContext
+trait ObsValueContext extends Feature
 
-@Schema
 trait SampleArray extends ICEMetric {
   val values : Seq[Number]
   val attributes : Set[MetricAttribute]
 }
 
-@Schema
 trait RealTimeSA extends SampleArray {
   // implementation to be completed   
 }
 
-@Schema
 trait TimeSA extends SampleArray {
   val values : Seq[Number]
   val attributes : Set[MetricAttribute]
 }
 
-@Schema
 trait DistributionSA extends SampleArray {
   // implementation to be completed 
 }
@@ -202,19 +185,14 @@ trait DistributionSA extends SampleArray {
 //  A very simple alert structure is given below.    
 //=======================================================================================================
 
-@Schema
-trait ICEAlert
+trait ICEAlert extends Feature
 
-@Schema
 trait RangeValueAlert extends ICEAlert with RangeSetting
 
-@Schema
 trait TargetValueAlert extends ICEAlert with ValueSetting
 
-@Schema
 trait ValueChangeAlert extends ICEAlert
 
-@Schema
 trait ComplexAlert extends ICEAlert {
   val cond : Boolean
 }
@@ -225,12 +203,10 @@ trait ComplexAlert extends ICEAlert {
 //  Defines settings on the provider that may be read or written by the client.
 //=======================================================================================================
 
-@Schema
-trait ICEDeviceSetting {
+trait ICEDeviceSetting extends Feature {
   val security : Option[ICESecurity]
 }
 
-@Schema
 trait RangeSetting extends ICEDeviceSetting {
   @Settable
   val min : Number
@@ -247,13 +223,11 @@ object RangeSetting {
     }
 }
 
-@Schema
 trait IntRangeSetting extends RangeSetting {
   override val min : Int
   override val max : Int
 }
 
-@Schema
 trait ValueSetting extends ICEDeviceSetting {
   @Settable
   val value : Any
@@ -266,14 +240,12 @@ trait ValueSetting extends ICEDeviceSetting {
 //  Such values may be read or written by the client.
 //=======================================================================================================
 
-@Schema
-trait ICEDeviceStatus {
+trait ICEDeviceStatus extends Feature {
   val security : Option[ICESecurity]
 
   val alarms : Set[ICEAlert]
 }
 
-@Schema
 trait BatteryLevelStatus extends ICEDeviceStatus {
   val level : Int
 
@@ -286,6 +258,5 @@ object BatteryLevelStatus {
   } 
 }
 
-@Schema
-trait ICESecurity
+trait ICESecurity extends Feature
 
