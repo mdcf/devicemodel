@@ -304,7 +304,7 @@ public class Ast {
       result.alias("ilist", ImmutableList.of(new Object()).getClass());
       result.alias("ilist", ImmutableList.of(new Object(), new Object())
           .getClass());
-      result.aliasPackage("exp", "scala.reflect.api");
+      result.aliasPackage("pred", "scala.reflect.api");
       result.registerConverter(new Converter() {
 
         @Override
