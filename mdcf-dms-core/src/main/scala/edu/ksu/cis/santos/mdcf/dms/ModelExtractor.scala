@@ -63,7 +63,7 @@ object ModelExtractor {
     val pkgModifier = mmapEmpty[java.lang.String, FeatureModifier]
 
     for (p <- packageNames) {
-      for (ci <- ClassPath.from(cl).getTopLevelClasses(p)) {
+      for (ci <- ClassPath.from(cl).getTopLevelClassesRecursive(p)) {
         val clazz = ci.load
         val pkg = clazz.getPackage
         decls :+= extract(pkgModifier.getOrElseUpdate(pkg.getName, {
