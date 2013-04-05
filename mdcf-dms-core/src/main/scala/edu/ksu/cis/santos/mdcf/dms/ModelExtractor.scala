@@ -60,14 +60,46 @@ object ModelExtractor {
   def extract(cl : ClassLoader, packageNames : java.lang.String*) : Model = {
     var decls = ivectorEmpty[Declaration]
 
-    for (p <- packageNames)
-      for (ci <- ClassPath.from(cl).getTopLevelClasses(p))
-        decls :+= extract(ci.load, imapEmpty[java.lang.String, Object])
+    val pkgModifier = mmapEmpty[java.lang.String, FeatureModifier]
+
+    for (p <- packageNames) {
+      for (ci <- ClassPath.from(cl).getTopLevelClasses(p)) {
+        val clazz = ci.load
+        val pkg = clazz.getPackage
+        decls :+= extract(pkgModifier.getOrElseUpdate(pkg.getName, {
+          var packageModifier = FeatureModifier.Unspecified
+          for (a <- pkg.getAnnotations)
+            packageModifier = extractFeatureModifier(a.getClass.getName)._1
+          packageModifier
+        }), clazz,
+          imapEmpty[java.lang.String, Object])
+      }
+    }
 
     model(decls)
   }
 
-  def extract(clazz : java.lang.Class[_],
+  def extractFeatureModifier(
+    name : java.lang.String) : (FeatureModifier, scala.Boolean) =
+    name match {
+      case `SCHEMA_NAME` =>
+        (FeatureModifier.Schema, false)
+      case `CLASS_NAME` =>
+        (FeatureModifier.Class, false)
+      case `PRODUCT_NAME` =>
+        (FeatureModifier.Product, false)
+      case `DEVICE_NAME` =>
+        (FeatureModifier.Product, true)
+      case `INSTANCE_NAME` =>
+        (FeatureModifier.Instance, false)
+      case `DATA_NAME` =>
+        (FeatureModifier.Data, false)
+      case c =>
+        sys.error(s"Unexpected annotation: $c; only Schema, Class, Product," +
+          " Device, Instance, and Data are allowed")
+    }
+
+  def extract(packageModifier : FeatureModifier, clazz : java.lang.Class[_],
               inits : IMap[java.lang.String, Object]) : Declaration = {
     val tipe = Reflection.getTypeOfClass(clazz)
     val ts = tipe.typeSymbol
@@ -82,25 +114,15 @@ object ModelExtractor {
 
     val isBasicType = classOf[BasicType].isAssignableFrom(clazz)
     var isDevice = false
-    var featureModifier = FeatureModifier.Unspecified
+    var featureModifier = packageModifier
     var supers = ivectorEmpty[NamedType]
     var members = ivectorEmpty[Member]
 
-    for (a <- ts.annotations.map(Reflection.annotation))
-      a.clazz.getName match {
-        case `SCHEMA_NAME` =>
-          featureModifier = FeatureModifier.Schema
-        case `CLASS_NAME` =>
-          featureModifier = FeatureModifier.Class
-        case `PRODUCT_NAME` =>
-          featureModifier = FeatureModifier.Product
-        case `DEVICE_NAME` =>
-          featureModifier = FeatureModifier.Product; isDevice = true
-        case `INSTANCE_NAME` =>
-          featureModifier = FeatureModifier.Instance
-        case `DATA_NAME` =>
-          featureModifier = FeatureModifier.Data
-      }
+    for (a <- ts.annotations.map(Reflection.annotation(_))) {
+      val (fm, id) = extractFeatureModifier(a.clazz.getName)
+      featureModifier = fm
+      isDevice = id
+    }
 
     {
       val s : java.lang.Class[_] = clazz.getSuperclass
@@ -128,6 +150,8 @@ object ModelExtractor {
         for (a <- annotations) {
           a.clazz.getName match {
             case `REQ_NAME` => isReq = true
+            case c =>
+              sys.error(s"Unexpected annotation: $c; only Req is allowed.")
           }
         }
         for (d <- companionSymbol.typeSignature.declarations)
@@ -158,7 +182,7 @@ object ModelExtractor {
     if (symbol.isOverride || symbol.isAbstractOverride)
       attributeModifier = AttributeModifier.Override
     else
-      for (a <- symbol.annotations.map(Reflection.annotation))
+      for (a <- symbol.annotations.map(Reflection.annotation(_)))
         a.clazz.getName match {
           case `CONST_NAME` =>
             if (a.params.size == 0)
@@ -182,6 +206,9 @@ object ModelExtractor {
             isInvariant = true
           case `SETTABLE_NAME` =>
             attributeModifier = AttributeModifier.Settable
+          case c =>
+            sys.error(s"Unexpected annotation: $c; only Const, Data, Inv, and" +
+              " Settable are allowed.")
         }
 
     if (isInvariant) {

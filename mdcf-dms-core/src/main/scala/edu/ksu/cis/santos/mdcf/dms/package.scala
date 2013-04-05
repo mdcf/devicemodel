@@ -33,8 +33,6 @@ package object dms {
   final val INSTANCE = edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode.INSTANCE
   final val UNSPECIFIED = edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode.UNSPECIFIED
 
-  type Predicate[T] = ru.Expr[T => Boolean]
-
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
@@ -216,18 +214,6 @@ package object dms {
   type Set[T] = scala.collection.immutable.Set[T]
   type Seq[T] = scala.collection.immutable.Seq[T]
 
-  import language.implicitConversions
-
-  implicit def b2dmlb(b : scala.Boolean) : Boolean = Boolean(b)
-  implicit def dmlb2b(b : Boolean) : scala.Boolean = b.value
-  implicit def i2dmli(n : scala.Int) : Int = Int(n)
-  implicit def l2dmli(n : scala.Long) : Int = Int(n)
-  implicit def bi2dmli(n : BigInt) : Int = Int(n)
-  implicit def jbi2dmli(n : java.math.BigInteger) : Int = Int(n)
-  implicit def s2dmli(n : java.lang.String) : Int = Int(n)
-  implicit def i2dmli(n : Integer) : Int = Int(n)
-  implicit def s2dmls(s : java.lang.String) : String = String(s)
-
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
@@ -311,7 +297,21 @@ package object dms {
     def !=(o : Any) : Boolean = !(this == o)
   }
 
+  import language.implicitConversions
+
+  implicit def b2dmlb(b : scala.Boolean) : Boolean = Boolean(b)
+  implicit def dmlb2b(b : Boolean) : scala.Boolean = b.value
+  implicit def i2dmli(n : scala.Int) : Int = Int(n)
+  implicit def l2dmli(n : scala.Long) : Int = Int(n)
+  implicit def bi2dmli(n : BigInt) : Int = Int(n)
+  implicit def jbi2dmli(n : java.math.BigInteger) : Int = Int(n)
+  implicit def s2dmli(n : java.lang.String) : Int = Int(n)
+  implicit def i2dmli(n : Integer) : Int = Int(n)
+  implicit def s2dmls(s : java.lang.String) : String = String(s)
+
   import scala.language.experimental.macros
+
+  type Predicate[T] = ru.Expr[T => Boolean]
 
   def pred[T](p : T => Boolean) : Predicate[T] = macro predImpl[T]
 
