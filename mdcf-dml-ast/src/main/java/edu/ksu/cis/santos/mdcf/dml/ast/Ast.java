@@ -312,6 +312,8 @@ public class Ast {
       result.alias("ilist", ImmutableList.of(new Object(), new Object())
           .getClass());
       result.aliasPackage("pred", "scala.reflect.api");
+      result.useAttributeFor(String.class);
+      result.useAttributeFor(Enum.class);
       result.registerConverter(new Converter() {
 
         @Override

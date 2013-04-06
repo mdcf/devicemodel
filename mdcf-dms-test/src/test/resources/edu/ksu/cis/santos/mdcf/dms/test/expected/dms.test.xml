@@ -1,68 +1,44 @@
 <model>
   <declarations class="ilist">
-    <basicType>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.DeviceId</name>
+    <basicType name="edu.ksu.cis.santos.mdcf.dms.example.DeviceId">
       <supers class="ilist">
-        <namedType>
-          <name>String</name>
-        </namedType>
+        <namedType name="String"/>
       </supers>
     </basicType>
-    <basicType>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.ICETimeStamp</name>
+    <basicType name="edu.ksu.cis.santos.mdcf.dms.example.ICETimeStamp">
       <supers class="ilist">
-        <namedType>
-          <name>String</name>
-        </namedType>
+        <namedType name="String"/>
       </supers>
     </basicType>
-    <basicType>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType</name>
+    <basicType name="edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType">
       <supers class="ilist">
-        <namedType>
-          <name>String</name>
-        </namedType>
+        <namedType name="String"/>
       </supers>
     </basicType>
-    <basicType>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
+    <basicType name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType">
       <supers class="ilist">
-        <namedType>
-          <name>String</name>
-        </namedType>
+        <namedType name="String"/>
       </supers>
     </basicType>
-    <basicType>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit</name>
+    <basicType name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit">
       <supers class="ilist">
-        <namedType>
-          <name>String</name>
-        </namedType>
+        <namedType name="String"/>
       </supers>
     </basicType>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure">
       <level>Class</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDevice</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDevice"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>type</name>
+        <attribute name="type">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType"/>
           <init class="some">
-            <reference class="basicInit">
-              <value>IEEE ... Blood Pressure</value>
-            </reference>
+            <reference class="basicInit" value="IEEE ... Blood Pressure"/>
           </init>
         </attribute>
-        <invariant>
-          <name>At least one Blood Pressure param</name>
+        <invariant name="At least one Blood Pressure param">
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure_-_-treecreator3_-1/>
@@ -77,88 +53,56 @@
         </invariant>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressureParam</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressureParam">
       <level>Class</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>systolic</name>
+        <attribute name="systolic">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="some">
-            <reference class="basicInit">
-              <value>MDC_PRESS_BLD_NONINV_SYS</value>
-            </reference>
+            <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_SYS"/>
           </init>
         </attribute>
-        <attribute>
-          <name>diastolic</name>
+        <attribute name="diastolic">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="some">
-            <reference class="basicInit">
-              <value>MDC_PRESS_BLD_NONINV_DIA</value>
-            </reference>
+            <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_DIA"/>
           </init>
         </attribute>
-        <attribute>
-          <name>physioParameterType</name>
+        <attribute name="physioParameterType">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="some">
-            <reference class="basicInit">
-              <value>MDC_PRESS_BLD_NONINV_MEAN</value>
-            </reference>
+            <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_MEAN"/>
           </init>
         </attribute>
-        <attribute>
-          <name>unit</name>
+        <attribute name="unit">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
           <init class="some">
-            <reference class="basicInit">
-              <value>MDC_DIM_MMHG</value>
-            </reference>
+            <reference class="basicInit" value="MDC_DIM_MMHG"/>
           </init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor">
       <level>Class</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDevice</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDevice"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>type</name>
+        <attribute name="type">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType"/>
           <init class="some">
-            <reference class="basicInit">
-              <value>IEEE ... MultiMonitor</value>
-            </reference>
+            <reference class="basicInit" value="IEEE ... MultiMonitor"/>
           </init>
         </attribute>
-        <invariant>
-          <name>At least one SpO2 param</name>
+        <invariant name="At least one SpO2 param">
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor_-_-treecreator4_-1/>
@@ -171,8 +115,7 @@
             </pred.SerializedExpr>
           </predicate>
         </invariant>
-        <invariant>
-          <name>At least one Pulse Rate param</name>
+        <invariant name="At least one Pulse Rate param">
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor_-_-treecreator5_-1/>
@@ -185,8 +128,7 @@
             </pred.SerializedExpr>
           </predicate>
         </invariant>
-        <invariant>
-          <name>At least one Blood Pressure param</name>
+        <invariant name="At least one Blood Pressure param">
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor_-_-treecreator6_-1/>
@@ -201,29 +143,20 @@
         </invariant>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx">
       <level>Class</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDevice</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDevice"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>type</name>
+        <attribute name="type">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType"/>
           <init class="some">
-            <reference class="basicInit">
-              <value>IEEE ... Pulse Ox</value>
-            </reference>
+            <reference class="basicInit" value="IEEE ... Pulse Ox"/>
           </init>
         </attribute>
-        <invariant>
-          <name>At least one SpO2 param</name>
+        <invariant name="At least one SpO2 param">
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx_-_-treecreator1_-1/>
@@ -236,8 +169,7 @@
             </pred.SerializedExpr>
           </predicate>
         </invariant>
-        <invariant>
-          <name>At least one Pulse Rate param</name>
+        <invariant name="At least one Pulse Rate param">
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx_-_-treecreator2_-1/>
@@ -252,130 +184,84 @@
         </invariant>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate">
       <level>Class</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>physioParameterType</name>
+        <attribute name="physioParameterType">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="some">
-            <reference class="basicInit">
-              <value>MDC_PULS_OXIM_PULS_RATE</value>
-            </reference>
+            <reference class="basicInit" value="MDC_PULS_OXIM_PULS_RATE"/>
           </init>
         </attribute>
-        <attribute>
-          <name>unit</name>
+        <attribute name="unit">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
           <init class="some">
-            <reference class="basicInit">
-              <value>MDC_DIM_BEAT_PER_MIN</value>
-            </reference>
+            <reference class="basicInit" value="MDC_DIM_BEAT_PER_MIN"/>
           </init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2">
       <level>Class</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>physioParameterType</name>
+        <attribute name="physioParameterType">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="some">
-            <reference class="basicInit">
-              <value>MDC_PULS_OXIM_SAT_O2</value>
-            </reference>
+            <reference class="basicInit" value="MDC_PULS_OXIM_SAT_O2"/>
           </init>
         </attribute>
-        <attribute>
-          <name>unit</name>
+        <attribute name="unit">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
           <init class="some">
-            <reference class="basicInit">
-              <value>MDC_DIM_PERCENT</value>
-            </reference>
+            <reference class="basicInit" value="MDC_DIM_PERCENT"/>
           </init>
         </attribute>
       </members>
     </feature>
-    <device>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.device.MultiMonitor</name>
+    <device name="edu.ksu.cis.santos.mdcf.dms.example.device.MultiMonitor">
       <level>Product</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>id</name>
+        <attribute name="id">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.DeviceId</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.DeviceId"/>
           <init class="some">
-            <reference class="basicInit">
-              <value>MultiMonitor</value>
-            </reference>
+            <reference class="basicInit" value="MultiMonitor"/>
           </init>
         </attribute>
-        <attribute>
-          <name>manufacturerModel</name>
+        <attribute name="manufacturerModel">
           <modifier>Override</modifier>
           <type class="edu.ksu.cis.santos.mdcf.dml.ast.RefinedType">
             <types class="ilist">
-              <namedType>
-                <name>ICEManufacturerModel</name>
-              </namedType>
+              <namedType name="ICEManufacturerModel"/>
             </types>
             <attributes class="ilist">
-              <attribute>
-                <name>versionNumber</name>
+              <attribute name="versionNumber">
                 <modifier>Override</modifier>
-                <type class="namedType">
-                  <name>String</name>
-                </type>
+                <type class="namedType" name="String"/>
                 <init class="none"></init>
               </attribute>
-              <attribute>
-                <name>modelNumber</name>
+              <attribute name="modelNumber">
                 <modifier>Override</modifier>
-                <type class="namedType">
-                  <name>String</name>
-                </type>
+                <type class="namedType" name="String"/>
                 <init class="none"></init>
               </attribute>
-              <attribute>
-                <name>credentials</name>
+              <attribute name="credentials">
                 <modifier>None</modifier>
                 <type class="setType">
-                  <elementType class="namedType">
-                    <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity</name>
-                  </elementType>
+                  <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                 </type>
                 <init class="none"></init>
               </attribute>
@@ -384,42 +270,27 @@
           <init class="some">
             <reference class="featureInit">
               <types class="ilist">
-                <namedType>
-                  <name>ICEManufacturerModel</name>
-                </namedType>
+                <namedType name="ICEManufacturerModel"/>
               </types>
               <attributes class="ilist">
-                <attribute>
-                  <name>versionNumber</name>
+                <attribute name="versionNumber">
                   <modifier>Override</modifier>
-                  <type class="namedType">
-                    <name>String</name>
-                  </type>
+                  <type class="namedType" name="String"/>
                   <init class="some">
-                    <reference class="basicInit">
-                      <value>XX.YY.ZZ</value>
-                    </reference>
+                    <reference class="basicInit" value="XX.YY.ZZ"/>
                   </init>
                 </attribute>
-                <attribute>
-                  <name>modelNumber</name>
+                <attribute name="modelNumber">
                   <modifier>Override</modifier>
-                  <type class="namedType">
-                    <name>String</name>
-                  </type>
+                  <type class="namedType" name="String"/>
                   <init class="some">
-                    <reference class="basicInit">
-                      <value>MultiMonitor</value>
-                    </reference>
+                    <reference class="basicInit" value="MultiMonitor"/>
                   </init>
                 </attribute>
-                <attribute>
-                  <name>credentials</name>
+                <attribute name="credentials">
                   <modifier>None</modifier>
                   <type class="setType">
-                    <elementType class="namedType">
-                      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity</name>
-                    </elementType>
+                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                   </type>
                   <init class="some">
                     <reference class="setInit">
@@ -431,141 +302,94 @@
             </reference>
           </init>
         </attribute>
-        <attribute>
-          <name>physioParams</name>
+        <attribute name="physioParams">
           <modifier>Override</modifier>
           <type class="setType">
-            <elementType class="namedType">
-              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter</name>
-            </elementType>
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter"/>
           </type>
           <init class="some">
             <reference class="setInit">
               <inits class="ilist">
                 <featureInit>
                   <types class="ilist">
-                    <namedType>
-                      <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2</name>
-                    </namedType>
+                    <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2"/>
                   </types>
                   <attributes class="ilist">
-                    <attribute>
-                      <name>range</name>
+                    <attribute name="range">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
                           <types class="ilist">
-                            <namedType>
-                              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange</name>
-                            </namedType>
+                            <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                           </types>
                           <attributes class="ilist">
-                            <attribute>
-                              <name>min</name>
+                            <attribute name="min">
                               <modifier>None</modifier>
-                              <type class="namedType">
-                                <name>Int</name>
-                              </type>
+                              <type class="namedType" name="Int"/>
                               <init class="some">
-                                <reference class="basicInit">
-                                  <value>0</value>
-                                </reference>
+                                <reference class="basicInit" value="0"/>
                               </init>
                             </attribute>
-                            <attribute>
-                              <name>max</name>
+                            <attribute name="max">
                               <modifier>None</modifier>
-                              <type class="namedType">
-                                <name>Int</name>
-                              </type>
+                              <type class="namedType" name="Int"/>
                               <init class="some">
-                                <reference class="basicInit">
-                                  <value>100</value>
-                                </reference>
+                                <reference class="basicInit" value="100"/>
                               </init>
                             </attribute>
                           </attributes>
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>exchanges</name>
+                    <attribute name="exchanges">
                       <modifier>None</modifier>
                       <type class="setType">
-                        <elementType class="namedType">
-                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange</name>
-                        </elementType>
+                        <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
                       <init class="some">
                         <reference class="setInit">
                           <inits class="ilist">
                             <featureInit>
                               <types class="ilist">
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated</name>
-                                </namedType>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated"/>
                               </types>
                               <attributes class="ilist">
-                                <attribute>
-                                  <name>maxRetrievalRatePerSecond</name>
+                                <attribute name="maxRetrievalRatePerSecond">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Nat</name>
-                                  </type>
+                                  <type class="namedType" name="Nat"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>15</value>
-                                    </reference>
+                                    <reference class="basicInit" value="15"/>
                                   </init>
                                 </attribute>
                               </attributes>
                             </featureInit>
                             <featureInit>
                               <types class="ilist">
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.Periodic</name>
-                                </namedType>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.Periodic"/>
                               </types>
                               <attributes class="ilist">
-                                <attribute>
-                                  <name>rateRange</name>
+                                <attribute name="rateRange">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange</name>
-                                  </type>
+                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange"/>
                                   <init class="some">
                                     <reference class="featureInit">
                                       <types class="ilist">
-                                        <namedType>
-                                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange</name>
-                                        </namedType>
+                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange"/>
                                       </types>
                                       <attributes class="ilist">
-                                        <attribute>
-                                          <name>min</name>
+                                        <attribute name="min">
                                           <modifier>None</modifier>
-                                          <type class="namedType">
-                                            <name>Nat</name>
-                                          </type>
+                                          <type class="namedType" name="Nat"/>
                                           <init class="some">
-                                            <reference class="basicInit">
-                                              <value>0</value>
-                                            </reference>
+                                            <reference class="basicInit" value="0"/>
                                           </init>
                                         </attribute>
-                                        <attribute>
-                                          <name>max</name>
+                                        <attribute name="max">
                                           <modifier>None</modifier>
-                                          <type class="namedType">
-                                            <name>Nat</name>
-                                          </type>
+                                          <type class="namedType" name="Nat"/>
                                           <init class="some">
-                                            <reference class="basicInit">
-                                              <value>100</value>
-                                            </reference>
+                                            <reference class="basicInit" value="100"/>
                                           </init>
                                         </attribute>
                                       </attributes>
@@ -578,58 +402,38 @@
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>alerts</name>
+                    <attribute name="alerts">
                       <modifier>None</modifier>
                       <type class="setType">
-                        <elementType class="namedType">
-                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert</name>
-                        </elementType>
+                        <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
                       <init class="some">
                         <reference class="setInit">
                           <inits class="ilist">
                             <featureInit>
                               <types class="ilist">
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.RangeValueAlert</name>
-                                </namedType>
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRangeSetting</name>
-                                </namedType>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.RangeValueAlert"/>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRangeSetting"/>
                               </types>
                               <attributes class="ilist">
-                                <attribute>
-                                  <name>min</name>
+                                <attribute name="min">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Int</name>
-                                  </type>
+                                  <type class="namedType" name="Int"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>85</value>
-                                    </reference>
+                                    <reference class="basicInit" value="85"/>
                                   </init>
                                 </attribute>
-                                <attribute>
-                                  <name>max</name>
+                                <attribute name="max">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Int</name>
-                                  </type>
+                                  <type class="namedType" name="Int"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>100</value>
-                                    </reference>
+                                    <reference class="basicInit" value="100"/>
                                   </init>
                                 </attribute>
-                                <attribute>
-                                  <name>security</name>
+                                <attribute name="security">
                                   <modifier>None</modifier>
                                   <type class="optionType">
-                                    <elementType class="namedType">
-                                      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity</name>
-                                    </elementType>
+                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                                   </type>
                                   <init class="some">
                                     <reference class="noneInit"/>
@@ -641,109 +445,72 @@
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>physioParameterType</name>
+                    <attribute name="physioParameterType">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_PULS_OXIM_SAT_O2</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_PULS_OXIM_SAT_O2"/>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>unit</name>
+                    <attribute name="unit">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_DIM_PERCENT</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_DIM_PERCENT"/>
                       </init>
                     </attribute>
                   </attributes>
                 </featureInit>
                 <featureInit>
                   <types class="ilist">
-                    <namedType>
-                      <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate</name>
-                    </namedType>
+                    <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate"/>
                   </types>
                   <attributes class="ilist">
-                    <attribute>
-                      <name>range</name>
+                    <attribute name="range">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
                           <types class="ilist">
-                            <namedType>
-                              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange</name>
-                            </namedType>
+                            <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                           </types>
                           <attributes class="ilist">
-                            <attribute>
-                              <name>min</name>
+                            <attribute name="min">
                               <modifier>None</modifier>
-                              <type class="namedType">
-                                <name>Int</name>
-                              </type>
+                              <type class="namedType" name="Int"/>
                               <init class="some">
-                                <reference class="basicInit">
-                                  <value>20</value>
-                                </reference>
+                                <reference class="basicInit" value="20"/>
                               </init>
                             </attribute>
-                            <attribute>
-                              <name>max</name>
+                            <attribute name="max">
                               <modifier>None</modifier>
-                              <type class="namedType">
-                                <name>Int</name>
-                              </type>
+                              <type class="namedType" name="Int"/>
                               <init class="some">
-                                <reference class="basicInit">
-                                  <value>300</value>
-                                </reference>
+                                <reference class="basicInit" value="300"/>
                               </init>
                             </attribute>
                           </attributes>
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>exchanges</name>
+                    <attribute name="exchanges">
                       <modifier>None</modifier>
                       <type class="setType">
-                        <elementType class="namedType">
-                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange</name>
-                        </elementType>
+                        <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
                       <init class="some">
                         <reference class="setInit">
                           <inits class="ilist">
                             <featureInit>
                               <types class="ilist">
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated</name>
-                                </namedType>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated"/>
                               </types>
                               <attributes class="ilist">
-                                <attribute>
-                                  <name>maxRetrievalRatePerSecond</name>
+                                <attribute name="maxRetrievalRatePerSecond">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Nat</name>
-                                  </type>
+                                  <type class="namedType" name="Nat"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>5</value>
-                                    </reference>
+                                    <reference class="basicInit" value="5"/>
                                   </init>
                                 </attribute>
                               </attributes>
@@ -752,58 +519,38 @@
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>alerts</name>
+                    <attribute name="alerts">
                       <modifier>None</modifier>
                       <type class="setType">
-                        <elementType class="namedType">
-                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert</name>
-                        </elementType>
+                        <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
                       <init class="some">
                         <reference class="setInit">
                           <inits class="ilist">
                             <featureInit>
                               <types class="ilist">
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.RangeValueAlert</name>
-                                </namedType>
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRangeSetting</name>
-                                </namedType>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.RangeValueAlert"/>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRangeSetting"/>
                               </types>
                               <attributes class="ilist">
-                                <attribute>
-                                  <name>min</name>
+                                <attribute name="min">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Int</name>
-                                  </type>
+                                  <type class="namedType" name="Int"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>40</value>
-                                    </reference>
+                                    <reference class="basicInit" value="40"/>
                                   </init>
                                 </attribute>
-                                <attribute>
-                                  <name>max</name>
+                                <attribute name="max">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Int</name>
-                                  </type>
+                                  <type class="namedType" name="Int"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>180</value>
-                                    </reference>
+                                    <reference class="basicInit" value="180"/>
                                   </init>
                                 </attribute>
-                                <attribute>
-                                  <name>security</name>
+                                <attribute name="security">
                                   <modifier>None</modifier>
                                   <type class="optionType">
-                                    <elementType class="namedType">
-                                      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity</name>
-                                    </elementType>
+                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                                   </type>
                                   <init class="some">
                                     <reference class="noneInit"/>
@@ -815,109 +562,72 @@
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>physioParameterType</name>
+                    <attribute name="physioParameterType">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_PULS_OXIM_PULS_RATE</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_PULS_OXIM_PULS_RATE"/>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>unit</name>
+                    <attribute name="unit">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_DIM_BEAT_PER_MIN</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_DIM_BEAT_PER_MIN"/>
                       </init>
                     </attribute>
                   </attributes>
                 </featureInit>
                 <featureInit>
                   <types class="ilist">
-                    <namedType>
-                      <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressureParam</name>
-                    </namedType>
+                    <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressureParam"/>
                   </types>
                   <attributes class="ilist">
-                    <attribute>
-                      <name>range</name>
+                    <attribute name="range">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
                           <types class="ilist">
-                            <namedType>
-                              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange</name>
-                            </namedType>
+                            <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                           </types>
                           <attributes class="ilist">
-                            <attribute>
-                              <name>min</name>
+                            <attribute name="min">
                               <modifier>None</modifier>
-                              <type class="namedType">
-                                <name>Int</name>
-                              </type>
+                              <type class="namedType" name="Int"/>
                               <init class="some">
-                                <reference class="basicInit">
-                                  <value>20</value>
-                                </reference>
+                                <reference class="basicInit" value="20"/>
                               </init>
                             </attribute>
-                            <attribute>
-                              <name>max</name>
+                            <attribute name="max">
                               <modifier>None</modifier>
-                              <type class="namedType">
-                                <name>Int</name>
-                              </type>
+                              <type class="namedType" name="Int"/>
                               <init class="some">
-                                <reference class="basicInit">
-                                  <value>300</value>
-                                </reference>
+                                <reference class="basicInit" value="300"/>
                               </init>
                             </attribute>
                           </attributes>
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>exchanges</name>
+                    <attribute name="exchanges">
                       <modifier>None</modifier>
                       <type class="setType">
-                        <elementType class="namedType">
-                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange</name>
-                        </elementType>
+                        <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
                       <init class="some">
                         <reference class="setInit">
                           <inits class="ilist">
                             <featureInit>
                               <types class="ilist">
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated</name>
-                                </namedType>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated"/>
                               </types>
                               <attributes class="ilist">
-                                <attribute>
-                                  <name>maxRetrievalRatePerSecond</name>
+                                <attribute name="maxRetrievalRatePerSecond">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Nat</name>
-                                  </type>
+                                  <type class="namedType" name="Nat"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>5</value>
-                                    </reference>
+                                    <reference class="basicInit" value="5"/>
                                   </init>
                                 </attribute>
                               </attributes>
@@ -926,58 +636,38 @@
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>alerts</name>
+                    <attribute name="alerts">
                       <modifier>None</modifier>
                       <type class="setType">
-                        <elementType class="namedType">
-                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert</name>
-                        </elementType>
+                        <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
                       <init class="some">
                         <reference class="setInit">
                           <inits class="ilist">
                             <featureInit>
                               <types class="ilist">
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.RangeValueAlert</name>
-                                </namedType>
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRangeSetting</name>
-                                </namedType>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.RangeValueAlert"/>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRangeSetting"/>
                               </types>
                               <attributes class="ilist">
-                                <attribute>
-                                  <name>min</name>
+                                <attribute name="min">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Int</name>
-                                  </type>
+                                  <type class="namedType" name="Int"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>40</value>
-                                    </reference>
+                                    <reference class="basicInit" value="40"/>
                                   </init>
                                 </attribute>
-                                <attribute>
-                                  <name>max</name>
+                                <attribute name="max">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Int</name>
-                                  </type>
+                                  <type class="namedType" name="Int"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>180</value>
-                                    </reference>
+                                    <reference class="basicInit" value="180"/>
                                   </init>
                                 </attribute>
-                                <attribute>
-                                  <name>security</name>
+                                <attribute name="security">
                                   <modifier>None</modifier>
                                   <type class="optionType">
-                                    <elementType class="namedType">
-                                      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity</name>
-                                    </elementType>
+                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                                   </type>
                                   <init class="some">
                                     <reference class="noneInit"/>
@@ -989,52 +679,32 @@
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>systolic</name>
+                    <attribute name="systolic">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_PRESS_BLD_NONINV_SYS</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_SYS"/>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>diastolic</name>
+                    <attribute name="diastolic">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_PRESS_BLD_NONINV_DIA</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_DIA"/>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>physioParameterType</name>
+                    <attribute name="physioParameterType">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_PRESS_BLD_NONINV_MEAN</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_MEAN"/>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>unit</name>
+                    <attribute name="unit">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_DIM_MMHG</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_DIM_MMHG"/>
                       </init>
                     </attribute>
                   </attributes>
@@ -1045,60 +715,40 @@
         </attribute>
       </members>
     </device>
-    <device>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.device.NellcorPulseOx</name>
+    <device name="edu.ksu.cis.santos.mdcf.dms.example.device.NellcorPulseOx">
       <level>Product</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>id</name>
+        <attribute name="id">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.DeviceId</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.DeviceId"/>
           <init class="some">
-            <reference class="basicInit">
-              <value>Nellcor PO</value>
-            </reference>
+            <reference class="basicInit" value="Nellcor PO"/>
           </init>
         </attribute>
-        <attribute>
-          <name>manufacturerModel</name>
+        <attribute name="manufacturerModel">
           <modifier>Override</modifier>
           <type class="edu.ksu.cis.santos.mdcf.dml.ast.RefinedType">
             <types class="ilist">
-              <namedType>
-                <name>ICEManufacturerModel</name>
-              </namedType>
+              <namedType name="ICEManufacturerModel"/>
             </types>
             <attributes class="ilist">
-              <attribute>
-                <name>versionNumber</name>
+              <attribute name="versionNumber">
                 <modifier>Override</modifier>
-                <type class="namedType">
-                  <name>String</name>
-                </type>
+                <type class="namedType" name="String"/>
                 <init class="none"></init>
               </attribute>
-              <attribute>
-                <name>modelNumber</name>
+              <attribute name="modelNumber">
                 <modifier>Override</modifier>
-                <type class="namedType">
-                  <name>String</name>
-                </type>
+                <type class="namedType" name="String"/>
                 <init class="none"></init>
               </attribute>
-              <attribute>
-                <name>credentials</name>
+              <attribute name="credentials">
                 <modifier>None</modifier>
                 <type class="setType">
-                  <elementType class="namedType">
-                    <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity</name>
-                  </elementType>
+                  <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                 </type>
                 <init class="none"></init>
               </attribute>
@@ -1107,42 +757,27 @@
           <init class="some">
             <reference class="featureInit">
               <types class="ilist">
-                <namedType>
-                  <name>ICEManufacturerModel</name>
-                </namedType>
+                <namedType name="ICEManufacturerModel"/>
               </types>
               <attributes class="ilist">
-                <attribute>
-                  <name>versionNumber</name>
+                <attribute name="versionNumber">
                   <modifier>Override</modifier>
-                  <type class="namedType">
-                    <name>String</name>
-                  </type>
+                  <type class="namedType" name="String"/>
                   <init class="some">
-                    <reference class="basicInit">
-                      <value>XX.YY.ZZ</value>
-                    </reference>
+                    <reference class="basicInit" value="XX.YY.ZZ"/>
                   </init>
                 </attribute>
-                <attribute>
-                  <name>modelNumber</name>
+                <attribute name="modelNumber">
                   <modifier>Override</modifier>
-                  <type class="namedType">
-                    <name>String</name>
-                  </type>
+                  <type class="namedType" name="String"/>
                   <init class="some">
-                    <reference class="basicInit">
-                      <value>Nellcor 2000</value>
-                    </reference>
+                    <reference class="basicInit" value="Nellcor 2000"/>
                   </init>
                 </attribute>
-                <attribute>
-                  <name>credentials</name>
+                <attribute name="credentials">
                   <modifier>None</modifier>
                   <type class="setType">
-                    <elementType class="namedType">
-                      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity</name>
-                    </elementType>
+                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                   </type>
                   <init class="some">
                     <reference class="setInit">
@@ -1154,141 +789,94 @@
             </reference>
           </init>
         </attribute>
-        <attribute>
-          <name>physioParams</name>
+        <attribute name="physioParams">
           <modifier>Override</modifier>
           <type class="setType">
-            <elementType class="namedType">
-              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter</name>
-            </elementType>
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter"/>
           </type>
           <init class="some">
             <reference class="setInit">
               <inits class="ilist">
                 <featureInit>
                   <types class="ilist">
-                    <namedType>
-                      <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2</name>
-                    </namedType>
+                    <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2"/>
                   </types>
                   <attributes class="ilist">
-                    <attribute>
-                      <name>range</name>
+                    <attribute name="range">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
                           <types class="ilist">
-                            <namedType>
-                              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange</name>
-                            </namedType>
+                            <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                           </types>
                           <attributes class="ilist">
-                            <attribute>
-                              <name>min</name>
+                            <attribute name="min">
                               <modifier>None</modifier>
-                              <type class="namedType">
-                                <name>Int</name>
-                              </type>
+                              <type class="namedType" name="Int"/>
                               <init class="some">
-                                <reference class="basicInit">
-                                  <value>0</value>
-                                </reference>
+                                <reference class="basicInit" value="0"/>
                               </init>
                             </attribute>
-                            <attribute>
-                              <name>max</name>
+                            <attribute name="max">
                               <modifier>None</modifier>
-                              <type class="namedType">
-                                <name>Int</name>
-                              </type>
+                              <type class="namedType" name="Int"/>
                               <init class="some">
-                                <reference class="basicInit">
-                                  <value>100</value>
-                                </reference>
+                                <reference class="basicInit" value="100"/>
                               </init>
                             </attribute>
                           </attributes>
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>exchanges</name>
+                    <attribute name="exchanges">
                       <modifier>None</modifier>
                       <type class="setType">
-                        <elementType class="namedType">
-                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange</name>
-                        </elementType>
+                        <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
                       <init class="some">
                         <reference class="setInit">
                           <inits class="ilist">
                             <featureInit>
                               <types class="ilist">
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated</name>
-                                </namedType>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated"/>
                               </types>
                               <attributes class="ilist">
-                                <attribute>
-                                  <name>maxRetrievalRatePerSecond</name>
+                                <attribute name="maxRetrievalRatePerSecond">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Nat</name>
-                                  </type>
+                                  <type class="namedType" name="Nat"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>15</value>
-                                    </reference>
+                                    <reference class="basicInit" value="15"/>
                                   </init>
                                 </attribute>
                               </attributes>
                             </featureInit>
                             <featureInit>
                               <types class="ilist">
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.Periodic</name>
-                                </namedType>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.Periodic"/>
                               </types>
                               <attributes class="ilist">
-                                <attribute>
-                                  <name>rateRange</name>
+                                <attribute name="rateRange">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange</name>
-                                  </type>
+                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange"/>
                                   <init class="some">
                                     <reference class="featureInit">
                                       <types class="ilist">
-                                        <namedType>
-                                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange</name>
-                                        </namedType>
+                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange"/>
                                       </types>
                                       <attributes class="ilist">
-                                        <attribute>
-                                          <name>min</name>
+                                        <attribute name="min">
                                           <modifier>None</modifier>
-                                          <type class="namedType">
-                                            <name>Nat</name>
-                                          </type>
+                                          <type class="namedType" name="Nat"/>
                                           <init class="some">
-                                            <reference class="basicInit">
-                                              <value>0</value>
-                                            </reference>
+                                            <reference class="basicInit" value="0"/>
                                           </init>
                                         </attribute>
-                                        <attribute>
-                                          <name>max</name>
+                                        <attribute name="max">
                                           <modifier>None</modifier>
-                                          <type class="namedType">
-                                            <name>Nat</name>
-                                          </type>
+                                          <type class="namedType" name="Nat"/>
                                           <init class="some">
-                                            <reference class="basicInit">
-                                              <value>100</value>
-                                            </reference>
+                                            <reference class="basicInit" value="100"/>
                                           </init>
                                         </attribute>
                                       </attributes>
@@ -1301,58 +889,38 @@
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>alerts</name>
+                    <attribute name="alerts">
                       <modifier>None</modifier>
                       <type class="setType">
-                        <elementType class="namedType">
-                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert</name>
-                        </elementType>
+                        <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
                       <init class="some">
                         <reference class="setInit">
                           <inits class="ilist">
                             <featureInit>
                               <types class="ilist">
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.RangeValueAlert</name>
-                                </namedType>
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRangeSetting</name>
-                                </namedType>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.RangeValueAlert"/>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRangeSetting"/>
                               </types>
                               <attributes class="ilist">
-                                <attribute>
-                                  <name>min</name>
+                                <attribute name="min">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Int</name>
-                                  </type>
+                                  <type class="namedType" name="Int"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>85</value>
-                                    </reference>
+                                    <reference class="basicInit" value="85"/>
                                   </init>
                                 </attribute>
-                                <attribute>
-                                  <name>max</name>
+                                <attribute name="max">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Int</name>
-                                  </type>
+                                  <type class="namedType" name="Int"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>100</value>
-                                    </reference>
+                                    <reference class="basicInit" value="100"/>
                                   </init>
                                 </attribute>
-                                <attribute>
-                                  <name>security</name>
+                                <attribute name="security">
                                   <modifier>None</modifier>
                                   <type class="optionType">
-                                    <elementType class="namedType">
-                                      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity</name>
-                                    </elementType>
+                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                                   </type>
                                   <init class="some">
                                     <reference class="noneInit"/>
@@ -1364,109 +932,72 @@
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>physioParameterType</name>
+                    <attribute name="physioParameterType">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_PULS_OXIM_SAT_O2</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_PULS_OXIM_SAT_O2"/>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>unit</name>
+                    <attribute name="unit">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_DIM_PERCENT</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_DIM_PERCENT"/>
                       </init>
                     </attribute>
                   </attributes>
                 </featureInit>
                 <featureInit>
                   <types class="ilist">
-                    <namedType>
-                      <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate</name>
-                    </namedType>
+                    <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate"/>
                   </types>
                   <attributes class="ilist">
-                    <attribute>
-                      <name>range</name>
+                    <attribute name="range">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
                           <types class="ilist">
-                            <namedType>
-                              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange</name>
-                            </namedType>
+                            <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                           </types>
                           <attributes class="ilist">
-                            <attribute>
-                              <name>min</name>
+                            <attribute name="min">
                               <modifier>None</modifier>
-                              <type class="namedType">
-                                <name>Int</name>
-                              </type>
+                              <type class="namedType" name="Int"/>
                               <init class="some">
-                                <reference class="basicInit">
-                                  <value>20</value>
-                                </reference>
+                                <reference class="basicInit" value="20"/>
                               </init>
                             </attribute>
-                            <attribute>
-                              <name>max</name>
+                            <attribute name="max">
                               <modifier>None</modifier>
-                              <type class="namedType">
-                                <name>Int</name>
-                              </type>
+                              <type class="namedType" name="Int"/>
                               <init class="some">
-                                <reference class="basicInit">
-                                  <value>300</value>
-                                </reference>
+                                <reference class="basicInit" value="300"/>
                               </init>
                             </attribute>
                           </attributes>
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>exchanges</name>
+                    <attribute name="exchanges">
                       <modifier>None</modifier>
                       <type class="setType">
-                        <elementType class="namedType">
-                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange</name>
-                        </elementType>
+                        <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
                       <init class="some">
                         <reference class="setInit">
                           <inits class="ilist">
                             <featureInit>
                               <types class="ilist">
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated</name>
-                                </namedType>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated"/>
                               </types>
                               <attributes class="ilist">
-                                <attribute>
-                                  <name>maxRetrievalRatePerSecond</name>
+                                <attribute name="maxRetrievalRatePerSecond">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Nat</name>
-                                  </type>
+                                  <type class="namedType" name="Nat"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>5</value>
-                                    </reference>
+                                    <reference class="basicInit" value="5"/>
                                   </init>
                                 </attribute>
                               </attributes>
@@ -1475,58 +1006,38 @@
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>alerts</name>
+                    <attribute name="alerts">
                       <modifier>None</modifier>
                       <type class="setType">
-                        <elementType class="namedType">
-                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert</name>
-                        </elementType>
+                        <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
                       <init class="some">
                         <reference class="setInit">
                           <inits class="ilist">
                             <featureInit>
                               <types class="ilist">
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.RangeValueAlert</name>
-                                </namedType>
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRangeSetting</name>
-                                </namedType>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.RangeValueAlert"/>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRangeSetting"/>
                               </types>
                               <attributes class="ilist">
-                                <attribute>
-                                  <name>min</name>
+                                <attribute name="min">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Int</name>
-                                  </type>
+                                  <type class="namedType" name="Int"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>40</value>
-                                    </reference>
+                                    <reference class="basicInit" value="40"/>
                                   </init>
                                 </attribute>
-                                <attribute>
-                                  <name>max</name>
+                                <attribute name="max">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Int</name>
-                                  </type>
+                                  <type class="namedType" name="Int"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>180</value>
-                                    </reference>
+                                    <reference class="basicInit" value="180"/>
                                   </init>
                                 </attribute>
-                                <attribute>
-                                  <name>security</name>
+                                <attribute name="security">
                                   <modifier>None</modifier>
                                   <type class="optionType">
-                                    <elementType class="namedType">
-                                      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity</name>
-                                    </elementType>
+                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                                   </type>
                                   <init class="some">
                                     <reference class="noneInit"/>
@@ -1538,28 +1049,18 @@
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>physioParameterType</name>
+                    <attribute name="physioParameterType">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_PULS_OXIM_PULS_RATE</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_PULS_OXIM_PULS_RATE"/>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>unit</name>
+                    <attribute name="unit">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_DIM_BEAT_PER_MIN</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_DIM_BEAT_PER_MIN"/>
                       </init>
                     </attribute>
                   </attributes>
@@ -1570,60 +1071,40 @@
         </attribute>
       </members>
     </device>
-    <device>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.device.NoninPulseOx</name>
+    <device name="edu.ksu.cis.santos.mdcf.dms.example.device.NoninPulseOx">
       <level>Product</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>id</name>
+        <attribute name="id">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.DeviceId</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.DeviceId"/>
           <init class="some">
-            <reference class="basicInit">
-              <value>Continua PO</value>
-            </reference>
+            <reference class="basicInit" value="Continua PO"/>
           </init>
         </attribute>
-        <attribute>
-          <name>manufacturerModel</name>
+        <attribute name="manufacturerModel">
           <modifier>Override</modifier>
           <type class="edu.ksu.cis.santos.mdcf.dml.ast.RefinedType">
             <types class="ilist">
-              <namedType>
-                <name>ICEManufacturerModel</name>
-              </namedType>
+              <namedType name="ICEManufacturerModel"/>
             </types>
             <attributes class="ilist">
-              <attribute>
-                <name>versionNumber</name>
+              <attribute name="versionNumber">
                 <modifier>Override</modifier>
-                <type class="namedType">
-                  <name>String</name>
-                </type>
+                <type class="namedType" name="String"/>
                 <init class="none"></init>
               </attribute>
-              <attribute>
-                <name>modelNumber</name>
+              <attribute name="modelNumber">
                 <modifier>Override</modifier>
-                <type class="namedType">
-                  <name>String</name>
-                </type>
+                <type class="namedType" name="String"/>
                 <init class="none"></init>
               </attribute>
-              <attribute>
-                <name>credentials</name>
+              <attribute name="credentials">
                 <modifier>None</modifier>
                 <type class="setType">
-                  <elementType class="namedType">
-                    <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity</name>
-                  </elementType>
+                  <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                 </type>
                 <init class="none"></init>
               </attribute>
@@ -1632,42 +1113,27 @@
           <init class="some">
             <reference class="featureInit">
               <types class="ilist">
-                <namedType>
-                  <name>ICEManufacturerModel</name>
-                </namedType>
+                <namedType name="ICEManufacturerModel"/>
               </types>
               <attributes class="ilist">
-                <attribute>
-                  <name>versionNumber</name>
+                <attribute name="versionNumber">
                   <modifier>Override</modifier>
-                  <type class="namedType">
-                    <name>String</name>
-                  </type>
+                  <type class="namedType" name="String"/>
                   <init class="some">
-                    <reference class="basicInit">
-                      <value>XX.YY.ZZ</value>
-                    </reference>
+                    <reference class="basicInit" value="XX.YY.ZZ"/>
                   </init>
                 </attribute>
-                <attribute>
-                  <name>modelNumber</name>
+                <attribute name="modelNumber">
                   <modifier>Override</modifier>
-                  <type class="namedType">
-                    <name>String</name>
-                  </type>
+                  <type class="namedType" name="String"/>
                   <init class="some">
-                    <reference class="basicInit">
-                      <value>Nonin Onyx II</value>
-                    </reference>
+                    <reference class="basicInit" value="Nonin Onyx II"/>
                   </init>
                 </attribute>
-                <attribute>
-                  <name>credentials</name>
+                <attribute name="credentials">
                   <modifier>None</modifier>
                   <type class="setType">
-                    <elementType class="namedType">
-                      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity</name>
-                    </elementType>
+                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                   </type>
                   <init class="some">
                     <reference class="setInit">
@@ -1679,94 +1145,64 @@
             </reference>
           </init>
         </attribute>
-        <attribute>
-          <name>physioParams</name>
+        <attribute name="physioParams">
           <modifier>Override</modifier>
           <type class="setType">
-            <elementType class="namedType">
-              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter</name>
-            </elementType>
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter"/>
           </type>
           <init class="some">
             <reference class="setInit">
               <inits class="ilist">
                 <featureInit>
                   <types class="ilist">
-                    <namedType>
-                      <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2</name>
-                    </namedType>
+                    <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2"/>
                   </types>
                   <attributes class="ilist">
-                    <attribute>
-                      <name>range</name>
+                    <attribute name="range">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
                           <types class="ilist">
-                            <namedType>
-                              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange</name>
-                            </namedType>
+                            <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                           </types>
                           <attributes class="ilist">
-                            <attribute>
-                              <name>min</name>
+                            <attribute name="min">
                               <modifier>None</modifier>
-                              <type class="namedType">
-                                <name>Int</name>
-                              </type>
+                              <type class="namedType" name="Int"/>
                               <init class="some">
-                                <reference class="basicInit">
-                                  <value>0</value>
-                                </reference>
+                                <reference class="basicInit" value="0"/>
                               </init>
                             </attribute>
-                            <attribute>
-                              <name>max</name>
+                            <attribute name="max">
                               <modifier>None</modifier>
-                              <type class="namedType">
-                                <name>Int</name>
-                              </type>
+                              <type class="namedType" name="Int"/>
                               <init class="some">
-                                <reference class="basicInit">
-                                  <value>100</value>
-                                </reference>
+                                <reference class="basicInit" value="100"/>
                               </init>
                             </attribute>
                           </attributes>
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>exchanges</name>
+                    <attribute name="exchanges">
                       <modifier>None</modifier>
                       <type class="setType">
-                        <elementType class="namedType">
-                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange</name>
-                        </elementType>
+                        <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
                       <init class="some">
                         <reference class="setInit">
                           <inits class="ilist">
                             <featureInit>
                               <types class="ilist">
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated</name>
-                                </namedType>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated"/>
                               </types>
                               <attributes class="ilist">
-                                <attribute>
-                                  <name>maxRetrievalRatePerSecond</name>
+                                <attribute name="maxRetrievalRatePerSecond">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Nat</name>
-                                  </type>
+                                  <type class="namedType" name="Nat"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>15</value>
-                                    </reference>
+                                    <reference class="basicInit" value="15"/>
                                   </init>
                                 </attribute>
                               </attributes>
@@ -1775,13 +1211,10 @@
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>alerts</name>
+                    <attribute name="alerts">
                       <modifier>None</modifier>
                       <type class="setType">
-                        <elementType class="namedType">
-                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert</name>
-                        </elementType>
+                        <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
                       <init class="some">
                         <reference class="setInit">
@@ -1789,109 +1222,72 @@
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>physioParameterType</name>
+                    <attribute name="physioParameterType">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_PULS_OXIM_SAT_O2</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_PULS_OXIM_SAT_O2"/>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>unit</name>
+                    <attribute name="unit">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_DIM_PERCENT</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_DIM_PERCENT"/>
                       </init>
                     </attribute>
                   </attributes>
                 </featureInit>
                 <featureInit>
                   <types class="ilist">
-                    <namedType>
-                      <name>edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate</name>
-                    </namedType>
+                    <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate"/>
                   </types>
                   <attributes class="ilist">
-                    <attribute>
-                      <name>range</name>
+                    <attribute name="range">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
                           <types class="ilist">
-                            <namedType>
-                              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange</name>
-                            </namedType>
+                            <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                           </types>
                           <attributes class="ilist">
-                            <attribute>
-                              <name>min</name>
+                            <attribute name="min">
                               <modifier>None</modifier>
-                              <type class="namedType">
-                                <name>Int</name>
-                              </type>
+                              <type class="namedType" name="Int"/>
                               <init class="some">
-                                <reference class="basicInit">
-                                  <value>20</value>
-                                </reference>
+                                <reference class="basicInit" value="20"/>
                               </init>
                             </attribute>
-                            <attribute>
-                              <name>max</name>
+                            <attribute name="max">
                               <modifier>None</modifier>
-                              <type class="namedType">
-                                <name>Int</name>
-                              </type>
+                              <type class="namedType" name="Int"/>
                               <init class="some">
-                                <reference class="basicInit">
-                                  <value>300</value>
-                                </reference>
+                                <reference class="basicInit" value="300"/>
                               </init>
                             </attribute>
                           </attributes>
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>exchanges</name>
+                    <attribute name="exchanges">
                       <modifier>None</modifier>
                       <type class="setType">
-                        <elementType class="namedType">
-                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange</name>
-                        </elementType>
+                        <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
                       <init class="some">
                         <reference class="setInit">
                           <inits class="ilist">
                             <featureInit>
                               <types class="ilist">
-                                <namedType>
-                                  <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated</name>
-                                </namedType>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated"/>
                               </types>
                               <attributes class="ilist">
-                                <attribute>
-                                  <name>maxRetrievalRatePerSecond</name>
+                                <attribute name="maxRetrievalRatePerSecond">
                                   <modifier>None</modifier>
-                                  <type class="namedType">
-                                    <name>Nat</name>
-                                  </type>
+                                  <type class="namedType" name="Nat"/>
                                   <init class="some">
-                                    <reference class="basicInit">
-                                      <value>5</value>
-                                    </reference>
+                                    <reference class="basicInit" value="5"/>
                                   </init>
                                 </attribute>
                               </attributes>
@@ -1900,13 +1296,10 @@
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>alerts</name>
+                    <attribute name="alerts">
                       <modifier>None</modifier>
                       <type class="setType">
-                        <elementType class="namedType">
-                          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert</name>
-                        </elementType>
+                        <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
                       <init class="some">
                         <reference class="setInit">
@@ -1914,28 +1307,18 @@
                         </reference>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>physioParameterType</name>
+                    <attribute name="physioParameterType">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_PULS_OXIM_PULS_RATE</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_PULS_OXIM_PULS_RATE"/>
                       </init>
                     </attribute>
-                    <attribute>
-                      <name>unit</name>
+                    <attribute name="unit">
                       <modifier>None</modifier>
-                      <type class="namedType">
-                        <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit</name>
-                      </type>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
-                        <reference class="basicInit">
-                          <value>MDC_DIM_BEAT_PER_MIN</value>
-                        </reference>
+                        <reference class="basicInit" value="MDC_DIM_BEAT_PER_MIN"/>
                       </init>
                     </attribute>
                   </attributes>
@@ -1946,11 +1329,9 @@
         </attribute>
       </members>
     </device>
-    <requirement>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.requirement.MyReqPulseOx</name>
+    <requirement name="edu.ksu.cis.santos.mdcf.dms.example.requirement.MyReqPulseOx">
       <invariants class="ilist">
-        <invariant>
-          <name>(SpO2&apos;s min &lt; 40 and SpO2&apos;s max == 100)</name>
+        <invariant name="(SpO2&apos;s min &lt; 40 and SpO2&apos;s max == 100)">
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.requirement.MyReqPulseOx_-_-treecreator1_-1/>
@@ -1963,8 +1344,7 @@
             </pred.SerializedExpr>
           </predicate>
         </invariant>
-        <invariant>
-          <name>PulseRate&apos;s min &lt;= 30 and PulseRate&apos;s max &gt;= 200</name>
+        <invariant name="PulseRate&apos;s min &lt;= 30 and PulseRate&apos;s max &gt;= 200">
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.requirement.MyReqPulseOx_-_-treecreator2_-1/>
@@ -1979,25 +1359,18 @@
         </invariant>
       </invariants>
     </requirement>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.BatteryLevelStatus</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.BatteryLevelStatus">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDeviceStatus</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDeviceStatus"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>level</name>
+        <attribute name="level">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>Int</name>
-          </type>
+          <type class="namedType" name="Int"/>
           <init class="none"></init>
         </attribute>
-        <invariant>
-          <name>level is in 1..100</name>
+        <invariant name="level is in 1..100">
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.schema.BatteryLevelStatus_-_-treecreator3_-1/>
@@ -2012,633 +1385,428 @@
         </invariant>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ClientInitiated">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>maxRetrievalRatePerSecond</name>
+        <attribute name="maxRetrievalRatePerSecond">
           <modifier>ConstClass</modifier>
-          <type class="namedType">
-            <name>Nat</name>
-          </type>
+          <type class="namedType" name="Nat"/>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ComplexAlert</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ComplexAlert">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>cond</name>
+        <attribute name="cond">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>Boolean</name>
-          </type>
+          <type class="namedType" name="Boolean"/>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.DistributionSA</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.DistributionSA">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.SampleArray</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.SampleArray"/>
       </supers>
       <members class="ilist"></members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.Episodic</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.Episodic">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ProviderInitiated</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ProviderInitiated"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>maxPublishRate</name>
+        <attribute name="maxPublishRate">
           <modifier>ConstProduct</modifier>
-          <type class="namedType">
-            <name>Nat</name>
-          </type>
+          <type class="namedType" name="Nat"/>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>Feature</name>
-        </namedType>
+        <namedType name="Feature"/>
       </supers>
       <members class="ilist"></members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>Feature</name>
-        </namedType>
+        <namedType name="Feature"/>
       </supers>
       <members class="ilist"></members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDevice</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDevice">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>Feature</name>
-        </namedType>
+        <namedType name="Feature"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>id</name>
+        <attribute name="id">
           <modifier>ConstInstance</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.DeviceId</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.DeviceId"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>type</name>
+        <attribute name="type">
           <modifier>ConstClass</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>manufacturerModel</name>
+        <attribute name="manufacturerModel">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEManufacturerModel</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEManufacturerModel"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>physioParams</name>
+        <attribute name="physioParams">
           <modifier>None</modifier>
           <type class="setType">
-            <elementType class="namedType">
-              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter</name>
-            </elementType>
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter"/>
           </type>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDeviceSetting</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDeviceSetting">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>Feature</name>
-        </namedType>
+        <namedType name="Feature"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>security</name>
+        <attribute name="security">
           <modifier>None</modifier>
           <type class="optionType">
-            <elementType class="namedType">
-              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity</name>
-            </elementType>
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
           </type>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDeviceStatus</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDeviceStatus">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>Feature</name>
-        </namedType>
+        <namedType name="Feature"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>security</name>
+        <attribute name="security">
           <modifier>None</modifier>
           <type class="optionType">
-            <elementType class="namedType">
-              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity</name>
-            </elementType>
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
           </type>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>alarms</name>
+        <attribute name="alarms">
           <modifier>None</modifier>
           <type class="setType">
-            <elementType class="namedType">
-              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert</name>
-            </elementType>
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
           </type>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEManufacturerModel</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEManufacturerModel">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>Feature</name>
-        </namedType>
+        <namedType name="Feature"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>modelNumber</name>
+        <attribute name="modelNumber">
           <modifier>ConstProduct</modifier>
-          <type class="namedType">
-            <name>String</name>
-          </type>
+          <type class="namedType" name="String"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>versionNumber</name>
+        <attribute name="versionNumber">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>String</name>
-          </type>
+          <type class="namedType" name="String"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>credentials</name>
+        <attribute name="credentials">
           <modifier>None</modifier>
           <type class="setType">
-            <elementType class="namedType">
-              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity</name>
-            </elementType>
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
           </type>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEMessageContext</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEMessageContext">
       <level>Data</level>
       <supers class="ilist">
-        <namedType>
-          <name>Feature</name>
-        </namedType>
+        <namedType name="Feature"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>messageConstructed</name>
+        <attribute name="messageConstructed">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.ICETimeStamp</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.ICETimeStamp"/>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEMetric</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEMetric">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>Feature</name>
-        </namedType>
+        <namedType name="Feature"/>
       </supers>
       <members class="ilist"></members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>Feature</name>
-        </namedType>
+        <namedType name="Feature"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>physioParameterType</name>
+        <attribute name="physioParameterType">
           <modifier>ConstClass</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>unit</name>
+        <attribute name="unit">
           <modifier>ConstClass</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>range</name>
+        <attribute name="range">
           <modifier>ConstProduct</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.schema.Range</name>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.Range"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="exchanges">
+          <modifier>None</modifier>
+          <type class="setType">
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
           </type>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>exchanges</name>
+        <attribute name="alerts">
           <modifier>None</modifier>
           <type class="setType">
-            <elementType class="namedType">
-              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange</name>
-            </elementType>
-          </type>
-          <init class="none"></init>
-        </attribute>
-        <attribute>
-          <name>alerts</name>
-          <modifier>None</modifier>
-          <type class="setType">
-            <elementType class="namedType">
-              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert</name>
-            </elementType>
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
           </type>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>Feature</name>
-        </namedType>
+        <namedType name="Feature"/>
       </supers>
       <members class="ilist"></members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.Range</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.Range"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>min</name>
+        <attribute name="min">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>Int</name>
-          </type>
+          <type class="namedType" name="Int"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>max</name>
+        <attribute name="max">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>Int</name>
-          </type>
+          <type class="namedType" name="Int"/>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.IntRangeSetting</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRangeSetting">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.RangeSetting</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.RangeSetting"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>min</name>
+        <attribute name="min">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>Int</name>
-          </type>
+          <type class="namedType" name="Int"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>max</name>
+        <attribute name="max">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>Int</name>
-          </type>
+          <type class="namedType" name="Int"/>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute">
       <level>Data</level>
       <supers class="ilist">
-        <namedType>
-          <name>Feature</name>
-        </namedType>
+        <namedType name="Feature"/>
       </supers>
       <members class="ilist"></members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.MetricTimeStampAttributes</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricTimeStampAttributes">
       <level>Data</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>sec</name>
+        <attribute name="sec">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>Int</name>
-          </type>
+          <type class="namedType" name="Int"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>min</name>
+        <attribute name="min">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>Int</name>
-          </type>
+          <type class="namedType" name="Int"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>hour</name>
+        <attribute name="hour">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>Int</name>
-          </type>
+          <type class="namedType" name="Int"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>mday</name>
+        <attribute name="mday">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>Int</name>
-          </type>
+          <type class="namedType" name="Int"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>mon</name>
+        <attribute name="mon">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>Int</name>
-          </type>
+          <type class="namedType" name="Int"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>year</name>
+        <attribute name="year">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>Int</name>
-          </type>
+          <type class="namedType" name="Int"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>wday</name>
+        <attribute name="wday">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>Int</name>
-          </type>
+          <type class="namedType" name="Int"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>yday</name>
+        <attribute name="yday">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>Int</name>
-          </type>
+          <type class="namedType" name="Int"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>isdst</name>
+        <attribute name="isdst">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>Int</name>
-          </type>
+          <type class="namedType" name="Int"/>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.Range</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.Range"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>min</name>
+        <attribute name="min">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>Nat</name>
-          </type>
+          <type class="namedType" name="Nat"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>max</name>
+        <attribute name="max">
           <modifier>Override</modifier>
-          <type class="namedType">
-            <name>Nat</name>
-          </type>
+          <type class="namedType" name="Nat"/>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.Numeric</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.Numeric">
       <level>Data</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEMetric</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEMetric"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>observedValue</name>
+        <attribute name="observedValue">
           <modifier>Data</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ObsValue</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ObsValue"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>attributes</name>
+        <attribute name="attributes">
           <modifier>None</modifier>
           <type class="setType">
-            <elementType class="namedType">
-              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute</name>
-            </elementType>
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute"/>
           </type>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>range</name>
+        <attribute name="range">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.schema.Range</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.Range"/>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ObsValue</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ObsValue">
       <level>Data</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEMessageContext</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEMessageContext"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>measurementTaken</name>
+        <attribute name="measurementTaken">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.ICETimeStamp</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.ICETimeStamp"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>value</name>
+        <attribute name="value">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>Any</name>
-          </type>
+          <type class="namedType" name="Any"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>context</name>
+        <attribute name="context">
           <modifier>None</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ObsValueContext</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ObsValueContext"/>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ObsValueContext</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ObsValueContext">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>Feature</name>
-        </namedType>
+        <namedType name="Feature"/>
       </supers>
       <members class="ilist"></members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.Periodic</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.Periodic">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ProviderInitiated</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ProviderInitiated"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>rateRange</name>
+        <attribute name="rateRange">
           <modifier>ConstProduct</modifier>
-          <type class="namedType">
-            <name>edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange</name>
-          </type>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange"/>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ProviderInitiated</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ProviderInitiated">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
       </supers>
       <members class="ilist"></members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.Range</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.Range">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>Feature</name>
-        </namedType>
+        <namedType name="Feature"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>min</name>
+        <attribute name="min">
           <modifier>Const</modifier>
-          <type class="namedType">
-            <name>Number</name>
-          </type>
+          <type class="namedType" name="Number"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>max</name>
+        <attribute name="max">
           <modifier>Const</modifier>
-          <type class="namedType">
-            <name>Number</name>
-          </type>
+          <type class="namedType" name="Number"/>
           <init class="none"></init>
         </attribute>
-        <invariant>
-          <name>min is less than or equal to max</name>
+        <invariant name="min is less than or equal to max">
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.schema.Range_-_-treecreator1_-1/>
@@ -2653,33 +1821,23 @@
         </invariant>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.RangeSetting</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.RangeSetting">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDeviceSetting</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDeviceSetting"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>min</name>
+        <attribute name="min">
           <modifier>Settable</modifier>
-          <type class="namedType">
-            <name>Number</name>
-          </type>
+          <type class="namedType" name="Number"/>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>max</name>
+        <attribute name="max">
           <modifier>Settable</modifier>
-          <type class="namedType">
-            <name>Number</name>
-          </type>
+          <type class="namedType" name="Number"/>
           <init class="none"></init>
         </attribute>
-        <invariant>
-          <name>min is less than or equal to max</name>
+        <invariant name="min is less than or equal to max">
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.schema.RangeSetting_-_-treecreator2_-1/>
@@ -2694,139 +1852,96 @@
         </invariant>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.RangeValueAlert</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.RangeValueAlert">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert</name>
-        </namedType>
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.RangeSetting</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.RangeSetting"/>
       </supers>
       <members class="ilist"></members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.RealTimeSA</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.RealTimeSA">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.SampleArray</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.SampleArray"/>
       </supers>
       <members class="ilist"></members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.SampleArray</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.SampleArray">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEMetric</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEMetric"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>values</name>
+        <attribute name="values">
           <modifier>None</modifier>
           <type class="seqType">
-            <elementType class="namedType">
-              <name>Number</name>
-            </elementType>
+            <elementType class="namedType" name="Number"/>
           </type>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>attributes</name>
+        <attribute name="attributes">
           <modifier>None</modifier>
           <type class="setType">
-            <elementType class="namedType">
-              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute</name>
-            </elementType>
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute"/>
           </type>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.StatusAttributes</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.StatusAttributes">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute"/>
       </supers>
       <members class="ilist"></members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.TargetValueAlert</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.TargetValueAlert">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert</name>
-        </namedType>
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ValueSetting</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ValueSetting"/>
       </supers>
       <members class="ilist"></members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.TimeSA</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.TimeSA">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.SampleArray</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.SampleArray"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>values</name>
+        <attribute name="values">
           <modifier>None</modifier>
           <type class="seqType">
-            <elementType class="namedType">
-              <name>Number</name>
-            </elementType>
+            <elementType class="namedType" name="Number"/>
           </type>
           <init class="none"></init>
         </attribute>
-        <attribute>
-          <name>attributes</name>
+        <attribute name="attributes">
           <modifier>None</modifier>
           <type class="setType">
-            <elementType class="namedType">
-              <name>edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute</name>
-            </elementType>
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute"/>
           </type>
           <init class="none"></init>
         </attribute>
       </members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ValueChangeAlert</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ValueChangeAlert">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
       </supers>
       <members class="ilist"></members>
     </feature>
-    <feature>
-      <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ValueSetting</name>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ValueSetting">
       <level>Schema</level>
       <supers class="ilist">
-        <namedType>
-          <name>edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDeviceSetting</name>
-        </namedType>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDeviceSetting"/>
       </supers>
       <members class="ilist">
-        <attribute>
-          <name>value</name>
+        <attribute name="value">
           <modifier>Settable</modifier>
-          <type class="namedType">
-            <name>Any</name>
-          </type>
+          <type class="namedType" name="Any"/>
           <init class="none"></init>
         </attribute>
       </members>
