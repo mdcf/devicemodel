@@ -185,10 +185,15 @@ object ModelExtractor {
       supers :+= namedType(i.getName)
     }
 
+    var memberSet = isetEmpty[java.lang.String]
     for (d <- tipe.declarations)
       extract(name, false, d, objInits) match {
-        case Some(m) => members :+= m
-        case _       =>
+        case Some(m) =>
+          if (!memberSet.contains(m.name)) {
+            memberSet += m.name
+            members :+= m
+          }
+        case _ =>
       }
 
     Reflection.companion(clazz, true) match {
@@ -420,7 +425,7 @@ object ModelExtractor {
             value match {
               case Some(value) =>
                 val vClass = value.getClass
-                for (d <- decls if d.isTerm && d.asTerm.isGetter) {
+                for (d <- tipe.members if d.isTerm && d.asTerm.isGetter) {
                   val dName = d.name.encoded.trim
                   val dValue = vClass.getMethod(d.name.encoded).invoke(value)
                   inits += (dName -> dValue)
@@ -428,7 +433,7 @@ object ModelExtractor {
               case None =>
             }
             var attributes = ivectorEmpty[Attribute]
-            for (d <- decls if d.isTerm && d.asTerm.isGetter) {
+            for (d <- tipe.members if d.isTerm && d.asTerm.isGetter)
               extract(aQName, false, d, inits) match {
                 case Some(a : Attribute) => attributes :+= a
                 case Some(m) =>
@@ -437,7 +442,6 @@ object ModelExtractor {
                       s"but found ${m.getClass}.")
                 case _ =>
               }
-            }
             val resultType = Ast.refinedType(types,
               attributes.map { a =>
                 attribute(a.modifier, a.`type`, a.name, none())
@@ -452,13 +456,13 @@ object ModelExtractor {
                 val vClass = value.getClass
                 val vTipe = Reflection.getTypeOfClass(vClass)
                 var inits = imapEmpty[java.lang.String, Object]
-                for (d <- vTipe.declarations if d.isTerm && d.asTerm.isGetter) {
+                for (d <- vTipe.declarations if d.isTerm && d.asTerm.isVal) {
                   val dName = d.name.encoded.trim
                   val dValue = vClass.getMethod(d.name.encoded).invoke(value)
                   inits += (dName -> dValue)
                 }
                 var attributes = ivectorEmpty[Attribute]
-                for (d <- vTipe.declarations if d.isTerm && d.asTerm.isGetter)
+                for (d <- vTipe.declarations if d.isTerm && d.asTerm.isVal)
                   extract(aQName, false, d, inits) match {
                     case Some(a : Attribute) => attributes :+= a
                     case Some(m) =>

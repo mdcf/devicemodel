@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/test/resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dml-ast"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dms-core"/>
@@ -9,5 +10,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="/mdcf-extlib/scala-library-2.10.1.jar"/>
 	<classpathentry kind="lib" path="/mdcf-extlib/scala-reflect-2.10.1.jar"/>
+	<classpathentry kind="lib" path="/mdcf-extlib/xmlunit-1.4.jar" sourcepath="/mdcf-extlib/xmlunit-1.4-src.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
