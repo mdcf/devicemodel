@@ -298,6 +298,7 @@ public class Ast {
       result.alias("noneInit", NoneInit.class);
       result.alias("optionType", OptionType.class);
       result.alias("requirement", Requirement.class);
+      result.alias("refinedType", RefinedType.class);
       result.alias("seqInit", SeqInit.class);
       result.alias("seqType", SeqType.class);
       result.alias("setInit", SetInit.class);
