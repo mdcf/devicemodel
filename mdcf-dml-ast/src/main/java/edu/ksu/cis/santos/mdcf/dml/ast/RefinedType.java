@@ -15,11 +15,11 @@ import java.util.List;
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
-public final class FeatureInit extends Initialization {
+public final class RefinedType extends Type {
   public final List<NamedType> types;
   public final List<Attribute> attributes;
 
-  public FeatureInit(final List<NamedType> types,
+  public RefinedType(final List<NamedType> types,
       final List<Attribute> attributes) {
     this.types = list(types);
     this.attributes = list(attributes);
@@ -32,6 +32,6 @@ public final class FeatureInit extends Initialization {
 
   @Override
   protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitFeatureInit(this);
+    return visitor.visitCompoundType(this);
   }
 }

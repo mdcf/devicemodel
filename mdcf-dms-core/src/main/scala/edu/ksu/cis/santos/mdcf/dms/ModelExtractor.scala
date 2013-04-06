@@ -125,9 +125,9 @@ object ModelExtractor {
     featureModifier : FeatureModifier,
     isDevice : scala.Boolean, isReq : scala.Boolean)
 
-  private def extractFeatureModifier(entityName : java.lang.String,
-                                     clazz : java.lang.Class[_], allowReq : Boolean)(
-                                       implicit context : Context) : FM = {
+  private def extractFeatureModifier(
+    entityName : java.lang.String, clazz : java.lang.Class[_],
+    allowReq : scala.Boolean)(implicit context : Context) : FM = {
     val name =
       if (!clazz.isInterface) clazz.getInterfaces()(0).getName
       else clazz.getName
@@ -243,9 +243,10 @@ object ModelExtractor {
       feature(featureModifier, name, supers, members)
   }
 
-  def extract(owner : java.lang.String, isCompanion : Boolean, symbol : Symbol,
-              inits : IMap[java.lang.String, Object])(
-                implicit context : Context) : scala.Option[Member] = {
+  def extract(
+    owner : java.lang.String, isCompanion : scala.Boolean, symbol : Symbol,
+    inits : IMap[java.lang.String, Object])(
+      implicit context : Context) : scala.Option[Member] = {
     val aName = symbol.name.decoded.trim
     val aQName = owner + '.' + aName
 
@@ -261,7 +262,7 @@ object ModelExtractor {
             if (a.params.size == 0)
               aModifier = AttributeModifier.Const
             else
-              annotation.ConstMode.valueOf(a.params(0).value.toString) match {
+              a.params(0).value match {
                 case SCHEMA      => aModifier = AttributeModifier.ConstSchema
                 case CLASS       => aModifier = AttributeModifier.ConstClass
                 case PRODUCT     => aModifier = AttributeModifier.ConstProduct
@@ -293,8 +294,9 @@ object ModelExtractor {
       }
     } else if (isCompanion) {
       None
-    } else if (symbol.isTerm && symbol.asTerm.isGetter) {
-      val (aType, aInit) = extractAttributeTypeInit(aQName, symbol, inits)
+    } else if (symbol.isTerm && (symbol.asTerm.isGetter || symbol.asTerm.isVal)) {
+      val (aType, aInit) =
+        extractAttributeTypeInit(aQName, aName, symbol, inits)
       val result = attribute(aModifier, aType, aName, aInit)
       Some(result)
     } else {
@@ -303,48 +305,199 @@ object ModelExtractor {
   }
 
   def extractAttributeTypeInit(
-    aQName : java.lang.String, symbol : Symbol,
+    aQName : java.lang.String, aName : java.lang.String, symbol : Symbol,
     inits : IMap[java.lang.String, Object])(
-      implicit context : Context) : (ast.Type, Optional[Initialization]) = {
-    val tipe = symbol.typeSignature
-    val attributeType =
-      tipe match {
-        case mt : NullaryMethodType => extractType(aQName, mt.resultType)
-        case _                      => extractType(aQName, tipe)
-      }
-    (attributeType, none()) // TODO
-  }
+      implicit context : Context) : (ast.Type, Optional[Initialization]) =
+    extractType(aQName, symbol.typeSignature match {
+      case NullaryMethodType(resultType) => resultType
+      case tipe                          => tipe
+    }, inits.get(aName))
 
-  def extractType(name : java.lang.String, tipe : Type)(
-    implicit context : Context) : ast.Type = {
+  def extractType(
+    aQName : java.lang.String, tipe : Type, value : Option[scala.Any])(
+      implicit context : Context) : (ast.Type, Optional[Initialization]) = {
     val clazz = Reflection.getClassOfType(tipe.erasure)
     clazz.getName match {
       case `OPTION_NAME` =>
         val TypeRef(_, _, List(elementType)) = tipe
-        optionType(extractType(name, elementType))
+        (value : @unchecked) match {
+          case Some(o : Option[_]) =>
+            val (eType, init) = extractType(aQName, elementType, o)
+            val resultType = optionType(eType)
+            if (init.isPresent)
+              (resultType, some(someInit(init.get)))
+            else
+              (resultType, some(noneInit))
+          case None =>
+            val (eType, _) = extractType(aQName, elementType, None)
+            (optionType(eType), none())
+        }
       case `EITHER_NAME` =>
-        val TypeRef(_, _, List(leftType, rightType)) = tipe
-        eitherType(
-          list(extractType(name, leftType), extractType(name, rightType)))
+        val TypeRef(_, _, List(leftTipe, rightTipe)) = tipe
+        (value : @unchecked) match {
+          case Some(Left(value)) =>
+            val (leftType, init) = extractType(aQName, leftTipe, Some(value))
+            val (rightType, _) = extractType(aQName, rightTipe, None)
+            val resultType = eitherType(list(leftType, rightType))
+            if (init.isPresent) (resultType, some(eitherInit(0, init.get)))
+            else (resultType, none())
+          case Some(Right(value)) =>
+            val (leftType, _) = extractType(aQName, leftTipe, None)
+            val (rightType, init) = extractType(aQName, rightTipe, Some(value))
+            val resultType = eitherType(list(leftType, rightType))
+            if (init.isPresent) (resultType, some(eitherInit(1, init.get)))
+            else (resultType, none())
+          case None =>
+            val (leftType, _) = extractType(aQName, leftTipe, None)
+            val (rightType, _) = extractType(aQName, rightTipe, None)
+            (eitherType(list(leftType, rightType)), none())
+        }
       case c if c.startsWith("scala.Tuple") =>
         val TypeRef(_, _, args) = tipe
-        tupleType(args.map(extractType(name, _)))
+        (value : @unchecked) match {
+          case Some(o : scala.Product) =>
+            var success = true
+            var elementTypes = ilistEmpty[ast.Type]
+            var inits = ilistEmpty[Initialization]
+            for (i <- 0 until args.length if success) {
+              val (eType, eInit) =
+                extractType(aQName, args(i), Some(o.productElement(i)))
+              elementTypes = eType :: elementTypes
+              if (!eInit.isPresent) success = false
+              else inits = eInit.get :: inits
+            }
+            val resultType = tupleType(elementTypes.reverse)
+            if (success) (resultType, some(tupleInit(inits.reverse)))
+            else (resultType, none())
+          case None =>
+            (tupleType(args.map { extractType(aQName, _, None)._1 }), none())
+        }
       case `SET_NAME` =>
         val TypeRef(_, _, List(elementType)) = tipe
-        setType(extractType(name, elementType))
+        val (eType, _) = extractType(aQName, elementType, None)
+        val resultType = setType(eType)
+        (value : @unchecked) match {
+          case Some(s : ISet[_]) =>
+            val inits = s.map(x => extractType(aQName, elementType, Some(x))._2)
+            if (inits.exists(!_.isPresent)) (resultType, none())
+            else (resultType, some(setInit(inits.toSeq.map(_.get))))
+          case None =>
+            (resultType, none())
+        }
       case `SEQ_NAME` =>
         val TypeRef(_, _, List(elementType)) = tipe
-        seqType(extractType(name, elementType))
+        val (eType, _) = extractType(aQName, elementType, None)
+        val resultType = seqType(eType)
+        (value : @unchecked) match {
+          case Some(s : ISeq[_]) =>
+            val inits = s.map(x => extractType(aQName, elementType, Some(x))._2)
+            if (inits.exists(!_.isPresent)) (resultType, none())
+            else (resultType, some(setInit(inits.map(_.get))))
+          case None =>
+            (resultType, none())
+        }
       case c if clazz.isPrimitive || clazz.isEnum || clazz.isArray ||
         clazz.isAnnotation || clazz.isSynthetic || c.startsWith("scala.") ||
         c.startsWith("java.") =>
         context.reporter.error(
-          s"Not permitted type $c for $name; only feature, option, " +
-            "either, tuple, set, seq, or subtypes of prelude's String, Int, " +
-            "or Nat are allowed.")
-        namedType("Error")
+          s"Not permitted type $c for $aQName; only feature, scala.Option, " +
+            "scala.Either, scala.Tuple<N>, Set, Seq, or subtypes of basic " +
+            "types are allowed.")
+        (namedType("Error"), none())
+      case c if context.basicTypeClass.isAssignableFrom(clazz) =>
+        (value : @unchecked) match {
+          case Some(value : BasicType) =>
+            (namedType(c), some(basicInit(value.asString)))
+          case None =>
+            (namedType(c), none())
+        }
       case c =>
-        namedType(c)
+        tipe match {
+          case RefinedType(parents, decls) =>
+            var success = true
+            val types = filterType(aQName, parents)
+            var inits = imapEmpty[java.lang.String, Object]
+            value match {
+              case Some(value) =>
+                val vClass = value.getClass
+                for (d <- decls if d.isTerm && d.asTerm.isGetter) {
+                  val dName = d.name.encoded.trim
+                  val dValue = vClass.getMethod(d.name.encoded).invoke(value)
+                  inits += (dName -> dValue)
+                }
+              case None =>
+            }
+            var attributes = ivectorEmpty[Attribute]
+            for (d <- decls if d.isTerm && d.asTerm.isGetter) {
+              extract(aQName, false, d, inits) match {
+                case Some(a : Attribute) => attributes :+= a
+                case Some(m) =>
+                  context.reporter.error(
+                    s"Expecting attribute for $aQName initialization, " +
+                      s"but found ${m.getClass}.")
+                case _ =>
+              }
+            }
+            val resultType = Ast.refinedType(types,
+              attributes.map { a =>
+                attribute(a.modifier, a.`type`, a.name, none())
+              })
+            if (value.isDefined)
+              (resultType, some(featureInit(types, attributes)))
+            else
+              (resultType, none())
+          case _ =>
+            value match {
+              case Some(value) =>
+                val vClass = value.getClass
+                val vTipe = Reflection.getTypeOfClass(vClass)
+                var inits = imapEmpty[java.lang.String, Object]
+                for (d <- vTipe.declarations if d.isTerm && d.asTerm.isGetter) {
+                  val dName = d.name.encoded.trim
+                  val dValue = vClass.getMethod(d.name.encoded).invoke(value)
+                  inits += (dName -> dValue)
+                }
+                var attributes = ivectorEmpty[Attribute]
+                for (d <- vTipe.declarations if d.isTerm && d.asTerm.isGetter)
+                  extract(aQName, false, d, inits) match {
+                    case Some(a : Attribute) => attributes :+= a
+                    case Some(m) =>
+                      context.reporter.error(
+                        s"Expecting attribute for $aQName initialization, " +
+                          s"but found ${m.getClass}.")
+                    case _ =>
+                  }
+                val resultType = namedType(c)
+                vTipe match {
+                  case RefinedType(parents, _) =>
+                    (resultType,
+                      some(featureInit(filterType(aQName, parents), attributes)))
+                  case TypeRef(pre, sym, _) =>
+                    val types = Reflection.getClassOfType(vTipe).getInterfaces.
+                      toVector.map(x => namedType(x.getName))
+                    (resultType,
+                      some(featureInit(types, attributes)))
+                }
+              case None =>
+                (namedType(c), none())
+            }
+        }
+    }
+  }
+
+  private def filterType(aQName : java.lang.String, l : List[Type])(
+    implicit context : Context) : ISeq[NamedType] = {
+    l.flatMap {
+      _ match {
+        case TypeRef(_, sym, _) =>
+          val name = sym.name.decoded
+          if (name == "AnyRef") None
+          else Some(namedType(name))
+        case t =>
+          context.reporter.error(
+            s"Unexpected type $t for $aQName initialization.")
+          None
+      }
     }
   }
 }

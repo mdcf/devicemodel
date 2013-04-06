@@ -25,7 +25,7 @@ import edu.ksu.cis.santos.mdcf.dms.example.schema.Periodic
 import edu.ksu.cis.santos.mdcf.dms.example.schema.RangeValueAlert
 import edu.ksu.cis.santos.mdcf.dms.example.DeviceId
 
-class NellcordPulseOx extends ICEPulseOx {
+class NellcorPulseOx extends ICEPulseOx {
   override val id = DeviceId("Nellcor PO")
 
   override val manufacturerModel = new ICEManufacturerModel {
@@ -58,7 +58,7 @@ class NellcordPulseOx extends ICEPulseOx {
         new RangeValueAlert with IntRangeSetting {
           override val min = Int(85)
           override val max = Int(100)
-          override val security = None
+          override val security : Option[ICESecurity] = None
         }
       )
     },
@@ -79,7 +79,7 @@ class NellcordPulseOx extends ICEPulseOx {
         new RangeValueAlert with IntRangeSetting {
           override val min = Int(40)
           override val max = Int(180)
-          override val security = None
+          override val security : Option[ICESecurity] = None
         }
       )
     }

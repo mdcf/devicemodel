@@ -18,7 +18,9 @@ public final class NamedType extends Type {
 
   public NamedType(final String name) {
     if (name.startsWith(NamedType.DMS_PACKAGE)) {
-      this.name = name.substring(NamedType.DMS_PACKAGE.length());
+      final String n = name.substring(NamedType.DMS_PACKAGE.length());
+      final int i = n.indexOf("$");
+      this.name = (i >= 0 ? n.substring(0, i) : n).intern();
     } else {
       this.name = name.intern();
     }

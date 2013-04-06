@@ -68,7 +68,7 @@ package object dms {
   trait String extends BasicType {
     def value : java.lang.String
     def asString = value
-    override def toString = value
+    override def toString = asString
   }
 
   /**
@@ -161,8 +161,8 @@ package object dms {
    */
   trait Int extends Number {
     def value : Integer
-    def asString = value.toString
-    final override def toString = value.toString
+    def asString = value.toBigInt.toString
+    final override def toString = asString
   }
 
   /**

@@ -59,7 +59,7 @@ class MultiMonitor extends ICEMultiMonitor {
         new RangeValueAlert with IntRangeSetting {
           override val min = Int(85)
           override val max = Int(100)
-          override val security = None
+          override val security : Option[ICESecurity] = None
         }
       )
     },
@@ -80,7 +80,7 @@ class MultiMonitor extends ICEMultiMonitor {
         new RangeValueAlert with IntRangeSetting {
           override val min = Int(40)
           override val max = Int(180)
-          override val security = None
+          override val security : Option[ICESecurity] = None
         }
       )
     },
@@ -99,7 +99,7 @@ class MultiMonitor extends ICEMultiMonitor {
         new RangeValueAlert with IntRangeSetting {
           override val min = Int(40)
           override val max = Int(180)
-          override val security = None
+          override val security : Option[ICESecurity] = None
         }
       )
     }

@@ -75,6 +75,11 @@ public class Ast {
     }
 
     @Override
+    public boolean visitCompoundType(final RefinedType node) {
+      return defaultCase(node);
+    }
+
+    @Override
     public boolean visitDevice(final Device node) {
       return defaultCase(node);
     }
@@ -171,6 +176,8 @@ public class Ast {
     boolean visitBasicInit(BasicInit node);
 
     boolean visitBasicType(BasicType node);
+
+    boolean visitCompoundType(RefinedType node);
 
     boolean visitDevice(Device node);
 
@@ -406,9 +413,9 @@ public class Ast {
     return new Feature(level, name, supers, members);
   }
 
-  public static FeatureInit featureInit(final NamedType type,
+  public static FeatureInit featureInit(final List<NamedType> types,
       final List<Attribute> attributes) {
-    return new FeatureInit(type, attributes);
+    return new FeatureInit(types, attributes);
   }
 
   public static Invariant invariant(final String name, final Object predicate) {
@@ -446,6 +453,11 @@ public class Ast {
 
   public static OptionType optionType(final Type elementType) {
     return new OptionType(elementType);
+  }
+
+  public static RefinedType refinedType(final List<NamedType> types,
+      final List<Attribute> attributes) {
+    return new RefinedType(types, attributes);
   }
 
   public static Requirement requirement(final String name,
