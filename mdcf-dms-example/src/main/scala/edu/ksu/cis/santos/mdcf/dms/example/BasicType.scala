@@ -8,49 +8,21 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dms.example
 
-import edu.ksu.cis.santos.mdcf.dms._
+import edu.ksu.cis.santos.mdcf.dms.BasicType
 
-object DeviceId {
-  def apply(s : java.lang.String) : DeviceId = DeviceIdImpl(s)
+import language.implicitConversions
 
-  case class DeviceIdImpl(value : java.lang.String)
-    extends AbstractString with DeviceId
-}
+final class DeviceId(val value : String) extends BasicType
+object DeviceId { implicit def apply(s : String) = new DeviceId(s) }
 
-trait DeviceId extends String
+final class IEEEDeviceType(val value : String) extends BasicType
+object IEEEDeviceType { implicit def apply(s : String) = new IEEEDeviceType(s) }
 
-object IEEEDeviceType {
-  def apply(s : java.lang.String) : IEEEDeviceType = IEEEDeviceTypeImpl(s)
+final class IEEEPhysioParameterType(val value : java.lang.String) extends BasicType
+object IEEEPhysioParameterType { implicit def apply(s : String) = new IEEEPhysioParameterType(s) }
 
-  case class IEEEDeviceTypeImpl(value : java.lang.String)
-    extends AbstractString with IEEEDeviceType
-}
+final class IEEEUnit(val value : java.lang.String) extends BasicType
+object IEEEUnit { implicit def apply(s : String) = new IEEEUnit(s) }
 
-trait IEEEDeviceType extends String
-
-object IEEEPhysioParameterType {
-  def apply(s : java.lang.String) : IEEEPhysioParameterType = IEEEPhysioParameterTypeImpl(s)
-
-  case class IEEEPhysioParameterTypeImpl(value : java.lang.String)
-    extends AbstractString with IEEEPhysioParameterType
-}
-
-trait IEEEPhysioParameterType extends String
-
-object IEEEUnit {
-  def apply(s : java.lang.String) : IEEEUnit = IEEEUnitImpl(s)
-
-  case class IEEEUnitImpl(value : java.lang.String)
-    extends AbstractString with IEEEUnit
-}
-
-trait IEEEUnit extends String
-
-object ICETimeStamp {
-  def apply(s : java.lang.String) : ICETimeStamp = ICETimeStampImpl(s)
-  case class ICETimeStampImpl(value : java.lang.String)
-    extends AbstractString with ICETimeStamp
-}
-
-trait ICETimeStamp extends String
-
+final class ICETimeStamp(val value : java.lang.String) extends BasicType
+object ICETimeStamp { implicit def apply(s : String) = new ICETimeStamp(s) }

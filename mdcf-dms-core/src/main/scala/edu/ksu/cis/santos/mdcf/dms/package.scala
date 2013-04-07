@@ -33,6 +33,9 @@ package object dms {
   final val INSTANCE = edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode.INSTANCE
   final val UNSPECIFIED = edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode.UNSPECIFIED
 
+  type Set[T] = scala.collection.immutable.Set[T]
+  type Seq[T] = scala.collection.immutable.Seq[T]
+
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
@@ -42,68 +45,57 @@ package object dms {
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
   trait BasicType extends Any {
-    def ==(o : Any) : Boolean
-    def !=(o : Any) : Boolean
-    def asString : java.lang.String
+    def value : scala.Any
+    def ==(o : BasicType) : Boolean = value == o.value
+    def !=(o : BasicType) : Boolean = value != o.value
+    def asString : java.lang.String = value.toString
+
+    override def equals(o : scala.Any) : scala.Boolean = {
+      if (this == o) true
+      else o match {
+        case o : BasicType => getClass == o.getClass && value == o.value
+        case _             => false
+      }
+    }
+    override def hashCode = value.hashCode
     override def toString = s"${getClass.getSimpleName}($asString)"
   }
 
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
-  trait Feature extends Any
-
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  object String {
-    def apply(s : java.lang.String) : String = StringImpl(s)
-
-    case class StringImpl(value : java.lang.String) extends AbstractString
+  trait Feature extends Any {
+    final override def toString = s"feature ${getClass.getName}"
   }
 
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
-  trait String extends BasicType {
-    def value : java.lang.String
-    def asString = value
-    override def toString = asString
+  final implicit class Boolean(val value : scala.Boolean) {
+    import Boolean._
+    def unary_! : Boolean = if (value) FALSE else TRUE
+    def &&(o : => Boolean) : Boolean = if (!value) FALSE else o
+    def ||(o : => Boolean) : Boolean = if (value) TRUE else o
+    def ==>(o : => Boolean) : Boolean = if (!value) TRUE else o
+    def <==(o : => Boolean) : Boolean = if (value) TRUE else !o
+    def &&&(o : Boolean) : Boolean = this && o
+    def ||&(o : Boolean) : Boolean = this || o
+    def ===>(o : Boolean) : Boolean = this ==> o
+    def <===(o : Boolean) : Boolean = this <== o
   }
 
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
   object Boolean {
-
-    def apply(b : scala.Boolean) : Boolean = if (b) True else False
-
-    object True extends AbstractBoolean {
-      def value = true
-    }
-
-    object False extends AbstractBoolean {
-      def value = false
-    }
+    final val TRUE = Boolean(true)
+    final val FALSE = Boolean(false)
   }
 
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
-  trait Boolean extends BasicType {
-    def value : scala.Boolean
-    def unary_! : Boolean
-    def &&(o : => Boolean) : Boolean
-    def ||(o : => Boolean) : Boolean
-    def ==>(o : => Boolean) : Boolean
-    def <==(o : => Boolean) : Boolean
-    def &&&(o : Boolean) : Boolean
-    def ||&(o : Boolean) : Boolean
-    def ===>(o : Boolean) : Boolean
-    def <===(o : Boolean) : Boolean
-    def asString = "true"
-    override def toString = value.toString
-  }
+  final implicit class String(val value : java.lang.String) extends BasicType
 
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
@@ -120,194 +112,151 @@ package object dms {
     def %(o : Number) : Number
   }
 
+  import language.implicitConversions
+
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
-  object Int {
+  object Number {
+    implicit def apply(n : scala.Int) = Int(n)
+    implicit def apply(n : scala.Long) = Int(n)
+  }
 
-    def apply(n : scala.Int) : Int = apply(SireumNumber(n))
-    def apply(n : scala.Long) : Int = apply(SireumNumber(n))
-    def apply(n : BigInt) : Int = apply(SireumNumber(n))
-    def apply(n : java.math.BigInteger) : Int = apply(SireumNumber(n))
-    def apply(n : java.lang.String) : Int = apply(SireumNumber(BigInt(n)))
-    def apply(n : Integer) : Int = IntImpl(n)
+  import org.sireum.util.math._
 
-    final case class IntImpl(value : Integer) extends AbstractInt {
-      def +(o : Number) : Int =
-        o match {
-          case o : Int => i2dmli(this.value + o.value)
-        }
-      def -(o : Number) : Int =
-        o match {
-          case o : Int => i2dmli(this.value - o.value)
-        }
-      def *(o : Number) : Int =
-        o match {
-          case o : Int => i2dmli(this.value * o.value)
-        }
-      def /(o : Number) : Int =
-        o match {
-          case o : Int => i2dmli(this.value / o.value)
-        }
-      def %(o : Number) : Int =
-        o match {
-          case o : Int => i2dmli(this.value % o.value)
-        }
-    }
+  /**
+   * @author <a href="mailto:robby@k-state.edu">Robby</a>
+   */
+  trait IntegralType extends Number {
+    def value : Integer
   }
 
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
-  trait Int extends Number {
-    def value : Integer
-    def asString = value.toBigInt.toString
-    final override def toString = asString
+  class Int(val value : Integer) extends IntegralType {
+    import Int._
+    override def <(o : Number) : Boolean =
+      o match {
+        case o : Int => this.value < o.value
+        case _       => false
+      }
+    override def <=(o : Number) : Boolean =
+      o match {
+        case o : Int => this.value <= o.value
+        case _       => false
+      }
+    override def >(o : Number) : Boolean =
+      o match {
+        case o : Int => this.value > o.value
+        case _       => false
+      }
+    override def >=(o : Number) : Boolean =
+      o match {
+        case o : Int => this.value >= o.value
+        case _       => false
+      }
+    override def +(o : Number) : Int =
+      o match {
+        case o : Int => Int(this.value + o.value)
+      }
+    override def -(o : Number) : Int =
+      o match {
+        case o : Int => Int(this.value - o.value)
+      }
+    override def *(o : Number) : Int =
+      o match {
+        case o : Int => Int(this.value * o.value)
+      }
+    override def /(o : Number) : Int =
+      o match {
+        case o : Int => Int(this.value / o.value)
+      }
+    override def %(o : Number) : Int =
+      o match {
+        case o : Int => Int(this.value % o.value)
+      }
+    override def asString = value.toBigInt.toString
+    override def toString = asString
+  }
+
+  /**
+   * @author <a href="mailto:robby@k-state.edu">Robby</a>
+   */
+  class Nat(value : Integer) extends Int(value) {
+    override def <(o : Number) : Boolean =
+      o match {
+        case o : Int => this.value < o.value
+        case _       => false
+      }
+    override def <=(o : Number) : Boolean =
+      o match {
+        case o : Int => this.value <= o.value
+        case _       => false
+      }
+    override def >(o : Number) : Boolean =
+      o match {
+        case o : Int => this.value > o.value
+        case _       => false
+      }
+    override def >=(o : Number) : Boolean =
+      o match {
+        case o : Int => this.value >= o.value
+        case _       => false
+      }
+    override def +(o : Number) : Int =
+      o match {
+        case o : Nat => Nat(this.value + o.value)
+        case o : Int => super.+(o)
+      }
+    override def -(o : Number) : Int =
+      o match {
+        case o : Nat => Nat(this.value + o.value)
+        case o : Int => super.-(o)
+      }
+    override def *(o : Number) : Int =
+      o match {
+        case o : Nat => Nat(this.value + o.value)
+        case o : Int => super.*(o)
+      }
+    override def /(o : Number) : Int =
+      o match {
+        case o : Nat => Nat(this.value / o.value)
+        case o : Int => super./(o)
+      }
+    override def %(o : Number) : Int =
+      o match {
+        case o : Nat => Nat(this.value % o.value)
+        case o : Int => super.%(o)
+      }
+  }
+
+  private def N = SireumNumber
+
+  /**
+   * @author <a href="mailto:robby@k-state.edu">Robby</a>
+   */
+  object Int {
+    implicit def apply(n : scala.Int) : Int = apply(N(n))
+    implicit def apply(n : scala.Long) : Int = apply(N(n))
+    implicit def apply(n : java.lang.String) : Int = apply(N(BigInt(n)))
+    implicit def apply(n : Integer) : Int = new Int(n)
   }
 
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
   object Nat {
-    def apply(n : scala.Int) : Nat = apply(SireumNumber(n))
-    def apply(n : scala.Long) : Nat = apply(SireumNumber(n))
-    def apply(n : BigInt) : Nat = apply(SireumNumber(n))
-    def apply(n : java.math.BigInteger) : Nat = apply(SireumNumber(n))
-    def apply(n : java.lang.String) : Nat = apply(SireumNumber(BigInt(n)))
-    def apply(n : Integer) : Nat =
-      if (n < 0) NatImpl(-n) else NatImpl(n)
+    final val ZERO = new Nat(SireumNumber(0))
 
-    final case class NatImpl(value : Integer) extends AbstractInt with Nat {
-      def +(o : Number) : Int =
-        o match {
-          case o : Nat => Nat(this.value + o.value)
-          case o : Int => Int(this.value + o.value)
-        }
-      def -(o : Number) : Int =
-        o match {
-          case o : Nat => Nat(this.value - o.value)
-          case o : Int => Int(this.value - o.value)
-        }
-      def *(o : Number) : Int =
-        o match {
-          case o : Nat => Nat(this.value * o.value)
-          case o : Int => Int(this.value * o.value)
-        }
-      def /(o : Number) : Int =
-        o match {
-          case o : Nat => Nat(this.value / o.value)
-          case o : Int => Int(this.value / o.value)
-        }
-      def %(o : Number) : Int =
-        o match {
-          case o : Nat => Nat(this.value % o.value)
-          case o : Int => Int(this.value % o.value)
-        }
-    }
+    implicit def apply(n : scala.Int) : Nat = apply(N(n))
+    implicit def apply(n : scala.Long) : Nat = apply(N(n))
+    implicit def apply(n : java.lang.String) : Nat = apply(N(BigInt(n)))
+    implicit def apply(n : Integer) : Nat = if (n < 0) ZERO else new Nat(n)
   }
 
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  trait Nat extends Int
-
-  type Set[T] = scala.collection.immutable.Set[T]
-  type Seq[T] = scala.collection.immutable.Seq[T]
-
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  abstract class AbstractInt extends Int {
-    import Boolean._
-
-    def ==(o : Any) : Boolean = this == o
-    def !=(o : Any) : Boolean = this != o
-    def <(o : Number) : Boolean =
-      o match {
-        case o : Int => this.value < o.value
-        case _       => False
-      }
-    def <=(o : Number) : Boolean =
-      o match {
-        case o : Int => this.value <= o.value
-        case _       => False
-      }
-    def >(o : Number) : Boolean =
-      o match {
-        case o : Int => this.value > o.value
-        case _       => False
-      }
-    def >=(o : Number) : Boolean =
-      o match {
-        case o : Int => this.value >= o.value
-        case _       => False
-      }
-  }
-
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  sealed abstract class AbstractBoolean extends Boolean {
-    import Boolean._
-
-    def unary_! : Boolean =
-      this match {
-        case True  => False
-        case False => True
-      }
-    def ==(o : Any) : Boolean = this == o
-    def !=(o : Any) : Boolean = this != o
-    def &&(o : => Boolean) : Boolean =
-      this match {
-        case True => o
-        case _    => False
-      }
-    def ||(o : => Boolean) : Boolean =
-      this match {
-        case False => o
-        case _     => True
-      }
-    def ==>(o : => Boolean) : Boolean =
-      this match {
-        case False => True
-        case _     => o
-      }
-    def <==(o : => Boolean) : Boolean =
-      this match {
-        case False => o
-        case _     => True
-      }
-    def &&&(o : Boolean) : Boolean = this && o
-    def ||&(o : Boolean) : Boolean = this || o
-    def ===>(o : Boolean) : Boolean = this ==> o
-    def <===(o : Boolean) : Boolean = this <== o
-  }
-
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  abstract class AbstractString extends String {
-    import Boolean._
-
-    def ==(o : Any) : Boolean =
-      o match {
-        case o : String => value == o.value
-        case _          => False
-      }
-    def !=(o : Any) : Boolean = !(this == o)
-  }
-
-  import language.implicitConversions
-
-  implicit def b2dmlb(b : scala.Boolean) : Boolean = Boolean(b)
-  implicit def dmlb2b(b : Boolean) : scala.Boolean = b.value
-  implicit def i2dmli(n : scala.Int) : Int = Int(n)
-  implicit def l2dmli(n : scala.Long) : Int = Int(n)
-  implicit def bi2dmli(n : BigInt) : Int = Int(n)
-  implicit def jbi2dmli(n : java.math.BigInteger) : Int = Int(n)
-  implicit def s2dmli(n : java.lang.String) : Int = Int(n)
-  implicit def i2dmli(n : Integer) : Int = Int(n)
-  implicit def s2dmls(s : java.lang.String) : String = String(s)
+  implicit def boolean2sboolean(b : Boolean) : scala.Boolean = b.value
+  implicit def seq2iseq[T](s : scala.collection.Seq[T]) : Seq[T] = s.toVector
 
   import scala.language.experimental.macros
 

@@ -11,10 +11,9 @@ package edu.ksu.cis.santos.mdcf.dms.example.clas
 import edu.ksu.cis.santos.mdcf.dms._
 import edu.ksu.cis.santos.mdcf.dms.example._
 import edu.ksu.cis.santos.mdcf.dms.example.schema._
-import edu.ksu.cis.santos.mdcf.dms.example.schema._
 
 trait ICEPulseOx extends ICEDevice {
-  final override val `type` = IEEEDeviceType("IEEE ... Pulse Ox")
+  final override val `type` : IEEEDeviceType = "IEEE ... Pulse Ox"
 }
 
 object ICEPulseOx {
@@ -32,17 +31,17 @@ object ICEPulseOx {
 }
 
 trait ICESpO2 extends ICEPhysioParameter {
-  final override val physioParameterType = IEEEPhysioParameterType("MDC_PULS_OXIM_SAT_O2")
-  final override val unit = IEEEUnit("MDC_DIM_PERCENT")
+  final override val physioParameterType : IEEEPhysioParameterType = "MDC_PULS_OXIM_SAT_O2"
+  final override val unit : IEEEUnit = "MDC_DIM_PERCENT"
 }
 
 trait ICEPulseRate extends ICEPhysioParameter {
-  final override val physioParameterType = IEEEPhysioParameterType("MDC_PULS_OXIM_PULS_RATE")
-  final override val unit = IEEEUnit("MDC_DIM_BEAT_PER_MIN")
+  final override val physioParameterType : IEEEPhysioParameterType = "MDC_PULS_OXIM_PULS_RATE"
+  final override val unit : IEEEUnit = "MDC_DIM_BEAT_PER_MIN"
 }
 
 trait ICEBloodPressure extends ICEDevice {
-  final override val `type` = IEEEDeviceType("IEEE ... Blood Pressure")
+  final override val `type` : IEEEDeviceType = "IEEE ... Blood Pressure"
 }
 
 object ICEBloodPressure {
@@ -54,17 +53,17 @@ object ICEBloodPressure {
 }
 
 trait ICEBloodPressureParam extends ICEPhysioParameter {
-  final val systolic = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_SYS")
-  final val diastolic = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_DIA")
+  final val systolic : IEEEPhysioParameterType = "MDC_PRESS_BLD_NONINV_SYS"
+  final val diastolic : IEEEPhysioParameterType= "MDC_PRESS_BLD_NONINV_DIA"
 
-  final val physioParameterType = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_MEAN")
+  final val physioParameterType : IEEEPhysioParameterType = "MDC_PRESS_BLD_NONINV_MEAN"
   // mean is used here, but we need composite of ICEPhysioParameter
 
-  final override val unit = IEEEUnit("MDC_DIM_MMHG")
+  final override val unit : IEEEUnit = "MDC_DIM_MMHG"
 }
 
 trait ICEMultiMonitor extends ICEDevice {
-  final override val `type` = IEEEDeviceType("IEEE ... MultiMonitor")
+  final override val `type` : IEEEDeviceType = "IEEE ... MultiMonitor"
 }
 
 object ICEMultiMonitor {

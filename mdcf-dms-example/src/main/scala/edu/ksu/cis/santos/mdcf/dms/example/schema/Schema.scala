@@ -9,11 +9,7 @@ http://www.eclipse.org/legal/epl-v10.html
 package edu.ksu.cis.santos.mdcf.dms.example.schema
 
 import edu.ksu.cis.santos.mdcf.dms._
-import edu.ksu.cis.santos.mdcf.dms.example.DeviceId
-import edu.ksu.cis.santos.mdcf.dms.example.ICETimeStamp
-import edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType
-import edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType
-import edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit
+import edu.ksu.cis.santos.mdcf.dms.example._
 
 trait Range extends Feature {
   @Const
@@ -255,8 +251,7 @@ object BatteryLevelStatus {
   @Inv
   val `level is in 1..100` : Predicate[BatteryLevelStatus] = pred {
     bls : BatteryLevelStatus => 0 <= bls.level && bls.level <= 100
-  } 
+  }
 }
 
 trait ICESecurity extends Feature
-

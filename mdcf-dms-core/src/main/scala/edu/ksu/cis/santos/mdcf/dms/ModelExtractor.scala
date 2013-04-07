@@ -185,39 +185,6 @@ object ModelExtractor {
       supers :+= namedType(i.getName)
     }
 
-    var memberSet = isetEmpty[java.lang.String]
-    for (d <- tipe.declarations.sorted)
-      extract(name, false, d, objInits) match {
-        case Some(m) =>
-          if (!memberSet.contains(m.name)) {
-            memberSet += m.name
-            members :+= m
-          }
-        case _ =>
-      }
-
-    Reflection.companion(clazz, true) match {
-      case Some((companionSymbol, companion, annotations)) =>
-        val companionInits =
-          Reflection.classInits(companionSymbol.typeSignature,
-            companion.asInstanceOf[Object], false)
-        for (a <- annotations) {
-          a.clazz.getName match {
-            case `REQ_NAME` => isReq = true
-            case c =>
-              context.reporter.warning(
-                s"Unexpected annotation $c for $name companion; " +
-                  "only Req is allowed.")
-          }
-        }
-        for (d <- companionSymbol.typeSignature.declarations.sorted)
-          extract(name, true, d, companionInits) match {
-            case Some(m) => members :+= m
-            case _       =>
-          }
-      case _ =>
-    }
-
     val isBasicType = {
       val isBasic = context.basicTypeClass.isAssignableFrom(clazz)
       val isFeature = context.featureClass.isAssignableFrom(clazz)
@@ -240,12 +207,47 @@ object ModelExtractor {
 
     if (isBasicType)
       basicType(name, supers)
-    else if (isDevice)
-      device(name, supers, members)
-    else if (isReq)
-      requirement(name, members.map { _.asInstanceOf[Invariant] })
-    else
-      feature(featureModifier, name, supers, members)
+    else {
+      var memberSet = isetEmpty[java.lang.String]
+      for (d <- tipe.declarations.sorted)
+        extract(name, false, d, objInits) match {
+          case Some(m) =>
+            if (!memberSet.contains(m.name)) {
+              memberSet += m.name
+              members :+= m
+            }
+          case _ =>
+        }
+
+      Reflection.companion(clazz, true) match {
+        case Some((companionSymbol, companion, annotations)) =>
+          val companionInits =
+            Reflection.classInits(companionSymbol.typeSignature,
+              companion.asInstanceOf[Object], false)
+          for (a <- annotations) {
+            a.clazz.getName match {
+              case `REQ_NAME` => isReq = true
+              case c =>
+                context.reporter.warning(
+                  s"Unexpected annotation $c for $name companion; " +
+                    "only Req is allowed.")
+            }
+          }
+          for (d <- companionSymbol.typeSignature.declarations.sorted)
+            extract(name, true, d, companionInits) match {
+              case Some(m) => members :+= m
+              case _       =>
+            }
+        case _ =>
+      }
+
+      if (isDevice)
+        device(name, supers, members)
+      else if (isReq)
+        requirement(name, members.map { _.asInstanceOf[Invariant] })
+      else
+        feature(featureModifier, name, supers, members)
+    }
   }
 
   private def extract(

@@ -2,27 +2,27 @@
   <declarations class="ilist">
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.DeviceId">
       <supers class="ilist">
-        <namedType name="String"/>
+        <namedType name="BasicType"/>
       </supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.ICETimeStamp">
       <supers class="ilist">
-        <namedType name="String"/>
+        <namedType name="BasicType"/>
       </supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType">
       <supers class="ilist">
-        <namedType name="String"/>
+        <namedType name="BasicType"/>
       </supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType">
       <supers class="ilist">
-        <namedType name="String"/>
+        <namedType name="BasicType"/>
       </supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit">
       <supers class="ilist">
-        <namedType name="String"/>
+        <namedType name="BasicType"/>
       </supers>
     </basicType>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure">
