@@ -49,6 +49,7 @@ package object dms {
     def ==(o : BasicType) : Boolean = value == o.value
     def !=(o : BasicType) : Boolean = value != o.value
     def asString : java.lang.String = value.toString
+    override def toString = s"${getClass.getSimpleName}($asString)"
 
     override def equals(o : scala.Any) : scala.Boolean = {
       if (this == o) true
@@ -58,7 +59,6 @@ package object dms {
       }
     }
     override def hashCode = value.hashCode
-    override def toString = s"${getClass.getSimpleName}($asString)"
   }
 
   /**
@@ -82,6 +82,7 @@ package object dms {
     def ||&(o : Boolean) : Boolean = this || o
     def ===>(o : Boolean) : Boolean = this ==> o
     def <===(o : Boolean) : Boolean = this <== o
+    def ite[T](v1 : => T, v2 : => T) : T = if (value) v1 else v2
   }
 
   /**
