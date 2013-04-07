@@ -248,7 +248,7 @@ object ModelExtractor {
       feature(featureModifier, name, supers, members)
   }
 
-  def extract(
+  private def extract(
     owner : java.lang.String, isCompanion : scala.Boolean, symbol : Symbol,
     inits : IMap[java.lang.String, Object])(
       implicit context : Context) : scala.Option[Member] = {
@@ -309,7 +309,7 @@ object ModelExtractor {
     }
   }
 
-  def extractAttributeTypeInit(
+  private def extractAttributeTypeInit(
     aQName : java.lang.String, aName : java.lang.String, symbol : Symbol,
     inits : IMap[java.lang.String, Object])(
       implicit context : Context) : (ast.Type, Optional[Initialization]) =
@@ -318,7 +318,7 @@ object ModelExtractor {
       case tipe                          => tipe
     }, inits.get(aName))
 
-  def extractType(
+  private def extractType(
     aQName : java.lang.String, tipe : Type, value : Option[scala.Any])(
       implicit context : Context) : (ast.Type, Optional[Initialization]) = {
     val clazz = Reflection.getClassOfType(tipe.erasure)
@@ -422,6 +422,7 @@ object ModelExtractor {
             var success = true
             val types = filterType(aQName, parents)
             var inits = imapEmpty[java.lang.String, Object]
+            var aTypes = imapEmpty[java.lang.String, Type]
             value match {
               case Some(value) =>
                 val vClass = value.getClass
@@ -429,27 +430,44 @@ object ModelExtractor {
                   val dName = d.name.encoded.trim
                   val dValue = vClass.getMethod(d.name.encoded).invoke(value)
                   inits += (dName -> dValue)
+                  aTypes += (dName -> d.asTerm.typeSignature)
                 }
               case None =>
             }
             var attributes = ivectorEmpty[Attribute]
-            for (d <- tipe.members if d.isTerm && d.asTerm.isGetter)
-              extract(aQName, false, d, inits) match {
-                case Some(a : Attribute) => attributes :+= a
-                case Some(m) =>
-                  context.reporter.error(
-                    s"Expecting attribute for $aQName initialization, " +
-                      s"but found ${m.getClass}.")
-                case _ =>
-              }
-            val resultType = Ast.refinedType(types,
-              attributes.map { a =>
-                attribute(a.modifier, a.`type`, a.name, none())
-              })
-            if (value.isDefined)
-              (resultType, some(featureInit(types, attributes)))
-            else
-              (resultType, none())
+            for (d <- tipe.declarations if d.isTerm && d.asTerm.isGetter)
+              extract(aQName, false, d,
+                imapEmpty[java.lang.String, Object]) match {
+                  case Some(a : Attribute) => attributes :+= a
+                  case Some(m) =>
+                    context.reporter.error(
+                      s"Expecting attribute for $aQName, " +
+                        s"but found ${m.getClass}.")
+                  case _ =>
+                }
+
+            val resultType =
+              if (types.size > 1 || attributes.size > 0)
+                Ast.refinedType(types, attributes)
+              else namedType(types(0).name)
+
+            value match {
+              case Some(_) =>
+                var attributeInits = ivectorEmpty[Attribute]
+                for (d <- tipe.members if d.isTerm && d.asTerm.isGetter)
+                  extract(aQName, false, d, inits) match {
+                    case Some(a : Attribute) =>
+                      attributeInits :+= attribute(AttributeModifier.Override,
+                        a.`type`, a.name, a.init)
+                    case Some(m) =>
+                      context.reporter.error(
+                        s"Expecting attribute for $aQName initialization, " +
+                          s"but found ${m.getClass}.")
+                    case _ =>
+                  }
+                (resultType, some(featureInit(types, attributeInits)))
+              case _ => (resultType, none())
+            }
           case _ =>
             value match {
               case Some(value) =>

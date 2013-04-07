@@ -243,36 +243,24 @@
         </attribute>
         <attribute name="manufacturerModel">
           <modifier>Override</modifier>
-          <type class="refinedType">
-            <types class="ilist">
-              <namedType name="ICEManufacturerModel"/>
-            </types>
-            <attributes class="ilist">
-              <attribute name="versionNumber">
-                <modifier>Override</modifier>
-                <type class="namedType" name="String"/>
-                <init class="none"></init>
-              </attribute>
-              <attribute name="modelNumber">
-                <modifier>Override</modifier>
-                <type class="namedType" name="String"/>
-                <init class="none"></init>
-              </attribute>
-              <attribute name="credentials">
-                <modifier>None</modifier>
-                <type class="setType">
-                  <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
-                </type>
-                <init class="none"></init>
-              </attribute>
-            </attributes>
-          </type>
+          <type class="namedType" name="ICEManufacturerModel"/>
           <init class="some">
             <reference class="featureInit">
               <types class="ilist">
                 <namedType name="ICEManufacturerModel"/>
               </types>
               <attributes class="ilist">
+                <attribute name="credentials">
+                  <modifier>Override</modifier>
+                  <type class="setType">
+                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
+                  </type>
+                  <init class="some">
+                    <reference class="setInit">
+                      <inits class="ilist"></inits>
+                    </reference>
+                  </init>
+                </attribute>
                 <attribute name="versionNumber">
                   <modifier>Override</modifier>
                   <type class="namedType" name="String"/>
@@ -285,17 +273,6 @@
                   <type class="namedType" name="String"/>
                   <init class="some">
                     <reference class="basicInit" value="MultiMonitor"/>
-                  </init>
-                </attribute>
-                <attribute name="credentials">
-                  <modifier>None</modifier>
-                  <type class="setType">
-                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
-                  </type>
-                  <init class="some">
-                    <reference class="setInit">
-                      <inits class="ilist"></inits>
-                    </reference>
                   </init>
                 </attribute>
               </attributes>
@@ -730,36 +707,24 @@
         </attribute>
         <attribute name="manufacturerModel">
           <modifier>Override</modifier>
-          <type class="refinedType">
-            <types class="ilist">
-              <namedType name="ICEManufacturerModel"/>
-            </types>
-            <attributes class="ilist">
-              <attribute name="versionNumber">
-                <modifier>Override</modifier>
-                <type class="namedType" name="String"/>
-                <init class="none"></init>
-              </attribute>
-              <attribute name="modelNumber">
-                <modifier>Override</modifier>
-                <type class="namedType" name="String"/>
-                <init class="none"></init>
-              </attribute>
-              <attribute name="credentials">
-                <modifier>None</modifier>
-                <type class="setType">
-                  <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
-                </type>
-                <init class="none"></init>
-              </attribute>
-            </attributes>
-          </type>
+          <type class="namedType" name="ICEManufacturerModel"/>
           <init class="some">
             <reference class="featureInit">
               <types class="ilist">
                 <namedType name="ICEManufacturerModel"/>
               </types>
               <attributes class="ilist">
+                <attribute name="credentials">
+                  <modifier>Override</modifier>
+                  <type class="setType">
+                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
+                  </type>
+                  <init class="some">
+                    <reference class="setInit">
+                      <inits class="ilist"></inits>
+                    </reference>
+                  </init>
+                </attribute>
                 <attribute name="versionNumber">
                   <modifier>Override</modifier>
                   <type class="namedType" name="String"/>
@@ -772,17 +737,6 @@
                   <type class="namedType" name="String"/>
                   <init class="some">
                     <reference class="basicInit" value="Nellcor 2000"/>
-                  </init>
-                </attribute>
-                <attribute name="credentials">
-                  <modifier>None</modifier>
-                  <type class="setType">
-                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
-                  </type>
-                  <init class="some">
-                    <reference class="setInit">
-                      <inits class="ilist"></inits>
-                    </reference>
                   </init>
                 </attribute>
               </attributes>
@@ -1086,36 +1040,24 @@
         </attribute>
         <attribute name="manufacturerModel">
           <modifier>Override</modifier>
-          <type class="refinedType">
-            <types class="ilist">
-              <namedType name="ICEManufacturerModel"/>
-            </types>
-            <attributes class="ilist">
-              <attribute name="versionNumber">
-                <modifier>Override</modifier>
-                <type class="namedType" name="String"/>
-                <init class="none"></init>
-              </attribute>
-              <attribute name="modelNumber">
-                <modifier>Override</modifier>
-                <type class="namedType" name="String"/>
-                <init class="none"></init>
-              </attribute>
-              <attribute name="credentials">
-                <modifier>None</modifier>
-                <type class="setType">
-                  <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
-                </type>
-                <init class="none"></init>
-              </attribute>
-            </attributes>
-          </type>
+          <type class="namedType" name="ICEManufacturerModel"/>
           <init class="some">
             <reference class="featureInit">
               <types class="ilist">
                 <namedType name="ICEManufacturerModel"/>
               </types>
               <attributes class="ilist">
+                <attribute name="credentials">
+                  <modifier>Override</modifier>
+                  <type class="setType">
+                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
+                  </type>
+                  <init class="some">
+                    <reference class="setInit">
+                      <inits class="ilist"></inits>
+                    </reference>
+                  </init>
+                </attribute>
                 <attribute name="versionNumber">
                   <modifier>Override</modifier>
                   <type class="namedType" name="String"/>
@@ -1128,17 +1070,6 @@
                   <type class="namedType" name="String"/>
                   <init class="some">
                     <reference class="basicInit" value="Nonin Onyx II"/>
-                  </init>
-                </attribute>
-                <attribute name="credentials">
-                  <modifier>None</modifier>
-                  <type class="setType">
-                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
-                  </type>
-                  <init class="some">
-                    <reference class="setInit">
-                      <inits class="ilist"></inits>
-                    </reference>
                   </init>
                 </attribute>
               </attributes>

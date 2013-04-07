@@ -57,7 +57,7 @@ package object dms {
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
   object String {
-    def apply(s : java.lang.String) = StringImpl(s)
+    def apply(s : java.lang.String) : String = StringImpl(s)
 
     case class StringImpl(value : java.lang.String) extends AbstractString
   }
@@ -76,7 +76,7 @@ package object dms {
    */
   object Boolean {
 
-    def apply(b : scala.Boolean) = if (b) True else False
+    def apply(b : scala.Boolean) : Boolean = if (b) True else False
 
     object True extends AbstractBoolean {
       def value = true
@@ -130,7 +130,7 @@ package object dms {
     def apply(n : BigInt) : Int = apply(SireumNumber(n))
     def apply(n : java.math.BigInteger) : Int = apply(SireumNumber(n))
     def apply(n : java.lang.String) : Int = apply(SireumNumber(BigInt(n)))
-    def apply(n : Integer) = IntImpl(n)
+    def apply(n : Integer) : Int = IntImpl(n)
 
     final case class IntImpl(value : Integer) extends AbstractInt {
       def +(o : Number) : Int =
@@ -174,7 +174,7 @@ package object dms {
     def apply(n : BigInt) : Nat = apply(SireumNumber(n))
     def apply(n : java.math.BigInteger) : Nat = apply(SireumNumber(n))
     def apply(n : java.lang.String) : Nat = apply(SireumNumber(BigInt(n)))
-    def apply(n : Integer) =
+    def apply(n : Integer) : Nat =
       if (n < 0) NatImpl(-n) else NatImpl(n)
 
     final case class NatImpl(value : Integer) extends AbstractInt with Nat {
