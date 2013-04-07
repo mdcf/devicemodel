@@ -92,6 +92,8 @@ public class ModelExtractorTest {
 
   void testXml(final Model m) throws Exception {
     final String xml1 = toXml(m);
-    assertEquals(xml1, toXml(fromXml(xml1)));
+    final Model m2 = fromXml(xml1);
+    Assert.assertEquals(m.toString(), m2.toString());
+    assertEquals(xml1, toXml(m2));
   }
 }
