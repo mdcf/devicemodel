@@ -39,8 +39,7 @@ public class ModelExtractorTest {
     final String expectedXml = Files.toString(
         expected,
         StandardCharsets.US_ASCII);
-    final String resultXml = Files
-        .toString(expected, StandardCharsets.US_ASCII);
+    final String resultXml = Files.toString(result, StandardCharsets.US_ASCII);
     final DetailedDiff myDiff = new DetailedDiff(this.xmlUnit.compareXML(
         expectedXml,
         resultXml));

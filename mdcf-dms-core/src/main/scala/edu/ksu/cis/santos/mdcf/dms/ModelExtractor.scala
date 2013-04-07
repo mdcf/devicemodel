@@ -186,7 +186,7 @@ object ModelExtractor {
     }
 
     var memberSet = isetEmpty[java.lang.String]
-    for (d <- tipe.declarations)
+    for (d <- tipe.declarations.sorted)
       extract(name, false, d, objInits) match {
         case Some(m) =>
           if (!memberSet.contains(m.name)) {
@@ -210,7 +210,7 @@ object ModelExtractor {
                   "only Req is allowed.")
           }
         }
-        for (d <- companionSymbol.typeSignature.declarations)
+        for (d <- companionSymbol.typeSignature.declarations.sorted)
           extract(name, true, d, companionInits) match {
             case Some(m) => members :+= m
             case _       =>
@@ -435,7 +435,7 @@ object ModelExtractor {
               case None =>
             }
             var attributes = ivectorEmpty[Attribute]
-            for (d <- tipe.declarations if d.isTerm && d.asTerm.isGetter)
+            for (d <- tipe.declarations.sorted if d.isTerm && d.asTerm.isGetter)
               extract(aQName, false, d,
                 imapEmpty[java.lang.String, Object]) match {
                   case Some(a : Attribute) => attributes :+= a
@@ -454,11 +454,15 @@ object ModelExtractor {
             value match {
               case Some(_) =>
                 var attributeInits = ivectorEmpty[Attribute]
-                for (d <- tipe.members if d.isTerm && d.asTerm.isGetter)
+                for (d <- tipe.members.sorted if d.isTerm && d.asTerm.isGetter)
                   extract(aQName, false, d, inits) match {
                     case Some(a : Attribute) =>
-                      attributeInits :+= attribute(AttributeModifier.Override,
-                        a.`type`, a.name, a.init)
+                      val NullaryMethodType(dType) = d.typeSignature
+                      if (isOverride(a.name, dType, parents))
+                        attributeInits :+= attribute(AttributeModifier.Override,
+                          a.`type`, a.name, a.init)
+                      else
+                        attributeInits :+= a
                     case Some(m) =>
                       context.reporter.error(
                         s"Expecting attribute for $aQName initialization, " +
@@ -480,9 +484,12 @@ object ModelExtractor {
                   inits += (dName -> dValue)
                 }
                 var attributes = ivectorEmpty[Attribute]
-                for (d <- vTipe.declarations if d.isTerm && d.asTerm.isVal)
+                var aTypes = imapEmpty[java.lang.String, Type]
+                for (d <- vTipe.declarations.sorted if d.isTerm && d.asTerm.isVal)
                   extract(aQName, false, d, inits) match {
-                    case Some(a : Attribute) => attributes :+= a
+                    case Some(a : Attribute) =>
+                      attributes :+= a
+                      aTypes += (a.name -> d.typeSignature)
                     case Some(m) =>
                       context.reporter.error(
                         s"Expecting attribute for $aQName initialization, " +
@@ -493,12 +500,29 @@ object ModelExtractor {
                 vTipe match {
                   case RefinedType(parents, _) =>
                     (resultType,
-                      some(featureInit(filterType(aQName, parents), attributes)))
+                      some(featureInit(filterType(aQName, parents),
+                        attributes.map { a =>
+                          if (a.modifier != AttributeModifier.Override &&
+                            isOverride(a.name, aTypes(a.name), parents))
+                            attribute(AttributeModifier.Override, a.`type`,
+                              a.name, a.init)
+                          else
+                            a
+                        })))
                   case TypeRef(pre, sym, _) =>
-                    val types = Reflection.getClassOfType(vTipe).getInterfaces.
-                      toVector.map(x => namedType(x.getName))
+                    val interfaces = Reflection.getClassOfType(vTipe).
+                      getInterfaces.toVector
+                    val types = interfaces.map(x => namedType(x.getName))
+                    val itypes = interfaces.map(Reflection.getTypeOfClass(_))
                     (resultType,
-                      some(featureInit(types, attributes)))
+                      some(featureInit(types, attributes.map { a =>
+                        if (a.modifier != AttributeModifier.Override &&
+                          isOverride(a.name, aTypes(a.name), itypes))
+                          attribute(AttributeModifier.Override, a.`type`,
+                            a.name, a.init)
+                        else
+                          a
+                      })))
                 }
               case None =>
                 (namedType(c), none())
@@ -521,5 +545,21 @@ object ModelExtractor {
           None
       }
     }
+  }
+
+  private def isOverride(aName : java.lang.String, aType : Type,
+                         types : ISeq[Type]) : scala.Boolean = {
+    for (t <- types) {
+      for (m <- t.members if m.isTerm && (m.asTerm.isGetter || m.asTerm.isVal)) {
+        val mType =
+          if (m.asTerm.isGetter) {
+            val NullaryMethodType(mType) = m.typeSignature
+            mType
+          } else m.typeSignature
+        if (aName == m.name.decoded.trim && aType <:< mType)
+          return true
+      }
+    }
+    false
   }
 }

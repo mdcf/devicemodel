@@ -250,15 +250,11 @@
                 <namedType name="ICEManufacturerModel"/>
               </types>
               <attributes class="ilist">
-                <attribute name="credentials">
+                <attribute name="modelNumber">
                   <modifier>Override</modifier>
-                  <type class="setType">
-                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
-                  </type>
+                  <type class="namedType" name="String"/>
                   <init class="some">
-                    <reference class="setInit">
-                      <inits class="ilist"></inits>
-                    </reference>
+                    <reference class="basicInit" value="MultiMonitor"/>
                   </init>
                 </attribute>
                 <attribute name="versionNumber">
@@ -268,11 +264,15 @@
                     <reference class="basicInit" value="XX.YY.ZZ"/>
                   </init>
                 </attribute>
-                <attribute name="modelNumber">
+                <attribute name="credentials">
                   <modifier>Override</modifier>
-                  <type class="namedType" name="String"/>
+                  <type class="setType">
+                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
+                  </type>
                   <init class="some">
-                    <reference class="basicInit" value="MultiMonitor"/>
+                    <reference class="setInit">
+                      <inits class="ilist"></inits>
+                    </reference>
                   </init>
                 </attribute>
               </attributes>
@@ -293,7 +293,7 @@
                   </types>
                   <attributes class="ilist">
                     <attribute name="range">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
@@ -302,14 +302,14 @@
                           </types>
                           <attributes class="ilist">
                             <attribute name="min">
-                              <modifier>None</modifier>
+                              <modifier>Override</modifier>
                               <type class="namedType" name="Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="0"/>
                               </init>
                             </attribute>
                             <attribute name="max">
-                              <modifier>None</modifier>
+                              <modifier>Override</modifier>
                               <type class="namedType" name="Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="100"/>
@@ -320,7 +320,7 @@
                       </init>
                     </attribute>
                     <attribute name="exchanges">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
@@ -333,7 +333,7 @@
                               </types>
                               <attributes class="ilist">
                                 <attribute name="maxRetrievalRatePerSecond">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Nat"/>
                                   <init class="some">
                                     <reference class="basicInit" value="15"/>
@@ -347,7 +347,7 @@
                               </types>
                               <attributes class="ilist">
                                 <attribute name="rateRange">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange"/>
                                   <init class="some">
                                     <reference class="featureInit">
@@ -356,14 +356,14 @@
                                       </types>
                                       <attributes class="ilist">
                                         <attribute name="min">
-                                          <modifier>None</modifier>
+                                          <modifier>Override</modifier>
                                           <type class="namedType" name="Nat"/>
                                           <init class="some">
                                             <reference class="basicInit" value="0"/>
                                           </init>
                                         </attribute>
                                         <attribute name="max">
-                                          <modifier>None</modifier>
+                                          <modifier>Override</modifier>
                                           <type class="namedType" name="Nat"/>
                                           <init class="some">
                                             <reference class="basicInit" value="100"/>
@@ -380,7 +380,7 @@
                       </init>
                     </attribute>
                     <attribute name="alerts">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
@@ -394,21 +394,21 @@
                               </types>
                               <attributes class="ilist">
                                 <attribute name="min">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="85"/>
                                   </init>
                                 </attribute>
                                 <attribute name="max">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="100"/>
                                   </init>
                                 </attribute>
                                 <attribute name="security">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="optionType">
                                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                                   </type>
@@ -423,14 +423,14 @@
                       </init>
                     </attribute>
                     <attribute name="physioParameterType">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PULS_OXIM_SAT_O2"/>
                       </init>
                     </attribute>
                     <attribute name="unit">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_DIM_PERCENT"/>
@@ -444,7 +444,7 @@
                   </types>
                   <attributes class="ilist">
                     <attribute name="range">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
@@ -453,14 +453,14 @@
                           </types>
                           <attributes class="ilist">
                             <attribute name="min">
-                              <modifier>None</modifier>
+                              <modifier>Override</modifier>
                               <type class="namedType" name="Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="20"/>
                               </init>
                             </attribute>
                             <attribute name="max">
-                              <modifier>None</modifier>
+                              <modifier>Override</modifier>
                               <type class="namedType" name="Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="300"/>
@@ -471,7 +471,7 @@
                       </init>
                     </attribute>
                     <attribute name="exchanges">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
@@ -484,7 +484,7 @@
                               </types>
                               <attributes class="ilist">
                                 <attribute name="maxRetrievalRatePerSecond">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Nat"/>
                                   <init class="some">
                                     <reference class="basicInit" value="5"/>
@@ -497,7 +497,7 @@
                       </init>
                     </attribute>
                     <attribute name="alerts">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
@@ -511,21 +511,21 @@
                               </types>
                               <attributes class="ilist">
                                 <attribute name="min">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="40"/>
                                   </init>
                                 </attribute>
                                 <attribute name="max">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="180"/>
                                   </init>
                                 </attribute>
                                 <attribute name="security">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="optionType">
                                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                                   </type>
@@ -540,14 +540,14 @@
                       </init>
                     </attribute>
                     <attribute name="physioParameterType">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PULS_OXIM_PULS_RATE"/>
                       </init>
                     </attribute>
                     <attribute name="unit">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_DIM_BEAT_PER_MIN"/>
@@ -561,7 +561,7 @@
                   </types>
                   <attributes class="ilist">
                     <attribute name="range">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
@@ -570,14 +570,14 @@
                           </types>
                           <attributes class="ilist">
                             <attribute name="min">
-                              <modifier>None</modifier>
+                              <modifier>Override</modifier>
                               <type class="namedType" name="Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="20"/>
                               </init>
                             </attribute>
                             <attribute name="max">
-                              <modifier>None</modifier>
+                              <modifier>Override</modifier>
                               <type class="namedType" name="Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="300"/>
@@ -588,7 +588,7 @@
                       </init>
                     </attribute>
                     <attribute name="exchanges">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
@@ -601,7 +601,7 @@
                               </types>
                               <attributes class="ilist">
                                 <attribute name="maxRetrievalRatePerSecond">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Nat"/>
                                   <init class="some">
                                     <reference class="basicInit" value="5"/>
@@ -614,7 +614,7 @@
                       </init>
                     </attribute>
                     <attribute name="alerts">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
@@ -628,21 +628,21 @@
                               </types>
                               <attributes class="ilist">
                                 <attribute name="min">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="40"/>
                                   </init>
                                 </attribute>
                                 <attribute name="max">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="180"/>
                                   </init>
                                 </attribute>
                                 <attribute name="security">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="optionType">
                                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                                   </type>
@@ -657,28 +657,28 @@
                       </init>
                     </attribute>
                     <attribute name="systolic">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_SYS"/>
                       </init>
                     </attribute>
                     <attribute name="diastolic">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_DIA"/>
                       </init>
                     </attribute>
                     <attribute name="physioParameterType">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_MEAN"/>
                       </init>
                     </attribute>
                     <attribute name="unit">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_DIM_MMHG"/>
@@ -714,15 +714,11 @@
                 <namedType name="ICEManufacturerModel"/>
               </types>
               <attributes class="ilist">
-                <attribute name="credentials">
+                <attribute name="modelNumber">
                   <modifier>Override</modifier>
-                  <type class="setType">
-                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
-                  </type>
+                  <type class="namedType" name="String"/>
                   <init class="some">
-                    <reference class="setInit">
-                      <inits class="ilist"></inits>
-                    </reference>
+                    <reference class="basicInit" value="Nellcor 2000"/>
                   </init>
                 </attribute>
                 <attribute name="versionNumber">
@@ -732,11 +728,15 @@
                     <reference class="basicInit" value="XX.YY.ZZ"/>
                   </init>
                 </attribute>
-                <attribute name="modelNumber">
+                <attribute name="credentials">
                   <modifier>Override</modifier>
-                  <type class="namedType" name="String"/>
+                  <type class="setType">
+                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
+                  </type>
                   <init class="some">
-                    <reference class="basicInit" value="Nellcor 2000"/>
+                    <reference class="setInit">
+                      <inits class="ilist"></inits>
+                    </reference>
                   </init>
                 </attribute>
               </attributes>
@@ -757,7 +757,7 @@
                   </types>
                   <attributes class="ilist">
                     <attribute name="range">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
@@ -766,14 +766,14 @@
                           </types>
                           <attributes class="ilist">
                             <attribute name="min">
-                              <modifier>None</modifier>
+                              <modifier>Override</modifier>
                               <type class="namedType" name="Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="0"/>
                               </init>
                             </attribute>
                             <attribute name="max">
-                              <modifier>None</modifier>
+                              <modifier>Override</modifier>
                               <type class="namedType" name="Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="100"/>
@@ -784,7 +784,7 @@
                       </init>
                     </attribute>
                     <attribute name="exchanges">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
@@ -797,7 +797,7 @@
                               </types>
                               <attributes class="ilist">
                                 <attribute name="maxRetrievalRatePerSecond">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Nat"/>
                                   <init class="some">
                                     <reference class="basicInit" value="15"/>
@@ -811,7 +811,7 @@
                               </types>
                               <attributes class="ilist">
                                 <attribute name="rateRange">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange"/>
                                   <init class="some">
                                     <reference class="featureInit">
@@ -820,14 +820,14 @@
                                       </types>
                                       <attributes class="ilist">
                                         <attribute name="min">
-                                          <modifier>None</modifier>
+                                          <modifier>Override</modifier>
                                           <type class="namedType" name="Nat"/>
                                           <init class="some">
                                             <reference class="basicInit" value="0"/>
                                           </init>
                                         </attribute>
                                         <attribute name="max">
-                                          <modifier>None</modifier>
+                                          <modifier>Override</modifier>
                                           <type class="namedType" name="Nat"/>
                                           <init class="some">
                                             <reference class="basicInit" value="100"/>
@@ -844,7 +844,7 @@
                       </init>
                     </attribute>
                     <attribute name="alerts">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
@@ -858,21 +858,21 @@
                               </types>
                               <attributes class="ilist">
                                 <attribute name="min">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="85"/>
                                   </init>
                                 </attribute>
                                 <attribute name="max">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="100"/>
                                   </init>
                                 </attribute>
                                 <attribute name="security">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="optionType">
                                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                                   </type>
@@ -887,14 +887,14 @@
                       </init>
                     </attribute>
                     <attribute name="physioParameterType">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PULS_OXIM_SAT_O2"/>
                       </init>
                     </attribute>
                     <attribute name="unit">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_DIM_PERCENT"/>
@@ -908,7 +908,7 @@
                   </types>
                   <attributes class="ilist">
                     <attribute name="range">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
@@ -917,14 +917,14 @@
                           </types>
                           <attributes class="ilist">
                             <attribute name="min">
-                              <modifier>None</modifier>
+                              <modifier>Override</modifier>
                               <type class="namedType" name="Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="20"/>
                               </init>
                             </attribute>
                             <attribute name="max">
-                              <modifier>None</modifier>
+                              <modifier>Override</modifier>
                               <type class="namedType" name="Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="300"/>
@@ -935,7 +935,7 @@
                       </init>
                     </attribute>
                     <attribute name="exchanges">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
@@ -948,7 +948,7 @@
                               </types>
                               <attributes class="ilist">
                                 <attribute name="maxRetrievalRatePerSecond">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Nat"/>
                                   <init class="some">
                                     <reference class="basicInit" value="5"/>
@@ -961,7 +961,7 @@
                       </init>
                     </attribute>
                     <attribute name="alerts">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
@@ -975,21 +975,21 @@
                               </types>
                               <attributes class="ilist">
                                 <attribute name="min">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="40"/>
                                   </init>
                                 </attribute>
                                 <attribute name="max">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="180"/>
                                   </init>
                                 </attribute>
                                 <attribute name="security">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="optionType">
                                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                                   </type>
@@ -1004,14 +1004,14 @@
                       </init>
                     </attribute>
                     <attribute name="physioParameterType">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PULS_OXIM_PULS_RATE"/>
                       </init>
                     </attribute>
                     <attribute name="unit">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_DIM_BEAT_PER_MIN"/>
@@ -1047,15 +1047,11 @@
                 <namedType name="ICEManufacturerModel"/>
               </types>
               <attributes class="ilist">
-                <attribute name="credentials">
+                <attribute name="modelNumber">
                   <modifier>Override</modifier>
-                  <type class="setType">
-                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
-                  </type>
+                  <type class="namedType" name="String"/>
                   <init class="some">
-                    <reference class="setInit">
-                      <inits class="ilist"></inits>
-                    </reference>
+                    <reference class="basicInit" value="Nonin Onyx II"/>
                   </init>
                 </attribute>
                 <attribute name="versionNumber">
@@ -1065,11 +1061,15 @@
                     <reference class="basicInit" value="XX.YY.ZZ"/>
                   </init>
                 </attribute>
-                <attribute name="modelNumber">
+                <attribute name="credentials">
                   <modifier>Override</modifier>
-                  <type class="namedType" name="String"/>
+                  <type class="setType">
+                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
+                  </type>
                   <init class="some">
-                    <reference class="basicInit" value="Nonin Onyx II"/>
+                    <reference class="setInit">
+                      <inits class="ilist"></inits>
+                    </reference>
                   </init>
                 </attribute>
               </attributes>
@@ -1090,7 +1090,7 @@
                   </types>
                   <attributes class="ilist">
                     <attribute name="range">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
@@ -1099,14 +1099,14 @@
                           </types>
                           <attributes class="ilist">
                             <attribute name="min">
-                              <modifier>None</modifier>
+                              <modifier>Override</modifier>
                               <type class="namedType" name="Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="0"/>
                               </init>
                             </attribute>
                             <attribute name="max">
-                              <modifier>None</modifier>
+                              <modifier>Override</modifier>
                               <type class="namedType" name="Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="100"/>
@@ -1117,7 +1117,7 @@
                       </init>
                     </attribute>
                     <attribute name="exchanges">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
@@ -1130,7 +1130,7 @@
                               </types>
                               <attributes class="ilist">
                                 <attribute name="maxRetrievalRatePerSecond">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Nat"/>
                                   <init class="some">
                                     <reference class="basicInit" value="15"/>
@@ -1143,7 +1143,7 @@
                       </init>
                     </attribute>
                     <attribute name="alerts">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
@@ -1154,14 +1154,14 @@
                       </init>
                     </attribute>
                     <attribute name="physioParameterType">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PULS_OXIM_SAT_O2"/>
                       </init>
                     </attribute>
                     <attribute name="unit">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_DIM_PERCENT"/>
@@ -1175,7 +1175,7 @@
                   </types>
                   <attributes class="ilist">
                     <attribute name="range">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
@@ -1184,14 +1184,14 @@
                           </types>
                           <attributes class="ilist">
                             <attribute name="min">
-                              <modifier>None</modifier>
+                              <modifier>Override</modifier>
                               <type class="namedType" name="Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="20"/>
                               </init>
                             </attribute>
                             <attribute name="max">
-                              <modifier>None</modifier>
+                              <modifier>Override</modifier>
                               <type class="namedType" name="Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="300"/>
@@ -1202,7 +1202,7 @@
                       </init>
                     </attribute>
                     <attribute name="exchanges">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
@@ -1215,7 +1215,7 @@
                               </types>
                               <attributes class="ilist">
                                 <attribute name="maxRetrievalRatePerSecond">
-                                  <modifier>None</modifier>
+                                  <modifier>Override</modifier>
                                   <type class="namedType" name="Nat"/>
                                   <init class="some">
                                     <reference class="basicInit" value="5"/>
@@ -1228,7 +1228,7 @@
                       </init>
                     </attribute>
                     <attribute name="alerts">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
@@ -1239,14 +1239,14 @@
                       </init>
                     </attribute>
                     <attribute name="physioParameterType">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PULS_OXIM_PULS_RATE"/>
                       </init>
                     </attribute>
                     <attribute name="unit">
-                      <modifier>None</modifier>
+                      <modifier>Override</modifier>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_DIM_BEAT_PER_MIN"/>
