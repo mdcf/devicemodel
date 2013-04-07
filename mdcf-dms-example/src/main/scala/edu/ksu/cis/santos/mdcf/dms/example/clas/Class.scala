@@ -32,17 +32,17 @@ object ICEPulseOx {
 }
 
 trait ICESpO2 extends ICEPhysioParameter {
-  override val physioParameterType = IEEEPhysioParameterType("MDC_PULS_OXIM_SAT_O2")
-  override val unit = IEEEUnit("MDC_DIM_PERCENT")
+  final override val physioParameterType = IEEEPhysioParameterType("MDC_PULS_OXIM_SAT_O2")
+  final override val unit = IEEEUnit("MDC_DIM_PERCENT")
 }
 
 trait ICEPulseRate extends ICEPhysioParameter {
-  override val physioParameterType = IEEEPhysioParameterType("MDC_PULS_OXIM_PULS_RATE")
-  override val unit = IEEEUnit("MDC_DIM_BEAT_PER_MIN")
+  final override val physioParameterType = IEEEPhysioParameterType("MDC_PULS_OXIM_PULS_RATE")
+  final override val unit = IEEEUnit("MDC_DIM_BEAT_PER_MIN")
 }
 
 trait ICEBloodPressure extends ICEDevice {
-  override val `type` = IEEEDeviceType("IEEE ... Blood Pressure")
+  final override val `type` = IEEEDeviceType("IEEE ... Blood Pressure")
 }
 
 object ICEBloodPressure {
@@ -54,17 +54,17 @@ object ICEBloodPressure {
 }
 
 trait ICEBloodPressureParam extends ICEPhysioParameter {
-  val systolic = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_SYS")
-  val diastolic = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_DIA")
+  final val systolic = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_SYS")
+  final val diastolic = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_DIA")
 
-  val physioParameterType = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_MEAN")
+  final val physioParameterType = IEEEPhysioParameterType("MDC_PRESS_BLD_NONINV_MEAN")
   // mean is used here, but we need composite of ICEPhysioParameter
 
-  override val unit = IEEEUnit("MDC_DIM_MMHG")
+  final override val unit = IEEEUnit("MDC_DIM_MMHG")
 }
 
 trait ICEMultiMonitor extends ICEDevice {
-  override val `type` = IEEEDeviceType("IEEE ... MultiMonitor")
+  final override val `type` = IEEEDeviceType("IEEE ... MultiMonitor")
 }
 
 object ICEMultiMonitor {
