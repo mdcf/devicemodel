@@ -8,8 +8,13 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dms.test;
 
+import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.XStreamer.fromXml;
+import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.XStreamer.toXml;
+
 import java.io.File;
+import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
@@ -19,10 +24,10 @@ import org.custommonkey.xmlunit.DetailedDiff;
 import org.custommonkey.xmlunit.XMLTestCase;
 import org.junit.Before;
 import org.junit.Test;
+import org.xml.sax.SAXException;
 
 import com.google.common.io.Files;
 
-import edu.ksu.cis.santos.mdcf.dml.ast.Ast;
 import edu.ksu.cis.santos.mdcf.dml.ast.Model;
 import edu.ksu.cis.santos.mdcf.dms.ModelExtractor;
 
@@ -40,6 +45,11 @@ public class ModelExtractorTest {
         expected,
         StandardCharsets.US_ASCII);
     final String resultXml = Files.toString(result, StandardCharsets.US_ASCII);
+    assertEquals(expectedXml, resultXml);
+  }
+
+  void assertEquals(final String expectedXml, final String resultXml)
+      throws SAXException, IOException {
     final DetailedDiff myDiff = new DetailedDiff(this.xmlUnit.compareXML(
         expectedXml,
         resultXml));
@@ -60,16 +70,28 @@ public class ModelExtractorTest {
 
   void test(final String name, final String... packageNames) throws Exception {
     final Model m = ModelExtractor.extractModel(packageNames);
+
+    testExpectedResult(name, m);
+    testXml(m);
+  }
+
+  void testExpectedResult(final String name, final Model m)
+      throws URISyntaxException, IOException, Exception {
     final File testDir = new File(new URI(getClass().getResource("").toURI()
         .toString().replace("/bin/", "/src/test/resources/")));
 
     final File expected = new File(testDir, "expected/" + name + ".xml");
     final File result = new File(testDir, "result/" + name + ".xml");
     if (ModelExtractorTest.GENERATE_EXPECTED || !expected.exists()) {
-      Files.write(Ast.XStreamer.toXml(m), expected, StandardCharsets.US_ASCII);
+      Files.write(toXml(m), expected, StandardCharsets.US_ASCII);
     } else {
-      Files.write(Ast.XStreamer.toXml(m), result, StandardCharsets.US_ASCII);
+      Files.write(toXml(m), result, StandardCharsets.US_ASCII);
       assertEquals(expected, result);
     }
+  }
+
+  void testXml(final Model m) throws Exception {
+    final String xml1 = toXml(m);
+    assertEquals(xml1, toXml(fromXml(xml1)));
   }
 }
