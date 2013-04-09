@@ -8,7 +8,7 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dml.ast;
 
-import java.lang.ref.WeakReference;
+import java.lang.ref.SoftReference;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 
@@ -30,7 +30,7 @@ public final class Invariant extends Member {
     return Invariant.xstream;
   }
 
-  private transient WeakReference<String> predicateString;
+  private transient SoftReference<String> predicateString;
 
   public Invariant(final String name, final Object predicate) {
     super(name);
@@ -53,7 +53,7 @@ public final class Invariant extends Member {
     if ((this.predicateString == null)
         || ((ps = this.predicateString.get()) == null)) {
       ps = StringEscapeUtils.escapeJava(xs().toXML(this.predicate));
-      this.predicateString = new WeakReference<String>(ps);
+      this.predicateString = new SoftReference<String>(ps);
     }
     sb.append(ps);
     sb.append("\")");

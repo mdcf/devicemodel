@@ -8,7 +8,7 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dml.ast;
 
-import java.lang.ref.WeakReference;
+import java.lang.ref.SoftReference;
 import java.util.List;
 
 import org.apache.commons.lang3.StringEscapeUtils;
@@ -19,13 +19,13 @@ import com.google.common.base.Optional;
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public abstract class AstNode {
-  private transient WeakReference<Object[]> children;
+  private transient SoftReference<Object[]> _children;
 
   public Object[] children() {
     Object[] result = null;
-    if ((this.children == null) || ((result = this.children.get()) == null)) {
+    if ((this._children == null) || ((result = this._children.get()) == null)) {
       result = getChildren();
-      this.children = new WeakReference<Object[]>(result);
+      this._children = new SoftReference<Object[]>(result);
     }
     return result;
   }

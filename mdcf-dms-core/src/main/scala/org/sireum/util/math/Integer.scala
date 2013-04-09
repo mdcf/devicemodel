@@ -53,7 +53,7 @@ trait IsLong {
     other match {
       case other : Long   => this.asLong == other
       case other : IsLong => this.asLong == other.asLong
-      case _             => false
+      case _              => false
     }
 
   override def hashCode = asLong.hashCode

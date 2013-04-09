@@ -6,18 +6,19 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dms.annotation;
+package edu.ksu.cis.santos.mdcf.dms.test.regression;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
+
+import edu.ksu.cis.santos.mdcf.dms.test.ModelExtractorTest;
+import edu.ksu.cis.santos.mdcf.dms.test.SymbolTableTest;
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target({ ElementType.FIELD, ElementType.METHOD })
-public @interface Const {
-  ConstMode value() default ConstMode.UNSPECIFIED;
+@RunWith(Suite.class)
+@SuiteClasses({ ModelExtractorTest.class, SymbolTableTest.class })
+public class DmsRegression {
 }

@@ -8,8 +8,9 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dms.test;
 
-import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.XStreamer.fromXml;
-import static edu.ksu.cis.santos.mdcf.dml.ast.Ast.XStreamer.toXml;
+import static edu.ksu.cis.santos.mdcf.dml.serialization.XStreamer.fromXml;
+import static edu.ksu.cis.santos.mdcf.dml.serialization.XStreamer.toXml;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,8 +18,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-
-import junit.framework.Assert;
 
 import org.custommonkey.xmlunit.DetailedDiff;
 import org.custommonkey.xmlunit.XMLTestCase;
@@ -36,7 +35,7 @@ import edu.ksu.cis.santos.mdcf.dms.ModelExtractor;
  */
 public class ModelExtractorTest {
 
-  public final static boolean GENERATE_EXPECTED = false;
+  private static boolean GENERATE_EXPECTED = false;
 
   private XMLTestCase xmlUnit;
 
@@ -45,7 +44,7 @@ public class ModelExtractorTest {
         expected,
         StandardCharsets.US_ASCII);
     final String resultXml = Files.toString(result, StandardCharsets.US_ASCII);
-    assertEquals(expectedXml, resultXml);
+    this.assertEquals(expectedXml, resultXml);
   }
 
   void assertEquals(final String expectedXml, final String resultXml)
@@ -54,7 +53,7 @@ public class ModelExtractorTest {
         expectedXml,
         resultXml));
     final List<?> allDifferences = myDiff.getAllDifferences();
-    Assert.assertEquals(myDiff.toString(), 0, allDifferences.size());
+    assertThat(allDifferences.size()).isZero().describedAs(myDiff.toString());
   }
 
   @Test
@@ -86,14 +85,14 @@ public class ModelExtractorTest {
       Files.write(toXml(m), expected, StandardCharsets.US_ASCII);
     } else {
       Files.write(toXml(m), result, StandardCharsets.US_ASCII);
-      assertEquals(expected, result);
+      this.assertEquals(expected, result);
     }
   }
 
   void testXml(final Model m) throws Exception {
     final String xml1 = toXml(m);
     final Model m2 = fromXml(xml1);
-    Assert.assertEquals(m.toString(), m2.toString());
-    assertEquals(xml1, toXml(m2));
+    assertThat(m2.toString()).isEqualTo(m.toString());
+    this.assertEquals(xml1, toXml(m2));
   }
 }

@@ -307,9 +307,9 @@ package object util {
       case _     =>
     }
   }
-  
+
   def min(n : Int, m : Int) = if (n < m) n else m
-  
+
   def max(n : Int, m : Int) = if (n > m) n else m
 
-}  
+}

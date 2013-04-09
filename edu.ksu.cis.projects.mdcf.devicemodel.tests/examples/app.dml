@@ -6,7 +6,7 @@
 // some section of the app will require names for the devices and and then specify the characteristics of a device
 // myPO : MyReqPulseOx
 
-component MyReqPulseOx extends ICEPulseOx {
+feature MyReqPulseOx extends ICEPulseOx {
   pysioParams       : Set[ICEPhysioParameter] = {
   
       ICESpO2 = {
@@ -17,7 +17,7 @@ component MyReqPulseOx extends ICEPulseOx {
         // alternatively, the constraint can be stated directly on the field names
       }
       // query for a pulse ox that supports a client initiated exchange.  We will be fetch at most once per second.
-      exchanges : Set[DataExchange] = {
+      exchanges : Set[ICEDataExchange] = {
         ClientInitiated = {
           // where maxRetrievalRatePerSecond == Nat'(1)
         }
@@ -28,7 +28,7 @@ component MyReqPulseOx extends ICEPulseOx {
       range : IntRange = {
       // where min <= 30 and max >= 200
       }
-      exchanges : Set[DataExchange] = {
+      exchanges : Set[ICEDataExchange] = {
         ClientInitiated = {
           // where maxRetrievalRatePerSecond == Nat'(1)
         }
@@ -45,9 +45,9 @@ component MyReqPulseOx extends ICEPulseOx {
 // some section of the app will require names for the devices and and then specify the characteristics of a device
 // myPO : MyReqPulseOx
 
-component MySpO2 extends ICESpO2 {
+feature MySpO2 extends ICESpO2 {
       // query for a pulse ox that supports a client initiated exchange.  We will be fetch at most once per second.
-      exchanges : Set[DataExchange] = {
+      exchanges : Set[ICEDataExchange] = {
         Periodic = {
           // specify that the period is once per second
         }
@@ -63,9 +63,9 @@ component MySpO2 extends ICESpO2 {
 // some section of the app will require names for the devices and and then specify the characteristics of a device
 // myPO : MyReqPulseOx
 
-component MySpO2 extends ICESpO2 {
+feature MySpO2 extends ICESpO2 {
       // query for a pulse ox that supports a periodic exchange for SpO2 at a rate of once per second.
-      exchanges : Set[DataExchange] = {
+      exchanges : Set[ICEDataExchange] = {
         Periodic = {
           // specify that the period is once per second
         }
@@ -80,9 +80,9 @@ component MySpO2 extends ICESpO2 {
 // some section of the app will require names for the devices and and then specify the characteristics of a device
 // myPO : MyReqPulseOx
 
-component MyPR extends ICEPulseRate {
+feature MyPR extends ICEPulseRate {
       // query for a pulse ox that supports a periodic exchange for SpO2 at a rate of once per second.
-      exchanges : Set[DataExchange] = {
+      exchanges : Set[ICEDataExchange] = {
         Periodic = {
           // specify that the period is once per second
         }

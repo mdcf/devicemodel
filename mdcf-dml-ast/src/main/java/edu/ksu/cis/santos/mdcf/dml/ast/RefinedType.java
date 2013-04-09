@@ -32,6 +32,6 @@ public final class RefinedType extends Type {
 
   @Override
   protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitCompoundType(this);
+    return visitor.visitRefinedType(this);
   }
 }

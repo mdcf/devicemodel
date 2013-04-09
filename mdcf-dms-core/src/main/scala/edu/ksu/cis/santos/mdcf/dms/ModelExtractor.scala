@@ -66,6 +66,9 @@ object ModelExtractor {
   private final val CONST_NAME = classOf[annotation.Const].getName
   private final val INV_NAME = classOf[annotation.Inv].getName
   private final val SETTABLE_NAME = classOf[annotation.Settable].getName
+  private final val PRIMORDIAL_TYPES = Set[java.lang.String](
+    classOf[Object].getName, classOf[Any].getName, classOf[BasicType].getName,
+    classOf[Feature].getName)
 
   def extractModel(packageNames : Array[java.lang.String]) : Model =
     extract(Context(packageNames.toIterable))
@@ -179,10 +182,9 @@ object ModelExtractor {
       if (s != null && s.getName != OBJECT_NAME) {
         supers :+= namedType(s.getName)
       }
-    }
 
-    for (i <- clazz.getInterfaces()) {
-      supers :+= namedType(i.getName)
+      for (i <- clazz.getInterfaces() if !PRIMORDIAL_TYPES.contains(i.getName))
+        supers :+= namedType(i.getName)
     }
 
     val isBasicType = {

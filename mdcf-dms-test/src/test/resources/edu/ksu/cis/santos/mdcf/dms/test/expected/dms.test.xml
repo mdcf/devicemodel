@@ -1,29 +1,19 @@
 <model>
   <declarations class="ilist">
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.DeviceId">
-      <supers class="ilist">
-        <namedType name="BasicType"/>
-      </supers>
+      <supers class="ilist"></supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.ICETimeStamp">
-      <supers class="ilist">
-        <namedType name="BasicType"/>
-      </supers>
+      <supers class="ilist"></supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType">
-      <supers class="ilist">
-        <namedType name="BasicType"/>
-      </supers>
+      <supers class="ilist"></supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType">
-      <supers class="ilist">
-        <namedType name="BasicType"/>
-      </supers>
+      <supers class="ilist"></supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit">
-      <supers class="ilist">
-        <namedType name="BasicType"/>
-      </supers>
+      <supers class="ilist"></supers>
     </basicType>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure">
       <level>Class</level>
@@ -1364,23 +1354,17 @@
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert">
       <level>Schema</level>
-      <supers class="ilist">
-        <namedType name="Feature"/>
-      </supers>
+      <supers class="ilist"></supers>
       <members class="ilist"></members>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange">
       <level>Schema</level>
-      <supers class="ilist">
-        <namedType name="Feature"/>
-      </supers>
+      <supers class="ilist"></supers>
       <members class="ilist"></members>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDevice">
       <level>Schema</level>
-      <supers class="ilist">
-        <namedType name="Feature"/>
-      </supers>
+      <supers class="ilist"></supers>
       <members class="ilist">
         <attribute name="id">
           <modifier>ConstInstance</modifier>
@@ -1408,9 +1392,7 @@
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDeviceSetting">
       <level>Schema</level>
-      <supers class="ilist">
-        <namedType name="Feature"/>
-      </supers>
+      <supers class="ilist"></supers>
       <members class="ilist">
         <attribute name="security">
           <modifier>None</modifier>
@@ -1423,9 +1405,7 @@
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDeviceStatus">
       <level>Schema</level>
-      <supers class="ilist">
-        <namedType name="Feature"/>
-      </supers>
+      <supers class="ilist"></supers>
       <members class="ilist">
         <attribute name="security">
           <modifier>None</modifier>
@@ -1445,9 +1425,7 @@
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEManufacturerModel">
       <level>Schema</level>
-      <supers class="ilist">
-        <namedType name="Feature"/>
-      </supers>
+      <supers class="ilist"></supers>
       <members class="ilist">
         <attribute name="modelNumber">
           <modifier>ConstProduct</modifier>
@@ -1470,9 +1448,7 @@
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEMessageContext">
       <level>Data</level>
-      <supers class="ilist">
-        <namedType name="Feature"/>
-      </supers>
+      <supers class="ilist"></supers>
       <members class="ilist">
         <attribute name="messageConstructed">
           <modifier>None</modifier>
@@ -1483,16 +1459,12 @@
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEMetric">
       <level>Schema</level>
-      <supers class="ilist">
-        <namedType name="Feature"/>
-      </supers>
+      <supers class="ilist"></supers>
       <members class="ilist"></members>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter">
       <level>Schema</level>
-      <supers class="ilist">
-        <namedType name="Feature"/>
-      </supers>
+      <supers class="ilist"></supers>
       <members class="ilist">
         <attribute name="physioParameterType">
           <modifier>ConstClass</modifier>
@@ -1527,9 +1499,7 @@
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity">
       <level>Schema</level>
-      <supers class="ilist">
-        <namedType name="Feature"/>
-      </supers>
+      <supers class="ilist"></supers>
       <members class="ilist"></members>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange">
@@ -1570,9 +1540,7 @@
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute">
       <level>Data</level>
-      <supers class="ilist">
-        <namedType name="Feature"/>
-      </supers>
+      <supers class="ilist"></supers>
       <members class="ilist"></members>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricTimeStampAttributes">
@@ -1696,9 +1664,7 @@
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ObsValueContext">
       <level>Schema</level>
-      <supers class="ilist">
-        <namedType name="Feature"/>
-      </supers>
+      <supers class="ilist"></supers>
       <members class="ilist"></members>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.Periodic">
@@ -1723,9 +1689,7 @@
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.Range">
       <level>Schema</level>
-      <supers class="ilist">
-        <namedType name="Feature"/>
-      </supers>
+      <supers class="ilist"></supers>
       <members class="ilist">
         <attribute name="min">
           <modifier>Const</modifier>
