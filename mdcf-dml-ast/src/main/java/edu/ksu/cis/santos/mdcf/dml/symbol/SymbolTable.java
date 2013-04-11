@@ -37,7 +37,6 @@ import edu.ksu.cis.santos.mdcf.dml.ast.Ast.AbstractVisitor;
 import edu.ksu.cis.santos.mdcf.dml.ast.Attribute;
 import edu.ksu.cis.santos.mdcf.dml.ast.BasicType;
 import edu.ksu.cis.santos.mdcf.dml.ast.Declaration;
-import edu.ksu.cis.santos.mdcf.dml.ast.Device;
 import edu.ksu.cis.santos.mdcf.dml.ast.Feature;
 import edu.ksu.cis.santos.mdcf.dml.ast.FeatureInit;
 import edu.ksu.cis.santos.mdcf.dml.ast.Invariant;
@@ -53,15 +52,13 @@ import edu.ksu.cis.santos.mdcf.dml.ast.Type;
  */
 public final class SymbolTable {
   public enum Kind {
-    BasicType, Feature, Device, Requirement
+    BasicType, Feature, Requirement
   }
 
   private final static Map<String, Kind> kindMap = ImmutableMap
       .<String, Kind> of(
           BasicType.class.getName(),
           Kind.BasicType,
-          Device.class.getName(),
-          Kind.Device,
           Feature.class.getName(),
           Kind.Feature,
           Requirement.class.getName(),
@@ -349,14 +346,6 @@ public final class SymbolTable {
     return feature(featureName).members;
   }
 
-  public Device device(final String name) {
-    return (Device) declarationMap().get(name);
-  }
-
-  public List<Device> devices() {
-    return declarations(Device.class);
-  }
-
   public Feature feature(final String name) {
     return (Feature) declarationMap().get(name);
   }
@@ -438,10 +427,6 @@ public final class SymbolTable {
 
   public boolean isBasicType(final String name) {
     return kind(name) == Kind.BasicType;
-  }
-
-  public boolean isDevice(final String name) {
-    return kind(name) == Kind.Device;
   }
 
   public boolean isFeature(final String name) {
@@ -548,10 +533,6 @@ public final class SymbolTable {
 
       for (final Feature f : features()) {
         superTransitive(seen, superb, subb, f);
-      }
-
-      for (final Device d : devices()) {
-        superTransitive(seen, superb, subb, d);
       }
 
       result = superb.build();

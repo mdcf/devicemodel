@@ -218,7 +218,7 @@
         </attribute>
       </members>
     </feature>
-    <device name="edu.ksu.cis.santos.mdcf.dms.example.device.MultiMonitor">
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.device.MultiMonitor">
       <level>Product</level>
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor"/>
@@ -681,8 +681,8 @@
           </init>
         </attribute>
       </members>
-    </device>
-    <device name="edu.ksu.cis.santos.mdcf.dms.example.device.NellcorPulseOx">
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.device.NellcorPulseOx">
       <level>Product</level>
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
@@ -1014,8 +1014,8 @@
           </init>
         </attribute>
       </members>
-    </device>
-    <device name="edu.ksu.cis.santos.mdcf.dms.example.device.NoninPulseOx">
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.example.device.NoninPulseOx">
       <level>Product</level>
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
@@ -1249,7 +1249,7 @@
           </init>
         </attribute>
       </members>
-    </device>
+    </feature>
     <requirement name="edu.ksu.cis.santos.mdcf.dms.example.requirement.MyReqPulseOx">
       <invariants class="ilist">
         <invariant name="(SpO2&apos;s min &lt; 40 and SpO2&apos;s max == 100)">

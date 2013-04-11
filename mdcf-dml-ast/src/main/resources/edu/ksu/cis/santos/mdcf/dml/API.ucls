@@ -3,7 +3,7 @@
   realizations="false" associations="false" dependencies="false" nesting-relationships="true">  
   <class id="1" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Ast" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/Ast.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="501" width="422" x="41" y="37"/>    
+    <position height="483" width="422" x="41" y="37"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Ast.AbstractVisitor" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/Ast.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="537" width="245" x="41" y="1010"/>    
+    <position height="519" width="245" x="41" y="956"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -21,7 +21,7 @@
   </class>  
   <interface id="3" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Ast.IVisitor" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/Ast.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="483" width="245" x="326" y="1010"/>    
+    <position height="465" width="245" x="326" y="956"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -41,7 +41,7 @@
   <enumeration id="5" language="java" name="edu.ksu.cis.santos.mdcf.dml.symbol.SymbolTable.Kind" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/symbol/SymbolTable.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="123" width="128" x="752" y="1010"/>    
+    <position height="105" width="128" x="752" y="956"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -51,7 +51,7 @@
   <class id="6" language="java" name="edu.ksu.cis.santos.mdcf.dml.symbol.SymbolTable" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/symbol/SymbolTable.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="933" width="446" x="752" y="37"/>    
+    <position height="879" width="446" x="752" y="37"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -59,16 +59,16 @@
     </display>  
   </class>  
   <nesting id="7">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="5"/>  
-  </nesting>  
-  <nesting id="8">    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="2"/>  
   </nesting>  
-  <nesting id="9">    
+  <nesting id="8">    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="3"/>  
+  </nesting>  
+  <nesting id="9">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="5"/>  
   </nesting>  
   <classifier-display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
     accessors="true" visibility="false">    

@@ -59,7 +59,6 @@ object ModelExtractor {
   private final val SCHEMA_NAME = classOf[annotation.Schema].getName
   private final val CLASS_NAME = classOf[annotation.Class].getName
   private final val PRODUCT_NAME = classOf[annotation.Product].getName
-  private final val DEVICE_NAME = classOf[annotation.Device].getName
   private final val INSTANCE_NAME = classOf[annotation.Instance].getName
   private final val DATA_NAME = classOf[annotation.Data].getName
   private final val REQ_NAME = classOf[annotation.Req].getName
@@ -109,7 +108,7 @@ object ModelExtractor {
           val pkg = clazz.getPackage
           val pkgName = pkg.getName
           decls :+= extract(pkgModifier.getOrElseUpdate(pkgName, {
-            var pm = FM(FeatureModifier.Unspecified, false, false)
+            var pm = FM(FeatureModifier.Unspecified, false)
             var isReq = false
             for (a <- pkg.getAnnotations) {
               pm = extractFeatureModifier(pkgName, a.getClass, true)
@@ -125,8 +124,7 @@ object ModelExtractor {
   }
 
   private final case class FM(
-    featureModifier : FeatureModifier,
-    isDevice : scala.Boolean, isReq : scala.Boolean)
+    featureModifier : FeatureModifier, isReq : scala.Boolean)
 
   private def extractFeatureModifier(
     entityName : java.lang.String, clazz : java.lang.Class[_],
@@ -135,18 +133,17 @@ object ModelExtractor {
       if (!clazz.isInterface) clazz.getInterfaces()(0).getName
       else clazz.getName
     name match {
-      case `SCHEMA_NAME`          => FM(FeatureModifier.Schema, false, false)
-      case `CLASS_NAME`           => FM(FeatureModifier.Class, false, false)
-      case `PRODUCT_NAME`         => FM(FeatureModifier.Product, false, false)
-      case `DEVICE_NAME`          => FM(FeatureModifier.Product, true, false)
-      case `INSTANCE_NAME`        => FM(FeatureModifier.Instance, false, false)
-      case `DATA_NAME`            => FM(FeatureModifier.Data, false, false)
-      case `REQ_NAME` if allowReq => FM(FeatureModifier.Unspecified, false, true)
+      case `SCHEMA_NAME`          => FM(FeatureModifier.Schema, false)
+      case `CLASS_NAME`           => FM(FeatureModifier.Class, false)
+      case `PRODUCT_NAME`         => FM(FeatureModifier.Product, false)
+      case `INSTANCE_NAME`        => FM(FeatureModifier.Instance, false)
+      case `DATA_NAME`            => FM(FeatureModifier.Data, false)
+      case `REQ_NAME` if allowReq => FM(FeatureModifier.Unspecified, true)
       case c =>
         context.reporter.warning(
           s"Unexpected annotation $c for $entityName; only Schema, Class, " +
             "Product, Device, Instance, and Data are allowed.")
-        FM(FeatureModifier.Unspecified, false, false)
+        FM(FeatureModifier.Unspecified, false)
     }
   }
 
@@ -166,7 +163,6 @@ object ModelExtractor {
         catch { case e : Exception => imapEmpty[java.lang.String, Object] }
 
     var featureModifier = fm.featureModifier
-    var isDevice = fm.isDevice
     var isReq = fm.isReq
     var supers = ivectorEmpty[NamedType]
     var members = ivectorEmpty[Member]
@@ -174,7 +170,6 @@ object ModelExtractor {
     for (a <- ts.annotations.map(Reflection.annotation(_))) {
       val cfm = extractFeatureModifier(name, a.clazz, false)
       featureModifier = cfm.featureModifier
-      isDevice = cfm.isDevice
     }
 
     {
@@ -243,9 +238,7 @@ object ModelExtractor {
         case _ =>
       }
 
-      if (isDevice)
-        device(name, supers, members)
-      else if (isReq)
+      if (isReq)
         requirement(name, members.map { _.asInstanceOf[Invariant] })
       else
         feature(featureModifier, name, supers, members)

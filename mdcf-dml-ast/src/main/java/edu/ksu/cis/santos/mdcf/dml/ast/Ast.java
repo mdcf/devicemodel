@@ -71,13 +71,6 @@ public class Ast {
     }
 
     @Override
-    public boolean visitDevice(final Device node) {
-      final boolean b1 = visitDeclaration(node);
-      final boolean b2 = defaultCase(node);
-      return b1 && b2;
-    }
-
-    @Override
     public boolean visitEitherInit(final EitherInit node) {
       return defaultCase(node);
     }
@@ -92,7 +85,7 @@ public class Ast {
     @Override
     public boolean visitFeature(final Feature node) {
       final boolean b1 = visitDeclaration(node);
-      final boolean b2 = node instanceof Device ? true : defaultCase(node);
+      final boolean b2 = defaultCase(node);
       return b1 && b2;
     }
 
@@ -210,8 +203,6 @@ public class Ast {
 
     boolean visitDeclaration(Declaration node);
 
-    boolean visitDevice(Device node);
-
     boolean visitEitherInit(EitherInit node);
 
     boolean visitEitherType(EitherType node);
@@ -265,11 +256,6 @@ public class Ast {
   public static BasicType basicType(final String name,
       final List<NamedType> supers) {
     return new BasicType(name, supers);
-  }
-
-  public static Device device(final String name, final List<NamedType> supers,
-      final List<Member> members) {
-    return new Device(name, supers, members);
   }
 
   public static EitherInit eitherInit(final int index, final Initialization init) {

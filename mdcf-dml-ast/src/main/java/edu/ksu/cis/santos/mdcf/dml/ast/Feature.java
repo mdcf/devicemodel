@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
-public class Feature extends Declaration {
+public final class Feature extends Declaration {
   public final FeatureModifier level;
 
   public final List<NamedType> supers;

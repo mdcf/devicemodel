@@ -30,7 +30,6 @@ import edu.ksu.cis.santos.mdcf.dml.ast.Ast;
 import edu.ksu.cis.santos.mdcf.dml.ast.Attribute;
 import edu.ksu.cis.santos.mdcf.dml.ast.BasicInit;
 import edu.ksu.cis.santos.mdcf.dml.ast.BasicType;
-import edu.ksu.cis.santos.mdcf.dml.ast.Device;
 import edu.ksu.cis.santos.mdcf.dml.ast.EitherInit;
 import edu.ksu.cis.santos.mdcf.dml.ast.EitherType;
 import edu.ksu.cis.santos.mdcf.dml.ast.Feature;
@@ -124,7 +123,6 @@ public class XStreamer {
     result.alias("attribute", Attribute.class);
     result.alias("basicInit", BasicInit.class);
     result.alias("basicType", BasicType.class);
-    result.alias("device", Device.class);
     result.alias("eitherInit", EitherInit.class);
     result.alias("eitherType", EitherType.class);
     result.alias("feature", Feature.class);

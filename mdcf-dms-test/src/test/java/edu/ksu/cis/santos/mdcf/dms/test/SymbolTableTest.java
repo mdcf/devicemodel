@@ -30,7 +30,6 @@ import com.google.common.io.Files;
 import edu.ksu.cis.santos.mdcf.dml.ast.Attribute;
 import edu.ksu.cis.santos.mdcf.dml.ast.BasicType;
 import edu.ksu.cis.santos.mdcf.dml.ast.Declaration;
-import edu.ksu.cis.santos.mdcf.dml.ast.Device;
 import edu.ksu.cis.santos.mdcf.dml.ast.Feature;
 import edu.ksu.cis.santos.mdcf.dml.ast.Invariant;
 import edu.ksu.cis.santos.mdcf.dml.ast.Member;
@@ -133,27 +132,17 @@ public class SymbolTableTest {
         if (d instanceof BasicType) {
           assertThat(st.kind(declarationName)).isEqualTo(Kind.BasicType);
           assertThat(st.isBasicType(declarationName)).isTrue();
-          assertThat(st.isDevice(declarationName)).isFalse();
           assertThat(st.isFeature(declarationName)).isFalse();
           assertThat(st.isRequirement(declarationName)).isFalse();
           assertThat(st.basicType(declarationName)).isNotNull();
-        } else if (d instanceof Device) {
-          assertThat(st.kind(declarationName)).isEqualTo(Kind.Device);
-          assertThat(st.isBasicType(declarationName)).isFalse();
-          assertThat(st.isDevice(declarationName)).isTrue();
-          assertThat(st.isFeature(declarationName)).isFalse();
-          assertThat(st.isRequirement(declarationName)).isFalse();
-          assertThat(st.device(declarationName)).isNotNull();
         } else if (d instanceof Feature) {
           assertThat(st.kind(declarationName)).isEqualTo(Kind.Feature);
           assertThat(st.isBasicType(declarationName)).isFalse();
-          assertThat(st.isDevice(declarationName)).isFalse();
           assertThat(st.isFeature(declarationName)).isTrue();
           assertThat(st.isRequirement(declarationName)).isFalse();
           assertThat(st.feature(declarationName)).isNotNull();
         } else {
           assertThat(st.isBasicType(declarationName)).isFalse();
-          assertThat(st.isDevice(declarationName)).isFalse();
           assertThat(st.isFeature(declarationName)).isFalse();
           assertThat(st.isRequirement(declarationName)).isTrue();
           assertThat(st.requirement(declarationName)).isNotNull();
@@ -162,7 +151,6 @@ public class SymbolTableTest {
     }
 
     assertThat(st.basicTypes()).isNotEmpty();
-    assertThat(st.devices()).isNotEmpty();
     assertThat(st.features()).isNotEmpty();
     assertThat(st.requirements()).isNotEmpty();
   }
@@ -251,9 +239,6 @@ public class SymbolTableTest {
     final Set<String> featureNames = new TreeSet<String>();
     for (final Feature f : st.features()) {
       featureNames.add(f.name);
-    }
-    for (final Device d : st.devices()) {
-      featureNames.add(d.name);
     }
     return featureNames;
   }

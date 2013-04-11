@@ -25,11 +25,11 @@ Language Specification and Representation
    basicToStringMethod : "override" "def" "toString" "=" <scalaExp : java.lang.String>
 
 .. productionlist:: DMS
-   feature             : [ featureModifier ] "trait" ID_feature 
+   feature             : [ featureModifier ] ( "trait" | "class" ) ID_feature 
                        : "extends" ( "Feature" | `featureType` )
                        : "{" ( `attribute` [ `initialization` ] )* "}"
                        : [ `invariantObject` ] 
-   featureModifier     : "@Schema" | "@Class" | "@Product" | "@Device" | "@Instance" | "@Data" | "@Settable"
+   featureModifier     : "@Schema" | "@Class" | "@Product" | "@Instance" | "@Data" | "@Settable"
    featureType         : ID_feature ( "with" ID_feature )*
    attribute           : [ `attributeModifier` ] "val" ID_attribute ":" `type`
    attributeModifier   : "@Data" | "@Settable" | "@Const" [ "(" `constMode` ")" ] 
