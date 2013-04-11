@@ -4,10 +4,10 @@
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Apfloat"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Guava"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dml-ast"/>
 	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_COMPILER_CONTAINER"/>
-	<classpathentry kind="lib" path="/mdcf-extlib/apfloat-1.6.3.jar"/>
-	<classpathentry kind="lib" path="/mdcf-extlib/guava-4.0.1.jar"/>
-	<classpathentry kind="lib" path="/mdcf-extlib/jsr305.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/sireum-util"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
