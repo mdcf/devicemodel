@@ -7,7 +7,7 @@ Setting up Development Environment
 1. Download and install Sireum by following the instructions at: http://www.sireum.org/download.
 
 2. Download the `DML in Scala (DMS) project set file <https://github.com/mdcf/devicemodel/blob/master/dms.psf>`__.
-   If you are MDCF team members at GitHub with SSH key installed, you can use the 
+   If you are a MDCF team member at GitHub with SSH key installed, you can use the 
    `project set file with write access <https://github.com/mdcf/devicemodel/blob/master/dms.psf>`__ instead.
 
 3. Launch `Sireum Development Environment (DE) <http://www.sireum.org/features>`__::
