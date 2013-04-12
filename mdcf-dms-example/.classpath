@@ -6,5 +6,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Apfloat"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dms-core"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/sireum-util"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
