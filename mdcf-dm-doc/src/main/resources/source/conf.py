@@ -25,7 +25,7 @@ import sys, os
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.intersphinx', 'sphinx.ext.todo', 'sphinx.ext.coverage', 'sphinx.ext.pngmath', 'sphinx.ext.mathjax', 'sphinx.ext.ifconfig', 'sphinx.ext.viewcode']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.intersphinx', 'sphinx.ext.todo', 'sphinx.ext.coverage', 'sphinx.ext.pngmath', 'sphinx.ext.mathjax', 'sphinx.ext.ifconfig', 'sphinx.ext.viewcode', 'sphinx.ext.extlinks']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -287,3 +287,8 @@ epub_copyright = u'2013, Robby'
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'http://docs.python.org/': None}
+
+extlinks = {'dml': ('https://github.com/mdcf/devicemodel/tree/master/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/%s', ''),
+            'dms': ('https://github.com/mdcf/devicemodel/tree/master/mdcf-dms-core/src/main/scala/edu/ksu/cis/santos/mdcf/dms/%s', ''),
+            'scala': ('http://www.scala-lang.org/node/%s', ''),
+            'scaladoc': ('http://docs.scala-lang.org/%s', '') }

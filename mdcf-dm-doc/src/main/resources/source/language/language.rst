@@ -2,7 +2,8 @@ Language Specification, Representation, and API
 ===============================================
 
 This section describes how device models can be specified in the Domain Specific
-Language (DML) encoded in Scala. Note that because there are multiple ways to 
+Language (DML) encoded in Scala (Device Modeling in Scala -- DMS). 
+Note that because there are multiple ways to 
 express the device models in Scala, the specification described here should not 
 be treated as prescriptive. Instead, the specification is provided as a 
 guideline for people that are not familiar with Scala (but familiar with Java) 
@@ -31,14 +32,17 @@ DML using the Extended Backus-Naur Format (EBNF). Specifically:
   runtime. The design intentions behind angle bracket-ed rules are explained as 
   the production rules using the angle brackets are discussed.
 
-In addition, for the grammar productions, we describe the DML 
-Abstract Syntax Tree (AST) Java classes defined in the package 
-``edu.ksu.cis.santos.mdcf.dml.ast`` 
-that are used to represent the productions, as well as AST constructor API
-in ``edu.ksu.cis.santos.mdcf.dml.ast.Ast``, symbol table API 
-in ``edu.ksu.cis.santos.mdcf.dml.symbol.SymbolTable``, 
-and XML de/serialization API
-in ``edu.ksu.cis.santos.mdcf.dml.serialization.XStreamer``.
+In addition, for the grammar productions, we describe DML implementation classes 
+and API; when referring to such classes, we use
+:dml:`dml <>` as a shorthand for the :dml:`edu.ksu.cis.santos.mdcf.dml <>` package.
+Similarly, we use :dms:`dms <>` as a shorthand for the 
+:dms:`edu.ksu.cis.santos.mdcf.dms <>` package.
+The DML Abstract Syntax Tree (AST) Java classes are defined in the  
+:dml:`dml <ast>` package with associated AST constructor API in 
+:dml:`dml.ast.Ast <ast/Ast.java>`, symbol table API in 
+:dml:`dml.symbol.SymbolTable <symbol/SymbolTable.java>`, 
+and XML de/serialization API in 
+:dml:`dml.serialization.XStreamer <serialization/XStreamer.java>`.
 
 .. figure:: ../../../../../../mdcf-dml-ast/src/main/resources/edu/ksu/cis/santos/mdcf/dml/ast/dml-ast.png
    :scale: 10%
@@ -69,20 +73,21 @@ declarations of `basic types <#grammar-token-basicType>`__,
 `requirements <#grammar-token-requirement>`__. 
 That is, it is assumed that models are
 specified in a package other than the Scala or Java "default" package.
-The grammar recommends importing all entities (specified using ``_`` instead of 
-``*``  like in Java) defined in the ``edu.ksu.cis.santos.mdcf.dms`` 
-`package <http://www.scala-lang.org/node/119>`__ and 
-`package object <http://www.naildrivin5.com/scalatour/wiki_pages/PackageObjects>`__
-(see ``mdcf/mdcf-dms-core/src/main/scala/edu/ksu/cis/santos/mdcf/dms/package.scala``), 
-which defines DML primordial types, 
-`implicit conversions <http://www.scala-lang.org/node/130>`__,
-and a `macro <http://docs.scala-lang.org/overviews/macros/overview.html>`__, 
+The grammar recommends importing all elements (specified using ``_`` instead of 
+``*``  like in Java) defined in the :dms:`dms <>` 
+:scala:`Scala package <119>` and :dms:`dms.package <package.scala>` 
+`package object <http://www.naildrivin5.com/scalatour/wiki_pages/PackageObjects>`__, 
+which defines DML primordial types, :scala:`implicit conversions <130>`,
+and a :scala:`macro <overviews/macros/overview.html>`, 
 which will be described in the appropriate subsequent sections below.
  
 In addition, it recommends importing `basic types <#grammar-token-basicType>`__ 
 or `features <#grammar-token-feature>`__ defined in 
 different packages; note that Scala allows import declarations to appear in many
 places, including inside class declarations and expression blocks among others.
+
+One can alternatively, for example, choose to not import any package elements
+and always use fully qualified name.
 
 
 Basic Type
