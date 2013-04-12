@@ -34,7 +34,7 @@ Setting up Development Environment
 
    sireum launch sireumdev --args -clean
 
-   (Please contact the project owners if still unsucessful.)
+   (Please contact the project owners if still unsuccessful.)
 
 7. Run the JUnit test in ``mdcf-dms-test`` by right clicking the project and select "Run As" and then "JUnit Test";
    all tests should pass.
