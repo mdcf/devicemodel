@@ -1,5 +1,5 @@
 Language Specification, Representation, and API
-===============================================
+###############################################
 
 This section describes how device models can be specified in the Domain Specific
 Language (DML) encoded in Scala (Device Modeling in Scala -- DMS). 
@@ -32,17 +32,26 @@ DML using the Extended Backus-Naur Format (EBNF). Specifically:
   runtime. The design intentions behind angle bracket-ed rules are explained as 
   the production rules using the angle brackets are discussed.
 
+Representation and API
+**********************
+
+
+.. |Ast| replace:: :dml:`dml.ast.Ast <ast/Ast.java>`
+
+.. |SymbolTable| replace:: :dml:`dml.symbol.SymbolTable <symbol/SymbolTable.java>`
+
+.. |XStreamer| replace:: :dml:`dml.serialization.XStreamer <serialization/XStreamer.java>`
+
 In addition, for the grammar productions, we describe DML implementation classes 
 and API; when referring to such classes, we use
 :dml:`dml <>` as a shorthand for the :dml:`edu.ksu.cis.santos.mdcf.dml <>` package.
 Similarly, we use :dms:`dms <>` as a shorthand for the 
 :dms:`edu.ksu.cis.santos.mdcf.dms <>` package.
 The DML Abstract Syntax Tree (AST) Java classes are defined in the  
-:dml:`dml <ast>` package with associated AST constructor API in 
-:dml:`dml.ast.Ast <ast/Ast.java>`, symbol table API in 
-:dml:`dml.symbol.SymbolTable <symbol/SymbolTable.java>`, 
-and XML de/serialization API in 
-:dml:`dml.serialization.XStreamer <serialization/XStreamer.java>`.
+:dml:`dml <ast>` package with associated AST constructor methods 
+and visitor API in 
+|Ast|, symbol table API in |SymbolTable|, and XML de/serialization API in 
+|XStreamer|. 
 
 .. figure:: ../../../../../../mdcf-dml-ast/src/main/resources/edu/ksu/cis/santos/mdcf/dml/ast/dml-ast.png
    :scale: 10%
@@ -54,8 +63,34 @@ and XML de/serialization API in
 
    DML AST Constructors, Symbol Table, XML de/serialization API UML Class Diagram
 
+
+Nullity and Immutability
+========================
+
+All method parameters in all the API are non-null by 
+default; these are declared in the respective package infos 
+(:dml:`ast <ast/package-info.java>`, 
+:dml:`serialization <serialization/package-info.java>`, 
+:dml:`symbol <symbol/package-info.java>`). In addition, all objects 
+are designed to be immutable (object state changes may occur but not 
+observable through the API).
+
+Each AST node class stores its children in a ``public`` ``final`` 
+fields. In addition, each node class inherits from the 
+:dml:`dml.ast.AstNode <ast/AstNode.java>`, which provides a 
+``children`` method that returns an array of the node's children;
+the returned array can be mutated but it does not affect the AST node.
+
+
+AST Node String Representation
+==============================
+
+Calling the ``toString`` method on an AST node object produces a Scala code as
+a String that builds structurally equivalent AST object.
+
+
 Model
-*****
+=====
 
 .. productionlist:: DMS
    model               : `package` `imports` `declaration`*
@@ -86,12 +121,49 @@ or `features <#grammar-token-feature>`__ defined in
 different packages; note that Scala allows import declarations to appear in many
 places, including inside class declarations and expression blocks among others.
 
-One can alternatively, for example, choose to not import any package elements
-and always use fully qualified name.
+One can alternatively choose to not import any package elements and always use 
+the fully qualified name of package elements.
+
+
+AST Class, Construction, and Traversal
+**************************************
+
+A model is represented using the :dml:`Model <ast/Model.java>` AST class which
+has a list of :dml:`Declarations <ast/Declaration.java>`, which can be either
+:dml:`BasicType <ast/BasicType.java>`, :dml:`Feature <ast/Feature.java>`, or
+:dml:`Requirement <ast/Requirement.java>`.
+
+One can construct a model by calling the |Ast| ``model`` 
+static method as follows.
+
+.. literalinclude:: /../../java/ExModel.java
+   :language: java
+   :linenos:
+
+The above example creates a model with an empty list of declarations, and then
+prints out the model and the model's declarations. The |Ast| ``list``
+methods are helper methods that given either a variable or an 
+`Iterable <http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html>`__ 
+number of objects, then create an immutable list containing the provided 
+objects.
+
+.. literalinclude:: /../../scala/ExsModel.scala
+   :language: scala
+   :linenos:
+
+
+
+De/serialization API
+********************
+
+
+SymbolTable API
+***************
+
 
 
 Basic Type
-**********
+==========
 
 .. productionlist:: DMS
    basicType           : `basicTypeTrait`
@@ -108,9 +180,8 @@ Basic Type
    basicAsStringMethod : "override" "def" "asString" "=" <scalaExp : java.lang.String(S)>
    basicToStringMethod : "override" "def" "toString" "=" <scalaExp : java.lang.String(S)>
 
-
 Feature and Requirement
-***********************
+-----------------------
 
 .. productionlist:: DMS
    feature             : [ featureModifier ] ( "trait" | "class" ) ID_feature 
@@ -130,7 +201,7 @@ Feature and Requirement
    requirement         : "@Req" "object" ID_requirement "{" `invariant`* "}"
 
 Type and Initialization
-***********************
+-----------------------
 .. productionlist:: DMS
    type                : "Any" 
                        : | "Boolean" 
