@@ -7,13 +7,15 @@ Setting up Development Environment
 1. Download and install Sireum by following the instructions at: http://www.sireum.org/download.
 
 2. Download the `DML in Scala (DMS) project set file <https://github.com/mdcf/devicemodel/blob/master/dms.psf>`__.
+   If you are MDCF team members at GitHub with SSH key installed, you can use the 
+   `project set file with write access <https://github.com/mdcf/devicemodel/blob/master/dms.psf>`__ instead.
 
 3. Launch `Sireum Development Environment (DE) <http://www.sireum.org/features>`__::
 
    sireum launch sireumdev
 
-   Pick a directory for your workspace when asked. Moreover, when asked, enable JDT Weaving for Scala IDE. 
-   This causes Eclipse to quit; relaunch Sireum DE.
+   Pick a directory for your workspace when asked. Moreover, agree when asked to run Scala diagnostics;
+   enable JDT Weaving for Scala IDE and quit; relaunch Sireum DE.
 
 4. `Import the project set file <http://wiki.eclipse.org/PSF>`__ downloaded in Step 2.
    This should import some projects into your workspace such as `sireum-lib <https://www.assembla.com/code/sireum-core/git-3/nodes/master/sireum-lib>`__
