@@ -17,7 +17,7 @@ Setting up Development Environment
    Pick a directory for your workspace when asked. Moreover, agree when asked to run Scala diagnostics;
    enable JDT Weaving for Scala IDE and then quit DE; relaunch Sireum DE.
 
-4. Add SIREUM_HOME/apps/platform/java in Eclipe's 
+4. Add ``SIREUM_HOME/apps/platform/java`` in Eclipe's 
    `Java Installed JREs preference page <http://help.eclipse.org/juno/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fpreferences%2Fjava%2Fdebug%2Fref-installed_jres.htm>`__,
    and make it the default. In addition, set Eclipse's `Java Compiler compliance level <http://help.eclipse.org/juno/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fpreferences%2Fjava%2Fbuildpath%2Fref-preferences-user-libraries.htm>`__ to 1.7.
 
