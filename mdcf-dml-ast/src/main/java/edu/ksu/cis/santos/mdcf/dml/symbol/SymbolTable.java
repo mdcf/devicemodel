@@ -33,7 +33,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 
-import edu.ksu.cis.santos.mdcf.dml.ast.Ast.AbstractVisitor;
+import edu.ksu.cis.santos.mdcf.dml.ast.AbstractVisitor;
 import edu.ksu.cis.santos.mdcf.dml.ast.Attribute;
 import edu.ksu.cis.santos.mdcf.dml.ast.BasicType;
 import edu.ksu.cis.santos.mdcf.dml.ast.Declaration;

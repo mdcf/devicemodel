@@ -10,15 +10,15 @@ class ExsModel extends FunSuite {
 
   test("Empty model construction") {
 
-    val m = model(list())
-    println(m) //                                         output: model(list())
-    println(m.declarations) //                            output: []
+    val m = model(list())    // create a model with empty declarations
+    println(m) //               output: model(list())
+    println(m.declarations)  // output: []
 
     val m2 = org.sireum.util.Reflection.eval[Model](s""" 
       import edu.ksu.cis.santos.mdcf.dml.ast.Ast._
       ${m.toString}
     """)
-    println(m2) //                                        output: model(list())
+    println(m2) //              output: model(list())
 
   }
 }

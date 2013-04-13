@@ -18,7 +18,7 @@ import java.util.List;
 public final class Model extends AstNode {
   public final List<Declaration> declarations;
 
-  public Model(final List<Declaration> declarations) {
+  public Model(final Iterable<Declaration> declarations) {
     this.declarations = list(declarations);
   }
 
@@ -28,7 +28,7 @@ public final class Model extends AstNode {
   }
 
   @Override
-  protected boolean visit(final Ast.IVisitor visitor) {
+  protected boolean visit(final IVisitor visitor) {
     return visitor.visitModel(this);
   }
 }

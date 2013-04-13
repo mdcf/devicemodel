@@ -24,7 +24,9 @@ public final class SetType extends Type {
   }
 
   @Override
-  protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitSetType(this);
+  protected boolean visit(final IVisitor visitor) {
+    final boolean b1 = visitor.visitType(this);
+    final boolean b2 = visitor.visitSetType(this);
+    return b1 && b2;
   }
 }

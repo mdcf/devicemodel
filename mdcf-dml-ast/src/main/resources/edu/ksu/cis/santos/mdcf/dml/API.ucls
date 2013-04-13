@@ -3,72 +3,83 @@
   realizations="false" associations="false" dependencies="false" nesting-relationships="true">  
   <class id="1" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Ast" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/Ast.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="483" width="422" x="41" y="37"/>    
+    <position height="483" width="466" x="41" y="37"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Ast.AbstractVisitor" project="mdcf-dml-ast" 
-    file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/Ast.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="519" width="245" x="41" y="956"/>    
-    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
-      visibility="false">      
-      <attributes public="true" package="false" protected="false" private="false"/>      
-      <operations public="true" package="false" protected="false" private="false"/>    
-    </display>  
-  </class>  
-  <interface id="3" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Ast.IVisitor" project="mdcf-dml-ast" 
-    file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/Ast.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="465" width="245" x="326" y="956"/>    
-    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
-      visibility="false">      
-      <attributes public="true" package="false" protected="false" private="false"/>      
-      <operations public="true" package="false" protected="false" private="false"/>    
-    </display>  
-  </interface>  
-  <class id="4" language="java" name="edu.ksu.cis.santos.mdcf.dml.serialization.XStreamer" project="mdcf-dml-ast" 
+  <class id="2" language="java" name="edu.ksu.cis.santos.mdcf.dml.serialization.XStreamer" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/serialization/XStreamer.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="267" width="209" x="503" y="37"/>    
+    <position height="267" width="209" x="547" y="37"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
-  <enumeration id="5" language="java" name="edu.ksu.cis.santos.mdcf.dml.symbol.SymbolTable.Kind" project="mdcf-dml-ast" 
+  <enumeration id="3" language="java" name="edu.ksu.cis.santos.mdcf.dml.symbol.SymbolTable.Kind" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/symbol/SymbolTable.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="105" width="128" x="752" y="956"/>    
+    <position height="105" width="128" x="796" y="956"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </enumeration>  
-  <class id="6" language="java" name="edu.ksu.cis.santos.mdcf.dml.symbol.SymbolTable" project="mdcf-dml-ast" 
+  <class id="4" language="java" name="edu.ksu.cis.santos.mdcf.dml.symbol.SymbolTable" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/symbol/SymbolTable.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="879" width="446" x="752" y="37"/>    
+    <position height="879" width="446" x="796" y="37"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
       <operations public="true" package="false" protected="false" private="false"/>    
     </display>  
   </class>  
-  <nesting id="7">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="2"/>  
-  </nesting>  
+  <class id="5" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.AbstractVisitor" project="mdcf-dml-ast" 
+    file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/AbstractVisitor.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="537" width="245" x="1282" y="37"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
+      <attributes public="true" package="false" protected="false" private="false"/>      
+      <operations public="true" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <interface id="6" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.IVisitor" project="mdcf-dml-ast" 
+    file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/IVisitor.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="483" width="245" x="1282" y="956"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
+      <attributes public="true" package="false" protected="false" private="false"/>      
+      <operations public="true" package="false" protected="false" private="false"/>    
+    </display>  
+  </interface>  
+  <class id="7" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Ast.Weak" project="mdcf-dml-ast" 
+    file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/Ast.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="483" width="368" x="41" y="956"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
+      visibility="false">      
+      <attributes public="true" package="false" protected="false" private="false"/>      
+      <operations public="true" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
   <nesting id="8">    
     <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="3"/>  
+    <end type="TARGET" refId="7"/>  
   </nesting>  
-  <nesting id="9">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="5"/>  
+  <realization id="9">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <nesting id="10">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
   </nesting>  
   <classifier-display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
     accessors="true" visibility="false">    

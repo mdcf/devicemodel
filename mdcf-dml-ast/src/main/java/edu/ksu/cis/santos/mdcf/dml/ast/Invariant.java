@@ -61,7 +61,9 @@ public final class Invariant extends Member {
   }
 
   @Override
-  protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitInvariant(this);
+  protected boolean visit(final IVisitor visitor) {
+    final boolean b1 = visitor.visitMember(this);
+    final boolean b2 = visitor.visitInvariant(this);
+    return b1 && b2;
   }
 }

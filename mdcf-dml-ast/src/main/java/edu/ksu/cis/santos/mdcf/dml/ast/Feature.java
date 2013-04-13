@@ -23,7 +23,7 @@ public final class Feature extends Declaration {
   public final List<Member> members;
 
   public Feature(final FeatureModifier level, final String name,
-      final List<NamedType> supers, final List<Member> members) {
+      final Iterable<NamedType> supers, final Iterable<Member> members) {
     super(name);
     this.level = level;
     this.supers = list(supers);
@@ -36,7 +36,9 @@ public final class Feature extends Declaration {
   }
 
   @Override
-  protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitFeature(this);
+  protected boolean visit(final IVisitor visitor) {
+    final boolean b1 = visitor.visitDeclaration(this);
+    final boolean b2 = visitor.visitFeature(this);
+    return b1 && b2;
   }
 }

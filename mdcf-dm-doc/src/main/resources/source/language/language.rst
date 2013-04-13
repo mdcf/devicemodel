@@ -13,6 +13,8 @@ possible variations are described on how one can express a model differently.
 We will specify the context free grammar of the subset of Scala that is part of 
 DML using the Extended Backus-Naur Format (EBNF). Specifically:
 
+.. |String| replace:: :javadoc:`String <java/lang/String.html>`
+
 * Double quotes (``"`` ... ``"``)  delimit tokens
 * Midbar (``|``) separates production alternatives
 * Parenthesis ``(`` ... ``)`` groups rules
@@ -25,22 +27,25 @@ DML using the Extended Backus-Naur Format (EBNF). Specifically:
 * Angle brackets (``<`` ... ``>``) denotes Scala entities whose specifications
   are not formally specified in the grammar. For example,  
   ``<scalaExp : java.lang.String(S)>`` denotes a Scala expression whose type
-  resolves to some ``java.lang.String`` constant ``S`` such as ``"abc"``, which
+  resolves to some |String| constant ``S`` such as ``"abc"``, which
   is equivalent to ``"a" + "bc"`` because the Scala compiler optimizes such
   static expression to a constant at compile time, hence, it not only knows that
-  its type is ``java.lang.String``, but also that its value is ``"abc"`` at 
-  runtime. The design intentions behind angle bracket-ed rules are explained as 
+  its type is |String|, but also that its value is ``"abc"`` at  runtime. 
+  The design intentions behind angle bracket'd rules are explained as 
   the production rules using the angle brackets are discussed.
 
 Representation and API
 **********************
 
-
 .. |Ast| replace:: :dml:`dml.ast.Ast <ast/Ast.java>`
 
-.. |SymbolTable| replace:: :dml:`dml.symbol.SymbolTable <symbol/SymbolTable.java>`
+.. |IVisitor| replace:: :dml:`dml.ast.IVisitor <ast/IVisitor.java>`
+
+.. |AVisitor| replace:: :dml:`dml.ast.AbstractVisitor <ast/AbstractVisitor.java>`
 
 .. |XStreamer| replace:: :dml:`dml.serialization.XStreamer <serialization/XStreamer.java>`
+
+.. |SymbolTable| replace:: :dml:`dml.symbol.SymbolTable <symbol/SymbolTable.java>`
 
 In addition, for the grammar productions, we describe DML implementation classes 
 and API; when referring to such classes, we use
@@ -49,10 +54,11 @@ Similarly, we use :dms:`dms <>` as a shorthand for the
 :dms:`edu.ksu.cis.santos.mdcf.dms <>` package.
 The DML Abstract Syntax Tree (AST) Java classes are defined in the  
 :dml:`dml <ast>` package with associated AST constructor methods 
-and visitor API in 
-|Ast|, symbol table API in |SymbolTable|, and XML de/serialization API in 
-|XStreamer|. 
+in |Ast|, symbol table API in |SymbolTable|, 
+visitor API in |IVisitor| and |AVisitor|,
+and XML de/serialization API in |XStreamer|.
 
+ 
 .. figure:: ../../../../../../mdcf-dml-ast/src/main/resources/edu/ksu/cis/santos/mdcf/dml/ast/dml-ast.png
    :scale: 10%
 
@@ -61,7 +67,7 @@ and visitor API in
 .. figure:: ../../../../../../mdcf-dml-ast/src/main/resources/edu/ksu/cis/santos/mdcf/dml/API.png
    :scale: 10%
 
-   DML AST Constructors, Symbol Table, XML de/serialization API UML Class Diagram
+   DML AST Constructor, Symbol Table, Visitor, XML de/serialization API UML Class Diagram
 
 
 Nullity and Immutability
@@ -82,15 +88,16 @@ fields. In addition, each node class inherits from the
 the returned array can be mutated but it does not affect the AST node.
 
 
-AST Node String Representation
-==============================
+AST String Representation
+=========================
 
-Calling the ``toString`` method on an AST node object produces a Scala code as
-a String that builds structurally equivalent AST object.
+Calling the ``toString`` method on an AST node object produces a valid Java and 
+Scala code (under the appropriate import context) as a |String| that builds 
+structurally equivalent AST object. 
 
 
 Model
-=====
+*****
 
 .. productionlist:: DMS
    model               : `package` `imports` `declaration`*
@@ -125,45 +132,124 @@ One can alternatively choose to not import any package elements and always use
 the fully qualified name of package elements.
 
 
-AST Class, Construction, and Traversal
-**************************************
+AST Classes and Construction
+============================
 
 A model is represented using the :dml:`Model <ast/Model.java>` AST class which
-has a list of :dml:`Declarations <ast/Declaration.java>`, which can be either
+has a :javadoc:`Iterable <java/util/List.html>` 
+of :dml:`Declarations <ast/Declaration.java>`, which can be either
 :dml:`BasicType <ast/BasicType.java>`, :dml:`Feature <ast/Feature.java>`, or
 :dml:`Requirement <ast/Requirement.java>`.
 
 One can construct a model by calling the |Ast| ``model`` 
-static method as follows.
+static method as illustrated in the following :dmdocj:`example <ExModel.java>`:
 
 .. literalinclude:: /../../java/ExModel.java
    :language: java
+   :emphasize-lines: 8
    :linenos:
 
 The above example creates a model with an empty list of declarations, and then
 prints out the model and the model's declarations. The |Ast| ``list``
-methods are helper methods that given either a variable or an 
-`Iterable <http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html>`__ 
-number of objects, then create an immutable list containing the provided 
-objects.
+methods are helper methods that when given either a variable or an 
+:javadoc:`Iterable <java/lang/Iterable.html>` number of objects, they create an 
+(immutable) list containing the provided objects. 
+
+Notice that at :dmdocs:`Line 8 <ExModel.scala\#L8>`, we need to use
+``Ast.<Declaration> list()`` instead of just ``list()``. That is because
+``list()`` without a parameter type supplied for its element type returns
+``List<Object>``, which is incompatible with ``model``'s parameter that expects
+a list of :dml:`Declarations <ast/Declaration.java>`. To address this issue,
+one can use |Ast|. ``Weak`` API that have the same set of AST constructor 
+methods,but with weaker compile-time parameter types that are checked at 
+runtime; 
+:javadoc:`IllegalArgumentException <java/lang/IllegalArgumentException.html>`
+will be thrown if the runtime types are not what are expected.  
+Below is an :dmdocj:`example <ExModel.java>` that illustrate the
+|Ast|. ``Weak`` API:
+
+.. literalinclude:: /../../java/ExModelWeak.java
+   :language: java
+   :linenos:
+
+Below is a similar :dmdocs:`example <ExsModel.scala>` written in Scala;
+thanks to Scala's type inference, |Ast| API work
+without a problem as can be seen at :dmdocs:`Line 13 <ExsModel.scala\#L13>` 
+(of course ``Weak`` would work as well):
 
 .. literalinclude:: /../../scala/ExsModel.scala
    :language: scala
+   :emphasize-lines: 13,17-21
    :linenos:
 
-
-
-De/serialization API
-********************
+We mentioned previously in the `AST String Representation`_ Section that
+the AST ``toString`` method produces a code that construct structurally 
+equivalent AST. This is illustrated at 
+:dmdocs:`Lines 17-21 <ExsModel.scala\#L17-21>` where
+``m``'s ``toString`` is used to construct a Scala code
+as |String| at Line 19 (``s"`` ... ``"`` is a
+:scaladoc:`Scala string interpolator </overviews/core/string-interpolation.html>`)
+along with the import declaration at Line 18; 
+:sutil:`Reflection <Reflection.scala>`'s ``eval`` method takes the |String| 
+code, compiles it (at runtime), and invokes it to produce a structurally 
+equivalent model ``m2`` with respect to ``m`` as shown in at Line 21.
 
 
 SymbolTable API
-***************
+===============
 
+
+AST and Symbol Table De/serialization
+=====================================
+
+The |XStreamer| API provides AST and symbol table serialization to XML 
+and deserialization back from XML using XStream_ with custom converters that 
+makes the produced XML representation easier to read as well as its size.
+More specifically, it provides ``toXml`` and ``fromXml`` static methods for 
+converting to/from |String|, |Writer|/|Reader|, or |OutputStream|/|InputStream|.   
+
+.. _XStream: http://xstream.codehaus.org
+
+.. _Jettison: http://jettison.codehaus.org
+
+.. |Writer| replace:: :javadoc:`Writer <java/io/Writer.html>`
+
+.. |Reader| replace:: :javadoc:`Reader <java/io/Reader.html>`
+
+.. |OutputStream| replace:: :javadoc:`OutputStream <java/io/OutputStream.html>`
+
+.. |InputStream| replace:: :javadoc:`InputStream <java/io/InputStream.html>`
+
+Below is an :dmdocj:`example <ExModelXml.java>` that uses the |XStreamer| API:
+
+.. literalinclude:: /../../java/ExModelXml.java
+   :language: java
+   :linenos:
+
+The |XStreamer| API also provides serialization to JSON provided by its
+``toJson`` methods that uses XStream_ along with Jettison_. 
+Deserialization from Json using |XStreamer| ``fromJson`` static methods 
+is, however, currently not supported (there seems to be a deserialization bug in
+XStream_ with Jettison_ that warrants further investigations).
+
+In addition, a custom XStream_ instance can be retrieved by calling the 
+|XStreamer| ``xstream`` static method.
+
+
+AST Traversal/Visitor
+=====================
+
+Below is an :dmdocs:`example <ExModelVisitor.java>` to show how one can traverse 
+DML AST using the provided visitor API.
+
+.. literalinclude:: /../../java/ExModelVisitor.java
+   :language: java
+   :emphasize-lines: 17,30
+   :linenos:
 
 
 Basic Type
-==========
+**********
 
 .. productionlist:: DMS
    basicType           : `basicTypeTrait`
@@ -181,7 +267,7 @@ Basic Type
    basicToStringMethod : "override" "def" "toString" "=" <scalaExp : java.lang.String(S)>
 
 Feature and Requirement
------------------------
+***********************
 
 .. productionlist:: DMS
    feature             : [ featureModifier ] ( "trait" | "class" ) ID_feature 
@@ -201,7 +287,7 @@ Feature and Requirement
    requirement         : "@Req" "object" ID_requirement "{" `invariant`* "}"
 
 Type and Initialization
------------------------
+***********************
 .. productionlist:: DMS
    type                : "Any" 
                        : | "Boolean" 

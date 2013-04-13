@@ -32,7 +32,9 @@ public final class NamedType extends Type {
   }
 
   @Override
-  protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitNamedType(this);
+  protected boolean visit(final IVisitor visitor) {
+    final boolean b1 = visitor.visitType(this);
+    final boolean b2 = visitor.visitNamedType(this);
+    return b1 && b2;
   }
 }

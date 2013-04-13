@@ -18,7 +18,7 @@ import java.util.List;
 public final class TupleInit extends Initialization {
   public final List<Initialization> inits;
 
-  public TupleInit(final List<Initialization> inits) {
+  public TupleInit(final Iterable<Initialization> inits) {
     this.inits = list(inits);
   }
 
@@ -28,7 +28,9 @@ public final class TupleInit extends Initialization {
   }
 
   @Override
-  protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitTupleInit(this);
+  protected boolean visit(final IVisitor visitor) {
+    final boolean b1 = visitor.visitInitialization(this);
+    final boolean b2 = visitor.visitTupleInit(this);
+    return b1 && b2;
   }
 }

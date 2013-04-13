@@ -18,7 +18,7 @@ import java.util.List;
 public final class TupleType extends Type {
   public final List<Type> elementTypes;
 
-  public TupleType(final List<Type> elementTypes) {
+  public TupleType(final Iterable<Type> elementTypes) {
     this.elementTypes = list(elementTypes);
   }
 
@@ -28,7 +28,9 @@ public final class TupleType extends Type {
   }
 
   @Override
-  protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitTupleType(this);
+  protected boolean visit(final IVisitor visitor) {
+    final boolean b1 = visitor.visitType(this);
+    final boolean b2 = visitor.visitTupleType(this);
+    return b1 && b2;
   }
 }

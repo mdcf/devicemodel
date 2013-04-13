@@ -19,8 +19,8 @@ public final class RefinedType extends Type {
   public final List<NamedType> types;
   public final List<Attribute> attributes;
 
-  public RefinedType(final List<NamedType> types,
-      final List<Attribute> attributes) {
+  public RefinedType(final Iterable<NamedType> types,
+      final Iterable<Attribute> attributes) {
     this.types = list(types);
     this.attributes = list(attributes);
   }
@@ -31,7 +31,9 @@ public final class RefinedType extends Type {
   }
 
   @Override
-  protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitRefinedType(this);
+  protected boolean visit(final IVisitor visitor) {
+    final boolean b1 = visitor.visitType(this);
+    final boolean b2 = visitor.visitRefinedType(this);
+    return b1 && b2;
   }
 }

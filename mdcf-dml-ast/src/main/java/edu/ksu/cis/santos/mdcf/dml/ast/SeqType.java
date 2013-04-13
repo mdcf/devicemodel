@@ -24,7 +24,9 @@ public final class SeqType extends Type {
   }
 
   @Override
-  protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitSeqType(this);
+  protected boolean visit(final IVisitor visitor) {
+    final boolean b1 = visitor.visitType(this);
+    final boolean b2 = visitor.visitSeqType(this);
+    return b1 && b2;
   }
 }

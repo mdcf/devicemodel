@@ -18,7 +18,7 @@ import java.util.List;
 public final class EitherType extends Type {
   public final List<Type> choiceTypes;
 
-  public EitherType(final List<Type> choiceTypes) {
+  public EitherType(final Iterable<Type> choiceTypes) {
     this.choiceTypes = list(choiceTypes);
   }
 
@@ -28,7 +28,9 @@ public final class EitherType extends Type {
   }
 
   @Override
-  protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitEitherType(this);
+  protected boolean visit(final IVisitor visitor) {
+    final boolean b1 = visitor.visitType(this);
+    final boolean b2 = visitor.visitEitherType(this);
+    return b1 && b2;
   }
 }

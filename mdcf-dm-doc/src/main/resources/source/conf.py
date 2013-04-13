@@ -288,7 +288,11 @@ epub_copyright = u'2013, Robby'
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'http://docs.python.org/': None}
 
-extlinks = {'dml': ('https://github.com/mdcf/devicemodel/tree/master/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/%s', ''),
-            'dms': ('https://github.com/mdcf/devicemodel/tree/master/mdcf-dms-core/src/main/scala/edu/ksu/cis/santos/mdcf/dms/%s', ''),
+extlinks = {'dml': ('https://github.com/mdcf/devicemodel/blob/master/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/%s', ''),
+            'dmdocj': ('https://github.com/mdcf/devicemodel/blob/master/mdcf-dm-doc/src/main/java/%s', ''),
+            'dmdocs': ('https://github.com/mdcf/devicemodel/blob/master/mdcf-dm-doc/src/main/scala/%s', ''),
+            'javadoc': ('http://docs.oracle.com/javase/7/docs/api/%s', ''), 
+            'dms': ('https://github.com/mdcf/devicemodel/blob/master/mdcf-dms-core/src/main/scala/edu/ksu/cis/santos/mdcf/dms/%s', ''),
+            'sutil': ('https://sireum.assembla.com/code/sireum-core/git-3/nodes/master/sireum-util/src/main/scala/org/sireum/util/%s', ''),
             'scala': ('http://www.scala-lang.org/node/%s', ''),
             'scaladoc': ('http://docs.scala-lang.org/%s', '') }

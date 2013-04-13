@@ -18,7 +18,7 @@ import java.util.List;
 public final class Requirement extends Declaration {
   public final List<Invariant> invariants;
 
-  public Requirement(final String name, final List<Invariant> invariants) {
+  public Requirement(final String name, final Iterable<Invariant> invariants) {
     super(name);
     this.invariants = list(invariants);
   }
@@ -29,7 +29,9 @@ public final class Requirement extends Declaration {
   }
 
   @Override
-  protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitRequirement(this);
+  protected boolean visit(final IVisitor visitor) {
+    final boolean b1 = visitor.visitDeclaration(this);
+    final boolean b2 = visitor.visitRequirement(this);
+    return b1 && b2;
   }
 }

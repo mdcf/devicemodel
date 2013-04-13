@@ -24,7 +24,9 @@ public final class BasicInit extends Initialization {
   }
 
   @Override
-  protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitBasicInit(this);
+  protected boolean visit(final IVisitor visitor) {
+    final boolean b1 = visitor.visitInitialization(this);
+    final boolean b2 = visitor.visitBasicInit(this);
+    return b1 && b2;
   }
 }

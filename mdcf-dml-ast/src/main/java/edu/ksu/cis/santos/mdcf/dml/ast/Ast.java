@@ -18,230 +18,173 @@ import com.google.common.collect.ImmutableList;
  */
 public class Ast {
 
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  public static abstract class AbstractVisitor
-      implements IVisitor {
+  public static class Weak {
 
-    public boolean defaultCase(final AstNode node) {
+    private static <T, O> boolean allInstanceOf(final Iterable<O> os,
+        final Class<T> clazz) {
+      for (final O o : os) {
+        if (!clazz.isAssignableFrom(o.getClass())) {
+          return false;
+        }
+      }
       return true;
     }
 
-    public final void visit(final Object o) {
-      if (o instanceof List) {
-        for (final Object e : (List<?>) o) {
-          visit(e);
-        }
-      } else if (o instanceof Optional) {
-        final Optional<?> opt = (Optional<?>) o;
-        if (opt.isPresent()) {
-          visit(opt.get());
-        }
-      } else if (o instanceof AstNode) {
-        final AstNode node = (AstNode) o;
-        if (node.visit(this)) {
-          for (final Object child : node.children()) {
-            visit(child);
-          }
-        }
+    public static Attribute attribute(final AttributeModifier modifier,
+        final Type type, final String name, final Optional<?> init) {
+      return Ast.attribute(
+          modifier,
+          type,
+          name,
+          opt(init, Initialization.class));
+    }
+
+    public static BasicInit basicInit(final String value) {
+      return Ast.basicInit(value);
+    }
+
+    public static BasicType basicType(final String name,
+        final Iterable<?> supers) {
+      return Ast.basicType(name, list(supers, NamedType.class));
+    }
+
+    public static EitherInit eitherInit(final int index,
+        final Initialization init) {
+      return Ast.eitherInit(index, init);
+    }
+
+    public static EitherType eitherType(final Iterable<?> choiceTypes) {
+      return Ast.eitherType(list(choiceTypes, Type.class));
+    }
+
+    public static Feature feature(final FeatureModifier level,
+        final String name, final Iterable<?> supers, final Iterable<?> members) {
+      return Ast.feature(
+          level,
+          name,
+          list(supers, NamedType.class),
+          list(members, Member.class));
+    }
+
+    public static FeatureInit featureInit(final Iterable<?> types,
+        final Iterable<?> attributes) {
+      return Ast.featureInit(
+          list(types, NamedType.class),
+          list(attributes, Attribute.class));
+    }
+
+    public static Invariant invariant(final String name, final Object predicate) {
+      return Ast.invariant(name, predicate);
+    }
+
+    @SuppressWarnings("unchecked")
+    private static <T, O> List<T> list(final Iterable<O> os,
+        final Class<T> clazz) {
+      if (!allInstanceOf(os, clazz)) {
+        throw new IllegalArgumentException(
+            "Expecting all elements to be of type " + clazz.getName());
+      }
+      if (os instanceof ImmutableList) {
+        return (ImmutableList<T>) os;
+      } else {
+        return ImmutableList.<T> builder().addAll((Iterable<T>) os).build();
       }
     }
 
-    @Override
-    public boolean visitAttribute(final Attribute node) {
-      return defaultCase(node);
+    public static <T> List<T> list(final Iterable<T> ts) {
+      return Ast.list(ts);
     }
 
-    @Override
-    public boolean visitBasicInit(final BasicInit node) {
-      return defaultCase(node);
+    @SafeVarargs
+    public static <T> List<T> list(final T... ts) {
+      return Ast.list(ts);
     }
 
-    @Override
-    public boolean visitBasicType(final BasicType node) {
-      final boolean b1 = visitDeclaration(node);
-      final boolean b2 = defaultCase(node);
-      return b1 && b2;
+    public static Model model(final Iterable<?> declarations) {
+      return Ast.model(list(declarations, Declaration.class));
     }
 
-    @Override
-    public boolean visitDeclaration(final Declaration node) {
-      return true;
+    public static NamedType namedType(final String name) {
+      return Ast.namedType(name);
     }
 
-    @Override
-    public boolean visitEitherInit(final EitherInit node) {
-      return defaultCase(node);
+    public static <T> Optional<T> none() {
+      return Ast.none();
     }
 
-    @Override
-    public boolean visitEitherType(final EitherType node) {
-      final boolean b1 = visitType(node);
-      final boolean b2 = defaultCase(node);
-      return b1 && b2;
+    public static NoneInit noneInit() {
+      return Ast.noneInit();
     }
 
-    @Override
-    public boolean visitFeature(final Feature node) {
-      final boolean b1 = visitDeclaration(node);
-      final boolean b2 = defaultCase(node);
-      return b1 && b2;
+    @SuppressWarnings("unchecked")
+    private static <T, O> Optional<T> opt(final Optional<O> opt,
+        final Class<T> clazz) {
+      if (!optInstanceOf(opt, clazz)) {
+        throw new IllegalArgumentException(
+            "Expecting optional referent to be of type " + clazz.getName());
+      }
+      return (Optional<T>) opt;
     }
 
-    @Override
-    public boolean visitFeatureInit(final FeatureInit node) {
-      return defaultCase(node);
+    private static <T, O> boolean optInstanceOf(final Optional<O> opt,
+        final Class<T> clazz) {
+      if (opt.isPresent()) {
+        return clazz.isAssignableFrom(opt.get().getClass());
+      } else {
+        return true;
+      }
     }
 
-    @Override
-    public boolean visitInvariant(final Invariant node) {
-      final boolean b1 = visitMember(node);
-      final boolean b2 = defaultCase(node);
-      return b1 && b2;
+    public static OptionType optionType(final Type elementType) {
+      return Ast.optionType(elementType);
     }
 
-    @Override
-    public boolean visitMember(final Member node) {
-      return true;
+    public static RefinedType refinedType(final Iterable<?> types,
+        final Iterable<?> attributes) {
+      return Ast.refinedType(
+          list(types, NamedType.class),
+          list(attributes, Attribute.class));
     }
 
-    @Override
-    public boolean visitModel(final Model node) {
-      return defaultCase(node);
+    public static Requirement requirement(final String name,
+        final Iterable<?> invariants) {
+      return Ast.requirement(name, list(invariants, Invariant.class));
     }
 
-    @Override
-    public boolean visitNamedType(final NamedType node) {
-      final boolean b1 = visitType(node);
-      final boolean b2 = defaultCase(node);
-      return b1 && b2;
+    public static SeqInit seqInit(final Iterable<?> inits) {
+      return Ast.seqInit(list(inits, Initialization.class));
     }
 
-    @Override
-    public boolean visitNoneInit(final NoneInit node) {
-      return defaultCase(node);
+    public static SeqType seqType(final Type elementType) {
+      return Ast.seqType(elementType);
     }
 
-    @Override
-    public boolean visitOptionType(final OptionType node) {
-      final boolean b1 = visitType(node);
-      final boolean b2 = defaultCase(node);
-      return b1 && b2;
+    public static SetInit setInit(final Iterable<?> inits) {
+      return Ast.setInit(list(inits, Initialization.class));
     }
 
-    @Override
-    public boolean visitRefinedType(final RefinedType node) {
-      final boolean b1 = visitType(node);
-      final boolean b2 = defaultCase(node);
-      return b1 && b2;
+    public static SetType setType(final Type elementType) {
+      return Ast.setType(elementType);
     }
 
-    @Override
-    public boolean visitRequirement(final Requirement node) {
-      final boolean b1 = visitDeclaration(node);
-      final boolean b2 = defaultCase(node);
-      return b1 && b2;
+    public static <T> Optional<T> some(final T t) {
+      return Ast.some(t);
     }
 
-    @Override
-    public boolean visitSeqInit(final SeqInit node) {
-      return defaultCase(node);
+    public static SomeInit someInit(final Initialization init) {
+      return Ast.someInit(init);
     }
 
-    @Override
-    public boolean visitSeqType(final SeqType node) {
-      final boolean b1 = visitType(node);
-      final boolean b2 = defaultCase(node);
-      return b1 && b2;
+    public static TupleInit tupleInit(final Iterable<?> inits) {
+      return Ast.tupleInit(list(inits, Initialization.class));
     }
 
-    @Override
-    public boolean visitSetInit(final SetInit node) {
-      return defaultCase(node);
+    public static TupleType tupleType(final Iterable<?> elementTypes) {
+      return Ast.tupleType(list(elementTypes, Type.class));
     }
 
-    @Override
-    public boolean visitSetType(final SetType node) {
-      final boolean b1 = visitType(node);
-      final boolean b2 = defaultCase(node);
-      return b1 && b2;
+    private Weak() {
     }
-
-    @Override
-    public boolean visitSomeInit(final SomeInit node) {
-      return defaultCase(node);
-    }
-
-    @Override
-    public boolean visitTupleInit(final TupleInit node) {
-      return defaultCase(node);
-    }
-
-    @Override
-    public boolean visitTupleType(final TupleType node) {
-      final boolean b1 = visitType(node);
-      final boolean b2 = defaultCase(node);
-      return b1 && b2;
-    }
-
-    @Override
-    public boolean visitType(final Type node) {
-      return true;
-    }
-  }
-
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  public static interface IVisitor {
-    boolean visitAttribute(Attribute node);
-
-    boolean visitBasicInit(BasicInit node);
-
-    boolean visitBasicType(BasicType node);
-
-    boolean visitDeclaration(Declaration node);
-
-    boolean visitEitherInit(EitherInit node);
-
-    boolean visitEitherType(EitherType node);
-
-    boolean visitFeature(Feature node);
-
-    boolean visitFeatureInit(FeatureInit node);
-
-    boolean visitInvariant(Invariant node);
-
-    boolean visitMember(Member node);
-
-    boolean visitModel(Model node);
-
-    boolean visitNamedType(NamedType node);
-
-    boolean visitNoneInit(NoneInit node);
-
-    boolean visitOptionType(OptionType node);
-
-    boolean visitRefinedType(RefinedType node);
-
-    boolean visitRequirement(Requirement node);
-
-    boolean visitSeqInit(SeqInit node);
-
-    boolean visitSeqType(SeqType node);
-
-    boolean visitSetInit(SetInit node);
-
-    boolean visitSetType(SetType node);
-
-    boolean visitSomeInit(SomeInit node);
-
-    boolean visitTupleInit(TupleInit node);
-
-    boolean visitTupleType(TupleType node);
-
-    boolean visitType(Type node);
   }
 
   public static Attribute attribute(final AttributeModifier modifier,
@@ -254,7 +197,7 @@ public class Ast {
   }
 
   public static BasicType basicType(final String name,
-      final List<NamedType> supers) {
+      final Iterable<NamedType> supers) {
     return new BasicType(name, supers);
   }
 
@@ -262,17 +205,17 @@ public class Ast {
     return new EitherInit(index, init);
   }
 
-  public static EitherType eitherType(final List<Type> choiceTypes) {
+  public static EitherType eitherType(final Iterable<Type> choiceTypes) {
     return new EitherType(choiceTypes);
   }
 
   public static Feature feature(final FeatureModifier level, final String name,
-      final List<NamedType> supers, final List<Member> members) {
+      final Iterable<NamedType> supers, final Iterable<Member> members) {
     return new Feature(level, name, supers, members);
   }
 
-  public static FeatureInit featureInit(final List<NamedType> types,
-      final List<Attribute> attributes) {
+  public static FeatureInit featureInit(final Iterable<NamedType> types,
+      final Iterable<Attribute> attributes) {
     return new FeatureInit(types, attributes);
   }
 
@@ -293,7 +236,7 @@ public class Ast {
     return ImmutableList.<T> builder().add(ts).build();
   }
 
-  public static Model model(final List<Declaration> declarations) {
+  public static Model model(final Iterable<Declaration> declarations) {
     return new Model(declarations);
   }
 
@@ -313,17 +256,17 @@ public class Ast {
     return new OptionType(elementType);
   }
 
-  public static RefinedType refinedType(final List<NamedType> types,
-      final List<Attribute> attributes) {
+  public static RefinedType refinedType(final Iterable<NamedType> types,
+      final Iterable<Attribute> attributes) {
     return new RefinedType(types, attributes);
   }
 
   public static Requirement requirement(final String name,
-      final List<Invariant> invariants) {
+      final Iterable<Invariant> invariants) {
     return new Requirement(name, invariants);
   }
 
-  public static SeqInit seqInit(final List<Initialization> inits) {
+  public static SeqInit seqInit(final Iterable<Initialization> inits) {
     return new SeqInit(inits);
   }
 
@@ -331,7 +274,7 @@ public class Ast {
     return new SeqType(elementType);
   }
 
-  public static SetInit setInit(final List<Initialization> inits) {
+  public static SetInit setInit(final Iterable<Initialization> inits) {
     return new SetInit(inits);
   }
 
@@ -347,11 +290,11 @@ public class Ast {
     return new SomeInit(init);
   }
 
-  public static TupleInit tupleInit(final List<Initialization> inits) {
+  public static TupleInit tupleInit(final Iterable<Initialization> inits) {
     return new TupleInit(inits);
   }
 
-  public static TupleType tupleType(final List<Type> elementTypes) {
+  public static TupleType tupleType(final Iterable<Type> elementTypes) {
     return new TupleType(elementTypes);
   }
 

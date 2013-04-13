@@ -19,8 +19,8 @@ public final class FeatureInit extends Initialization {
   public final List<NamedType> types;
   public final List<Attribute> attributes;
 
-  public FeatureInit(final List<NamedType> types,
-      final List<Attribute> attributes) {
+  public FeatureInit(final Iterable<NamedType> types,
+      final Iterable<Attribute> attributes) {
     this.types = list(types);
     this.attributes = list(attributes);
   }
@@ -31,7 +31,9 @@ public final class FeatureInit extends Initialization {
   }
 
   @Override
-  protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitFeatureInit(this);
+  protected boolean visit(final IVisitor visitor) {
+    final boolean b1 = visitor.visitInitialization(this);
+    final boolean b2 = visitor.visitFeatureInit(this);
+    return b1 && b2;
   }
 }

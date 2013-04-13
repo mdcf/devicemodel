@@ -18,7 +18,7 @@ import java.util.List;
 public final class BasicType extends Declaration {
   public final List<NamedType> supers;
 
-  public BasicType(final String name, final List<NamedType> supers) {
+  public BasicType(final String name, final Iterable<NamedType> supers) {
     super(name);
     this.supers = list(supers);
   }
@@ -29,7 +29,9 @@ public final class BasicType extends Declaration {
   }
 
   @Override
-  protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitBasicType(this);
+  protected boolean visit(final IVisitor visitor) {
+    final boolean b1 = visitor.visitDeclaration(this);
+    final boolean b2 = visitor.visitBasicType(this);
+    return b1 && b2;
   }
 }

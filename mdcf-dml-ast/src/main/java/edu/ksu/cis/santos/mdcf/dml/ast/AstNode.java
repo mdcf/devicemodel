@@ -98,5 +98,5 @@ public abstract class AstNode {
     }
   }
 
-  protected abstract boolean visit(Ast.IVisitor visitor);
+  protected abstract boolean visit(IVisitor visitor);
 }

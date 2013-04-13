@@ -33,7 +33,9 @@ public final class Attribute extends Member {
   }
 
   @Override
-  protected boolean visit(final Ast.IVisitor visitor) {
-    return visitor.visitAttribute(this);
+  protected boolean visit(final IVisitor visitor) {
+    final boolean b1 = visitor.visitMember(this);
+    final boolean b2 = visitor.visitAttribute(this);
+    return b1 && b2;
   }
 }
