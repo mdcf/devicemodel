@@ -9,7 +9,5 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dml-ast"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dms-core"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dms-example"/>
-	<classpathentry kind="lib" path="lib/scala-library-2.10.1.jar"/>
-	<classpathentry kind="lib" path="lib/scala-reflect-2.10.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
