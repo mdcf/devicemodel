@@ -23,7 +23,7 @@
   <enumeration id="3" language="java" name="edu.ksu.cis.santos.mdcf.dml.symbol.SymbolTable.Kind" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/symbol/SymbolTable.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="105" width="128" x="796" y="866"/>    
+    <position height="105" width="128" x="796" y="938"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -33,7 +33,7 @@
   <class id="4" language="java" name="edu.ksu.cis.santos.mdcf.dml.symbol.SymbolTable" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/symbol/SymbolTable.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="789" width="445" x="796" y="37"/>    
+    <position height="861" width="445" x="796" y="37"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -53,7 +53,7 @@
   <interface id="6" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.IVisitor" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/IVisitor.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="483" width="245" x="1281" y="866"/>    
+    <position height="483" width="245" x="1281" y="938"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -62,7 +62,7 @@
   </interface>  
   <class id="7" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Ast.Weak" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/Ast.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="483" width="368" x="41" y="866"/>    
+    <position height="483" width="368" x="41" y="938"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      

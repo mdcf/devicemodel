@@ -8,6 +8,8 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dml.symbol;
 
+import static com.google.common.base.Preconditions.checkArgument;
+
 import java.lang.ref.SoftReference;
 import java.util.Collection;
 import java.util.Collections;
@@ -24,6 +26,7 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
 import com.google.common.base.Function;
+import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.collect.ImmutableList;
@@ -376,9 +379,33 @@ public final class SymbolTable {
    * @param name
    *          The fully-qualified name of the {@link BasicType}.
    * @return The {@link BasicType}.
+   * 
+   * @throws {@link IllegalArgumentException} if the provided name is not a
+   *         {@link BasicType} in the {@link #models}.
    */
   public BasicType basicType(final String name) {
-    return (BasicType) declarationMap().get(name);
+    final Map<String, Declaration> dm = declarationMap();
+    checkArgument(dm.containsKey(name));
+    final Declaration d = dm.get(name);
+    checkArgument(d instanceof BasicType);
+    return (BasicType) d;
+  }
+
+  /**
+   * Retrieves a {@link BasicType} from its fully-qualified name (
+   * {@link BasicType#name}), if any.
+   * 
+   * @param name
+   *          The fully-qualified name to query.
+   * @return The {@link BasicType}, if found in {@link #models}.
+   */
+  public Optional<BasicType> basicTypeOpt(final String name) {
+    Optional<BasicType> result = Optional.absent();
+    final Declaration d = declarationMap().get(name);
+    if (d instanceof BasicType) {
+      result = Optional.of((BasicType) d);
+    }
+    return result;
   }
 
   /**
@@ -535,9 +562,16 @@ public final class SymbolTable {
    *          The fully-qualified name ({@link Feature#name}) of the
    *          {@link Feature}.
    * @return The {@link Feature}.
+   * 
+   * @throws {@link IllegalArgumentException} if the provided name is not a
+   *         {@link Feature} in the {@link #models}.
    */
   public Feature feature(final String name) {
-    return (Feature) declarationMap().get(name);
+    final Map<String, Declaration> dm = declarationMap();
+    checkArgument(dm.containsKey(name));
+    final Declaration d = dm.get(name);
+    checkArgument(d instanceof Feature);
+    return (Feature) dm.get(name);
   }
 
   /**
@@ -578,6 +612,23 @@ public final class SymbolTable {
           .<String, Map<String, Pair<Feature, Member>>> build().asMap();
     }
     return this._featureMemberMap;
+  }
+
+  /**
+   * Retrieves a {@link Feature} from its fully-qualified name (
+   * {@link Featuree#name}), if any.
+   * 
+   * @param name
+   *          The fully-qualified name to query.
+   * @return The {@link Feature}, if found in {@link #models}.
+   */
+  public Optional<Feature> featureOpt(final String name) {
+    Optional<Feature> result = Optional.absent();
+    final Declaration d = declarationMap().get(name);
+    if (d instanceof Feature) {
+      result = Optional.of((Feature) d);
+    }
+    return result;
   }
 
   /**
@@ -732,10 +783,28 @@ public final class SymbolTable {
    *          The fully-qualified name ({@link Declaration#name}) of the
    *          {@link Declaration} to query.
    * @return the {@link Kind} of the declaration.
+   * @throws {@link IllegalArgumentException} if the provided declaration name
+   *         is not a {@link Declaration} in the {@link #models}.
    */
   public Kind kind(final String declarationName) {
-    return SymbolTable.kindMap.get(declarationMap().get(declarationName)
-        .getClass().getName());
+    final Map<String, Declaration> dm = declarationMap();
+    checkArgument(dm.containsKey(declarationName));
+    return SymbolTable.kindMap
+        .get(dm.get(declarationName).getClass().getName());
+  }
+
+  /**
+   * Retrieves the kind of a {@link Declaration}, if any.
+   * 
+   * @param declarationName
+   *          The fully-qualified name ({@link Declaration#name}) of the
+   *          {@link Declaration} to query.
+   * @return the {@link Kind} of the declaration, if found in {@link #models}.
+   */
+  public Optional<Kind> kindOpt(final String declarationName) {
+    final Map<String, Declaration> dm = declarationMap();
+    return Optional.fromNullable(SymbolTable.kindMap.get(dm
+        .get(declarationName).getClass().getName()));
   }
 
   /**
@@ -769,9 +838,32 @@ public final class SymbolTable {
    * @param name
    *          The fully-qualified name of the {@link Requirement}.
    * @return The {@link Requirement}.
+   * @throws {@link IllegalArgumentException} if the provided name is not a
+   *         {@link Requirement} in the {@link #models}.
    */
   public Requirement requirement(final String name) {
-    return (Requirement) declarationMap().get(name);
+    final Map<String, Declaration> dm = declarationMap();
+    checkArgument(dm.containsKey(name));
+    final Declaration d = dm.get(name);
+    checkArgument(d instanceof Requirement);
+    return (Requirement) d;
+  }
+
+  /**
+   * Retrieves a {@link Requirement} from its fully-qualified name (
+   * {@link Requirement#name}), if any.
+   * 
+   * @param name
+   *          The fully-qualified name to query.
+   * @return The {@link Requirement}, if found in {@link #models}.
+   */
+  public Optional<Requirement> requirementOpt(final String name) {
+    Optional<Requirement> result = Optional.absent();
+    final Declaration d = declarationMap().get(name);
+    if (d instanceof Requirement) {
+      result = Optional.of((Requirement) d);
+    }
+    return result;
   }
 
   /**

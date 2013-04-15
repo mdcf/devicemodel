@@ -83,16 +83,20 @@ are (to be) done after the extraction process.
 Nullity and Immutability
 ========================
 
-All method parameters in all the API are non-null by 
+All method parameters in all the DML API are non-null by 
 default; these are declared in the respective package infos 
 (:dml:`ast <ast/package-info.java>`, 
 :dml:`serialization <serialization/package-info.java>`, 
-:dml:`symbol <symbol/package-info.java>`). In addition, all objects 
-are designed to be immutable (object state changes may occur but not 
-observable through the API).
+:dml:`symbol <symbol/package-info.java>`). 
+In addition, all DML methods return non-null values.
 
-Each AST node class stores its children in ``public`` ``final`` 
-fields. In addition, each node class inherits from the 
+.. |List| replace:: :javadoc:`String <java/util/List.html>`
+
+All DML objects are immutable (object state changes may occur but not 
+observable through the API). Each AST node class stores its children in 
+``public`` ``final`` fields, which are non-null; 
+fields whose type is |List| store immutable |List| values. 
+In addition, each node class inherits from the 
 :dml:`dml.ast.AstNode <ast/AstNode.java>`, which provides a 
 ``children`` method that returns an array of the node's children;
 the returned array can be mutated but it does not affect the AST node.
