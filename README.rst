@@ -38,3 +38,5 @@ Setting up Development Environment
 
 7. Run the JUnit test in ``mdcf-dms-test`` by right clicking the project and select "Run As" and then "JUnit Test";
    all tests should pass.
+
+See the DMS documentation `online <http://mdcf.github.io/doc/dms/>`__.
