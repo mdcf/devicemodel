@@ -9,6 +9,8 @@ http://www.eclipse.org/legal/epl-v10.html
 package edu.ksu.cis.santos.mdcf.dml.ast;
 
 /**
+ * AST Visitor Interface. 
+ * 
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public interface IVisitor {

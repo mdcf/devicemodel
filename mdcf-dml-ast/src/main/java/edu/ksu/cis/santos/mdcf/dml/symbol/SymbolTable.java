@@ -114,8 +114,8 @@ public final class SymbolTable {
    * declared and closest (least) inherited attributes of the provided features.
    * 
    * @param featureNames
-   *          The fully-qualified name of the {@link Feature}s whose attributes
-   *          to be retrieved.
+   *          The fully-qualified name ({@link Feature#name}) of the
+   *          {@link Feature}s whose attributes to be retrieved.
    * @return an immutable {@link Map}.
    */
   public Map<String, Pair<Feature, Attribute>> allAttributeMap(
@@ -145,8 +145,8 @@ public final class SymbolTable {
    * declared and closest (least) inherited attributes of the provided feature.
    * 
    * @param featureName
-   *          The fully-qualified name of the {@link Feature} whose attributes
-   *          to be retrieved.
+   *          The fully-qualified name ({@link Feature#name}) of the
+   *          {@link Feature} whose attributes to be retrieved.
    * @return an immutable {@link Map}.
    */
   public Map<String, Pair<Feature, Attribute>> allAttributeMap(
@@ -160,8 +160,8 @@ public final class SymbolTable {
    * provided features and attribute name.
    * 
    * @param featureNames
-   *          The fully-qualified name of the {@link Feature}s whose attributes
-   *          to be retrieved.
+   *          The fully-qualified name ({@link Feature#name}) of the
+   *          {@link Feature}s whose attributes to be retrieved.
    * @param attributeName
    *          The {@link Attribute#name}.
    * @param isOverriden
@@ -204,8 +204,8 @@ public final class SymbolTable {
    * provided named types and attribute name.
    * 
    * @param featureName
-   *          The fully-qualified name of the {@link Feature} whose attributes
-   *          to be retrieved.
+   *          The fully-qualified name ({@link Feature#name}) of the
+   *          {@link Feature} whose attributes to be retrieved.
    * @param attributeName
    *          The {@link Attribute#name}.
    * @param isOverriden
@@ -227,8 +227,8 @@ public final class SymbolTable {
    * declared and inherited invariants of the provided features.
    * 
    * @param featureNames
-   *          The fully-qualified name of the {@link Feature}s whose invariants
-   *          to be retrieved.
+   *          The fully-qualified name ({@link Feature#name}) of the
+   *          {@link Feature}s whose invariants to be retrieved.
    * @return an immutable {@link Map}.
    */
   public Map<String, Pair<Feature, Invariant>> allInvariantMap(
@@ -257,8 +257,8 @@ public final class SymbolTable {
    * declared and inherited invariants of the provided feature.
    * 
    * @param featureName
-   *          The fully-qualified name of the {@link Feature} whose invariants
-   *          to be retrieved.
+   *          The fully-qualified name ({@link Feature#name}) of the
+   *          {@link Feature} whose invariants to be retrieved.
    * @return an immutable {@link Map}.
    */
   public Map<String, Pair<Feature, Invariant>> allInvariantMap(
@@ -272,8 +272,8 @@ public final class SymbolTable {
    * (least) inherited members of the provided features.
    * 
    * @param featureNames
-   *          The fully-qualified name of the {@link Feature}s whose members to
-   *          be retrieved.
+   *          The fully-qualified name ({@link Feature#name}) of the
+   *          {@link Feature}s whose members to be retrieved.
    * @return an immutable {@link Map}.
    */
   public Map<String, Pair<Feature, Member>> allMemberMap(
@@ -310,8 +310,8 @@ public final class SymbolTable {
    * declared and closest (least) inherited members of the provided feature.
    * 
    * @param featureName
-   *          The fully-qualified name of the {@link Feature} whose members to
-   *          be retrieved.
+   *          The fully-qualified name ({@link Feature#name}) of the
+   *          {@link Feature} whose members to be retrieved.
    * @return an immutable {@link Map}.
    */
   public Map<String, Pair<Feature, Member>> allMemberMap(
@@ -370,7 +370,8 @@ public final class SymbolTable {
   }
 
   /**
-   * Retrieves a {@link BasicType} from its fully-qualified name.
+   * Retrieves a {@link BasicType} from its fully-qualified name (
+   * {@link BasicType#name}).
    * 
    * @param name
    *          The fully-qualified name of the {@link BasicType}.
@@ -448,8 +449,8 @@ public final class SymbolTable {
    * feature.
    * 
    * @param featureName
-   *          The fully-qualified name of the {@link Feature} whose attributes
-   *          to be retrieved.
+   *          The fully-qualified name ({@link Feature#name}) of the
+   *          {@link Feature} whose attributes to be retrieved.
    * @return an immutable {@link Map}.
    */
   public Map<String, Attribute> declaredAttributeMap(final String featureName) {
@@ -461,8 +462,8 @@ public final class SymbolTable {
    * s of the provided feature.
    * 
    * @param featureName
-   *          The fully-qualified name of the {@link Feature} whose attributes
-   *          to be retrieved.
+   *          The fully-qualified name ({@link Feature#name}) of the
+   *          {@link Feature} whose attributes to be retrieved.
    * @return an immutable {@link Collection}.
    */
   public Collection<Attribute> declaredAttributes(final String featureName) {
@@ -475,8 +476,8 @@ public final class SymbolTable {
    * feature.
    * 
    * @param featureName
-   *          The fully-qualified name of the {@link Feature} whose invariants
-   *          to be retrieved.
+   *          The fully-qualified name ({@link Feature#name}) of the
+   *          {@link Feature} whose invariants to be retrieved.
    * @return an immutable {@link Map}.
    */
   public Map<String, Invariant> declaredInvariantMap(final String featureName) {
@@ -488,8 +489,8 @@ public final class SymbolTable {
    * s of the provided feature.
    * 
    * @param featureName
-   *          The fully-qualified name of the {@link Feature} whose attributes
-   *          to be retrieved.
+   *          The fully-qualified name ({@link Feature#name}) of the
+   *          {@link Feature} whose attributes to be retrieved.
    * @return an immutable {@link Collection}.
    */
   public Collection<Invariant> declaredInvariants(final String featureName) {
@@ -501,8 +502,8 @@ public final class SymbolTable {
    * that contains all declared members of the provided feature.
    * 
    * @param featureName
-   *          The fully-qualified name of the {@link Feature} whose members to
-   *          be retrieved.
+   *          The fully-qualified name ({@link Feature#name}) of the
+   *          {@link Feature} whose members to be retrieved.
    * @return an immutable {@link Map}.
    */
   public Map<String, Member> declaredMemberMap(final String featureName) {
@@ -518,8 +519,8 @@ public final class SymbolTable {
    * of the provided feature.
    * 
    * @param featureName
-   *          The fully-qualified name of the {@link Feature} whose members to
-   *          be retrieved.
+   *          The fully-qualified name ({@link Feature#name}) of the
+   *          {@link Feature} whose members to be retrieved.
    * @return an immutable {@link Collection}.
    */
   public Collection<Member> declaredMembers(final String featureName) {
@@ -527,10 +528,12 @@ public final class SymbolTable {
   }
 
   /**
-   * Retrieves a {@link Feature} from its fully-qualified name.
+   * Retrieves a {@link Feature} from its fully-qualified name (
+   * {@link Feature#name}).
    * 
    * @param name
-   *          The fully-qualified name of the {@link Feature}.
+   *          The fully-qualified name ({@link Feature#name}) of the
+   *          {@link Feature}.
    * @return The {@link Feature}.
    */
   public Feature feature(final String name) {
@@ -654,8 +657,8 @@ public final class SymbolTable {
   }
 
   /**
-   * Determines whether a {@link Declaration} fully-qualified name is of a
-   * {@link BasicType}.
+   * Determines whether a {@link Declaration} fully-qualified name (
+   * {@link Declaration#name}) is of a {@link BasicType}.
    * 
    * @param name
    *          The fully-qualified name to query.
@@ -667,8 +670,8 @@ public final class SymbolTable {
   }
 
   /**
-   * Determines whether a {@link Declaration} fully-qualified name is of a
-   * {@link Feature}.
+   * Determines whether a {@link Declaration} fully-qualified name (
+   * {@link Declaration#name}) is of a {@link Feature}.
    * 
    * @param name
    *          The fully-qualified name to query.
@@ -680,8 +683,8 @@ public final class SymbolTable {
   }
 
   /**
-   * Determines whether a {@link Declaration} fully-qualified name is of a
-   * {@link Requirement}.
+   * Determines whether a {@link Declaration} fully-qualified name (
+   * {@link Declaration#name}) is of a {@link Requirement}.
    * 
    * @param name
    *          The fully-qualified name to query.
@@ -726,7 +729,8 @@ public final class SymbolTable {
    * Retrieves the kind of a {@link Declaration}.
    * 
    * @param declarationName
-   *          The fully-qualified name of the {@link Declaration} to query.
+   *          The fully-qualified name ({@link Declaration#name}) of the
+   *          {@link Declaration} to query.
    * @return the {@link Kind} of the declaration.
    */
   public Kind kind(final String declarationName) {
@@ -759,7 +763,8 @@ public final class SymbolTable {
   }
 
   /**
-   * Retrieves a {@link Requirement} from its fully-qualified name.
+   * Retrieves a {@link Requirement} from its fully-qualified name (
+   * {@link Requirement#name}).
    * 
    * @param name
    *          The fully-qualified name of the {@link Requirement}.

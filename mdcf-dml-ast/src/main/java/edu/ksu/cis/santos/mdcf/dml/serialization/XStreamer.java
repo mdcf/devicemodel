@@ -59,66 +59,163 @@ public class XStreamer {
   private static final XStream XML = xstream(true);
   private static final XStream JSON = xstream(false);
 
+  /**
+   * Deserialize from a JSON {@link InputStream}.
+   * 
+   * @param is
+   *          The JSON {@link InputStream}.
+   * @return an object deserialized from the provided input.
+   */
   public static <T> T fromJson(final InputStream is) {
     @SuppressWarnings("unchecked")
     final T result = (T) XStreamer.JSON.fromXML(is);
     return result;
   }
 
+  /**
+   * Deserialize from a JSON {@link Reader}.
+   * 
+   * @param r
+   *          The JSON {@link Reader}.
+   * @return an object deserialized from the provided input.
+   */
   public static <T> T fromJson(final Reader r) {
     @SuppressWarnings("unchecked")
     final T result = (T) XStreamer.JSON.fromXML(r);
     return result;
   }
 
+  /**
+   * Deserialize from a JSON {@link String}.
+   * 
+   * @param s
+   *          The JSON {@link String}.
+   * @return an object deserialized from the provided input.
+   */
   public static <T> T fromJson(final String s) {
     @SuppressWarnings("unchecked")
     final T result = (T) XStreamer.JSON.fromXML(s);
     return result;
   }
 
+  /**
+   * Deserialize from a XML {@link InputStream}.
+   * 
+   * @param is
+   *          The XML {@link InputStream}.
+   * @return an object deserialized from the provided input.
+   */
   public static <T> T fromXml(final InputStream is) {
     @SuppressWarnings("unchecked")
     final T result = (T) XStreamer.XML.fromXML(is);
     return result;
   }
 
+  /**
+   * Deserialize from a XML {@link Reader}.
+   * 
+   * @param r
+   *          The XML {@link Reader}.
+   * @return an object deserialized from the provided input.
+   */
   public static <T> T fromXml(final Reader r) {
     @SuppressWarnings("unchecked")
     final T result = (T) XStreamer.XML.fromXML(r);
     return result;
   }
 
+  /**
+   * Deserialize from a XML {@link String}.
+   * 
+   * @param s
+   *          The XML {@link String}.
+   * @return an object deserialized from the provided input.
+   */
   public static <T> T fromXml(final String s) {
     @SuppressWarnings("unchecked")
     final T result = (T) XStreamer.XML.fromXML(s);
     return result;
   }
 
+  /**
+   * Serialize to JSON {@link String}.
+   * 
+   * @param o
+   *          The object to serialize.
+   * @return the JSON {@link String} representation of the provided object.
+   */
   public static String toJson(final Object o) {
     return XStreamer.JSON.toXML(o);
   }
 
+  /**
+   * Serialize to JSON using an {@link OutputStream}.
+   * 
+   * @param o
+   *          The object to serialize.
+   * @param os
+   *          The {@link OutputStream} to write the JSON representation to.
+   */
   public static void toJson(final Object o, final OutputStream os) {
     XStreamer.JSON.toXML(o, os);
   }
 
+  /**
+   * Serialize to JSON using a {@link Writer}.
+   * 
+   * @param o
+   *          The object to serialize.
+   * @param w
+   *          The {@link Writer} to write the JSON representation to.
+   */
   public static void toJson(final Object o, final Writer w) {
     XStreamer.JSON.toXML(o, w);
   }
 
+  /**
+   * Serialize to JSON {@link String}.
+   * 
+   * @param o
+   *          The object to serialize.
+   * @return the JSON {@link String} representation of the provided object.
+   */
   public static String toXml(final Object o) {
     return XStreamer.XML.toXML(o);
   }
 
+  /**
+   * Serialize to XML using an {@link OutputStream}.
+   * 
+   * @param o
+   *          The object to serialize.
+   * @param os
+   *          The {@link OutputStream} to write the XML representation to.
+   */
   public static void toXml(final Object o, final OutputStream os) {
     XStreamer.XML.toXML(o, os);
   }
 
+  /**
+   * Serialize to XML using a {@link Writer}.
+   * 
+   * @param o
+   *          The object to serialize.
+   * @param w
+   *          The {@link Writer} to write the XML representation to.
+   */
   public static void toXml(final Object o, final Writer w) {
     XStreamer.XML.toXML(o, w);
   }
 
+  /**
+   * Retrieves a custom {@link XStream} pre-configured for de/serializing DML
+   * AST and symbol table.
+   * 
+   * @param isXml
+   *          Indicates whether the {@link XStream} is for XML or JSON
+   *          de/serialization.
+   * @return a custom {@link XStream}.
+   */
   public static XStream xstream(final boolean isXml) {
     final XStream result = new XStream(isXml ? new Xpp3Driver()
         : new JettisonMappedXmlDriver());

@@ -14,10 +14,17 @@ import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 
 /**
+ * Provides AST construction methods.
+ * 
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public class Ast {
 
+  /**
+   * Provides AST construction methods with weaker type parameter constraints.
+   * 
+   * @author <a href="mailto:robby@k-state.edu">Robby</a>
+   */
   public static class Weak {
 
     private static <T, O> boolean allInstanceOf(final Iterable<O> os,

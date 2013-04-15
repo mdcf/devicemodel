@@ -13,6 +13,11 @@ import java.util.List;
 import com.google.common.base.Optional;
 
 /**
+ * A basic {@link IVisitor} implementation that handles {@link List},
+ * {@link Optional}, and returns true for all {@link IVisitor} methods
+ * (indicating that all children should be visited) with default case handler
+ * for all AST nodes.
+ * 
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public abstract class AbstractVisitor
