@@ -48,14 +48,23 @@ import edu.ksu.cis.santos.mdcf.dml.ast.Requirement;
 import edu.ksu.cis.santos.mdcf.dml.ast.Type;
 
 /**
+ * Provides API to retrieve DML entities such as basic types, features,
+ * attributes, and invariants in the models or by their fully-qualified name.
+ * 
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public final class SymbolTable {
+
+  /**
+   * Represents {@link Declaration} kind.
+   * 
+   * @author <a href="mailto:robby@k-state.edu">Robby</a>
+   */
   public enum Kind {
     BasicType, Feature, Requirement
   }
 
-  private final static Map<String, Kind> kindMap = ImmutableMap
+  private transient final static Map<String, Kind> kindMap = ImmutableMap
       .<String, Kind> of(
           BasicType.class.getName(),
           Kind.BasicType,
@@ -64,10 +73,20 @@ public final class SymbolTable {
           Requirement.class.getName(),
           Kind.Requirement);
 
+  /**
+   * Creates a symbol table of the provided models.
+   * 
+   * @param models
+   *          The models whose symbol table to be created.
+   * @return A symbol table.
+   */
   public static SymbolTable of(final Model... models) {
     return new SymbolTable(models);
   }
 
+  /**
+   * The list of models used to construct this symbol table.
+   */
   public final List<Model> models;
 
   private transient Map<String, Declaration> _declarationMap;
@@ -77,7 +96,7 @@ public final class SymbolTable {
   private transient SoftReference<Multimap<String, String>> _superMap;
   private transient SoftReference<Multimap<String, String>> _subMap;
 
-  private final Function<NamedType, String> namedType2String = new Function<NamedType, String>() {
+  private transient static final Function<NamedType, String> namedType2String = new Function<NamedType, String>() {
     @Override
     @Nullable
     public String apply(@Nullable final NamedType input) {
@@ -89,86 +108,174 @@ public final class SymbolTable {
     this.models = ImmutableList.<Model> builder().add(models).build();
   }
 
+  /**
+   * Retrieves an immutable {@link Map} of {@link Attribute#name} to
+   * {@link Attribute} with its declaring {@link Feature} that contains all
+   * declared and closest (least) inherited attributes of the provided features.
+   * 
+   * @param featureNames
+   *          The fully-qualified name of the {@link Feature}s whose attributes
+   *          to be retrieved.
+   * @return an immutable {@link Map}.
+   */
   public Map<String, Pair<Feature, Attribute>> allAttributeMap(
       final Iterable<String> featureNames) {
     return filterp(allMemberMap(featureNames), Attribute.class);
   }
 
+  /**
+   * Retrieves an immutable {@link Map} of {@link Attribute#name} to
+   * {@link Attribute} with its declaring {@link Feature} that contains all
+   * declared and closest (least) inherited attributes of the provided named
+   * types.
+   * 
+   * @param namedTypes
+   *          The {@link NamedType}s referring to {@link Feature}s whose
+   *          attributes to be retrieved.
+   * @return an immutable {@link Map}.
+   */
   public Map<String, Pair<Feature, Attribute>> allAttributeMap(
       final List<NamedType> namedTypes) {
     return filterp(allMemberMap(namedTypes), Attribute.class);
   }
 
+  /**
+   * Retrieves an immutable {@link Map} of {@link Attribute#name} to
+   * {@link Attribute} with its declaring {@link Feature} that contains all
+   * declared and closest (least) inherited attributes of the provided feature.
+   * 
+   * @param featureName
+   *          The fully-qualified name of the {@link Feature} whose attributes
+   *          to be retrieved.
+   * @return an immutable {@link Map}.
+   */
   public Map<String, Pair<Feature, Attribute>> allAttributeMap(
       final String featureName) {
     return filterp(allMemberMap(featureName), Attribute.class);
   }
 
+  /**
+   * Retrieves an immutable {@link Set} of {@link Attribute} with its declaring
+   * {@link Feature} that contains all overriden/overriding attributes of the
+   * provided features and attribute name.
+   * 
+   * @param featureNames
+   *          The fully-qualified name of the {@link Feature}s whose attributes
+   *          to be retrieved.
+   * @param attributeName
+   *          The {@link Attribute#name}.
+   * @param isOverriden
+   *          Indicates whether to retrieve overriden/overriding attributes.
+   * @return an immutable {@link Set}.
+   */
   public Set<Pair<Feature, Attribute>> allAttributes(
-      final Iterable<String> featureNames, final String memberName,
-      final boolean isSuper) {
-    return allMembers(featureNames, Attribute.class, memberName, isSuper);
+      final Iterable<String> featureNames, final String attributeName,
+      final boolean isOverriden) {
+    return allMembers(featureNames, Attribute.class, attributeName, isOverriden);
   }
 
+  /**
+   * Retrieves an immutable {@link Set} of {@link Attribute} with its declaring
+   * {@link Feature} that contains all overriden/overriding attributes of the
+   * provided named types and attribute name.
+   * 
+   * @param namedTypes
+   *          The {@link NamedType}s referring to {@link Feature}s whose
+   *          attributes to be retrieved.
+   * @param attributeName
+   *          The {@link Attribute#name}.
+   * @param isOverriden
+   *          Indicates whether to retrieve overriden/overriding attributes.
+   * @return an immutable {@link Set}.
+   */
   public Set<Pair<Feature, Attribute>> allAttributes(
-      final List<NamedType> namedTypes, final String memberName,
-      final boolean isSuper) {
+      final List<NamedType> namedTypes, final String attributeName,
+      final boolean isOverriden) {
     return allMembers(
-        Iterables.transform(namedTypes, this.namedType2String),
+        Iterables.transform(namedTypes, SymbolTable.namedType2String),
         Attribute.class,
-        memberName,
-        isSuper);
+        attributeName,
+        isOverriden);
   }
 
+  /**
+   * Retrieves an immutable {@link Set} of {@link Attribute} with its declaring
+   * {@link Feature} that contains all overriden/overriding attributes of the
+   * provided named types and attribute name.
+   * 
+   * @param featureName
+   *          The fully-qualified name of the {@link Feature} whose attributes
+   *          to be retrieved.
+   * @param attributeName
+   *          The {@link Attribute#name}.
+   * @param isOverriden
+   *          Indicates whether to retrieve overriden/overriding attributes.
+   * @return an immutable {@link Set}.
+   */
   public Set<Pair<Feature, Attribute>> allAttributes(final String featureName,
-      final String memberName, final boolean isSuper) {
+      final String attributeName, final boolean isOverriden) {
     return allMembers(
         ImmutableList.of(featureName),
         Attribute.class,
-        memberName,
-        isSuper);
+        attributeName,
+        isOverriden);
   }
 
+  /**
+   * Retrieves an immutable {@link Map} of {@link Invariant#name} to
+   * {@link Invariant} with its declaring {@link Feature} that contains all
+   * declared and inherited invariants of the provided features.
+   * 
+   * @param featureNames
+   *          The fully-qualified name of the {@link Feature}s whose invariants
+   *          to be retrieved.
+   * @return an immutable {@link Map}.
+   */
   public Map<String, Pair<Feature, Invariant>> allInvariantMap(
       final Iterable<String> featureNames) {
     return filterp(allMemberMap(featureNames), Invariant.class);
   }
 
+  /**
+   * Retrieves an immutable {@link Map} of {@link Invariant#name} to
+   * {@link Invariant} with its declaring {@link Feature} that contains all
+   * declared and inherited invariants of the provided named types.
+   * 
+   * @param namedTypes
+   *          The {@link NamedType}s referring to {@link Feature}s whose
+   *          invariants to be retrieved.
+   * @return an immutable {@link Map}.
+   */
   public Map<String, Pair<Feature, Invariant>> allInvariantMap(
       final List<NamedType> namedTypes) {
     return filterp(allMemberMap(namedTypes), Invariant.class);
   }
 
+  /**
+   * Retrieves an immutable {@link Map} of {@link Invariant#name} to
+   * {@link Invariant} with its declaring {@link Feature} that contains all
+   * declared and inherited invariants of the provided feature.
+   * 
+   * @param featureName
+   *          The fully-qualified name of the {@link Feature} whose invariants
+   *          to be retrieved.
+   * @return an immutable {@link Map}.
+   */
   public Map<String, Pair<Feature, Invariant>> allInvariantMap(
       final String featureName) {
     return filterp(allMemberMap(featureName), Invariant.class);
   }
 
-  public Set<Pair<Feature, Invariant>> allInvariants(
-      final Iterable<String> featureNames, final String memberName,
-      final boolean isSuper) {
-    return allMembers(featureNames, Invariant.class, memberName, isSuper);
-  }
-
-  public Set<Pair<Feature, Invariant>> allInvariants(
-      final List<NamedType> namedTypes, final String memberName,
-      final boolean isSuper) {
-    return allMembers(
-        Iterables.transform(namedTypes, this.namedType2String),
-        Invariant.class,
-        memberName,
-        isSuper);
-  }
-
-  public Set<Pair<Feature, Invariant>> allInvariants(final String featureName,
-      final String memberName, final boolean isSuper) {
-    return allMembers(
-        ImmutableList.of(featureName),
-        Invariant.class,
-        memberName,
-        isSuper);
-  }
-
+  /**
+   * Retrieves an immutable {@link Map} of {@link Member#name} to {@link Member}
+   * with its declaring {@link Feature} that contains all declared and closest
+   * (least) inherited members of the provided features.
+   * 
+   * @param featureNames
+   *          The fully-qualified name of the {@link Feature}s whose members to
+   *          be retrieved.
+   * @return an immutable {@link Map}.
+   */
   public Map<String, Pair<Feature, Member>> allMemberMap(
       final Iterable<String> featureNames) {
     final TreeMap<String, Pair<Feature, Member>> b = new TreeMap<>();
@@ -180,11 +287,33 @@ public final class SymbolTable {
     return Collections.unmodifiableMap(b);
   }
 
+  /**
+   * Retrieves an immutable {@link Map} of {@link Member#name} to {@link Member}
+   * with its declaring {@link Feature} that contains all declared and inherited
+   * closest (least) members of the provided named types.
+   * 
+   * @param namedTypes
+   *          The {@link NamedType}s referring to {@link Feature}s whose members
+   *          to be retrieved.
+   * @return an immutable {@link Map}.
+   */
   public Map<String, Pair<Feature, Member>> allMemberMap(
       final List<NamedType> namedTypes) {
-    return allMemberMap(Iterables.transform(namedTypes, this.namedType2String));
+    return allMemberMap(Iterables.transform(
+        namedTypes,
+        SymbolTable.namedType2String));
   }
 
+  /**
+   * Retrieves an immutable {@link Map} of {@link Member#name} to
+   * {@link Invariant} with its declaring {@link Feature} that contains all
+   * declared and closest (least) inherited members of the provided feature.
+   * 
+   * @param featureName
+   *          The fully-qualified name of the {@link Feature} whose members to
+   *          be retrieved.
+   * @return an immutable {@link Map}.
+   */
   public Map<String, Pair<Feature, Member>> allMemberMap(
       final String featureName) {
     final Map<String, Map<String, Pair<Feature, Member>>> map = featureMemberMap();
@@ -212,11 +341,11 @@ public final class SymbolTable {
     return result;
   }
 
-  public <T extends Member> Set<Pair<Feature, T>> allMembers(
+  private <T extends Member> Set<Pair<Feature, T>> allMembers(
       final Iterable<String> featureNames, final Class<T> clazz,
-      final String memberName, final boolean isSuper) {
+      final String memberName, final boolean isOverriden) {
     final LinkedHashSet<Pair<Feature, T>> b = new LinkedHashSet<>();
-    final Multimap<String, String> map = isSuper ? superTransitiveMap()
+    final Multimap<String, String> map = isOverriden ? superTransitiveMap()
         : subTransitiveMap();
     for (final String featureName : featureNames) {
       Member m = declaredMemberMap(featureName).get(memberName);
@@ -240,43 +369,32 @@ public final class SymbolTable {
     return Collections.unmodifiableSet(b);
   }
 
-  public Set<Pair<Feature, Member>> allMembers(
-      final Iterable<String> featureNames, final String memberName,
-      final boolean isSuper) {
-    return allMembers(featureNames, Member.class, memberName, isSuper);
-  }
-
-  public Set<Pair<Feature, Member>> allMembers(
-      final List<NamedType> namedTypes, final String memberName,
-      final boolean isSuper) {
-    return allMembers(
-        Iterables.transform(namedTypes, this.namedType2String),
-        Member.class,
-        memberName,
-        isSuper);
-  }
-
-  public Set<Pair<Feature, Member>> allMembers(final String featureName,
-      final String memberName, final boolean isSuper) {
-    return allMembers(
-        ImmutableList.of(featureName),
-        Member.class,
-        memberName,
-        isSuper);
-  }
-
+  /**
+   * Retrieves a {@link BasicType} from its fully-qualified name.
+   * 
+   * @param name
+   *          The fully-qualified name of the {@link BasicType}.
+   * @return The {@link BasicType}.
+   */
   public BasicType basicType(final String name) {
     return (BasicType) declarationMap().get(name);
   }
 
+  /**
+   * Retrieves all {@link BasicType}s declared in the {@link #models}.
+   * 
+   * @return an immutable {@link List}.
+   */
   public List<BasicType> basicTypes() {
     return declarations(BasicType.class);
   }
 
-  public boolean conformsTo(final String typeName, final String name) {
-    return superTransitiveMap().containsEntry(typeName, name);
-  }
-
+  /**
+   * Retrieves an immutable {@link Map} of {@link Declaration#name} to
+   * {@link Declaration} that contains all declarations in the {@link #models}.
+   * 
+   * @return an immutable {@link Map}.
+   */
   public Map<String, Declaration> declarationMap() {
     if (this._declarationMap == null) {
       final TreeMap<String, Declaration> dm = new TreeMap<>();
@@ -300,6 +418,12 @@ public final class SymbolTable {
     return this._declarationMap;
   }
 
+  /**
+   * Retrieves an immutable {@link Set} of {@link Declaration#name} declared in
+   * the {@link #models}.
+   * 
+   * @return an immutable {@link Set}.
+   */
   public Set<String> declarationNames() {
     return declarationMap().keySet();
   }
@@ -318,22 +442,69 @@ public final class SymbolTable {
     return b.build();
   }
 
+  /**
+   * Retrieves an immutable {@link Map} of {@link Attribute#name} to
+   * {@link Attribute} that contains all declared attributes of the provided
+   * feature.
+   * 
+   * @param featureName
+   *          The fully-qualified name of the {@link Feature} whose attributes
+   *          to be retrieved.
+   * @return an immutable {@link Map}.
+   */
   public Map<String, Attribute> declaredAttributeMap(final String featureName) {
     return filter(declaredMemberMap(featureName), Attribute.class);
   }
 
+  /**
+   * Retrieves an immutable {@link Collection} of all declared {@link Attribute}
+   * s of the provided feature.
+   * 
+   * @param featureName
+   *          The fully-qualified name of the {@link Feature} whose attributes
+   *          to be retrieved.
+   * @return an immutable {@link Collection}.
+   */
   public Collection<Attribute> declaredAttributes(final String featureName) {
     return declaredAttributeMap(featureName).values();
   }
 
+  /**
+   * Retrieves an immutable {@link Map} of {@link Invariant#name} to
+   * {@link Invariant} that contains all declared invariants of the provided
+   * feature.
+   * 
+   * @param featureName
+   *          The fully-qualified name of the {@link Feature} whose invariants
+   *          to be retrieved.
+   * @return an immutable {@link Map}.
+   */
   public Map<String, Invariant> declaredInvariantMap(final String featureName) {
     return filter(declaredMemberMap(featureName), Invariant.class);
   }
 
+  /**
+   * Retrieves an immutable {@link Collection} of all declared {@link Invariant}
+   * s of the provided feature.
+   * 
+   * @param featureName
+   *          The fully-qualified name of the {@link Feature} whose attributes
+   *          to be retrieved.
+   * @return an immutable {@link Collection}.
+   */
   public Collection<Invariant> declaredInvariants(final String featureName) {
     return declaredInvariantMap(featureName).values();
   }
 
+  /**
+   * Retrieves an immutable {@link Map} of {@link Member#name} to {@link Member}
+   * that contains all declared members of the provided feature.
+   * 
+   * @param featureName
+   *          The fully-qualified name of the {@link Feature} whose members to
+   *          be retrieved.
+   * @return an immutable {@link Map}.
+   */
   public Map<String, Member> declaredMemberMap(final String featureName) {
     final TreeMap<String, Member> b = new TreeMap<>();
     for (final Member m : feature(featureName).members) {
@@ -342,14 +513,35 @@ public final class SymbolTable {
     return Collections.unmodifiableMap(b);
   }
 
+  /**
+   * Retrieves an immutable {@link Collection} of all declared {@link Member}s
+   * of the provided feature.
+   * 
+   * @param featureName
+   *          The fully-qualified name of the {@link Feature} whose members to
+   *          be retrieved.
+   * @return an immutable {@link Collection}.
+   */
   public Collection<Member> declaredMembers(final String featureName) {
     return feature(featureName).members;
   }
 
+  /**
+   * Retrieves a {@link Feature} from its fully-qualified name.
+   * 
+   * @param name
+   *          The fully-qualified name of the {@link Feature}.
+   * @return The {@link Feature}.
+   */
   public Feature feature(final String name) {
     return (Feature) declarationMap().get(name);
   }
 
+  /**
+   * Retrieves all {@link FeatureInit}s declared in the {@link #models}.
+   * 
+   * @return an immutable {@link List}.
+   */
   public List<FeatureInit> featureInits() {
     List<FeatureInit> result = null;
     if ((this._featureInits == null)
@@ -369,6 +561,14 @@ public final class SymbolTable {
     return result;
   }
 
+  /**
+   * Retrieves an immutable {@link Map} of {@link Feature#name} to {@link Map}
+   * of {@link Member#name} to {@link Member} with its declaring {@link Feature}
+   * that contains all features' and their declared and closest (least)
+   * inherited members.
+   * 
+   * @return an immutable {@link Map}.
+   */
   public Map<String, Map<String, Pair<Feature, Member>>> featureMemberMap() {
     if (this._featureMemberMap == null) {
       this._featureMemberMap = CacheBuilder.newBuilder().softValues()
@@ -377,10 +577,26 @@ public final class SymbolTable {
     return this._featureMemberMap;
   }
 
+  /**
+   * Retrieves all {@link Feature}s declared in the {@link #models}.
+   * 
+   * @return an immutable {@link List}.
+   */
   public List<Feature> features() {
     return declarations(Feature.class);
   }
 
+  /**
+   * Retrieves an immutable map {@link Map} whose entries come from the provided
+   * map where the entries' value is an instance of the provided {@link Class}.
+   * 
+   * @param m
+   *          The map whose entries will be used to construct a filtered map
+   *          according to the provided class.
+   * @param clazz
+   *          The class for filtering the provided map.
+   * @return an immutable {@link Map}.
+   */
   public <V, T> Map<String, T> filter(final Map<String, V> m,
       final Class<T> clazz) {
     return Maps.transformValues(Maps.filterValues(m, new Predicate<V>() {
@@ -402,6 +618,18 @@ public final class SymbolTable {
     });
   }
 
+  /**
+   * Retrieves an immutable map {@link Map} whose entries come from the provided
+   * map where the entries' value's second element is an instance of the
+   * provided {@link Class}.
+   * 
+   * @param m
+   *          The map whose entries will be used to construct a filtered map
+   *          according to the provided class.
+   * @param clazz
+   *          The class for filtering the provided map.
+   * @return an immutable {@link Map}.
+   */
   public <V, T> Map<String, Pair<Feature, T>> filterp(
       final Map<String, Pair<Feature, V>> m, final Class<T> clazz) {
     return Maps.transformValues(
@@ -425,23 +653,92 @@ public final class SymbolTable {
         });
   }
 
+  /**
+   * Determines whether a {@link Declaration} fully-qualified name is of a
+   * {@link BasicType}.
+   * 
+   * @param name
+   *          The fully-qualified name to query.
+   * 
+   * @return true if the fully-qualified name is of a {@link BasicType}.
+   */
   public boolean isBasicType(final String name) {
     return kind(name) == Kind.BasicType;
   }
 
+  /**
+   * Determines whether a {@link Declaration} fully-qualified name is of a
+   * {@link Feature}.
+   * 
+   * @param name
+   *          The fully-qualified name to query.
+   * 
+   * @return true if the fully-qualified name is of a {@link Feature}.
+   */
   public boolean isFeature(final String name) {
     return kind(name) == Kind.Feature;
   }
 
+  /**
+   * Determines whether a {@link Declaration} fully-qualified name is of a
+   * {@link Requirement}.
+   * 
+   * @param name
+   *          The fully-qualified name to query.
+   * 
+   * @return true if the fully-qualified name is of a {@link Requirement}.
+   */
   public boolean isRequirement(final String name) {
     return kind(name) == Kind.Requirement;
   }
 
+  /**
+   * Determines whether a fully-qualified name of a {@link BasicType} or a
+   * {@link Feature} is a sub type of another {@link BasicType} or a
+   * {@link Feature}.
+   * 
+   * @param typeName
+   *          The fully-qualified name to query.
+   * @param name
+   *          The fully-qualified name of a super type to query.
+   * @return true if typeName is a super type of name.
+   */
+  public boolean isSubTypeOf(final String typeName, final String name) {
+    return superTransitiveMap().containsEntry(typeName, name);
+  }
+
+  /**
+   * Determines whether a fully-qualified name of a {@link BasicType} or a
+   * {@link Feature} is a super type of another {@link BasicType} or a
+   * {@link Feature}.
+   * 
+   * @param typeName
+   *          The fully-qualified name to query.
+   * @param name
+   *          The fully-qualified name of a sub type to query.
+   * @return true if typeName is a super type of name.
+   */
+  public boolean isSuperTypeOf(final String typeName, final String name) {
+    return subTransitiveMap().containsEntry(typeName, name);
+  }
+
+  /**
+   * Retrieves the kind of a {@link Declaration}.
+   * 
+   * @param declarationName
+   *          The fully-qualified name of the {@link Declaration} to query.
+   * @return the {@link Kind} of the declaration.
+   */
   public Kind kind(final String declarationName) {
     return SymbolTable.kindMap.get(declarationMap().get(declarationName)
         .getClass().getName());
   }
 
+  /**
+   * Retrieves all {@link RefinedType}s declared in the {@link #models}.
+   * 
+   * @return an immutable {@link List}.
+   */
   public List<RefinedType> refinedTypes() {
     List<RefinedType> result = null;
     if ((this._refinedTypes == null)
@@ -461,14 +758,34 @@ public final class SymbolTable {
     return result;
   }
 
+  /**
+   * Retrieves a {@link Requirement} from its fully-qualified name.
+   * 
+   * @param name
+   *          The fully-qualified name of the {@link Requirement}.
+   * @return The {@link Requirement}.
+   */
   public Requirement requirement(final String name) {
     return (Requirement) declarationMap().get(name);
   }
 
+  /**
+   * Retrieves all {@link Requirement}s declared in the {@link #models}.
+   * 
+   * @return an immutable {@link List}.
+   */
   public List<Requirement> requirements() {
     return declarations(Requirement.class);
   }
 
+  /**
+   * Retrieves a {@link Multimap} that relates a sub type's fully-qualified name
+   * (either of {@link BasicType#name} or {@link Feature#name}) to its super
+   * type's fully-qualified name (either of {@link BasicType#name} or
+   * {@link Feature#name}).
+   * 
+   * @return an immutable {@link Multimap}.
+   */
   public Multimap<String, String> subTransitiveMap() {
     Multimap<String, String> result = null;
     while ((this._subMap == null) || ((result = this._subMap.get()) == null)) {
@@ -510,6 +827,14 @@ public final class SymbolTable {
     }
   }
 
+  /**
+   * Retrieves a {@link Multimap} that relates a sub type's fully-qualified name
+   * (either of {@link BasicType#name} or {@link Feature#name}) to its super
+   * type's fully-qualified name (either of {@link BasicType#name} or
+   * {@link Feature#name}).
+   * 
+   * @return an immutable {@link Multimap}.
+   */
   public Multimap<String, String> superTransitiveMap() {
     Multimap<String, String> result = null;
     if ((this._superMap == null) || ((result = this._superMap.get()) == null)) {
@@ -539,7 +864,16 @@ public final class SymbolTable {
       this._superMap = new SoftReference<Multimap<String, String>>(result);
       this._subMap = new SoftReference<Multimap<String, String>>(subb.build());
     }
-    return result;
 
+    return result;
+  }
+
+  /**
+   * Returns the {@link String} representation of this symbol table.
+   */
+  @Override
+  public String toString() {
+    final String ms = this.models.toString();
+    return "SymbolTable.of(" + ms.substring(1, ms.length() - 1) + ")";
   }
 }

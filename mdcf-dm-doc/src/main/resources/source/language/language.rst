@@ -47,6 +47,9 @@ Representation and API
 
 .. |SymbolTable| replace:: :dml:`dml.symbol.SymbolTable <symbol/SymbolTable.java>`
 
+.. |Extractor| replace:: :dms:`dms.ModelExtractor <ModelExtractor.scala>`
+
+
 In addition, for the grammar productions, we describe DML implementation classes 
 and API; when referring to such classes, we use
 :dml:`dml <>` as a shorthand for the :dml:`edu.ksu.cis.santos.mdcf.dml <>` package.
@@ -57,7 +60,14 @@ The DML Abstract Syntax Tree (AST) Java classes are defined in the
 in |Ast|, symbol table API in |SymbolTable|, 
 visitor API in |IVisitor| and |AVisitor|,
 and XML de/serialization API in |XStreamer|.
+The |Extractor| 
+`Scala object <http://en.wikibooks.org/wiki/Scala/Objects>`__ 
+provides methods to extract DML AST from DMS models.
 
+Furthermore, we also describe AST well-formedness throughout the discussion of
+various parts of DMS; some of the well-formedness are enforced by the Scala
+compiler, while some additional ones are enforced by the |Extractor|, and some 
+are (to be) done after the extraction process. 
  
 .. figure:: ../../../../../../mdcf-dml-ast/src/main/resources/edu/ksu/cis/santos/mdcf/dml/ast/dml-ast.png
    :scale: 10%
@@ -118,7 +128,7 @@ specified in a package other than the Scala or Java "default" package.
 The grammar recommends importing all elements (specified using ``_`` instead of 
 ``*``  like in Java) defined in the :dms:`dms <>` 
 :scala:`Scala package <119>` and :dms:`dms.package <package.scala>` 
-`package object <http://www.naildrivin5.com/scalatour/wiki_pages/PackageObjects>`__, 
+`package object <http://www.artima.com/scalazine/articles/package_objects.html>`__, 
 which defines DML primordial types, :scala:`implicit conversions <130>`,
 and a :scala:`macro <overviews/macros/overview.html>`, 
 which will be described in the appropriate subsequent sections below.
@@ -195,8 +205,57 @@ code, compiles it (at runtime), and invokes it to produce a structurally
 equivalent model ``m2`` with respect to ``m`` as shown in at Line 21.
 
 
-SymbolTable API
-===============
+AST Extraction
+==============
+
+Instead of constructing AST manually by hand, |Extractor| provides 
+``extractModel`` methods that extract DML AST from DMS models.
+More specifically, given an array of package |String| names, they returns
+the DML AST model that is represented in the packages and their sub-packages.
+
+Below is an :dmdocj:`example <ExModelExtractor.java>` illustrating the use of 
+|Extractor| API to extract DMS models from the :dmsx:`dms.example <>` package and
+its sub-packages:
+
+.. literalinclude:: /../../java/ExModelExtractor.java
+   :language: scala
+   :linenos:
+
+.. |ClassLoader| replace:: :javadoc:`ClassLoader <java/lang/ClassLoader.html>`
+
+Variants of the |Extractor| ``extractModel`` methods are provided to extract 
+models using a specific |ClassLoader| and 
+|Extractor| ``Reporter`` for custimizing warning and error notifications during
+the extraction process. By default, the |ClassLoader| that loads the 
+|Extractor| is used, and warning and errors are printed to the console (output
+and error streams, respectively).
+
+
+Model Well-Formedness
+=====================
+A set of models are well-formed if the all user-defined 
+`basic types <#grammar-token-basicType>`__,
+`features <#grammar-token-feature>`__, and 
+`requirements <#grammar-token-basicType>`__ are well-formed. 
+
+
+SymbolTable
+===========
+
+Given a set of models, the |SymbolTable| ``of`` method creates an instance of
+|SymbolTable| that provides various methods to retrieve DML entities
+such as `basic types <#grammar-token-basicType>`__,
+`features <#grammar-token-feature>`__,
+`attributes <#grammar-token-attribute>`__, and
+`invariants <#grammar-token-invariant>`__
+in the models or by their fully-qualified name.
+
+Below is an :dmdocj:`example <ExModelSymbolTable.java>` to illustate the 
+construction of |SymbolTable| and its |String| representation:
+
+.. literalinclude:: /../../java/ExModelSymbolTable.java
+   :language: scala
+   :linenos:
 
 
 AST and Symbol Table De/serialization

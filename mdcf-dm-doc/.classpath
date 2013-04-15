@@ -12,5 +12,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dms-core"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JUnit"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/sireum-util"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dms-example"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

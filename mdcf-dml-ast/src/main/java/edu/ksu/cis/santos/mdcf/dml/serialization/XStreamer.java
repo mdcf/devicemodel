@@ -48,8 +48,11 @@ import edu.ksu.cis.santos.mdcf.dml.ast.SetType;
 import edu.ksu.cis.santos.mdcf.dml.ast.SomeInit;
 import edu.ksu.cis.santos.mdcf.dml.ast.TupleInit;
 import edu.ksu.cis.santos.mdcf.dml.ast.TupleType;
+import edu.ksu.cis.santos.mdcf.dml.symbol.SymbolTable;
 
 /**
+ * Provides de/serialization of DML AST and symbol table.
+ * 
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public class XStreamer {
@@ -141,6 +144,7 @@ public class XStreamer {
     result.alias("someInit", SomeInit.class);
     result.alias("tupleInit", TupleInit.class);
     result.alias("tupleType", TupleType.class);
+    result.alias("symbolTable", SymbolTable.class);
     result.alias("some", Optional.of(new Object()).getClass());
     result.alias("none", Optional.absent().getClass());
     result.alias("ilist", ImmutableList.of().getClass());

@@ -6,6 +6,9 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
+/**
+ * DML Symbol Table API
+ */
 @ParametersAreNonnullByDefault
 package edu.ksu.cis.santos.mdcf.dml.symbol;
 
