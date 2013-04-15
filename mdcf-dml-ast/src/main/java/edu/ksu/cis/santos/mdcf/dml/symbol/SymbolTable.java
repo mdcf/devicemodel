@@ -616,7 +616,7 @@ public final class SymbolTable {
 
   /**
    * Retrieves a {@link Feature} from its fully-qualified name (
-   * {@link Featuree#name}), if any.
+   * {@link Feature#name}), if any.
    * 
    * @param name
    *          The fully-qualified name to query.
