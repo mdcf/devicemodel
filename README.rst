@@ -1,8 +1,16 @@
 MDCF Device Modeling Language (DML)
-===================================
+###################################
+
+Documentation
+*************
+
+* `DML in Scala <http://mdcf.github.io/doc/dms/>`__
+
+* `DML Javadoc <http://mdcf.github.io/doc/dml/>`__
+
 
 Setting up Development Environment
-----------------------------------
+**********************************
 
 1. Download and install Sireum by following the instructions at: http://www.sireum.org/download.
 
@@ -42,5 +50,3 @@ Setting up Development Environment
 
 7. Run the JUnit test in ``mdcf-dms-test`` by right clicking the project and select "Run As" and then "JUnit Test";
    all tests should pass.
-
-See the DMS documentation `online <http://mdcf.github.io/doc/dms/>`__.
