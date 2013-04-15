@@ -56,7 +56,7 @@ and API; when referring to such classes, we use
 Similarly, we use :dms:`dms <>` as a shorthand for the 
 :dms:`edu.ksu.cis.santos.mdcf.dms <>` package.
 The DML Abstract Syntax Tree (AST) Java classes are defined in the  
-:dml:`dml <ast>` package with associated AST constructor methods 
+:dml:`dml.ast <ast>` package with associated AST constructor methods 
 in |Ast|, symbol table API in |SymbolTable|, 
 visitor API in |IVisitor| and |AVisitor|,
 and XML de/serialization API in |XStreamer|.
@@ -91,7 +91,7 @@ default; these are declared in the respective package infos
 are designed to be immutable (object state changes may occur but not 
 observable through the API).
 
-Each AST node class stores its children in a ``public`` ``final`` 
+Each AST node class stores its children in ``public`` ``final`` 
 fields. In addition, each node class inherits from the 
 :dml:`dml.ast.AstNode <ast/AstNode.java>`, which provides a 
 ``children`` method that returns an array of the node's children;
@@ -146,7 +146,7 @@ AST Classes and Construction
 ============================
 
 A model is represented using the :dml:`Model <ast/Model.java>` AST class which
-has a :javadoc:`Iterable <java/util/List.html>` 
+has an :javadoc:`Iterable <java/util/List.html>` 
 of :dml:`Declarations <ast/Declaration.java>`, which can be either
 :dml:`BasicType <ast/BasicType.java>`, :dml:`Feature <ast/Feature.java>`, or
 :dml:`Requirement <ast/Requirement.java>`.
@@ -170,11 +170,11 @@ Notice that at :dmdocs:`Line 8 <ExModel.scala\#L8>`, we need to use
 ``list()`` without a parameter type supplied for its element type returns
 ``List<Object>``, which is incompatible with ``model``'s parameter that expects
 a list of :dml:`Declarations <ast/Declaration.java>`. To address this issue,
-one can use |Ast|. ``Weak`` API that have the same set of AST constructor 
-methods,but with weaker compile-time parameter types that are checked at 
+one can use |Ast|. ``Weak`` API that have the same set of AST construction 
+methods, but with weaker compile-time parameter types that are checked at 
 runtime; 
 :javadoc:`IllegalArgumentException <java/lang/IllegalArgumentException.html>`
-will be thrown if the runtime types are not what are expected.  
+will be thrown if the runtime types are not what expected.  
 Below is an :dmdocj:`example <ExModel.java>` that illustrate the
 |Ast|. ``Weak`` API:
 
@@ -201,8 +201,8 @@ as |String| at Line 19 (``s"`` ... ``"`` is a
 :scaladoc:`Scala string interpolator </overviews/core/string-interpolation.html>`)
 along with the import declaration at Line 18; 
 :sutil:`Reflection <Reflection.scala>`'s ``eval`` method takes the |String| 
-code, compiles it (at runtime), and invokes it to produce a structurally 
-equivalent model ``m2`` with respect to ``m`` as shown in at Line 21.
+code, compiles it (at runtime), and then invokes the compiled code to produce a 
+structurally equivalent model ``m2`` with respect to ``m`` as shown in at Line 21.
 
 
 AST Extraction
@@ -210,7 +210,7 @@ AST Extraction
 
 Instead of constructing AST manually by hand, |Extractor| provides 
 ``extractModel`` methods that extract DML AST from DMS models.
-More specifically, given an array of package |String| names, they returns
+More specifically, given an array of package |String| names, they return
 the DML AST model that is represented in the packages and their sub-packages.
 
 Below is an :dmdocj:`example <ExModelExtractor.java>` illustrating the use of 
@@ -224,7 +224,7 @@ its sub-packages:
 .. |ClassLoader| replace:: :javadoc:`ClassLoader <java/lang/ClassLoader.html>`
 
 Variants of the |Extractor| ``extractModel`` methods are provided to extract 
-models using a specific |ClassLoader| and 
+a model using a specific |ClassLoader| and 
 |Extractor| ``Reporter`` for custimizing warning and error notifications during
 the extraction process. By default, the |ClassLoader| that loads the 
 |Extractor| is used, and warning and errors are printed to the console (output
@@ -233,7 +233,7 @@ and error streams, respectively).
 
 Model Well-Formedness
 =====================
-A set of models are well-formed if the all user-defined 
+A set of models are well-formed if all user-defined 
 `basic types <#grammar-token-basicType>`__,
 `features <#grammar-token-feature>`__, and 
 `requirements <#grammar-token-basicType>`__ are well-formed. 
@@ -257,8 +257,9 @@ construction of |SymbolTable| and its |String| representation:
    :language: scala
    :linenos:
 
-See the SymbolTable Javadoc 
-`online <http://mdcf.github.io/doc/dml/edu/ksu/cis/santos/mdcf/dml/symbol/SymbolTable.html>`__.
+The reader is referred the SymbolTable Javadoc 
+`online <http://mdcf.github.io/doc/dml/edu/ksu/cis/santos/mdcf/dml/symbol/SymbolTable.html>`__
+to see what queries are available through the API.
 
 
 AST and Symbol Table De/serialization
@@ -289,7 +290,7 @@ Below is an :dmdocj:`example <ExModelXml.java>` that uses the |XStreamer| API:
    :linenos:
 
 The |XStreamer| API also provides serialization to JSON provided by its
-``toJson`` methods that uses XStream_ along with Jettison_. 
+``toJson`` methods that use XStream_ along with Jettison_. 
 Deserialization from Json using |XStreamer| ``fromJson`` static methods 
 is, however, currently not supported (there seems to be a deserialization bug in
 XStream_ with Jettison_ that warrants further investigations).
@@ -306,7 +307,6 @@ DML AST using the provided visitor API.
 
 .. literalinclude:: /../../java/ExModelVisitor.java
    :language: java
-   :emphasize-lines: 17,30
    :linenos:
 
 
