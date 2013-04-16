@@ -1,4 +1,4 @@
-`MDCF <http://mdcf.santos.cis.ksu.edu>__ Device Modeling Language (DML)
+`MDCF <http://mdcf.santos.cis.ksu.edu>`_ Device Modeling Language (DML)
 #######################################################################
 
 Documentation
