@@ -68,7 +68,7 @@ in |Ast|, symbol table API in |SymbolTable|,
 visitor API in |IVisitor| and |AVisitor|,
 and XML de/serialization API in |XStreamer|.
 The |Extractor| 
-`Scala object <http://en.wikibooks.org/wiki/Scala/Objects>`__ 
+`Scala object <http://en.wikibooks.org/wiki/Scala/Objects>`_ 
 provides methods to extract DML AST from DMS models.
 
 Furthermore, we also describe AST well-formedness throughout the discussion of
@@ -84,7 +84,7 @@ are (to be) done after the extraction process.
 .. figure:: ../../../../../../mdcf-dml-ast/src/main/resources/edu/ksu/cis/santos/mdcf/dml/API.png
    :scale: 10%
 
-   DML AST Constructor, Symbol Table, Visitor, XML de/serialization API UML Class Diagram
+   DML AST Construction, Symbol Table, XML de/serialization, and Visitor API UML Class Diagram
 
 
 Nullity and Immutability
@@ -130,23 +130,23 @@ Model
    declaration         : `basicType` | `feature` | `requirement`
 
 A model may be specified in multiple Scala source files. 
-For each file, a model starts with a `package <#grammar-token-package>`__ 
-declaration, followed by `import <#grammar-token-import>`__ declarations and 
-declarations of `basic types <#grammar-token-basicType>`__, 
-`features <#grammar-token-feature>`__, and 
-`requirements <#grammar-token-requirement>`__. 
+For each file, a model starts with a `package <#grammar-token-package>`_ 
+declaration, followed by `import <#grammar-token-import>`_ declarations and 
+declarations of `basic types <#grammar-token-basicType>`_, 
+`features <#grammar-token-feature>`_, and 
+`requirements <#grammar-token-requirement>`_. 
 That is, it is assumed that models are
 specified in a package other than the Scala or Java "default" package.
 The grammar recommends importing all elements (specified using ``_`` instead of 
 ``*``  like in Java) defined in the :dms:`dms <>` 
 :scala:`Scala package <119>` and :dms:`dms.package <package.scala>` 
-`package object <http://www.artima.com/scalazine/articles/package_objects.html>`__, 
+`package object <http://www.artima.com/scalazine/articles/package_objects.html>`_, 
 which defines DML primordial types, :scala:`implicit conversions <130>`,
 and a :scala:`macro <overviews/macros/overview.html>`, 
 which will be described in the appropriate subsequent sections below.
  
-In addition, it recommends importing `basic types <#grammar-token-basicType>`__ 
-or `features <#grammar-token-feature>`__ defined in 
+In addition, it recommends importing `basic types <#grammar-token-basicType>`_ 
+or `features <#grammar-token-feature>`_ defined in 
 different packages; note that Scala allows import declarations to appear in many
 places, including inside class declarations and expression blocks among others.
 
@@ -247,24 +247,16 @@ the extraction process. By default, the |ClassLoader| that loads the
 and error streams, respectively).
 
 
-Model Well-Formedness
-=====================
-A set of models are well-formed if all user-defined 
-`basic types <#grammar-token-basicType>`__,
-`features <#grammar-token-feature>`__, and 
-`requirements <#grammar-token-basicType>`__ are well-formed. 
-
-
 SymbolTable
 ===========
 
 Given a set of models, the |SymbolTable| 
 :dmldoc:`of <symbol/SymbolTable.html#of(edu.ksu.cis.santos.mdcf.dml.ast.Model...)>` 
 method creates an instance of |SymbolTable| that provides various methods to 
-retrieve DML entities such as `basic types <#grammar-token-basicType>`__,
-`features <#grammar-token-feature>`__,
-`attributes <#grammar-token-attribute>`__, and
-`invariants <#grammar-token-invariant>`__
+retrieve DML entities such as `basic types <#grammar-token-basicType>`_,
+`features <#grammar-token-feature>`_,
+`attributes <#grammar-token-attribute>`_, and
+`invariants <#grammar-token-invariant>`_
 in the models or by their fully-qualified name.
 
 Below is an :dmdocj:`example <ExModelSymbolTable.java>` to illustate the 
@@ -274,8 +266,8 @@ construction of |SymbolTable| and its |String| representation:
    :language: java
    :linenos:
 
-The reader is referred the SymbolTable Javadoc 
-`online <http://mdcf.github.io/doc/dml/edu/ksu/cis/santos/mdcf/dml/symbol/SymbolTable.html>`__
+The reader is referred to the SymbolTable Javadoc 
+`online <http://mdcf.github.io/doc/dml/edu/ksu/cis/santos/mdcf/dml/symbol/SymbolTable.html>`_
 to see what queries are available through the API.
 
 
@@ -334,6 +326,14 @@ DML AST using the provided visitor API.
    :linenos:
 
 
+Model Well-Formedness
+=====================
+A set of models is well-formed if all user-defined 
+`basic types <#grammar-token-basicType>`_,
+`features <#grammar-token-feature>`_, and 
+`requirements <#grammar-token-requirement>`_ are well-formed. 
+
+
 Basic Type
 **********
 
@@ -349,14 +349,14 @@ Basic Type
    basicTypeApply      : "implicit" "def" "apply" "(" ID_apply ":" basicInternalType ")" "=" 
                        : "new" ID_basic "(" ID_apply ")"
    basicTypeBody       : "{" [ `basicAsStringMethod` ] [ `basicToStringMethod` ] <basicOpMethod>* "}"
-   basicAsStringMethod : "override" "def" "asString" "=" <scalaExp : java.lang.String(S)>
-   basicToStringMethod : "override" "def" "toString" "=" <scalaExp : java.lang.String(S)>
+   basicAsStringMethod : "override" "def" "asString" "=" <scalaExp : java.lang.String>
+   basicToStringMethod : "override" "def" "toString" "=" <scalaExp : java.lang.String>
 
 Feature and Requirement
 ***********************
 
 .. productionlist:: DMS
-   feature             : [ featureModifier ] ( "trait" | "class" ) ID_feature 
+   feature             : [ featureModifier ] ( "trait" | "final" "class" ) ID_feature 
                        : "extends" ( "Feature" | `featureType` )
                        : "{" ( `attribute` [ `initialization` ] )* "}"
                        : [ `invariantObject` ] 
