@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to `MDCF <http://mdcf.santos.cis.ksu.edu>`_ Device Modeling's documentation
-===================================================================================
+Welcome to `MDCF <http://mdcf.santos.cis.ksu.edu>`_ DML's documentation
+=======================================================================
 
 :author:       `Robby <http://people.cis.ksu.edu/~robby>`_
 :contact:      robby@k-state.edu
@@ -12,7 +12,8 @@ Welcome to `MDCF <http://mdcf.santos.cis.ksu.edu>`_ Device Modeling's documentat
 
 .. admonition:: Acknowledgement
    
-   The development of `MDCF <http://mdcf.santos.cis.ksu.edu>`_ DML is supported 
+   The development of `MDCF <http://mdcf.santos.cis.ksu.edu>`_ 
+   Device Modeling Language (DML) is supported 
    in part by the US National Science Foundation (NSF) 
    :nsfgrant:`OCI-1239543 <1239543>` award, 
    NSF :nsfgrant:`CNS-1238431 <1238431>` award,
