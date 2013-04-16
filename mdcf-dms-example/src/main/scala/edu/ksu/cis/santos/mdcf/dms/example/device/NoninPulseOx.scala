@@ -13,7 +13,7 @@ import edu.ksu.cis.santos.mdcf.dms.example._
 import edu.ksu.cis.santos.mdcf.dms.example.schema._
 import edu.ksu.cis.santos.mdcf.dms.example.clas._
 
-class NoninPulseOx extends ICEPulseOx {
+final class NoninPulseOx extends ICEPulseOx {
   override val id : DeviceId = "Continua PO"
 
   override val manufacturerModel = new ICEManufacturerModel {

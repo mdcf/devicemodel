@@ -13,7 +13,7 @@ import edu.ksu.cis.santos.mdcf.dms.example._
 import edu.ksu.cis.santos.mdcf.dms.example.schema._
 import edu.ksu.cis.santos.mdcf.dms.example.clas._
 
-class MultiMonitor extends ICEMultiMonitor {
+final class MultiMonitor extends ICEMultiMonitor {
   override val id : DeviceId = "MultiMonitor"
 
   override val manufacturerModel = new ICEManufacturerModel {

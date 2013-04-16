@@ -13,7 +13,7 @@ import edu.ksu.cis.santos.mdcf.dms.example._
 import edu.ksu.cis.santos.mdcf.dms.example.schema._
 import edu.ksu.cis.santos.mdcf.dms.example.clas._
 
-class NellcorPulseOx extends ICEPulseOx {
+final class NellcorPulseOx extends ICEPulseOx {
   override val id : DeviceId = "Nellcor PO"
 
   override val manufacturerModel = new ICEManufacturerModel {
