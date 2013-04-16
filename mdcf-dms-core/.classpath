@@ -3,12 +3,8 @@
 	<classpathentry kind="src" path="src/main/scala"/>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Apfloat"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Guava"/>
+  <classpathentry combineaccessrules="false" kind="src" path="/sireum-lib"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dml-ast"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/sireum-util"/>
-	<classpathentry exported="true" kind="lib" path="elib/scala-library-2.10.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="elib/scala-reflect-2.10.1.jar"/>
-	<classpathentry exported="true" kind="lib" path="elib/scala-compiler-2.10.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
