@@ -360,7 +360,7 @@ traverse DML AST using the provided visitor API.
    :linenos:
 
 The example creates a model with one basic type (explained 
-`below <#grammar-token-basicType>`). The first visitor at 
+`below <#grammar-token-basicType>`_). The first visitor at 
 :dmdocj:`Lines 12-18 <ExModelVisitor.java#L12-18>` prints out
 the name of any basic type it encounters at 
 :dmdocj:`Line 15 <ExModelVisitor.java#L15>`, which in this case prints
