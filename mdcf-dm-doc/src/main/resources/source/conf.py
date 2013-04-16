@@ -289,6 +289,7 @@ epub_copyright = u'2013, Robby'
 intersphinx_mapping = {'http://docs.python.org/': None}
 
 extlinks = {'dml': ('https://github.com/mdcf/devicemodel/blob/master/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/%s', ''),
+            'dmldoc': ('http://mdcf.github.io/doc/dml/edu/ksu/cis/santos/mdcf/dml/%s' , ''),
             'dmdocj': ('https://github.com/mdcf/devicemodel/blob/master/mdcf-dm-doc/src/main/java/%s', ''),
             'dmdocs': ('https://github.com/mdcf/devicemodel/blob/master/mdcf-dm-doc/src/main/scala/%s', ''),
             'javadoc': ('http://docs.oracle.com/javase/7/docs/api/%s', ''), 

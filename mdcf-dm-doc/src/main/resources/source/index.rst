@@ -3,18 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to MDCF Device Modeling's documentation
-===============================================
+Welcome to `MDCF <http://mdcf.santos.cis.ksu.edu>`__ Device Modeling's documentation
+====================================================================================
 
-:author:       Robby
+:author:       `Robby <http://people.cis.ksu.edu/~robby>`__
 :contact:      robby@k-state.edu
-:organization: SAnToS Laboratory, Kansas State University
+:organization: `SAnToS Laboratory <http://santoslab.org>`__, `Kansas State University <http://k-state.edu>`__
 
 Contents
 ********
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
 
    language/language.rst
 

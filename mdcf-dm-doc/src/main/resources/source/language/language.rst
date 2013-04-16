@@ -1,18 +1,21 @@
 Language Specification and Implementation
 #########################################
 
-This section describes how device models can be specified in the Domain Specific
+This section describes how device models can be specified in the Device Modeling 
 Language (DML) encoded in Scala (Device Modeling in Scala -- DMS). 
 Note that because there are multiple ways to 
 express the device models in Scala, the specification described here should not 
 be treated as prescriptive. Instead, the specification is provided as a 
 guideline for people that are not familiar with Scala (but familiar with Java) 
-in order for the model to be accepted by the DML Scala Model Extractor; some 
+in order for the model to be accepted by the DMS Model Extractor; some 
 possible variations are described on how one can express a model differently.
 
 
+Overview
+********
+
 Specification Form
-******************
+==================
 
 We will specify the context free grammar of the subset of Scala that is part of 
 DMS using Extended Backus-Naur Form (EBNF). Specifically:
@@ -39,17 +42,17 @@ DMS using Extended Backus-Naur Form (EBNF). Specifically:
   the production rules using the angle brackets are discussed.
 
 Representation and API
-**********************
+======================
 
-.. |Ast| replace:: :dml:`dml.ast.Ast <ast/Ast.java>`
+.. |Ast| replace:: :dmldoc:`dml.ast.Ast <ast/Ast.html>`
 
-.. |IVisitor| replace:: :dml:`dml.ast.IVisitor <ast/IVisitor.java>`
+.. |IVisitor| replace:: :dmldoc:`dml.ast.IVisitor <ast/IVisitor.html>`
 
 .. |AVisitor| replace:: :dml:`dml.ast.AbstractVisitor <ast/AbstractVisitor.java>`
 
-.. |XStreamer| replace:: :dml:`dml.serialization.XStreamer <serialization/XStreamer.java>`
+.. |XStreamer| replace:: :dmldoc:`dml.serialization.XStreamer <serialization/XStreamer.html>`
 
-.. |SymbolTable| replace:: :dml:`dml.symbol.SymbolTable <symbol/SymbolTable.java>`
+.. |SymbolTable| replace:: :dmldoc:`dml.symbol.SymbolTable <symbol/SymbolTable.html>`
 
 .. |Extractor| replace:: :dms:`dms.ModelExtractor <ModelExtractor.scala>`
 
@@ -85,7 +88,7 @@ are (to be) done after the extraction process.
 
 
 Nullity and Immutability
-========================
+------------------------
 
 All method parameters in all the DML API are non-null by 
 default; these are declared in the respective package infos 
@@ -102,12 +105,13 @@ observable through the API). Each AST node class stores its children in
 fields whose type is |List| store immutable |List| values. 
 In addition, each node class inherits from the 
 :dml:`dml.ast.AstNode <ast/AstNode.java>`, which provides a 
-``children`` method that returns an array of the node's children;
-the returned array can be mutated but it does not affect the AST node.
+:dmldoc:`children <ast/AstNode.html#children()>` method that returns an array of 
+the node's children; the returned array can be mutated but it does not affect 
+the AST node.
 
 
 String Representation
-=====================
+---------------------
 
 Calling the ``toString`` method on an AST object or a |SymbolTable| object 
 produces a valid Java and Scala code (under the appropriate import context) as a 
@@ -159,7 +163,8 @@ of :dml:`Declarations <ast/Declaration.java>`, which can be either
 :dml:`BasicType <ast/BasicType.java>`, :dml:`Feature <ast/Feature.java>`, or
 :dml:`Requirement <ast/Requirement.java>`.
 
-One can construct a model by calling the |Ast| ``model`` 
+One can construct a model by calling the |Ast| 
+:dmldoc:`model <ast/Ast.html#model(java.lang.Iterable)>`
 static method as illustrated in the following :dmdocj:`example <ExModel.java>`:
 
 .. literalinclude:: /../../java/ExModel.java
@@ -168,23 +173,26 @@ static method as illustrated in the following :dmdocj:`example <ExModel.java>`:
    :linenos:
 
 The above example creates a model with an empty list of declarations, and then
-prints out the model and the model's declarations. The |Ast| ``list``
+prints out the model and the model's declarations. The |Ast| 
+:dmldoc:`list <ast/Ast.html#list(java.lang.Iterable)>`
 methods are helper methods that when given either a variable or an 
 :javadoc:`Iterable <java/lang/Iterable.html>` number of objects, they create an 
 (immutable) list containing the provided objects. 
+
+.. |AstWeak| replace:: |Ast| :dmldoc:`.Weak <ast/Ast.Weak.html>`
 
 Notice that at :dmdocs:`Line 8 <ExModel.scala\#L8>`, we need to use
 ``Ast.<Declaration> list()`` instead of just ``list()``. That is because
 ``list()`` without a parameter type supplied for its element type returns
 ``List<Object>``, which is incompatible with ``model``'s parameter that expects
 a list of :dml:`Declarations <ast/Declaration.java>`. To address this issue,
-one can use |Ast|. ``Weak`` API that have the same set of AST construction 
-methods, but with weaker compile-time parameter types that are checked at 
-runtime; 
+one can use |AstWeak| API that have the same set
+of AST construction methods, but with weaker compile-time parameter types that 
+are checked at runtime; 
 :javadoc:`IllegalArgumentException <java/lang/IllegalArgumentException.html>`
 will be thrown if the runtime types are not what expected.  
-Below is an :dmdocj:`example <ExModel.java>` that illustrates the
-|Ast|. ``Weak`` API:
+Below is an :dmdocj:`example <ExModel.java>` that illustrates the use of
+|AstWeak| API:
 
 .. literalinclude:: /../../java/ExModelWeak.java
    :language: java
@@ -193,7 +201,7 @@ Below is an :dmdocj:`example <ExModel.java>` that illustrates the
 Below is a similar :dmdocs:`example <ExsModel.scala>` written in Scala;
 thanks to Scala's type inference, |Ast| API work
 without a problem as can be seen at :dmdocs:`Line 13 <ExsModel.scala\#L13>` 
-(of course ``Weak`` would work as well):
+(of course |AstWeak| would work as well):
 
 .. literalinclude:: /../../scala/ExsModel.scala
    :language: scala
@@ -250,9 +258,10 @@ A set of models are well-formed if all user-defined
 SymbolTable
 ===========
 
-Given a set of models, the |SymbolTable| ``of`` method creates an instance of
-|SymbolTable| that provides various methods to retrieve DML entities
-such as `basic types <#grammar-token-basicType>`__,
+Given a set of models, the |SymbolTable| 
+:dmldoc:`of <symbol/SymbolTable.html#of(edu.ksu.cis.santos.mdcf.dml.ast.Model...)>` 
+method creates an instance of |SymbolTable| that provides various methods to 
+retrieve DML entities such as `basic types <#grammar-token-basicType>`__,
 `features <#grammar-token-feature>`__,
 `attributes <#grammar-token-attribute>`__, and
 `invariants <#grammar-token-invariant>`__
@@ -276,7 +285,10 @@ AST and Symbol Table De/serialization
 The |XStreamer| API provides AST and symbol table serialization to XML 
 and deserialization back from XML using XStream_ with custom converters that 
 makes the produced XML representation easier to read as well as its size.
-More specifically, it provides ``toXml`` and ``fromXml`` static methods for 
+More specifically, it provides 
+:dmldoc:`toXml <serialization/XStreamer.html#toXml(java.lang.Object)>` and 
+:dmldoc:`fromXml <serialization/XStreamer.html#fromXml(java.io.InputStream)>` 
+static methods for 
 converting to/from |String|, |Writer|/|Reader|, or |OutputStream|/|InputStream|.   
 
 .. _XStream: http://xstream.codehaus.org
@@ -298,13 +310,17 @@ Below is an :dmdocj:`example <ExModelXml.java>` that uses the |XStreamer| API:
    :linenos:
 
 The |XStreamer| API also provides serialization to JSON provided by its
-``toJson`` methods that use XStream_ along with Jettison_. 
-Deserialization from Json using |XStreamer| ``fromJson`` static methods 
-is, however, currently not supported (there seems to be a deserialization bug in
-XStream_ with Jettison_ that warrants further investigations).
+:dmldoc:`toJson <serialization/XStreamer.html#toJson(java.lang.Object)>` 
+methods that use XStream_ along with Jettison_. 
+Deserialization from Json using |XStreamer| 
+:dmldoc:`fromJson <serialization/XStreamer.html#fromJson(java.io.InputStream)>` 
+static methods  is, however, currently not supported (there seems to be a 
+deserialization bug in XStream_ with Jettison_ that warrants further 
+investigations).
 
 In addition, a custom XStream_ instance can be retrieved by calling the 
-|XStreamer| ``xstream`` static method.
+|XStreamer| :dmldoc:`xstream <serialization/XStreamer.html#xstream(boolean)>` 
+static method.
 
 
 AST Traversal/Visitor

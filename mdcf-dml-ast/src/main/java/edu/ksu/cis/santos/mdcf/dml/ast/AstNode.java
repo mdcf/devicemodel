@@ -16,11 +16,19 @@ import org.apache.commons.lang3.StringEscapeUtils;
 import com.google.common.base.Optional;
 
 /**
+ * Top-level AST class that all AST node inherits from.
+ * 
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public abstract class AstNode {
   private transient SoftReference<Object[]> _children;
 
+  /**
+   * Retrieves the immediate children of this AST.
+   * 
+   * @return a possibly empty array of this node's children. The returned array
+   *         can be mutated but it does not affect the AST.
+   */
   public Object[] children() {
     Object[] result = null;
     if ((this._children == null) || ((result = this._children.get()) == null)) {
@@ -32,6 +40,15 @@ public abstract class AstNode {
 
   protected abstract Object[] getChildren();
 
+  /**
+   * Constructs an AST node whose type is equal to this node's type with the
+   * provided child nodes.
+   * 
+   * @param args
+   *          The child nodes; no changes to the array will be made.
+   * @return an AST node whose type is equal to this node's type and whose
+   *         children are the provided nodes.
+   */
   public final <T extends AstNode> T make(final Object[] args) {
     try {
       @SuppressWarnings("unchecked")
@@ -43,6 +60,9 @@ public abstract class AstNode {
     }
   }
 
+  /**
+   * Returns the {@link String} representation of this AST.
+   */
   @Override
   public String toString() {
     final StringBuilder sb = new StringBuilder();
