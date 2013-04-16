@@ -35,18 +35,13 @@ Setting up Development Environment
 
 5. `Import the project set file <http://wiki.eclipse.org/PSF>`__ downloaded in Step 2.
    This should import some projects into your workspace such as `sireum-lib <https://www.assembla.com/code/sireum-core/git-3/nodes/master/sireum-lib>`__
-   and `mdcf-dms-test <https://github.com/mdcf/devicemodel/tree/master/mdcf-dms-test>`__.
-
-6. Import `sireum-lib/lib/sireum.userlibraries <https://www.assembla.com/code/sireum-core/git-3/nodes/master/sireum-lib/lib/sireum.userlibraries>`__ 
-   from your workspace in Eclipse's 
-   `Java User Libraries preference page <http://help.eclipse.org/juno/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fpreferences%2Fjava%2Fbuildpath%2Fref-preferences-user-libraries.htm>`__.
-   There should not be any compile error. 
-   If errors persist, try cleaning all projects. 
+   and `mdcf-dms-test <https://github.com/mdcf/devicemodel/tree/master/mdcf-dms-test>`__. 
+   There should not be any compile error. If errors persist, try cleaning all projects. 
    If it still fails, exit Eclipse and relaunch Sireum DE as follows::
 
    sireum launch sireumdev --args -clean
 
    (Please contact the project owners if still unsuccessful.)
 
-7. Run the JUnit test in ``mdcf-dms-test`` by right clicking the project and select "Run As" and then "JUnit Test";
+6. Run the JUnit test in ``mdcf-dms-test`` by right clicking the project and select "Run As" and then "JUnit Test";
    all tests should pass.
