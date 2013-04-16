@@ -29,7 +29,7 @@ public abstract class AstNode {
    * @return a possibly empty array of this node's children. The returned array
    *         can be mutated but it does not affect the AST.
    */
-  public Object[] children() {
+  public final Object[] children() {
     Object[] result = null;
     if ((this._children == null) || ((result = this._children.get()) == null)) {
       result = getChildren();
@@ -48,6 +48,7 @@ public abstract class AstNode {
    *          The child nodes; no changes to the array will be made.
    * @return an AST node whose type is equal to this node's type and whose
    *         children are the provided nodes.
+   * @throws {@link InstantiationError} if unsuccessful.
    */
   public final <T extends AstNode> T make(final Object[] args) {
     try {
@@ -64,26 +65,42 @@ public abstract class AstNode {
    * Returns the {@link String} representation of this AST.
    */
   @Override
-  public String toString() {
+  public final String toString() {
     final StringBuilder sb = new StringBuilder();
-    final String name = getClass().getSimpleName();
-    sb.append(Character.toLowerCase(name.charAt(0)));
-    sb.append(name.substring(1));
-    sb.append('(');
-    final Object[] children = children();
-    final int len = children.length;
-    for (int i = 0; i < len; i++) {
-      toString(sb, children[i]);
-      if (i != (len - 1)) {
-        sb.append(", ");
-      }
-    }
-    sb.append(')');
+    toString(sb, this);
     return sb.toString();
   }
 
   private void toString(final StringBuilder sb, final Object o) {
-    if (o instanceof List) {
+    if (o instanceof Invariant) {
+      final Invariant inv = (Invariant) o;
+      sb.append("invariant(\"");
+      sb.append(StringEscapeUtils.escapeJava(inv.name));
+      sb.append("\", \"");
+      String ps;
+      if ((inv.predicateString == null)
+          || ((ps = inv.predicateString.get()) == null)) {
+        ps = StringEscapeUtils.escapeJava(Invariant.xs().toXML(inv.predicate));
+        inv.predicateString = new SoftReference<String>(ps);
+      }
+      sb.append(ps);
+      sb.append("\")");
+    } else if (o instanceof AstNode) {
+      final AstNode n = (AstNode) o;
+      final String name = n.getClass().getSimpleName();
+      sb.append(Character.toLowerCase(name.charAt(0)));
+      sb.append(name.substring(1));
+      sb.append('(');
+      final Object[] children = n.children();
+      final int len = children.length;
+      for (int i = 0; i < len; i++) {
+        toString(sb, children[i]);
+        if (i != (len - 1)) {
+          sb.append(", ");
+        }
+      }
+      sb.append(')');
+    } else if (o instanceof List) {
       final List<?> l = (List<?>) o;
       sb.append("list(");
       final int size = l.size();

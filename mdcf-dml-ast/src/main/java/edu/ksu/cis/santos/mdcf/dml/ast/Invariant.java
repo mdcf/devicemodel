@@ -19,10 +19,9 @@ import com.thoughtworks.xstream.io.xml.Xpp3Driver;
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public final class Invariant extends Member {
-  public final Object predicate;
-  private static transient XStream xstream;
+  static transient XStream xstream;
 
-  private static XStream xs() {
+  static XStream xs() {
     if (Invariant.xstream == null) {
       Invariant.xstream = new XStream(new Xpp3Driver());
       Invariant.xstream.setMode(XStream.ID_REFERENCES);
@@ -30,7 +29,9 @@ public final class Invariant extends Member {
     return Invariant.xstream;
   }
 
-  private transient SoftReference<String> predicateString;
+  public final Object predicate;
+
+  transient SoftReference<String> predicateString;
 
   public Invariant(final String name, final Object predicate) {
     super(name);
@@ -41,23 +42,6 @@ public final class Invariant extends Member {
   @Override
   protected Object[] getChildren() {
     return new Object[] { this.name, this.predicate };
-  }
-
-  @Override
-  public String toString() {
-    final StringBuilder sb = new StringBuilder();
-    sb.append("invariant(\"");
-    sb.append(StringEscapeUtils.escapeJava(this.name));
-    sb.append("\", \"");
-    String ps;
-    if ((this.predicateString == null)
-        || ((ps = this.predicateString.get()) == null)) {
-      ps = StringEscapeUtils.escapeJava(xs().toXML(this.predicate));
-      this.predicateString = new SoftReference<String>(ps);
-    }
-    sb.append(ps);
-    sb.append("\")");
-    return sb.toString();
   }
 
   @Override
