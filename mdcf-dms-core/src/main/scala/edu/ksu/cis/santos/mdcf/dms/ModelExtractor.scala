@@ -26,23 +26,23 @@ import Ast._
 object ModelExtractor {
 
   trait Reporter {
-    def error(message : String)
-    def warning(message : String)
-    def info(message : String)
+    def error(message : java.lang.String)
+    def warning(message : java.lang.String)
+    def info(message : java.lang.String)
   }
 
   final val DEFAULT_REPORTER = new Reporter {
-    def error(message : String) {
+    def error(message : java.lang.String) {
       Console.err.println(message)
       Console.err.flush
     }
 
-    def warning(message : String) {
+    def warning(message : java.lang.String) {
       Console.out.println(message)
       Console.out.flush
     }
 
-    def info(message : String) {
+    def info(message : java.lang.String) {
       Console.out.println(message)
       Console.out.flush
     }
@@ -59,6 +59,7 @@ object ModelExtractor {
   private final val SCHEMA_NAME = classOf[annotation.Schema].getName
   private final val CLASS_NAME = classOf[annotation.Class].getName
   private final val PRODUCT_NAME = classOf[annotation.Product].getName
+  private final val DEVICE_NAME = classOf[annotation.Device].getName
   private final val INSTANCE_NAME = classOf[annotation.Instance].getName
   private final val DATA_NAME = classOf[annotation.Data].getName
   private final val REQ_NAME = classOf[annotation.Req].getName
@@ -100,9 +101,12 @@ object ModelExtractor {
 
     val pkgModifier = mmapEmpty[java.lang.String, FM]
 
+    var size = 0
     for (p <- context.packageNames) {
       val cp = ClassPath.from(context.classLoader)
-      for (ci <- cp.getTopLevelClassesRecursive(p)) {
+      val cis = cp.getTopLevelClassesRecursive(p)
+      size += cis.size
+      for (ci <- cis) {
         val clazz = ci.load
         if (!clazz.getName.endsWith(".package-info")) {
           val pkg = clazz.getPackage
@@ -118,6 +122,12 @@ object ModelExtractor {
             imapEmpty[java.lang.String, Object])
         }
       }
+    }
+
+    if (size == 0) {
+      context.reporter.warning("Could not find any classes in the provided " +
+        s"packages ${context.packageNames.toVector}; " +
+        "perhaps a classpath setting issue?")
     }
 
     model(decls)
@@ -136,6 +146,7 @@ object ModelExtractor {
       case `SCHEMA_NAME`          => FM(FeatureModifier.Schema, false)
       case `CLASS_NAME`           => FM(FeatureModifier.Class, false)
       case `PRODUCT_NAME`         => FM(FeatureModifier.Product, false)
+      case `DEVICE_NAME`          => FM(FeatureModifier.Device, false)
       case `INSTANCE_NAME`        => FM(FeatureModifier.Instance, false)
       case `DATA_NAME`            => FM(FeatureModifier.Data, false)
       case `REQ_NAME` if allowReq => FM(FeatureModifier.Unspecified, true)
