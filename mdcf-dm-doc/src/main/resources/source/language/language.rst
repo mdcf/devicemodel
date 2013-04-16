@@ -97,7 +97,7 @@ default; these are declared in the respective package infos
 :dml:`dml.symbol <symbol/package-info.java>`). 
 In addition, all DML methods return non-null values.
 
-.. |List| replace:: :javadoc:`String <java/util/List.html>`
+.. |List| replace:: :javadoc:`List <java/util/List.html>`
 
 All DML objects are immutable (object state changes may occur but not 
 observable through the API). Each AST node class stores its children in 
@@ -142,7 +142,7 @@ The grammar recommends importing all elements (specified using ``_`` instead of
 :scala:`Scala package <119>` and :dms:`dms.package <package.scala>` 
 `package object <http://www.artima.com/scalazine/articles/package_objects.html>`_, 
 which defines DML primordial types, :scala:`implicit conversions <130>`,
-and a :scala:`macro <overviews/macros/overview.html>`, 
+and a :scaladoc:`macro <overviews/macros/overview.html>`, 
 which will be described in the appropriate subsequent sections below.
  
 In addition, it recommends importing `basic types <#grammar-token-basicType>`_ 
@@ -158,7 +158,7 @@ AST Classes and Construction
 ============================
 
 A model is represented using the :dml:`dml.ast.Model <ast/Model.java>` AST class which
-has an :javadoc:`Iterable <java/util/List.html>` 
+has an :javadoc:`Iterable <java/util/Iterable.html>` 
 of :dml:`dml.ast.Declarations <ast/Declaration.java>`, which can be either
 :dml:`dml.ast.BasicType <ast/BasicType.java>`, :dml:`dml.ast.Feature <ast/Feature.java>`, or
 :dml:`dml.ast.Requirement <ast/Requirement.java>`.
@@ -181,7 +181,7 @@ methods are helper methods that when given either a variable or an
 
 .. |AstWeak| replace:: |Ast| :dmldoc:`.Weak <ast/Ast.Weak.html>`
 
-Notice that at :dmdocs:`Line 8 <ExModel.scala\#L8>`, we need to use
+Notice that at :dmdocj:`Line 8 <ExModel.java#L8>`, we need to use
 ``Ast.<Declaration> list()`` instead of just ``list()``. That is because
 ``list()`` without a parameter type supplied for its element type returns
 ``List<Object>``, which is incompatible with ``model``'s parameter that expects
@@ -191,11 +191,12 @@ of AST construction methods, but with weaker compile-time parameter types that
 are checked at runtime; 
 :javadoc:`IllegalArgumentException <java/lang/IllegalArgumentException.html>`
 will be thrown if the runtime types are not what expected.  
-Below is an :dmdocj:`example <ExModel.java>` that illustrates the use of
+Below is an :dmdocj:`example <ExModelWeak.java>` that illustrates the use of
 |AstWeak| API:
 
 .. literalinclude:: /../../java/ExModelWeak.java
    :language: java
+   :emphasize-lines: 3,8
    :linenos:
 
 Below is a similar :dmdocs:`example <ExsModel.scala>` written in Scala;
@@ -271,8 +272,8 @@ construction of |SymbolTable| and its |String| representation:
    :language: java
    :linenos:
 
-The reader is referred to the SymbolTable Javadoc 
-`online <http://mdcf.github.io/doc/dml/edu/ksu/cis/santos/mdcf/dml/symbol/SymbolTable.html>`_
+The reader is referred to the SymbolTable 
+`Javadoc <http://mdcf.github.io/doc/dml/edu/ksu/cis/santos/mdcf/dml/symbol/SymbolTable.html>`_
 to see what queries are available through the API.
 
 
