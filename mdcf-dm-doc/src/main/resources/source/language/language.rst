@@ -1,5 +1,5 @@
-Language Specification, Representation, and API
-###############################################
+Language Specification and Implementation
+#########################################
 
 This section describes how device models can be specified in the Domain Specific
 Language (DML) encoded in Scala (Device Modeling in Scala -- DMS). 
@@ -10,8 +10,12 @@ guideline for people that are not familiar with Scala (but familiar with Java)
 in order for the model to be accepted by the DML Scala Model Extractor; some 
 possible variations are described on how one can express a model differently.
 
+
+Specification Form
+******************
+
 We will specify the context free grammar of the subset of Scala that is part of 
-DML using the Extended Backus-Naur Format (EBNF). Specifically:
+DMS using Extended Backus-Naur Form (EBNF). Specifically:
 
 .. |String| replace:: :javadoc:`String <java/lang/String.html>`
 
@@ -102,12 +106,12 @@ In addition, each node class inherits from the
 the returned array can be mutated but it does not affect the AST node.
 
 
-AST String Representation
-=========================
+String Representation
+=====================
 
-Calling the ``toString`` method on an AST node object produces a valid Java and 
-Scala code (under the appropriate import context) as a |String| that builds 
-structurally equivalent AST object. 
+Calling the ``toString`` method on an AST object or a |SymbolTable| object 
+produces a valid Java and Scala code (under the appropriate import context) as a 
+|String| that builds a structurally and behaviorally equivalent object. 
 
 
 Model
@@ -179,7 +183,7 @@ methods, but with weaker compile-time parameter types that are checked at
 runtime; 
 :javadoc:`IllegalArgumentException <java/lang/IllegalArgumentException.html>`
 will be thrown if the runtime types are not what expected.  
-Below is an :dmdocj:`example <ExModel.java>` that illustrate the
+Below is an :dmdocj:`example <ExModel.java>` that illustrates the
 |Ast|. ``Weak`` API:
 
 .. literalinclude:: /../../java/ExModelWeak.java
@@ -196,7 +200,7 @@ without a problem as can be seen at :dmdocs:`Line 13 <ExsModel.scala\#L13>`
    :emphasize-lines: 13,17-21
    :linenos:
 
-We mentioned previously in the `AST String Representation`_ Section that
+We mentioned previously in the `String Representation`_ Section that
 the AST ``toString`` method produces a code that construct structurally 
 equivalent AST. This is illustrated at 
 :dmdocs:`Lines 17-21 <ExsModel.scala\#L17-21>` where
@@ -222,7 +226,7 @@ Below is an :dmdocj:`example <ExModelExtractor.java>` illustrating the use of
 its sub-packages:
 
 .. literalinclude:: /../../java/ExModelExtractor.java
-   :language: scala
+   :language: java
    :linenos:
 
 .. |ClassLoader| replace:: :javadoc:`ClassLoader <java/lang/ClassLoader.html>`
@@ -258,7 +262,7 @@ Below is an :dmdocj:`example <ExModelSymbolTable.java>` to illustate the
 construction of |SymbolTable| and its |String| representation:
 
 .. literalinclude:: /../../java/ExModelSymbolTable.java
-   :language: scala
+   :language: java
    :linenos:
 
 The reader is referred the SymbolTable Javadoc 
