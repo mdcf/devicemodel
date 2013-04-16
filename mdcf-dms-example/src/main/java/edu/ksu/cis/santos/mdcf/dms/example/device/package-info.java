@@ -6,5 +6,5 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-@edu.ksu.cis.santos.mdcf.dms.annotation.Product
+@edu.ksu.cis.santos.mdcf.dms.annotation.Device
 package edu.ksu.cis.santos.mdcf.dms.example.device;

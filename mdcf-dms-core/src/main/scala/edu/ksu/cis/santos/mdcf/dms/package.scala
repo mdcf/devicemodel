@@ -19,6 +19,7 @@ package object dms {
   type Class = edu.ksu.cis.santos.mdcf.dms.annotation.Class @getter @setter
   type Const = edu.ksu.cis.santos.mdcf.dms.annotation.Const @getter @setter
   type Data = edu.ksu.cis.santos.mdcf.dms.annotation.Data @getter @setter
+  type Device = edu.ksu.cis.santos.mdcf.dms.annotation.Device @getter @setter
   type Instance = edu.ksu.cis.santos.mdcf.dms.annotation.Instance @getter @setter
   type Inv = edu.ksu.cis.santos.mdcf.dms.annotation.Inv @getter @setter
   type Product = edu.ksu.cis.santos.mdcf.dms.annotation.Product @getter @setter

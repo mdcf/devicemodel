@@ -28,5 +28,14 @@ public class ExModelVisitor {
         throw new RuntimeException("Reached " + node.name); //  unreachable
       }
     }.visit(m);
+    
+    new AbstractVisitor() {
+      @Override
+      public boolean defaultCase(AstNode node) {
+        System.out.println(node); //                    output: model(list(basicType("foo", list())))
+        //                                                      basicType("foo", list())
+        return true;
+      }
+    }.visit(m);
   }
 }

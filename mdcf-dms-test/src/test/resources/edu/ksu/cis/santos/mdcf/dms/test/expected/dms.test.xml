@@ -219,7 +219,7 @@
       </members>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.device.MultiMonitor">
-      <level>Product</level>
+      <level>Device</level>
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor"/>
       </supers>
@@ -683,7 +683,7 @@
       </members>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.device.NellcorPulseOx">
-      <level>Product</level>
+      <level>Device</level>
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
       </supers>
@@ -1016,7 +1016,7 @@
       </members>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.device.NoninPulseOx">
-      <level>Product</level>
+      <level>Device</level>
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
       </supers>

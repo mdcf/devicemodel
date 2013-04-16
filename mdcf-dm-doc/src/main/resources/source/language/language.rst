@@ -46,7 +46,7 @@ Representation and API
 
 .. |Ast| replace:: :dmldoc:`dml.ast.Ast <ast/Ast.html>`
 
-.. |IVisitor| replace:: :dmldoc:`dml.ast.IVisitor <ast/IVisitor.html>`
+.. |IVisitor| replace:: :dml:`dml.ast.IVisitor <ast/IVisitor.java>`
 
 .. |AVisitor| replace:: :dml:`dml.ast.AbstractVisitor <ast/AbstractVisitor.java>`
 
@@ -92,9 +92,9 @@ Nullity and Immutability
 
 All method parameters in all the DML API are non-null by 
 default; these are declared in the respective package infos 
-(:dml:`ast <ast/package-info.java>`, 
-:dml:`serialization <serialization/package-info.java>`, 
-:dml:`symbol <symbol/package-info.java>`). 
+(:dml:`dml.ast <ast/package-info.java>`, 
+:dml:`dml.serialization <serialization/package-info.java>`, 
+:dml:`dml.symbol <symbol/package-info.java>`). 
 In addition, all DML methods return non-null values.
 
 .. |List| replace:: :javadoc:`String <java/util/List.html>`
@@ -157,11 +157,11 @@ the fully qualified name of package elements.
 AST Classes and Construction
 ============================
 
-A model is represented using the :dml:`Model <ast/Model.java>` AST class which
+A model is represented using the :dml:`dml.ast.Model <ast/Model.java>` AST class which
 has an :javadoc:`Iterable <java/util/List.html>` 
-of :dml:`Declarations <ast/Declaration.java>`, which can be either
-:dml:`BasicType <ast/BasicType.java>`, :dml:`Feature <ast/Feature.java>`, or
-:dml:`Requirement <ast/Requirement.java>`.
+of :dml:`dml.ast.Declarations <ast/Declaration.java>`, which can be either
+:dml:`dml.ast.BasicType <ast/BasicType.java>`, :dml:`dml.ast.Feature <ast/Feature.java>`, or
+:dml:`dml.ast.Requirement <ast/Requirement.java>`.
 
 One can construct a model by calling the |Ast| 
 :dmldoc:`model <ast/Ast.html#model(java.lang.Iterable)>`
@@ -185,7 +185,7 @@ Notice that at :dmdocs:`Line 8 <ExModel.scala\#L8>`, we need to use
 ``Ast.<Declaration> list()`` instead of just ``list()``. That is because
 ``list()`` without a parameter type supplied for its element type returns
 ``List<Object>``, which is incompatible with ``model``'s parameter that expects
-a list of :dml:`Declarations <ast/Declaration.java>`. To address this issue,
+a list of :dml:`dml.ast.Declaration <ast/Declaration.java>`. To address this issue,
 one can use |AstWeak| API that have the same set
 of AST construction methods, but with weaker compile-time parameter types that 
 are checked at runtime; 
@@ -245,6 +245,11 @@ a model using a specific |ClassLoader| and
 the extraction process. By default, the |ClassLoader| that loads the 
 |Extractor| is used, and warning and errors are printed to the console (output
 and error streams, respectively).
+
+.. note:: When extracting a model, make sure that the Java classpath is setup
+          properly so the |Extractor| can find the package elements. Otherwise,
+          it would return a model with empty declarations. The |Extractor| will
+          give a warning when such situation occurs.
 
 
 SymbolTable
@@ -318,13 +323,60 @@ static method.
 AST Traversal/Visitor
 =====================
 
-Below is an :dmdocs:`example <ExModelVisitor.java>` to show how one can traverse 
-DML AST using the provided visitor API.
+The |IVisitor| interface and |AVisitor| class realize the visitor pattern for
+(top-down, left-to-right) traversal of DML AST. 
+Each visit method for different AST node type in |IVisitor| 
+returns a boolean value that, if true, indicates the visitor should continue 
+visiting the node's children; otherwise, the traversal is short-circuited by
+skipping the node's children (and hence, the node's decendants). 
+
+The visit methods for abstract AST node types (i.e., 
+:dml:`dml.ast.Declaration <ast/Declaration.java>`, 
+:dml:`dml.ast.Initialization <ast/Initialization.java>`, 
+:dml:`dml.ast.Member <ast/Member.java>`, and 
+:dml:`dml.ast.Type <ast/Type.java>`) will be visited first before any of its 
+subtypes visit methods are called. 
+For example, 
+|IVisitor| |visitDeclaration| will be called before |visitBasicType|.
+In such case, the AST traversal continues visiting the node's children
+when **both** |visitDeclaration| and |visitBasicType| return true. 
+ 
+.. |visitDeclaration| replace:: :dmldoc:`visitDeclaration <ast/IVisitor.html#visitDeclaration(edu.ksu.cis.santos.mdcf.dml.ast.Declaration)>` 
+
+.. |visitBasicType| replace:: :dmldoc:`visitBasicType <ast/IVisitor.html#visitBasicType(edu.ksu.cis.santos.mdcf.dml.ast.BasicType)>`
+ 
+The |AVisitor| class provides a basic implementation of |IVisitor| where calls 
+to all visit methods of non-abstract AST node types
+are routed to call (and return the return value of) |AVisitor|   
+:dmldoc:`defaultCase <ast/AbstractVisitor.html#defaultCase(edu.ksu.cis.santos.mdcf.dml.ast.AstNode)>`,
+which can be conveniently overriden in a sub-class.
+
+Below is an :dmdocj:`example <ExModelVisitor.java>` to illustrate how one can 
+traverse DML AST using the provided visitor API.
 
 .. literalinclude:: /../../java/ExModelVisitor.java
    :language: java
+   :emphasize-lines: 15,23,28,35-36
    :linenos:
 
+The example creates a model with one basic type (explained 
+`below <#grammar-token-basicType>`). The first visitor at 
+:dmdocj:`Lines 12-18 <ExModelVisitor.java#L12-18>` prints out
+the name of any basic type it encounters at 
+:dmdocj:`Line 15 <ExModelVisitor.java#L15>`, which in this case prints
+out ``Reached foo``. 
+The second visitor at 
+:dmdocj:`Lines 20-30 <ExModelVisitor.java#L20-30>` throws an exception 
+at :dmdocj:`Line 28 <ExModelVisitor.java#L28>` whenever it encounters
+a basic type; however, because its 
+:dmdocj:`visitModel <ExModelVisitor.java#L22-24>` method returns false, the
+visitor skips all model's children, hence skipping visiting the basic type
+declaration (more precisely, all declarations).
+The third visitor at 
+:dmdocj:`Lines 32-39 <ExModelVisitor.java#L32-39>` prints out AST node in
+its :dmdocj:`defaultCase <ExModelVisitor.java#L34-38>` method; hence, it
+prints out the model and the basic type.
+ 
 
 Model Well-Formedness
 =====================
@@ -338,15 +390,15 @@ Basic Type
 **********
 
 .. productionlist:: DMS
-   basicType           : `basicTypeTrait`
-                       : | `basicTypeClass` `basicTypeObject`
-   basicTypeTrait      : "trait" ID_basic "extends" ( "BasicType" | ID_basic ) [ `basicTypeBody` ]
-   basicTypeClass      : [ `basicTypeModifier` ] [ "final" ] 
-                       : "class" ID_basic "(" "val" "value" ":" <basicInternalType> ")"
-                       : "extends" ( "BasicType" | ID_basic ) [ `basicTypeBody` ]
-   basicTypeModifier   : "@Schema" | "@Class" | "@Product" | "@Instance"
+   basicType           : `basicTypeTrait` | `basicTypeClass` `basicTypeObject`
+   basicTypeTrait      : "trait" ID_basic 
+                       : "extends" ( "BasicType" | ID_basic ( "with" ID_basic )* ) 
+                       : [ `basicTypeBody` ]
+   basicTypeClass      : [ "final" ] "class" ID_basic "(" "val" "value" ":" <basicInternalType> ")"
+                       : "extends" ( "BasicType" | ID_basic ( "with" ID_basic )* ) 
+                       : [ `basicTypeBody` ]
    basicTypeObject     : "object" ID_basic "{" `basicTypeApply` "}"
-   basicTypeApply      : "implicit" "def" "apply" "(" ID_apply ":" basicInternalType ")" "=" 
+   basicTypeApply      : "implicit" "def" "apply" "(" ID_apply ":" <basicInternalType> ")" "=" 
                        : "new" ID_basic "(" ID_apply ")"
    basicTypeBody       : "{" [ `basicAsStringMethod` ] [ `basicToStringMethod` ] <basicOpMethod>* "}"
    basicAsStringMethod : "override" "def" "asString" "=" <scalaExp : java.lang.String>
@@ -360,7 +412,7 @@ Feature and Requirement
                        : "extends" ( "Feature" | `featureType` )
                        : "{" ( `attribute` [ `initialization` ] )* "}"
                        : [ `invariantObject` ] 
-   featureModifier     : "@Schema" | "@Class" | "@Product" | "@Instance" | "@Data" | "@Settable"
+   featureModifier     : "@Schema" | "@Class" | "@Product"| "@Device" | "@Instance" | "@Data" | "@Settable"
    featureType         : ID_feature ( "with" ID_feature )*
    attribute           : [ `attributeModifier` ] "val" ID_attribute ":" `type`
    attributeModifier   : "@Data" | "@Settable" | "@Const" [ "(" `constMode` ")" ] 
