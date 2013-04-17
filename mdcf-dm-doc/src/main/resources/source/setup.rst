@@ -1,4 +1,4 @@
-Setting up Development Environment
+Setting Up Development Environment
 ##################################
 
 1. Download and install Sireum by following the instructions at: 
@@ -30,7 +30,7 @@ Setting up Development Environment
    There should not be any compile error. If errors persist, try cleaning all 
    projects. If it still fails, exit Eclipse and relaunch Sireum DE as follows::
 
-   sireum launch sireumdev --args -clean
+       sireum launch sireumdev --args -clean
 
    (Please contact the project owners if still unsuccessful.)
 

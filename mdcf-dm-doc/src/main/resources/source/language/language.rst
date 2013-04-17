@@ -153,6 +153,25 @@ places, including inside class declarations and expression blocks among others.
 One can alternatively choose to not import any package elements and always use 
 the fully qualified name of package elements.
 
+Some examples of Scala model files can be found at:
+
+* :dmsx:`BasicType <BasicType.scala>`
+
+* :dmsx:`Schema <schema/Schema.scala>`
+
+* :dmsx:`Class <clas/Class.scala>`
+
+* :dmsx:`NoninPulseOx <device/NoninPulseOx.scala>`
+
+* :dmsx:`NellcorPulseOx <device/NellcorPulseOx.scala>`
+
+* :dmsx:`MultiMonitor <device/MultiMonitor.scala>`
+
+* :dmsx:`App <requirement/App.scala>`
+
+We will use portions of the above examples to illustrate various DMS elements
+in the subsequent sections.
+
 
 AST Classes and Construction
 ============================
@@ -226,9 +245,10 @@ AST Extraction
 ==============
 
 Instead of constructing AST manually by hand, |Extractor| provides 
-``extractModel`` methods that extract DML AST from DMS models.
-More specifically, given an array of package |String| names, they return
-the DML AST model that is represented in the packages and their sub-packages.
+``extractModel`` methods that extract DML AST from *compiled* DMS model Java 
+class files (see the :ref:`note below <extractor_note>`). 
+Given an array of package |String| names, they return the DML AST model that is
+represented in the packages and their sub-packages.
 
 Below is an :dmdocj:`example <ExModelExtractor.java>` illustrating the use of 
 |Extractor| API to extract DMS models from the :dmsx:`dms.example <>` package and
@@ -247,11 +267,28 @@ the extraction process. By default, the |ClassLoader| that loads the
 |Extractor| is used, and warning and errors are printed to the console (output
 and error streams, respectively).
 
-.. note:: When extracting a model, make sure that the Java classpath is setup
+.. _extractor_note:
+
+.. note:: The |Extractor| extracts models from Java bytecode compiled from DMS 
+          model source files. Thus, one need to compile the Scala source files
+          first by using the Scala compiler. After compilation, the
+          |Extractor| does not require access to the source code.
+          
+          When extracting a model, make sure that the Java classpath is setup
           properly so the |Extractor| can find the package elements. Otherwise,
           it would return a model with empty declarations. The |Extractor| will
           give a warning when such situation occurs.
 
+          The |Extractor| is implemented using a combination of 
+          :scaladoc:`Scala Runtime Reflection <overviews/reflection/overview.html>`,
+          `Guava ClassPath <http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/reflect/ClassPath.html>`_,
+          and
+          `Java Reflection <http://docs.oracle.com/javase/tutorial/reflect/>`_, 
+          including 
+          `Java dynamic Proxy <http://docs.oracle.com/javase/tutorial/reflect/>`_.
+          Interested reader is referred to the |Extractor| code and 
+          Sireum's :sutil:`Reflection <Reflection.scala>` code.
+          
 
 SymbolTable
 ===========
