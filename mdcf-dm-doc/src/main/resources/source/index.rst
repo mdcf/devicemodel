@@ -28,11 +28,9 @@ Welcome to `MDCF <http://mdcf.santos.cis.ksu.edu>`_ DML's documentation
    material are those of the author(s) and do not necessarily reflect the views 
    of the previously mentioned institutions.
 
-Contents
-********
-
 .. toctree::
    :maxdepth: 4
 
+   setup.rst
    language/language.rst
 
