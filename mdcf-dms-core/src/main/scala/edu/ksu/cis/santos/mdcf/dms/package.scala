@@ -39,12 +39,7 @@ package object dms {
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
-  trait Any
-
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  trait BasicType extends Any {
+  trait BasicType {
     def value : scala.Any
     def ==(o : BasicType) : Boolean = value == o.value
     def !=(o : BasicType) : Boolean = value != o.value
@@ -64,7 +59,7 @@ package object dms {
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
-  trait Feature extends Any {
+  trait Feature {
     final override def toString = s"feature ${getClass.getName}"
   }
 

@@ -51,6 +51,7 @@ object ModelExtractor {
   import scala.collection.JavaConversions._
   import scala.reflect.runtime.universe._
 
+  private final val ANY_NAME = classOf[scala.Any].getName
   private final val OBJECT_NAME = classOf[java.lang.Object].getName
   private final val OPTION_NAME = classOf[scala.Option[_]].getName
   private final val EITHER_NAME = classOf[scala.Either[_, _]].getName
@@ -331,6 +332,14 @@ object ModelExtractor {
       implicit context : Context) : (ast.Type, Optional[Initialization]) = {
     val clazz = Reflection.getClassOfType(tipe.erasure)
     clazz.getName match {
+      case `ANY_NAME` =>
+        value match {
+          case Some(v) =>
+            context.reporter.error(
+              s"Any type initialization for $aQName is not permitted.")
+          case _ =>
+        }
+        (namedType("Any"), none())
       case `OPTION_NAME` =>
         val TypeRef(_, _, List(elementType)) = tipe
         (value : @unchecked) match {
