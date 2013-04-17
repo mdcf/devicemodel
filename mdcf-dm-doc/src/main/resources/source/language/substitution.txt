@@ -1,0 +1,28 @@
+.. |Ast| replace:: :dmldoc:`dml.ast.Ast <ast/Ast.html>`
+
+.. |IVisitor| replace:: :dml:`dml.ast.IVisitor <ast/IVisitor.java>`
+
+.. |AVisitor| replace:: :dml:`dml.ast.AbstractVisitor <ast/AbstractVisitor.java>`
+
+.. |XStreamer| replace:: :dmldoc:`dml.serialization.XStreamer <serialization/XStreamer.html>`
+
+.. |SymbolTable| replace:: :dmldoc:`dml.symbol.SymbolTable <symbol/SymbolTable.html>`
+
+.. |Extractor| replace:: :dms:`dms.ModelExtractor <ModelExtractor.scala>`
+
+.. |String| replace:: :javadoc:`String <java/lang/String.html>`
+
+.. |List| replace:: :javadoc:`List <java/util/List.html>`
+
+.. |Writer| replace:: :javadoc:`Writer <java/io/Writer.html>`
+
+.. |Reader| replace:: :javadoc:`Reader <java/io/Reader.html>`
+
+.. |OutputStream| replace:: :javadoc:`OutputStream <java/io/OutputStream.html>`
+
+.. |InputStream| replace:: :javadoc:`InputStream <java/io/InputStream.html>`
+
+.. |visitDeclaration| replace:: :dmldoc:`visitDeclaration <ast/IVisitor.html#visitDeclaration(edu.ksu.cis.santos.mdcf.dml.ast.Declaration)>` 
+
+.. |visitBasicType| replace:: :dmldoc:`visitBasicType <ast/IVisitor.html#visitBasicType(edu.ksu.cis.santos.mdcf.dml.ast.BasicType)>`
+ 
