@@ -22,11 +22,12 @@ Basic Type
 Basic types are primitive types for device attributes in models. 
 DML (DMS) provides one built-in basic type and that is ``Boolean`` (|Boolean|),
 which represents true and false values. Note that it has the same simple name to 
-Scala :scalaapi:`scala.Boolean <scala.Boolean>` that are imported by default in 
-a Scala code; thus, they should not be confused. Using 
+:scalaapi:`scala.Boolean <scala.Boolean>` that is imported by default in 
+any Scala code; thus, they should not be confused. Using 
 ``import edu.ksu.cis.santos.mdcf.dms._`` as recommended in the 
-:ref:`Model <sec-model>` Section made all references to ``Boolean`` refer to 
-|Boolean| instead of :scalaapi:`scala.Boolean <scala.Boolean>`. 
+:ref:`Model <sec-model>` Section override the default import and
+made all references to ``Boolean`` refer to |Boolean| instead of 
+:scalaapi:`scala.Boolean <scala.Boolean>`. 
 
 
 Basic types can be organized in a sub-type (|subtypeof|) hierarchy such as 
@@ -49,3 +50,15 @@ Implementation Classes and Construction
 Well-Formedness
 ***************
    
+The set of basic types in models are well-formed if:
+
+1. For each basic type, each of its super types is either another
+   basic type or |BasicType|.
+
+2. There is no circularity in the basic type subtype hierarchy.
+
+In DMS, the |Extractor| enforces the first rule; more precisely, 
+it only recoqnizes a Scala type as a basic type if it is a descendant of 
+|BasicType|. 
+The second rule is enforced by the Scala compiler.
+ 
