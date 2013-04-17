@@ -30,12 +30,12 @@
 
 .. |Boolean| replace:: :dms:`dms.Boolean <package.scala#L69>`
 
-.. |Number| replace:: :dmsx:`dms.example.Number <BasicType#L33>`
+.. |Number| replace:: :dmsx:`dms.example.Number <BasicType.scala#L33>`
 
-.. |IntegralType| replace:: :dmsx:`dms.example.IntegralType <BasicType#L52>`
+.. |IntegralType| replace:: :dmsx:`dms.example.IntegralType <BasicType.scala#L52>`
 
-.. |Int| replace:: :dmsx:`dms.example.Int <BasicType#L56>`
+.. |Int| replace:: :dmsx:`dms.example.Int <BasicType.scala#L56>`
 
-.. |Nat| replace:: :dmsx:`dms.example.Nat <BasicType#L111>`
+.. |Nat| replace:: :dmsx:`dms.example.Nat <BasicType.scala#L111>`
 
 .. |subtypeof| replace:: ``<:``  
