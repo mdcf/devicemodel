@@ -901,7 +901,7 @@ public final class SymbolTable {
       seen.add(basicTypeName);
       for (final NamedType nt : basicType.supers) {
         final String superName = nt.name;
-        superTransitive(seen, superm, subm, feature(nt.name));
+        superTransitive(seen, superm, subm, basicType(nt.name));
         superm.put(basicTypeName, superName);
         subm.put(superName, basicTypeName);
       }
@@ -939,13 +939,6 @@ public final class SymbolTable {
           .builder();
       final ImmutableMultimap.Builder<String, String> subb = ImmutableMultimap
           .builder();
-
-      superb.put("IntegralType", "Number");
-      superb.put("Int", "IntegralType");
-      superb.put("Nat", "Int");
-      subb.put("Number", "IntegralType");
-      subb.put("IntegralType", "Int");
-      subb.put("Int", "Nat");
 
       final HashSet<String> seen = new HashSet<>();
 

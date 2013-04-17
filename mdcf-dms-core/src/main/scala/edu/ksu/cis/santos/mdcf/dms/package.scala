@@ -41,8 +41,8 @@ package object dms {
    */
   trait BasicType {
     def value : scala.Any
-    def ==(o : BasicType) : Boolean = value == o.value
-    def !=(o : BasicType) : Boolean = value != o.value
+    def ==(o : BasicType) : Boolean = Boolean(value == o.value)
+    def !=(o : BasicType) : Boolean = Boolean(value != o.value)
     def asString : java.lang.String = value.toString
     override def toString = s"${getClass.getSimpleName}($asString)"
 
@@ -66,7 +66,7 @@ package object dms {
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
-  final implicit class Boolean(val value : scala.Boolean) {
+  final class Boolean(val value : scala.Boolean) {
     import Boolean._
     def unary_! : Boolean = if (value) FALSE else TRUE
     def &&(o : => Boolean) : Boolean = if (!value) FALSE else o
@@ -80,175 +80,16 @@ package object dms {
     def ite[T](v1 : => T, v2 : => T) : T = if (value) v1 else v2
   }
 
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  object Boolean {
-    final val TRUE = Boolean(true)
-    final val FALSE = Boolean(false)
-  }
-
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  final implicit class String(val value : java.lang.String) extends BasicType
-
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  trait Number extends BasicType {
-    def <(o : Number) : Boolean
-    def <=(o : Number) : Boolean
-    def >(o : Number) : Boolean
-    def >=(o : Number) : Boolean
-    def +(o : Number) : Number
-    def -(o : Number) : Number
-    def *(o : Number) : Number
-    def /(o : Number) : Number
-    def %(o : Number) : Number
-  }
-
   import language.implicitConversions
 
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
-  object Number {
-    implicit def apply(n : scala.Int) = Int(n)
-    implicit def apply(n : scala.Long) = Int(n)
-  }
+  object Boolean {
+    final val TRUE = new Boolean(true)
+    final val FALSE = new Boolean(false)
 
-  import org.sireum.util.math._
-
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  trait IntegralType extends Number {
-    def value : Integer
-  }
-
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  class Int(val value : Integer) extends IntegralType {
-    import Int._
-    override def <(o : Number) : Boolean =
-      o match {
-        case o : Int => this.value < o.value
-        case _       => false
-      }
-    override def <=(o : Number) : Boolean =
-      o match {
-        case o : Int => this.value <= o.value
-        case _       => false
-      }
-    override def >(o : Number) : Boolean =
-      o match {
-        case o : Int => this.value > o.value
-        case _       => false
-      }
-    override def >=(o : Number) : Boolean =
-      o match {
-        case o : Int => this.value >= o.value
-        case _       => false
-      }
-    override def +(o : Number) : Int =
-      o match {
-        case o : Int => Int(this.value + o.value)
-      }
-    override def -(o : Number) : Int =
-      o match {
-        case o : Int => Int(this.value - o.value)
-      }
-    override def *(o : Number) : Int =
-      o match {
-        case o : Int => Int(this.value * o.value)
-      }
-    override def /(o : Number) : Int =
-      o match {
-        case o : Int => Int(this.value / o.value)
-      }
-    override def %(o : Number) : Int =
-      o match {
-        case o : Int => Int(this.value % o.value)
-      }
-    override def asString = value.toBigInt.toString
-    override def toString = asString
-  }
-
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  class Nat(value : Integer) extends Int(value) {
-    override def <(o : Number) : Boolean =
-      o match {
-        case o : Int => this.value < o.value
-        case _       => false
-      }
-    override def <=(o : Number) : Boolean =
-      o match {
-        case o : Int => this.value <= o.value
-        case _       => false
-      }
-    override def >(o : Number) : Boolean =
-      o match {
-        case o : Int => this.value > o.value
-        case _       => false
-      }
-    override def >=(o : Number) : Boolean =
-      o match {
-        case o : Int => this.value >= o.value
-        case _       => false
-      }
-    override def +(o : Number) : Int =
-      o match {
-        case o : Nat => Nat(this.value + o.value)
-        case o : Int => super.+(o)
-      }
-    override def -(o : Number) : Int =
-      o match {
-        case o : Nat => Nat(this.value + o.value)
-        case o : Int => super.-(o)
-      }
-    override def *(o : Number) : Int =
-      o match {
-        case o : Nat => Nat(this.value + o.value)
-        case o : Int => super.*(o)
-      }
-    override def /(o : Number) : Int =
-      o match {
-        case o : Nat => Nat(this.value / o.value)
-        case o : Int => super./(o)
-      }
-    override def %(o : Number) : Int =
-      o match {
-        case o : Nat => Nat(this.value % o.value)
-        case o : Int => super.%(o)
-      }
-  }
-
-  private def N = SireumNumber
-
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  object Int {
-    implicit def apply(n : scala.Int) : Int = apply(N(n))
-    implicit def apply(n : scala.Long) : Int = apply(N(n))
-    implicit def apply(n : java.lang.String) : Int = apply(N(BigInt(n)))
-    implicit def apply(n : Integer) : Int = new Int(n)
-  }
-
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  object Nat {
-    final val ZERO = new Nat(SireumNumber(0))
-
-    implicit def apply(n : scala.Int) : Nat = apply(N(n))
-    implicit def apply(n : scala.Long) : Nat = apply(N(n))
-    implicit def apply(n : java.lang.String) : Nat = apply(N(BigInt(n)))
-    implicit def apply(n : Integer) : Nat = if (n < 0) ZERO else new Nat(n)
+    implicit def apply(b : scala.Boolean) = if (b) TRUE else FALSE
   }
 
   implicit def boolean2sboolean(b : Boolean) : scala.Boolean = b.value
