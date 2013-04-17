@@ -30,7 +30,8 @@ a Scala code; thus, they should not be confused. Using
 
 
 Basic types can be organized in a sub-type (|subtypeof|) hierarchy such as 
-|Nat| |subtypeof| |Int| |subtypeof| |IntegralType| |subtypeof| |Number|. 
+|Nat| |subtypeof| |Int| |subtypeof| |IntegralType| |subtypeof| |Number|
+|subtypeof| |BasicType|. 
 In general, basic types can be organized to form a sub-type hierarchy lattice 
 instead of just a tree rooted at |BasicType|.
 That is, user-defined basic types can inherit from one or more basic types.
