@@ -18,27 +18,31 @@ Basic Type
    basicAsStringMethod : "override" "def" "asString" "=" <scalaExp : java.lang.String>
    basicToStringMethod : "override" "def" "toString" "=" <scalaExp : java.lang.String>
 
-Basic type declarations allow one to specify available primitive types for
-device attributes in models. All basic types should inherit from 
-|BasicType|.
+
+Basic types are primitive types for device attributes in models. 
+DML (DMS) provides one built-in basic type and that is ``Boolean`` (|Boolean|),
+which represents true and false values. Note that it has the same simple name to 
+Scala :scalaapi:`scala.Boolean <scala.Boolean>` that are imported by default in 
+a Scala code; thus, they should not be confused. Using 
+``import edu.ksu.cis.santos.mdcf.dms._`` as recommended in the 
+:ref:`Model <sec-model>` Section made all references to ``Boolean`` refer to 
+|Boolean| instead of :scalaapi:`scala.Boolean <scala.Boolean>`. 
 
 
-Built-in Types
-**************
+Basic types can be organized in a sub-type (|subtypeof|) hierarchy such as 
+|Nat| |subtypeof| |Int| |subtypeof| |IntegralType| |subtypeof| |Number|. 
+In general, basic types can be organized to form a sub-type hierarchy lattice 
+instead of just a tree rooted at |BasicType|.
+That is, user-defined basic types can inherit from one or more basic types.
 
-DML provides several built-in basic types:
 
-* |Boolean| -- representing true or false values.
-* |Number| -- representing number values.
-* |IntegralType| -- representing whole number values.
-* |Int| -- representing arbitrary-precision integer values.
-* |Nat| -- representing arbitrary-precision non-negative integer values.
+Basic type declarations allow one to declare additional types.
+All basic types inherit from |BasicType|.
 
-Note that they have the same simple name such as Scala 
-:scalaapi:`Boolean <scala.Boolean>`, thus, they should not be confused.
- 
-Basic types can be organized to form sub-type hierarchy lattices.
 
+
+Implementation Classes and Construction
+***************************************
 
 
 Well-Formedness

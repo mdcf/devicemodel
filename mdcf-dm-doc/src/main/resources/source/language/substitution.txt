@@ -26,3 +26,16 @@
 
 .. |visitBasicType| replace:: :dmldoc:`visitBasicType <ast/IVisitor.html#visitBasicType(edu.ksu.cis.santos.mdcf.dml.ast.BasicType)>`
  
+.. |BasicType| replace:: :dms:`dms.BasicType <package.scala#L42>`
+
+.. |Boolean| replace:: :dms:`dms.Boolean <package.scala#L69>`
+
+.. |Number| replace:: :dmsx:`dms.example.Number <BasicType#L33>`
+
+.. |IntegralType| replace:: :dmsx:`dms.example.IntegralType <BasicType#L52>`
+
+.. |Int| replace:: :dmsx:`dms.example.Int <BasicType#L56>`
+
+.. |Nat| replace:: :dmsx:`dms.example.Nat <BasicType#L111>`
+
+.. |subtypeof| replace:: ``<:``  

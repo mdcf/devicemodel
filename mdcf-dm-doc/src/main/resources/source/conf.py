@@ -297,5 +297,6 @@ extlinks = {'dml': ('https://github.com/mdcf/devicemodel/blob/master/mdcf-dml-as
             'dmsx': ('https://github.com/mdcf/devicemodel/blob/master/mdcf-dms-example/src/main/scala/edu/ksu/cis/santos/mdcf/dms/example/%s', ''),
             'sutil': ('https://sireum.assembla.com/code/sireum-core/git-3/nodes/master/sireum-util/src/main/scala/org/sireum/util/%s', ''),
             'scala': ('http://www.scala-lang.org/node/%s', ''),
+            'scalaapi': ('http://www.scala-lang.org/api/current/index.html#%s', ''),
             'scaladoc': ('http://docs.scala-lang.org/%s', ''),
             'nsfgrant': ('http://www.nsf.gov/awardsearch/showAward?AWD_ID=%s', '') }

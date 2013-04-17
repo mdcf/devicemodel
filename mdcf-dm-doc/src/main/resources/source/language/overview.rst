@@ -81,7 +81,7 @@ In addition, each node class inherits from the
 the node's children; the returned array can be mutated but it does not affect 
 the AST node.
 
-.. _string-representation:
+.. _sec-string-representation:
 
 String Representation
 =====================

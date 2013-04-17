@@ -1,5 +1,7 @@
 .. include:: substitution.txt
 
+.. _sec-model:
+
 Model
 #####
 
@@ -55,8 +57,8 @@ We will use portions of the above examples to illustrate various DMS elements
 in the subsequent sections.
 
 
-Classes and Construction
-************************
+Implementation Classes and Construction
+***************************************
 
 A model is represented using the :dml:`dml.ast.Model <ast/Model.java>` AST class which
 has an :javadoc:`Iterable <java/util/Iterable.html>` 
@@ -110,7 +112,7 @@ without a problem as can be seen at :dmdocs:`Line 13 <ExsModel.scala\#L13>`
    :emphasize-lines: 13,17-21
    :linenos:
 
-We mentioned previously in the :ref:`string-representation` Section that
+We mentioned previously in the :ref:`sec-string-representation` Section that
 the AST ``toString`` method produces a code that construct structurally 
 equivalent AST. This is illustrated at 
 :dmdocs:`Lines 17-21 <ExsModel.scala\#L17-21>` where
