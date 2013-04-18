@@ -1,3 +1,13 @@
+.. |ScalaPackage| replace:: :scala:`Scala package <119>`
+
+.. |PackageObject| replace:: `package object <http://www.artima.com/scalazine/articles/package_objects.html>`__
+
+.. |implicit| replace:: :scala:`implicit <130>`
+
+.. |macro| replace:: :scaladoc:`macro <overviews/macros/overview.html>`
+
+.. |string interpolator| replace:: :scaladoc:`Scala string interpolator </overviews/core/string-interpolation.html>`
+
 .. |Ast| replace:: :dmldoc:`dml.ast.Ast <ast/Ast.html>`
 
 .. |IVisitor| replace:: :dml:`dml.ast.IVisitor <ast/IVisitor.java>`
@@ -30,12 +40,34 @@
 
 .. |Boolean| replace:: :dms:`dms.Boolean <package.scala#L69>`
 
-.. |Number| replace:: :dmsx:`dms.example.Number <BasicType.scala#L33>`
+.. |Predicate| replace:: :dms:`dms.Predicate <package.scala#L100>`
 
-.. |IntegralType| replace:: :dmsx:`dms.example.IntegralType <BasicType.scala#L52>`
+.. |Number| replace:: :dmsx:`dms.example.Number <BasicType.scala#L36>`
 
-.. |Int| replace:: :dmsx:`dms.example.Int <BasicType.scala#L56>`
+.. |IntegralType| replace:: :dmsx:`dms.example.IntegralType <BasicType.scala#L58>`
 
-.. |Nat| replace:: :dmsx:`dms.example.Nat <BasicType.scala#L111>`
+.. |Int| replace:: :dmsx:`dms.example.Int <BasicType.scala#L65>`
+
+.. |Nat| replace:: :dmsx:`dms.example.Nat <BasicType.scala#L123>`
 
 .. |subtypeof| replace:: ``<:``  
+
+.. _XStream: http://xstream.codehaus.org
+
+.. _Jettison: http://jettison.codehaus.org
+
+.. |trait| replace:: :scala:`trait <126>`
+
+.. |class| replace:: :scala:`class <132>`
+
+.. |companion object| replace:: `companion object <http://stackoverflow.com/questions/609744/what-is-the-rationale-behind-having-companion-objects-in-scala>`__
+
+.. |basic type value| replace:: :dms:`value <package.scala#L43>`
+
+.. |basic asString| replace:: :dms:`asString <package.scala#L46>`
+
+.. |basic toString| replace:: :dms:`toString <package.scala#L47>`
+
+.. |val| replace:: `val <http://stackoverflow.com/questions/1791408/what-is-the-difference-between-a-var-and-val-definition-in-scala>`__
+
+.. |apply| replace:: `apply <http://stackoverflow.com/questions/9737352/what-is-the-apply-function-in-scala>`__

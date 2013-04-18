@@ -30,6 +30,9 @@ object ICETimeStamp { implicit def apply(s : java.lang.String) = new ICETimeStam
 final class String(val value : java.lang.String) extends BasicType
 object String { implicit def apply(s : java.lang.String) = new String(s) }
 
+/**
+ * Represents number values.
+ */
 trait Number extends BasicType {
   def <(o : Number) : Boolean
   def <=(o : Number) : Boolean
@@ -49,10 +52,16 @@ object Number {
 
 import org.sireum.util.math._
 
+/**
+ * Represents whole number values.
+ */
 trait IntegralType extends Number {
   def value : Integer
 }
 
+/**
+ * Represents arbitrary-precision integer values.
+ */
 class Int(val value : Integer) extends IntegralType {
   import Int._
   override def <(o : Number) : Boolean =
@@ -108,6 +117,9 @@ object Int {
   implicit def apply(n : Integer) : Int = new Int(n)
 }
 
+/**
+ * Represents arbitrary-precision non-negative integer values.
+ */
 class Nat(value : Integer) extends Int(value) {
   override def <(o : Number) : Boolean =
     o match {

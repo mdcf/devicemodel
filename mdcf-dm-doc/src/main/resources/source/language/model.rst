@@ -16,21 +16,20 @@ Model
 A model may be specified in multiple Scala source files. 
 For each file, a model starts with a `package <#grammar-token-package>`_ 
 declaration, followed by `import <#grammar-token-import>`_ declarations and 
-declarations of `basic types <#grammar-token-basicType>`_, 
-`features <#grammar-token-feature>`_, and 
-`requirements <#grammar-token-requirement>`_. 
+declarations of :ref:`basic types <sec-basictype>`, 
+:ref:`features, and requirements <sec-feature-requirement>`. 
 That is, it is assumed that models are
 specified in a package other than the Scala or Java "default" package.
 The grammar recommends importing all elements (specified using ``_`` instead of 
 ``*``  like in Java) defined in the :dms:`dms <>` 
-:scala:`Scala package <119>` and :dms:`dms.package <package.scala>` 
-`package object <http://www.artima.com/scalazine/articles/package_objects.html>`_, 
-which defines DML primordial types, :scala:`implicit conversions <130>`,
-and a :scaladoc:`macro <overviews/macros/overview.html>`, 
-which will be described in the appropriate subsequent sections below.
+|ScalaPackage| and :dms:`dms.package <package.scala>` 
+|PackageObject|, 
+which defines DML primordial types, |implicit| conversions,
+and a |macro|, which will be described in the appropriate subsequent sections 
+below.
  
-In addition, it recommends importing `basic types <#grammar-token-basicType>`_ 
-or `features <#grammar-token-feature>`_ defined in 
+In addition, it recommends importing :ref:`basic types <sec-basictype>` 
+or :ref:`features <sec-feature-requirement>` defined in 
 different packages; note that Scala allows import declarations to appear in many
 places, including inside class declarations and expression blocks among others.
 
@@ -84,7 +83,7 @@ methods are helper methods that when given either a variable or an
 
 .. |AstWeak| replace:: |Ast| :dmldoc:`.Weak <ast/Ast.Weak.html>`
 
-Notice that at :dmdocj:`Line 8 <ExModel.java#L8>`, we need to use
+Notice that at :dmdocj:`line 8 <ExModel.java#L8>`, we need to use
 ``Ast.<Declaration> list()`` instead of just ``list()``. That is because
 ``list()`` without a parameter type supplied for its element type returns
 ``List<Object>``, which is incompatible with ``model``'s parameter that expects
@@ -104,7 +103,7 @@ Below is an :dmdocj:`example <ExModelWeak.java>` that illustrates the use of
 
 Below is a similar :dmdocs:`example <ExsModel.scala>` written in Scala;
 thanks to Scala's type inference, |Ast| API work
-without a problem as can be seen at :dmdocs:`Line 13 <ExsModel.scala\#L13>` 
+without a problem as can be seen at :dmdocs:`line 13 <ExsModel.scala\#L13>` 
 (of course |AstWeak| would work as well):
 
 .. literalinclude:: /../../scala/ExsModel.scala
@@ -115,28 +114,28 @@ without a problem as can be seen at :dmdocs:`Line 13 <ExsModel.scala\#L13>`
 We mentioned previously in the :ref:`sec-string-representation` Section that
 the AST ``toString`` method produces a code that construct structurally 
 equivalent AST. This is illustrated at 
-:dmdocs:`Lines 17-21 <ExsModel.scala\#L17-21>` where
+:dmdocs:`lines 17-21 <ExsModel.scala\#L17-21>` where
 ``m``'s ``toString`` is used to construct a Scala code
-as |String| at Line 19 (``s"`` ... ``"`` is a
-:scaladoc:`Scala string interpolator </overviews/core/string-interpolation.html>`)
-along with the import declaration at Line 18; 
+as |String| at line 19 (``s"`` ... ``"`` is a |string interpolator|)
+along with the import declaration at line 18; 
 :sutil:`Reflection <Reflection.scala>`'s ``eval`` method takes the |String| 
 code, compiles it (at runtime), and then invokes the compiled code to produce a 
-structurally equivalent model ``m2`` with respect to ``m`` as shown in at Line 21.
+structurally equivalent model ``m2`` with respect to ``m`` as shown in at line 21.
 
 
 Extraction
 **********
 
 Instead of constructing AST manually by hand, |Extractor| provides 
-``extractModel`` methods that extract DML AST from *compiled* DMS model Java 
+:dms:`extractModel <ModelExtractor.scala#L74-87>` "static" methods 
+that extract DML AST from *compiled* DMS model Java 
 class files (see the :ref:`note below <extractor_note>`). 
 Given an array of package |String| names, they return the DML AST model that is
 represented in the packages and their sub-packages.
 
 Below is an :dmdocj:`example <ExModelExtractor.java>` illustrating the use of 
-|Extractor| API to extract DMS models from the :dmsx:`dms.example <>` package and
-its sub-packages:
+|Extractor| API to extract DMS models from the :dmsx:`dms.example <>` package 
+and its sub-packages:
 
 .. literalinclude:: /../../java/ExModelExtractor.java
    :language: java
@@ -146,7 +145,9 @@ its sub-packages:
 
 Variants of the |Extractor| ``extractModel`` methods are provided to extract 
 a model using a specific |ClassLoader| and 
-|Extractor| ``Reporter`` for custimizing warning and error notifications during
+|Extractor| 
+:dms:`Reporter <ModelExtractor.scala#L28-32>`
+for custimizing warning and error notifications during
 the extraction process. By default, the |ClassLoader| that loads the 
 |Extractor| is used, and warning and errors are printed to the console (output
 and error streams, respectively).
@@ -180,10 +181,10 @@ SymbolTable
 Given a set of models, the |SymbolTable| 
 :dmldoc:`of <symbol/SymbolTable.html#of(edu.ksu.cis.santos.mdcf.dml.ast.Model...)>` 
 method creates an instance of |SymbolTable| that provides various methods to 
-retrieve DML entities such as `basic types <#grammar-token-basicType>`_,
-`features <#grammar-token-feature>`_,
-`attributes <#grammar-token-attribute>`_, and
-`invariants <#grammar-token-invariant>`_
+retrieve DML entities such as :ref:`basic types <sec-basictype>`,
+:ref:`features <sec-feature-requirement>`,
+:ref:`attributes <sec-feature-requirement>`, and
+:ref:`invariants <sec-feature-requirement>`
 in the models or by their fully-qualified name.
 
 Below is an :dmdocj:`example <ExModelSymbolTable.java>` to illustate the 
@@ -193,9 +194,9 @@ construction of |SymbolTable| and its |String| representation:
    :language: java
    :linenos:
 
-The reader is referred to the SymbolTable 
-`Javadoc <http://mdcf.github.io/doc/dml/edu/ksu/cis/santos/mdcf/dml/symbol/SymbolTable.html>`_
+The reader is referred to the |SymbolTable| Javadoc
 to see what queries are available through the API.
+We will illustrate some of the API in the relevant subsequent sections.
 
 
 De/serialization
@@ -209,10 +210,6 @@ More specifically, it provides
 :dmldoc:`fromXml <serialization/XStreamer.html#fromXml(java.io.InputStream)>` 
 static methods for 
 converting to/from |String|, |Writer|/|Reader|, or |OutputStream|/|InputStream|.   
-
-.. _XStream: http://xstream.codehaus.org
-
-.. _Jettison: http://jettison.codehaus.org
 
 Below is an :dmdocj:`example <ExModelXml.java>` that uses the |XStreamer| API:
 
@@ -269,28 +266,27 @@ traverse DML AST using the provided visitor API.
    :emphasize-lines: 15,23,28,35-36
    :linenos:
 
-The example creates a model with one basic type (explained 
-`below <#grammar-token-basicType>`_). The first visitor at 
-:dmdocj:`Lines 12-18 <ExModelVisitor.java#L12-18>` prints out
+The example creates a model with one :ref:`basic type <sec-basictype>`. 
+The first visitor at 
+:dmdocj:`lines 12-18 <ExModelVisitor.java#L12-18>` prints out
 the name of any basic type it encounters at 
-:dmdocj:`Line 15 <ExModelVisitor.java#L15>`, which in this case prints
+:dmdocj:`line 15 <ExModelVisitor.java#L15>`, which in this case prints
 out ``Reached foo``. 
 The second visitor at 
-:dmdocj:`Lines 20-30 <ExModelVisitor.java#L20-30>` throws an exception 
-at :dmdocj:`Line 28 <ExModelVisitor.java#L28>` whenever it encounters
+:dmdocj:`lines 20-30 <ExModelVisitor.java#L20-30>` throws an exception 
+at :dmdocj:`line 28 <ExModelVisitor.java#L28>` whenever it encounters
 a basic type; however, because its 
 :dmdocj:`visitModel <ExModelVisitor.java#L22-24>` method returns false, the
 visitor skips all model's children, hence skipping visiting the basic type
 declaration (more precisely, all declarations).
 The third visitor at 
-:dmdocj:`Lines 32-39 <ExModelVisitor.java#L32-39>` prints out AST node in
+:dmdocj:`lines 32-39 <ExModelVisitor.java#L32-39>` prints out AST node in
 its :dmdocj:`defaultCase <ExModelVisitor.java#L34-38>` method; hence, it
 prints out the model and the basic type.
- 
+
 
 Well-Formedness
 ***************
 A set of models is well-formed if all user-defined 
-`basic types <#grammar-token-basicType>`_,
-`features <#grammar-token-feature>`_, and 
-`requirements <#grammar-token-requirement>`_ are well-formed. 
+:ref:`basic types <sec-basictype>`,
+:ref:`features, and requirements <sec-feature-requirement>` are well-formed. 

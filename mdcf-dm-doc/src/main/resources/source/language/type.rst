@@ -1,3 +1,7 @@
+.. include:: substitution.txt
+
+.. _sec-type-initialization:
+
 Type and Initialization
 #######################
 

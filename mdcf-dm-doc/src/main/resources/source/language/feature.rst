@@ -1,3 +1,7 @@
+.. include:: substitution.txt
+
+.. _sec-feature-requirement:
+
 Feature and Requirement
 #######################
 

@@ -128,7 +128,7 @@ object ModelExtractor {
     if (size == 0) {
       context.reporter.warning("Could not find any class in the provided " +
         s"packages ${context.packageNames.toVector}; " +
-        "perhaps a classpath setting issue?")
+        "perhaps classpath issues or typos?")
     }
 
     model(decls)
