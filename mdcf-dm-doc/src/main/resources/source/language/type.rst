@@ -8,8 +8,6 @@ Type and Initialization
 .. productionlist:: DMS
    type                : "Any" 
                        : | "Boolean" 
-                       : | "Number" | "IntegralType" | "Int" | "Nat"
-                       : | "String"
                        : | ID_basic 
                        : | "Option" "[" `type` "]" 
                        : | "Either" "[" `type` "," `type` "]"

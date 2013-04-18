@@ -12,8 +12,11 @@ Feature and Requirement
                        : [ `invariantObject` ] 
    featureModifier     : "@Schema" | "@Class" | "@Product"| "@Device" | "@Instance" | "@Data" | "@Settable"
    featureType         : ID_feature ( "with" ID_feature )*
-   attribute           : [ `attributeModifier` ] "val" ID_attribute ":" `type`
-   attributeModifier   : "@Data" | "@Settable" | "@Const" [ "(" `constMode` ")" ] 
+   attribute           : [ `attributeModifier` ] [ `attributeInvariant` ] "val" ID_attribute ":" `type`
+   attributeModifier   : "@Data" | "@Settable" | "@Const" [ "(" `constMode` ")" ]
+   attributeInvariant  : "@Multiplicity" "(" 
+                       : "lo" "=" ( <scalaExp : scala.Int(N)> | "*" ) "," 
+                       : "hi" "=" ( <scalaExp : scala.Int(N)> | "*" ) ")" 
    constMode           : "SCHEMA" | "CLASS" | "PRODUCT" | "INSTANCE" | "UNSPECIFIED"
    invariantObject     : "object" ID_feature "{" `invariant`* "}"
    invariant           : "@Inv" "val" ID_invariant ":" "Predicate" "[" `predicateType` "]" "="
