@@ -169,6 +169,35 @@ previously).
 Symbol Table
 ************
 
+There are several methods provided by the symbol table API related to basic
+types. Below is the list of relevant methods (please see the documentation
+in the |SymbolTable| that describes the methods):
+
+* :dmldoc:`basicTypes <symbol/SymbolTable.html#basicTypes()>` 
+
+* :dmldoc:`basicType <symbol/SymbolTable.html#basicType(java.lang.String)>`
+
+* :dmldoc:`basicTypeOpt <symbol/SymbolTable.html#basicTypeOpt(java.lang.String)>` 
+
+* :dmldoc:`declarationMap <symbol/SymbolTable.html#declarationMap()>`
+
+* :dmldoc:`declarationNames <symbol/SymbolTable.html#declarationNames()>`
+
+* :dmldoc:`isBasicType <symbol/SymbolTable.html#isBasicType(java.lang.String)>`
+
+* :dmldoc:`isSubTypeOf <symbol/SymbolTable.html#isSubTypeOf(java.lang.String,%20java.lang.String)>`
+
+* :dmldoc:`isSuperTypeOf <symbol/SymbolTable.html#isSuperTypeOf(java.lang.String,%20java.lang.String)>`
+
+* :dmldoc:`kind <symbol/SymbolTable.html#kind(java.lang.String)>`
+
+* :dmldoc:`kindOpt <symbol/SymbolTable.html#kindOpt(java.lang.String)>`
+
+* :dmldoc:`subTransitiveMap <symbol/SymbolTable.html#subTransitiveMap()>`
+
+* :dmldoc:`superTransitiveMap <symbol/SymbolTable.html#superTransitiveMap()>`
+
+
 
 Well-Formedness
 ***************

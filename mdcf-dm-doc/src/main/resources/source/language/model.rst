@@ -122,6 +122,9 @@ along with the import declaration at line 18;
 code, compiles it (at runtime), and then invokes the compiled code to produce a 
 structurally equivalent model ``m2`` with respect to ``m`` as shown in at line 21.
 
+.. note:: AST construction methods are named the same as the AST class names 
+          that they build but with the first letter lowercased.
+
 
 Extraction
 **********
@@ -195,8 +198,8 @@ construction of |SymbolTable| and its |String| representation:
    :linenos:
 
 The reader is referred to the |SymbolTable| Javadoc
-to see what queries are available through the API.
-We will illustrate some of the API in the relevant subsequent sections.
+to see what queries are available through the API;
+we will mention some of the API in the relevant subsequent sections.
 
 
 De/serialization
