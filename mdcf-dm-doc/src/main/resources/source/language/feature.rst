@@ -15,7 +15,11 @@ Feature and Requirement
    featureLevel        : "@Schema" | "@Class" | "@Product"| "@Device" | "@Instance"
    featureType         : ID_feature ( "with" ID_feature )*
    attribute           : `attributeAnnotation`* "val" ID_attribute ":" `type`
-   attributeAnnotation : "@Data" | "@Settable" | "@Const" [ "(" `constLevel` ")" ]
+   attributeAnnotation : "@Data" | "@Settable" 
+                       : | "@Const" 
+                       :     [ "(" `constLevel` 
+                       :           | "value" "=" `constLevel` "," 
+                       :             "qualifier" "=" <scalaExp : java.lang.String(S)> ")" ]
                        : | "@Multiplicity" "(" "lo" "=" <scalaExp : scala.Int(N)> "," 
                        :                       "hi" "=" ( <scalaExp : scala.Int(N)> | "*" ) 
                        :                       [ "," "clas" "=" "classOf" "[" <typeName> "]" ] ")" 
