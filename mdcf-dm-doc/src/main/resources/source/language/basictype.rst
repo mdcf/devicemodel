@@ -29,6 +29,9 @@ separate the types in the modeling type universe with that of Scala's;
 in other words, they draw the boundaries of Scala types available that are 
 imported as primitive types for modeling.
 
+Built-in Type
+*************
+
 DML (DMS) provides only one built-in basic type and that is ``Boolean`` 
 (|Boolean|) -- representing the typical true and false values; this is provided
 because :ref:`invariant <sec-feature-requirement>` |Predicate| uses it. 
@@ -43,12 +46,19 @@ Similarly, this default overriding is recommended for |Number| (overriding
 :javadoc:`java.lang.Number <java/lang/Number.html>`) and |Int| (overriding
 :scalaapi:`scala.Int <scala.Int>`). 
 
+Hierarchy
+*********
+
 Basic types can be organized in a sub-type (|subtypeof|) hierarchy such as 
 |Nat| |subtypeof| |Int| |subtypeof| |IntegralType| |subtypeof| |Number|
 |subtypeof| |BasicType|. 
 In general, basic types can be organized to form a sub-type hierarchy lattice 
 instead of just a tree rooted at |BasicType|.
 That is, user-defined basic types can inherit from one or more basic types.
+
+
+Declaration
+***********
 
 In DMS, a basic type can be declared as a Scala |trait|
 (e.g., |Number|) or |class| (e.g., |Int|), and optionally, accompanied by
@@ -63,6 +73,10 @@ In the grammar, this is satisfied by declaring a |val| named ``value`` in a
 |class|' constructor. Thus, a basic declaration can be viewed as simply a
 wrapper type for existing type (``<basicInternalType>``)
 that is exported to the modeling type universe.
+
+
+Operations
+**********
 
 In addition, a basic type declaration can override |BasicType| methods such as:
 
@@ -86,6 +100,10 @@ The *pure* qualifier means that they are non-side-effecting value operations
 (recall that DML basic type values are immutable). 
 The reader is referred to |Boolean|, |Number|, |Int|, and |Nat| for
 examples of ``<basicOpMethod>``.  
+
+
+Factory and Implicit Conversion
+*******************************
 
 In the companion object for a basic type, one can provide |implicit| factory 
 methods as |apply| methods to ease attribute 
@@ -144,7 +162,7 @@ optionally leave out to explicitly give a type of an attribute ``val``):
    :linenos:
 
 
-Implementation Classes
+Representation Classes
 **********************
 
 Basic type declarations are represented using the 

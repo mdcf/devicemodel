@@ -1,3 +1,5 @@
+.. |MDCF| replace:: `MDCF <http://mdcf.santos.cis.ksu.edu>`__
+
 .. |ScalaPackage| replace:: :scala:`Scala package <119>`
 
 .. |PackageObject| replace:: `package object <http://www.artima.com/scalazine/articles/package_objects.html>`__
@@ -71,3 +73,5 @@
 .. |val| replace:: `val <http://stackoverflow.com/questions/1791408/what-is-the-difference-between-a-var-and-val-definition-in-scala>`__
 
 .. |apply| replace:: `apply <http://stackoverflow.com/questions/9737352/what-is-the-apply-function-in-scala>`__
+ 
+.. |Feature| replace:: :dms:`dms.Feature <package.scala#L65>`

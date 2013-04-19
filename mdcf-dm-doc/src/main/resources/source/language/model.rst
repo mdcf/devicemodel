@@ -56,7 +56,7 @@ We will use portions of the above examples to illustrate various DMS elements
 in the subsequent sections.
 
 
-Implementation Classes and Construction
+Representation Classes and Construction
 ***************************************
 
 A model is represented using the :dml:`dml.ast.Model <ast/Model.java>` AST class which
