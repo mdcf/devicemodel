@@ -44,10 +44,25 @@
       <members class="ilist">
         <attribute name="type">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType"/>
           <init class="some">
             <reference class="basicInit" value="IEEE ... Blood Pressure"/>
           </init>
+        </attribute>
+        <attribute name="physioParams">
+          <modifier>Override</modifier>
+          <annotations class="ilist">
+            <multiplicity lo="1" hi="*">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure</reference>
+              </typeName>
+            </multiplicity>
+          </annotations>
+          <type class="setType">
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter"/>
+          </type>
+          <init class="none"></init>
         </attribute>
         <invariant name="At least one Blood Pressure param">
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
@@ -72,6 +87,7 @@
       <members class="ilist">
         <attribute name="systolic">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="some">
             <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_SYS"/>
@@ -79,6 +95,7 @@
         </attribute>
         <attribute name="diastolic">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="some">
             <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_DIA"/>
@@ -86,6 +103,7 @@
         </attribute>
         <attribute name="physioParameterType">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="some">
             <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_MEAN"/>
@@ -93,6 +111,7 @@
         </attribute>
         <attribute name="unit">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
           <init class="some">
             <reference class="basicInit" value="MDC_DIM_MMHG"/>
@@ -108,10 +127,35 @@
       <members class="ilist">
         <attribute name="type">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType"/>
           <init class="some">
             <reference class="basicInit" value="IEEE ... MultiMonitor"/>
           </init>
+        </attribute>
+        <attribute name="physioParams">
+          <modifier>Override</modifier>
+          <annotations class="ilist">
+            <multiplicity lo="1" hi="*">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="*">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="*">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure</reference>
+              </typeName>
+            </multiplicity>
+          </annotations>
+          <type class="setType">
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter"/>
+          </type>
+          <init class="none"></init>
         </attribute>
         <invariant name="At least one SpO2 param">
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
@@ -162,10 +206,30 @@
       <members class="ilist">
         <attribute name="type">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType"/>
           <init class="some">
             <reference class="basicInit" value="IEEE ... Pulse Ox"/>
           </init>
+        </attribute>
+        <attribute name="physioParams">
+          <modifier>Override</modifier>
+          <annotations class="ilist">
+            <multiplicity lo="1" hi="*">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="*">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx</reference>
+              </typeName>
+            </multiplicity>
+          </annotations>
+          <type class="setType">
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter"/>
+          </type>
+          <init class="none"></init>
         </attribute>
         <invariant name="At least one SpO2 param">
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
@@ -203,6 +267,7 @@
       <members class="ilist">
         <attribute name="physioParameterType">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="some">
             <reference class="basicInit" value="MDC_PULS_OXIM_PULS_RATE"/>
@@ -210,6 +275,7 @@
         </attribute>
         <attribute name="unit">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
           <init class="some">
             <reference class="basicInit" value="MDC_DIM_BEAT_PER_MIN"/>
@@ -225,6 +291,7 @@
       <members class="ilist">
         <attribute name="physioParameterType">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="some">
             <reference class="basicInit" value="MDC_PULS_OXIM_SAT_O2"/>
@@ -232,6 +299,7 @@
         </attribute>
         <attribute name="unit">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
           <init class="some">
             <reference class="basicInit" value="MDC_DIM_PERCENT"/>
@@ -247,6 +315,7 @@
       <members class="ilist">
         <attribute name="id">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.DeviceId"/>
           <init class="some">
             <reference class="basicInit" value="MultiMonitor"/>
@@ -254,6 +323,7 @@
         </attribute>
         <attribute name="manufacturerModel">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="ICEManufacturerModel"/>
           <init class="some">
             <reference class="featureInit">
@@ -263,6 +333,7 @@
               <attributes class="ilist">
                 <attribute name="modelNumber">
                   <modifier>Override</modifier>
+                  <annotations class="ilist"></annotations>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.String"/>
                   <init class="some">
                     <reference class="basicInit" value="MultiMonitor"/>
@@ -270,6 +341,7 @@
                 </attribute>
                 <attribute name="versionNumber">
                   <modifier>Override</modifier>
+                  <annotations class="ilist"></annotations>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.String"/>
                   <init class="some">
                     <reference class="basicInit" value="XX.YY.ZZ"/>
@@ -277,6 +349,7 @@
                 </attribute>
                 <attribute name="credentials">
                   <modifier>Override</modifier>
+                  <annotations class="ilist"></annotations>
                   <type class="setType">
                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                   </type>
@@ -292,6 +365,7 @@
         </attribute>
         <attribute name="physioParams">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter"/>
           </type>
@@ -305,6 +379,7 @@
                   <attributes class="ilist">
                     <attribute name="range">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
@@ -314,6 +389,7 @@
                           <attributes class="ilist">
                             <attribute name="min">
                               <modifier>Override</modifier>
+                              <annotations class="ilist"></annotations>
                               <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="0"/>
@@ -321,6 +397,7 @@
                             </attribute>
                             <attribute name="max">
                               <modifier>Override</modifier>
+                              <annotations class="ilist"></annotations>
                               <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="100"/>
@@ -332,6 +409,7 @@
                     </attribute>
                     <attribute name="exchanges">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
@@ -345,6 +423,7 @@
                               <attributes class="ilist">
                                 <attribute name="maxRetrievalRatePerSecond">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Nat"/>
                                   <init class="some">
                                     <reference class="basicInit" value="15"/>
@@ -359,6 +438,7 @@
                               <attributes class="ilist">
                                 <attribute name="rateRange">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange"/>
                                   <init class="some">
                                     <reference class="featureInit">
@@ -368,6 +448,7 @@
                                       <attributes class="ilist">
                                         <attribute name="min">
                                           <modifier>Override</modifier>
+                                          <annotations class="ilist"></annotations>
                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Nat"/>
                                           <init class="some">
                                             <reference class="basicInit" value="0"/>
@@ -375,6 +456,7 @@
                                         </attribute>
                                         <attribute name="max">
                                           <modifier>Override</modifier>
+                                          <annotations class="ilist"></annotations>
                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Nat"/>
                                           <init class="some">
                                             <reference class="basicInit" value="100"/>
@@ -392,6 +474,7 @@
                     </attribute>
                     <attribute name="alerts">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
@@ -406,6 +489,7 @@
                               <attributes class="ilist">
                                 <attribute name="min">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="85"/>
@@ -413,6 +497,7 @@
                                 </attribute>
                                 <attribute name="max">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="100"/>
@@ -420,6 +505,7 @@
                                 </attribute>
                                 <attribute name="security">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="optionType">
                                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                                   </type>
@@ -435,6 +521,7 @@
                     </attribute>
                     <attribute name="physioParameterType">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PULS_OXIM_SAT_O2"/>
@@ -442,6 +529,7 @@
                     </attribute>
                     <attribute name="unit">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_DIM_PERCENT"/>
@@ -456,6 +544,7 @@
                   <attributes class="ilist">
                     <attribute name="range">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
@@ -465,6 +554,7 @@
                           <attributes class="ilist">
                             <attribute name="min">
                               <modifier>Override</modifier>
+                              <annotations class="ilist"></annotations>
                               <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="20"/>
@@ -472,6 +562,7 @@
                             </attribute>
                             <attribute name="max">
                               <modifier>Override</modifier>
+                              <annotations class="ilist"></annotations>
                               <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="300"/>
@@ -483,6 +574,7 @@
                     </attribute>
                     <attribute name="exchanges">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
@@ -496,6 +588,7 @@
                               <attributes class="ilist">
                                 <attribute name="maxRetrievalRatePerSecond">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Nat"/>
                                   <init class="some">
                                     <reference class="basicInit" value="5"/>
@@ -509,6 +602,7 @@
                     </attribute>
                     <attribute name="alerts">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
@@ -523,6 +617,7 @@
                               <attributes class="ilist">
                                 <attribute name="min">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="40"/>
@@ -530,6 +625,7 @@
                                 </attribute>
                                 <attribute name="max">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="180"/>
@@ -537,6 +633,7 @@
                                 </attribute>
                                 <attribute name="security">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="optionType">
                                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                                   </type>
@@ -552,6 +649,7 @@
                     </attribute>
                     <attribute name="physioParameterType">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PULS_OXIM_PULS_RATE"/>
@@ -559,6 +657,7 @@
                     </attribute>
                     <attribute name="unit">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_DIM_BEAT_PER_MIN"/>
@@ -573,6 +672,7 @@
                   <attributes class="ilist">
                     <attribute name="range">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
@@ -582,6 +682,7 @@
                           <attributes class="ilist">
                             <attribute name="min">
                               <modifier>Override</modifier>
+                              <annotations class="ilist"></annotations>
                               <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="20"/>
@@ -589,6 +690,7 @@
                             </attribute>
                             <attribute name="max">
                               <modifier>Override</modifier>
+                              <annotations class="ilist"></annotations>
                               <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="300"/>
@@ -600,6 +702,7 @@
                     </attribute>
                     <attribute name="exchanges">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
@@ -613,6 +716,7 @@
                               <attributes class="ilist">
                                 <attribute name="maxRetrievalRatePerSecond">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Nat"/>
                                   <init class="some">
                                     <reference class="basicInit" value="5"/>
@@ -626,6 +730,7 @@
                     </attribute>
                     <attribute name="alerts">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
@@ -640,6 +745,7 @@
                               <attributes class="ilist">
                                 <attribute name="min">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="40"/>
@@ -647,6 +753,7 @@
                                 </attribute>
                                 <attribute name="max">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="180"/>
@@ -654,6 +761,7 @@
                                 </attribute>
                                 <attribute name="security">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="optionType">
                                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                                   </type>
@@ -669,6 +777,7 @@
                     </attribute>
                     <attribute name="systolic">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_SYS"/>
@@ -676,6 +785,7 @@
                     </attribute>
                     <attribute name="diastolic">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_DIA"/>
@@ -683,6 +793,7 @@
                     </attribute>
                     <attribute name="physioParameterType">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_MEAN"/>
@@ -690,6 +801,7 @@
                     </attribute>
                     <attribute name="unit">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_DIM_MMHG"/>
@@ -711,6 +823,7 @@
       <members class="ilist">
         <attribute name="id">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.DeviceId"/>
           <init class="some">
             <reference class="basicInit" value="Nellcor PO"/>
@@ -718,6 +831,7 @@
         </attribute>
         <attribute name="manufacturerModel">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="ICEManufacturerModel"/>
           <init class="some">
             <reference class="featureInit">
@@ -727,6 +841,7 @@
               <attributes class="ilist">
                 <attribute name="modelNumber">
                   <modifier>Override</modifier>
+                  <annotations class="ilist"></annotations>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.String"/>
                   <init class="some">
                     <reference class="basicInit" value="Nellcor 2000"/>
@@ -734,6 +849,7 @@
                 </attribute>
                 <attribute name="versionNumber">
                   <modifier>Override</modifier>
+                  <annotations class="ilist"></annotations>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.String"/>
                   <init class="some">
                     <reference class="basicInit" value="XX.YY.ZZ"/>
@@ -741,6 +857,7 @@
                 </attribute>
                 <attribute name="credentials">
                   <modifier>Override</modifier>
+                  <annotations class="ilist"></annotations>
                   <type class="setType">
                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                   </type>
@@ -756,6 +873,7 @@
         </attribute>
         <attribute name="physioParams">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter"/>
           </type>
@@ -769,6 +887,7 @@
                   <attributes class="ilist">
                     <attribute name="range">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
@@ -778,6 +897,7 @@
                           <attributes class="ilist">
                             <attribute name="min">
                               <modifier>Override</modifier>
+                              <annotations class="ilist"></annotations>
                               <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="0"/>
@@ -785,6 +905,7 @@
                             </attribute>
                             <attribute name="max">
                               <modifier>Override</modifier>
+                              <annotations class="ilist"></annotations>
                               <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="100"/>
@@ -796,6 +917,7 @@
                     </attribute>
                     <attribute name="exchanges">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
@@ -809,6 +931,7 @@
                               <attributes class="ilist">
                                 <attribute name="maxRetrievalRatePerSecond">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Nat"/>
                                   <init class="some">
                                     <reference class="basicInit" value="15"/>
@@ -823,6 +946,7 @@
                               <attributes class="ilist">
                                 <attribute name="rateRange">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange"/>
                                   <init class="some">
                                     <reference class="featureInit">
@@ -832,6 +956,7 @@
                                       <attributes class="ilist">
                                         <attribute name="min">
                                           <modifier>Override</modifier>
+                                          <annotations class="ilist"></annotations>
                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Nat"/>
                                           <init class="some">
                                             <reference class="basicInit" value="0"/>
@@ -839,6 +964,7 @@
                                         </attribute>
                                         <attribute name="max">
                                           <modifier>Override</modifier>
+                                          <annotations class="ilist"></annotations>
                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Nat"/>
                                           <init class="some">
                                             <reference class="basicInit" value="100"/>
@@ -856,6 +982,7 @@
                     </attribute>
                     <attribute name="alerts">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
@@ -870,6 +997,7 @@
                               <attributes class="ilist">
                                 <attribute name="min">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="85"/>
@@ -877,6 +1005,7 @@
                                 </attribute>
                                 <attribute name="max">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="100"/>
@@ -884,6 +1013,7 @@
                                 </attribute>
                                 <attribute name="security">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="optionType">
                                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                                   </type>
@@ -899,6 +1029,7 @@
                     </attribute>
                     <attribute name="physioParameterType">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PULS_OXIM_SAT_O2"/>
@@ -906,6 +1037,7 @@
                     </attribute>
                     <attribute name="unit">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_DIM_PERCENT"/>
@@ -920,6 +1052,7 @@
                   <attributes class="ilist">
                     <attribute name="range">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
@@ -929,6 +1062,7 @@
                           <attributes class="ilist">
                             <attribute name="min">
                               <modifier>Override</modifier>
+                              <annotations class="ilist"></annotations>
                               <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="20"/>
@@ -936,6 +1070,7 @@
                             </attribute>
                             <attribute name="max">
                               <modifier>Override</modifier>
+                              <annotations class="ilist"></annotations>
                               <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="300"/>
@@ -947,6 +1082,7 @@
                     </attribute>
                     <attribute name="exchanges">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
@@ -960,6 +1096,7 @@
                               <attributes class="ilist">
                                 <attribute name="maxRetrievalRatePerSecond">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Nat"/>
                                   <init class="some">
                                     <reference class="basicInit" value="5"/>
@@ -973,6 +1110,7 @@
                     </attribute>
                     <attribute name="alerts">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
@@ -987,6 +1125,7 @@
                               <attributes class="ilist">
                                 <attribute name="min">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="40"/>
@@ -994,6 +1133,7 @@
                                 </attribute>
                                 <attribute name="max">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                                   <init class="some">
                                     <reference class="basicInit" value="180"/>
@@ -1001,6 +1141,7 @@
                                 </attribute>
                                 <attribute name="security">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="optionType">
                                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                                   </type>
@@ -1016,6 +1157,7 @@
                     </attribute>
                     <attribute name="physioParameterType">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PULS_OXIM_PULS_RATE"/>
@@ -1023,6 +1165,7 @@
                     </attribute>
                     <attribute name="unit">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_DIM_BEAT_PER_MIN"/>
@@ -1044,6 +1187,7 @@
       <members class="ilist">
         <attribute name="id">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.DeviceId"/>
           <init class="some">
             <reference class="basicInit" value="Continua PO"/>
@@ -1051,6 +1195,7 @@
         </attribute>
         <attribute name="manufacturerModel">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="ICEManufacturerModel"/>
           <init class="some">
             <reference class="featureInit">
@@ -1060,6 +1205,7 @@
               <attributes class="ilist">
                 <attribute name="modelNumber">
                   <modifier>Override</modifier>
+                  <annotations class="ilist"></annotations>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.String"/>
                   <init class="some">
                     <reference class="basicInit" value="Nonin Onyx II"/>
@@ -1067,6 +1213,7 @@
                 </attribute>
                 <attribute name="versionNumber">
                   <modifier>Override</modifier>
+                  <annotations class="ilist"></annotations>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.String"/>
                   <init class="some">
                     <reference class="basicInit" value="XX.YY.ZZ"/>
@@ -1074,6 +1221,7 @@
                 </attribute>
                 <attribute name="credentials">
                   <modifier>Override</modifier>
+                  <annotations class="ilist"></annotations>
                   <type class="setType">
                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                   </type>
@@ -1089,6 +1237,7 @@
         </attribute>
         <attribute name="physioParams">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter"/>
           </type>
@@ -1102,6 +1251,7 @@
                   <attributes class="ilist">
                     <attribute name="range">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
@@ -1111,6 +1261,7 @@
                           <attributes class="ilist">
                             <attribute name="min">
                               <modifier>Override</modifier>
+                              <annotations class="ilist"></annotations>
                               <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="0"/>
@@ -1118,6 +1269,7 @@
                             </attribute>
                             <attribute name="max">
                               <modifier>Override</modifier>
+                              <annotations class="ilist"></annotations>
                               <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="100"/>
@@ -1129,6 +1281,7 @@
                     </attribute>
                     <attribute name="exchanges">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
@@ -1142,6 +1295,7 @@
                               <attributes class="ilist">
                                 <attribute name="maxRetrievalRatePerSecond">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Nat"/>
                                   <init class="some">
                                     <reference class="basicInit" value="15"/>
@@ -1155,6 +1309,7 @@
                     </attribute>
                     <attribute name="alerts">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
@@ -1166,6 +1321,7 @@
                     </attribute>
                     <attribute name="physioParameterType">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PULS_OXIM_SAT_O2"/>
@@ -1173,6 +1329,7 @@
                     </attribute>
                     <attribute name="unit">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_DIM_PERCENT"/>
@@ -1187,6 +1344,7 @@
                   <attributes class="ilist">
                     <attribute name="range">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange"/>
                       <init class="some">
                         <reference class="featureInit">
@@ -1196,6 +1354,7 @@
                           <attributes class="ilist">
                             <attribute name="min">
                               <modifier>Override</modifier>
+                              <annotations class="ilist"></annotations>
                               <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="20"/>
@@ -1203,6 +1362,7 @@
                             </attribute>
                             <attribute name="max">
                               <modifier>Override</modifier>
+                              <annotations class="ilist"></annotations>
                               <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
                               <init class="some">
                                 <reference class="basicInit" value="300"/>
@@ -1214,6 +1374,7 @@
                     </attribute>
                     <attribute name="exchanges">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
                       </type>
@@ -1227,6 +1388,7 @@
                               <attributes class="ilist">
                                 <attribute name="maxRetrievalRatePerSecond">
                                   <modifier>Override</modifier>
+                                  <annotations class="ilist"></annotations>
                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Nat"/>
                                   <init class="some">
                                     <reference class="basicInit" value="5"/>
@@ -1240,6 +1402,7 @@
                     </attribute>
                     <attribute name="alerts">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="setType">
                         <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
                       </type>
@@ -1251,6 +1414,7 @@
                     </attribute>
                     <attribute name="physioParameterType">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_PULS_OXIM_PULS_RATE"/>
@@ -1258,6 +1422,7 @@
                     </attribute>
                     <attribute name="unit">
                       <modifier>Override</modifier>
+                      <annotations class="ilist"></annotations>
                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
                       <init class="some">
                         <reference class="basicInit" value="MDC_DIM_BEAT_PER_MIN"/>
@@ -1309,6 +1474,7 @@
       <members class="ilist">
         <attribute name="level">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
@@ -1335,6 +1501,7 @@
       <members class="ilist">
         <attribute name="maxRetrievalRatePerSecond">
           <modifier>ConstClass</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Nat"/>
           <init class="none"></init>
         </attribute>
@@ -1348,6 +1515,7 @@
       <members class="ilist">
         <attribute name="cond">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="Boolean"/>
           <init class="none"></init>
         </attribute>
@@ -1368,6 +1536,7 @@
       <members class="ilist">
         <attribute name="maxPublishRate">
           <modifier>ConstProduct</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Nat"/>
           <init class="none"></init>
         </attribute>
@@ -1389,21 +1558,25 @@
       <members class="ilist">
         <attribute name="id">
           <modifier>ConstInstance</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.DeviceId"/>
           <init class="none"></init>
         </attribute>
         <attribute name="type">
           <modifier>ConstClass</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType"/>
           <init class="none"></init>
         </attribute>
         <attribute name="manufacturerModel">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEManufacturerModel"/>
           <init class="none"></init>
         </attribute>
         <attribute name="physioParams">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter"/>
           </type>
@@ -1417,6 +1590,7 @@
       <members class="ilist">
         <attribute name="security">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="optionType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
           </type>
@@ -1430,6 +1604,7 @@
       <members class="ilist">
         <attribute name="security">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="optionType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
           </type>
@@ -1437,6 +1612,7 @@
         </attribute>
         <attribute name="alarms">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
           </type>
@@ -1450,16 +1626,19 @@
       <members class="ilist">
         <attribute name="modelNumber">
           <modifier>ConstProduct</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.String"/>
           <init class="none"></init>
         </attribute>
         <attribute name="versionNumber">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.String"/>
           <init class="none"></init>
         </attribute>
         <attribute name="credentials">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
           </type>
@@ -1473,6 +1652,7 @@
       <members class="ilist">
         <attribute name="messageConstructed">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.ICETimeStamp"/>
           <init class="none"></init>
         </attribute>
@@ -1489,21 +1669,25 @@
       <members class="ilist">
         <attribute name="physioParameterType">
           <modifier>ConstClass</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="none"></init>
         </attribute>
         <attribute name="unit">
           <modifier>ConstClass</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit"/>
           <init class="none"></init>
         </attribute>
         <attribute name="range">
           <modifier>ConstProduct</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.Range"/>
           <init class="none"></init>
         </attribute>
         <attribute name="exchanges">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
           </type>
@@ -1511,6 +1695,7 @@
         </attribute>
         <attribute name="alerts">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
           </type>
@@ -1531,11 +1716,13 @@
       <members class="ilist">
         <attribute name="min">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="max">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
@@ -1549,11 +1736,13 @@
       <members class="ilist">
         <attribute name="min">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="max">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
@@ -1572,46 +1761,55 @@
       <members class="ilist">
         <attribute name="sec">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="min">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="hour">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="mday">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="mon">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="year">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="wday">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="yday">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="isdst">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
@@ -1625,11 +1823,13 @@
       <members class="ilist">
         <attribute name="min">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Nat"/>
           <init class="none"></init>
         </attribute>
         <attribute name="max">
           <modifier>Override</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Nat"/>
           <init class="none"></init>
         </attribute>
@@ -1643,11 +1843,13 @@
       <members class="ilist">
         <attribute name="observedValue">
           <modifier>Data</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ObsValue"/>
           <init class="none"></init>
         </attribute>
         <attribute name="attributes">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute"/>
           </type>
@@ -1655,6 +1857,7 @@
         </attribute>
         <attribute name="range">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.Range"/>
           <init class="none"></init>
         </attribute>
@@ -1668,16 +1871,19 @@
       <members class="ilist">
         <attribute name="measurementTaken">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.ICETimeStamp"/>
           <init class="none"></init>
         </attribute>
         <attribute name="value">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="Any"/>
           <init class="none"></init>
         </attribute>
         <attribute name="context">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ObsValueContext"/>
           <init class="none"></init>
         </attribute>
@@ -1696,6 +1902,7 @@
       <members class="ilist">
         <attribute name="rateRange">
           <modifier>ConstProduct</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.NatRange"/>
           <init class="none"></init>
         </attribute>
@@ -1714,11 +1921,13 @@
       <members class="ilist">
         <attribute name="min">
           <modifier>Const</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
           <init class="none"></init>
         </attribute>
         <attribute name="max">
           <modifier>Const</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
           <init class="none"></init>
         </attribute>
@@ -1745,11 +1954,13 @@
       <members class="ilist">
         <attribute name="min">
           <modifier>Settable</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
           <init class="none"></init>
         </attribute>
         <attribute name="max">
           <modifier>Settable</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
           <init class="none"></init>
         </attribute>
@@ -1791,6 +2002,7 @@
       <members class="ilist">
         <attribute name="values">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="seqType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
           </type>
@@ -1798,6 +2010,7 @@
         </attribute>
         <attribute name="attributes">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute"/>
           </type>
@@ -1828,6 +2041,7 @@
       <members class="ilist">
         <attribute name="values">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="seqType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
           </type>
@@ -1835,6 +2049,7 @@
         </attribute>
         <attribute name="attributes">
           <modifier>None</modifier>
+          <annotations class="ilist"></annotations>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute"/>
           </type>
@@ -1857,6 +2072,7 @@
       <members class="ilist">
         <attribute name="value">
           <modifier>Settable</modifier>
+          <annotations class="ilist"></annotations>
           <type class="namedType" name="Any"/>
           <init class="none"></init>
         </attribute>

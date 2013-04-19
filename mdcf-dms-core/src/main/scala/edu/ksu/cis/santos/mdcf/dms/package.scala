@@ -22,6 +22,7 @@ package object dms {
   type Device = edu.ksu.cis.santos.mdcf.dms.annotation.Device @getter @setter
   type Instance = edu.ksu.cis.santos.mdcf.dms.annotation.Instance @getter @setter
   type Inv = edu.ksu.cis.santos.mdcf.dms.annotation.Inv @getter @setter
+  type Multiplicity = edu.ksu.cis.santos.mdcf.dms.annotation.Multiplicity @getter @setter
   type Product = edu.ksu.cis.santos.mdcf.dms.annotation.Product @getter @setter
   type Req = edu.ksu.cis.santos.mdcf.dms.annotation.Req @getter @setter
   type Schema = edu.ksu.cis.santos.mdcf.dms.annotation.Schema @getter @setter
@@ -32,6 +33,8 @@ package object dms {
   final val PRODUCT = edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode.PRODUCT
   final val INSTANCE = edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode.INSTANCE
   final val UNSPECIFIED = edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode.UNSPECIFIED
+  
+  final val * = -1
 
   type Set[T] = scala.collection.immutable.Set[T]
   type Seq[T] = scala.collection.immutable.Seq[T]

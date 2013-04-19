@@ -130,7 +130,7 @@ Extraction
 **********
 
 Instead of constructing AST manually by hand, |Extractor| provides 
-:dms:`extractModel <ModelExtractor.scala#L74-87>` "static" methods 
+:dms:`extractModel <ModelExtractor.scala#L75-88>` "static" methods 
 that extract DML AST from *compiled* DMS model Java 
 class files (see the :ref:`note below <extractor_note>`). 
 Given an array of package |String| names, they return the DML AST model that is

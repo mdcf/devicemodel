@@ -1,10 +1,10 @@
 Declared Attributes
 ===================
 
-* clas.ICEBloodPressure: attr:type
+* clas.ICEBloodPressure: attr:physioParams, attr:type
 * clas.ICEBloodPressureParam: attr:diastolic, attr:physioParameterType, attr:systolic, attr:unit
-* clas.ICEMultiMonitor: attr:type
-* clas.ICEPulseOx: attr:type
+* clas.ICEMultiMonitor: attr:physioParams, attr:type
+* clas.ICEPulseOx: attr:physioParams, attr:type
 * clas.ICEPulseRate: attr:physioParameterType, attr:unit
 * clas.ICESpO2: attr:physioParameterType, attr:unit
 * device.MultiMonitor: attr:id, attr:manufacturerModel, attr:physioParams

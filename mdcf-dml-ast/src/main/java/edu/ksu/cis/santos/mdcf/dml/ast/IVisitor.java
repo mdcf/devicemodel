@@ -9,12 +9,14 @@ http://www.eclipse.org/legal/epl-v10.html
 package edu.ksu.cis.santos.mdcf.dml.ast;
 
 /**
- * AST Visitor Interface. 
+ * AST Visitor Interface.
  * 
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public interface IVisitor {
   boolean visitAttribute(Attribute node);
+
+  boolean visitAttributeAnnotation(AttributeAnnotation node);
 
   boolean visitBasicInit(BasicInit node);
 
@@ -37,6 +39,8 @@ public interface IVisitor {
   boolean visitMember(Member node);
 
   boolean visitModel(Model node);
+
+  boolean visitMultiplicityAnnotation(MultiplicityAnnotation node);
 
   boolean visitNamedType(NamedType node);
 

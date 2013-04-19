@@ -66,6 +66,7 @@ object ModelExtractor {
   private final val REQ_NAME = classOf[annotation.Req].getName
   private final val CONST_NAME = classOf[annotation.Const].getName
   private final val INV_NAME = classOf[annotation.Inv].getName
+  private final val MULTIPLICITY_NAME = classOf[annotation.Multiplicity].getName
   private final val SETTABLE_NAME = classOf[annotation.Settable].getName
   private final val PRIMORDIAL_TYPES = Set[java.lang.String](
     classOf[Object].getName, classOf[Any].getName, classOf[BasicType].getName,
@@ -218,7 +219,7 @@ object ModelExtractor {
       basicType(name, supers)
     else {
       var memberSet = isetEmpty[java.lang.String]
-      for (d <- tipe.declarations.sorted)
+      for (d <- tipe.declarations.sorted) {
         extract(name, false, d, objInits) match {
           case Some(m) =>
             if (!memberSet.contains(m.name)) {
@@ -227,6 +228,7 @@ object ModelExtractor {
             }
           case _ =>
         }
+      }
 
       Reflection.companion(clazz, true) match {
         case Some((companionSymbol, companion, annotations)) =>
@@ -266,11 +268,42 @@ object ModelExtractor {
 
     var isInvariant = false
     var aModifier = AttributeModifier.None
+    var aAnnotations = ivectorEmpty[AttributeAnnotation]
+
+    val anns = symbol.annotations.map(Reflection.annotation(_))
+
+    for (a <- anns)
+      a.clazz.getName match {
+        case `MULTIPLICITY_NAME` =>
+          var lo = 0
+          var hi = *
+          var typeName = Optional.absent[String]
+          for (p <- a.params)
+            p.name match {
+              case "lo" => lo = p.value.asInstanceOf[Int]
+              case "hi" => hi = p.value.asInstanceOf[Int]
+              case "clas" =>
+                p.value.asInstanceOf[java.lang.Class[_]].getName match {
+                  case `OBJECT_NAME` =>
+                  case name          => typeName = Optional.of(name)
+                }
+            }
+          if (lo < 0) {
+            context.reporter.error(
+              s"Invalid low range for $aQName multiplicity.")
+          } else if (lo > hi && hi >= 0) {
+            context.reporter.error(
+              "High range cannot be smaller than low range for " +
+                s"$aQName multiplicity.")
+          } else
+            aAnnotations :+= multiplicityAnnotation(lo, hi, typeName)
+        case _ =>
+      }
 
     if (symbol.isOverride || symbol.isAbstractOverride)
       aModifier = AttributeModifier.Override
     else
-      for (a <- symbol.annotations.map(Reflection.annotation(_)))
+      for (a <- anns)
         a.clazz.getName match {
           case `CONST_NAME` =>
             if (a.params.size == 0)
@@ -283,9 +316,10 @@ object ModelExtractor {
                 case INSTANCE    => aModifier = AttributeModifier.ConstInstance
                 case UNSPECIFIED => aModifier = AttributeModifier.Const
               }
-          case `DATA_NAME`     => aModifier = AttributeModifier.Data
-          case `INV_NAME`      => isInvariant = true
-          case `SETTABLE_NAME` => aModifier = AttributeModifier.Settable
+          case `DATA_NAME`         => aModifier = AttributeModifier.Data
+          case `INV_NAME`          => isInvariant = true
+          case `SETTABLE_NAME`     => aModifier = AttributeModifier.Settable
+          case `MULTIPLICITY_NAME` =>
           case c =>
             context.reporter.warning(
               s"Unexpected annotation $c for $aQName; " +
@@ -311,7 +345,7 @@ object ModelExtractor {
     } else if (symbol.isTerm && (symbol.asTerm.isGetter || symbol.asTerm.isVal)) {
       val (aType, aInit) =
         extractAttributeTypeInit(aQName, aName, symbol, inits)
-      val result = attribute(aModifier, aType, aName, aInit)
+      val result = attribute(aModifier, aAnnotations, aType, aName, aInit)
       Some(result)
     } else {
       None
@@ -477,7 +511,7 @@ object ModelExtractor {
                       val NullaryMethodType(dType) = d.typeSignature
                       if (isOverride(a.name, dType, parents))
                         attributeInits :+= attribute(AttributeModifier.Override,
-                          a.`type`, a.name, a.init)
+                          a.annotations, a.`type`, a.name, a.init)
                       else
                         attributeInits :+= a
                     case Some(m) =>
@@ -521,8 +555,8 @@ object ModelExtractor {
                         attributes.map { a =>
                           if (a.modifier != AttributeModifier.Override &&
                             isOverride(a.name, aTypes(a.name), parents))
-                            attribute(AttributeModifier.Override, a.`type`,
-                              a.name, a.init)
+                            attribute(AttributeModifier.Override, a.annotations,
+                              a.`type`, a.name, a.init)
                           else
                             a
                         })))
@@ -535,8 +569,8 @@ object ModelExtractor {
                       some(featureInit(types, attributes.map { a =>
                         if (a.modifier != AttributeModifier.Override &&
                           isOverride(a.name, aTypes(a.name), itypes))
-                          attribute(AttributeModifier.Override, a.`type`,
-                            a.name, a.init)
+                          attribute(AttributeModifier.Override, a.annotations,
+                            a.`type`, a.name, a.init)
                         else
                           a
                       })))

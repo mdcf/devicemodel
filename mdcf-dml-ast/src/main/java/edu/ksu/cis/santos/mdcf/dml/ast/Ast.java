@@ -38,9 +38,11 @@ public class Ast {
     }
 
     public static Attribute attribute(final AttributeModifier modifier,
-        final Type type, final String name, final Optional<?> init) {
+        final Iterable<?> annotations, final Type type, final String name,
+        final Optional<?> init) {
       return Ast.attribute(
           modifier,
+          list(annotations, AttributeAnnotation.class),
           type,
           name,
           opt(init, Initialization.class));
@@ -109,6 +111,11 @@ public class Ast {
 
     public static Model model(final Iterable<?> declarations) {
       return Ast.model(list(declarations, Declaration.class));
+    }
+
+    public static MultiplicityAnnotation multiplicityAnnotation(final int lo,
+        final int hi, final Optional<String> typeName) {
+      return Ast.multiplicityAnnotation(lo, hi, typeName);
     }
 
     public static NamedType namedType(final String name) {
@@ -195,8 +202,9 @@ public class Ast {
   }
 
   public static Attribute attribute(final AttributeModifier modifier,
-      final Type type, final String name, final Optional<Initialization> init) {
-    return new Attribute(modifier, type, name, init);
+      final Iterable<AttributeAnnotation> annotations, final Type type,
+      final String name, final Optional<Initialization> init) {
+    return new Attribute(modifier, annotations, type, name, init);
   }
 
   public static BasicInit basicInit(final String value) {
@@ -245,6 +253,11 @@ public class Ast {
 
   public static Model model(final Iterable<Declaration> declarations) {
     return new Model(declarations);
+  }
+
+  public static MultiplicityAnnotation multiplicityAnnotation(final int lo,
+      final int hi, final Optional<String> typeName) {
+    return new MultiplicityAnnotation(lo, hi, typeName);
   }
 
   public static NamedType namedType(final String name) {

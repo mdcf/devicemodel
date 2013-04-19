@@ -14,9 +14,15 @@ import edu.ksu.cis.santos.mdcf.dms.example.schema._
 
 trait ICEPulseOx extends ICEDevice {
   final override val `type` : IEEEDeviceType = "IEEE ... Pulse Ox"
+
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICESpO2])
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICEPulseOx])
+  override val physioParams : Set[ICEPhysioParameter]
 }
 
 object ICEPulseOx {
+  // redundant invariants because of the multiplicity above
+  // shown here as general invariant examples
   @Inv
   val `At least one SpO2 param` : Predicate[ICEPulseOx] =
     pred { po : ICEPulseOx =>
@@ -42,6 +48,9 @@ trait ICEPulseRate extends ICEPhysioParameter {
 
 trait ICEBloodPressure extends ICEDevice {
   final override val `type` : IEEEDeviceType = "IEEE ... Blood Pressure"
+
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICEBloodPressure])
+  override val physioParams : Set[ICEPhysioParameter]
 }
 
 object ICEBloodPressure {
@@ -54,7 +63,7 @@ object ICEBloodPressure {
 
 trait ICEBloodPressureParam extends ICEPhysioParameter {
   final val systolic : IEEEPhysioParameterType = "MDC_PRESS_BLD_NONINV_SYS"
-  final val diastolic : IEEEPhysioParameterType= "MDC_PRESS_BLD_NONINV_DIA"
+  final val diastolic : IEEEPhysioParameterType = "MDC_PRESS_BLD_NONINV_DIA"
 
   final val physioParameterType : IEEEPhysioParameterType = "MDC_PRESS_BLD_NONINV_MEAN"
   // mean is used here, but we need composite of ICEPhysioParameter
@@ -64,6 +73,11 @@ trait ICEBloodPressureParam extends ICEPhysioParameter {
 
 trait ICEMultiMonitor extends ICEDevice {
   final override val `type` : IEEEDeviceType = "IEEE ... MultiMonitor"
+
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICESpO2])
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICEPulseOx])
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICEBloodPressure])
+  override val physioParams : Set[ICEPhysioParameter]
 }
 
 object ICEMultiMonitor {

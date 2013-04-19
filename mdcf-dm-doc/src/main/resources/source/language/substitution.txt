@@ -36,11 +36,11 @@
 
 .. |visitBasicType| replace:: :dmldoc:`visitBasicType <ast/IVisitor.html#visitBasicType(edu.ksu.cis.santos.mdcf.dml.ast.BasicType)>`
  
-.. |BasicType| replace:: :dms:`dms.BasicType <package.scala#L42>`
+.. |BasicType| replace:: :dms:`dms.BasicType <package.scala#L45>`
 
-.. |Boolean| replace:: :dms:`dms.Boolean <package.scala#L69>`
+.. |Boolean| replace:: :dms:`dms.Boolean <package.scala#L72>`
 
-.. |Predicate| replace:: :dms:`dms.Predicate <package.scala#L100>`
+.. |Predicate| replace:: :dms:`dms.Predicate <package.scala#L103>`
 
 .. |Number| replace:: :dmsx:`dms.example.Number <BasicType.scala#L36>`
 

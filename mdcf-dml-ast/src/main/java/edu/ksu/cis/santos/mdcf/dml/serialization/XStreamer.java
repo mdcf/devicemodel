@@ -36,6 +36,7 @@ import edu.ksu.cis.santos.mdcf.dml.ast.Feature;
 import edu.ksu.cis.santos.mdcf.dml.ast.FeatureInit;
 import edu.ksu.cis.santos.mdcf.dml.ast.Invariant;
 import edu.ksu.cis.santos.mdcf.dml.ast.Model;
+import edu.ksu.cis.santos.mdcf.dml.ast.MultiplicityAnnotation;
 import edu.ksu.cis.santos.mdcf.dml.ast.NamedType;
 import edu.ksu.cis.santos.mdcf.dml.ast.NoneInit;
 import edu.ksu.cis.santos.mdcf.dml.ast.OptionType;
@@ -229,6 +230,7 @@ public class XStreamer {
     result.alias("featureInit", FeatureInit.class);
     result.alias("invariant", Invariant.class);
     result.alias("model", Model.class);
+    result.alias("multiplicity", MultiplicityAnnotation.class);
     result.alias("namedType", NamedType.class);
     result.alias("noneInit", NoneInit.class);
     result.alias("optionType", OptionType.class);
@@ -249,6 +251,8 @@ public class XStreamer {
     result.alias("ilist", ImmutableList.of(new Object(), new Object())
         .getClass());
     result.aliasPackage("pred", "scala.reflect.api");
+    result.useAttributeFor(Class.class);
+    result.useAttributeFor(int.class);
     result.useAttributeFor(String.class);
     result.useAttributeFor(Enum.class);
     result.registerConverter(new Converter() {
@@ -313,6 +317,35 @@ public class XStreamer {
         return "";
       }
     });
+    result.registerLocalConverter(
+        MultiplicityAnnotation.class,
+        "hi",
+        new SingleValueConverter() {
+
+          @Override
+          public boolean canConvert(
+              @SuppressWarnings("rawtypes") final Class type) {
+            return true;
+          }
+
+          @Override
+          public Object fromString(final String str) {
+            if ("*".equals(str)) {
+              return -1;
+            }
+            return Integer.parseInt(str);
+          }
+
+          @Override
+          public String toString(final Object obj) {
+            final int n = (int) obj;
+            if (n < 0) {
+              return "*";
+            } else {
+              return Integer.toString(n);
+            }
+          }
+        });
     return result;
   }
 

@@ -1,10 +1,10 @@
 Declared Members
 ================
 
-* clas.ICEBloodPressure: inv:At least one Blood Pressure param, attr:type
+* clas.ICEBloodPressure: inv:At least one Blood Pressure param, attr:physioParams, attr:type
 * clas.ICEBloodPressureParam: attr:diastolic, attr:physioParameterType, attr:systolic, attr:unit
-* clas.ICEMultiMonitor: inv:At least one Blood Pressure param, inv:At least one Pulse Rate param, inv:At least one SpO2 param, attr:type
-* clas.ICEPulseOx: inv:At least one Pulse Rate param, inv:At least one SpO2 param, attr:type
+* clas.ICEMultiMonitor: inv:At least one Blood Pressure param, inv:At least one Pulse Rate param, inv:At least one SpO2 param, attr:physioParams, attr:type
+* clas.ICEPulseOx: inv:At least one Pulse Rate param, inv:At least one SpO2 param, attr:physioParams, attr:type
 * clas.ICEPulseRate: attr:physioParameterType, attr:unit
 * clas.ICESpO2: attr:physioParameterType, attr:unit
 * device.MultiMonitor: attr:id, attr:manufacturerModel, attr:physioParams

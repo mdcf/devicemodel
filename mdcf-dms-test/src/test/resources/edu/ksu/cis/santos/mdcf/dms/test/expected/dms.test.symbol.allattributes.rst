@@ -1,10 +1,10 @@
 All (Declared and Inherited) Attributes
 =======================================
 
-* clas.ICEBloodPressure: (schema.ICEDevice, attr:id), (schema.ICEDevice, attr:manufacturerModel), (schema.ICEDevice, attr:physioParams), (clas.ICEBloodPressure, attr:type)
+* clas.ICEBloodPressure: (schema.ICEDevice, attr:id), (schema.ICEDevice, attr:manufacturerModel), (clas.ICEBloodPressure, attr:physioParams), (clas.ICEBloodPressure, attr:type)
 * clas.ICEBloodPressureParam: (schema.ICEPhysioParameter, attr:alerts), (clas.ICEBloodPressureParam, attr:diastolic), (schema.ICEPhysioParameter, attr:exchanges), (clas.ICEBloodPressureParam, attr:physioParameterType), (schema.ICEPhysioParameter, attr:range), (clas.ICEBloodPressureParam, attr:systolic), (clas.ICEBloodPressureParam, attr:unit)
-* clas.ICEMultiMonitor: (schema.ICEDevice, attr:id), (schema.ICEDevice, attr:manufacturerModel), (schema.ICEDevice, attr:physioParams), (clas.ICEMultiMonitor, attr:type)
-* clas.ICEPulseOx: (schema.ICEDevice, attr:id), (schema.ICEDevice, attr:manufacturerModel), (schema.ICEDevice, attr:physioParams), (clas.ICEPulseOx, attr:type)
+* clas.ICEMultiMonitor: (schema.ICEDevice, attr:id), (schema.ICEDevice, attr:manufacturerModel), (clas.ICEMultiMonitor, attr:physioParams), (clas.ICEMultiMonitor, attr:type)
+* clas.ICEPulseOx: (schema.ICEDevice, attr:id), (schema.ICEDevice, attr:manufacturerModel), (clas.ICEPulseOx, attr:physioParams), (clas.ICEPulseOx, attr:type)
 * clas.ICEPulseRate: (schema.ICEPhysioParameter, attr:alerts), (schema.ICEPhysioParameter, attr:exchanges), (clas.ICEPulseRate, attr:physioParameterType), (schema.ICEPhysioParameter, attr:range), (clas.ICEPulseRate, attr:unit)
 * clas.ICESpO2: (schema.ICEPhysioParameter, attr:alerts), (schema.ICEPhysioParameter, attr:exchanges), (clas.ICESpO2, attr:physioParameterType), (schema.ICEPhysioParameter, attr:range), (clas.ICESpO2, attr:unit)
 * device.MultiMonitor: (device.MultiMonitor, attr:id), (device.MultiMonitor, attr:manufacturerModel), (device.MultiMonitor, attr:physioParams), (clas.ICEMultiMonitor, attr:type)

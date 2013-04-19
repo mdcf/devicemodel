@@ -53,6 +53,11 @@ public abstract class AbstractVisitor
   }
 
   @Override
+  public boolean visitAttributeAnnotation(final AttributeAnnotation node) {
+    return true;
+  }
+
+  @Override
   public boolean visitBasicInit(final BasicInit node) {
     return defaultCase(node);
   }
@@ -104,6 +109,11 @@ public abstract class AbstractVisitor
 
   @Override
   public boolean visitModel(final Model node) {
+    return defaultCase(node);
+  }
+
+  @Override
+  public boolean visitMultiplicityAnnotation(final MultiplicityAnnotation node) {
     return defaultCase(node);
   }
 
