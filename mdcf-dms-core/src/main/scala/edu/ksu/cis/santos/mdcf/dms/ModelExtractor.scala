@@ -119,7 +119,7 @@ object ModelExtractor {
             for (a <- pkg.getAnnotations) {
               var qualifier = ""
               try {
-                val m = a.annotationType().getDeclaredMethod("qualifier")
+                val m = a.annotationType().getDeclaredMethod("value")
                 qualifier = m.invoke(a).toString
               } catch {
                 case e : Exception =>
@@ -192,7 +192,7 @@ object ModelExtractor {
     for (a <- ts.annotations.map(Reflection.annotation(_))) {
       var qualifier = ""
       for (p <- a.params)
-        if (p.name == "qualifier")
+        if (p.name == "value")
           qualifier = p.value.toString
       extractFeatureLevelAnnotation(fm, name, a.clazz, qualifier, false)
     }
@@ -293,24 +293,27 @@ object ModelExtractor {
       aAnnotations :+= overrideAnnotation
 
     for (a <- anns) {
-      var qualifier = ""
       a.clazz.getName match {
         case `CONST_NAME` =>
-          if (a.params.size == 0)
-            aAnnotations :+= constAnnotation(FeatureLevel.Unspecified, qualifier)
-          else
-            a.params(0).value match {
-              case SCHEMA =>
-                aAnnotations :+= constAnnotation(FeatureLevel.Schema, qualifier)
-              case CLASS =>
-                aAnnotations :+= constAnnotation(FeatureLevel.Class, qualifier)
-              case PRODUCT =>
-                aAnnotations :+= constAnnotation(FeatureLevel.Product, qualifier)
-              case INSTANCE =>
-                aAnnotations :+= constAnnotation(FeatureLevel.Instance, qualifier)
-              case UNSPECIFIED =>
-                aAnnotations :+= constAnnotation(FeatureLevel.Unspecified, qualifier)
+          var value : Any = UNSPECIFIED
+          var qualifier = ""
+          for (p <- a.params)
+            p.name match {
+              case "value"     => value = p.value
+              case "qualifier" => qualifier = p.value.toString
             }
+          value match {
+            case SCHEMA =>
+              aAnnotations :+= constAnnotation(FeatureLevel.Schema, qualifier)
+            case CLASS =>
+              aAnnotations :+= constAnnotation(FeatureLevel.Class, qualifier)
+            case PRODUCT =>
+              aAnnotations :+= constAnnotation(FeatureLevel.Product, qualifier)
+            case INSTANCE =>
+              aAnnotations :+= constAnnotation(FeatureLevel.Instance, qualifier)
+            case UNSPECIFIED =>
+              aAnnotations :+= constAnnotation(FeatureLevel.Unspecified, qualifier)
+          }
         case `DATA_NAME`     => aAnnotations :+= dataAnnotation
         case `SETTABLE_NAME` => aAnnotations :+= settableAnnotation
         case `INV_NAME`      => isInvariant = true
