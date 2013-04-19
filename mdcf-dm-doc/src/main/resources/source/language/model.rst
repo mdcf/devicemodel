@@ -60,7 +60,7 @@ Implementation Classes and Construction
 ***************************************
 
 A model is represented using the :dml:`dml.ast.Model <ast/Model.java>` AST class which
-has an :javadoc:`Iterable <java/util/Iterable.html>` 
+has an :javadoc:`Iterable <java/lang/Iterable.html>` 
 of :dml:`dml.ast.Declarations <ast/Declaration.java>`, which can be either
 :dml:`dml.ast.BasicType <ast/BasicType.java>`, :dml:`dml.ast.Feature <ast/Feature.java>`, or
 :dml:`dml.ast.Requirement <ast/Requirement.java>`.

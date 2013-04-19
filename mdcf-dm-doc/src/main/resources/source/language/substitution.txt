@@ -62,11 +62,11 @@
 
 .. |companion object| replace:: `companion object <http://stackoverflow.com/questions/609744/what-is-the-rationale-behind-having-companion-objects-in-scala>`__
 
-.. |basic type value| replace:: :dms:`value <package.scala#L43>`
+.. |basic type value| replace:: :dms:`value <package.scala#L46>`
 
-.. |basic asString| replace:: :dms:`asString <package.scala#L46>`
+.. |basic asString| replace:: :dms:`asString <package.scala#L49>`
 
-.. |basic toString| replace:: :dms:`toString <package.scala#L47>`
+.. |basic toString| replace:: :dms:`toString <package.scala#L50>`
 
 .. |val| replace:: `val <http://stackoverflow.com/questions/1791408/what-is-the-difference-between-a-var-and-val-definition-in-scala>`__
 

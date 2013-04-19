@@ -38,7 +38,8 @@ Setting Up Development Environment
    select "Run As" and then "JUnit Test"; all tests should pass.
 
 7. If you plan to commit code to the repository, import the following in the 
-   respective Eclipse preference pages:
+   respective Eclipse preference pages 
+   (the files should already in your workspace after following Step 5):
  
    * In `Java -> Code Style -> Clean Up preference page <http://help.eclipse.org/juno/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fpreferences%2Fjava%2Fcodestyle%2Fref-preferences-cleanup.htm>`_:
      `sireum-util/codestyle/java-clean-up.xml <https://www.assembla.com/code/sireum-core/git-3/nodes/master/sireum-util/codestyle/java-clean-up.xml>`_
@@ -49,5 +50,11 @@ Setting Up Development Environment
    * In `Scala -> Formatter preference page <http://scala-ide.org/docs/current-user-doc/features/typingviewing/formatting/index.html>`_: 
      `sireum-util/codestyle/scala-formatterPreferences.properties <https://www.assembla.com/code/sireum-core/git-3/nodes/master/sireum-util/codestyle/scala-formatterPreferences.properties>`_
    
-   Make sure to run Java source clean up before committing Java code.
-   Similarly, make sure to run Scala formatter before committing Scala code. 
+   Make sure to run *Java source clean up* before committing Java code.
+   Similarly, make sure to run *Scala source formatter* before committing Scala
+   code. You can run the clean up and formatter on all source in a project wide 
+   by right clicking the project and then selecting ``Source -> Clean up...``
+   and ``Source -> Format``, respectively. This also works at source folders and
+   packages.
+   
+    
