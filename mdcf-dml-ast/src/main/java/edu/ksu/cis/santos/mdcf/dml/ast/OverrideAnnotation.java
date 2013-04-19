@@ -11,6 +11,19 @@ package edu.ksu.cis.santos.mdcf.dml.ast;
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
-public enum FeatureModifier {
-  Unspecified, Schema, Class, Product, Device, Instance, Data
+public final class OverrideAnnotation extends AstNode
+    implements FeatureAnnotation, AttributeAnnotation {
+
+  public OverrideAnnotation() {
+  }
+
+  @Override
+  protected Object[] getChildren() {
+    return AstNode.EMPTY_CHILDREN;
+  }
+
+  @Override
+  protected boolean visit(final IVisitor visitor) {
+    return visitor.visitOverrideAnnotation(this);
+  }
 }

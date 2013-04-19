@@ -11,8 +11,5 @@ package edu.ksu.cis.santos.mdcf.dml.ast;
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
-public abstract class AttributeAnnotation extends AstNode {
-  AttributeAnnotation() {
-
-  }
+public interface AttributeAnnotation {
 }

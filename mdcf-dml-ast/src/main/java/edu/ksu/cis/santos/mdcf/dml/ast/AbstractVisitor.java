@@ -53,17 +53,22 @@ public abstract class AbstractVisitor
   }
 
   @Override
-  public boolean visitAttributeAnnotation(final AttributeAnnotation node) {
-    return true;
-  }
-
-  @Override
   public boolean visitBasicInit(final BasicInit node) {
     return defaultCase(node);
   }
 
   @Override
   public boolean visitBasicType(final BasicType node) {
+    return defaultCase(node);
+  }
+
+  @Override
+  public boolean visitConstAnnotation(final ConstAnnotation node) {
+    return defaultCase(node);
+  }
+
+  @Override
+  public boolean visitDataAnnotation(final DataAnnotation node) {
     return defaultCase(node);
   }
 
@@ -89,6 +94,11 @@ public abstract class AbstractVisitor
 
   @Override
   public boolean visitFeatureInit(final FeatureInit node) {
+    return defaultCase(node);
+  }
+
+  @Override
+  public boolean visitFeatureLevelAnnotation(final FeatureLevelAnnotation node) {
     return defaultCase(node);
   }
 
@@ -133,6 +143,11 @@ public abstract class AbstractVisitor
   }
 
   @Override
+  public boolean visitOverrideAnnotation(final OverrideAnnotation node) {
+    return defaultCase(node);
+  }
+
+  @Override
   public boolean visitRefinedType(final RefinedType node) {
     return defaultCase(node);
   }
@@ -154,6 +169,11 @@ public abstract class AbstractVisitor
 
   @Override
   public boolean visitSetInit(final SetInit node) {
+    return defaultCase(node);
+  }
+
+  @Override
+  public boolean visitSettableAnnotation(final SettableAnnotation node) {
     return defaultCase(node);
   }
 

@@ -26,23 +26,23 @@ import Ast._
 object ModelExtractor {
 
   trait Reporter {
-    def error(message : java.lang.String)
-    def warning(message : java.lang.String)
-    def info(message : java.lang.String)
+    def error(message : String)
+    def warning(message : String)
+    def info(message : String)
   }
 
   final val DEFAULT_REPORTER = new Reporter {
-    def error(message : java.lang.String) {
+    def error(message : String) {
       Console.err.println(message)
       Console.err.flush
     }
 
-    def warning(message : java.lang.String) {
+    def warning(message : String) {
       Console.out.println(message)
       Console.out.flush
     }
 
-    def info(message : java.lang.String) {
+    def info(message : String) {
       Console.out.println(message)
       Console.out.flush
     }
@@ -68,27 +68,27 @@ object ModelExtractor {
   private final val INV_NAME = classOf[annotation.Inv].getName
   private final val MULTIPLICITY_NAME = classOf[annotation.Multiplicity].getName
   private final val SETTABLE_NAME = classOf[annotation.Settable].getName
-  private final val PRIMORDIAL_TYPES = Set[java.lang.String](
+  private final val PRIMORDIAL_TYPES = Set[String](
     classOf[Object].getName, classOf[Any].getName, classOf[BasicType].getName,
     classOf[Feature].getName)
 
-  def extractModel(packageNames : Array[java.lang.String]) : Model =
+  def extractModel(packageNames : Array[String]) : Model =
     extract(Context(packageNames.toIterable))
 
   def extractModel(cl : ClassLoader,
-                   packageNames : Array[java.lang.String]) : Model =
+                   packageNames : Array[String]) : Model =
     extract(Context(packageNames.toIterable, classLoader = cl))
 
   def extractModel(reporter : Reporter,
-                   packageNames : Array[java.lang.String]) : Model =
+                   packageNames : Array[String]) : Model =
     extract(Context(packageNames.toIterable, reporter = reporter))
 
   def extractModel(reporter : Reporter, cl : ClassLoader,
-                   packageNames : Array[java.lang.String]) : Model =
+                   packageNames : Array[String]) : Model =
     extract(Context(packageNames.toIterable, reporter, cl))
 
   final case class Context(
-      packageNames : Traversable[java.lang.String],
+      packageNames : Traversable[String],
       reporter : Reporter = DEFAULT_REPORTER,
       classLoader : ClassLoader = getClass.getClassLoader match {
         case null=> ClassLoader.getSystemClassLoader
@@ -101,7 +101,7 @@ object ModelExtractor {
   def extract(implicit context : Context) : Model = {
     var decls = ivectorEmpty[Declaration]
 
-    val pkgModifier = mmapEmpty[java.lang.String, FM]
+    val pkgModifier = mmapEmpty[String, FM]
 
     var size = 0
     for (p <- context.packageNames) {
@@ -114,14 +114,21 @@ object ModelExtractor {
           val pkg = clazz.getPackage
           val pkgName = pkg.getName
           decls :+= extract(pkgModifier.getOrElseUpdate(pkgName, {
-            var pm = FM(FeatureModifier.Unspecified, false)
             var isReq = false
+            val pm = new FM()
             for (a <- pkg.getAnnotations) {
-              pm = extractFeatureModifier(pkgName, a.getClass, true)
+              var qualifier = ""
+              try {
+                val m = a.annotationType().getDeclaredMethod("qualifier")
+                qualifier = m.invoke(a).toString
+              } catch {
+                case e : Exception =>
+              }
+              extractFeatureLevelAnnotation(pm, pkgName, a.annotationType,
+                qualifier, true)
             }
             pm
-          }), clazz,
-            imapEmpty[java.lang.String, Object])
+          }), clazz, imapEmpty[String, Object])
         }
       }
     }
@@ -135,34 +142,40 @@ object ModelExtractor {
     model(decls)
   }
 
-  private final case class FM(
-    featureModifier : FeatureModifier, isReq : scala.Boolean)
+  private final class FM(
+    var featureAnnotations : IVector[FeatureAnnotation] = ivectorEmpty,
+    var isReq : scala.Boolean = false)
 
-  private def extractFeatureModifier(
-    entityName : java.lang.String, clazz : java.lang.Class[_],
-    allowReq : scala.Boolean)(implicit context : Context) : FM = {
+  private def extractFeatureLevelAnnotation(
+    fm : FM, entityName : String, clazz : java.lang.Class[_],
+    qualifier : String, allowReq : scala.Boolean)(implicit context : Context) {
     val name =
       if (!clazz.isInterface) clazz.getInterfaces()(0).getName
       else clazz.getName
     name match {
-      case `SCHEMA_NAME`          => FM(FeatureModifier.Schema, false)
-      case `CLASS_NAME`           => FM(FeatureModifier.Class, false)
-      case `PRODUCT_NAME`         => FM(FeatureModifier.Product, false)
-      case `DEVICE_NAME`          => FM(FeatureModifier.Device, false)
-      case `INSTANCE_NAME`        => FM(FeatureModifier.Instance, false)
-      case `DATA_NAME`            => FM(FeatureModifier.Data, false)
-      case `REQ_NAME` if allowReq => FM(FeatureModifier.Unspecified, true)
+      case `SCHEMA_NAME` =>
+        fm.featureAnnotations :+= featureLevelAnnotation(FeatureLevel.Schema, qualifier)
+      case `CLASS_NAME` =>
+        fm.featureAnnotations :+= featureLevelAnnotation(FeatureLevel.Class, qualifier)
+      case `PRODUCT_NAME` =>
+        fm.featureAnnotations :+= featureLevelAnnotation(FeatureLevel.Product, qualifier)
+      case `DEVICE_NAME` =>
+        fm.featureAnnotations :+= featureLevelAnnotation(FeatureLevel.Device, qualifier)
+      case `INSTANCE_NAME` =>
+        fm.featureAnnotations :+= featureLevelAnnotation(FeatureLevel.Instance, qualifier)
+      case `SETTABLE_NAME`        => fm.featureAnnotations :+= settableAnnotation
+      case `DATA_NAME`            => fm.featureAnnotations :+= dataAnnotation
+      case `REQ_NAME` if allowReq => fm.isReq = true
       case c =>
         context.reporter.warning(
           s"Unexpected annotation $c for $entityName; only Schema, Class, " +
             "Product, Device, Instance, and Data are allowed.")
-        FM(FeatureModifier.Unspecified, false)
     }
   }
 
   private def extract(
-    fm : FM, clazz : java.lang.Class[_],
-    inits : IMap[java.lang.String, Object])(
+    pm : FM, clazz : java.lang.Class[_],
+    inits : IMap[String, Object])(
       implicit context : Context) : Declaration = {
     val tipe = Reflection.getTypeOfClass(clazz)
     val ts = tipe.typeSymbol
@@ -173,17 +186,22 @@ object ModelExtractor {
       else if (ts.asClass.isTrait) Reflection.traitInits(clazz)
       else
         try Reflection.classInits(tipe, clazz.newInstance, false)
-        catch { case e : Exception => imapEmpty[java.lang.String, Object] }
+        catch { case e : Exception => imapEmpty[String, Object] }
 
-    var featureModifier = fm.featureModifier
+    val fm = new FM(pm.featureAnnotations, pm.isReq)
+    for (a <- ts.annotations.map(Reflection.annotation(_))) {
+      var qualifier = ""
+      for (p <- a.params)
+        if (p.name == "qualifier")
+          qualifier = p.value.toString
+      extractFeatureLevelAnnotation(fm, name, a.clazz, qualifier, false)
+    }
+
+    var featureAnnotations = fm.featureAnnotations
     var isReq = fm.isReq
+
     var supers = ivectorEmpty[NamedType]
     var members = ivectorEmpty[Member]
-
-    for (a <- ts.annotations.map(Reflection.annotation(_))) {
-      val cfm = extractFeatureModifier(name, a.clazz, false)
-      featureModifier = cfm.featureModifier
-    }
 
     {
       val s : java.lang.Class[_] = clazz.getSuperclass
@@ -218,7 +236,7 @@ object ModelExtractor {
     if (isBasicType)
       basicType(name, supers)
     else {
-      var memberSet = isetEmpty[java.lang.String]
+      var memberSet = isetEmpty[String]
       for (d <- tipe.declarations.sorted) {
         extract(name, false, d, objInits) match {
           case Some(m) =>
@@ -255,25 +273,47 @@ object ModelExtractor {
       if (isReq)
         requirement(name, members.map { _.asInstanceOf[Invariant] })
       else
-        feature(featureModifier, name, supers, members)
+        feature(featureAnnotations, name, supers, members)
     }
   }
 
   private def extract(
-    owner : java.lang.String, isCompanion : scala.Boolean, symbol : Symbol,
-    inits : IMap[java.lang.String, Object])(
+    owner : String, isCompanion : scala.Boolean, symbol : Symbol,
+    inits : IMap[String, Object])(
       implicit context : Context) : scala.Option[Member] = {
     val aName = symbol.name.decoded.trim
     val aQName = owner + '.' + aName
 
     var isInvariant = false
-    var aModifier = AttributeModifier.None
     var aAnnotations = ivectorEmpty[AttributeAnnotation]
 
     val anns = symbol.annotations.map(Reflection.annotation(_))
 
-    for (a <- anns)
+    if (symbol.isOverride || symbol.isAbstractOverride)
+      aAnnotations :+= overrideAnnotation
+
+    for (a <- anns) {
+      var qualifier = ""
       a.clazz.getName match {
+        case `CONST_NAME` =>
+          if (a.params.size == 0)
+            aAnnotations :+= constAnnotation(FeatureLevel.Unspecified, qualifier)
+          else
+            a.params(0).value match {
+              case SCHEMA =>
+                aAnnotations :+= constAnnotation(FeatureLevel.Schema, qualifier)
+              case CLASS =>
+                aAnnotations :+= constAnnotation(FeatureLevel.Class, qualifier)
+              case PRODUCT =>
+                aAnnotations :+= constAnnotation(FeatureLevel.Product, qualifier)
+              case INSTANCE =>
+                aAnnotations :+= constAnnotation(FeatureLevel.Instance, qualifier)
+              case UNSPECIFIED =>
+                aAnnotations :+= constAnnotation(FeatureLevel.Unspecified, qualifier)
+            }
+        case `DATA_NAME`     => aAnnotations :+= dataAnnotation
+        case `SETTABLE_NAME` => aAnnotations :+= settableAnnotation
+        case `INV_NAME`      => isInvariant = true
         case `MULTIPLICITY_NAME` =>
           var lo = 0
           var hi = *
@@ -297,34 +337,12 @@ object ModelExtractor {
                 s"$aQName multiplicity.")
           } else
             aAnnotations :+= multiplicityAnnotation(lo, hi, typeName)
-        case _ =>
+        case c =>
+          context.reporter.warning(
+            s"Unexpected annotation $c for $aQName; " +
+              "only Const, Data, Inv, and Settable are allowed.")
       }
-
-    if (symbol.isOverride || symbol.isAbstractOverride)
-      aModifier = AttributeModifier.Override
-    else
-      for (a <- anns)
-        a.clazz.getName match {
-          case `CONST_NAME` =>
-            if (a.params.size == 0)
-              aModifier = AttributeModifier.Const
-            else
-              a.params(0).value match {
-                case SCHEMA      => aModifier = AttributeModifier.ConstSchema
-                case CLASS       => aModifier = AttributeModifier.ConstClass
-                case PRODUCT     => aModifier = AttributeModifier.ConstProduct
-                case INSTANCE    => aModifier = AttributeModifier.ConstInstance
-                case UNSPECIFIED => aModifier = AttributeModifier.Const
-              }
-          case `DATA_NAME`         => aModifier = AttributeModifier.Data
-          case `INV_NAME`          => isInvariant = true
-          case `SETTABLE_NAME`     => aModifier = AttributeModifier.Settable
-          case `MULTIPLICITY_NAME` =>
-          case c =>
-            context.reporter.warning(
-              s"Unexpected annotation $c for $aQName; " +
-                "only Const, Data, Inv, and Settable are allowed.")
-        }
+    }
 
     if (isInvariant) {
       inits.get(aName) match {
@@ -345,7 +363,7 @@ object ModelExtractor {
     } else if (symbol.isTerm && (symbol.asTerm.isGetter || symbol.asTerm.isVal)) {
       val (aType, aInit) =
         extractAttributeTypeInit(aQName, aName, symbol, inits)
-      val result = attribute(aModifier, aAnnotations, aType, aName, aInit)
+      val result = attribute(aAnnotations, aType, aName, aInit)
       Some(result)
     } else {
       None
@@ -353,8 +371,8 @@ object ModelExtractor {
   }
 
   private def extractAttributeTypeInit(
-    aQName : java.lang.String, aName : java.lang.String, symbol : Symbol,
-    inits : IMap[java.lang.String, Object])(
+    aQName : String, aName : String, symbol : Symbol,
+    inits : IMap[String, Object])(
       implicit context : Context) : (ast.Type, Optional[Initialization]) =
     extractType(aQName, symbol.typeSignature match {
       case NullaryMethodType(resultType) => resultType
@@ -362,7 +380,7 @@ object ModelExtractor {
     }, inits.get(aName))
 
   private def extractType(
-    aQName : java.lang.String, tipe : Type, value : Option[scala.Any])(
+    aQName : String, tipe : Type, value : Option[scala.Any])(
       implicit context : Context) : (ast.Type, Optional[Initialization]) = {
     val clazz = Reflection.getClassOfType(tipe.erasure)
     clazz.getName match {
@@ -472,8 +490,8 @@ object ModelExtractor {
           case RefinedType(parents, decls) =>
             var success = true
             val types = filterType(aQName, parents)
-            var inits = imapEmpty[java.lang.String, Object]
-            var aTypes = imapEmpty[java.lang.String, Type]
+            var inits = imapEmpty[String, Object]
+            var aTypes = imapEmpty[String, Type]
             value match {
               case Some(value) =>
                 val vClass = value.getClass
@@ -488,7 +506,7 @@ object ModelExtractor {
             var attributes = ivectorEmpty[Attribute]
             for (d <- tipe.declarations.sorted if d.isTerm && d.asTerm.isGetter)
               extract(aQName, false, d,
-                imapEmpty[java.lang.String, Object]) match {
+                imapEmpty[String, Object]) match {
                   case Some(a : Attribute) => attributes :+= a
                   case Some(m) =>
                     context.reporter.error(
@@ -510,8 +528,8 @@ object ModelExtractor {
                     case Some(a : Attribute) =>
                       val NullaryMethodType(dType) = d.typeSignature
                       if (isOverride(a.name, dType, parents))
-                        attributeInits :+= attribute(AttributeModifier.Override,
-                          a.annotations, a.`type`, a.name, a.init)
+                        attributeInits :+= attribute(a.annotations, a.`type`,
+                          a.name, a.init)
                       else
                         attributeInits :+= a
                     case Some(m) =>
@@ -528,14 +546,14 @@ object ModelExtractor {
               case Some(value) =>
                 val vClass = value.getClass
                 val vTipe = Reflection.getTypeOfClass(vClass)
-                var inits = imapEmpty[java.lang.String, Object]
+                var inits = imapEmpty[String, Object]
                 for (d <- vTipe.declarations if d.isTerm && d.asTerm.isVal) {
                   val dName = d.name.encoded.trim
                   val dValue = vClass.getMethod(d.name.encoded).invoke(value)
                   inits += (dName -> dValue)
                 }
                 var attributes = ivectorEmpty[Attribute]
-                var aTypes = imapEmpty[java.lang.String, Type]
+                var aTypes = imapEmpty[String, Type]
                 for (d <- vTipe.declarations.sorted if d.isTerm && d.asTerm.isVal)
                   extract(aQName, false, d, inits) match {
                     case Some(a : Attribute) =>
@@ -553,9 +571,10 @@ object ModelExtractor {
                     (resultType,
                       some(featureInit(filterType(aQName, parents),
                         attributes.map { a =>
-                          if (a.modifier != AttributeModifier.Override &&
+                          if (!a.annotations.exists(
+                            _.isInstanceOf[OverrideAnnotation]) &&
                             isOverride(a.name, aTypes(a.name), parents))
-                            attribute(AttributeModifier.Override, a.annotations,
+                            attribute(a.annotations :+ overrideAnnotation,
                               a.`type`, a.name, a.init)
                           else
                             a
@@ -567,9 +586,10 @@ object ModelExtractor {
                     val itypes = interfaces.map(Reflection.getTypeOfClass(_))
                     (resultType,
                       some(featureInit(types, attributes.map { a =>
-                        if (a.modifier != AttributeModifier.Override &&
+                        if (!a.annotations.exists(
+                          _.isInstanceOf[OverrideAnnotation]) &&
                           isOverride(a.name, aTypes(a.name), itypes))
-                          attribute(AttributeModifier.Override, a.annotations,
+                          attribute(a.annotations :+ overrideAnnotation,
                             a.`type`, a.name, a.init)
                         else
                           a
@@ -582,7 +602,7 @@ object ModelExtractor {
     }
   }
 
-  private def filterType(aQName : java.lang.String, l : List[Type])(
+  private def filterType(aQName : String, l : List[Type])(
     implicit context : Context) : ISeq[NamedType] = {
     l.flatMap {
       _ match {
@@ -598,7 +618,7 @@ object ModelExtractor {
     }
   }
 
-  private def isOverride(aName : java.lang.String, aType : Type,
+  private def isOverride(aName : String, aType : Type,
                          types : ISeq[Type]) : scala.Boolean = {
     for (t <- types) {
       for (m <- t.members if m.isTerm && (m.asTerm.isGetter || m.asTerm.isVal)) {

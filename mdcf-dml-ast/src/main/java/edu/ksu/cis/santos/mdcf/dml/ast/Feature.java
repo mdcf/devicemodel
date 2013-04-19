@@ -16,23 +16,25 @@ import java.util.List;
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public final class Feature extends Declaration {
-  public final FeatureModifier level;
+  public final Iterable<FeatureAnnotation> annotations;
 
   public final List<NamedType> supers;
 
   public final List<Member> members;
 
-  public Feature(final FeatureModifier level, final String name,
-      final Iterable<NamedType> supers, final Iterable<Member> members) {
+  public Feature(final Iterable<FeatureAnnotation> annotations,
+      final String name, final Iterable<NamedType> supers,
+      final Iterable<Member> members) {
     super(name);
-    this.level = level;
+    this.annotations = list(annotations);
     this.supers = list(supers);
     this.members = list(members);
   }
 
   @Override
   protected Object[] getChildren() {
-    return new Object[] { this.level, this.name, this.supers, this.members };
+    return new Object[] { this.annotations, this.name, this.supers,
+        this.members };
   }
 
   @Override

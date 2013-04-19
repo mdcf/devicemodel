@@ -37,11 +37,9 @@ public class Ast {
       return true;
     }
 
-    public static Attribute attribute(final AttributeModifier modifier,
-        final Iterable<?> annotations, final Type type, final String name,
-        final Optional<?> init) {
+    public static Attribute attribute(final Iterable<?> annotations,
+        final Type type, final String name, final Optional<?> init) {
       return Ast.attribute(
-          modifier,
           list(annotations, AttributeAnnotation.class),
           type,
           name,
@@ -57,6 +55,15 @@ public class Ast {
       return Ast.basicType(name, list(supers, NamedType.class));
     }
 
+    public static ConstAnnotation constAnnotation(final FeatureLevel level,
+        final String qualifier) {
+      return Ast.constAnnotation(level, qualifier);
+    }
+
+    public static DataAnnotation dataAnnotation() {
+      return Ast.dataAnnotation();
+    }
+
     public static EitherInit eitherInit(final int index,
         final Initialization init) {
       return Ast.eitherInit(index, init);
@@ -66,10 +73,10 @@ public class Ast {
       return Ast.eitherType(list(choiceTypes, Type.class));
     }
 
-    public static Feature feature(final FeatureModifier level,
+    public static Feature feature(final Iterable<?> annotations,
         final String name, final Iterable<?> supers, final Iterable<?> members) {
       return Ast.feature(
-          level,
+          list(annotations, FeatureAnnotation.class),
           name,
           list(supers, NamedType.class),
           list(members, Member.class));
@@ -80,6 +87,11 @@ public class Ast {
       return Ast.featureInit(
           list(types, NamedType.class),
           list(attributes, Attribute.class));
+    }
+
+    public static FeatureLevelAnnotation featureLevelAnnotation(
+        final FeatureLevel level, final String qualifier) {
+      return Ast.featureLevelAnnotation(level, qualifier);
     }
 
     public static Invariant invariant(final String name, final Object predicate) {
@@ -153,6 +165,10 @@ public class Ast {
       return Ast.optionType(elementType);
     }
 
+    public static OverrideAnnotation overrideAnnotation() {
+      return Ast.overrideAnnotation();
+    }
+
     public static RefinedType refinedType(final Iterable<?> types,
         final Iterable<?> attributes) {
       return Ast.refinedType(
@@ -175,6 +191,10 @@ public class Ast {
 
     public static SetInit setInit(final Iterable<?> inits) {
       return Ast.setInit(list(inits, Initialization.class));
+    }
+
+    public static SettableAnnotation settableAnnotation() {
+      return Ast.settableAnnotation();
     }
 
     public static SetType setType(final Type elementType) {
@@ -201,10 +221,10 @@ public class Ast {
     }
   }
 
-  public static Attribute attribute(final AttributeModifier modifier,
+  public static Attribute attribute(
       final Iterable<AttributeAnnotation> annotations, final Type type,
       final String name, final Optional<Initialization> init) {
-    return new Attribute(modifier, annotations, type, name, init);
+    return new Attribute(annotations, type, name, init);
   }
 
   public static BasicInit basicInit(final String value) {
@@ -216,6 +236,15 @@ public class Ast {
     return new BasicType(name, supers);
   }
 
+  public static ConstAnnotation constAnnotation(final FeatureLevel level,
+      final String qualifier) {
+    return new ConstAnnotation(level, qualifier);
+  }
+
+  public static DataAnnotation dataAnnotation() {
+    return new DataAnnotation();
+  }
+
   public static EitherInit eitherInit(final int index, final Initialization init) {
     return new EitherInit(index, init);
   }
@@ -224,14 +253,20 @@ public class Ast {
     return new EitherType(choiceTypes);
   }
 
-  public static Feature feature(final FeatureModifier level, final String name,
-      final Iterable<NamedType> supers, final Iterable<Member> members) {
-    return new Feature(level, name, supers, members);
+  public static Feature feature(final Iterable<FeatureAnnotation> annotations,
+      final String name, final Iterable<NamedType> supers,
+      final Iterable<Member> members) {
+    return new Feature(annotations, name, supers, members);
   }
 
   public static FeatureInit featureInit(final Iterable<NamedType> types,
       final Iterable<Attribute> attributes) {
     return new FeatureInit(types, attributes);
+  }
+
+  public static FeatureLevelAnnotation featureLevelAnnotation(
+      final FeatureLevel level, final String qualifier) {
+    return new FeatureLevelAnnotation(level, qualifier);
   }
 
   public static Invariant invariant(final String name, final Object predicate) {
@@ -276,6 +311,10 @@ public class Ast {
     return new OptionType(elementType);
   }
 
+  public static OverrideAnnotation overrideAnnotation() {
+    return new OverrideAnnotation();
+  }
+
   public static RefinedType refinedType(final Iterable<NamedType> types,
       final Iterable<Attribute> attributes) {
     return new RefinedType(types, attributes);
@@ -296,6 +335,10 @@ public class Ast {
 
   public static SetInit setInit(final Iterable<Initialization> inits) {
     return new SetInit(inits);
+  }
+
+  public static SettableAnnotation settableAnnotation() {
+    return new SettableAnnotation();
   }
 
   public static SetType setType(final Type elementType) {

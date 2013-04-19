@@ -8,32 +8,27 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dml.ast;
 
-import com.google.common.base.Optional;
-
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
-public final class MultiplicityAnnotation extends AstNode
-    implements AttributeAnnotation {
-  public final int lo;
-  public final int hi;
-  public final Optional<String> typeName;
+public final class FeatureLevelAnnotation extends AstNode
+    implements FeatureAnnotation {
 
-  public MultiplicityAnnotation(final int lo, final int hi,
-      final Optional<String> typeName) {
-    this.lo = lo;
-    this.hi = hi;
-    this.typeName = typeName.isPresent() ? Optional.of(typeName.get().intern())
-        : typeName;
+  public final FeatureLevel level;
+  public final String qualifier;
+
+  public FeatureLevelAnnotation(final FeatureLevel level, final String qualifier) {
+    this.level = level;
+    this.qualifier = qualifier.intern();
   }
 
   @Override
   protected Object[] getChildren() {
-    return new Object[] { this.lo, this.hi, this.typeName };
+    return new Object[] { this.level, this.qualifier };
   }
 
   @Override
   protected boolean visit(final IVisitor visitor) {
-    return visitor.visitMultiplicityAnnotation(this);
+    return visitor.visitFeatureLevelAnnotation(this);
   }
 }

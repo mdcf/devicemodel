@@ -6,20 +6,11 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dms.annotation;
-
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+package edu.ksu.cis.santos.mdcf.dml.ast;
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target({ ElementType.FIELD, ElementType.METHOD })
-public @interface Const {
-  String qualifier() default "";
-
-  ConstMode value() default ConstMode.UNSPECIFIED;
+public enum FeatureLevel {
+  Unspecified, Schema, Class, Product, Device, Instance
 }

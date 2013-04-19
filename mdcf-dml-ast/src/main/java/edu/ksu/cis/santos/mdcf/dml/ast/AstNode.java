@@ -21,6 +21,8 @@ import com.google.common.base.Optional;
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public abstract class AstNode {
+  protected final static Object[] EMPTY_CHILDREN = new Object[] {};
+
   private transient SoftReference<Object[]> _children;
 
   /**

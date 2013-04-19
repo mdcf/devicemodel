@@ -14,13 +14,16 @@ package edu.ksu.cis.santos.mdcf.dml.ast;
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public interface IVisitor {
-  boolean visitAttribute(Attribute node);
 
-  boolean visitAttributeAnnotation(AttributeAnnotation node);
+  boolean visitAttribute(Attribute node);
 
   boolean visitBasicInit(BasicInit node);
 
   boolean visitBasicType(BasicType node);
+
+  boolean visitConstAnnotation(ConstAnnotation node);
+
+  boolean visitDataAnnotation(DataAnnotation node);
 
   boolean visitDeclaration(Declaration node);
 
@@ -31,6 +34,8 @@ public interface IVisitor {
   boolean visitFeature(Feature node);
 
   boolean visitFeatureInit(FeatureInit node);
+
+  boolean visitFeatureLevelAnnotation(FeatureLevelAnnotation node);
 
   boolean visitInitialization(Initialization node);
 
@@ -48,6 +53,8 @@ public interface IVisitor {
 
   boolean visitOptionType(OptionType node);
 
+  boolean visitOverrideAnnotation(OverrideAnnotation node);
+
   boolean visitRefinedType(RefinedType node);
 
   boolean visitRequirement(Requirement node);
@@ -57,6 +64,8 @@ public interface IVisitor {
   boolean visitSeqType(SeqType node);
 
   boolean visitSetInit(SetInit node);
+
+  boolean visitSettableAnnotation(SettableAnnotation node);
 
   boolean visitSetType(SetType node);
 

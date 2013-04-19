@@ -278,8 +278,9 @@ public class SymbolTableTest {
       deleteLastChars(sb, 2);
     }
 
-    testExpectedResult("dms.test.symbol."
-        + (isSuper ? "supermap" : "submap"), sb.toString());
+    testExpectedResult(
+        "dms.test.symbol." + (isSuper ? "supermap" : "submap"),
+        sb.toString());
   }
 
   @Test

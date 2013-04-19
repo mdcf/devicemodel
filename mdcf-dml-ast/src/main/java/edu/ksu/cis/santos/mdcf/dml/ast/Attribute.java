@@ -18,26 +18,22 @@ import com.google.common.base.Optional;
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public final class Attribute extends Member {
-  public final AttributeModifier modifier;
   public final List<AttributeAnnotation> annotations;
   public final Type type;
 
   public final Optional<Initialization> init;
 
-  public Attribute(final AttributeModifier modifier,
-      final Iterable<AttributeAnnotation> annotations, final Type type,
-      final String name, final Optional<Initialization> init) {
+  public Attribute(final Iterable<AttributeAnnotation> annotations,
+      final Type type, final String name, final Optional<Initialization> init) {
     super(name);
     this.annotations = list(annotations);
-    this.modifier = modifier;
     this.type = type;
     this.init = init;
   }
 
   @Override
   protected Object[] getChildren() {
-    return new Object[] { this.modifier, this.annotations, this.type,
-        this.name, this.init };
+    return new Object[] { this.annotations, this.type, this.name, this.init };
   }
 
   @Override

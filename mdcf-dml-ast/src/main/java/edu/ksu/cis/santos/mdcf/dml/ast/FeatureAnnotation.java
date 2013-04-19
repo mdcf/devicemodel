@@ -11,8 +11,5 @@ package edu.ksu.cis.santos.mdcf.dml.ast;
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
-public enum AttributeModifier {
-  None, //
-  Settable, Data, Override, // 
-  Const, ConstSchema, ConstClass, ConstProduct, ConstInstance
+public interface FeatureAnnotation {
 }

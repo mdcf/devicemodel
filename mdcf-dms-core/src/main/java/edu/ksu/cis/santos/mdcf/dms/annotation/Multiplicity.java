@@ -19,9 +19,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.FIELD, ElementType.METHOD })
 public @interface Multiplicity {
-  int lo() default 0;
+  java.lang.Class<?> clas() default Object.class;
 
   int hi() default -1;
-  
-  java.lang.Class<?> clas() default Object.class;
+
+  int lo() default 0;
 }

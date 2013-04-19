@@ -33,7 +33,7 @@ package object dms {
   final val PRODUCT = edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode.PRODUCT
   final val INSTANCE = edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode.INSTANCE
   final val UNSPECIFIED = edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode.UNSPECIFIED
-  
+
   final val * = -1
 
   type Set[T] = scala.collection.immutable.Set[T]
