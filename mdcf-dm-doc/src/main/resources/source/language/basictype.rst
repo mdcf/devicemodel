@@ -17,7 +17,7 @@ Basic Type
    basicAsStringMethod : "override" "def" "asString" "=" <scalaExp : java.lang.String>
    basicToStringMethod : "override" "def" "toString" "=" <scalaExp : java.lang.String>
    basicTypeObject     : "object" ID_basic "{" `basicTypeApply` <basicTypeApplyOther>* "}"
-   basicTypeApply      : "implicit" "def" "apply" "(" ID_apply ":" (basicInternalType> ")" "=" 
+   basicTypeApply      : "implicit" "def" "apply" "(" ID_apply ":" <basicInternalType> ")" "=" 
                        :   "new" ID_basic "(" ID_apply ")"
 
 
