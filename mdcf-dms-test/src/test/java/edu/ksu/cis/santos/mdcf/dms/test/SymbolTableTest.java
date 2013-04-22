@@ -16,6 +16,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -47,7 +48,7 @@ public class SymbolTableTest {
   private static SymbolTable ST = SymbolTable.of(ModelExtractor
       .extractModel(new String[] { "edu.ksu.cis.santos.mdcf.dms.example" }));
 
-  private static final String lineSep = "\n";
+  private static final String lineSep = System.lineSeparator();
 
   @Test
   public void allAttributes() throws Exception {
@@ -114,13 +115,14 @@ public class SymbolTableTest {
   }
 
   void assertEquals(final File expected, final File result) throws Exception {
-    final String expectedContent = Files.toString(
+    final List<String> expectedLines = Files.readLines(
         expected,
         StandardCharsets.US_ASCII);
-    final String resultContent = Files.toString(
+    final List<String> resultLines = Files.readLines(
         result,
         StandardCharsets.US_ASCII);
-    assertThat(resultContent).isEqualTo(expectedContent);
+
+    assertThat(resultLines).isEqualTo(expectedLines);
   }
 
   @Test
