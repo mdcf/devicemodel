@@ -17,12 +17,13 @@ Feature and Requirement
    attribute           : `attributeAnnotation`* [ "final" ] "val" ID_attribute ":" `type`
    attributeAnnotation : "override" | "@Data" | "@Settable"
                        : | "@Const" 
-                       :     [ "(" `constLevel` 
-                       :           | "value" "=" `constLevel` "," 
-                       :             "qualifier" "=" <scalaExp : java.lang.String(S)> ")" ]
-                       : | "@Multiplicity" "(" "lo" "=" <scalaExp : scala.Int(N)> "," 
-                       :                       "hi" "=" ( <scalaExp : scala.Int(N)> | "*" ) 
-                       :                       [ "," "clas" "=" "classOf" "[" <typeName> "]" ] ")" 
+                       :      [ "(" `constLevel` 
+                       :        | "value" "=" `constLevel` "," 
+                       :          "qualifier" "=" <scalaExp : java.lang.String(S)> ")" ]
+                       : | "@Multiplicity" "(" 
+                       :      "lo" "=" <scalaExp : scala.Int(N)> 
+                       :      [ "," "hi" "=" ( <scalaExp : scala.Int(N)> | "*" ) ] 
+                       :      [ "," "clas" "=" "classOf" "[" <typeName> "]" ] ")" 
    constLevel          : "SCHEMA" | "CLASS" | "PRODUCT" | "INSTANCE" | "UNSPECIFIED"
    invariantObject     : "object" ID_feature "{" `invariant`* "}"
    invariant           : "@Inv" "val" ID_invariant ":" "Predicate" "[" `predicateType` "]" "="
@@ -95,7 +96,7 @@ dedicate a Scala/Java package for a particular level and annotate the package
 with ``@Schema``, ``@Class``, ``@Product``, or ``@Device`` instead.
 
 Unfortunately, 
-`Scala does not support annotating packages <https://issues.scala-lang.org/browse/SI-3600>`__, 
+`Scala does not support annotation on packages <https://issues.scala-lang.org/browse/SI-3600>`__, 
 thus, this should be done using Java's 
 `package-info.java <http://docs.oracle.com/javase/specs/jls/se7/html/jls-7.html>`__ 
 facility. For example, see the following package infos:
@@ -202,12 +203,42 @@ declared as ``final``.
 Multiplicity
 ^^^^^^^^^^^^
 
+For attribute whose type is a sequence or a set (collection), it may 
+contain zero or more elements. 
+DML (DMS) provide a specialized, lightweight construct useful for 
+constraining the size of sequence/set. For example, see 
+:dmsx:`dms.example.clas.ICEPulseOx.physioParams <clas/Class.scala#L18-20>`.
+Each multiplicity constraint can specify the low and high bounds (inclusive)
+for the number of elements in the sequence/set (as usual, the low bound
+should be equal or less than the high bound); by default, the low bound
+is ``0``, and the high bound is unbounded (``*``). 
+In addition, one can specify the element type that is applicable for the 
+multiplicity constraint. 
+If specified, it means that the low and high bounds are on the 
+number of elements whose type is a sub-type of the specified type. 
+For example, the multiplicity constraint 
+:dmsx:`dms.example.clas.ICEPulseOx.physioParams <clas/Class.scala#L18>`
+specifies that ``dms.example.clas.ICEPulseOx.physioParams`` should at 
+least have one :dmsx:`dms.example.clas.ICEPulseOx <clas/Class.scala#L39>`.
+If the type is unspecified, then by default, it is 
+:javadoc:`Object <java/lang/Object.html>`, which match any element type.
+
+The multiplicity constraint can be expressed using a general invariant
+construct (described below) such as the general invariants for 
+:dmsx:`dms.example.clas.ICEPulseOx<clas/Class.scala#L26-36>`. 
+However, using the annotation eases
+the development of some tool support, for example, a tool that generates 
+UML class diagrams. Thus, multiplicity constraints should be used 
+first whenever possible instead of expressing them as general constraints.
+
 
 Invariant
 =========
 
+
 Representation Classes
 ======================
+
 
 Symbol Table
 ============
