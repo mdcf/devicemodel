@@ -47,7 +47,7 @@ public class SymbolTableTest {
   private static SymbolTable ST = SymbolTable.of(ModelExtractor
       .extractModel(new String[] { "edu.ksu.cis.santos.mdcf.dms.example" }));
 
-  private static final String lineSep = System.lineSeparator();
+  private static final String lineSep = "\n";
 
   @Test
   public void allAttributes() throws Exception {
