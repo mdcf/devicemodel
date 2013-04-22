@@ -109,12 +109,12 @@ class Int(val value : Integer) extends IntegralType {
 }
 
 object Int {
-  private def N = SireumNumber
-
+  implicit def apply(n : Integer) : Int = new Int(n)
   implicit def apply(n : scala.Int) : Int = apply(N(n))
   implicit def apply(n : scala.Long) : Int = apply(N(n))
   implicit def apply(n : java.lang.String) : Int = apply(N(BigInt(n)))
-  implicit def apply(n : Integer) : Int = new Int(n)
+  
+  private val N = SireumNumber
 }
 
 /**
@@ -169,12 +169,12 @@ class Nat(value : Integer) extends Int(value) {
 }
 
 object Nat {
-  private def N = SireumNumber
-
-  final val ZERO = new Nat(SireumNumber(0))
-
+  implicit def apply(n : Integer) : Nat = if (n < 0) ZERO else new Nat(n)
   implicit def apply(n : scala.Int) : Nat = apply(N(n))
   implicit def apply(n : scala.Long) : Nat = apply(N(n))
   implicit def apply(n : java.lang.String) : Nat = apply(N(BigInt(n)))
-  implicit def apply(n : Integer) : Nat = if (n < 0) ZERO else new Nat(n)
+
+  private def N = SireumNumber
+
+  final val ZERO = new Nat(SireumNumber(0))
 }
