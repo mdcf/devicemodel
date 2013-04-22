@@ -25,3 +25,8 @@ Type and Initialization
                        : | "Set" "(" [ `initialization` ( "," `initialization` )* ] ")"
                        : | "new" `featureType` [ "{" `attributeInit` "}" ]
    attributeInit       : [ ( `attributeModifier` | "override" ) ] "val" ID_attribute ":" `type` "=" `initialization`
+
+.. _sec-type-refinement:
+   
+Type Refinement
+***************

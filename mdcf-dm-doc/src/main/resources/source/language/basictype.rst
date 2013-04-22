@@ -229,6 +229,6 @@ The set of basic types in models are well-formed if:
 
 In DMS, the |Extractor| enforces the first rule; more precisely, 
 it only recoqnizes a Scala type as a basic type if it is a descendant of 
-|BasicType|. 
+|BasicType| (and not a descendant of |Feature|). 
 The second rule is enforced by the Scala compiler.
  
