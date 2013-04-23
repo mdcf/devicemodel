@@ -268,22 +268,23 @@ from the feature type to |Boolean| would be accepted, one should use
 the :scala:`Scala anonymous function syntax <133>` variant as
 described in the `invariant grammar <#grammar-token-invariant>`__. 
 
-The body of the function (``<scalaExp : dms.Boolean>``) should only depend 
-on the function argument (i.e., no free variables are allowed), and the 
-exact expression language subset is not specified at this point in time. 
-Currently, we are considering the following subset:
+The body of the function (``<scalaExp : dms.Boolean>``) cannot depend 
+on variables declared outside the function (i.e., no free variables are 
+allowed). The exact expression language subset is not specified at this 
+point in time. Currently, we are considering the following subset:
 
-1. Function application, where the function is a basic type 
+1. Attribute/field navigation, i.e., ``<scalaExp>.ID_attribute``.
+
+2. Assigment of the form ``val ID = <scalaExp>``. 
+   
+3. Function application, where the function is a basic type 
    ``<basicOpMethod>`` or methods from compound types (e.g., set or 
    sequence methods).
    
-2. Assigment of the form ``val ID = exp``, where expression is also in the 
-   expression language subset.
+4. :scala:`Pattern matching <120>`, where the matching is over type, e.g.,
+   ``case x : PulseOx => <scalaExp>``. 
    
-3. :scala:`Pattern matching <120>`, where the matching is over type, e.g.,
-   ``case x : PulseOx => exp``. 
-   
-4. Field navigation, i.e., ``exp.f``.
+5. `Closure <http://www.tutorialspoint.com/scala/scala_closures.htm>`__.
 
 As DML (DMS) are evolved, we will settle on the invariant expression 
 language.
