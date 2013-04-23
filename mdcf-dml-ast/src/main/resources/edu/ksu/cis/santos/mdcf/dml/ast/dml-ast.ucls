@@ -80,7 +80,7 @@
   <class id="9" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Declaration" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/Declaration.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="51" width="102" x="629" y="182"/>    
+    <position height="51" width="102" x="692" y="182"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -99,7 +99,7 @@
   </class>  
   <class id="11" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.AstNode" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/AstNode.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="105" width="122" x="1554" y="37"/>    
+    <position height="105" width="122" x="1515" y="37"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -108,7 +108,7 @@
   </class>  
   <class id="12" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Member" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/Member.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="51" width="95" x="2237" y="182"/>    
+    <position height="51" width="95" x="2300" y="182"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -146,7 +146,7 @@
   </class>  
   <class id="16" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.Model" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/Model.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="140" y="212"/>    
+    <position height="-1" width="-1" x="141" y="219"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -245,7 +245,7 @@
   <enumeration id="26" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.FeatureLevel" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/FeatureLevel.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="159" width="169" x="1146" y="327"/>    
+    <position height="-1" width="-1" x="1325" y="466"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -265,7 +265,7 @@
   <class id="28" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.MultiplicityAnnotation" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/MultiplicityAnnotation.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="105" width="274" x="1923" y="182"/>    
+    <position height="105" width="274" x="1787" y="182"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -275,7 +275,7 @@
   <class id="29" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.DataAnnotation" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/DataAnnotation.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="51" width="132" x="1751" y="182"/>    
+    <position height="51" width="132" x="1343" y="182"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -285,7 +285,7 @@
   <class id="30" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.ConstAnnotation" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/ConstAnnotation.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="69" width="232" x="1083" y="182"/>    
+    <position height="69" width="232" x="1515" y="182"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -295,7 +295,7 @@
   <class id="31" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.FeatureLevelAnnotation" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/FeatureLevelAnnotation.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="69" width="272" x="771" y="182"/>    
+    <position height="69" width="272" x="834" y="182"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -305,7 +305,7 @@
   <interface id="32" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.FeatureAnnotation" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/FeatureAnnotation.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="33" width="153" x="1355" y="327"/>    
+    <position height="-1" width="-1" x="1324" y="343"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -315,7 +315,7 @@
   <class id="33" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.OverrideAnnotation" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/OverrideAnnotation.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="51" width="159" x="1355" y="182"/>    
+    <position height="51" width="159" x="2101" y="182"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -325,7 +325,7 @@
   <class id="34" language="java" name="edu.ksu.cis.santos.mdcf.dml.ast.SettableAnnotation" project="mdcf-dml-ast" 
     file="/mdcf-dml-ast/src/main/java/edu/ksu/cis/santos/mdcf/dml/ast/SettableAnnotation.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="51" width="157" x="1554" y="182"/>    
+    <position height="51" width="157" x="1146" y="182"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" accessors="true" 
       visibility="false">      
       <attributes public="true" package="false" protected="false" private="false"/>      
@@ -343,180 +343,176 @@
     </display>  
   </interface>  
   <generalization id="36">    
-    <end type="SOURCE" refId="34"/>    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <generalization id="37">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <generalization id="38">    
+    <end type="SOURCE" refId="30"/>    
     <end type="TARGET" refId="11"/>  
   </generalization>  
-  <realization id="37">    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="35"/>  
-  </realization>  
-  <realization id="38">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="35"/>  
-  </realization>  
   <generalization id="39">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="23"/>  
-  </generalization>  
-  <realization id="40">    
-    <end type="SOURCE" refId="34"/>    
-    <end type="TARGET" refId="32"/>  
-  </realization>  
-  <realization id="41">    
-    <end type="SOURCE" refId="31"/>    
-    <end type="TARGET" refId="32"/>  
-  </realization>  
-  <generalization id="42">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <generalization id="43">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="23"/>  
-  </generalization>  
-  <generalization id="44">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="23"/>  
-  </generalization>  
-  <generalization id="45">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="23"/>  
-  </generalization>  
-  <generalization id="46">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="9"/>  
-  </generalization>  
-  <generalization id="47">    
     <end type="SOURCE" refId="22"/>    
     <end type="TARGET" refId="9"/>  
   </generalization>  
-  <generalization id="48">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="12"/>  
-  </generalization>  
-  <generalization id="49">    
-    <end type="SOURCE" refId="16"/>    
+  <generalization id="40">    
+    <end type="SOURCE" refId="28"/>    
     <end type="TARGET" refId="11"/>  
   </generalization>  
-  <generalization id="50">    
+  <generalization id="41">    
     <end type="SOURCE" refId="13"/>    
     <end type="TARGET" refId="14"/>  
   </generalization>  
-  <realization id="51">    
-    <end type="SOURCE" refId="33"/>    
-    <end type="TARGET" refId="32"/>  
-  </realization>  
-  <generalization id="52">    
+  <generalization id="42">    
     <end type="SOURCE" refId="24"/>    
     <end type="TARGET" refId="23"/>  
   </generalization>  
-  <generalization id="53">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="14"/>  
-  </generalization>  
-  <generalization id="54">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="12"/>  
-  </generalization>  
-  <generalization id="55">    
-    <end type="SOURCE" refId="33"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <generalization id="56">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="14"/>  
-  </generalization>  
-  <generalization id="57">    
-    <end type="SOURCE" refId="7"/>    
+  <generalization id="43">    
+    <end type="SOURCE" refId="18"/>    
     <end type="TARGET" refId="23"/>  
   </generalization>  
-  <generalization id="58">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <generalization id="59">    
+  <generalization id="44">    
     <end type="SOURCE" refId="15"/>    
     <end type="TARGET" refId="23"/>  
   </generalization>  
-  <generalization id="60">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="14"/>  
-  </generalization>  
-  <generalization id="61">    
-    <end type="SOURCE" refId="29"/>    
+  <generalization id="45">    
+    <end type="SOURCE" refId="23"/>    
     <end type="TARGET" refId="11"/>  
   </generalization>  
-  <association id="62">    
+  <realization id="46">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="35"/>  
+  </realization>  
+  <generalization id="47">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <realization id="48">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="32"/>  
+  </realization>  
+  <generalization id="49">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <generalization id="50">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <generalization id="51">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <generalization id="52">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <association id="53">    
     <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="63" name="level"/>      
-      <multiplicity id="64" minimum="0" maximum="1"/>    
+      <attribute id="54" name="level"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="26" navigable="true"/>    
     <display labels="false" multiplicity="false"/>  
   </association>  
-  <generalization id="65">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="14"/>  
-  </generalization>  
-  <generalization id="66">    
-    <end type="SOURCE" refId="12"/>    
+  <generalization id="56">    
+    <end type="SOURCE" refId="34"/>    
     <end type="TARGET" refId="11"/>  
   </generalization>  
-  <generalization id="67">    
-    <end type="SOURCE" refId="27"/>    
-    <end type="TARGET" refId="14"/>  
-  </generalization>  
-  <generalization id="68">    
+  <generalization id="57">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="9"/>  
   </generalization>  
-  <generalization id="69">    
-    <end type="SOURCE" refId="31"/>    
-    <end type="TARGET" refId="11"/>  
+  <generalization id="58">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="14"/>  
   </generalization>  
-  <generalization id="70">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="23"/>  
-  </generalization>  
-  <realization id="71">    
-    <end type="SOURCE" refId="30"/>    
+  <realization id="59">    
+    <end type="SOURCE" refId="29"/>    
     <end type="TARGET" refId="35"/>  
   </realization>  
-  <realization id="72">    
+  <association id="60">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="61" name="level"/>      
+      <multiplicity id="62" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="false" multiplicity="false"/>  
+  </association>  
+  <realization id="63">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="35"/>  
+  </realization>  
+  <generalization id="64">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <realization id="65">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="32"/>  
+  </realization>  
+  <generalization id="66">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <generalization id="67">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <generalization id="68">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <generalization id="69">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <generalization id="70">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <realization id="71">    
     <end type="SOURCE" refId="34"/>    
     <end type="TARGET" refId="35"/>  
   </realization>  
+  <generalization id="72">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
   <realization id="73">    
     <end type="SOURCE" refId="29"/>    
     <end type="TARGET" refId="32"/>  
   </realization>  
   <generalization id="74">    
-    <end type="SOURCE" refId="28"/>    
+    <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="11"/>  
   </generalization>  
-  <association id="75">    
-    <end type="SOURCE" refId="31" navigable="false">      
-      <attribute id="76" name="level"/>      
-      <multiplicity id="77" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
-    <display labels="false" multiplicity="false"/>  
-  </association>  
-  <realization id="78">    
-    <end type="SOURCE" refId="33"/>    
+  <realization id="75">    
+    <end type="SOURCE" refId="28"/>    
     <end type="TARGET" refId="35"/>  
   </realization>  
-  <generalization id="79">    
-    <end type="SOURCE" refId="17"/>    
+  <generalization id="76">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <generalization id="77">    
+    <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="14"/>  
   </generalization>  
-  <generalization id="80">    
-    <end type="SOURCE" refId="30"/>    
+  <generalization id="78">    
+    <end type="SOURCE" refId="16"/>    
     <end type="TARGET" refId="11"/>  
   </generalization>  
-  <generalization id="81">    
+  <generalization id="79">    
     <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <generalization id="80">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="23"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
     accessors="true" visibility="false">    

@@ -12,7 +12,7 @@ package edu.ksu.cis.santos.mdcf.dml.ast;
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public final class OverrideAnnotation extends AstNode
-    implements FeatureAnnotation, AttributeAnnotation {
+    implements AttributeAnnotation {
 
   public OverrideAnnotation() {
   }
