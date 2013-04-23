@@ -23,7 +23,7 @@ Setting Up Development Environment
 
 4. Download the `DML in Scala (DMS) project set file <https://github.com/mdcf/devicemodel/blob/master/dms.psf>`_.
    If you are a MDCF team member at GitHub with SSH key installed, you can use 
-   the `project set file with write access <https://github.com/mdcf/devicemodel/blob/master/dms.psf>`_ 
+   the `project set file with write access <https://github.com/mdcf/devicemodel/blob/master/dms-write.psf>`_ 
    instead. 
    
    `Import the project set file <http://wiki.eclipse.org/PSF>`_ .
