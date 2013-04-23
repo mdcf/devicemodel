@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java-sireum"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dml-ast"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dml-ast-wellformedness"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dms-core"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dms-example"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/sireum-lib"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/sireum-util"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
