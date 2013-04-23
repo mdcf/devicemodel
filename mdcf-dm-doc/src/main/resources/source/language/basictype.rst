@@ -216,7 +216,6 @@ in the |SymbolTable| that describes the methods):
 * :dmldoc:`superTransitiveMap <symbol/SymbolTable.html#superTransitiveMap()>`
 
 
-
 Well-Formedness
 ***************
    

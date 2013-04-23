@@ -44,6 +44,8 @@
 
 .. |Predicate| replace:: :dms:`dms.Predicate <package.scala#L103>`
 
+.. |pred| replace:: :dms:`dms.pred <package.scala#L105>`
+
 .. |Number| replace:: :dmsx:`dms.example.Number <BasicType.scala#L36>`
 
 .. |IntegralType| replace:: :dmsx:`dms.example.IntegralType <BasicType.scala#L58>`
@@ -75,3 +77,9 @@
 .. |apply| replace:: `apply <http://stackoverflow.com/questions/9737352/what-is-the-apply-function-in-scala>`__
  
 .. |Feature| replace:: :dms:`dms.Feature <package.scala#L65>`
+
+.. |Range| replace:: :dmsx:`dms.example.schema.Range <schema/Schema.scala#L14-28>`
+
+.. |MyReqPulseOx| replace:: :dmsx:`dms.example.requirement.MyReqPulseOx <requirement/App.scala#L15-38>`
+
+.. |range invariant| replace:: :dmsx:`dms.example.schema.Range's invariant <schema/Schema.scala#L23-27>`

@@ -27,28 +27,30 @@ Feature and Requirement
    constLevel          : "SCHEMA" | "CLASS" | "PRODUCT" | "INSTANCE" | "UNSPECIFIED"
    invariantObject     : "object" ID_feature "{" `invariant`* "}"
    invariant           : "@Inv" "val" ID_invariant ":" "Predicate" "[" `predicateType` "]" "="
-                       :   "pred" "{" ID ":" `predicateType` "=>" <scalaExp : Boolean> "}"
+                       :   "pred" "{" ID ":" `predicateType` "=>" <scalaExp : dms.Boolean> "}"
    predicateType       : `featureType`
                        : | "(" `featureType` ( "," `featureType` )+ ")"
    requirement         : "@Req" "object" ID_requirement "{" `invariant`* "}"
 
-Feature declarations are used to introduce compound types consisting of 
+`Feature declarations <#grammar-token-feature>`__
+are used to introduce compound types consisting of 
 a set of named attributes for modeling parts or complete medical device 
-features. Attributes are used to model information that may or must present in 
-devices. Moreover, features can declare invariants over attribute values that 
+features. `Attributes <#grammar-token-attribute>`__
+are used to model information that may or must present in 
+devices. Moreover, features can declare 
+`invariants <#grammar-token-invariant>`__ over attribute values that 
 express information consistency constraints. 
-For example, the :dmsx:`dms.example.schema.Range <schema/Schema.scala#L14-28>` 
-feature is used to model a number range information between ``min``
-and ``max`` (inclusive), and an invariant that states that ``min`` is less than
-or equal to ``max``. (Note that in Scala, backticks can delimit 
+For example, the |Range| feature is used to model a number range 
+information between ``min`` and ``max`` (inclusive), and an invariant that
+states that ``min`` is less than or equal to ``max``. (Note that in Scala, 
+backticks can delimit 
 `unconventional identifiers <http://stackoverflow.com/questions/6576594/need-clarification-on-scala-literal-identifiers-backticks>`__).
 
-Requirement declarations are used to introduce constraints for features that 
+`Requirement declarations <#grammar-token-requirement>`__ 
+are used to introduce constraints for features that 
 depend on other features, which are useful for medical device coordination.
-For example, the 
-:dmsx:`dms.example.requirement.MyReqPulseOx <requirement/App.scala#L15-38>`
-states a requirement for a pulse oximeter that has the specific SpO2 
-and pulse rate ranges.  
+For example, the |MyReqPulseOx| states a requirement for a pulse oximeter 
+that has the specific SpO2 and pulse rate ranges.  
 
 
 Feature
@@ -73,8 +75,9 @@ Annotation
 Level
 -----
 
-DML (DMS) recognize four main levels of features for staging device type 
-refinement and when constant attribute values should be provided:
+DML (DMS) recognize `four main levels of features <#grammar-token-featureLevel>`__
+for staging device type refinement and when constant attribute values 
+should be provided:
 
 * ``Schema`` (``@Schema``). In DMS, schema features are declared using |trait|.
 
@@ -88,12 +91,14 @@ refinement and when constant attribute values should be provided:
 * ``Instance`` (``@Instance``). In DML (DMS), instances are not represented as 
   they belong to a running |MDCF| instance.
   
-At each level, one can add a |String| qualifier that indicates custom sub-levels 
-within the provided four levels.
+At each level, one can add a |String| qualifier 
+(``[ "(" <scalaExp : java.lang.String(S)> ")" ]``)
+that indicates custom sub-levels within the provided four levels.
 
-In addition to specifying feature level at each feature declaration, one can 
-dedicate a Scala/Java package for a particular level and annotate the package 
-with ``@Schema``, ``@Class``, ``@Product``, or ``@Device`` instead.
+In addition to specifying feature level at each feature declaration, one 
+can dedicate a Scala/Java package for a particular level and annotate the 
+package with ``@Schema``, ``@Class``, ``@Product``, or ``@Device`` 
+instead.
 
 Unfortunately, 
 `Scala does not support annotation on packages <https://issues.scala-lang.org/browse/SI-3600>`__, 
@@ -140,7 +145,8 @@ Attribute
 =========
 
 
-As mentioned previously, attributes are used to model information stored in
+As mentioned previously, `attributes <#grammar-token-attribute>`__ 
+are used to model information stored in
 devices. Attribute types can be either basic type, feature, or other compound
 types such as a sequence or a set as described in the 
 :ref:`sec-type-initialization` Section. Moreover, an attribute declaration can 
@@ -152,9 +158,12 @@ Annotation
 
 
 In addition to ``@Data`` and ``@Settable`` similar to feature, attributes can
-be annotated as overriding previously declared attribute (``override``), 
+be `annotated <#grammar-token-featureAnnotation>`__ 
+as overriding previously declared attribute (``override``), 
 constants (``@Const``), or multiplity constraints (``@Multiplicity``) for
-attributes whose type is a set and or a sequence.
+attributes whose type is a set and or a sequence. Note that ``override``
+should be listed last to adhere to Scala's grammar. 
+
 
 
 Override
@@ -173,7 +182,7 @@ There are three reasons why one wants to override an attribute:
 
 1. To :ref:`refine the attribute type <sec-type-refinement>` to be more
    specific; for example, see 
-   :dmsx:`dms.example.schema.IntRange <schema/Schema.scala#L31-32>`.
+   :dmsx:`dms.example.schema.IntRange min and max <schema/Schema.scala#L31-32>`.
 
 2. To assign an initial (or the constant) value; for example, see 
    :dmsx:`dms.example.clas.ICEPulseOx.type <clas/Class.scala#L16>`
@@ -234,6 +243,58 @@ first whenever possible instead of expressing them as general constraints.
 
 Invariant
 =========
+
+`Invariant declarations <#grammar-token-invariant>`__
+are used to state feature consistency constraints.
+Instead of declaring them in the feature |trait| or |class|, invariants 
+are declared in the feature |companion object| 
+(`invariantObject <#grammar-token-invariantObject>`__).
+
+In DMS, each invariant declaration is represented using a |val| that is
+annotated with ``@Inv`` and whose type 
+(`predicateType <#grammar-token-predicateType>`__) is a 
+|Predicate| over the type of the feature (|Predicate| returns |Boolean|, i.e.,
+not to be confused with :scalaapi:`scala.Boolean <scala.Boolean>`). 
+For example,  
+|range invariant| should have the type of a |Predicate| over |Range|, 
+i.e., ``dms.Predicate[dms.example.schema.Range]``.
+
+The invariant |val| should be initialized by calling the |pred| |macro|
+that accepts a 
+:scalaapi:`scala.Function1 <scala.Function1>` (that in turn, accepts  
+a feature type object and returns a |Boolean| object). 
+While any Scala expression returning a function
+from the feature type to |Boolean| would be accepted, one should use
+the :scala:`Scala anonymous function syntax <133>` variant as
+described in the `invariant grammar <#grammar-token-invariant>`__. 
+
+The body of the function (``<scalaExp : dms.Boolean>``) should only depend 
+on the function argument (i.e., no free variables are allowed), and the 
+exact expression language subset is not specified at this point in time. 
+Currently, we are considering the following subset:
+
+1. Function application, where the function is a basic type 
+   ``<basicOpMethod>`` or methods from compound types (e.g., set or 
+   sequence methods).
+   
+2. Assigment of the form ``val ID = exp``, where expression is also in the 
+   expression language subset.
+   
+3. :scala:`Pattern matching <120>`, where the matching is over type, e.g.,
+   ``case x : PulseOx => exp``. 
+   
+4. Field navigation, i.e., ``exp.f``.
+
+As DML (DMS) are evolved, we will settle on the invariant expression 
+language.
+
+.. note:: The |pred| |macro| is used to retrieve the fully-resolved Scala 
+          AST of the invariant function expression that works similarly to 
+          :scalaapi:`scala.reflect.api.Universe <scala.reflect.api.Universe>`'s
+          ``reify``; the difference is that |pred| enforces the 
+          expression's type to be a function type returning |Boolean|. 
+          The fully-resolved Scala AST is then retrieved by the 
+          |Extractor| during model extraction process.
 
 
 Representation Classes
