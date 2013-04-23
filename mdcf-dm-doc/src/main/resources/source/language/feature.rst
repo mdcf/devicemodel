@@ -93,7 +93,8 @@ should be provided:
   
 At each level, one can add a |String| qualifier 
 (``[ "(" <scalaExp : java.lang.String(S)> ")" ]``)
-that indicates custom sub-levels within the provided four levels.
+that indicates custom sub-levels within the provided four levels; by
+default, the qualifier is an empty string (``""``).
 
 In addition to specifying feature level at each feature declaration, one 
 can dedicate a Scala/Java package for a particular level and annotate the 
@@ -301,12 +302,92 @@ language.
 Representation Classes
 ======================
 
+Below is a table that maps grammar productions related to feature and
+its DML AST representation classes:
+
+===========================================================================  ==========================================================================
+Grammar Non-Terminals                                                        DML AST Classes                                                          
+===========================================================================  ==========================================================================
+`feature <#grammar-token-feature>`__                                         :dml:`dml.ast.Feature <ast/Feature.java>`
+
+`featureAnnotation <#grammar-token-featureAnnotation>`__                     :dml:`dml.ast.FeatureAnnotation <ast/FeatureAnnotation.java>`
+            
+                                                                             * :dml:`dml.ast.FeatureLevelAnnotation <ast/FeatureLevelAnnotation.java>`
+                                                                             * :dml:`dml.ast.DataAnnotation <ast/DataAnnotation.java>`
+                                                                             * :dml:`dml.ast.SettableAnnotation <ast/SettableAnnotation.java>`
+
+`featureLevel <#grammar-token-featureLevel>`__                               :dml:`dml.ast.FeatureLevel <ast/FeatureLevel.java>`
+
+`featureType <#grammar-token-featureType>`__                                 :dml:`dml.ast.NamedType <ast/NamedType.java>` (list of)
+
+`attribute <#grammar-token-attribute>`__                                     :dml:`dml.ast.Attribute <ast/Attribute.java>`
+
+`attributeAnnotation <#grammar-token-attributeAnnotation>`__                 :dml:`dml.ast.AttributeAnnotation <ast/AttributeAnnotation.java>`
+            
+                                                                             * :dml:`dml.ast.OverrideAnnotation <ast/OverrideAnnotation.java>`
+                                                                             * :dml:`dml.ast.DataAnnotation <ast/DataAnnotation.java>`
+                                                                             * :dml:`dml.ast.SettableAnnotation <ast/SettableAnnotation.java>`
+                                                                             * :dml:`dml.ast.ConstAnnotation <ast/ConstAnnotation.java>`
+                                                                             * :dml:`dml.ast.MultiplicityAnnotation <ast/MultiplicityAnnotation.java>`
+
+`constLevel <#grammar-token-constLevel>`__                                   :dml:`dml.ast.FeatureLevel <ast/FeatureLevel.java>`
+
+`invariantObject <#grammar-token-invariantObject>`__                         *not represented*; invariants stored directly in 
+                                                                             :dml:`dml.ast.Feature <ast/Feature.java>`
+                                                                             :dmldoc:`members <ast/Feature.html#members>`
+
+`invariant <#grammar-token-invariant>`__                                     :dml:`dml.ast.Invariant <ast/Invariant.java>`
+===========================================================================  ==========================================================================
+
+Currently, :dml:`dml.ast.Invariant <ast/Invariant.java>` 
+:dmldoc:`predicates <ast/Invariant.html#predicate>`
+are not represented using custom DML AST classes 
+(the :dmldoc:`predicate <ast/Invariant.html#predicate>` type is 
+:javadoc:`java.lang.Object <java/lang/Object.html>`);
+the :dmldoc:`predicate <ast/Invariant.html#predicate>` is currently
+represented using 
+:scalaapi:`Scala scala.reflect.api.Trees types <scala.reflect.api.Trees>`.
+As DML (DMS) expression language is evolved, we will introduce custom
+AST classes for representing predicates.
+ 
 
 Symbol Table
 ============
 
-.. _sec-feature-wf:
+There are several methods provided by the symbol table API related to 
+features. Below is the list of relevant methods (please see the documentation
+in the |SymbolTable| that describes the methods):
 
+* :dmldoc:`features <symbol/SymbolTable.html#features()>` 
+
+* :dmldoc:`feature <symbol/SymbolTable.html#feature(java.lang.String)>` 
+
+* :dmldoc:`featureOpt <symbol/SymbolTable.html#featureOpt(java.lang.String)>`
+ 
+* :dmldoc:`all... <symbol/SymbolTable.html#allAttributeMap(java.lang.Iterable)>`
+
+* :dmldoc:`declarationMap <symbol/SymbolTable.html#declarationMap()>`
+
+* :dmldoc:`declarationNames <symbol/SymbolTable.html#declarationNames()>`
+
+* :dmldoc:`declared... <symbol/SymbolTable.html#declaredAttributeMap(java.lang.String)>`
+
+* :dmldoc:`isFeature <symbol/SymbolTable.html#isFeature(java.lang.String)>`
+
+* :dmldoc:`isSubTypeOf <symbol/SymbolTable.html#isSubTypeOf(java.lang.String,%20java.lang.String)>`
+
+* :dmldoc:`isSuperTypeOf <symbol/SymbolTable.html#isSuperTypeOf(java.lang.String,%20java.lang.String)>`
+
+* :dmldoc:`kind <symbol/SymbolTable.html#kind(java.lang.String)>`
+
+* :dmldoc:`kindOpt <symbol/SymbolTable.html#kindOpt(java.lang.String)>`
+
+* :dmldoc:`subTransitiveMap <symbol/SymbolTable.html#subTransitiveMap()>`
+
+* :dmldoc:`superTransitiveMap <symbol/SymbolTable.html#superTransitiveMap()>`
+
+
+.. _sec-feature-wf:
 
 Well-Formedness
 ===============
