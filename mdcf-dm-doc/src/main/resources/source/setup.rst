@@ -4,8 +4,10 @@ Setting Up Development Environment
 1. Download and install Sireum by following the instructions at: 
    http://www.sireum.org/download.
    
-   (Alternatively, you can install `Eclipse <http://www.eclipse.org>`__
-   with `Scala IDE <http://scala-ide.org>`__ and 
+   (Alternatively, you can install
+   `Java 7 SDK <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`__, 
+   and `Eclipse <http://www.eclipse.org>`__
+   with `Scala IDE for Scala 2.10 <http://scala-ide.org>`__ and 
    `EGit <http://www.eclipse.org/egit/>`__ plugins.) 
 
 2. Launch `Sireum Development Environment (DE) <http://www.sireum.org/features>`_ 
