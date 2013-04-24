@@ -321,10 +321,10 @@ Representation Classes
 Below is a table that maps grammar productions related to feature and
 its DML AST representation classes:
 
-===========================================================================  ==========================================================================
+===========================================================================  ===========================================================================================================================
 Grammar Non-Terminals                                                        DML AST Classes                                                          
-===========================================================================  ==========================================================================
-`feature <#grammar-token-feature>`__                                         :dml:`dml.ast.Feature <ast/Feature.java>`
+===========================================================================  ===========================================================================================================================
+`feature <#grammar-token-feature>`__                                         :dml:`dml.ast.Feature <ast/Feature.java>` with :dmldoc:`name <ast/Feature.html#name>` = fully-qualified name of the feature
 
 `featureAnnotation <#grammar-token-featureAnnotation>`__                     :dml:`dml.ast.FeatureAnnotation <ast/FeatureAnnotation.java>`
             
@@ -353,7 +353,7 @@ Grammar Non-Terminals                                                        DML
                                                                              :dmldoc:`members <ast/Feature.html#members>`
 
 `invariant <#grammar-token-invariant>`__                                     :dml:`dml.ast.Invariant <ast/Invariant.java>`
-===========================================================================  ==========================================================================
+===========================================================================  ===========================================================================================================================
 
 Currently, :dml:`dml.ast.Invariant <ast/Invariant.java>` 
 :dmldoc:`predicates <ast/Invariant.html#predicate>`
@@ -424,8 +424,9 @@ Representation Classes
 ======================
 
 Requirements are represented using the 
-:dml:`dml.ast.Requirement <ast/Requirement.java>` AST class and 
-requirement invariant is represented using
+:dml:`dml.ast.Requirement <ast/Requirement.java>` AST class 
+(with :dmldoc:`name <ast/Requirement.html#name>` = fully-qualified
+name of the requirement) and requirement invariant is represented using
 :dml:`dml.ast.Invariant <ast/Invariant.java>` similar to a feature
 invariant.  
 
