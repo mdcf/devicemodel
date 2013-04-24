@@ -8,7 +8,7 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dms.example
 
-import edu.ksu.cis.santos.mdcf.dms.BasicType
+import edu.ksu.cis.santos.mdcf.dms._
 
 import language.implicitConversions
 
