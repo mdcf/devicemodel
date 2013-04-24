@@ -4,5 +4,6 @@
 # * pygments-style-github: https://pypi.python.org/pypi/pygments-style-github
 export PATH=$PATH:/opt/local/bin:/usr/texbin
 cd src/main/resources
+touch source/index.rst
 make html
 cd ../../..
