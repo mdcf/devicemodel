@@ -63,8 +63,10 @@ Similar to basic types, feature sub-type hierarchy forms a lattice with
 |Feature| at the top. By allowing multiple feature inheritance 
 (`featureType <#grammar-token-featureType>`__), one can mix-in
 different features to put together larger device parts or complete device 
-features. As stated in the :ref:`Well-Formedness <sec-feature-wf>` Section below, 
-we avoid the dreaded `diamond problem <http://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem>`__
+features. As stated in the 
+:ref:`Well-Formedness <sec-feature-requirement-wf>` Section below, 
+we avoid the dreaded 
+`diamond problem <http://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem>`__
 associated with multiple inheritance over feature attributes by disallowing it 
 completely instead of allowing mitigations or workarounds.
 
@@ -152,6 +154,12 @@ devices. Attribute types can be either basic type, feature, or other compound
 types such as a sequence or a set as described in the 
 :ref:`sec-type-initialization` Section. Moreover, an attribute declaration can 
 be accompanied with an initial attribute value. 
+
+Attributes are inherited from super-types to their sub-types. 
+A sub-type can :ref:`refine <sec-type-refinement>` the attribute type 
+inherited from its super-type. However, no two or more attributes with the 
+same name whose declaring features are different can be inherited 
+(attribute refinements are considered as declarations).
 
 
 Annotation
@@ -241,6 +249,7 @@ the development of some tool support, for example, a tool that generates
 UML class diagrams. Thus, multiplicity constraints should be used 
 first whenever possible instead of expressing them as general constraints.
 
+.. _sec-feature-invariant:
 
 Invariant
 =========
@@ -250,6 +259,13 @@ are used to state feature consistency constraints.
 Instead of declaring them in the feature |trait| or |class|, invariants 
 are declared in the feature |companion object| 
 (`invariantObject <#grammar-token-invariantObject>`__).
+
+Invariants are inherited from super types to their sub-types. However,
+they are not allowed to be overriden. That is, a sub-type cannot
+declare an invariant with the same name as with any of its super types'
+invariants. The *effective* invariant of a feature is a conjunction of all
+the invariants declared by the feature and all invariants inherited from
+its super types.
 
 In DMS, each invariant declaration is represented using a |val| that is
 annotated with ``@Inv`` and whose type 
@@ -387,25 +403,59 @@ in the |SymbolTable| that describes the methods):
 * :dmldoc:`superTransitiveMap <symbol/SymbolTable.html#superTransitiveMap()>`
 
 
-.. _sec-feature-wf:
-
-Well-Formedness
-===============
-
 Requirement
 ***********
 
-Invariant
-=========
+`Requirements <#grammar-token-requirement>`__ are used to express 
+dependency constraints for medical device coordinations. That is, if a 
+device requires some features from other devices with some specific 
+properties, the device can advertise the properties as requirements.
+ 
+A `requirement <#grammar-token-requirement>`__ consists of invariants that 
+state the required feature properties. The form of a requirement invariant 
+is similar to :ref:`feature`s invariant <sec-feature-invariant>`, except
+that a requirement invariant predicate function is allowed to work over
+a tuple of feature types 
+(`predicateType <#grammar-token-predicateType>`__: 
+``"(" `featureType` ( "," `featureType` )+ ")"``).
+
 
 Representation Classes
 ======================
+
+Requirements are represented using the 
+:dml:`dml.ast.Requirement <ast/Requirement.java>` AST class and 
+requirement invariant is represented using
+:dml:`dml.ast.Invariant <ast/Invariant.java>` similar to a feature
+invariant.  
 
 
 Symbol Table
 ============
 
+There are several methods provided by the symbol table API related to 
+requirements. Below is the list of relevant methods (please see the 
+documentation in the |SymbolTable| that describes the methods):
+
+* :dmldoc:`requirements <symbol/SymbolTable.html#requirements()>` 
+
+* :dmldoc:`requirement <symbol/SymbolTable.html#requirement(java.lang.String)>` 
+
+* :dmldoc:`requirementOpt <symbol/SymbolTable.html#requirementOpt(java.lang.String)>`
+ 
+* :dmldoc:`declarationMap <symbol/SymbolTable.html#declarationMap()>`
+
+* :dmldoc:`declarationNames <symbol/SymbolTable.html#declarationNames()>`
+
+* :dmldoc:`isRequirement <symbol/SymbolTable.html#isRequirement(java.lang.String)>`
+
+* :dmldoc:`kind <symbol/SymbolTable.html#kind(java.lang.String)>`
+
+* :dmldoc:`kindOpt <symbol/SymbolTable.html#kindOpt(java.lang.String)>`
+
+
+.. _sec-feature-requirement-wf:
 
 Well-Formedness
-===============
+***************
 
