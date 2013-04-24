@@ -11,7 +11,7 @@ Welcome to |MDCF| DML's documentation
 :author:       `Robby <http://people.cis.ksu.edu/~robby>`_
 :contact:      robby@k-state.edu
 :organization: `SAnToS Laboratory <http://santoslab.org>`_, `Kansas State University <http://k-state.edu>`_
-:last updated: |today|
+:last updated: |today| (`changes <https://github.com/mdcf/mdcf.github.io/commits/master>`__)
 
 .. admonition:: Acknowledgement
    
