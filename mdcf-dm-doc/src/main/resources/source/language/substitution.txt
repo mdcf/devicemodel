@@ -12,6 +12,8 @@
 
 .. |Ast| replace:: :dmldoc:`dml.ast.Ast <ast/Ast.html>`
 
+.. |AstWeak| replace:: :dmldoc:`dml.ast.Ast.Weak <ast/Ast.Weak.html>`
+
 .. |IVisitor| replace:: :dml:`dml.ast.IVisitor <ast/IVisitor.java>`
 
 .. |AVisitor| replace:: :dml:`dml.ast.AbstractVisitor <ast/AbstractVisitor.java>`

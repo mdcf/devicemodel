@@ -14,19 +14,20 @@ Model
    declaration         : `basicType` | `feature` | `requirement`
 
 A model may be specified in multiple Scala source files. 
-For each file, a model starts with a `package <#grammar-token-package>`_ 
-declaration, followed by `import <#grammar-token-import>`_ declarations and 
+For each file, a model source starts with a 
+`package <#grammar-token-package>`__ declaration, followed by 
+`import <#grammar-token-import>`__ declarations and 
 declarations of :ref:`basic types <sec-basictype>`, 
-:ref:`features, and requirements <sec-feature-requirement>`. 
+:ref:`features, or requirements <sec-feature-requirement>`. 
 That is, it is assumed that models are
 specified in a package other than the Scala or Java "default" package.
-The grammar recommends importing all elements (specified using ``_`` instead of 
-``*``  like in Java) defined in the :dms:`dms <>` 
+The grammar recommends importing all elements (specified using ``_`` 
+instead of ``*``  like in Java) defined in the :dms:`dms <>` 
 |ScalaPackage| and :dms:`dms.package <package.scala>` 
 |PackageObject|, 
-which defines DML primordial types, |implicit| conversions,
-and a |macro|, which will be described in the appropriate subsequent sections 
-below.
+which defines DMS primordial types, |implicit| conversions,
+and a |macro|, which will be described in the appropriate subsequent 
+sections below.
  
 In addition, it recommends importing :ref:`basic types <sec-basictype>` 
 or :ref:`features <sec-feature-requirement>` defined in 
@@ -80,8 +81,6 @@ prints out the model and the model's declarations. The |Ast|
 methods are helper methods that when given either a variable or an 
 :javadoc:`Iterable <java/lang/Iterable.html>` number of objects, they create an 
 (immutable) list containing the provided objects. 
-
-.. |AstWeak| replace:: |Ast| :dmldoc:`.Weak <ast/Ast.Weak.html>`
 
 Notice that at :dmdocj:`line 8 <ExModel.java#L8>`, we need to use
 ``Ast.<Declaration> list()`` instead of just ``list()``. That is because

@@ -8,7 +8,7 @@ import static edu.ksu.cis.santos.mdcf.dms.ModelExtractor.extractModel;
 public class ExModelXml {
   @Test
   public void de_serialization() {
-    Model m = model(list()); // create a model with empty declarations
+    Model m = model(list()); //             create a model with empty declarations
     String mXml = toXml(m);
     System.out.println(mXml); //            output: <model>
     //                                                <declarations class="ilist"></declarations>
