@@ -51,7 +51,7 @@ Setting Up Development Environment
 
 6. If you plan to commit code to the repository, import the following in the 
    respective Eclipse preference pages 
-   (the files should already in your workspace after following Step 5):
+   (the files should already in your workspace after following Step 4):
  
    * In `Java -> Code Style -> Clean Up preference page <http://help.eclipse.org/juno/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fpreferences%2Fjava%2Fcodestyle%2Fref-preferences-cleanup.htm>`_:
      `sireum-util/codestyle/java-clean-up.xml <https://www.assembla.com/code/sireum-core/git-3/nodes/master/sireum-util/codestyle/java-clean-up.xml>`_
