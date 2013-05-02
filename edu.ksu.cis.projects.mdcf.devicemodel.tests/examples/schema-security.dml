@@ -103,12 +103,6 @@ feature ICECredentials {
   inv ((rootCertificate == null) || (rootCertificate.type == "ROOT" && rootCertificate.issuer == "FDA"))
 }
 
-feature ICEManufacturerCredentials extends ICECredentials {
-  const instance manufacturerCred   : ICECertificate
-
-  inv (manufacturerCred.type == "MANUFACTURER" && manufacturerCred.issuer == "FDA")
-}
-
 feature ICECertifierCredentials extends ICECredentials { //3rd party certifier
   const instance certifierCred   : ICECertificate
 
@@ -121,54 +115,54 @@ feature ICEAllianceCredentials extends ICECredentials { //This is a strawman exa
   inv (allianceCred.type == "ICEALLIANCE" && certifierCred.issuer == "ICEALLIANCE")
 }
 
+feature ICEManufacturerCredentials extends ICECredentials {
+  const instance manufacturerCred   : ICECertificate
+
+  inv (manufacturerCred.type == "MANUFACTURER" && manufacturerCred.issuer == "FDA")
+}
+
 feature ICEDeviceModelCredentials extends ICECredentials {
   const instance deviceModelCertFDA          : ICECertificate //Device model certificate signed by FDA
   const instance deviceModelCertManufacturer : ICECertificate //Device model certificate signed by manufacturer
-  const manufacturerCert                     : Option[ICEManufacturerCredentials]
-
+  const manufacturerCert                     : Either[UUID, ICEManufacturerCredentials]
+  
   //FIXME: Certifier should be an option (instead of FDA), but invariants become 
   //too complex to get into right now
   inv (deviceModelCertFDA.type == "DEVICEMODEL" && deviceModelCertFDA.issuer == "FDA")
   inv (deviceModelCertManufacturer.type == "MANUFACTURER" && deviceModelCertManufacturer.issuer == "FDA")
-  inv ((manufacturerCert == null) || (deviceModelCertManufacturer.name == manufacturerCert.name))
+  inv (deviceModelCertManufacturer.name == manufacturerCert.name) //FIXME: can't handle reference (UUID)
 }
 
 feature ICEAppModelCredentials extends ICECredentials {
   const instance appModelCertFDA          : ICECertificate //App model certificate signed by FDA
   const instance appModelCertManufacturer : ICECertificate //App model certificate signed by manufacturer
-  const manufacturerCert                  : Option[ICEManufacturerCredentials]
+  const manufacturerCert                  : Either[UUID, ICEManufacturerCredentials]
 
   //FIXME: Certifier should be an option (instead of FDA), but invariants become 
   //too complex to get into right now
   inv (appModelCertFDA.type == "APPMODEL" && appModelCertFDA.issuer == "FDA")
   inv (deviceModelCertManufacturer.type == "MANUFACTURER" && deviceModelCertManufacturer.issuer == "FDA")
-  inv ((manufacturerCert == null) || (appModelCertManufacturer.name == manufacturerCert.name))
+  inv (appModelCertManufacturer.name == manufacturerCert.name) //FIXME: can't handle reference (UUID)
 }
 
 feature ICEDeviceCredentials extends ICECredentials {
   const instance deviceInstanceCert : ICECertificate //Device physical instance certificate signed by manufacturer
-  const instance manufacturerCert   : Option[ICEManufacturerCertificate] //Manufacturer's certification
-  const instance modelCertRef       : UUID //Don't have to include full certificate, can reference
-  const instance deviceModelCert    : Option[ICEDeviceModelCredentials]
+  const instance manufacturerCert   : Either[UUID, ICEManufacturerCertificate] //Manufacturer's certification
+  const instance deviceModelCert    : Either[UUID, ICEDeviceModelCredentials]
 
-  inv (modelCert.model == deviceInstanceCert.model)
-  inv ((manufacturerCert == null) || (manufacturerCert.manufacturer == deviceInstanceCert.manufacturer == deviceInstanceCert.issuer))
-  inv ((deviceModelCert == null) || (deviceModelCert.type == "DEVICEMODEL" && (deviceInstanceCert.manufacturer))) //same manufacturer
-  //FIXME: handle option where neither manufacturerCert nor deviceModelCert are null
-  //TODO: Handle reference (invariants) rather than full certificate
+  inv (deviceModelCert.model == deviceInstanceCert.model) //FIXME: can't handle reference (UUID)
+  inv (manufacturerCert.manufacturer == deviceInstanceCert.manufacturer == deviceInstanceCert.issuer) //FIXME: can't handle reference (UUID)
+  inv (deviceModelCert.type == "DEVICEMODEL" && (deviceInstanceCert.manufacturer)) //same manufacturer //FIXME: can't handle reference (UUID)
 }
 
 feature ICEAppCredentials extends ICECredentials {
   const instance appInstanceCert    : ICECertificate //App instance certificate signed by manufacturer
-  const instance manufacturerCert   : Option[ICEManufacturerCertificate] //Manufacturer's certification
-  const instance modelCertRef       : UUID //Don't have to include full certificate, can reference
-  const instance appModelCert       : Option[ICEAppModelCredentials]
+  const instance manufacturerCert   : Either[UUID, ICEManufacturerCertificate] //Manufacturer's certification
+  const instance appModelCert       : Either[UUID, ICEAppModelCredentials]
 
-  inv (modelCert.model == appInstanceCert.model)
-  inv ((manufacturerCert == null) || (manufacturerCert.manufacturer == appInstanceCert.manufacturer == appInstanceCert.issuer))
-  inv ((appModelCert == null) || (appModelCert.type == "APPMODEL" && (appInstanceCert.manufacturer))) //same manufacturer
-  //FIXME: handle option where neither manufacturerCert nor appModelCert are null
-  //TODO: Handle reference (invariants) rather than full certificate
+  inv (deviceModelCert.model == deviceInstanceCert.model) //FIXME: can't handle reference (UUID)
+  inv (manufacturerCert.manufacturer == appInstanceCert.manufacturer == appInstanceCert.issuer) //FIXME: can't handle reference (UUID)
+  inv (appModelCert.type == "APPMODEL" && (appInstanceCert.manufacturer)) //same manufacturer //FIXME: can't handle reference (UUID)
 }
 
 
