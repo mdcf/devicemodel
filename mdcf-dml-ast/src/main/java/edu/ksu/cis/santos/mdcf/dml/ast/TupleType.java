@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
-public final class TupleType extends Type {
+public final class TupleType extends Type implements PredicateType {
   public final List<Type> elementTypes;
 
   public TupleType(final Iterable<Type> elementTypes) {

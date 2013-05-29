@@ -29,12 +29,15 @@ public final class Invariant extends Member {
     return Invariant.xstream;
   }
 
+  public final PredicateType predicateType;
   public final Object predicate;
 
   transient SoftReference<String> predicateString;
 
-  public Invariant(final String name, final Object predicate) {
+  public Invariant(final String name, final PredicateType predicateType,
+      final Object predicate) {
     super(name);
+    this.predicateType = predicateType;
     this.predicate = predicate instanceof String ? xs().fromXML(
         StringEscapeUtils.unescapeJava((String) predicate)) : predicate;
   }

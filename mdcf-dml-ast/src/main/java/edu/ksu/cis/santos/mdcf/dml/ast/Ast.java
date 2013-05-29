@@ -94,8 +94,9 @@ public class Ast {
       return Ast.featureLevelAnnotation(level, qualifier);
     }
 
-    public static Invariant invariant(final String name, final Object predicate) {
-      return Ast.invariant(name, predicate);
+    public static Invariant invariant(final String name,
+        final PredicateType predicateType, final Object predicate) {
+      return Ast.invariant(name, predicateType, predicate);
     }
 
     @SuppressWarnings("unchecked")
@@ -269,8 +270,9 @@ public class Ast {
     return new FeatureLevelAnnotation(level, qualifier);
   }
 
-  public static Invariant invariant(final String name, final Object predicate) {
-    return new Invariant(name, predicate);
+  public static Invariant invariant(final String name,
+      final PredicateType predicateType, final Object predicate) {
+    return new Invariant(name, predicateType, predicate);
   }
 
   public static <T> List<T> list(final Iterable<T> ts) {

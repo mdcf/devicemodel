@@ -11,7 +11,7 @@ package edu.ksu.cis.santos.mdcf.dml.ast;
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
-public final class NamedType extends Type {
+public final class NamedType extends Type implements PredicateType {
   private static final String DMS_PACKAGE = "edu.ksu.cis.santos.mdcf.dms.package$";
 
   public final String name;

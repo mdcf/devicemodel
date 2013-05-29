@@ -70,6 +70,7 @@
           <init class="none"></init>
         </attribute>
         <invariant name="At least one Blood Pressure param">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure"/>
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure_-_-treecreator3_-1/>
@@ -170,6 +171,7 @@
           <init class="none"></init>
         </attribute>
         <invariant name="At least one SpO2 param">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor"/>
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor_-_-treecreator4_-1/>
@@ -183,6 +185,7 @@
           </predicate>
         </invariant>
         <invariant name="At least one Pulse Rate param">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor"/>
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor_-_-treecreator5_-1/>
@@ -196,6 +199,7 @@
           </predicate>
         </invariant>
         <invariant name="At least one Blood Pressure param">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor"/>
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor_-_-treecreator6_-1/>
@@ -249,6 +253,7 @@
           <init class="none"></init>
         </attribute>
         <invariant name="At least one SpO2 param">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx_-_-treecreator1_-1/>
@@ -262,6 +267,7 @@
           </predicate>
         </invariant>
         <invariant name="At least one Pulse Rate param">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx_-_-treecreator2_-1/>
@@ -1571,6 +1577,7 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.example.requirement.MyReqPulseOx">
       <invariants class="ilist">
         <invariant name="(SpO2&apos;s min &lt; 40 and SpO2&apos;s max == 100)">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.requirement.MyReqPulseOx_-_-treecreator1_-1/>
@@ -1584,6 +1591,7 @@
           </predicate>
         </invariant>
         <invariant name="PulseRate&apos;s min &lt;= 30 and PulseRate&apos;s max &gt;= 200">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.requirement.MyReqPulseOx_-_-treecreator2_-1/>
@@ -1614,6 +1622,7 @@
           <init class="none"></init>
         </attribute>
         <invariant name="level is in 1..100">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.BatteryLevelStatus"/>
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.schema.BatteryLevelStatus_-_-treecreator3_-1/>
@@ -2187,6 +2196,7 @@
           <init class="none"></init>
         </attribute>
         <invariant name="min is less than or equal to max">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.Range"/>
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.schema.Range_-_-treecreator1_-1/>
@@ -2226,6 +2236,7 @@
           <init class="none"></init>
         </attribute>
         <invariant name="min is less than or equal to max">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.RangeSetting"/>
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
             <pred.SerializedExpr>
               <edu.ksu.cis.santos.mdcf.dms.example.schema.RangeSetting_-_-treecreator2_-1/>

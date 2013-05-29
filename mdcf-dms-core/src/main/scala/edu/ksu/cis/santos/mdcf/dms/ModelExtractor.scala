@@ -355,8 +355,15 @@ object ModelExtractor {
             context.reporter.warning(
               s"Not permitted invariant type $valueClass for $aQName")
             None
-          } else
-            Some(invariant(aName, value))
+          } else {
+            val NullaryMethodType(TypeRef(_, _, l)) = symbol.typeSignature
+            val predicateType =
+              (if (l.size == 1) first2(extractType(aQName, l(0), None))
+              else tupleType(l.map { t =>
+                first2(extractType(aQName, t, None))
+              })).asInstanceOf[PredicateType]
+            Some(invariant(aName, predicateType, value))
+          }
         case _ =>
           context.reporter.error(s"Ill-formed model: $aQName")
           None
