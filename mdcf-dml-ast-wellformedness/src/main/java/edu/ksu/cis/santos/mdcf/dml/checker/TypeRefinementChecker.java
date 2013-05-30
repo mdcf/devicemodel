@@ -33,7 +33,7 @@ public class TypeRefinementChecker {
 	private ArrayList<String> basicTypeList;
 	private HashMap<String, ArrayList<String>> inheritanceRelations;
 	private HashMap<String, ArrayList<String>> completeInheritanceRelations;
-	
+
 	public TypeRefinementChecker(Model m) {
 		this.m = m;
 		this.ST = SymbolTable.of(this.m);
@@ -77,8 +77,9 @@ public class TypeRefinementChecker {
 
 		System.out.println("Complete Inheritance Relation List: "
 				+ this.completeInheritanceRelations);
-		
-		System.err.println(this.ST.superTransitiveMap().get("edu.ksu.cis.santos.mdcf.dms.example.Int"));
+
+		System.err.println(this.ST.superTransitiveMap().get(
+				"edu.ksu.cis.santos.mdcf.dms.example.Int"));
 	}
 
 	private void buildInheritanceHierarchy(String original, String current,
@@ -149,7 +150,6 @@ public class TypeRefinementChecker {
 		return true;
 	}
 
-
 	public boolean checkTypeRefinementRulesOnAllFeatures() {
 		boolean result = true;
 		System.out.println("Start of checkTypeRefinementRulesOnAllFeatures");
@@ -195,9 +195,10 @@ public class TypeRefinementChecker {
 								+ superAttrInfo.getLeft().name + ")");
 
 						result = checkTypeRefinement(pair.getRight().type,
-									superAttrInfo.getRight().type);
-						
-						if(!result) break; //No need to proceed when violation found
+								superAttrInfo.getRight().type);
+
+						if (!result)
+							break; // No need to proceed when violation found
 					}
 				}
 			}
@@ -205,7 +206,7 @@ public class TypeRefinementChecker {
 		System.out.println("End of checkTypeRefinementRulesOnAllFeatures");
 		return result;
 	}
-	
+
 	private boolean checkTypeRefinement(Type type, Type type_super) {
 
 		// Rule 1
@@ -218,7 +219,8 @@ public class TypeRefinementChecker {
 
 		if (type instanceof EitherType) {
 			if (!(type_super instanceof EitherType)) {
-				System.err.println("Type Mismatch 1:" + type + ":" + type_super);
+				System.err
+						.println("Type Mismatch 1:" + type + ":" + type_super);
 				return false;
 			}
 			return checkTypeRefinement(((EitherType) type).choiceTypes.get(0),
@@ -248,7 +250,8 @@ public class TypeRefinementChecker {
 					return true;
 				}
 
-				System.err.println("Type Mismatch 2:" + type + ":" + type_super);
+				System.err
+						.println("Type Mismatch 2:" + type + ":" + type_super);
 				return false;
 			}
 
@@ -266,7 +269,8 @@ public class TypeRefinementChecker {
 			}
 		} else if (type instanceof OptionType) {
 			if (!(type_super instanceof OptionType)) {
-				System.err.println("Type Mismatch 4:" + type + ":" + type_super);
+				System.err
+						.println("Type Mismatch 4:" + type + ":" + type_super);
 				return false;
 			}
 
@@ -275,7 +279,8 @@ public class TypeRefinementChecker {
 
 		} else if (type instanceof RefinedType) {
 			if (!(type_super instanceof RefinedType)) {
-				System.err.println("Type Mismatch 5:" + type + ":" + type_super);
+				System.err
+						.println("Type Mismatch 5:" + type + ":" + type_super);
 				return false;
 			}
 
@@ -296,7 +301,8 @@ public class TypeRefinementChecker {
 			}
 		} else if (type instanceof SeqType) {
 			if (!(type_super instanceof SeqType)) {
-				System.err.println("Type Mismatch 7:" + type + ":" + type_super);
+				System.err
+						.println("Type Mismatch 7:" + type + ":" + type_super);
 				return false;
 			}
 
@@ -305,7 +311,8 @@ public class TypeRefinementChecker {
 
 		} else if (type instanceof SetType) {
 			if (!(type_super instanceof SetType)) {
-				System.err.println("Type Mismatch 8:" + type + ":" + type_super);
+				System.err
+						.println("Type Mismatch 8:" + type + ":" + type_super);
 				return false;
 			}
 
@@ -314,7 +321,8 @@ public class TypeRefinementChecker {
 
 		} else if (type instanceof TupleType) {
 			if (!(type_super instanceof TupleType)) {
-				System.err.println("Type Mismatch 9:" + type + ":" + type_super);
+				System.err
+						.println("Type Mismatch 9:" + type + ":" + type_super);
 				return false;
 			}
 
@@ -332,8 +340,8 @@ public class TypeRefinementChecker {
 					Type t_super = tupleType_super.elementTypes.get(index);
 					result = result & checkTypeRefinement(t, t_super);
 					if (!result) {
-						System.err
-								.println("Type Mismatch 10:" + t + ":" + t_super);
+						System.err.println("Type Mismatch 10:" + t + ":"
+								+ t_super);
 						break;
 					}
 				}
@@ -355,9 +363,8 @@ public class TypeRefinementChecker {
 
 		return sl;
 	}
-	
-	
-	private boolean isSubTypeOf(String type, String type_super){
+
+	private boolean isSubTypeOf(String type, String type_super) {
 		System.err.println("type:" + type + ":" + type_super);
 		return completeInheritanceRelations.get(type).contains(type_super);
 	}
