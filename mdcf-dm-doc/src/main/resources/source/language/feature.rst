@@ -8,7 +8,7 @@ Feature and Requirement
 .. productionlist:: DMS
    feature             : `featureAnnotation`* ( "trait" | "final" "class" ) ID_feature 
                        :   "extends" ( "Feature" | `featureType` )
-                       : "{" ( `attribute` [ `initialization` ] )* "}"
+                       : "{" ( `attribute` [ "=" `initialization` ] )* "}"
                        : [ `invariantObject` ] 
    featureAnnotation   : `featureLevel` [ "(" <scalaExp : java.lang.String(S)> ")" ] 
                        : | "@Data" | "@Settable"

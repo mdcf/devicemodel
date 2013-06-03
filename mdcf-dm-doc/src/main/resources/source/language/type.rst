@@ -39,7 +39,7 @@ tuple type (:scalaapi:`scala.Tuple2`, :scalaapi:`scala.Tuple3`, ...,
 The :scalaapi:`scala.util.Either` type only supports a choice between
 two types. In the future, DMS will provide choice types for more than two
 types; however, for type safety guarantee, similar tricks to Scala tuple
-types need to provided (e.g., ``Either3``, ``Either4``, ...) and
+types need to be provided (e.g., ``Either3``, ``Either4``, ...) and
 handled by the |Extractor|. 
 
 The :scalaapi:`scala.Any` type can only be used as a placeholder for
