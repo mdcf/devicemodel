@@ -365,11 +365,11 @@
           <annotations class="ilist">
             <override/>
           </annotations>
-          <type class="namedType" name="ICEManufacturerModel"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEManufacturerModel"/>
           <init class="some">
             <reference class="featureInit">
               <types class="ilist">
-                <namedType name="ICEManufacturerModel"/>
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEManufacturerModel"/>
               </types>
               <attributes class="ilist">
                 <attribute name="modelNumber">
@@ -919,11 +919,11 @@
           <annotations class="ilist">
             <override/>
           </annotations>
-          <type class="namedType" name="ICEManufacturerModel"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEManufacturerModel"/>
           <init class="some">
             <reference class="featureInit">
               <types class="ilist">
-                <namedType name="ICEManufacturerModel"/>
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEManufacturerModel"/>
               </types>
               <attributes class="ilist">
                 <attribute name="modelNumber">
@@ -1316,11 +1316,11 @@
           <annotations class="ilist">
             <override/>
           </annotations>
-          <type class="namedType" name="ICEManufacturerModel"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEManufacturerModel"/>
           <init class="some">
             <reference class="featureInit">
               <types class="ilist">
-                <namedType name="ICEManufacturerModel"/>
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEManufacturerModel"/>
               </types>
               <attributes class="ilist">
                 <attribute name="modelNumber">

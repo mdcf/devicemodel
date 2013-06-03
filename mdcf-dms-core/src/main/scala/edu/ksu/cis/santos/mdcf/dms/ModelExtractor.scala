@@ -619,7 +619,8 @@ object ModelExtractor {
         case TypeRef(_, sym, _) =>
           val name = sym.name.decoded
           if (name == "AnyRef") None
-          else Some(namedType(name))
+          else Some(namedType(
+            Reflection.getClassOfType(sym.asType.typeSignature).getName))
         case t =>
           context.reporter.error(
             s"Unexpected type $t for $aQName initialization.")
