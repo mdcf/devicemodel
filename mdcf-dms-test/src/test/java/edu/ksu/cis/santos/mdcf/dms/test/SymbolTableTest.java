@@ -273,7 +273,7 @@ public class SymbolTableTest {
       sb.append("* ");
       sb.append(shorten(name));
       sb.append(": ");
-      for (final String superName : m.get(name)) {
+      for (final String superName : ImmutableSortedSet.copyOf(m.get(name))) {
         sb.append(shorten(superName));
         sb.append(", ");
       }

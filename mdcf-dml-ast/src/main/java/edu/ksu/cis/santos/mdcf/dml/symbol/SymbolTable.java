@@ -29,6 +29,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
 import com.google.common.cache.CacheBuilder;
+import com.google.common.collect.HashMultimap;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMultimap;
@@ -876,8 +877,8 @@ public final class SymbolTable {
   }
 
   /**
-   * Retrieves a {@link Multimap} that relates a sub type's fully-qualified name
-   * (either of {@link BasicType#name} or {@link Feature#name}) to its super
+   * Retrieves a {@link Multimap} that relates a super type's fully-qualified
+   * name (either of {@link BasicType#name} or {@link Feature#name}) to its sub
    * type's fully-qualified name (either of {@link BasicType#name} or
    * {@link Feature#name}).
    * 
@@ -893,33 +894,33 @@ public final class SymbolTable {
   }
 
   private void superTransitive(final Set<String> seen,
-      final ImmutableMultimap.Builder<String, String> superm,
-      final ImmutableMultimap.Builder<String, String> subm,
-      final BasicType basicType) {
+      final HashMultimap<String, String> superm, final BasicType basicType) {
     final String basicTypeName = basicType.name;
     if (!seen.contains(basicTypeName)) {
       seen.add(basicTypeName);
       for (final NamedType nt : basicType.supers) {
         final String superName = nt.name;
-        superTransitive(seen, superm, subm, basicType(nt.name));
+        superTransitive(seen, superm, basicType(superName));
+        for (String ancestor : superm.get(superName)) {
+          superm.put(basicTypeName, ancestor);
+        }
         superm.put(basicTypeName, superName);
-        subm.put(superName, basicTypeName);
       }
     }
   }
 
   private void superTransitive(final Set<String> seen,
-      final ImmutableMultimap.Builder<String, String> superm,
-      final ImmutableMultimap.Builder<String, String> subm,
-      final Feature feature) {
+      final HashMultimap<String, String> superm, final Feature feature) {
     final String featureName = feature.name;
     if (!seen.contains(featureName)) {
       seen.add(featureName);
       for (final NamedType nt : feature.supers) {
         final String superName = nt.name;
-        superTransitive(seen, superm, subm, feature(nt.name));
+        superTransitive(seen, superm, feature(superName));
+        for (String ancestor : superm.get(superName)) {
+          superm.put(featureName, ancestor);
+        }
         superm.put(featureName, superName);
-        subm.put(superName, featureName);
       }
     }
   }
@@ -935,19 +936,28 @@ public final class SymbolTable {
   public Multimap<String, String> superTransitiveMap() {
     Multimap<String, String> result = null;
     if ((this._superMap == null) || ((result = this._superMap.get()) == null)) {
+      final HashSet<String> seen = new HashSet<>();
+
+      HashMultimap<String, String> m = HashMultimap.create();
+      for (final BasicType bt : basicTypes()) {
+        superTransitive(seen, m, bt);
+      }
+
+      for (final Feature f : features()) {
+        superTransitive(seen, m, f);
+      }
+
       final ImmutableMultimap.Builder<String, String> superb = ImmutableMultimap
           .builder();
       final ImmutableMultimap.Builder<String, String> subb = ImmutableMultimap
           .builder();
 
-      final HashSet<String> seen = new HashSet<>();
-
-      for (final BasicType bt : basicTypes()) {
-        superTransitive(seen, superb, subb, bt);
-      }
-
-      for (final Feature f : features()) {
-        superTransitive(seen, superb, subb, f);
+      for (String sub : m.keySet()) {
+        Set<String> sups = m.get(sub);
+        for (String sup : sups) {
+          superb.put(sub, sup);
+          subb.put(sup, sub);
+        }
       }
 
       result = superb.build();
