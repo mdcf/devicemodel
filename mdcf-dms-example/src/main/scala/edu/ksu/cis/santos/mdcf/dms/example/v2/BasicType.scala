@@ -67,19 +67,15 @@ object IEEE11073_TYPE { implicit def apply(s : java.lang.String) = new IEEE11073
 // Enums
 final class ICE_VMD_State(val value : ICE_VMD_State.Value) extends BasicType
 object ICE_VMD_State extends Enumeration {
-  type Type = Value
   val Ok, NotOk = Value
   implicit def apply(s : ICE_VMD_State.Value) = new ICE_VMD_State(s) 
 }
 
 final class MeasurementStatus(val value : MeasurementStatus.Value) extends BasicType
 object MeasurementStatus extends Enumeration {
-  type Type = Value
   val Ok, NotOk = Value
   implicit def apply(s : MeasurementStatus.Value) = new MeasurementStatus(s) 
 }
-
-
 
 /**
  * Represents number values.
