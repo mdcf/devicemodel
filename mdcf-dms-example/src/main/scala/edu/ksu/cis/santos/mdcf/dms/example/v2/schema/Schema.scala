@@ -236,8 +236,8 @@ trait ICE_MDS extends ICE_VMS {
   // NOTE: TODO: We may want to bypass the indirection through VMD, and simply reference a set
   // of channels (feature groups) here.
   @Const(PRODUCT)
+  @Multiplicity(lo = 1, hi = *)
   val vmds : Set[ICE_VMD]
-  // TODO: Need to add cardinality constraint requiring at least one.
 }
 
 // === I C E   V M D  (Virtual Medical Device) ===
