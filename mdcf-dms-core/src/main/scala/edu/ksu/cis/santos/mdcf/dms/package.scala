@@ -36,6 +36,7 @@ package object dms {
 
   final val * = -1
 
+  type Map[K, V] = scala.collection.immutable.Map[K, V]
   type Set[T] = scala.collection.immutable.Set[T]
   type Seq[T] = scala.collection.immutable.Seq[T]
 

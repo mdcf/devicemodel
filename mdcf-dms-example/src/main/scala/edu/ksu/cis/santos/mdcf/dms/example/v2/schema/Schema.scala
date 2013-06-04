@@ -54,23 +54,23 @@ trait FloatRange extends Range {
 // 11073 -- 7.1.2.13 Absolute time data type  (p. 41)
 @Data
 trait IEEE11073_AbsoluteTime extends Feature {
-  val century :        IEEE11073_INT_U8 
-  val year :           IEEE11073_INT_U8 
-  val month :          IEEE11073_INT_U8 
-  val day :            IEEE11073_INT_U8 
-  val mon :            IEEE11073_INT_U8 
-  val minute :         IEEE11073_INT_U8 
-  val second :         IEEE11073_INT_U8 
-  val sec_franctions : IEEE11073_INT_U8 
+  val century : IEEE11073_INT_U8
+  val year : IEEE11073_INT_U8
+  val month : IEEE11073_INT_U8
+  val day : IEEE11073_INT_U8
+  val mon : IEEE11073_INT_U8
+  val minute : IEEE11073_INT_U8
+  val second : IEEE11073_INT_U8
+  val sec_franctions : IEEE11073_INT_U8
 }
 
 // 11073 -- 7.1.2.14 Date data type  (p. 41)
 @Data
 trait IEEE11073_Date extends Feature {
-  val century :        IEEE11073_INT_U8 
-  val year :           IEEE11073_INT_U8 
-  val month :          IEEE11073_INT_U8 
-  val day :            IEEE11073_INT_U8 
+  val century : IEEE11073_INT_U8
+  val year : IEEE11073_INT_U8
+  val month : IEEE11073_INT_U8
+  val day : IEEE11073_INT_U8
 }
 
 //=======================================================================================================
@@ -104,7 +104,6 @@ trait ICE_Security_Certificate extends Feature {}
 //=======================================================================================================
 //
 
-
 trait ICE_Data_Exchange extends Feature {
 }
 
@@ -132,7 +131,7 @@ trait ICE_ClientInitiated_Exchange extends ICE_Data_Exchange
 // a value at a certain rate.
 trait ICE_Periodic_Exchange extends ICE_ProviderInitiated_Exchange {
   @Const(PRODUCT)
-  val access: Option[ICE_Security_Access_Read]
+  val access : Option[ICE_Security_Access_Read]
   @Const(PRODUCT)
   val rateRange : NatRange
 }
@@ -141,7 +140,7 @@ trait ICE_Periodic_Exchange extends ICE_ProviderInitiated_Exchange {
 // a value episodically (i.e., intermittently)
 trait ICE_Episodic_Exchange extends ICE_ProviderInitiated_Exchange {
   @Const(PRODUCT)
-  val access: Option[ICE_Security_Access_Read]
+  val access : Option[ICE_Security_Access_Read]
   @Const(PRODUCT)
   val maxPublishRate : Nat
 }
@@ -150,25 +149,22 @@ trait ICE_Episodic_Exchange extends ICE_ProviderInitiated_Exchange {
 // a value episodically (i.e., intermittently)
 trait ICE_Get_Exchange extends ICE_ClientInitiated_Exchange {
   @Const(PRODUCT)
-  val access: Option[ICE_Security_Access_Read]
-  @Const(PRODUCT)
-  // need some way to formally declare units on these types of values.
+  val access : Option[ICE_Security_Access_Read]
+  @Const(PRODUCT) // need some way to formally declare units on these types of values.
   val maxReadsPerSecond : Nat
 }
 
 trait ICE_Set_Exchange extends ICE_ClientInitiated_Exchange {
   @Const(PRODUCT)
-  val access: Option[ICE_Security_Access_Write]
-  @Const(PRODUCT)
-  // need some way to formally declare units on these types of values.
+  val access : Option[ICE_Security_Access_Write]
+  @Const(PRODUCT) // need some way to formally declare units on these types of values.
   val maxWritesPerSecond : Nat
 }
 
 trait ICE_Action_Exchange extends ICE_ClientInitiated_Exchange {
   @Const(PRODUCT)
-  val access: Option[ICE_Security_Access_Action]
-  @Const(PRODUCT)
-  // need some way to formally declare units on these types of values.
+  val access : Option[ICE_Security_Access_Action]
+  @Const(PRODUCT) // need some way to formally declare units on these types of values.
   val maxCallsPerSecond : Nat
 }
 
@@ -182,7 +178,7 @@ trait ICE_VMS extends Feature {
   // Listed as "Conditional" in 11073.  Only required if inheriting class is top level (and that is our intention
   // here.)
   @Const(CLASS)
-   val IEEE11073_MDC_ATTR_SYS_TYPE : IEEE11073_TYPE
+  val IEEE11073_MDC_ATTR_SYS_TYPE : IEEE11073_TYPE
   // 11073 VMS includes attribute "System-Model" (MDC_ATTR_ID_MODEL) 
   // It is missing needed attributes related to the credentialing of the manufacturer,
   // product, etc.   We propose that such attributes be aggregated into a feature ICE_ManufacturerModel.
@@ -190,12 +186,12 @@ trait ICE_VMS extends Feature {
   // Listed as "Conditional" in 11073 with the explanation "Only required if inheriting class is top level"
   // -- and that is our intention here.
   @Const(PRODUCT)
-   val manufacturerModel : ICE_ManufacturerModel
-   
-   // 11073 defines the following string attribute to uniquely identifier a device instance.   The 11073
-   // type is "string", but this should be changed to some notion of UDI
-   @Const(INSTANCE)
-   val IEEE11073_MDC_ATTR_SYS_ID : ICE_UDI
+  val manufacturerModel : ICE_ManufacturerModel
+
+  // 11073 defines the following string attribute to uniquely identifier a device instance.   The 11073
+  // type is "string", but this should be changed to some notion of UDI
+  @Const(INSTANCE)
+  val IEEE11073_MDC_ATTR_SYS_ID : ICE_UDI
 }
 
 // === I C E   M a n u f a c t u r e r    I n f o r m a t i o n ===
@@ -207,15 +203,14 @@ trait ICE_ManufacturerModel extends Feature {
   @Const(PRODUCT)
   val MDC_ATTR_ID_MODEL : IEEE11073_SystemModel
   // not sure what the constancy attribute should be here: product or instance.
-  val credentials : Set[ICE_Security_Certificate] // TODO: Need to work with Eugene to fill this in
+  val credentials : Map[String, ICE_Security_Certificate] // TODO: Need to work with Eugene to fill this in
 }
 
 @Data
 trait IEEE11073_SystemModel extends Feature {
-   val manufacturer  : String  // IEEE 11073 has this as OCTET STRING
-   val model_number  : String  // IEEE 11073 has this as OCTET STRING
+  val manufacturer : String // IEEE 11073 has this as OCTET STRING
+  val model_number : String // IEEE 11073 has this as OCTET STRING
 }
-
 
 // === I C E   M D S  (Medical Data System) ===
 //
@@ -237,7 +232,7 @@ trait ICE_MDS extends ICE_VMS {
   // of channels (feature groups) here.
   @Const(PRODUCT)
   @Multiplicity(lo = 1, hi = *)
-  val vmds : Set[ICE_VMD]
+  val vmds : Map[String, ICE_VMD]
 }
 
 // === I C E   V M D  (Virtual Medical Device) ===
@@ -268,7 +263,7 @@ trait ICE_VMD extends Feature {
   @Const(CLASS)
   val MDC_ATTR_ID_PARAM_GRP : IEEE11073_OID_TYPE
   @Const(PRODUCT)
-  val channels : Set[ICE_Channel]
+  val channels : Map[String, ICE_Channel]
 }
 
 trait ICE_VMD_Status extends ICE_Status {
@@ -307,13 +302,13 @@ trait ICE_VMD_Status extends ICE_Status {
 // being accessed.
 
 trait ICE_Channel extends Feature {
- @Const(CLASS)
- val MDC_ATTR_ID_PARAM_GRP : IEEE11073_OID_TYPE
- val alerts   : Set[ICE_Alert]
- val metrics  : Set[ICE_Metric]
- val settings : Set[ICE_Setting] 
- val statuses : Set[ICE_Status] 
- val actions  : Set[ICE_Action] 
+  @Const(CLASS)
+  val MDC_ATTR_ID_PARAM_GRP : IEEE11073_OID_TYPE
+  val alerts : Map[String, ICE_Alert]
+  val metrics : Map[String, ICE_Metric]
+  val settings : Map[String, ICE_Setting]
+  val statuses : Map[String, ICE_Status]
+  val actions : Map[String, ICE_Action]
 }
 
 trait ICE_Feature extends Feature {}
@@ -343,16 +338,14 @@ trait ICE_Action extends ICE_Feature {}
 //
 //  TODO: complete the definition
 
-trait ICE_Metric_Status extends ICE_Status {} 
+trait ICE_Metric_Status extends ICE_Status {}
 
 // ICE Metric Specification
 //
 // 11073 defines a Metric Specification Structure and associated definitions
 // 
 
-
 // === I C E   M e t r i c  ===
-
 
 trait ICE_Metric extends Feature {
   // include the 11073 MDC_ATTR_ID_PHYSIO attribute from the 11073 Metric class
@@ -373,18 +366,17 @@ trait ICE_Metric extends Feature {
   //   determined by specially marked payload declaration.   The fully qualified names for the
   //   operations should be determined by the path through the feature tree.
   @Const(PRODUCT)
-  val exchanges : Set[ICE_Data_Exchange]
+  val exchanges : Map[String, ICE_Data_Exchange]
 
   // NOTE: There are many more attributes in the 11073 Metric class, but the rest do not 
   // seem crucial nor interesting when experimenting with device model concepts.
-  
+
   // Alerts specific to this physiological parameter.  It is unclear if we need this attribute
   // here or if we should simply use the alert attribute in the feature.
   // TODO: consider refactoring (removing, and just relying on alerts in channel / feature group)
   @Const(PRODUCT)
-  val alerts : Set[ICE_Alert]
+  val alerts : Map[String, ICE_Alert]
 }
-
 
 // === I C E   N u m e r i c ===
 
@@ -408,7 +400,6 @@ trait ICE_Numeric extends ICE_Metric {
   // accuracy / precision.
 }
 
-
 //  The ``report'' for the Numeric (the observed value), includes
 //  information such as unit and metric ID that are already known
 //  statically.  So these attributes should be omitted.   On the other
@@ -416,7 +407,7 @@ trait ICE_Numeric extends ICE_Metric {
 //  status/quality information (which should be included).  While such attributes in 11073
 //  can be accessed as a "static group" using the get service, we believe that it would be
 //  better to aggregate these attributes directly with the observed value.
-  
+
 // This collection of data values provides information that should be included every time a message
 // is constructed that will be communicated between device and app.
 //
@@ -435,11 +426,10 @@ trait ICE_NuObsValueContext extends Feature {
   val measurementTaken : ICETimeStamp
 }
 
-
 // Define possible status values for sensor readings represented by ICE Numerics.
 @Data
 trait ICE_NuObsValueStatusAttributes extends Feature {
-  val status    : MeasurementStatus // enum, TODO: extensibility
+  val status : MeasurementStatus // enum, TODO: extensibility
 }
 
 // Defines the representation of the physiological parameter.   This should be a polymorphic
@@ -457,10 +447,9 @@ trait ICE_NuObsValueSimpleFloat extends ICE_NuObsValue {
   val value : Float
 }
 
-
 // trait SampleArray extends ICEMetric {
 //  val values : Seq[Number]
-//  val attributes : Set[MetricAttribute]
+//  val attributes : Map[String, MetricAttribute]
 // }
 //
 // trait RealTimeSA extends SampleArray {
@@ -469,14 +458,12 @@ trait ICE_NuObsValueSimpleFloat extends ICE_NuObsValue {
 //
 // trait TimeSA extends SampleArray {
 //  val values : Seq[Number]
-//  val attributes : Set[MetricAttribute]
+//  val attributes : Map[String, MetricAttribute]
 // }
 // 
 // trait DistributionSA extends SampleArray {
 //   implementation to be completed 
 // }
-
-
 
 //=======================================================================================================
 //  I C E   S e t t i n g
@@ -537,8 +524,8 @@ trait ICE_SettingSetPayload {
 // Define payload contents (without time stamp and other context)
 @Data
 trait ICE_RangeSettingPayloadContent {
-  val min : Number  
-  val max : Number  
+  val min : Number
+  val max : Number
 }
 
 @Data
@@ -547,50 +534,47 @@ trait ICE_FloatRangeSettingPayloadContent extends ICE_RangeSettingPayloadContent
   val max : Float
 }
 
- @Data 
- trait ICE_RangeSettingGetPayload extends ICE_SettingGetPayload {
-   override val payload : ICE_RangeSettingPayloadContent  // why doesn't an Eclipse "override" marker show up here?
- }
- 
- @Data 
- trait ICE_RangeSettingSetPayload extends ICE_SettingSetPayload {
-   override val payload : ICE_RangeSettingPayloadContent  // why doesn't an Eclipse "override" marker show up here?
- }
+@Data
+trait ICE_RangeSettingGetPayload extends ICE_SettingGetPayload {
+  override val payload : ICE_RangeSettingPayloadContent // why doesn't an Eclipse "override" marker show up here?
+}
 
- @Data 
- trait ICE_FloatRangeSettingGetPayload extends ICE_RangeSettingGetPayload {
-   override val payload : ICE_FloatRangeSettingPayloadContent
- }
- 
- @Data 
- trait ICE_FloatRangeSettingSetPayload extends ICE_RangeSettingSetPayload {
-   override val payload : ICE_FloatRangeSettingPayloadContent
- }
- 
+@Data
+trait ICE_RangeSettingSetPayload extends ICE_SettingSetPayload {
+  override val payload : ICE_RangeSettingPayloadContent // why doesn't an Eclipse "override" marker show up here?
+}
+
+@Data
+trait ICE_FloatRangeSettingGetPayload extends ICE_RangeSettingGetPayload {
+  override val payload : ICE_FloatRangeSettingPayloadContent
+}
+
+@Data
+trait ICE_FloatRangeSettingSetPayload extends ICE_RangeSettingSetPayload {
+  override val payload : ICE_FloatRangeSettingPayloadContent
+}
+
 // Form a range setting by instantiating the type of the payload contents.
 // Parameterization would allow us to instantiate the content type which is nested down in the payload type.
 // Parameterization would allow us to instantiate with on type (RangeSettingPayloadContent) instead of having
 // to refine Any in multiple places. 
 trait ICE_RangeSetting extends ICE_Setting {
-  @Const(PRODUCT)  
+  @Const(PRODUCT)
   override val get_payload : ICE_RangeSettingGetPayload // why doesn't an Eclipse "override" marker show up here?
-  @Const(PRODUCT)  
+  @Const(PRODUCT)
   override val set_payload : Option[ICE_RangeSettingSetPayload] // why doesn't an Eclipse "override" marker show up here?
 }
 
 trait ICE_FloatRangeSetting extends ICE_RangeSetting {
   @Const(PRODUCT)
-  override val get_payload : ICE_FloatRangeSettingGetPayload      // here we should override the payload of type Any       
+  override val get_payload : ICE_FloatRangeSettingGetPayload // here we should override the payload of type Any       
   @Const(PRODUCT)
   override val set_payload : Option[ICE_FloatRangeSettingSetPayload]
 }
- 
 
 //
 // TODO: Robby how do I refactor this to partially instantiate the Range Setting payload
 //
-
-
 
 // object RangeSetting {
 //  @Inv
@@ -621,9 +605,9 @@ trait ICE_FloatRangeSetting extends ICE_RangeSetting {
 
 trait ICE_Alert extends ICE_Feature {
   @Const(PRODUCT)
-  val access: Option[ICE_Security_Access_Read]
+  val access : Option[ICE_Security_Access_Read]
   @Const(PRODUCT)
-  val exchange : ICE_Episodic_Exchange 
+  val exchange : ICE_Episodic_Exchange
 }
 
 trait ICE_FloatRangeValueAlert extends ICE_Alert with ICE_FloatRangeSetting
@@ -635,7 +619,6 @@ trait ICE_FloatRangeValueAlert extends ICE_Alert with ICE_FloatRangeSetting
 // trait ComplexAlert extends ICE_Alert {
 // val cond : Boolean
 // }
-
 
 //=======================================================================================================
 //  I C E   D e v i c e    S t a t u s   /   S t a t e
@@ -653,7 +636,7 @@ trait ICE_FloatRangeValueAlert extends ICE_Alert with ICE_FloatRangeSetting
 
 trait ICE_Status extends ICE_Feature {
   @Const(PRODUCT)
-  val access: Option[ICE_Security_Access_Read]
+  val access : Option[ICE_Security_Access_Read]
   @Const(PRODUCT)
   val exchange : ICE_Get_Exchange
 }
