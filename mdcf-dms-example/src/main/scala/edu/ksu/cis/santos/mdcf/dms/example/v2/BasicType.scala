@@ -30,6 +30,57 @@ object ICETimeStamp { implicit def apply(s : java.lang.String) = new ICETimeStam
 final class String(val value : java.lang.String) extends BasicType
 object String { implicit def apply(s : java.lang.String) = new String(s) }
 
+//=======================================================================================================
+//  B a s i c    D a t a    T y p e s 
+//
+//  Elements analogous to those declared in 11073 PHD Section 7.1.2 would be declared as data components
+//  and compiled (in a fairly direct manner) to IDL definitions.
+//
+//  Some examples from 11073 Section 7.1.2 are given below.
+//=======================================================================================================
+
+final class ICE_UDI(val value : java.lang.String) extends BasicType
+object ICE_UDI { implicit def apply(s : java.lang.String) = new ICE_UDI(s) }
+
+// 11073 -- 7.1.2.1 -- Some basic data declarations.  For now, omit the specifics of the definition.
+//                     In fact, we might adopt a framework in which specifics are given externally
+
+final class IEEE11073_INT_U8(val value : scala.Int) extends BasicType
+object IEEE11073_INT_U8 { implicit def apply(n : scala.Int) = new IEEE11073_INT_U8(n) }
+
+final class IEEE11073_INT_32(val value : scala.Int) extends BasicType
+object IEEE11073_INT_32 { implicit def apply(n : scala.Int) = new IEEE11073_INT_32(n) }
+
+final class IEEE11073_FLOAT_TYPE(val value : scala.Double) extends BasicType
+object IEEE11073_FLOAT_TYPE { implicit def apply(n : scala.Double) = new IEEE11073_FLOAT_TYPE(n) }
+
+// 11073 -- 7.1.2.2 -- OID type -- representation for nomenclature tags.
+//                     Need to fill in specific representation
+// TODO: Should we just use a new type to specifically indicate a nomenclature value??
+
+final class IEEE11073_OID_TYPE(val value : java.lang.String) extends BasicType
+object IEEE11073_OID_TYPE { implicit def apply(s : java.lang.String) = new IEEE11073_OID_TYPE(s) }
+
+final class IEEE11073_TYPE(val value : java.lang.String) extends BasicType
+object IEEE11073_TYPE { implicit def apply(s : java.lang.String) = new IEEE11073_TYPE(s) }
+
+// Enums
+final class ICE_VMD_State(val value : ICE_VMD_State.Value) extends BasicType
+object ICE_VMD_State extends Enumeration {
+  type Type = Value
+  val Ok, NotOk = Value
+  implicit def apply(s : ICE_VMD_State.Value) = new ICE_VMD_State(s) 
+}
+
+final class MeasurementStatus(val value : MeasurementStatus.Value) extends BasicType
+object MeasurementStatus extends Enumeration {
+  type Type = Value
+  val Ok, NotOk = Value
+  implicit def apply(s : MeasurementStatus.Value) = new MeasurementStatus(s) 
+}
+
+
+
 /**
  * Represents number values.
  */

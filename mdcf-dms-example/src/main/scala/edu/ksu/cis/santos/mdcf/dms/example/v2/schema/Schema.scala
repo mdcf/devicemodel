@@ -42,8 +42,6 @@ trait FloatRange extends Range {
   override val max : Float
 }
 
-
-
 //=======================================================================================================
 //  B a s i c    D a t a    T y p e s 
 //
@@ -52,30 +50,6 @@ trait FloatRange extends Range {
 //
 //  Some examples from 11073 Section 7.1.2 are given below.
 //=======================================================================================================
-
-@Data
-trait ICE_UDI extends BasicType {} // TODO: this needs to refer to a specific a data representation
-
-// 11073 -- 7.1.2.1 -- Some basic data declarations.  For now, omit the specifics of the definition.
-//                     In fact, we might adopt a framework in which specifics are given externally
-
-@Data
-trait IEEE11073_INT_U8 extends Feature {} // TODO: this needs to refer to a specific a data representation
-
-@Data
-trait IEEE11073_INT_32 extends Feature {} // TODO: this needs to refer to a specific a data representation
-
-@Data
-trait IEEE11073_FLOAT_TYPE extends Feature {} // TODO: this needs to refer to a specific a data representation
-
-// 11073 -- 7.1.2.2 -- OID type -- representation for nomenclature tags.
-//                     Need to fill in specific representation
-// TODO: Should we just use a new type to specifically indicate a nomenclature value??
-@Data
-trait IEEE11073_OID_TYPE extends Feature {} // TODO: this needs to refer to a specific a data representation
-
-@Data
-trait IEEE11073_TYPE extends Feature {}  // TODO: this needs to refer to a specific a data representation
 
 // 11073 -- 7.1.2.13 Absolute time data type  (p. 41)
 @Data
@@ -297,9 +271,9 @@ trait ICE_VMD extends Feature {
   val channels : Set[ICE_Channel]
 }
 
-// TODO: fill in with enumerations for app operational state, and set up for customization to 
-// particular devices
-trait ICE_VMD_Status extends ICE_Status {}
+trait ICE_VMD_Status extends ICE_Status {
+  val state : ICE_VMD_State // enum
+}
 
 // === I C E   C h a n n e l  ===
 //
@@ -463,11 +437,9 @@ trait ICE_NuObsValueContext extends Feature {
 
 
 // Define possible status values for sensor readings represented by ICE Numerics.
-// TODO: Need the ability to define an enumeration here, that can possibly be extended
-// we new values.
 @Data
 trait ICE_NuObsValueStatusAttributes extends Feature {
-  // val status    : MeasurementStatus // wanted to express an enum but not sure how to do it
+  val status    : MeasurementStatus // enum, TODO: extensibility
 }
 
 // Defines the representation of the physiological parameter.   This should be a polymorphic
