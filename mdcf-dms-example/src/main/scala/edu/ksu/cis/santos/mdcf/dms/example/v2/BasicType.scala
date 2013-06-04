@@ -71,10 +71,15 @@ object ICE_VMD_State extends Enumeration {
   implicit def apply(s : ICE_VMD_State.Value) = new ICE_VMD_State(s) 
 }
 
-final class MeasurementStatus(val value : MeasurementStatus.Value) extends BasicType
-object MeasurementStatus extends Enumeration {
+final class MeasurementStatus(val value : MeasurementStatusValue) extends BasicType
+object MeasurementStatus {
+  implicit def apply(s : MeasurementStatusValue) = new MeasurementStatus(s) 
+}
+
+// Extensible enums
+abstract class MeasurementStatusValue extends Enumeration
+object MeasurementStatusValue extends MeasurementStatusValue {
   val Ok, NotOk = Value
-  implicit def apply(s : MeasurementStatus.Value) = new MeasurementStatus(s) 
 }
 
 /**
