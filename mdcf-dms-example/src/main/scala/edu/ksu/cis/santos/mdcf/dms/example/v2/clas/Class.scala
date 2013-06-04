@@ -13,95 +13,79 @@ import edu.ksu.cis.santos.mdcf.dms.example.v2._
 import edu.ksu.cis.santos.mdcf.dms.example.v2.schema._
 
 trait ICE_PulseOx_VMD extends ICE_VMD {
-//  final override val `type` : IEEEDeviceType = "IEEE ... Pulse Ox"
+  @Const(CLASS)
+  override val MDC_ATTR_ID_PARAM_GRP : IEEE11073_OID_TYPE = "IEEE ... Pulse Ox"
 
   // declare a SpO2 channel
-    
   // declare an PulseRate channel
-    
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_SpO2_Channel])
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_PulseRate_Channel])
+  override val channels : Map[String, ICE_Channel]
 }
 
 trait ICE_SpO2_Channel extends ICE_Channel {
-  
   // indicate at least one Sp02 Numeric
-  
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_SpO2_Numeric])
+  override val metrics : Map[String, ICE_Metric]
 }
 
 trait ICE_PulseRate_Channel extends ICE_Channel {
-  
   // indicate at least one PulseRate Numeric
-  
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_PulseRate_Numeric])
+  override val metrics : Map[String, ICE_Metric]
 }
 
 trait ICE_SpO2_Numeric extends ICE_Numeric {
-  
+  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "MDC_PULS_OXIM_SAT_O2"
+  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "MDC_DIM_PERCENT"
 }
 
 trait ICE_PulseRate_Numeric extends ICE_Numeric {
-  
+  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "MDC_PULS_OXIM_PULS_RATE"
+  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "MDC_DIM_BEAT_PER_MIN"
 }
 
+trait ICE_BloodPressure_VMD extends ICE_VMD {
+  @Const(CLASS)
+  override val MDC_ATTR_ID_PARAM_GRP : IEEE11073_OID_TYPE = "IEEE ... Blood Pressure"
 
-// trait ICE_SpO2 extends ICEPhysioParameter {
-//  final override val physioParameterType : IEEEPhysioParameterType = "MDC_PULS_OXIM_SAT_O2"
-//  final override val unit : IEEEUnit = "MDC_DIM_PERCENT"
-// }
+  // declare a BloodPressure channel
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_BloodPressure_Channel])
+  override val channels : Map[String, ICE_Channel]
+}
 
-// trait ICEPulseRate extends ICEPhysioParameter {
-//  final override val physioParameterType : IEEEPhysioParameterType = "MDC_PULS_OXIM_PULS_RATE"
-//  final override val unit : IEEEUnit = "MDC_DIM_BEAT_PER_MIN"
-// }
+trait ICE_BloodPressure_Channel extends ICE_Channel {
+  // indicate at least one Systolic, Diastolic, and Mean Numeric
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_BloodPressure_Systolic_Numeric])
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_BloodPressure_Diastolic_Numeric])
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_BloodPressure_Mean_Numeric])
+  override val metrics : Map[String, ICE_Metric]
+}
 
-//trait ICEBloodPressure extends ICEDevice {
-//  final override val `type` : IEEEDeviceType = "IEEE ... Blood Pressure"
-//
-//  @Multiplicity(lo = 1, hi = *, clas = classOf[ICEBloodPressure])
-//  override val physioParams : Set[ICEPhysioParameter]
-//}
-//
-//object ICEBloodPressure {
-//  @Inv
-//  val `At least one Blood Pressure param` : Predicate[ICEBloodPressure] =
-//    pred { bp : ICEBloodPressure =>
-//      bp.physioParams.exists(_.isInstanceOf[ICEPulseRate])
-//    }
-//}
-//
-//trait ICEBloodPressureParam extends ICEPhysioParameter {
-//  final val systolic : IEEEPhysioParameterType = "MDC_PRESS_BLD_NONINV_SYS"
-//  final val diastolic : IEEEPhysioParameterType = "MDC_PRESS_BLD_NONINV_DIA"
-//
-//  final val physioParameterType : IEEEPhysioParameterType = "MDC_PRESS_BLD_NONINV_MEAN"
-//  // mean is used here, but we need composite of ICEPhysioParameter
-//
-//  final override val unit : IEEEUnit = "MDC_DIM_MMHG"
-//}
-//
-//trait ICEMultiMonitor extends ICEDevice {
-//  final override val `type` : IEEEDeviceType = "IEEE ... MultiMonitor"
-//
-//  @Multiplicity(lo = 1, hi = *, clas = classOf[ICESpO2])
-//  @Multiplicity(lo = 1, hi = *, clas = classOf[ICEPulseOx])
-//  @Multiplicity(lo = 1, hi = *, clas = classOf[ICEBloodPressure])
-//  override val physioParams : Set[ICEPhysioParameter]
-//}
-//
-//object ICEMultiMonitor {
-//  @Inv
-//  val `At least one SpO2 param` : Predicate[ICEMultiMonitor] =
-//    pred { mm : ICEMultiMonitor =>
-//      mm.physioParams.exists(_.isInstanceOf[ICESpO2])
-//    }
-//
-//  @Inv
-//  val `At least one Pulse Rate param` : Predicate[ICEMultiMonitor] =
-//    pred { mm : ICEMultiMonitor =>
-//      mm.physioParams.exists(_.isInstanceOf[ICEPulseRate])
-//    }
-//
-//  @Inv
-//  val `At least one Blood Pressure param` : Predicate[ICEMultiMonitor] =
-//    pred { mm : ICEMultiMonitor =>
-//      mm.physioParams.exists(_.isInstanceOf[ICEBloodPressure])
-//    }
-//}
+trait ICE_BloodPressure_Systolic_Numeric extends ICE_Numeric {
+  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "MDC_PRESS_BLD_NONINV_SYS"
+  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "MDC_DIM_MMHG"
+}
+
+trait ICE_BloodPressure_Diastolic_Numeric extends ICE_Numeric {
+  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "MDC_PRESS_BLD_NONINV_DIA"
+  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "MDC_DIM_MMHG"
+}
+
+trait ICE_BloodPressure_Mean_Numeric extends ICE_Numeric {
+  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "MDC_PRESS_BLD_NONINV_MEAN"
+  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "MDC_DIM_MMHG"
+}
+
+trait ICE_MultiMonitor_VMD extends ICE_VMD {
+  @Const(CLASS)
+  override val MDC_ATTR_ID_PARAM_GRP : IEEE11073_OID_TYPE = "IEEE ... MultiMonitor"
+
+  // declare a SpO2 channel
+  // declare an PulseRate channel
+  // declare a BloodPressure channel
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_SpO2_Channel])
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_PulseRate_Channel])
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_BloodPressure_Channel])
+  override val channels : Map[String, ICE_Channel]
+}
