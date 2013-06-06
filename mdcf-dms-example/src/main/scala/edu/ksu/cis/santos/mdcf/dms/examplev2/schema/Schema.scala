@@ -523,15 +523,15 @@ trait ICE_SettingSetPayload {
 
 // Define payload contents (without time stamp and other context)
 @Data
-trait ICE_RangeSettingPayloadContent {
-  val min : Number
-  val max : Number
+trait ICE_RangeSettingPayloadContent extends Range {
+  override val min : Number
+  override val max : Number
 }
 
 @Data
 trait ICE_FloatRangeSettingPayloadContent extends ICE_RangeSettingPayloadContent {
-  val min : Float
-  val max : Float
+  override val min : Float
+  override val max : Float
 }
 
 @Data
