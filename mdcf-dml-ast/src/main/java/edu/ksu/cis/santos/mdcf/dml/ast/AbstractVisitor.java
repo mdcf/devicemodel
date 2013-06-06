@@ -113,6 +113,16 @@ public abstract class AbstractVisitor
   }
 
   @Override
+  public boolean visitMapInit(final MapInit node) {
+    return defaultCase(node);
+  }
+
+  @Override
+  public boolean visitMapType(final MapType node) {
+    return defaultCase(node);
+  }
+
+  @Override
   public boolean visitMember(final Member node) {
     return true;
   }

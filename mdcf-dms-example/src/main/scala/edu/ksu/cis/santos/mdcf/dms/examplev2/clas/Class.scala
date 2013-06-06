@@ -6,11 +6,11 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dms.example.v2.clas
+package edu.ksu.cis.santos.mdcf.dms.examplev2.clas
 
 import edu.ksu.cis.santos.mdcf.dms._
-import edu.ksu.cis.santos.mdcf.dms.example.v2._
-import edu.ksu.cis.santos.mdcf.dms.example.v2.schema._
+import edu.ksu.cis.santos.mdcf.dms.examplev2._
+import edu.ksu.cis.santos.mdcf.dms.examplev2.schema._
 
 trait ICE_PulseOx_VMD extends ICE_VMD {
   @Const(CLASS)

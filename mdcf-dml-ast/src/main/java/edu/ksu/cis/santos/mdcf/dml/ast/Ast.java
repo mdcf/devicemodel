@@ -122,6 +122,17 @@ public class Ast {
       return Ast.list(ts);
     }
 
+    public static MapInit mapInit(final Iterable<?> keyInits,
+        final Iterable<?> valueInits) {
+      return Ast.mapInit(
+          list(keyInits, Initialization.class),
+          list(valueInits, Initialization.class));
+    }
+
+    public static MapType mapType(final Type keyType, final Type valueType) {
+      return Ast.mapType(keyType, valueType);
+    }
+
     public static Model model(final Iterable<?> declarations) {
       return Ast.model(list(declarations, Declaration.class));
     }
@@ -286,6 +297,15 @@ public class Ast {
   @SafeVarargs
   public static <T> List<T> list(final T... ts) {
     return ImmutableList.<T> builder().add(ts).build();
+  }
+
+  public static MapInit mapInit(final Iterable<Initialization> keyInits,
+      final Iterable<Initialization> valueInits) {
+    return new MapInit(list(keyInits), list(valueInits));
+  }
+
+  public static MapType mapType(final Type keyType, final Type valueType) {
+    return new MapType(keyType, valueType);
   }
 
   public static Model model(final Iterable<Declaration> declarations) {

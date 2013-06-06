@@ -55,6 +55,7 @@ object ModelExtractor {
   private final val OBJECT_NAME = classOf[java.lang.Object].getName
   private final val OPTION_NAME = classOf[scala.Option[_]].getName
   private final val EITHER_NAME = classOf[scala.Either[_, _]].getName
+  private final val MAP_NAME = classOf[scala.collection.immutable.Map[_, _]].getName
   private final val SET_NAME = classOf[scala.collection.immutable.Set[_]].getName
   private final val SEQ_NAME = classOf[scala.collection.immutable.Seq[_]].getName
   private final val SCHEMA_NAME = classOf[annotation.Schema].getName
@@ -455,6 +456,25 @@ object ModelExtractor {
             else (resultType, none())
           case None =>
             (tupleType(args.map { extractType(aQName, _, None)._1 }), none())
+        }
+      case `MAP_NAME` =>
+        val TypeRef(_, _, List(keyType, valueType)) = tipe
+        val (kType, _) = extractType(aQName, keyType, None)
+        val (vType, _) = extractType(aQName, valueType, None)
+        val resultType = mapType(kType, vType)
+        (value : @unchecked) match {
+          case Some(m : IMap[_, _]) =>
+            val inits = m.map(p =>
+              (extractType(aQName, keyType, Some(p._1))._2,
+                extractType(aQName, valueType, Some(p._1))._2))
+            if (inits.exists(p => !p._1.isPresent || !p._1.isPresent))
+              (resultType, none())
+            else
+              (resultType,
+                some(mapInit(inits.toSeq.map(_._1.get),
+                  inits.toSeq.map(_._2.get))))
+          case None =>
+            (resultType, none())
         }
       case `SET_NAME` =>
         val TypeRef(_, _, List(elementType)) = tipe

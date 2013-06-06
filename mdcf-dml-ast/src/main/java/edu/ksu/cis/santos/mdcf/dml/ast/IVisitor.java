@@ -41,6 +41,10 @@ public interface IVisitor {
 
   boolean visitInvariant(Invariant node);
 
+  boolean visitMapInit(MapInit node);
+
+  boolean visitMapType(MapType node);
+
   boolean visitMember(Member node);
 
   boolean visitModel(Model node);
