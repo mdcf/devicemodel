@@ -96,7 +96,7 @@
               </typeName>
             </multiplicity>
           </annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Metric"/>
           </type>
@@ -225,7 +225,7 @@
               </typeName>
             </multiplicity>
           </annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
           </type>
@@ -274,7 +274,7 @@
               </typeName>
             </multiplicity>
           </annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
           </type>
@@ -318,7 +318,7 @@
               </typeName>
             </multiplicity>
           </annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
           </type>
@@ -345,7 +345,7 @@
               </typeName>
             </multiplicity>
           </annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Metric"/>
           </type>
@@ -402,7 +402,7 @@
               </typeName>
             </multiplicity>
           </annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Metric"/>
           </type>
@@ -591,7 +591,7 @@
         </attribute>
         <attribute name="alerts">
           <annotations class="ilist"></annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
           </type>
@@ -599,7 +599,7 @@
         </attribute>
         <attribute name="metrics">
           <annotations class="ilist"></annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Metric"/>
           </type>
@@ -607,7 +607,7 @@
         </attribute>
         <attribute name="settings">
           <annotations class="ilist"></annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
           </type>
@@ -615,7 +615,7 @@
         </attribute>
         <attribute name="statuses">
           <annotations class="ilist"></annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
           </type>
@@ -623,7 +623,7 @@
         </attribute>
         <attribute name="actions">
           <annotations class="ilist"></annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
           </type>
@@ -856,7 +856,7 @@
               <typeName class="none"></typeName>
             </multiplicity>
           </annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD"/>
           </type>
@@ -883,7 +883,7 @@
         </attribute>
         <attribute name="credentials">
           <annotations class="ilist"></annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Certificate"/>
           </type>
@@ -939,7 +939,7 @@
               <level>Product</level>
             </const>
           </annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Data_Exchange"/>
           </type>
@@ -951,7 +951,7 @@
               <level>Product</level>
             </const>
           </annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
           </type>
@@ -1472,7 +1472,7 @@
               <level>Product</level>
             </const>
           </annotations>
-          <type class="edu.ksu.cis.santos.mdcf.dml.ast.MapType">
+          <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
           </type>
