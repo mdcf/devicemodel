@@ -38,6 +38,8 @@ import edu.ksu.cis.santos.mdcf.dml.ast.Feature;
 import edu.ksu.cis.santos.mdcf.dml.ast.FeatureInit;
 import edu.ksu.cis.santos.mdcf.dml.ast.FeatureLevelAnnotation;
 import edu.ksu.cis.santos.mdcf.dml.ast.Invariant;
+import edu.ksu.cis.santos.mdcf.dml.ast.MapInit;
+import edu.ksu.cis.santos.mdcf.dml.ast.MapType;
 import edu.ksu.cis.santos.mdcf.dml.ast.Model;
 import edu.ksu.cis.santos.mdcf.dml.ast.MultiplicityAnnotation;
 import edu.ksu.cis.santos.mdcf.dml.ast.NamedType;
@@ -237,6 +239,8 @@ public class XStreamer {
     result.alias("featureInit", FeatureInit.class);
     result.alias("featureLevel", FeatureLevelAnnotation.class);
     result.alias("invariant", Invariant.class);
+    result.alias("mapInit", MapInit.class);
+    result.alias("mapType", MapType.class);
     result.alias("model", Model.class);
     result.alias("multiplicity", MultiplicityAnnotation.class);
     result.alias("namedType", NamedType.class);
