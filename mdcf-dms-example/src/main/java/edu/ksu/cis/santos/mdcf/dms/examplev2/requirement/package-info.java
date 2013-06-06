@@ -7,4 +7,4 @@ http://www.eclipse.org/legal/epl-v10.html
 */
 
 @edu.ksu.cis.santos.mdcf.dms.annotation.Req
-package edu.ksu.cis.santos.mdcf.dms.example.v2.requirement;
+package edu.ksu.cis.santos.mdcf.dms.examplev2.requirement;

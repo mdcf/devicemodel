@@ -9,8 +9,9 @@ http://www.eclipse.org/legal/epl-v10.html
 package edu.ksu.cis.santos.mdcf.dms.examplev2
 
 import edu.ksu.cis.santos.mdcf.dms._
-
 import org.sireum.util.math._
+
+import language.implicitConversions
 
 final class DeviceId(val value : java.lang.String) extends BasicType
 object DeviceId { implicit def apply(s : java.lang.String) = new DeviceId(s) }
