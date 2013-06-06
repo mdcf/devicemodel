@@ -65,22 +65,14 @@ object IEEE11073_OID_TYPE { implicit def apply(s : java.lang.String) = new IEEE1
 final class IEEE11073_TYPE(val value : java.lang.String) extends BasicType
 object IEEE11073_TYPE { implicit def apply(s : java.lang.String) = new IEEE11073_TYPE(s) }
 
-// Enums
-final class ICE_VMD_State(val value : ICE_VMD_State.Value) extends BasicType
+final class ICE_VMD_State(val value : ICE_VMD_StateValue.Type) extends BasicType
 object ICE_VMD_State extends Enumeration {
-  val Ok, NotOk = Value
-  implicit def apply(s : ICE_VMD_State.Value) = new ICE_VMD_State(s)
+  implicit def apply(s : ICE_VMD_StateValue.Type) = new ICE_VMD_State(s)
 }
 
-final class MeasurementStatus(val value : MeasurementStatusValue) extends BasicType
+final class MeasurementStatus(val value : MeasurementStatusValue.Type) extends BasicType
 object MeasurementStatus {
-  implicit def apply(s : MeasurementStatusValue) = new MeasurementStatus(s)
-}
-
-// Extensible enums
-abstract class MeasurementStatusValue extends Enumeration
-object MeasurementStatusValue extends MeasurementStatusValue {
-  val Ok, NotOk = Value
+  implicit def apply(s : MeasurementStatusValue.Type) = new MeasurementStatus(s)
 }
 
 /**
