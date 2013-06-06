@@ -513,7 +513,7 @@ trait ICE_SettingGetPayload extends ICE_MessageContext {
 // The set payload should not include a time stamp (at least, it shouldn't be seen 
 // on the app side)
 @Data
-trait ICE_SettingSetPayload {
+trait ICE_SettingSetPayload extends Feature {
   val payload : Any
 }
 

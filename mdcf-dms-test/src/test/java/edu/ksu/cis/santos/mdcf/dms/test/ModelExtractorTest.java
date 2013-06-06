@@ -61,6 +61,11 @@ public class ModelExtractorTest {
     test("dms.test", "edu.ksu.cis.santos.mdcf.dms.example");
   }
 
+  @Test
+  public void examplev2() throws Exception {
+    test("dms.testv2", "edu.ksu.cis.santos.mdcf.dms.examplev2");
+  }
+
   @Before
   public void setUp() throws Exception {
     this.xmlUnit = new XMLTestCase() {

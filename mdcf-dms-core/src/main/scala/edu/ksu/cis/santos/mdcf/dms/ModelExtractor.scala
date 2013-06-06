@@ -99,6 +99,18 @@ object ModelExtractor {
     def featureClass = classLoader.loadClass(classOf[Feature].getName)
   }
 
+  def isPackageClass(c : java.lang.Class[_]) =
+    c.getName.endsWith(".package-info") || c.getName.endsWith(".package")
+
+  def isEnum(c : java.lang.Class[_]) : scala.Boolean =
+    if (classOf[Enumeration].isAssignableFrom(c)) true
+    else
+      Reflection.companion(c, false) match {
+        case Some((_, o, _)) =>
+          classOf[Enumeration].isAssignableFrom(o.getClass)
+        case None => false
+      }
+
   def extract(implicit context : Context) : Model = {
     var decls = ivectorEmpty[Declaration]
 
@@ -111,7 +123,7 @@ object ModelExtractor {
       size += cis.size
       for (ci <- cis) {
         val clazz = ci.load
-        if (!clazz.getName.endsWith(".package-info")) {
+        if (!isPackageClass(clazz) && !isEnum(clazz)) {
           val pkg = clazz.getPackage
           val pkgName = pkg.getName
           decls :+= extract(pkgModifier.getOrElseUpdate(pkgName, {
