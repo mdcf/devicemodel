@@ -54,23 +54,23 @@ trait FloatRange extends Range {
 // 11073 -- 7.1.2.13 Absolute time data type  (p. 41)
 @Data
 trait IEEE11073_AbsoluteTime extends Feature {
-  val century : IEEE11073_INT_U8
-  val year : IEEE11073_INT_U8
-  val month : IEEE11073_INT_U8
-  val day : IEEE11073_INT_U8
-  val mon : IEEE11073_INT_U8
-  val minute : IEEE11073_INT_U8
-  val second : IEEE11073_INT_U8
-  val sec_franctions : IEEE11073_INT_U8
+  val century : IEEE11073_INT_U8 = DYN
+  val year : IEEE11073_INT_U8 = DYN
+  val month : IEEE11073_INT_U8 = DYN
+  val day : IEEE11073_INT_U8 = DYN
+  val mon : IEEE11073_INT_U8 = DYN
+  val minute : IEEE11073_INT_U8 = DYN
+  val second : IEEE11073_INT_U8 = DYN
+  val sec_franctions : IEEE11073_INT_U8 = DYN
 }
 
 // 11073 -- 7.1.2.14 Date data type  (p. 41)
 @Data
 trait IEEE11073_Date extends Feature {
-  val century : IEEE11073_INT_U8
-  val year : IEEE11073_INT_U8
-  val month : IEEE11073_INT_U8
-  val day : IEEE11073_INT_U8
+  val century : IEEE11073_INT_U8 = DYN
+  val year : IEEE11073_INT_U8 = DYN
+  val month : IEEE11073_INT_U8 = DYN
+  val day : IEEE11073_INT_U8 = DYN
 }
 
 //=======================================================================================================
@@ -404,7 +404,7 @@ trait ICE_Numeric extends ICE_Metric {
   //   A code generation payload attribute indicates that the code generator use this type as the
   //   message payload when generating data exchange code.  
   @Data
-  val observedValue : ICE_NuObsValue
+  val observedValue : ICE_NuObsValue = DYN
   // specify the allowable range.  For now, assume that such a constraint will be standardized for
   // a particular device class.
   @Const(PRODUCT)
@@ -428,7 +428,7 @@ trait ICE_Numeric extends ICE_Metric {
 //
 @Data
 trait ICE_MessageContext extends Feature {
-  val messageConstructed : ICETimeStamp
+  val messageConstructed : ICETimeStamp = DYN
 }
 
 // Provides additional attributes that should be communicated with an numeric observed value.
@@ -436,13 +436,13 @@ trait ICE_MessageContext extends Feature {
 // value.
 @Data
 trait ICE_NuObsValueContext extends Feature {
-  val measurementTaken : ICETimeStamp
+  val measurementTaken : ICETimeStamp = DYN
 }
 
 // Define possible status values for sensor readings represented by ICE Numerics.
 @Data
 trait ICE_NuObsValueStatusAttributes extends Feature {
-  val status : MeasurementStatus // enum, TODO: extensibility
+  val status : MeasurementStatus = DYN // enum, TODO: extensibility
 }
 
 // Defines the representation of the physiological parameter.   This should be a polymorphic
@@ -452,12 +452,12 @@ trait ICE_NuObsValueStatusAttributes extends Feature {
 
 @Data
 trait ICE_NuObsValue extends ICE_MessageContext with ICE_NuObsValueContext with ICE_NuObsValueStatusAttributes {
-  val value : Number
+  val value : Number = DYN
 }
 
 @Data
 trait ICE_NuObsValueSimpleFloat extends ICE_NuObsValue {
-  val value : Float
+  override val value : Float = DYN
 }
 
 // trait SampleArray extends ICEMetric {
