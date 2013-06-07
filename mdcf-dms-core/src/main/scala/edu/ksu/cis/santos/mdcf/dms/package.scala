@@ -35,6 +35,7 @@ package object dms {
   final val UNSPECIFIED = edu.ksu.cis.santos.mdcf.dms.annotation.ConstMode.UNSPECIFIED
 
   final val * = -1
+  final val DYN = null
 
   type Map[K, V] = scala.collection.immutable.Map[K, V]
   type Set[T] = scala.collection.immutable.Set[T]
