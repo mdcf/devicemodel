@@ -133,16 +133,18 @@ trait ICE_Periodic_Exchange extends ICE_ProviderInitiated_Exchange {
   @Const(PRODUCT)
   val access : Option[ICE_Security_Access_Read]
   @Const(PRODUCT)
-  val rateRange : NatRange
+  val separation : NatRange // The separation between messages in milliseconds, using this allows us to model jitter
+  @Const(INSTANCE)
+  val rate : NatRange // latency (This will be govern code-generation at the channel level)
 }
 
 // An episodic provider-initiated exchange indicates that the interface provider (e.g., a device) publishes
 // a value episodically (i.e., intermittently)
-trait ICE_Episodic_Exchange extends ICE_ProviderInitiated_Exchange {
+trait ICE_Sporadic_Exchange extends ICE_ProviderInitiated_Exchange {
   @Const(PRODUCT)
   val access : Option[ICE_Security_Access_Read]
   @Const(PRODUCT)
-  val maxPublishRate : Nat
+  val separation : NatRange // The separation between messages in milliseconds
 }
 
 // A client-initiated exchange indicates that the interface client (e.g., an app) fetches 
@@ -150,23 +152,34 @@ trait ICE_Episodic_Exchange extends ICE_ProviderInitiated_Exchange {
 trait ICE_Get_Exchange extends ICE_ClientInitiated_Exchange {
   @Const(PRODUCT)
   val access : Option[ICE_Security_Access_Read]
-  @Const(PRODUCT) // need some way to formally declare units on these types of values.
-  val maxReadsPerSecond : Nat
+  @Const(PRODUCT)
+  val separation : NatRange // This may need revision per Andrew's paper
+  @Const(PRODUCT)
+  val serviceTime : NatRange
+// Andrew notes that technically this is not needed for scheduling
+// and the most natural place for this might be in the device behaviors
+// (which we can view as a refinement of this info).
+// code generation has two separate channels
+// Eventually code generation will handle the auto-splitting on the app side.
 }
 
 trait ICE_Set_Exchange extends ICE_ClientInitiated_Exchange {
   @Const(PRODUCT)
   val access : Option[ICE_Security_Access_Write]
-  @Const(PRODUCT) // need some way to formally declare units on these types of values.
-  val maxWritesPerSecond : Nat
+  @Const(PRODUCT)
+  val separation : NatRange // This may need revision per Andrew's paper
+  @Const(PRODUCT)
+  val serviceTime : NatRange // See note in Get_Exchange
 }
 
 trait ICE_Action_Exchange extends ICE_ClientInitiated_Exchange {
   @Const(PRODUCT)
   val access : Option[ICE_Security_Access_Action]
-  @Const(PRODUCT) // need some way to formally declare units on these types of values.
-  val maxCallsPerSecond : Nat
-}
+  @Const(PRODUCT)
+  val separation : NatRange // This may need revision per Andrew's paper
+  @Const(PRODUCT)
+  val serviceTime : NatRange // See note in Get_Exchange
+ }
 
 //=======================================================================================================
 //  I C E   P r i m a r y     S c h e m a s 
@@ -607,7 +620,7 @@ trait ICE_Alert extends ICE_Feature {
   @Const(PRODUCT)
   val access : Option[ICE_Security_Access_Read]
   @Const(PRODUCT)
-  val exchange : ICE_Episodic_Exchange
+  val exchange : ICE_Sporadic_Exchange
 }
 
 trait ICE_FloatRangeValueAlert extends ICE_Alert with ICE_FloatRangeSetting
