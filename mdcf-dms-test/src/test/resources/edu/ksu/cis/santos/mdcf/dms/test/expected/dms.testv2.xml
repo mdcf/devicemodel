@@ -548,15 +548,6 @@
             <reference class="basicInit" value="Nonin PO"/>
           </init>
         </attribute>
-        <attribute name="IEEE11073_MDC_ATTR_SYS_ID">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.ICE_UDI"/>
-          <init class="some">
-            <reference class="basicInit" value=""/>
-          </init>
-        </attribute>
         <attribute name="manufacturerModel">
           <annotations class="ilist">
             <override/>
@@ -749,13 +740,6 @@
                                             <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
                                           </types>
                                           <attributes class="ilist">
-                                            <attribute name="observedValue">
-                                              <annotations class="ilist">
-                                                <override/>
-                                              </annotations>
-                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_NuObsValueSimpleFloat"/>
-                                              <init class="none"></init>
-                                            </attribute>
                                             <attribute name="range">
                                               <annotations class="ilist">
                                                 <override/>
@@ -843,6 +827,13 @@
                                               <init class="some">
                                                 <reference class="basicInit" value="MDC_DIM_PERCENT"/>
                                               </init>
+                                            </attribute>
+                                            <attribute name="observedValue">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_NuObsValue"/>
+                                              <init class="none"></init>
                                             </attribute>
                                           </attributes>
                                         </featureInit>
@@ -945,13 +936,6 @@
                                             <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseRate_Numeric"/>
                                           </types>
                                           <attributes class="ilist">
-                                            <attribute name="observedValue">
-                                              <annotations class="ilist">
-                                                <override/>
-                                              </annotations>
-                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_NuObsValueSimpleFloat"/>
-                                              <init class="none"></init>
-                                            </attribute>
                                             <attribute name="range">
                                               <annotations class="ilist">
                                                 <override/>
@@ -1039,6 +1023,13 @@
                                               <init class="some">
                                                 <reference class="basicInit" value="MDC_DIM_BEAT_PER_MIN"/>
                                               </init>
+                                            </attribute>
+                                            <attribute name="observedValue">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_NuObsValue"/>
+                                              <init class="none"></init>
                                             </attribute>
                                           </attributes>
                                         </featureInit>

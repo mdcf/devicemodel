@@ -45,7 +45,6 @@ class NoninGetExchange extends ICE_Get_Exchange {
 
 final class NoninPulseOx extends ICE_MDS {
   override val IEEE11073_MDC_ATTR_SYS_TYPE : IEEE11073_TYPE = "Nonin PO"
-  override val IEEE11073_MDC_ATTR_SYS_ID : ICE_UDI = "" // TODO: Dynamic
 
   override val manufacturerModel : ICE_ManufacturerModel = new ICE_ManufacturerModel {
     override val MDC_ATTR_ID_MODEL : IEEE11073_SystemModel = new IEEE11073_SystemModel {
@@ -69,7 +68,6 @@ final class NoninPulseOx extends ICE_MDS {
           override val alerts : Map[String, ICE_Alert] = Map()
           override val metrics : Map[String, ICE_Metric] = Map(
             "spo2_num" -> new ICE_SpO2_Numeric {
-              override val observedValue : ICE_NuObsValueSimpleFloat = DYN
               override val range : FloatRange = new FloatRange {
                 override val min : Float = 0.0
                 override val max : Float = 100.0
@@ -88,7 +86,6 @@ final class NoninPulseOx extends ICE_MDS {
           override val alerts : Map[String, ICE_Alert] = Map()
           override val metrics : Map[String, ICE_Metric] = Map(
             "pulserate_num" -> new ICE_PulseRate_Numeric {
-              override val observedValue : ICE_NuObsValueSimpleFloat = DYN
               override val range : FloatRange = new FloatRange {
                 override val min : Float = 20.0
                 override val max : Float = 300.0

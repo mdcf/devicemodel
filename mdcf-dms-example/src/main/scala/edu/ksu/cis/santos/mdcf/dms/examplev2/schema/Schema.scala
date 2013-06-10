@@ -204,7 +204,7 @@ trait ICE_VMS extends Feature {
   // 11073 defines the following string attribute to uniquely identifier a device instance.   The 11073
   // type is "string", but this should be changed to some notion of UDI
   @Const(INSTANCE)
-  val IEEE11073_MDC_ATTR_SYS_ID : ICE_UDI
+  val IEEE11073_MDC_ATTR_SYS_ID : ICE_UDI = DYN
 }
 
 // === I C E   M a n u f a c t u r e r    I n f o r m a t i o n ===
