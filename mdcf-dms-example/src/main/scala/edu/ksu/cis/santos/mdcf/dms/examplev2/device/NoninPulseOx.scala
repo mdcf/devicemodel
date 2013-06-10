@@ -71,7 +71,15 @@ final class NoninPulseOx extends ICE_MDS {
                 "get" -> new NoninGetExchange {}
               )
               override val alerts : Map[String, ICE_Alert] = Map()
-            },
+            })
+          override val settings : Map[String, ICE_Setting] = Map()
+          override val statuses : Map[String, ICE_Status] = Map()
+          override val actions : Map[String, ICE_Action] = Map()
+        },
+        "pulserate" -> new ICE_SpO2_Channel {
+          override val MDC_ATTR_ID_PARAM_GRP : IEEE11073_OID_TYPE = "Pulse Rate Channel"
+          override val alerts : Map[String, ICE_Alert] = Map()
+          override val metrics : Map[String, ICE_Metric] = Map(
             "pulserate_num" -> new ICE_PulseRate_Numeric {
               override val observedValue : ICE_NuObsValueSimpleFloat = DYN
               override val range : FloatRange = new FloatRange {
