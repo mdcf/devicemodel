@@ -52,7 +52,7 @@ package object dms {
     override def toString = s"${getClass.getSimpleName}($asString)"
 
     override def equals(o : scala.Any) : scala.Boolean = {
-      if (this == o) true
+      if (this eq o.asInstanceOf[AnyRef]) true
       else o match {
         case o : BasicType => getClass == o.getClass && value == o.value
         case _             => false

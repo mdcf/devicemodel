@@ -440,6 +440,207 @@
         </attribute>
       </members>
     </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.device.NoninGetExchange">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Device</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="access">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="optionType">
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+          </type>
+          <init class="some">
+            <reference class="noneInit"/>
+          </init>
+        </attribute>
+        <attribute name="separation">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <init class="some">
+            <reference class="featureInit">
+              <types class="ilist">
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+              </types>
+              <attributes class="ilist">
+                <attribute name="min">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="0"/>
+                  </init>
+                </attribute>
+                <attribute name="max">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="50"/>
+                  </init>
+                </attribute>
+              </attributes>
+            </reference>
+          </init>
+        </attribute>
+        <attribute name="serviceTime">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <init class="some">
+            <reference class="featureInit">
+              <types class="ilist">
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+              </types>
+              <attributes class="ilist">
+                <attribute name="min">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="0"/>
+                  </init>
+                </attribute>
+                <attribute name="max">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="50"/>
+                  </init>
+                </attribute>
+              </attributes>
+            </reference>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.device.NoninPulseOx">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Device</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_MDS"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="IEEE11073_MDC_ATTR_SYS_TYPE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="Nonin PO"/>
+          </init>
+        </attribute>
+        <attribute name="IEEE11073_MDC_ATTR_SYS_ID">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.ICE_UDI"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+        <attribute name="manufacturerModel">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_ManufacturerModel"/>
+          <init class="some">
+            <reference class="featureInit">
+              <types class="ilist">
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_ManufacturerModel"/>
+              </types>
+              <attributes class="ilist">
+                <attribute name="MDC_ATTR_ID_MODEL">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.IEEE11073_SystemModel"/>
+                  <init class="some">
+                    <reference class="featureInit">
+                      <types class="ilist">
+                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.IEEE11073_SystemModel"/>
+                      </types>
+                      <attributes class="ilist">
+                        <attribute name="manufacturer">
+                          <annotations class="ilist">
+                            <override/>
+                          </annotations>
+                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                          <init class="some">
+                            <reference class="basicInit" value="Nonin"/>
+                          </init>
+                        </attribute>
+                        <attribute name="model_number">
+                          <annotations class="ilist">
+                            <override/>
+                          </annotations>
+                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                          <init class="some">
+                            <reference class="basicInit" value="Nonin Onyx II X5551122"/>
+                          </init>
+                        </attribute>
+                      </attributes>
+                    </reference>
+                  </init>
+                </attribute>
+                <attribute name="credentials">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="mapType">
+                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Certificate"/>
+                  </type>
+                  <init class="some">
+                    <reference class="mapInit">
+                      <keyInits class="ilist"></keyInits>
+                      <valueInits class="ilist"></valueInits>
+                    </reference>
+                  </init>
+                </attribute>
+              </attributes>
+            </reference>
+          </init>
+        </attribute>
+        <attribute name="vmds">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="mapType">
+            <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+            <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD"/>
+          </type>
+          <init class="some">
+            <reference class="mapInit">
+              <keyInits class="ilist">
+                <basicInit value="pulseox"/>
+              </keyInits>
+              <valueInits class="ilist">
+                <basicInit value="pulseox"/>
+              </valueInits>
+            </reference>
+          </init>
+        </attribute>
+      </members>
+    </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.BatteryLevelStatus">
       <annotations class="ilist">
         <featureLevel qualifier="">
@@ -529,13 +730,22 @@
           </type>
           <init class="none"></init>
         </attribute>
-        <attribute name="maxCallsPerSecond">
+        <attribute name="separation">
           <annotations class="ilist">
             <const qualifier="">
               <level>Product</level>
             </const>
           </annotations>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="serviceTime">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Product</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
           <init class="none"></init>
         </attribute>
       </members>
@@ -567,7 +777,7 @@
               <level>Product</level>
             </const>
           </annotations>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Episodic_Exchange"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Sporadic_Exchange"/>
           <init class="none"></init>
         </attribute>
       </members>
@@ -650,38 +860,6 @@
       </annotations>
       <supers class="ilist"></supers>
       <members class="ilist"></members>
-    </feature>
-    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Episodic_Exchange">
-      <annotations class="ilist">
-        <featureLevel qualifier="">
-          <level>Schema</level>
-        </featureLevel>
-      </annotations>
-      <supers class="ilist">
-        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_ProviderInitiated_Exchange"/>
-      </supers>
-      <members class="ilist">
-        <attribute name="access">
-          <annotations class="ilist">
-            <const qualifier="">
-              <level>Product</level>
-            </const>
-          </annotations>
-          <type class="optionType">
-            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
-          </type>
-          <init class="none"></init>
-        </attribute>
-        <attribute name="maxPublishRate">
-          <annotations class="ilist">
-            <const qualifier="">
-              <level>Product</level>
-            </const>
-          </annotations>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-          <init class="none"></init>
-        </attribute>
-      </members>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Feature">
       <annotations class="ilist">
@@ -826,13 +1004,22 @@
           </type>
           <init class="none"></init>
         </attribute>
-        <attribute name="maxReadsPerSecond">
+        <attribute name="separation">
           <annotations class="ilist">
             <const qualifier="">
               <level>Product</level>
             </const>
           </annotations>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="serviceTime">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Product</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
           <init class="none"></init>
         </attribute>
       </members>
@@ -1018,7 +1205,9 @@
       </supers>
       <members class="ilist">
         <attribute name="value">
-          <annotations class="ilist"></annotations>
+          <annotations class="ilist">
+            <override/>
+          </annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Float"/>
           <init class="none"></init>
         </attribute>
@@ -1089,10 +1278,19 @@
           </type>
           <init class="none"></init>
         </attribute>
-        <attribute name="rateRange">
+        <attribute name="separation">
           <annotations class="ilist">
             <const qualifier="">
               <level>Product</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="rate">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
             </const>
           </annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
@@ -1295,13 +1493,22 @@
           </type>
           <init class="none"></init>
         </attribute>
-        <attribute name="maxWritesPerSecond">
+        <attribute name="separation">
           <annotations class="ilist">
             <const qualifier="">
               <level>Product</level>
             </const>
           </annotations>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="serviceTime">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Product</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
           <init class="none"></init>
         </attribute>
       </members>
@@ -1404,6 +1611,38 @@
         <attribute name="payload">
           <annotations class="ilist"></annotations>
           <type class="namedType" name="Any"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Sporadic_Exchange">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Schema</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_ProviderInitiated_Exchange"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="access">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Product</level>
+            </const>
+          </annotations>
+          <type class="optionType">
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+          </type>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="separation">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Product</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
           <init class="none"></init>
         </attribute>
       </members>

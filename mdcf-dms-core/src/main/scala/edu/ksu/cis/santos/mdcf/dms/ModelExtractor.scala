@@ -524,7 +524,7 @@ object ModelExtractor {
         (value : @unchecked) match {
           case Some(value : BasicType) =>
             (namedType(c), some(basicInit(value.asString)))
-          case None =>
+          case Some(DYN) | None =>
             (namedType(c), none())
         }
       case c =>
@@ -535,6 +535,7 @@ object ModelExtractor {
             var inits = imapEmpty[String, Object]
             var aTypes = imapEmpty[String, Type]
             value match {
+              case None | Some(DYN) =>
               case Some(value) =>
                 val vClass = value.getClass
                 for (d <- tipe.members if d.isTerm && d.asTerm.isGetter) {
@@ -543,7 +544,6 @@ object ModelExtractor {
                   inits += (dName -> dValue)
                   aTypes += (dName -> d.asTerm.typeSignature)
                 }
-              case None =>
             }
             var attributes = ivectorEmpty[Attribute]
             for (d <- tipe.declarations.sorted if d.isTerm && d.asTerm.isGetter)
@@ -563,6 +563,7 @@ object ModelExtractor {
               else namedType(types(0).name)
 
             value match {
+              case None | Some(DYN) => (resultType, none())
               case Some(_) =>
                 var attributeInits = ivectorEmpty[Attribute]
                 for (d <- tipe.members.sorted if d.isTerm && d.asTerm.isGetter)
@@ -581,10 +582,14 @@ object ModelExtractor {
                     case _ =>
                   }
                 (resultType, some(featureInit(types, attributeInits)))
-              case _ => (resultType, none())
             }
           case _ =>
             value match {
+              case None | Some(DYN) =>
+                (namedType(c), none())
+              case Some(value) if context.basicTypeClass.isAssignableFrom(value.getClass) =>
+                (namedType(value.getClass.getName),
+                  some(basicInit(value.asInstanceOf[BasicType].asString)))
               case Some(value) =>
                 val vClass = value.getClass
                 val vTipe = Reflection.getTypeOfClass(vClass)
@@ -637,8 +642,6 @@ object ModelExtractor {
                           a
                       })))
                 }
-              case None =>
-                (namedType(c), none())
             }
         }
     }

@@ -13,28 +13,35 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2._
 import edu.ksu.cis.santos.mdcf.dms.examplev2.schema._
 import edu.ksu.cis.santos.mdcf.dms.examplev2.clas._
 
-trait NoninGetExchangeAccess extends ICE_Get_Exchange {
-  override val access : Option[ICE_Security_Access_Read] = None
-}
+//trait NoninGetExchangeAccess extends ICE_Get_Exchange {
+//  override val access : Option[ICE_Security_Access_Read] = None
+//}
+//
+//trait NoninGetExchangeSeparation extends ICE_Get_Exchange {
+//  override val separation : NatRange = new NatRange {
+//    override val min : Nat = 0
+//    override val max : Nat = 50
+//  }
+//}
+//
+//trait NoninGetExchangeServiceTime extends ICE_Get_Exchange {
+//  override val serviceTime : NatRange = new NatRange {
+//    override val min : Nat = 0
+//    override val max : Nat = 50
+//  }
+//}
 
-trait NoninGetExchangeSeparation extends ICE_Get_Exchange {
+class NoninGetExchange extends ICE_Get_Exchange {
+  override val access : Option[ICE_Security_Access_Read] = None
   override val separation : NatRange = new NatRange {
     override val min : Nat = 0
     override val max : Nat = 50
   }
-}
-
-trait NoninGetExchangeServiceTime extends ICE_Get_Exchange {
   override val serviceTime : NatRange = new NatRange {
     override val min : Nat = 0
     override val max : Nat = 50
   }
 }
-
-trait NoninGetExchange
-  extends NoninGetExchangeAccess
-  with NoninGetExchangeSeparation
-  with NoninGetExchangeServiceTime
 
 final class NoninPulseOx extends ICE_MDS {
   override val IEEE11073_MDC_ATTR_SYS_TYPE : IEEE11073_TYPE = "Nonin PO"
