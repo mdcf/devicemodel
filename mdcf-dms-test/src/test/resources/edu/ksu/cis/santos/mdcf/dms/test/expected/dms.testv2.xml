@@ -634,7 +634,480 @@
                 <basicInit value="pulseox"/>
               </keyInits>
               <valueInits class="ilist">
-                <basicInit value="pulseox"/>
+                <featureInit>
+                  <types class="ilist">
+                    <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseOx_VMD"/>
+                  </types>
+                  <attributes class="ilist">
+                    <attribute name="status">
+                      <annotations class="ilist">
+                        <override/>
+                      </annotations>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD_Status"/>
+                      <init class="some">
+                        <reference class="featureInit">
+                          <types class="ilist">
+                            <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD_Status"/>
+                          </types>
+                          <attributes class="ilist">
+                            <attribute name="state">
+                              <annotations class="ilist">
+                                <override/>
+                              </annotations>
+                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.ICE_VMD_State"/>
+                              <init class="some">
+                                <reference class="basicInit" value="Ok"/>
+                              </init>
+                            </attribute>
+                            <attribute name="access">
+                              <annotations class="ilist">
+                                <override/>
+                              </annotations>
+                              <type class="optionType">
+                                <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+                              </type>
+                              <init class="some">
+                                <reference class="noneInit"/>
+                              </init>
+                            </attribute>
+                            <attribute name="exchange">
+                              <annotations class="ilist">
+                                <override/>
+                              </annotations>
+                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                              <init class="some">
+                                <reference class="featureInit">
+                                  <types class="ilist"></types>
+                                  <attributes class="ilist"></attributes>
+                                </reference>
+                              </init>
+                            </attribute>
+                          </attributes>
+                        </reference>
+                      </init>
+                    </attribute>
+                    <attribute name="channels">
+                      <annotations class="ilist">
+                        <override/>
+                      </annotations>
+                      <type class="mapType">
+                        <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                        <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+                      </type>
+                      <init class="some">
+                        <reference class="mapInit">
+                          <keyInits class="ilist">
+                            <basicInit value="spo2"/>
+                            <basicInit value="pulserate"/>
+                          </keyInits>
+                          <valueInits class="ilist">
+                            <featureInit>
+                              <types class="ilist">
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Channel"/>
+                              </types>
+                              <attributes class="ilist">
+                                <attribute name="MDC_ATTR_ID_PARAM_GRP">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                  <init class="some">
+                                    <reference class="basicInit" value="SpO2 Channel"/>
+                                  </init>
+                                </attribute>
+                                <attribute name="alerts">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="ilist"></keyInits>
+                                      <valueInits class="ilist"></valueInits>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="metrics">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Metric"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="ilist">
+                                        <basicInit value="spo2_num"/>
+                                      </keyInits>
+                                      <valueInits class="ilist">
+                                        <featureInit>
+                                          <types class="ilist">
+                                            <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
+                                          </types>
+                                          <attributes class="ilist">
+                                            <attribute name="observedValue">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_NuObsValueSimpleFloat"/>
+                                              <init class="none"></init>
+                                            </attribute>
+                                            <attribute name="range">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.FloatRange"/>
+                                              <init class="some">
+                                                <reference class="featureInit">
+                                                  <types class="ilist">
+                                                    <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.FloatRange"/>
+                                                  </types>
+                                                  <attributes class="ilist">
+                                                    <attribute name="min">
+                                                      <annotations class="ilist">
+                                                        <override/>
+                                                      </annotations>
+                                                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Float"/>
+                                                      <init class="some">
+                                                        <reference class="basicInit" value="0.0"/>
+                                                      </init>
+                                                    </attribute>
+                                                    <attribute name="max">
+                                                      <annotations class="ilist">
+                                                        <override/>
+                                                      </annotations>
+                                                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Float"/>
+                                                      <init class="some">
+                                                        <reference class="basicInit" value="100.0"/>
+                                                      </init>
+                                                    </attribute>
+                                                  </attributes>
+                                                </reference>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="exchanges">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="mapType">
+                                                <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                                <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Data_Exchange"/>
+                                              </type>
+                                              <init class="some">
+                                                <reference class="mapInit">
+                                                  <keyInits class="ilist">
+                                                    <basicInit value="get"/>
+                                                  </keyInits>
+                                                  <valueInits class="ilist">
+                                                    <featureInit>
+                                                      <types class="ilist"></types>
+                                                      <attributes class="ilist"></attributes>
+                                                    </featureInit>
+                                                  </valueInits>
+                                                </reference>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="alerts">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="mapType">
+                                                <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                                <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+                                              </type>
+                                              <init class="some">
+                                                <reference class="mapInit">
+                                                  <keyInits class="ilist"></keyInits>
+                                                  <valueInits class="ilist"></valueInits>
+                                                </reference>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="MDC_ATTR_ID_PHYSIO">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                              <init class="some">
+                                                <reference class="basicInit" value="MDC_PULS_OXIM_SAT_O2"/>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="MDC_ATTR_UNIT_CODE">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                              <init class="some">
+                                                <reference class="basicInit" value="MDC_DIM_PERCENT"/>
+                                              </init>
+                                            </attribute>
+                                          </attributes>
+                                        </featureInit>
+                                      </valueInits>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="settings">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="ilist"></keyInits>
+                                      <valueInits class="ilist"></valueInits>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="statuses">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="ilist"></keyInits>
+                                      <valueInits class="ilist"></valueInits>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="actions">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="ilist"></keyInits>
+                                      <valueInits class="ilist"></valueInits>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                              </attributes>
+                            </featureInit>
+                            <featureInit>
+                              <types class="ilist">
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Channel"/>
+                              </types>
+                              <attributes class="ilist">
+                                <attribute name="MDC_ATTR_ID_PARAM_GRP">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                  <init class="some">
+                                    <reference class="basicInit" value="Pulse Rate Channel"/>
+                                  </init>
+                                </attribute>
+                                <attribute name="alerts">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="ilist"></keyInits>
+                                      <valueInits class="ilist"></valueInits>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="metrics">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Metric"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="ilist">
+                                        <basicInit value="pulserate_num"/>
+                                      </keyInits>
+                                      <valueInits class="ilist">
+                                        <featureInit>
+                                          <types class="ilist">
+                                            <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseRate_Numeric"/>
+                                          </types>
+                                          <attributes class="ilist">
+                                            <attribute name="observedValue">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_NuObsValueSimpleFloat"/>
+                                              <init class="none"></init>
+                                            </attribute>
+                                            <attribute name="range">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.FloatRange"/>
+                                              <init class="some">
+                                                <reference class="featureInit">
+                                                  <types class="ilist">
+                                                    <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.FloatRange"/>
+                                                  </types>
+                                                  <attributes class="ilist">
+                                                    <attribute name="min">
+                                                      <annotations class="ilist">
+                                                        <override/>
+                                                      </annotations>
+                                                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Float"/>
+                                                      <init class="some">
+                                                        <reference class="basicInit" value="20.0"/>
+                                                      </init>
+                                                    </attribute>
+                                                    <attribute name="max">
+                                                      <annotations class="ilist">
+                                                        <override/>
+                                                      </annotations>
+                                                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Float"/>
+                                                      <init class="some">
+                                                        <reference class="basicInit" value="300.0"/>
+                                                      </init>
+                                                    </attribute>
+                                                  </attributes>
+                                                </reference>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="exchanges">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="mapType">
+                                                <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                                <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Data_Exchange"/>
+                                              </type>
+                                              <init class="some">
+                                                <reference class="mapInit">
+                                                  <keyInits class="ilist">
+                                                    <basicInit value="get"/>
+                                                  </keyInits>
+                                                  <valueInits class="ilist">
+                                                    <featureInit>
+                                                      <types class="ilist"></types>
+                                                      <attributes class="ilist"></attributes>
+                                                    </featureInit>
+                                                  </valueInits>
+                                                </reference>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="alerts">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="mapType">
+                                                <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                                <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+                                              </type>
+                                              <init class="some">
+                                                <reference class="mapInit">
+                                                  <keyInits class="ilist"></keyInits>
+                                                  <valueInits class="ilist"></valueInits>
+                                                </reference>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="MDC_ATTR_ID_PHYSIO">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                              <init class="some">
+                                                <reference class="basicInit" value="MDC_PULS_OXIM_PULS_RATE"/>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="MDC_ATTR_UNIT_CODE">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                              <init class="some">
+                                                <reference class="basicInit" value="MDC_DIM_BEAT_PER_MIN"/>
+                                              </init>
+                                            </attribute>
+                                          </attributes>
+                                        </featureInit>
+                                      </valueInits>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="settings">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="ilist"></keyInits>
+                                      <valueInits class="ilist"></valueInits>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="statuses">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="ilist"></keyInits>
+                                      <valueInits class="ilist"></valueInits>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="actions">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="ilist"></keyInits>
+                                      <valueInits class="ilist"></valueInits>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                              </attributes>
+                            </featureInit>
+                          </valueInits>
+                        </reference>
+                      </init>
+                    </attribute>
+                    <attribute name="MDC_ATTR_ID_PARAM_GRP">
+                      <annotations class="ilist">
+                        <override/>
+                      </annotations>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                      <init class="some">
+                        <reference class="basicInit" value="IEEE ... Pulse Ox"/>
+                      </init>
+                    </attribute>
+                  </attributes>
+                </featureInit>
               </valueInits>
             </reference>
           </init>

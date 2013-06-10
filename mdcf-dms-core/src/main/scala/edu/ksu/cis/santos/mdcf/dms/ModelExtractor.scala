@@ -478,7 +478,7 @@ object ModelExtractor {
           case Some(m : IMap[_, _]) =>
             val inits = m.map(p =>
               (extractType(aQName, keyType, Some(p._1))._2,
-                extractType(aQName, valueType, Some(p._1))._2))
+                extractType(aQName, valueType, Some(p._2))._2))
             if (inits.exists(p => !p._1.isPresent || !p._1.isPresent))
               (resultType, none())
             else
