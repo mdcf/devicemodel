@@ -92,19 +92,13 @@ final class NellcorPulseOx extends ICE_MDS {
               )
               override val alerts : Map[String, ICE_Alert] = Map(
                 "spo2rangealert" -> new ICE_FloatRangeValueAlert{
-                  override val MDC_ATTR_ID_PHYSIO: IEEE11073_OID_TYPE = "PLACEHOLDER ID"
-                  override val MDC_ATTR_UNIT_CODE: IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
-                  override val get = new NellcorGetExchange {}
-                  override val set = Some(new NellcorSetExchange {})
-                  override val access = None
-                  override val exchange = new NellcorSporadicExchange {}
-                  override val set_payload = None
-                  override val get_payload = new ICE_FloatRangeSettingGetPayload {
-                    override val payload = new ICE_FloatRangeSettingPayloadContent {
-                      override val min : Float = 0.0
-                      override val max : Float = 100.0
-                    }
-                  }
+                  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
+                  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
+                  override val get : ICE_Get_Exchange = new NellcorGetExchange {}
+                  override val set : Option[ICE_Set_Exchange] = Some(new NellcorSetExchange {})
+                  override val access : Option[ICE_Security_Access_Read] = None
+                  override val exchange : ICE_Sporadic_Exchange = new NellcorSporadicExchange {}
+                  // All payload stuff is dynamic, so we don't write anything about it here
                 }
               )
             })
@@ -126,21 +120,16 @@ final class NellcorPulseOx extends ICE_MDS {
                 "periodic" -> new NellcorPeriodicExchange {}
               )
               override val alerts : Map[String, ICE_Alert] = Map(
-                "pulseraterangealert" -> new ICE_FloatRangeValueAlert{
-                  override val MDC_ATTR_ID_PHYSIO: IEEE11073_OID_TYPE = "PLACEHOLDER ID"
-                  override val MDC_ATTR_UNIT_CODE: IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
-                  override val get = new NellcorGetExchange {}
-                  override val set = Some(new NellcorSetExchange {})
-                  override val access = None
-                  override val exchange = new NellcorSporadicExchange {}
-                  override val set_payload = None
-                  override val get_payload = new ICE_FloatRangeSettingGetPayload {
-                    override val payload = new ICE_FloatRangeSettingPayloadContent {
-                      override val min : Float = 40.0
-                      override val max : Float = 140.0
-                    }
-                  }
-                })
+                  "pulseraterangealert" -> new ICE_FloatRangeValueAlert{
+                  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
+                  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
+                  override val get : ICE_Get_Exchange = new NellcorGetExchange {}
+                  override val set : Option[ICE_Set_Exchange] = Some(new NellcorSetExchange {})
+                  override val access : Option[ICE_Security_Access_Read] = None
+                  override val exchange : ICE_Sporadic_Exchange = new NellcorSporadicExchange {}
+                  // All payload stuff is dynamic, so we don't write anything about it here
+                }
+              )
             }
           )
           override val settings : Map[String, ICE_Setting] = Map()
