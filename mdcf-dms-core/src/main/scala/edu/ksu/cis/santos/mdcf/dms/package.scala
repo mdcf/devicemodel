@@ -105,6 +105,7 @@ package object dms {
   type Predicate[T] = ru.Expr[T => Boolean]
 
   def pred[T](p : T => Boolean) : Predicate[T] = macro predImpl[T]
+  implicit def pred2predicate[T](p : Predicate[T]) : T => Boolean = p.value
 
   def predImpl[T : c.WeakTypeTag](c : scala.reflect.macros.Context)(
     p : c.Expr[T => Boolean]) : c.Expr[Predicate[T]] = {

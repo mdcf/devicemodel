@@ -284,7 +284,7 @@ object ModelExtractor {
       }
 
       if (isReq)
-        requirement(name, members.map { _.asInstanceOf[Invariant] })
+        requirement(name, members)
       else
         feature(featureAnnotations, name, supers, members)
     }
@@ -409,15 +409,18 @@ object ModelExtractor {
     clazz.getName match {
       case `ANY_NAME` =>
         value match {
+          case Some(DYN) | None =>
           case Some(v) =>
             context.reporter.error(
               s"Any type initialization for $aQName is not permitted.")
-          case _ =>
         }
         (namedType("Any"), none())
       case `OPTION_NAME` =>
         val TypeRef(_, _, List(elementType)) = tipe
         (value : @unchecked) match {
+          case Some(DYN) | None =>
+            val (eType, _) = extractType(aQName, elementType, None)
+            (optionType(eType), none())
           case Some(o : Option[_]) =>
             val (eType, init) = extractType(aQName, elementType, o)
             val resultType = optionType(eType)
@@ -425,13 +428,14 @@ object ModelExtractor {
               (resultType, some(someInit(init.get)))
             else
               (resultType, some(noneInit))
-          case None =>
-            val (eType, _) = extractType(aQName, elementType, None)
-            (optionType(eType), none())
         }
       case `EITHER_NAME` =>
         val TypeRef(_, _, List(leftTipe, rightTipe)) = tipe
         (value : @unchecked) match {
+          case Some(DYN) | None =>
+            val (leftType, _) = extractType(aQName, leftTipe, None)
+            val (rightType, _) = extractType(aQName, rightTipe, None)
+            (eitherType(list(leftType, rightType)), none())
           case Some(Left(value)) =>
             val (leftType, init) = extractType(aQName, leftTipe, Some(value))
             val (rightType, _) = extractType(aQName, rightTipe, None)
@@ -444,14 +448,12 @@ object ModelExtractor {
             val resultType = eitherType(list(leftType, rightType))
             if (init.isPresent) (resultType, some(eitherInit(1, init.get)))
             else (resultType, none())
-          case None =>
-            val (leftType, _) = extractType(aQName, leftTipe, None)
-            val (rightType, _) = extractType(aQName, rightTipe, None)
-            (eitherType(list(leftType, rightType)), none())
         }
       case c if c.startsWith("scala.Tuple") =>
         val TypeRef(_, _, args) = tipe
         (value : @unchecked) match {
+          case Some(DYN) | None =>
+            (tupleType(args.map { extractType(aQName, _, None)._1 }), none())
           case Some(o : scala.Product) =>
             var success = true
             var elementTypes = ilistEmpty[ast.Type]
@@ -466,8 +468,6 @@ object ModelExtractor {
             val resultType = tupleType(elementTypes.reverse)
             if (success) (resultType, some(tupleInit(inits.reverse)))
             else (resultType, none())
-          case None =>
-            (tupleType(args.map { extractType(aQName, _, None)._1 }), none())
         }
       case `MAP_NAME` =>
         val TypeRef(_, _, List(keyType, valueType)) = tipe
@@ -475,6 +475,8 @@ object ModelExtractor {
         val (vType, _) = extractType(aQName, valueType, None)
         val resultType = mapType(kType, vType)
         (value : @unchecked) match {
+          case Some(DYN) | None =>
+            (resultType, none())
           case Some(m : IMap[_, _]) =>
             val inits = m.map(p =>
               (extractType(aQName, keyType, Some(p._1))._2,
@@ -485,32 +487,30 @@ object ModelExtractor {
               (resultType,
                 some(mapInit(inits.toSeq.map(_._1.get),
                   inits.toSeq.map(_._2.get))))
-          case None =>
-            (resultType, none())
         }
       case `SET_NAME` =>
         val TypeRef(_, _, List(elementType)) = tipe
         val (eType, _) = extractType(aQName, elementType, None)
         val resultType = setType(eType)
         (value : @unchecked) match {
+          case Some(DYN) | None =>
+            (resultType, none())
           case Some(s : ISet[_]) =>
             val inits = s.map(x => extractType(aQName, elementType, Some(x))._2)
             if (inits.exists(!_.isPresent)) (resultType, none())
             else (resultType, some(setInit(inits.toSeq.map(_.get))))
-          case None =>
-            (resultType, none())
         }
       case `SEQ_NAME` =>
         val TypeRef(_, _, List(elementType)) = tipe
         val (eType, _) = extractType(aQName, elementType, None)
         val resultType = seqType(eType)
         (value : @unchecked) match {
+          case Some(DYN) | None =>
+            (resultType, none())
           case Some(s : ISeq[_]) =>
             val inits = s.map(x => extractType(aQName, elementType, Some(x))._2)
             if (inits.exists(!_.isPresent)) (resultType, none())
             else (resultType, some(setInit(inits.map(_.get))))
-          case None =>
-            (resultType, none())
         }
       case c if clazz.isPrimitive || clazz.isEnum || clazz.isArray ||
         clazz.isAnnotation || clazz.isSynthetic || c.startsWith("scala.") ||
