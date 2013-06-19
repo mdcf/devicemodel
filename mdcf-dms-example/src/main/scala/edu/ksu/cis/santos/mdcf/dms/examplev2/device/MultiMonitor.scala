@@ -92,10 +92,14 @@ final class MultiMonitorPulseOx extends ICE_MDS {
               )
               override val alerts : Map[String, ICE_Alert] = Map(
                 "spo2rangealert" -> new ICE_FloatRangeValueAlert{
-                  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
-                  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
-                  override val get : ICE_Get_Exchange = new MultiMonitorGetExchange {}
-                  override val set : Option[ICE_Set_Exchange] = Some(new MultiMonitorSetExchange {})
+                  override val ALERT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER CODE"
+                  override val ALERT_SOURCE : IEEE11073_OID_TYPE = "PLACEHOLDER SOURCE"
+                  override val setting = new ICE_FloatRangeSetting {
+                    override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
+                    override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
+                    override val get : ICE_Get_Exchange = new MultiMonitorGetExchange {}
+                    override val set : Option[ICE_Set_Exchange] = Some(new MultiMonitorSetExchange {})
+                  }
                   override val access : Option[ICE_Security_Access_Read] = None
                   override val exchange : ICE_Sporadic_Exchange = new MultiMonitorSporadicExchange {}
                   // All payload stuff is dynamic, so we don't write anything about it here
@@ -121,10 +125,14 @@ final class MultiMonitorPulseOx extends ICE_MDS {
               )
               override val alerts : Map[String, ICE_Alert] = Map(
                   "pulseraterangealert" -> new ICE_FloatRangeValueAlert{
-                  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
-                  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
-                  override val get : ICE_Get_Exchange = new MultiMonitorGetExchange {}
-                  override val set : Option[ICE_Set_Exchange] = Some(new MultiMonitorSetExchange {})
+                  override val ALERT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER CODE"
+                  override val ALERT_SOURCE : IEEE11073_OID_TYPE = "PLACEHOLDER SOURCE"
+                  override val setting = new ICE_FloatRangeSetting {
+                    override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
+                    override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
+                    override val get : ICE_Get_Exchange = new MultiMonitorGetExchange {}
+                    override val set : Option[ICE_Set_Exchange] = Some(new MultiMonitorSetExchange {})
+                  }
                   override val access : Option[ICE_Security_Access_Read] = None
                   override val exchange : ICE_Sporadic_Exchange = new MultiMonitorSporadicExchange {}
                   // All payload stuff is dynamic, so we don't write anything about it here
@@ -160,10 +168,14 @@ final class MultiMonitorPulseOx extends ICE_MDS {
               )
               override val alerts : Map[String, ICE_Alert] = Map(
                   "bpdia_rangealert" -> new ICE_FloatRangeValueAlert{
-                  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
-                  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
-                  override val get : ICE_Get_Exchange = new MultiMonitorGetExchange {}
-                  override val set : Option[ICE_Set_Exchange] = Some(new MultiMonitorSetExchange {})
+                  override val ALERT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER CODE"
+                  override val ALERT_SOURCE : IEEE11073_OID_TYPE = "PLACEHOLDER SOURCE"
+                  override val setting = new ICE_FloatRangeSetting {
+                    override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
+                    override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
+                    override val get : ICE_Get_Exchange = new MultiMonitorGetExchange {}
+                    override val set : Option[ICE_Set_Exchange] = Some(new MultiMonitorSetExchange {})
+                  }
                   override val access : Option[ICE_Security_Access_Read] = None
                   override val exchange : ICE_Sporadic_Exchange = new MultiMonitorSporadicExchange {}
                   // All payload stuff is dynamic, so we don't write anything about it here
@@ -181,10 +193,14 @@ final class MultiMonitorPulseOx extends ICE_MDS {
               )
               override val alerts : Map[String, ICE_Alert] = Map(
                   "bpsys_rangealert" -> new ICE_FloatRangeValueAlert{
-                  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
-                  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
-                  override val get : ICE_Get_Exchange = new MultiMonitorGetExchange {}
-                  override val set : Option[ICE_Set_Exchange] = Some(new MultiMonitorSetExchange {})
+                  override val ALERT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER CODE"
+                  override val ALERT_SOURCE : IEEE11073_OID_TYPE = "PLACEHOLDER SOURCE"
+                  override val setting = new ICE_FloatRangeSetting {
+                    override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
+                    override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
+                    override val get : ICE_Get_Exchange = new MultiMonitorGetExchange {}
+                    override val set : Option[ICE_Set_Exchange] = Some(new MultiMonitorSetExchange {})
+                  }
                   override val access : Option[ICE_Security_Access_Read] = None
                   override val exchange : ICE_Sporadic_Exchange = new MultiMonitorSporadicExchange {}
                   // All payload stuff is dynamic, so we don't write anything about it here
@@ -202,10 +218,14 @@ final class MultiMonitorPulseOx extends ICE_MDS {
               )
               override val alerts : Map[String, ICE_Alert] = Map(
                   "bpsys_rangealert" -> new ICE_FloatRangeValueAlert{
-                  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
-                  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
-                  override val get : ICE_Get_Exchange = new MultiMonitorGetExchange {}
-                  override val set : Option[ICE_Set_Exchange] = Some(new MultiMonitorSetExchange {})
+                  override val ALERT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER CODE"
+                  override val ALERT_SOURCE : IEEE11073_OID_TYPE = "PLACEHOLDER SOURCE"
+                  override val setting = new ICE_FloatRangeSetting {
+                    override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
+                    override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
+                    override val get : ICE_Get_Exchange = new MultiMonitorGetExchange {}
+                    override val set : Option[ICE_Set_Exchange] = Some(new MultiMonitorSetExchange {})
+                  }
                   override val access : Option[ICE_Security_Access_Read] = None
                   override val exchange : ICE_Sporadic_Exchange = new MultiMonitorSporadicExchange {}
                   // All payload stuff is dynamic, so we don't write anything about it here
