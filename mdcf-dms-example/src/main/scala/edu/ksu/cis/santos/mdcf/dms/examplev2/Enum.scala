@@ -19,6 +19,6 @@ abstract class MeasurementStatusValue extends Enumeration
 
 object MeasurementStatusValue extends MeasurementStatusValue {
   type Type = Value
-  val Ok, NotOk = Value
+  val Ok, NotOk, MinRangeTresholdAlert, MaxRangeTresholdAlert = Value
 }
 
