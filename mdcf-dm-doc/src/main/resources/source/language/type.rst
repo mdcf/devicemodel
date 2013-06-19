@@ -23,6 +23,7 @@ Type and Initialization
                        : | "(" `initialization` ( "," `initialization` )+ ")"
                        : | "Seq" "(" [ `initialization` ( "," `initialization` )* ] ")"
                        : | "Set" "(" [ `initialization` ( "," `initialization` )* ] ")"
+                       : | "DYN"
    attributeInit       : `attributeAnnotation`* "val" ID_attribute ":" `type` "=" `initialization`
 
 A `type <#grammar-token-type>`__ can refer to :scalaapi:`scala.Any`,
@@ -92,6 +93,8 @@ for convenience.
 On the other hand ``Set(...)`` creates 
 :scalaapi:`scala.collection.immutable.Set <scala.collection.immutable.Set>`,
 hence, no conversion is necessary.
+The ``DYN`` initialization indicates an attributes whose value is dynamic
+and not part of the device model.
 
 
 Representation Classes

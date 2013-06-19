@@ -13,28 +13,10 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2._
 import edu.ksu.cis.santos.mdcf.dms.examplev2.schema._
 import edu.ksu.cis.santos.mdcf.dms.examplev2.clas._
 
-//trait NoninGetExchangeAccess extends ICE_Get_Exchange {
-//  override val access : Option[ICE_Security_Access_Read] = None
-//}
-//
-//trait NoninGetExchangeSeparation extends ICE_Get_Exchange {
-//  override val separation : NatRange = new NatRange {
-//    override val min : Nat = 0
-//    override val max : Nat = 50
-//  }
-//}
-//
-//trait NoninGetExchangeServiceTime extends ICE_Get_Exchange {
-//  override val serviceTime : NatRange = new NatRange {
-//    override val min : Nat = 0
-//    override val max : Nat = 50
-//  }
-//}
-
-class NoninGetExchange extends ICE_Get_Exchange {
+class NellcorGetExchange extends ICE_Get_Exchange {
   override val access : Option[ICE_Security_Access_Read] = None
   override val separation : NatRange = new NatRange {
-    override val min : Nat = 0
+    override val min : Nat = 10
     override val max : Nat = 50
   }
   override val serviceTime : NatRange = new NatRange {
@@ -43,13 +25,45 @@ class NoninGetExchange extends ICE_Get_Exchange {
   }
 }
 
-final class NoninPulseOx extends ICE_MDS {
-  override val IEEE11073_MDC_ATTR_SYS_TYPE : IEEE11073_TYPE = "Nonin PO"
+class NellcorSetExchange extends ICE_Set_Exchange{
+  override val access : Option[ICE_Security_Access_Write] = None
+  override val separation : NatRange = new NatRange {
+    override val min : Nat = 10
+    override val max : Nat = 50
+  }
+  override val serviceTime : NatRange = new NatRange {
+    override val min : Nat = 0
+    override val max : Nat = 50
+  }
+}
+
+class NellcorPeriodicExchange extends ICE_Periodic_Exchange {
+  override val access : Option[ICE_Security_Access_Read] = None
+  override val separation : NatRange = new NatRange {
+    override val min : Nat = 98
+    override val max : Nat = 102
+  }
+  override val rate : NatRange = new NatRange {
+    override val min : Nat = 50
+    override val max : Nat = 150
+  }
+}
+
+class NellcorSporadicExchange extends ICE_Sporadic_Exchange {
+  override val access : Option[ICE_Security_Access_Read] = None
+  override val separation : NatRange = new NatRange {
+    override val min : Nat = 98
+    override val max : Nat = 102
+  }
+}
+
+final class NellcorPulseOx extends ICE_MDS {
+  override val IEEE11073_MDC_ATTR_SYS_TYPE : IEEE11073_TYPE = "Nellcor PO"
 
   override val manufacturerModel : ICE_ManufacturerModel = new ICE_ManufacturerModel {
     override val MDC_ATTR_ID_MODEL : IEEE11073_SystemModel = new IEEE11073_SystemModel {
-      override val manufacturer : String = "Nonin"
-      override val model_number : String = "Nonin Onyx II X5551122"
+      override val manufacturer : String = "Nellcor"
+      override val model_number : String = "Nellcor 2000"
     }
     override val credentials : Map[String, ICE_Security_Certificate] = Map()
   }
@@ -59,7 +73,7 @@ final class NoninPulseOx extends ICE_MDS {
       override val status : ICE_VMD_Status = new ICE_VMD_Status {
         override val state : ICE_VMD_State = ICE_VMD_StateValue.Ok
         override val access : Option[ICE_Security_Access_Read] = None
-        override val exchange : ICE_Get_Exchange = new NoninGetExchange {}
+        override val exchange : ICE_Get_Exchange = new NellcorGetExchange {}
       }
 
       override val channels : Map[String, ICE_Channel] = Map(
@@ -73,9 +87,20 @@ final class NoninPulseOx extends ICE_MDS {
                 override val max : Float = 100.0
               }
               override val exchanges : Map[String, ICE_Data_Exchange] = Map(
-                "get" -> new NoninGetExchange {}
+                "get" -> new NellcorGetExchange {},
+                "periodic" -> new NellcorPeriodicExchange {}
               )
-              override val alerts : Map[String, ICE_Alert] = Map()
+              override val alerts : Map[String, ICE_Alert] = Map(
+                "spo2rangealert" -> new ICE_FloatRangeValueAlert{
+                  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
+                  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
+                  override val get : ICE_Get_Exchange = new NellcorGetExchange {}
+                  override val set : Option[ICE_Set_Exchange] = Some(new NellcorSetExchange {})
+                  override val access : Option[ICE_Security_Access_Read] = None
+                  override val exchange : ICE_Sporadic_Exchange = new NellcorSporadicExchange {}
+                  // All payload stuff is dynamic, so we don't write anything about it here
+                }
+              )
             })
           override val settings : Map[String, ICE_Setting] = Map()
           override val statuses : Map[String, ICE_Status] = Map()
@@ -91,9 +116,20 @@ final class NoninPulseOx extends ICE_MDS {
                 override val max : Float = 300.0
               }
               override val exchanges : Map[String, ICE_Data_Exchange] = Map(
-                "get" -> new NoninGetExchange {}
+                "get" -> new NellcorGetExchange {},
+                "periodic" -> new NellcorPeriodicExchange {}
               )
-              override val alerts : Map[String, ICE_Alert] = Map()
+              override val alerts : Map[String, ICE_Alert] = Map(
+                  "pulseraterangealert" -> new ICE_FloatRangeValueAlert{
+                  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
+                  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
+                  override val get : ICE_Get_Exchange = new NellcorGetExchange {}
+                  override val set : Option[ICE_Set_Exchange] = Some(new NellcorSetExchange {})
+                  override val access : Option[ICE_Security_Access_Read] = None
+                  override val exchange : ICE_Sporadic_Exchange = new NellcorSporadicExchange {}
+                  // All payload stuff is dynamic, so we don't write anything about it here
+                }
+              )
             }
           )
           override val settings : Map[String, ICE_Setting] = Map()

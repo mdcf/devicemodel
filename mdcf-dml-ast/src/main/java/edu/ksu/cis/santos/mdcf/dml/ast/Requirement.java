@@ -16,16 +16,16 @@ import java.util.List;
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public final class Requirement extends Declaration {
-  public final List<Invariant> invariants;
+  public final List<Member> members;
 
-  public Requirement(final String name, final Iterable<Invariant> invariants) {
+  public Requirement(final String name, final Iterable<Member> members) {
     super(name);
-    this.invariants = list(invariants);
+    this.members = list(members);
   }
 
   @Override
   protected Object[] getChildren() {
-    return new Object[] { this.name, this.invariants };
+    return new Object[] { this.name, this.members };
   }
 
   @Override

@@ -35,7 +35,7 @@ import edu.ksu.cis.santos.mdcf.dms.ModelExtractor;
  */
 public class ModelExtractorTest {
 
-  private static boolean GENERATE_EXPECTED = false;
+  private static boolean GENERATE_EXPECTED = true;
 
   private XMLTestCase xmlUnit;
 

@@ -204,7 +204,7 @@ trait ICE_VMS extends Feature {
   // 11073 defines the following string attribute to uniquely identifier a device instance.   The 11073
   // type is "string", but this should be changed to some notion of UDI
   @Const(INSTANCE)
-  val IEEE11073_MDC_ATTR_SYS_ID : ICE_UDI
+  val IEEE11073_MDC_ATTR_SYS_ID : ICE_UDI = DYN
 }
 
 // === I C E   M a n u f a c t u r e r    I n f o r m a t i o n ===
@@ -502,9 +502,9 @@ trait ICE_Setting extends Feature {
   @Const(PRODUCT)
   val set : Option[ICE_Set_Exchange]
   @Const(PRODUCT)
-  val get_payload : ICE_SettingGetPayload
+  val get_payload : ICE_SettingGetPayload = DYN
   @Const(PRODUCT)
-  val set_payload : Option[ICE_SettingSetPayload]
+  val set_payload : Option[ICE_SettingSetPayload] = DYN
 }
 
 // Defines the representation of the setting.   This should be a polymorphic
@@ -519,7 +519,7 @@ trait ICE_Setting extends Feature {
 // Set up generic "get payload" type.  The get payload should include a time stamp.
 @Data
 trait ICE_SettingGetPayload extends ICE_MessageContext {
-  val payload : Any
+  val payload : Any = DYN
 }
 
 // Set up generic "set payload" type.
@@ -527,7 +527,7 @@ trait ICE_SettingGetPayload extends ICE_MessageContext {
 // on the app side)
 @Data
 trait ICE_SettingSetPayload extends Feature {
-  val payload : Any
+  val payload : Any = DYN
 }
 
 // == C o m m o n    S e t t i n g s == 
@@ -537,34 +537,34 @@ trait ICE_SettingSetPayload extends Feature {
 // Define payload contents (without time stamp and other context)
 @Data
 trait ICE_RangeSettingPayloadContent extends Range {
-  override val min : Number
-  override val max : Number
+  override val min : Number = DYN
+  override val max : Number = DYN
 }
 
 @Data
 trait ICE_FloatRangeSettingPayloadContent extends ICE_RangeSettingPayloadContent {
-  override val min : Float
-  override val max : Float
+  override val min : Float = DYN
+  override val max : Float = DYN
 }
 
 @Data
 trait ICE_RangeSettingGetPayload extends ICE_SettingGetPayload {
-  override val payload : ICE_RangeSettingPayloadContent // why doesn't an Eclipse "override" marker show up here?
+  override val payload : ICE_RangeSettingPayloadContent = DYN // why doesn't an Eclipse "override" marker show up here?
 }
 
 @Data
 trait ICE_RangeSettingSetPayload extends ICE_SettingSetPayload {
-  override val payload : ICE_RangeSettingPayloadContent // why doesn't an Eclipse "override" marker show up here?
+  override val payload : ICE_RangeSettingPayloadContent = DYN // why doesn't an Eclipse "override" marker show up here?
 }
 
 @Data
 trait ICE_FloatRangeSettingGetPayload extends ICE_RangeSettingGetPayload {
-  override val payload : ICE_FloatRangeSettingPayloadContent
+  override val payload : ICE_FloatRangeSettingPayloadContent = DYN
 }
 
 @Data
 trait ICE_FloatRangeSettingSetPayload extends ICE_RangeSettingSetPayload {
-  override val payload : ICE_FloatRangeSettingPayloadContent
+  override val payload : ICE_FloatRangeSettingPayloadContent = DYN
 }
 
 // Form a range setting by instantiating the type of the payload contents.
@@ -573,16 +573,16 @@ trait ICE_FloatRangeSettingSetPayload extends ICE_RangeSettingSetPayload {
 // to refine Any in multiple places. 
 trait ICE_RangeSetting extends ICE_Setting {
   @Const(PRODUCT)
-  override val get_payload : ICE_RangeSettingGetPayload // why doesn't an Eclipse "override" marker show up here?
+  override val get_payload : ICE_RangeSettingGetPayload = DYN // why doesn't an Eclipse "override" marker show up here?
   @Const(PRODUCT)
-  override val set_payload : Option[ICE_RangeSettingSetPayload] // why doesn't an Eclipse "override" marker show up here?
+  override val set_payload : Option[ICE_RangeSettingSetPayload] = DYN // why doesn't an Eclipse "override" marker show up here?
 }
 
 trait ICE_FloatRangeSetting extends ICE_RangeSetting {
   @Const(PRODUCT)
-  override val get_payload : ICE_FloatRangeSettingGetPayload // here we should override the payload of type Any       
+  override val get_payload : ICE_FloatRangeSettingGetPayload = DYN // here we should override the payload of type Any       
   @Const(PRODUCT)
-  override val set_payload : Option[ICE_FloatRangeSettingSetPayload]
+  override val set_payload : Option[ICE_FloatRangeSettingSetPayload] = DYN
 }
 
 //

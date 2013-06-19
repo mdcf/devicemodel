@@ -30,7 +30,9 @@ Feature and Requirement
                        :   "pred" "{" ID ":" `predicateType` "=>" <scalaExp : dms.Boolean> "}"
    predicateType       : `featureType`
                        : | "(" `featureType` ( "," `featureType` )+ ")"
-   requirement         : "@Req" "object" ID_requirement "{" `invariant`* "}"
+   requirement         : [ "@Req" ]
+                       : "trait" ID_requirement "{" `attribute`* "}"
+                       : "object" ID_requirement "{" `invariant`* "}"
 
 `Feature declarations <#grammar-token-feature>`__
 are used to introduce compound types consisting of 
@@ -411,8 +413,9 @@ dependency constraints for medical device coordinations. That is, if a
 device requires some features from other devices with some specific 
 properties, the device can advertise the properties as requirements.
  
-A `requirement <#grammar-token-requirement>`__ consists of invariants that 
-state the required feature properties. The form of a requirement invariant 
+A `requirement <#grammar-token-requirement>`__ consists of attributes and 
+invariants that state the required feature properties. 
+The form of a requirement invariant 
 is similar to :ref:`feature`s invariant <sec-feature-invariant>`, except
 that a requirement invariant predicate function is allowed to work over
 a tuple of feature types 

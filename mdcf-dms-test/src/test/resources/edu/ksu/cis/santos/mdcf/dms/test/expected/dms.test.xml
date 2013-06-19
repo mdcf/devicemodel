@@ -1575,7 +1575,7 @@
       </members>
     </feature>
     <requirement name="edu.ksu.cis.santos.mdcf.dms.example.requirement.MyReqPulseOx">
-      <invariants class="ilist">
+      <members class="ilist">
         <invariant name="(SpO2&apos;s min &lt; 40 and SpO2&apos;s max == 100)">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
           <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
@@ -1604,7 +1604,7 @@
             </pred.SerializedExpr>
           </predicate>
         </invariant>
-      </invariants>
+      </members>
     </requirement>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.BatteryLevelStatus">
       <annotations class="ilist">

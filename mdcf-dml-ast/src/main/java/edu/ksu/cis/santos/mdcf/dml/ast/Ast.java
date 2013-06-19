@@ -189,8 +189,8 @@ public class Ast {
     }
 
     public static Requirement requirement(final String name,
-        final Iterable<?> invariants) {
-      return Ast.requirement(name, list(invariants, Invariant.class));
+        final Iterable<?> members) {
+      return Ast.requirement(name, list(members, Member.class));
     }
 
     public static SeqInit seqInit(final Iterable<?> inits) {
@@ -343,8 +343,8 @@ public class Ast {
   }
 
   public static Requirement requirement(final String name,
-      final Iterable<Invariant> invariants) {
-    return new Requirement(name, invariants);
+      final Iterable<Member> members) {
+    return new Requirement(name, members);
   }
 
   public static SeqInit seqInit(final Iterable<Initialization> inits) {
