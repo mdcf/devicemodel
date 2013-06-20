@@ -1668,7 +1668,7 @@
                 <param name="x$1">
                   <type class="none"></type>
                 </param>
-                <body class="edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp">
+                <body class="matchExp">
                   <type class="none"></type>
                   <exp class="varRefExp" id="x$1">
                     <type class="none"></type>
@@ -1751,7 +1751,7 @@
                 <param name="x$2">
                   <type class="none"></type>
                 </param>
-                <body class="edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp">
+                <body class="matchExp">
                   <type class="none"></type>
                   <exp class="varRefExp" id="x$2">
                     <type class="none"></type>

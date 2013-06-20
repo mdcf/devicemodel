@@ -65,6 +65,7 @@ import edu.ksu.cis.santos.mdcf.dml.ast.exp.InstanceOfExp;
 import edu.ksu.cis.santos.mdcf.dml.ast.exp.LiteralExp;
 import edu.ksu.cis.santos.mdcf.dml.ast.exp.MapOpExp;
 import edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchCase;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp;
 import edu.ksu.cis.santos.mdcf.dml.ast.exp.NamedMatchCaseBind;
 import edu.ksu.cis.santos.mdcf.dml.ast.exp.Param;
 import edu.ksu.cis.santos.mdcf.dml.ast.exp.SeqOpExp;
@@ -282,6 +283,7 @@ public class XStreamer {
     result.alias("literalExp", LiteralExp.class);
     result.alias("mapOpExp", MapOpExp.class);
     result.alias("matchCase", MatchCase.class);
+    result.alias("matchExp", MatchExp.class);
     result.alias("namedMatchCaseBind", NamedMatchCaseBind.class);
     result.alias("param", Param.class);
     result.alias("seqOpExp", SeqOpExp.class);
