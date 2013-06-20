@@ -12,6 +12,26 @@ import java.util.List;
 
 import com.google.common.base.Optional;
 
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.AccessExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.ApplyExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.BinaryBasicOpExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.DefaultMatchCaseBind;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.Exp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.FunExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.InstanceOfExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.LiteralExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.MapOpExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchCase;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchCaseBind;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.NamedMatchCaseBind;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.Param;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.SeqOpExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.SetOpExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.TupleOpExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.UnknownExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.VarRefExp;
+
 /**
  * A basic {@link IVisitor} implementation that handles {@link List},
  * {@link Optional}, and returns true for all {@link IVisitor} methods
@@ -48,6 +68,16 @@ public abstract class AbstractVisitor
   }
 
   @Override
+  public boolean visitAccessExp(final AccessExp node) {
+    return defaultCase(node);
+  }
+
+  @Override
+  public boolean visitApplyExp(final ApplyExp node) {
+    return defaultCase(node);
+  }
+
+  @Override
   public boolean visitAttribute(final Attribute node) {
     return defaultCase(node);
   }
@@ -59,6 +89,11 @@ public abstract class AbstractVisitor
 
   @Override
   public boolean visitBasicType(final BasicType node) {
+    return defaultCase(node);
+  }
+
+  @Override
+  public boolean visitBinaryBasicOpExp(final BinaryBasicOpExp node) {
     return defaultCase(node);
   }
 
@@ -78,6 +113,11 @@ public abstract class AbstractVisitor
   }
 
   @Override
+  public boolean visitDefaultMatchCaseBind(final DefaultMatchCaseBind node) {
+    return defaultCase(node);
+  }
+
+  @Override
   public boolean visitEitherInit(final EitherInit node) {
     return defaultCase(node);
   }
@@ -85,6 +125,11 @@ public abstract class AbstractVisitor
   @Override
   public boolean visitEitherType(final EitherType node) {
     return defaultCase(node);
+  }
+
+  @Override
+  public boolean visitExp(final Exp node) {
+    return true;
   }
 
   @Override
@@ -103,12 +148,27 @@ public abstract class AbstractVisitor
   }
 
   @Override
+  public boolean visitFunExp(final FunExp node) {
+    return defaultCase(node);
+  }
+
+  @Override
   public boolean visitInitialization(final Initialization node) {
     return true;
   }
 
   @Override
+  public boolean visitInstanceOfExp(final InstanceOfExp node) {
+    return defaultCase(node);
+  }
+
+  @Override
   public boolean visitInvariant(final Invariant node) {
+    return defaultCase(node);
+  }
+
+  @Override
+  public boolean visitLiteralExp(final LiteralExp node) {
     return defaultCase(node);
   }
 
@@ -118,7 +178,27 @@ public abstract class AbstractVisitor
   }
 
   @Override
+  public boolean visitMapOpExp(final MapOpExp node) {
+    return defaultCase(node);
+  }
+
+  @Override
   public boolean visitMapType(final MapType node) {
+    return defaultCase(node);
+  }
+
+  @Override
+  public boolean visitMatchCase(final MatchCase node) {
+    return defaultCase(node);
+  }
+
+  @Override
+  public boolean visitMatchCaseBind(final MatchCaseBind node) {
+    return true;
+  }
+
+  @Override
+  public boolean visitMatchExp(final MatchExp node) {
     return defaultCase(node);
   }
 
@@ -134,6 +214,11 @@ public abstract class AbstractVisitor
 
   @Override
   public boolean visitMultiplicityAnnotation(final MultiplicityAnnotation node) {
+    return defaultCase(node);
+  }
+
+  @Override
+  public boolean visitNamedMatchCaseBind(final NamedMatchCaseBind node) {
     return defaultCase(node);
   }
 
@@ -158,6 +243,11 @@ public abstract class AbstractVisitor
   }
 
   @Override
+  public boolean visitParam(final Param node) {
+    return defaultCase(node);
+  }
+
+  @Override
   public boolean visitRefinedType(final RefinedType node) {
     return defaultCase(node);
   }
@@ -173,12 +263,22 @@ public abstract class AbstractVisitor
   }
 
   @Override
+  public boolean visitSeqOpExp(final SeqOpExp node) {
+    return defaultCase(node);
+  }
+
+  @Override
   public boolean visitSeqType(final SeqType node) {
     return defaultCase(node);
   }
 
   @Override
   public boolean visitSetInit(final SetInit node) {
+    return defaultCase(node);
+  }
+
+  @Override
+  public boolean visitSetOpExp(final SetOpExp node) {
     return defaultCase(node);
   }
 
@@ -203,6 +303,11 @@ public abstract class AbstractVisitor
   }
 
   @Override
+  public boolean visitTupleOpExp(final TupleOpExp node) {
+    return defaultCase(node);
+  }
+
+  @Override
   public boolean visitTupleType(final TupleType node) {
     return defaultCase(node);
   }
@@ -210,5 +315,15 @@ public abstract class AbstractVisitor
   @Override
   public boolean visitType(final Type node) {
     return true;
+  }
+
+  @Override
+  public boolean visitUnknownExp(final UnknownExp node) {
+    return defaultCase(node);
+  }
+
+  @Override
+  public boolean visitVarRefExp(final VarRefExp node) {
+    return defaultCase(node);
   }
 }

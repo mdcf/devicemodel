@@ -74,20 +74,7 @@ public abstract class AstNode {
   }
 
   private void toString(final StringBuilder sb, final Object o) {
-    if (o instanceof Invariant) {
-      final Invariant inv = (Invariant) o;
-      sb.append("invariant(\"");
-      sb.append(StringEscapeUtils.escapeJava(inv.name));
-      sb.append("\", \"");
-      String ps;
-      if ((inv.predicateString == null)
-          || ((ps = inv.predicateString.get()) == null)) {
-        ps = StringEscapeUtils.escapeJava(Invariant.xs().toXML(inv.predicate));
-        inv.predicateString = new SoftReference<String>(ps);
-      }
-      sb.append(ps);
-      sb.append("\")");
-    } else if (o instanceof AstNode) {
+    if (o instanceof AstNode) {
       final AstNode n = (AstNode) o;
       final String name = n.getClass().getSimpleName();
       sb.append(Character.toLowerCase(name.charAt(0)));
