@@ -363,6 +363,9 @@ object ModelExtractor {
 
     if (isInvariant) {
       inits.get(aName) match {
+        case Some(DYN) | None =>
+          context.reporter.error(s"Ill-formed model: $aQName")
+          None
         case Some(value) =>
           val valueClass = value.getClass
           if (valueClass.getName != "scala.reflect.api.Exprs$ExprImpl") {
@@ -379,9 +382,6 @@ object ModelExtractor {
             Some(invariant(aName, predicateType,
               predExtractor(value.asInstanceOf[Predicate[_]])))
           }
-        case _ =>
-          context.reporter.error(s"Ill-formed model: $aQName")
-          None
       }
     } else if (isCompanion) {
       None
