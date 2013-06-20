@@ -15,7 +15,7 @@ trait App5 {
   val dev : ICE_VMD
 }
 
-object Case5 extends App {
+object App5 {
   @Inv
   val req1 : Predicate[App5] =
     pred { vmd : App5 =>

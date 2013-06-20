@@ -909,49 +909,98 @@
                                                         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeValueAlert"/>
                                                       </types>
                                                       <attributes class="ilist">
-                                                        <attribute name="MDC_ATTR_ID_PHYSIO">
+                                                        <attribute name="ALERT_CODE">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
                                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
                                                           <init class="some">
-                                                            <reference class="basicInit" value="PLACEHOLDER ID"/>
+                                                            <reference class="basicInit" value="PLACEHOLDER CODE"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="MDC_ATTR_UNIT_CODE">
+                                                        <attribute name="ALERT_SOURCE">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
                                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
                                                           <init class="some">
-                                                            <reference class="basicInit" value="PLACEHOLDER UNIT CODE"/>
+                                                            <reference class="basicInit" value="PLACEHOLDER SOURCE"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="get">
+                                                        <attribute name="setting">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
                                                           <init class="some">
                                                             <reference class="featureInit">
-                                                              <types class="ilist"></types>
-                                                              <attributes class="ilist"></attributes>
-                                                            </reference>
-                                                          </init>
-                                                        </attribute>
-                                                        <attribute name="set">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="optionType">
-                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange"/>
-                                                          </type>
-                                                          <init class="some">
-                                                            <reference class="someInit">
-                                                              <init class="featureInit">
-                                                                <types class="ilist"></types>
-                                                                <attributes class="ilist"></attributes>
-                                                              </init>
+                                                              <types class="ilist">
+                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
+                                                              </types>
+                                                              <attributes class="ilist">
+                                                                <attribute name="MDC_ATTR_ID_PHYSIO">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="PLACEHOLDER ID"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="MDC_ATTR_UNIT_CODE">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="PLACEHOLDER UNIT CODE"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="get">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                                                                  <init class="some">
+                                                                    <reference class="featureInit">
+                                                                      <types class="ilist"></types>
+                                                                      <attributes class="ilist"></attributes>
+                                                                    </reference>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="set">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="optionType">
+                                                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange"/>
+                                                                  </type>
+                                                                  <init class="some">
+                                                                    <reference class="someInit">
+                                                                      <init class="featureInit">
+                                                                        <types class="ilist"></types>
+                                                                        <attributes class="ilist"></attributes>
+                                                                      </init>
+                                                                    </reference>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="get_payload">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingGetPayload"/>
+                                                                  <init class="none"></init>
+                                                                </attribute>
+                                                                <attribute name="set_payload">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="optionType">
+                                                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingSetPayload"/>
+                                                                  </type>
+                                                                  <init class="none"></init>
+                                                                </attribute>
+                                                              </attributes>
                                                             </reference>
                                                           </init>
                                                         </attribute>
@@ -977,22 +1026,6 @@
                                                               <attributes class="ilist"></attributes>
                                                             </reference>
                                                           </init>
-                                                        </attribute>
-                                                        <attribute name="get_payload">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingGetPayload"/>
-                                                          <init class="none"></init>
-                                                        </attribute>
-                                                        <attribute name="set_payload">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="optionType">
-                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingSetPayload"/>
-                                                          </type>
-                                                          <init class="none"></init>
                                                         </attribute>
                                                       </attributes>
                                                     </featureInit>
@@ -1080,7 +1113,7 @@
                             </featureInit>
                             <featureInit>
                               <types class="ilist">
-                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Channel"/>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseRate_Channel"/>
                               </types>
                               <attributes class="ilist">
                                 <attribute name="MDC_ATTR_ID_PARAM_GRP">
@@ -1205,49 +1238,98 @@
                                                         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeValueAlert"/>
                                                       </types>
                                                       <attributes class="ilist">
-                                                        <attribute name="MDC_ATTR_ID_PHYSIO">
+                                                        <attribute name="ALERT_CODE">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
                                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
                                                           <init class="some">
-                                                            <reference class="basicInit" value="PLACEHOLDER ID"/>
+                                                            <reference class="basicInit" value="PLACEHOLDER CODE"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="MDC_ATTR_UNIT_CODE">
+                                                        <attribute name="ALERT_SOURCE">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
                                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
                                                           <init class="some">
-                                                            <reference class="basicInit" value="PLACEHOLDER UNIT CODE"/>
+                                                            <reference class="basicInit" value="PLACEHOLDER SOURCE"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="get">
+                                                        <attribute name="setting">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
                                                           <init class="some">
                                                             <reference class="featureInit">
-                                                              <types class="ilist"></types>
-                                                              <attributes class="ilist"></attributes>
-                                                            </reference>
-                                                          </init>
-                                                        </attribute>
-                                                        <attribute name="set">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="optionType">
-                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange"/>
-                                                          </type>
-                                                          <init class="some">
-                                                            <reference class="someInit">
-                                                              <init class="featureInit">
-                                                                <types class="ilist"></types>
-                                                                <attributes class="ilist"></attributes>
-                                                              </init>
+                                                              <types class="ilist">
+                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
+                                                              </types>
+                                                              <attributes class="ilist">
+                                                                <attribute name="MDC_ATTR_ID_PHYSIO">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="PLACEHOLDER ID"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="MDC_ATTR_UNIT_CODE">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="PLACEHOLDER UNIT CODE"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="get">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                                                                  <init class="some">
+                                                                    <reference class="featureInit">
+                                                                      <types class="ilist"></types>
+                                                                      <attributes class="ilist"></attributes>
+                                                                    </reference>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="set">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="optionType">
+                                                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange"/>
+                                                                  </type>
+                                                                  <init class="some">
+                                                                    <reference class="someInit">
+                                                                      <init class="featureInit">
+                                                                        <types class="ilist"></types>
+                                                                        <attributes class="ilist"></attributes>
+                                                                      </init>
+                                                                    </reference>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="get_payload">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingGetPayload"/>
+                                                                  <init class="none"></init>
+                                                                </attribute>
+                                                                <attribute name="set_payload">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="optionType">
+                                                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingSetPayload"/>
+                                                                  </type>
+                                                                  <init class="none"></init>
+                                                                </attribute>
+                                                              </attributes>
                                                             </reference>
                                                           </init>
                                                         </attribute>
@@ -1273,22 +1355,6 @@
                                                               <attributes class="ilist"></attributes>
                                                             </reference>
                                                           </init>
-                                                        </attribute>
-                                                        <attribute name="get_payload">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingGetPayload"/>
-                                                          <init class="none"></init>
-                                                        </attribute>
-                                                        <attribute name="set_payload">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="optionType">
-                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingSetPayload"/>
-                                                          </type>
-                                                          <init class="none"></init>
                                                         </attribute>
                                                       </attributes>
                                                     </featureInit>
@@ -1569,49 +1635,98 @@
                                                         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeValueAlert"/>
                                                       </types>
                                                       <attributes class="ilist">
-                                                        <attribute name="MDC_ATTR_ID_PHYSIO">
+                                                        <attribute name="ALERT_CODE">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
                                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
                                                           <init class="some">
-                                                            <reference class="basicInit" value="PLACEHOLDER ID"/>
+                                                            <reference class="basicInit" value="PLACEHOLDER CODE"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="MDC_ATTR_UNIT_CODE">
+                                                        <attribute name="ALERT_SOURCE">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
                                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
                                                           <init class="some">
-                                                            <reference class="basicInit" value="PLACEHOLDER UNIT CODE"/>
+                                                            <reference class="basicInit" value="PLACEHOLDER SOURCE"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="get">
+                                                        <attribute name="setting">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
                                                           <init class="some">
                                                             <reference class="featureInit">
-                                                              <types class="ilist"></types>
-                                                              <attributes class="ilist"></attributes>
-                                                            </reference>
-                                                          </init>
-                                                        </attribute>
-                                                        <attribute name="set">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="optionType">
-                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange"/>
-                                                          </type>
-                                                          <init class="some">
-                                                            <reference class="someInit">
-                                                              <init class="featureInit">
-                                                                <types class="ilist"></types>
-                                                                <attributes class="ilist"></attributes>
-                                                              </init>
+                                                              <types class="ilist">
+                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
+                                                              </types>
+                                                              <attributes class="ilist">
+                                                                <attribute name="MDC_ATTR_ID_PHYSIO">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="PLACEHOLDER ID"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="MDC_ATTR_UNIT_CODE">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="PLACEHOLDER UNIT CODE"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="get">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                                                                  <init class="some">
+                                                                    <reference class="featureInit">
+                                                                      <types class="ilist"></types>
+                                                                      <attributes class="ilist"></attributes>
+                                                                    </reference>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="set">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="optionType">
+                                                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange"/>
+                                                                  </type>
+                                                                  <init class="some">
+                                                                    <reference class="someInit">
+                                                                      <init class="featureInit">
+                                                                        <types class="ilist"></types>
+                                                                        <attributes class="ilist"></attributes>
+                                                                      </init>
+                                                                    </reference>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="get_payload">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingGetPayload"/>
+                                                                  <init class="none"></init>
+                                                                </attribute>
+                                                                <attribute name="set_payload">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="optionType">
+                                                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingSetPayload"/>
+                                                                  </type>
+                                                                  <init class="none"></init>
+                                                                </attribute>
+                                                              </attributes>
                                                             </reference>
                                                           </init>
                                                         </attribute>
@@ -1637,22 +1752,6 @@
                                                               <attributes class="ilist"></attributes>
                                                             </reference>
                                                           </init>
-                                                        </attribute>
-                                                        <attribute name="get_payload">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingGetPayload"/>
-                                                          <init class="none"></init>
-                                                        </attribute>
-                                                        <attribute name="set_payload">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="optionType">
-                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingSetPayload"/>
-                                                          </type>
-                                                          <init class="none"></init>
                                                         </attribute>
                                                       </attributes>
                                                     </featureInit>
@@ -1771,49 +1870,98 @@
                                                         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeValueAlert"/>
                                                       </types>
                                                       <attributes class="ilist">
-                                                        <attribute name="MDC_ATTR_ID_PHYSIO">
+                                                        <attribute name="ALERT_CODE">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
                                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
                                                           <init class="some">
-                                                            <reference class="basicInit" value="PLACEHOLDER ID"/>
+                                                            <reference class="basicInit" value="PLACEHOLDER CODE"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="MDC_ATTR_UNIT_CODE">
+                                                        <attribute name="ALERT_SOURCE">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
                                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
                                                           <init class="some">
-                                                            <reference class="basicInit" value="PLACEHOLDER UNIT CODE"/>
+                                                            <reference class="basicInit" value="PLACEHOLDER SOURCE"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="get">
+                                                        <attribute name="setting">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
                                                           <init class="some">
                                                             <reference class="featureInit">
-                                                              <types class="ilist"></types>
-                                                              <attributes class="ilist"></attributes>
-                                                            </reference>
-                                                          </init>
-                                                        </attribute>
-                                                        <attribute name="set">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="optionType">
-                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange"/>
-                                                          </type>
-                                                          <init class="some">
-                                                            <reference class="someInit">
-                                                              <init class="featureInit">
-                                                                <types class="ilist"></types>
-                                                                <attributes class="ilist"></attributes>
-                                                              </init>
+                                                              <types class="ilist">
+                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
+                                                              </types>
+                                                              <attributes class="ilist">
+                                                                <attribute name="MDC_ATTR_ID_PHYSIO">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="PLACEHOLDER ID"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="MDC_ATTR_UNIT_CODE">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="PLACEHOLDER UNIT CODE"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="get">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                                                                  <init class="some">
+                                                                    <reference class="featureInit">
+                                                                      <types class="ilist"></types>
+                                                                      <attributes class="ilist"></attributes>
+                                                                    </reference>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="set">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="optionType">
+                                                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange"/>
+                                                                  </type>
+                                                                  <init class="some">
+                                                                    <reference class="someInit">
+                                                                      <init class="featureInit">
+                                                                        <types class="ilist"></types>
+                                                                        <attributes class="ilist"></attributes>
+                                                                      </init>
+                                                                    </reference>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="get_payload">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingGetPayload"/>
+                                                                  <init class="none"></init>
+                                                                </attribute>
+                                                                <attribute name="set_payload">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="optionType">
+                                                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingSetPayload"/>
+                                                                  </type>
+                                                                  <init class="none"></init>
+                                                                </attribute>
+                                                              </attributes>
                                                             </reference>
                                                           </init>
                                                         </attribute>
@@ -1839,22 +1987,6 @@
                                                               <attributes class="ilist"></attributes>
                                                             </reference>
                                                           </init>
-                                                        </attribute>
-                                                        <attribute name="get_payload">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingGetPayload"/>
-                                                          <init class="none"></init>
-                                                        </attribute>
-                                                        <attribute name="set_payload">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="optionType">
-                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingSetPayload"/>
-                                                          </type>
-                                                          <init class="none"></init>
                                                         </attribute>
                                                       </attributes>
                                                     </featureInit>
@@ -1973,49 +2105,98 @@
                                                         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeValueAlert"/>
                                                       </types>
                                                       <attributes class="ilist">
-                                                        <attribute name="MDC_ATTR_ID_PHYSIO">
+                                                        <attribute name="ALERT_CODE">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
                                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
                                                           <init class="some">
-                                                            <reference class="basicInit" value="PLACEHOLDER ID"/>
+                                                            <reference class="basicInit" value="PLACEHOLDER CODE"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="MDC_ATTR_UNIT_CODE">
+                                                        <attribute name="ALERT_SOURCE">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
                                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
                                                           <init class="some">
-                                                            <reference class="basicInit" value="PLACEHOLDER UNIT CODE"/>
+                                                            <reference class="basicInit" value="PLACEHOLDER SOURCE"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="get">
+                                                        <attribute name="setting">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
                                                           <init class="some">
                                                             <reference class="featureInit">
-                                                              <types class="ilist"></types>
-                                                              <attributes class="ilist"></attributes>
-                                                            </reference>
-                                                          </init>
-                                                        </attribute>
-                                                        <attribute name="set">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="optionType">
-                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange"/>
-                                                          </type>
-                                                          <init class="some">
-                                                            <reference class="someInit">
-                                                              <init class="featureInit">
-                                                                <types class="ilist"></types>
-                                                                <attributes class="ilist"></attributes>
-                                                              </init>
+                                                              <types class="ilist">
+                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
+                                                              </types>
+                                                              <attributes class="ilist">
+                                                                <attribute name="MDC_ATTR_ID_PHYSIO">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="PLACEHOLDER ID"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="MDC_ATTR_UNIT_CODE">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="PLACEHOLDER UNIT CODE"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="get">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                                                                  <init class="some">
+                                                                    <reference class="featureInit">
+                                                                      <types class="ilist"></types>
+                                                                      <attributes class="ilist"></attributes>
+                                                                    </reference>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="set">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="optionType">
+                                                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange"/>
+                                                                  </type>
+                                                                  <init class="some">
+                                                                    <reference class="someInit">
+                                                                      <init class="featureInit">
+                                                                        <types class="ilist"></types>
+                                                                        <attributes class="ilist"></attributes>
+                                                                      </init>
+                                                                    </reference>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="get_payload">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingGetPayload"/>
+                                                                  <init class="none"></init>
+                                                                </attribute>
+                                                                <attribute name="set_payload">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="optionType">
+                                                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingSetPayload"/>
+                                                                  </type>
+                                                                  <init class="none"></init>
+                                                                </attribute>
+                                                              </attributes>
                                                             </reference>
                                                           </init>
                                                         </attribute>
@@ -2041,22 +2222,6 @@
                                                               <attributes class="ilist"></attributes>
                                                             </reference>
                                                           </init>
-                                                        </attribute>
-                                                        <attribute name="get_payload">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingGetPayload"/>
-                                                          <init class="none"></init>
-                                                        </attribute>
-                                                        <attribute name="set_payload">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="optionType">
-                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingSetPayload"/>
-                                                          </type>
-                                                          <init class="none"></init>
                                                         </attribute>
                                                       </attributes>
                                                     </featureInit>
@@ -2791,49 +2956,98 @@
                                                         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeValueAlert"/>
                                                       </types>
                                                       <attributes class="ilist">
-                                                        <attribute name="MDC_ATTR_ID_PHYSIO">
+                                                        <attribute name="ALERT_CODE">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
                                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
                                                           <init class="some">
-                                                            <reference class="basicInit" value="PLACEHOLDER ID"/>
+                                                            <reference class="basicInit" value="PLACEHOLDER CODE"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="MDC_ATTR_UNIT_CODE">
+                                                        <attribute name="ALERT_SOURCE">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
                                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
                                                           <init class="some">
-                                                            <reference class="basicInit" value="PLACEHOLDER UNIT CODE"/>
+                                                            <reference class="basicInit" value="PLACEHOLDER SOURCE"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="get">
+                                                        <attribute name="setting">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
                                                           <init class="some">
                                                             <reference class="featureInit">
-                                                              <types class="ilist"></types>
-                                                              <attributes class="ilist"></attributes>
-                                                            </reference>
-                                                          </init>
-                                                        </attribute>
-                                                        <attribute name="set">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="optionType">
-                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange"/>
-                                                          </type>
-                                                          <init class="some">
-                                                            <reference class="someInit">
-                                                              <init class="featureInit">
-                                                                <types class="ilist"></types>
-                                                                <attributes class="ilist"></attributes>
-                                                              </init>
+                                                              <types class="ilist">
+                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
+                                                              </types>
+                                                              <attributes class="ilist">
+                                                                <attribute name="MDC_ATTR_ID_PHYSIO">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="PLACEHOLDER ID"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="MDC_ATTR_UNIT_CODE">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="PLACEHOLDER UNIT CODE"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="get">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                                                                  <init class="some">
+                                                                    <reference class="featureInit">
+                                                                      <types class="ilist"></types>
+                                                                      <attributes class="ilist"></attributes>
+                                                                    </reference>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="set">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="optionType">
+                                                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange"/>
+                                                                  </type>
+                                                                  <init class="some">
+                                                                    <reference class="someInit">
+                                                                      <init class="featureInit">
+                                                                        <types class="ilist"></types>
+                                                                        <attributes class="ilist"></attributes>
+                                                                      </init>
+                                                                    </reference>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="get_payload">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingGetPayload"/>
+                                                                  <init class="none"></init>
+                                                                </attribute>
+                                                                <attribute name="set_payload">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="optionType">
+                                                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingSetPayload"/>
+                                                                  </type>
+                                                                  <init class="none"></init>
+                                                                </attribute>
+                                                              </attributes>
                                                             </reference>
                                                           </init>
                                                         </attribute>
@@ -2859,22 +3073,6 @@
                                                               <attributes class="ilist"></attributes>
                                                             </reference>
                                                           </init>
-                                                        </attribute>
-                                                        <attribute name="get_payload">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingGetPayload"/>
-                                                          <init class="none"></init>
-                                                        </attribute>
-                                                        <attribute name="set_payload">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="optionType">
-                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingSetPayload"/>
-                                                          </type>
-                                                          <init class="none"></init>
                                                         </attribute>
                                                       </attributes>
                                                     </featureInit>
@@ -2962,7 +3160,7 @@
                             </featureInit>
                             <featureInit>
                               <types class="ilist">
-                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Channel"/>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseRate_Channel"/>
                               </types>
                               <attributes class="ilist">
                                 <attribute name="MDC_ATTR_ID_PARAM_GRP">
@@ -3087,49 +3285,98 @@
                                                         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeValueAlert"/>
                                                       </types>
                                                       <attributes class="ilist">
-                                                        <attribute name="MDC_ATTR_ID_PHYSIO">
+                                                        <attribute name="ALERT_CODE">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
                                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
                                                           <init class="some">
-                                                            <reference class="basicInit" value="PLACEHOLDER ID"/>
+                                                            <reference class="basicInit" value="PLACEHOLDER CODE"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="MDC_ATTR_UNIT_CODE">
+                                                        <attribute name="ALERT_SOURCE">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
                                                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
                                                           <init class="some">
-                                                            <reference class="basicInit" value="PLACEHOLDER UNIT CODE"/>
+                                                            <reference class="basicInit" value="PLACEHOLDER SOURCE"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="get">
+                                                        <attribute name="setting">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
                                                           <init class="some">
                                                             <reference class="featureInit">
-                                                              <types class="ilist"></types>
-                                                              <attributes class="ilist"></attributes>
-                                                            </reference>
-                                                          </init>
-                                                        </attribute>
-                                                        <attribute name="set">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="optionType">
-                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange"/>
-                                                          </type>
-                                                          <init class="some">
-                                                            <reference class="someInit">
-                                                              <init class="featureInit">
-                                                                <types class="ilist"></types>
-                                                                <attributes class="ilist"></attributes>
-                                                              </init>
+                                                              <types class="ilist">
+                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
+                                                              </types>
+                                                              <attributes class="ilist">
+                                                                <attribute name="MDC_ATTR_ID_PHYSIO">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="PLACEHOLDER ID"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="MDC_ATTR_UNIT_CODE">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="PLACEHOLDER UNIT CODE"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="get">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                                                                  <init class="some">
+                                                                    <reference class="featureInit">
+                                                                      <types class="ilist"></types>
+                                                                      <attributes class="ilist"></attributes>
+                                                                    </reference>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="set">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="optionType">
+                                                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange"/>
+                                                                  </type>
+                                                                  <init class="some">
+                                                                    <reference class="someInit">
+                                                                      <init class="featureInit">
+                                                                        <types class="ilist"></types>
+                                                                        <attributes class="ilist"></attributes>
+                                                                      </init>
+                                                                    </reference>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="get_payload">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingGetPayload"/>
+                                                                  <init class="none"></init>
+                                                                </attribute>
+                                                                <attribute name="set_payload">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="optionType">
+                                                                    <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingSetPayload"/>
+                                                                  </type>
+                                                                  <init class="none"></init>
+                                                                </attribute>
+                                                              </attributes>
                                                             </reference>
                                                           </init>
                                                         </attribute>
@@ -3155,22 +3402,6 @@
                                                               <attributes class="ilist"></attributes>
                                                             </reference>
                                                           </init>
-                                                        </attribute>
-                                                        <attribute name="get_payload">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingGetPayload"/>
-                                                          <init class="none"></init>
-                                                        </attribute>
-                                                        <attribute name="set_payload">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="optionType">
-                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSettingSetPayload"/>
-                                                          </type>
-                                                          <init class="none"></init>
                                                         </attribute>
                                                       </attributes>
                                                     </featureInit>
@@ -3872,7 +4103,7 @@
                             </featureInit>
                             <featureInit>
                               <types class="ilist">
-                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Channel"/>
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseRate_Channel"/>
                               </types>
                               <attributes class="ilist">
                                 <attribute name="MDC_ATTR_ID_PARAM_GRP">
@@ -4087,39 +4318,857 @@
         </attribute>
       </members>
     </feature>
+    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App1">
+      <members class="ilist">
+        <attribute name="po">
+          <annotations class="ilist"></annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseOx_VMD"/>
+          <init class="none"></init>
+        </attribute>
+        <invariant name="req1">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App1"/>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="rpo">
+              <type class="none"></type>
+            </param>
+            <body class="literalExp" value="true">
+              <type class="none"></type>
+            </body>
+          </predicate>
+        </invariant>
+      </members>
+    </requirement>
+    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App2Dev">
+      <members class="ilist">
+        <attribute name="dev">
+          <annotations class="ilist"></annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD"/>
+          <init class="none"></init>
+        </attribute>
+        <invariant name="ReqDev">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App2Dev"/>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="vmd">
+              <type class="none"></type>
+            </param>
+            <body class="applyExp">
+              <type class="none"></type>
+              <fun class="accessExp" id="exists">
+                <type class="none"></type>
+                <exp class="accessExp" id="values">
+                  <type class="none"></type>
+                  <exp class="accessExp" id="channels">
+                    <type class="none"></type>
+                    <exp class="accessExp" id="dev">
+                      <type class="none"></type>
+                      <exp class="varRefExp" id="vmd">
+                        <type class="none"></type>
+                      </exp>
+                    </exp>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="funExp">
+                <type class="none"></type>
+                <param name="x$1">
+                  <type class="none"></type>
+                </param>
+                <body class="edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="x$1">
+                    <type class="none"></type>
+                  </exp>
+                  <cases class="ilist">
+                    <matchCase>
+                      <bind class="namedMatchCaseBind" id="chan">
+                        <type class="some">
+                          <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+                        </type>
+                      </bind>
+                      <cond class="none"></cond>
+                      <body class="applyExp">
+                        <type class="none"></type>
+                        <fun class="accessExp" id="exists">
+                          <type class="none"></type>
+                          <exp class="accessExp" id="values">
+                            <type class="none"></type>
+                            <exp class="accessExp" id="metrics">
+                              <type class="none"></type>
+                              <exp class="varRefExp" id="chan">
+                                <type class="none"></type>
+                              </exp>
+                            </exp>
+                          </exp>
+                        </fun>
+                        <arg class="funExp">
+                          <type class="none"></type>
+                          <param name="x$2">
+                            <type class="none"></type>
+                          </param>
+                          <body class="instanceOfExp">
+                            <type class="none"></type>
+                            <exp class="varRefExp" id="x$2">
+                              <type class="none"></type>
+                            </exp>
+                            <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
+                          </body>
+                        </arg>
+                      </body>
+                    </matchCase>
+                    <matchCase>
+                      <bind class="defaultMatchCaseBindExp"/>
+                      <cond class="none"></cond>
+                      <body class="literalExp" value="false">
+                        <type class="none"></type>
+                      </body>
+                    </matchCase>
+                  </cases>
+                </body>
+              </arg>
+            </body>
+          </predicate>
+        </invariant>
+      </members>
+    </requirement>
+    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App2Num">
+      <members class="ilist">
+        <attribute name="num">
+          <annotations class="ilist"></annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
+          <init class="none"></init>
+        </attribute>
+        <invariant name="ReqNum">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App2Num"/>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="x">
+              <type class="none"></type>
+            </param>
+            <body class="literalExp" value="true">
+              <type class="none"></type>
+            </body>
+          </predicate>
+        </invariant>
+      </members>
+    </requirement>
+    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App3">
+      <members class="ilist">
+        <attribute name="dev">
+          <annotations class="ilist"></annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD"/>
+          <init class="none"></init>
+        </attribute>
+        <invariant name="req1">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App3"/>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="vmd">
+              <type class="none"></type>
+            </param>
+            <body class="applyExp">
+              <type class="none"></type>
+              <fun class="accessExp" id="exists">
+                <type class="none"></type>
+                <exp class="accessExp" id="values">
+                  <type class="none"></type>
+                  <exp class="accessExp" id="channels">
+                    <type class="none"></type>
+                    <exp class="accessExp" id="dev">
+                      <type class="none"></type>
+                      <exp class="varRefExp" id="vmd">
+                        <type class="none"></type>
+                      </exp>
+                    </exp>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="funExp">
+                <type class="none"></type>
+                <param name="x$1">
+                  <type class="none"></type>
+                </param>
+                <body class="edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="x$1">
+                    <type class="none"></type>
+                  </exp>
+                  <cases class="ilist">
+                    <matchCase>
+                      <bind class="namedMatchCaseBind" id="chan">
+                        <type class="some">
+                          <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+                        </type>
+                      </bind>
+                      <cond class="none"></cond>
+                      <body class="applyExp">
+                        <type class="none"></type>
+                        <fun class="accessExp" id="exists">
+                          <type class="none"></type>
+                          <exp class="accessExp" id="values">
+                            <type class="none"></type>
+                            <exp class="accessExp" id="metrics">
+                              <type class="none"></type>
+                              <exp class="varRefExp" id="chan">
+                                <type class="none"></type>
+                              </exp>
+                            </exp>
+                          </exp>
+                        </fun>
+                        <arg class="funExp">
+                          <type class="none"></type>
+                          <param name="x$2">
+                            <type class="none"></type>
+                          </param>
+                          <body class="edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp">
+                            <type class="none"></type>
+                            <exp class="varRefExp" id="x$2">
+                              <type class="none"></type>
+                            </exp>
+                            <cases class="ilist">
+                              <matchCase>
+                                <bind class="namedMatchCaseBind" id="spo2">
+                                  <type class="some">
+                                    <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
+                                  </type>
+                                </bind>
+                                <cond class="none"></cond>
+                                <body class="mapOpExp" id="exists">
+                                  <type class="none"></type>
+                                  <exp class="funExp">
+                                    <type class="none"></type>
+                                    <param name="x$3">
+                                      <type class="none"></type>
+                                    </param>
+                                    <body class="instanceOfExp">
+                                      <type class="none"></type>
+                                      <exp class="varRefExp" id="x$3">
+                                        <type class="none"></type>
+                                      </exp>
+                                      <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeValueAlert"/>
+                                    </body>
+                                  </exp>
+                                </body>
+                              </matchCase>
+                              <matchCase>
+                                <bind class="defaultMatchCaseBindExp"/>
+                                <cond class="none"></cond>
+                                <body class="literalExp" value="false">
+                                  <type class="none"></type>
+                                </body>
+                              </matchCase>
+                            </cases>
+                          </body>
+                        </arg>
+                      </body>
+                    </matchCase>
+                    <matchCase>
+                      <bind class="defaultMatchCaseBindExp"/>
+                      <cond class="none"></cond>
+                      <body class="literalExp" value="false">
+                        <type class="none"></type>
+                      </body>
+                    </matchCase>
+                  </cases>
+                </body>
+              </arg>
+            </body>
+          </predicate>
+        </invariant>
+      </members>
+    </requirement>
+    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App4">
+      <members class="ilist">
+        <attribute name="dev">
+          <annotations class="ilist"></annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD"/>
+          <init class="none"></init>
+        </attribute>
+        <invariant name="req1">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App4"/>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="vmd">
+              <type class="none"></type>
+            </param>
+            <body class="applyExp">
+              <type class="none"></type>
+              <fun class="accessExp" id="exists">
+                <type class="none"></type>
+                <exp class="accessExp" id="values">
+                  <type class="none"></type>
+                  <exp class="accessExp" id="channels">
+                    <type class="none"></type>
+                    <exp class="accessExp" id="dev">
+                      <type class="none"></type>
+                      <exp class="varRefExp" id="vmd">
+                        <type class="none"></type>
+                      </exp>
+                    </exp>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="funExp">
+                <type class="none"></type>
+                <param name="x$1">
+                  <type class="none"></type>
+                </param>
+                <body class="edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="x$1">
+                    <type class="none"></type>
+                  </exp>
+                  <cases class="ilist">
+                    <matchCase>
+                      <bind class="namedMatchCaseBind" id="chan">
+                        <type class="some">
+                          <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+                        </type>
+                      </bind>
+                      <cond class="none"></cond>
+                      <body class="applyExp">
+                        <type class="none"></type>
+                        <fun class="accessExp" id="exists">
+                          <type class="none"></type>
+                          <exp class="accessExp" id="values">
+                            <type class="none"></type>
+                            <exp class="accessExp" id="metrics">
+                              <type class="none"></type>
+                              <exp class="varRefExp" id="chan">
+                                <type class="none"></type>
+                              </exp>
+                            </exp>
+                          </exp>
+                        </fun>
+                        <arg class="funExp">
+                          <type class="none"></type>
+                          <param name="x$2">
+                            <type class="none"></type>
+                          </param>
+                          <body class="edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp">
+                            <type class="none"></type>
+                            <exp class="varRefExp" id="x$2">
+                              <type class="none"></type>
+                            </exp>
+                            <cases class="ilist">
+                              <matchCase>
+                                <bind class="namedMatchCaseBind" id="spo2">
+                                  <type class="some">
+                                    <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
+                                  </type>
+                                </bind>
+                                <cond class="none"></cond>
+                                <body class="applyExp">
+                                  <type class="none"></type>
+                                  <fun class="accessExp" id="&amp;&amp;">
+                                    <type class="none"></type>
+                                    <exp class="binaryBasicOpExp" op="==">
+                                      <type class="some">
+                                        <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                      </type>
+                                      <left class="accessExp" id="min">
+                                        <type class="none"></type>
+                                        <exp class="accessExp" id="range">
+                                          <type class="none"></type>
+                                          <exp class="varRefExp" id="spo2">
+                                            <type class="none"></type>
+                                          </exp>
+                                        </exp>
+                                      </left>
+                                      <right class="literalExp" value="70">
+                                        <type class="none"></type>
+                                      </right>
+                                    </exp>
+                                  </fun>
+                                  <arg class="binaryBasicOpExp" op="==">
+                                    <type class="some">
+                                      <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                    </type>
+                                    <left class="accessExp" id="max">
+                                      <type class="none"></type>
+                                      <exp class="accessExp" id="range">
+                                        <type class="none"></type>
+                                        <exp class="varRefExp" id="spo2">
+                                          <type class="none"></type>
+                                        </exp>
+                                      </exp>
+                                    </left>
+                                    <right class="literalExp" value="100">
+                                      <type class="none"></type>
+                                    </right>
+                                  </arg>
+                                </body>
+                              </matchCase>
+                              <matchCase>
+                                <bind class="defaultMatchCaseBindExp"/>
+                                <cond class="none"></cond>
+                                <body class="literalExp" value="false">
+                                  <type class="none"></type>
+                                </body>
+                              </matchCase>
+                            </cases>
+                          </body>
+                        </arg>
+                      </body>
+                    </matchCase>
+                    <matchCase>
+                      <bind class="defaultMatchCaseBindExp"/>
+                      <cond class="none"></cond>
+                      <body class="literalExp" value="false">
+                        <type class="none"></type>
+                      </body>
+                    </matchCase>
+                  </cases>
+                </body>
+              </arg>
+            </body>
+          </predicate>
+        </invariant>
+      </members>
+    </requirement>
+    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App5">
+      <members class="ilist">
+        <attribute name="dev">
+          <annotations class="ilist"></annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD"/>
+          <init class="none"></init>
+        </attribute>
+        <invariant name="req1">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App5"/>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="vmd">
+              <type class="none"></type>
+            </param>
+            <body class="applyExp">
+              <type class="none"></type>
+              <fun class="accessExp" id="exists">
+                <type class="none"></type>
+                <exp class="accessExp" id="values">
+                  <type class="none"></type>
+                  <exp class="accessExp" id="channels">
+                    <type class="none"></type>
+                    <exp class="accessExp" id="dev">
+                      <type class="none"></type>
+                      <exp class="varRefExp" id="vmd">
+                        <type class="none"></type>
+                      </exp>
+                    </exp>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="funExp">
+                <type class="none"></type>
+                <param name="x$1">
+                  <type class="none"></type>
+                </param>
+                <body class="edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="x$1">
+                    <type class="none"></type>
+                  </exp>
+                  <cases class="ilist">
+                    <matchCase>
+                      <bind class="namedMatchCaseBind" id="chan">
+                        <type class="some">
+                          <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+                        </type>
+                      </bind>
+                      <cond class="none"></cond>
+                      <body class="applyExp">
+                        <type class="none"></type>
+                        <fun class="accessExp" id="exists">
+                          <type class="none"></type>
+                          <exp class="accessExp" id="values">
+                            <type class="none"></type>
+                            <exp class="accessExp" id="metrics">
+                              <type class="none"></type>
+                              <exp class="varRefExp" id="chan">
+                                <type class="none"></type>
+                              </exp>
+                            </exp>
+                          </exp>
+                        </fun>
+                        <arg class="funExp">
+                          <type class="none"></type>
+                          <param name="x$2">
+                            <type class="none"></type>
+                          </param>
+                          <body class="edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp">
+                            <type class="none"></type>
+                            <exp class="varRefExp" id="x$2">
+                              <type class="none"></type>
+                            </exp>
+                            <cases class="ilist">
+                              <matchCase>
+                                <bind class="namedMatchCaseBind" id="spo2">
+                                  <type class="some">
+                                    <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
+                                  </type>
+                                </bind>
+                                <cond class="none"></cond>
+                                <body class="applyExp">
+                                  <type class="none"></type>
+                                  <fun class="accessExp" id="exists">
+                                    <type class="none"></type>
+                                    <exp class="accessExp" id="values">
+                                      <type class="none"></type>
+                                      <exp class="accessExp" id="exchanges">
+                                        <type class="none"></type>
+                                        <exp class="varRefExp" id="spo2">
+                                          <type class="none"></type>
+                                        </exp>
+                                      </exp>
+                                    </exp>
+                                  </fun>
+                                  <arg class="funExp">
+                                    <type class="none"></type>
+                                    <param name="x$3">
+                                      <type class="none"></type>
+                                    </param>
+                                    <body class="edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp">
+                                      <type class="none"></type>
+                                      <exp class="varRefExp" id="x$3">
+                                        <type class="none"></type>
+                                      </exp>
+                                      <cases class="ilist">
+                                        <matchCase>
+                                          <bind class="namedMatchCaseBind" id="exch">
+                                            <type class="some">
+                                              <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
+                                            </type>
+                                          </bind>
+                                          <cond class="none"></cond>
+                                          <body class="applyExp">
+                                            <type class="none"></type>
+                                            <fun class="accessExp" id="&amp;&amp;">
+                                              <type class="none"></type>
+                                              <exp class="binaryBasicOpExp" op="==">
+                                                <type class="some">
+                                                  <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                </type>
+                                                <left class="accessExp" id="min">
+                                                  <type class="none"></type>
+                                                  <exp class="accessExp" id="rate">
+                                                    <type class="none"></type>
+                                                    <exp class="varRefExp" id="exch">
+                                                      <type class="none"></type>
+                                                    </exp>
+                                                  </exp>
+                                                </left>
+                                                <right class="literalExp" value="500">
+                                                  <type class="none"></type>
+                                                </right>
+                                              </exp>
+                                            </fun>
+                                            <arg class="binaryBasicOpExp" op="==">
+                                              <type class="some">
+                                                <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                              </type>
+                                              <left class="accessExp" id="max">
+                                                <type class="none"></type>
+                                                <exp class="accessExp" id="rate">
+                                                  <type class="none"></type>
+                                                  <exp class="varRefExp" id="exch">
+                                                    <type class="none"></type>
+                                                  </exp>
+                                                </exp>
+                                              </left>
+                                              <right class="literalExp" value="500">
+                                                <type class="none"></type>
+                                              </right>
+                                            </arg>
+                                          </body>
+                                        </matchCase>
+                                        <matchCase>
+                                          <bind class="defaultMatchCaseBindExp"/>
+                                          <cond class="none"></cond>
+                                          <body class="literalExp" value="false">
+                                            <type class="none"></type>
+                                          </body>
+                                        </matchCase>
+                                      </cases>
+                                    </body>
+                                  </arg>
+                                </body>
+                              </matchCase>
+                              <matchCase>
+                                <bind class="defaultMatchCaseBindExp"/>
+                                <cond class="none"></cond>
+                                <body class="literalExp" value="false">
+                                  <type class="none"></type>
+                                </body>
+                              </matchCase>
+                            </cases>
+                          </body>
+                        </arg>
+                      </body>
+                    </matchCase>
+                    <matchCase>
+                      <bind class="defaultMatchCaseBindExp"/>
+                      <cond class="none"></cond>
+                      <body class="literalExp" value="false">
+                        <type class="none"></type>
+                      </body>
+                    </matchCase>
+                  </cases>
+                </body>
+              </arg>
+            </body>
+          </predicate>
+        </invariant>
+      </members>
+    </requirement>
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.MyPulseOxReq">
       <members class="ilist">
         <attribute name="po">
           <annotations class="ilist"></annotations>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseOx_VMD"/>
           <init class="none"></init>
         </attribute>
         <invariant name="req1">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.MyPulseOxReq"/>
-          <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
-            <pred.SerializedExpr>
-              <edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.MyPulseOxReq_-_-treecreator1_-1/>
-              <pred.TypeTags_-TypeTagImpl resolves-to="pred.SerializedTypeTag" serialization="custom">
-                <pred.SerializedTypeTag>
-                  <edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.MyPulseOxReq_-_-typecreator2_-1/>
-                  <boolean>true</boolean>
-                </pred.SerializedTypeTag>
-              </pred.TypeTags_-TypeTagImpl>
-            </pred.SerializedExpr>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="rpo">
+              <type class="none"></type>
+            </param>
+            <body class="mapOpExp" id="exists">
+              <type class="none"></type>
+              <exp class="funExp">
+                <type class="none"></type>
+                <param name="x$1">
+                  <type class="none"></type>
+                </param>
+                <body class="edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp">
+                  <type class="none"></type>
+                  <exp class="accessExp" id="_2">
+                    <type class="none"></type>
+                    <exp class="varRefExp" id="x$1">
+                      <type class="none"></type>
+                    </exp>
+                  </exp>
+                  <cases class="ilist">
+                    <matchCase>
+                      <bind class="namedMatchCaseBind" id="spo2">
+                        <type class="some">
+                          <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Channel"/>
+                        </type>
+                      </bind>
+                      <cond class="none"></cond>
+                      <body class="mapOpExp" id="exists">
+                        <type class="none"></type>
+                        <exp class="funExp">
+                          <type class="none"></type>
+                          <param name="x$2">
+                            <type class="none"></type>
+                          </param>
+                          <body class="edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp">
+                            <type class="none"></type>
+                            <exp class="accessExp" id="_2">
+                              <type class="none"></type>
+                              <exp class="varRefExp" id="x$2">
+                                <type class="none"></type>
+                              </exp>
+                            </exp>
+                            <cases class="ilist">
+                              <matchCase>
+                                <bind class="namedMatchCaseBind" id="spo2num">
+                                  <type class="some">
+                                    <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
+                                  </type>
+                                </bind>
+                                <cond class="none"></cond>
+                                <body class="applyExp">
+                                  <type class="none"></type>
+                                  <fun class="accessExp" id="&amp;&amp;">
+                                    <type class="none"></type>
+                                    <exp class="binaryBasicOpExp" op="&lt;">
+                                      <type class="some">
+                                        <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                      </type>
+                                      <left class="accessExp" id="min">
+                                        <type class="none"></type>
+                                        <exp class="accessExp" id="range">
+                                          <type class="none"></type>
+                                          <exp class="varRefExp" id="spo2num">
+                                            <type class="none"></type>
+                                          </exp>
+                                        </exp>
+                                      </left>
+                                      <right class="literalExp" value="40">
+                                        <type class="some">
+                                          <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                        </type>
+                                      </right>
+                                    </exp>
+                                  </fun>
+                                  <arg class="binaryBasicOpExp" op="==">
+                                    <type class="some">
+                                      <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                    </type>
+                                    <left class="accessExp" id="max">
+                                      <type class="none"></type>
+                                      <exp class="accessExp" id="range">
+                                        <type class="none"></type>
+                                        <exp class="varRefExp" id="spo2num">
+                                          <type class="none"></type>
+                                        </exp>
+                                      </exp>
+                                    </left>
+                                    <right class="literalExp" value="100">
+                                      <type class="none"></type>
+                                    </right>
+                                  </arg>
+                                </body>
+                              </matchCase>
+                              <matchCase>
+                                <bind class="defaultMatchCaseBindExp"/>
+                                <cond class="none"></cond>
+                                <body class="literalExp" value="false">
+                                  <type class="none"></type>
+                                </body>
+                              </matchCase>
+                            </cases>
+                          </body>
+                        </exp>
+                      </body>
+                    </matchCase>
+                    <matchCase>
+                      <bind class="defaultMatchCaseBindExp"/>
+                      <cond class="none"></cond>
+                      <body class="literalExp" value="false">
+                        <type class="none"></type>
+                      </body>
+                    </matchCase>
+                  </cases>
+                </body>
+              </exp>
+            </body>
           </predicate>
         </invariant>
         <invariant name="req2">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.MyPulseOxReq"/>
-          <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
-            <pred.SerializedExpr>
-              <edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.MyPulseOxReq_-_-treecreator2_-1/>
-              <pred.TypeTags_-TypeTagImpl resolves-to="pred.SerializedTypeTag" serialization="custom">
-                <pred.SerializedTypeTag>
-                  <edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.MyPulseOxReq_-_-typecreator4_-1/>
-                  <boolean>true</boolean>
-                </pred.SerializedTypeTag>
-              </pred.TypeTags_-TypeTagImpl>
-            </pred.SerializedExpr>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="rpo">
+              <type class="none"></type>
+            </param>
+            <body class="mapOpExp" id="exists">
+              <type class="none"></type>
+              <exp class="funExp">
+                <type class="none"></type>
+                <param name="x$3">
+                  <type class="none"></type>
+                </param>
+                <body class="edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp">
+                  <type class="none"></type>
+                  <exp class="accessExp" id="_2">
+                    <type class="none"></type>
+                    <exp class="varRefExp" id="x$3">
+                      <type class="none"></type>
+                    </exp>
+                  </exp>
+                  <cases class="ilist">
+                    <matchCase>
+                      <bind class="namedMatchCaseBind" id="pr">
+                        <type class="some">
+                          <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseRate_Channel"/>
+                        </type>
+                      </bind>
+                      <cond class="none"></cond>
+                      <body class="mapOpExp" id="exists">
+                        <type class="none"></type>
+                        <exp class="funExp">
+                          <type class="none"></type>
+                          <param name="x$4">
+                            <type class="none"></type>
+                          </param>
+                          <body class="edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp">
+                            <type class="none"></type>
+                            <exp class="accessExp" id="_2">
+                              <type class="none"></type>
+                              <exp class="varRefExp" id="x$4">
+                                <type class="none"></type>
+                              </exp>
+                            </exp>
+                            <cases class="ilist">
+                              <matchCase>
+                                <bind class="namedMatchCaseBind" id="prnum">
+                                  <type class="some">
+                                    <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseRate_Numeric"/>
+                                  </type>
+                                </bind>
+                                <cond class="none"></cond>
+                                <body class="applyExp">
+                                  <type class="none"></type>
+                                  <fun class="accessExp" id="&amp;&amp;">
+                                    <type class="none"></type>
+                                    <exp class="binaryBasicOpExp" op="&lt;=">
+                                      <type class="some">
+                                        <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                      </type>
+                                      <left class="accessExp" id="min">
+                                        <type class="none"></type>
+                                        <exp class="accessExp" id="range">
+                                          <type class="none"></type>
+                                          <exp class="varRefExp" id="prnum">
+                                            <type class="none"></type>
+                                          </exp>
+                                        </exp>
+                                      </left>
+                                      <right class="literalExp" value="30">
+                                        <type class="some">
+                                          <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                        </type>
+                                      </right>
+                                    </exp>
+                                  </fun>
+                                  <arg class="binaryBasicOpExp" op="&gt;=">
+                                    <type class="some">
+                                      <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                    </type>
+                                    <left class="accessExp" id="max">
+                                      <type class="none"></type>
+                                      <exp class="accessExp" id="range">
+                                        <type class="none"></type>
+                                        <exp class="varRefExp" id="prnum">
+                                          <type class="none"></type>
+                                        </exp>
+                                      </exp>
+                                    </left>
+                                    <right class="literalExp" value="200">
+                                      <type class="some">
+                                        <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                      </type>
+                                    </right>
+                                  </arg>
+                                </body>
+                              </matchCase>
+                              <matchCase>
+                                <bind class="defaultMatchCaseBindExp"/>
+                                <cond class="none"></cond>
+                                <body class="literalExp" value="false">
+                                  <type class="none"></type>
+                                </body>
+                              </matchCase>
+                            </cases>
+                          </body>
+                        </exp>
+                      </body>
+                    </matchCase>
+                    <matchCase>
+                      <bind class="defaultMatchCaseBindExp"/>
+                      <cond class="none"></cond>
+                      <body class="literalExp" value="false">
+                        <type class="none"></type>
+                      </body>
+                    </matchCase>
+                  </cases>
+                </body>
+              </exp>
+            </body>
           </predicate>
         </invariant>
       </members>
@@ -4141,16 +5190,49 @@
         </attribute>
         <invariant name="level is in 1..100">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.BatteryLevelStatus"/>
-          <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
-            <pred.SerializedExpr>
-              <edu.ksu.cis.santos.mdcf.dms.examplev2.schema.BatteryLevelStatus_-_-treecreator2_-1/>
-              <pred.TypeTags_-TypeTagImpl resolves-to="pred.SerializedTypeTag" serialization="custom">
-                <pred.SerializedTypeTag>
-                  <edu.ksu.cis.santos.mdcf.dms.examplev2.schema.BatteryLevelStatus_-_-typecreator4_-1/>
-                  <boolean>true</boolean>
-                </pred.SerializedTypeTag>
-              </pred.TypeTags_-TypeTagImpl>
-            </pred.SerializedExpr>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="bls">
+              <type class="none"></type>
+            </param>
+            <body class="applyExp">
+              <type class="none"></type>
+              <fun class="accessExp" id="&amp;&amp;">
+                <type class="none"></type>
+                <exp class="binaryBasicOpExp" op="&lt;=">
+                  <type class="some">
+                    <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+                  </type>
+                  <left class="literalExp" value="0">
+                    <type class="some">
+                      <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+                    </type>
+                  </left>
+                  <right class="accessExp" id="level">
+                    <type class="none"></type>
+                    <exp class="varRefExp" id="bls">
+                      <type class="none"></type>
+                    </exp>
+                  </right>
+                </exp>
+              </fun>
+              <arg class="binaryBasicOpExp" op="&lt;=">
+                <type class="some">
+                  <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+                </type>
+                <left class="accessExp" id="level">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="bls">
+                    <type class="none"></type>
+                  </exp>
+                </left>
+                <right class="literalExp" value="100">
+                  <type class="some">
+                    <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                  </type>
+                </right>
+              </arg>
+            </body>
           </predicate>
         </invariant>
       </members>
@@ -4243,6 +5325,24 @@
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Feature"/>
       </supers>
       <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Product</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Product</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="none"></init>
+        </attribute>
         <attribute name="access">
           <annotations class="ilist">
             <const qualifier="">
@@ -4462,9 +5562,14 @@
       </annotations>
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
-        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
       </supers>
-      <members class="ilist"></members>
+      <members class="ilist">
+        <attribute name="setting">
+          <annotations class="ilist"></annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange">
       <annotations class="ilist">
@@ -5439,16 +6544,28 @@
         </attribute>
         <invariant name="min is less than or equal to max">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.Range"/>
-          <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
-            <pred.SerializedExpr>
-              <edu.ksu.cis.santos.mdcf.dms.examplev2.schema.Range_-_-treecreator1_-1/>
-              <pred.TypeTags_-TypeTagImpl resolves-to="pred.SerializedTypeTag" serialization="custom">
-                <pred.SerializedTypeTag>
-                  <edu.ksu.cis.santos.mdcf.dms.examplev2.schema.Range_-_-typecreator2_-1/>
-                  <boolean>true</boolean>
-                </pred.SerializedTypeTag>
-              </pred.TypeTags_-TypeTagImpl>
-            </pred.SerializedExpr>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="r">
+              <type class="none"></type>
+            </param>
+            <body class="binaryBasicOpExp" op="&lt;=">
+              <type class="some">
+                <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+              </type>
+              <left class="accessExp" id="min">
+                <type class="none"></type>
+                <exp class="varRefExp" id="r">
+                  <type class="none"></type>
+                </exp>
+              </left>
+              <right class="accessExp" id="max">
+                <type class="none"></type>
+                <exp class="varRefExp" id="r">
+                  <type class="none"></type>
+                </exp>
+              </right>
+            </body>
           </predicate>
         </invariant>
       </members>

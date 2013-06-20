@@ -21,11 +21,7 @@ trait App2Dev {
   val dev : ICE_VMD
 }
 
-trait App2Num {
-  val num : ICE_SpO2_Numeric
-}
-
-object Case2 extends App {
+object App2Dev {
   @Inv
   val ReqDev : Predicate[App2Dev] =
     pred { vmd : App2Dev =>
@@ -36,7 +32,13 @@ object Case2 extends App {
         }
       )
     }
+}
 
+trait App2Num {
+  val num : ICE_SpO2_Numeric
+}
+
+object App2Num {
   @Inv
-  val ReqNum : Predicate[App2Num] = pred { _ => true }
+  val ReqNum : Predicate[App2Num] = pred { x : App2Num => true }
 }

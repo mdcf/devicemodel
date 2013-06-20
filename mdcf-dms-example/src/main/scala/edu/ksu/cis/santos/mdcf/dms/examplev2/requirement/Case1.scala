@@ -11,7 +11,7 @@ trait App1 {
   val po : ICE_PulseOx_VMD
 }
 
-object Case1 extends App {
+object App1 {
   @Inv
   val req1 : Predicate[App1] = pred { rpo : App1 => true }
 }
