@@ -17,14 +17,14 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric
  * as components of devices instead of independent entities)
  */
 
-trait App2Dev {
+trait AppReq2 {
   val dev : ICE_VMD
 }
 
-object App2Dev {
+object AppReq2 {
   @Inv
-  val ReqDev : Predicate[App2Dev] =
-    pred { vmd : App2Dev =>
+  val ReqDev : Predicate[AppReq2] =
+    pred { vmd : AppReq2 =>
       vmd.dev.channels.values.exists(
         _ match {
           case chan : ICE_Channel => chan.metrics.values.exists(_.isInstanceOf[ICE_SpO2_Numeric])
@@ -34,11 +34,11 @@ object App2Dev {
     }
 }
 
-trait App2Num {
+trait AppReq2Alt {
   val num : ICE_SpO2_Numeric
 }
 
-object App2Num {
-  @Inv
-  val ReqNum : Predicate[App2Num] = pred { x : App2Num => true }
-}
+//object AppReq2Alt {
+//  @Inv
+//  val ReqNum : Predicate[AppReq2Alt] = pred { x : AppReq2Alt => true }
+//}

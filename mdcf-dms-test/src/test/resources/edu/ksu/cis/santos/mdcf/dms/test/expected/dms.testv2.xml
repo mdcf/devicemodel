@@ -600,7 +600,7 @@
                   </annotations>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                   <init class="some">
-                    <reference class="basicInit" value="50"/>
+                    <reference class="basicInit" value="495"/>
                   </init>
                 </attribute>
                 <attribute name="max">
@@ -609,7 +609,7 @@
                   </annotations>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                   <init class="some">
-                    <reference class="basicInit" value="150"/>
+                    <reference class="basicInit" value="505"/>
                   </init>
                 </attribute>
               </attributes>
@@ -4318,28 +4318,16 @@
         </attribute>
       </members>
     </feature>
-    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App1">
+    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq1">
       <members class="ilist">
         <attribute name="po">
           <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseOx_VMD"/>
           <init class="none"></init>
         </attribute>
-        <invariant name="req1">
-          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App1"/>
-          <predicate class="funExp">
-            <type class="none"></type>
-            <param name="rpo">
-              <type class="none"></type>
-            </param>
-            <body class="literalExp" value="true">
-              <type class="none"></type>
-            </body>
-          </predicate>
-        </invariant>
       </members>
     </requirement>
-    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App2Dev">
+    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2">
       <members class="ilist">
         <attribute name="dev">
           <annotations class="ilist"></annotations>
@@ -4347,7 +4335,7 @@
           <init class="none"></init>
         </attribute>
         <invariant name="ReqDev">
-          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App2Dev"/>
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2"/>
           <predicate class="funExp">
             <type class="none"></type>
             <param name="vmd">
@@ -4432,28 +4420,16 @@
         </invariant>
       </members>
     </requirement>
-    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App2Num">
+    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2Alt">
       <members class="ilist">
         <attribute name="num">
           <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
-        <invariant name="ReqNum">
-          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App2Num"/>
-          <predicate class="funExp">
-            <type class="none"></type>
-            <param name="x">
-              <type class="none"></type>
-            </param>
-            <body class="literalExp" value="true">
-              <type class="none"></type>
-            </body>
-          </predicate>
-        </invariant>
       </members>
     </requirement>
-    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App3">
+    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq3">
       <members class="ilist">
         <attribute name="dev">
           <annotations class="ilist"></annotations>
@@ -4461,7 +4437,7 @@
           <init class="none"></init>
         </attribute>
         <invariant name="req1">
-          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App3"/>
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq3"/>
           <predicate class="funExp">
             <type class="none"></type>
             <param name="vmd">
@@ -4578,7 +4554,7 @@
         </invariant>
       </members>
     </requirement>
-    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App4">
+    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq4">
       <members class="ilist">
         <attribute name="dev">
           <annotations class="ilist"></annotations>
@@ -4586,7 +4562,7 @@
           <init class="none"></init>
         </attribute>
         <invariant name="req1">
-          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App4"/>
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq4"/>
           <predicate class="funExp">
             <type class="none"></type>
             <param name="vmd">
@@ -4663,7 +4639,7 @@
                                   <type class="none"></type>
                                   <fun class="accessExp" id="&amp;&amp;">
                                     <type class="none"></type>
-                                    <exp class="binaryBasicOpExp" op="==">
+                                    <exp class="binaryBasicOpExp" op="&lt;=">
                                       <type class="some">
                                         <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
                                       </type>
@@ -4676,12 +4652,14 @@
                                           </exp>
                                         </exp>
                                       </left>
-                                      <right class="literalExp" value="70">
-                                        <type class="none"></type>
+                                      <right class="literalExp" value="30">
+                                        <type class="some">
+                                          <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                        </type>
                                       </right>
                                     </exp>
                                   </fun>
-                                  <arg class="binaryBasicOpExp" op="==">
+                                  <arg class="binaryBasicOpExp" op="&gt;=">
                                     <type class="some">
                                       <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
                                     </type>
@@ -4695,7 +4673,9 @@
                                       </exp>
                                     </left>
                                     <right class="literalExp" value="100">
-                                      <type class="none"></type>
+                                      <type class="some">
+                                        <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                      </type>
                                     </right>
                                   </arg>
                                 </body>
@@ -4727,7 +4707,7 @@
         </invariant>
       </members>
     </requirement>
-    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App5">
+    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq5">
       <members class="ilist">
         <attribute name="dev">
           <annotations class="ilist"></annotations>
@@ -4735,7 +4715,7 @@
           <init class="none"></init>
         </attribute>
         <invariant name="req1">
-          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.App5"/>
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq5"/>
           <predicate class="funExp">
             <type class="none"></type>
             <param name="vmd">
@@ -4844,7 +4824,7 @@
                                             <type class="none"></type>
                                             <fun class="accessExp" id="&amp;&amp;">
                                               <type class="none"></type>
-                                              <exp class="binaryBasicOpExp" op="==">
+                                              <exp class="binaryBasicOpExp" op="&gt;=">
                                                 <type class="some">
                                                   <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                 </type>
@@ -4857,12 +4837,14 @@
                                                     </exp>
                                                   </exp>
                                                 </left>
-                                                <right class="literalExp" value="500">
-                                                  <type class="none"></type>
+                                                <right class="literalExp" value="490">
+                                                  <type class="some">
+                                                    <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                                  </type>
                                                 </right>
                                               </exp>
                                             </fun>
-                                            <arg class="binaryBasicOpExp" op="==">
+                                            <arg class="binaryBasicOpExp" op="&lt;=">
                                               <type class="some">
                                                 <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                               </type>
@@ -4875,8 +4857,10 @@
                                                   </exp>
                                                 </exp>
                                               </left>
-                                              <right class="literalExp" value="500">
-                                                <type class="none"></type>
+                                              <right class="literalExp" value="510">
+                                                <type class="some">
+                                                  <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                                </type>
                                               </right>
                                             </arg>
                                           </body>

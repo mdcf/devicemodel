@@ -13,20 +13,22 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric
  *
  */
 
-trait App3 {
+trait AppReq3 {
   val dev : ICE_VMD
 }
 
-object App3 {
+object AppReq3 {
   @Inv
-  val req1 : Predicate[App3] =
-    pred { vmd : App3 =>
+  val req1 : Predicate[AppReq3] =
+    pred { vmd : AppReq3 =>
       vmd.dev.channels.values.exists(
         _ match {
           case chan : ICE_Channel => chan.metrics.values.exists(
             _ match {
-              case spo2 : ICE_SpO2_Numeric => spo2.alerts.exists(_.isInstanceOf[ICE_FloatRangeValueAlert])
-              case _                       => false
+              case spo2 : ICE_SpO2_Numeric =>
+                spo2.alerts.exists(_.isInstanceOf[ICE_FloatRangeValueAlert])
+              case _ =>
+                false
             }
           )
           case _ => false

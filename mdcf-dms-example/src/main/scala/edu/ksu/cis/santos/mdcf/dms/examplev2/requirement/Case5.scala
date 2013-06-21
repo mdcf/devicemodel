@@ -11,24 +11,27 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric
  * 
  */
 
-trait App5 {
+trait AppReq5 {
   val dev : ICE_VMD
 }
 
-object App5 {
+object AppReq5 {
   @Inv
-  val req1 : Predicate[App5] =
-    pred { vmd : App5 =>
+  val req1 : Predicate[AppReq5] =
+    pred { vmd : AppReq5 =>
       vmd.dev.channels.values.exists(
         _ match {
           case chan : ICE_Channel => chan.metrics.values.exists(
             _ match {
-              case spo2 : ICE_SpO2_Numeric => spo2.exchanges.values.exists(
-                _ match {
-                  case exch : ICE_Periodic_Exchange => exch.rate.min == 500 && exch.rate.max == 500
-                  case _                            => false
-                }
-              )
+              case spo2 : ICE_SpO2_Numeric =>
+                spo2.exchanges.values.exists(
+                  _ match {
+                    case exch : ICE_Periodic_Exchange =>
+                      exch.rate.min >= 490 && exch.rate.max <= 510
+                    case _ =>
+                      false
+                  }
+                )
               case _ => false
             }
           )

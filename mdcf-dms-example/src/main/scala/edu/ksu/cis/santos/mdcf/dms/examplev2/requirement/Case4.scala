@@ -10,20 +10,22 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric
  * on the ICE_SpO2_Numeric. (e.g. min:70, max: 100)
  */
 
-trait App4 {
+trait AppReq4 {
   val dev : ICE_VMD
 }
 
-object App4 {
+object AppReq4 {
   @Inv
-  val req1 : Predicate[App4] =
-    pred { vmd : App4 =>
+  val req1 : Predicate[AppReq4] =
+    pred { vmd : AppReq4 =>
       vmd.dev.channels.values.exists(
         _ match {
           case chan : ICE_Channel => chan.metrics.values.exists(
             _ match {
-              case spo2 : ICE_SpO2_Numeric => spo2.range.min == 70 && spo2.range.max == 100
-              case _                       => false
+              case spo2 : ICE_SpO2_Numeric =>
+                spo2.range.min <= 30 && spo2.range.max >= 100
+              case _ =>
+                false
             }
           )
           case _ => false

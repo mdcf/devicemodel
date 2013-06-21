@@ -44,8 +44,8 @@ class MultiMonitorPeriodicExchange extends ICE_Periodic_Exchange {
     override val max : Nat = 102
   }
   override val rate : NatRange = new NatRange {
-    override val min : Nat = 50
-    override val max : Nat = 150
+    override val min : Nat = 495
+    override val max : Nat = 505
   }
 }
 
