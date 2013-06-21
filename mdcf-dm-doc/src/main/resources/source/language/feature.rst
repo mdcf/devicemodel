@@ -115,7 +115,7 @@ facility. For example, see the following package infos:
 
 * :dmsjx:`dms.example.class package-info.java <clas/package-info.java>`
 
-* :dmsjx:`dms.example.device package-info.java <device/package-info.java>`
+* :dmsjx:`dms.example.device package-info.java <product/package-info.java>`
 
 The package annotation scheme sets the default level for any feature declared in 
 the package; this default can still be overriden by specifying the level in a

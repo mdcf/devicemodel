@@ -77,7 +77,7 @@ such as by using its implicit factory method (if defined). For example:
 Attribute whose type is a feature (or a compound of features) can be 
 initialized by creating (``new``) the feature with 
 attribute initializations. For example, see 
-:dmsx:`NoninPulseOx.manufacturerModel <device/NoninPulseOx.scala#L19-23>`.
+:dmsx:`NoninPulseOx.manufacturerModel <product/NoninPulseOx.scala#L19-23>`.
 
 Initializations for the other types use the typical Scala factory
 methods associated with the types, whose usage syntax are specified above.
