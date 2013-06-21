@@ -6,56 +6,18 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dms.examplev2.device
+package edu.ksu.cis.santos.mdcf.dms.examplev2.product
 
 import edu.ksu.cis.santos.mdcf.dms._
 import edu.ksu.cis.santos.mdcf.dms.examplev2._
 import edu.ksu.cis.santos.mdcf.dms.examplev2.schema._
 import edu.ksu.cis.santos.mdcf.dms.examplev2.clas._
-
-class NellcorGetExchange extends ICE_Get_Exchange {
-  override val access : Option[ICE_Security_Access_Read] = None
-  override val separation : NatRange = new NatRange {
-    override val min : Nat = 10
-    override val max : Nat = 50
-  }
-  override val serviceTime : NatRange = new NatRange {
-    override val min : Nat = 0
-    override val max : Nat = 50
-  }
-}
-
-class NellcorSetExchange extends ICE_Set_Exchange {
-  override val access : Option[ICE_Security_Access_Write] = None
-  override val separation : NatRange = new NatRange {
-    override val min : Nat = 10
-    override val max : Nat = 50
-  }
-  override val serviceTime : NatRange = new NatRange {
-    override val min : Nat = 0
-    override val max : Nat = 50
-  }
-}
-
-class NellcorPeriodicExchange extends ICE_Periodic_Exchange {
-  override val access : Option[ICE_Security_Access_Read] = None
-  override val separation : NatRange = new NatRange {
-    override val min : Nat = 98
-    override val max : Nat = 102
-  }
-  override val rate : NatRange = new NatRange {
-    override val min : Nat = 50
-    override val max : Nat = 150
-  }
-}
-
-class NellcorSporadicExchange extends ICE_Sporadic_Exchange {
-  override val access : Option[ICE_Security_Access_Read] = None
-  override val separation : NatRange = new NatRange {
-    override val min : Nat = 98
-    override val max : Nat = 102
-  }
-}
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product._
+import edu.ksu.cis.santos.mdcf.dms.examplev2.Float.apply
+import edu.ksu.cis.santos.mdcf.dms.examplev2.ICE_VMD_State.apply
+import edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE.apply
+import edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_TYPE.apply
+import edu.ksu.cis.santos.mdcf.dms.examplev2.String.apply
 
 final class NellcorPulseOx extends ICE_MDS {
   override val IEEE11073_MDC_ATTR_SYS_TYPE : IEEE11073_TYPE = "Nellcor PO"
