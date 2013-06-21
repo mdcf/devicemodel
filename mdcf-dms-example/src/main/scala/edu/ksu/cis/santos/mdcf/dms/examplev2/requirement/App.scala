@@ -9,21 +9,28 @@ http://www.eclipse.org/legal/epl-v10.html
 package edu.ksu.cis.santos.mdcf.dms.examplev2.requirement
 
 import edu.ksu.cis.santos.mdcf.dms._
-import edu.ksu.cis.santos.mdcf.dms.example.schema._
-import edu.ksu.cis.santos.mdcf.dms.example.clas._
+import edu.ksu.cis.santos.mdcf.dms.examplev2.schema._
+import edu.ksu.cis.santos.mdcf.dms.examplev2.clas._
 
 trait MyPulseOxReq {
-  val po : ICEPulseOx
+  val po : ICE_PulseOx_VMD
 }
 
 object MyPulseOxReq {
   @Inv
   val req1 : Predicate[MyPulseOxReq] =
     pred { rpo : MyPulseOxReq =>
-      rpo.po.physioParams.exists(
-        _ match {
-          case spo2 : ICESpO2 => spo2.range.min < 40 && spo2.range.max == 100
-          case _              => false
+      rpo.po.channels.exists(
+        _._2 match {
+          case spo2 : ICE_SpO2_Channel =>
+            spo2.metrics.exists(
+              _._2 match {
+                case spo2num : ICE_SpO2_Numeric =>
+                  spo2num.range.min < 40 && spo2num.range.max == 100
+                case _ => false
+              }
+            )
+          case _ => false
         }
       )
     }
@@ -31,10 +38,16 @@ object MyPulseOxReq {
   @Inv
   val req2 : Predicate[MyPulseOxReq] =
     pred { rpo : MyPulseOxReq =>
-      rpo.po.physioParams.exists(
-        _ match {
-          case pr : ICEPulseRate => pr.range.min <= 30 && pr.range.max >= 200
-          case _                 => false
+      rpo.po.channels.exists(
+        _._2 match {
+          case pr : ICE_PulseRate_Channel =>
+            pr.metrics.exists(
+              _._2 match {
+                case prnum : ICE_PulseRate_Numeric =>
+                  prnum.range.min <= 30 && prnum.range.max >= 200
+                case _ => false
+              })
+          case _ => false
         }
       )
     }

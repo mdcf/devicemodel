@@ -71,16 +71,27 @@
         </attribute>
         <invariant name="At least one Blood Pressure param">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure"/>
-          <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
-            <pred.SerializedExpr>
-              <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure_-_-treecreator3_-1/>
-              <pred.TypeTags_-TypeTagImpl resolves-to="pred.SerializedTypeTag" serialization="custom">
-                <pred.SerializedTypeTag>
-                  <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure_-_-typecreator6_-1/>
-                  <boolean>true</boolean>
-                </pred.SerializedTypeTag>
-              </pred.TypeTags_-TypeTagImpl>
-            </pred.SerializedExpr>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="bp">
+              <type class="none"></type>
+            </param>
+            <body class="setOpExp" id="exists">
+              <type class="none"></type>
+              <exp class="funExp">
+                <type class="none"></type>
+                <param name="x$3">
+                  <type class="none"></type>
+                </param>
+                <body class="instanceOfExp">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="x$3">
+                    <type class="none"></type>
+                  </exp>
+                  <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate"/>
+                </body>
+              </exp>
+            </body>
           </predicate>
         </invariant>
       </members>
@@ -172,44 +183,77 @@
         </attribute>
         <invariant name="At least one SpO2 param">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor"/>
-          <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
-            <pred.SerializedExpr>
-              <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor_-_-treecreator4_-1/>
-              <pred.TypeTags_-TypeTagImpl resolves-to="pred.SerializedTypeTag" serialization="custom">
-                <pred.SerializedTypeTag>
-                  <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor_-_-typecreator8_-1/>
-                  <boolean>true</boolean>
-                </pred.SerializedTypeTag>
-              </pred.TypeTags_-TypeTagImpl>
-            </pred.SerializedExpr>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="mm">
+              <type class="none"></type>
+            </param>
+            <body class="setOpExp" id="exists">
+              <type class="none"></type>
+              <exp class="funExp">
+                <type class="none"></type>
+                <param name="x$4">
+                  <type class="none"></type>
+                </param>
+                <body class="instanceOfExp">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="x$4">
+                    <type class="none"></type>
+                  </exp>
+                  <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2"/>
+                </body>
+              </exp>
+            </body>
           </predicate>
         </invariant>
         <invariant name="At least one Pulse Rate param">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor"/>
-          <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
-            <pred.SerializedExpr>
-              <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor_-_-treecreator5_-1/>
-              <pred.TypeTags_-TypeTagImpl resolves-to="pred.SerializedTypeTag" serialization="custom">
-                <pred.SerializedTypeTag>
-                  <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor_-_-typecreator10_-1/>
-                  <boolean>true</boolean>
-                </pred.SerializedTypeTag>
-              </pred.TypeTags_-TypeTagImpl>
-            </pred.SerializedExpr>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="mm">
+              <type class="none"></type>
+            </param>
+            <body class="setOpExp" id="exists">
+              <type class="none"></type>
+              <exp class="funExp">
+                <type class="none"></type>
+                <param name="x$5">
+                  <type class="none"></type>
+                </param>
+                <body class="instanceOfExp">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="x$5">
+                    <type class="none"></type>
+                  </exp>
+                  <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate"/>
+                </body>
+              </exp>
+            </body>
           </predicate>
         </invariant>
         <invariant name="At least one Blood Pressure param">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor"/>
-          <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
-            <pred.SerializedExpr>
-              <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor_-_-treecreator6_-1/>
-              <pred.TypeTags_-TypeTagImpl resolves-to="pred.SerializedTypeTag" serialization="custom">
-                <pred.SerializedTypeTag>
-                  <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor_-_-typecreator12_-1/>
-                  <boolean>true</boolean>
-                </pred.SerializedTypeTag>
-              </pred.TypeTags_-TypeTagImpl>
-            </pred.SerializedExpr>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="mm">
+              <type class="none"></type>
+            </param>
+            <body class="setOpExp" id="exists">
+              <type class="none"></type>
+              <exp class="funExp">
+                <type class="none"></type>
+                <param name="x$6">
+                  <type class="none"></type>
+                </param>
+                <body class="instanceOfExp">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="x$6">
+                    <type class="none"></type>
+                  </exp>
+                  <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure"/>
+                </body>
+              </exp>
+            </body>
           </predicate>
         </invariant>
       </members>
@@ -254,30 +298,64 @@
         </attribute>
         <invariant name="At least one SpO2 param">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
-          <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
-            <pred.SerializedExpr>
-              <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx_-_-treecreator1_-1/>
-              <pred.TypeTags_-TypeTagImpl resolves-to="pred.SerializedTypeTag" serialization="custom">
-                <pred.SerializedTypeTag>
-                  <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx_-_-typecreator2_-1/>
-                  <boolean>true</boolean>
-                </pred.SerializedTypeTag>
-              </pred.TypeTags_-TypeTagImpl>
-            </pred.SerializedExpr>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="po">
+              <type class="none"></type>
+            </param>
+            <body class="applyExp">
+              <type class="none"></type>
+              <fun class="accessExp" id="&gt;=">
+                <type class="none"></type>
+                <exp class="accessExp" id="size">
+                  <type class="none"></type>
+                  <exp class="setOpExp" id="filter">
+                    <type class="none"></type>
+                    <exp class="funExp">
+                      <type class="none"></type>
+                      <param name="x$1">
+                        <type class="none"></type>
+                      </param>
+                      <body class="instanceOfExp">
+                        <type class="none"></type>
+                        <exp class="varRefExp" id="x$1">
+                          <type class="none"></type>
+                        </exp>
+                        <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2"/>
+                      </body>
+                    </exp>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="literalExp" value="1">
+                <type class="none"></type>
+              </arg>
+            </body>
           </predicate>
         </invariant>
         <invariant name="At least one Pulse Rate param">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
-          <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
-            <pred.SerializedExpr>
-              <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx_-_-treecreator2_-1/>
-              <pred.TypeTags_-TypeTagImpl resolves-to="pred.SerializedTypeTag" serialization="custom">
-                <pred.SerializedTypeTag>
-                  <edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx_-_-typecreator4_-1/>
-                  <boolean>true</boolean>
-                </pred.SerializedTypeTag>
-              </pred.TypeTags_-TypeTagImpl>
-            </pred.SerializedExpr>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="po">
+              <type class="none"></type>
+            </param>
+            <body class="setOpExp" id="exists">
+              <type class="none"></type>
+              <exp class="funExp">
+                <type class="none"></type>
+                <param name="x$2">
+                  <type class="none"></type>
+                </param>
+                <body class="instanceOfExp">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="x$2">
+                    <type class="none"></type>
+                  </exp>
+                  <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate"/>
+                </body>
+              </exp>
+            </body>
           </predicate>
         </invariant>
       </members>
@@ -1578,30 +1656,170 @@
       <members class="ilist">
         <invariant name="(SpO2&apos;s min &lt; 40 and SpO2&apos;s max == 100)">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
-          <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
-            <pred.SerializedExpr>
-              <edu.ksu.cis.santos.mdcf.dms.example.requirement.MyReqPulseOx_-_-treecreator1_-1/>
-              <pred.TypeTags_-TypeTagImpl resolves-to="pred.SerializedTypeTag" serialization="custom">
-                <pred.SerializedTypeTag>
-                  <edu.ksu.cis.santos.mdcf.dms.example.requirement.MyReqPulseOx_-_-typecreator2_-1/>
-                  <boolean>true</boolean>
-                </pred.SerializedTypeTag>
-              </pred.TypeTags_-TypeTagImpl>
-            </pred.SerializedExpr>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="po">
+              <type class="none"></type>
+            </param>
+            <body class="setOpExp" id="exists">
+              <type class="none"></type>
+              <exp class="funExp">
+                <type class="none"></type>
+                <param name="x$1">
+                  <type class="none"></type>
+                </param>
+                <body class="matchExp">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="x$1">
+                    <type class="none"></type>
+                  </exp>
+                  <cases class="ilist">
+                    <matchCase>
+                      <bind class="namedMatchCaseBind" id="spo2">
+                        <type class="some">
+                          <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2"/>
+                        </type>
+                      </bind>
+                      <cond class="none"></cond>
+                      <body class="applyExp">
+                        <type class="none"></type>
+                        <fun class="accessExp" id="&amp;&amp;">
+                          <type class="none"></type>
+                          <exp class="binaryBasicOpExp" op="&lt;">
+                            <type class="some">
+                              <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
+                            </type>
+                            <left class="accessExp" id="min">
+                              <type class="none"></type>
+                              <exp class="accessExp" id="range">
+                                <type class="none"></type>
+                                <exp class="varRefExp" id="spo2">
+                                  <type class="none"></type>
+                                </exp>
+                              </exp>
+                            </left>
+                            <right class="literalExp" value="40">
+                              <type class="some">
+                                <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
+                              </type>
+                            </right>
+                          </exp>
+                        </fun>
+                        <arg class="binaryBasicOpExp" op="==">
+                          <type class="some">
+                            <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
+                          </type>
+                          <left class="accessExp" id="max">
+                            <type class="none"></type>
+                            <exp class="accessExp" id="range">
+                              <type class="none"></type>
+                              <exp class="varRefExp" id="spo2">
+                                <type class="none"></type>
+                              </exp>
+                            </exp>
+                          </left>
+                          <right class="literalExp" value="100">
+                            <type class="none"></type>
+                          </right>
+                        </arg>
+                      </body>
+                    </matchCase>
+                    <matchCase>
+                      <bind class="defaultMatchCaseBindExp"/>
+                      <cond class="none"></cond>
+                      <body class="literalExp" value="false">
+                        <type class="none"></type>
+                      </body>
+                    </matchCase>
+                  </cases>
+                </body>
+              </exp>
+            </body>
           </predicate>
         </invariant>
         <invariant name="PulseRate&apos;s min &lt;= 30 and PulseRate&apos;s max &gt;= 200">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
-          <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
-            <pred.SerializedExpr>
-              <edu.ksu.cis.santos.mdcf.dms.example.requirement.MyReqPulseOx_-_-treecreator2_-1/>
-              <pred.TypeTags_-TypeTagImpl resolves-to="pred.SerializedTypeTag" serialization="custom">
-                <pred.SerializedTypeTag>
-                  <edu.ksu.cis.santos.mdcf.dms.example.requirement.MyReqPulseOx_-_-typecreator4_-1/>
-                  <boolean>true</boolean>
-                </pred.SerializedTypeTag>
-              </pred.TypeTags_-TypeTagImpl>
-            </pred.SerializedExpr>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="po">
+              <type class="none"></type>
+            </param>
+            <body class="setOpExp" id="exists">
+              <type class="none"></type>
+              <exp class="funExp">
+                <type class="none"></type>
+                <param name="x$2">
+                  <type class="none"></type>
+                </param>
+                <body class="matchExp">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="x$2">
+                    <type class="none"></type>
+                  </exp>
+                  <cases class="ilist">
+                    <matchCase>
+                      <bind class="namedMatchCaseBind" id="pr">
+                        <type class="some">
+                          <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate"/>
+                        </type>
+                      </bind>
+                      <cond class="none"></cond>
+                      <body class="applyExp">
+                        <type class="none"></type>
+                        <fun class="accessExp" id="&amp;&amp;">
+                          <type class="none"></type>
+                          <exp class="binaryBasicOpExp" op="&lt;=">
+                            <type class="some">
+                              <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
+                            </type>
+                            <left class="accessExp" id="min">
+                              <type class="none"></type>
+                              <exp class="accessExp" id="range">
+                                <type class="none"></type>
+                                <exp class="varRefExp" id="pr">
+                                  <type class="none"></type>
+                                </exp>
+                              </exp>
+                            </left>
+                            <right class="literalExp" value="30">
+                              <type class="some">
+                                <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
+                              </type>
+                            </right>
+                          </exp>
+                        </fun>
+                        <arg class="binaryBasicOpExp" op="&gt;=">
+                          <type class="some">
+                            <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
+                          </type>
+                          <left class="accessExp" id="max">
+                            <type class="none"></type>
+                            <exp class="accessExp" id="range">
+                              <type class="none"></type>
+                              <exp class="varRefExp" id="pr">
+                                <type class="none"></type>
+                              </exp>
+                            </exp>
+                          </left>
+                          <right class="literalExp" value="200">
+                            <type class="some">
+                              <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
+                            </type>
+                          </right>
+                        </arg>
+                      </body>
+                    </matchCase>
+                    <matchCase>
+                      <bind class="defaultMatchCaseBindExp"/>
+                      <cond class="none"></cond>
+                      <body class="literalExp" value="false">
+                        <type class="none"></type>
+                      </body>
+                    </matchCase>
+                  </cases>
+                </body>
+              </exp>
+            </body>
           </predicate>
         </invariant>
       </members>
@@ -1623,16 +1841,49 @@
         </attribute>
         <invariant name="level is in 1..100">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.BatteryLevelStatus"/>
-          <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
-            <pred.SerializedExpr>
-              <edu.ksu.cis.santos.mdcf.dms.example.schema.BatteryLevelStatus_-_-treecreator3_-1/>
-              <pred.TypeTags_-TypeTagImpl resolves-to="pred.SerializedTypeTag" serialization="custom">
-                <pred.SerializedTypeTag>
-                  <edu.ksu.cis.santos.mdcf.dms.example.schema.BatteryLevelStatus_-_-typecreator6_-1/>
-                  <boolean>true</boolean>
-                </pred.SerializedTypeTag>
-              </pred.TypeTags_-TypeTagImpl>
-            </pred.SerializedExpr>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="bls">
+              <type class="none"></type>
+            </param>
+            <body class="applyExp">
+              <type class="none"></type>
+              <fun class="accessExp" id="&amp;&amp;">
+                <type class="none"></type>
+                <exp class="binaryBasicOpExp" op="&lt;=">
+                  <type class="some">
+                    <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
+                  </type>
+                  <left class="literalExp" value="0">
+                    <type class="some">
+                      <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
+                    </type>
+                  </left>
+                  <right class="accessExp" id="level">
+                    <type class="none"></type>
+                    <exp class="varRefExp" id="bls">
+                      <type class="none"></type>
+                    </exp>
+                  </right>
+                </exp>
+              </fun>
+              <arg class="binaryBasicOpExp" op="&lt;=">
+                <type class="some">
+                  <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
+                </type>
+                <left class="accessExp" id="level">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="bls">
+                    <type class="none"></type>
+                  </exp>
+                </left>
+                <right class="literalExp" value="100">
+                  <type class="some">
+                    <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
+                  </type>
+                </right>
+              </arg>
+            </body>
           </predicate>
         </invariant>
       </members>
@@ -2197,16 +2448,28 @@
         </attribute>
         <invariant name="min is less than or equal to max">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.Range"/>
-          <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
-            <pred.SerializedExpr>
-              <edu.ksu.cis.santos.mdcf.dms.example.schema.Range_-_-treecreator1_-1/>
-              <pred.TypeTags_-TypeTagImpl resolves-to="pred.SerializedTypeTag" serialization="custom">
-                <pred.SerializedTypeTag>
-                  <edu.ksu.cis.santos.mdcf.dms.example.schema.Range_-_-typecreator2_-1/>
-                  <boolean>true</boolean>
-                </pred.SerializedTypeTag>
-              </pred.TypeTags_-TypeTagImpl>
-            </pred.SerializedExpr>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="r">
+              <type class="none"></type>
+            </param>
+            <body class="binaryBasicOpExp" op="&lt;=">
+              <type class="some">
+                <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
+              </type>
+              <left class="accessExp" id="min">
+                <type class="none"></type>
+                <exp class="varRefExp" id="r">
+                  <type class="none"></type>
+                </exp>
+              </left>
+              <right class="accessExp" id="max">
+                <type class="none"></type>
+                <exp class="varRefExp" id="r">
+                  <type class="none"></type>
+                </exp>
+              </right>
+            </body>
           </predicate>
         </invariant>
       </members>
@@ -2237,16 +2500,28 @@
         </attribute>
         <invariant name="min is less than or equal to max">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.RangeSetting"/>
-          <predicate class="pred.Exprs$ExprImpl" resolves-to="pred.SerializedExpr" serialization="custom">
-            <pred.SerializedExpr>
-              <edu.ksu.cis.santos.mdcf.dms.example.schema.RangeSetting_-_-treecreator2_-1/>
-              <pred.TypeTags_-TypeTagImpl resolves-to="pred.SerializedTypeTag" serialization="custom">
-                <pred.SerializedTypeTag>
-                  <edu.ksu.cis.santos.mdcf.dms.example.schema.RangeSetting_-_-typecreator4_-1/>
-                  <boolean>true</boolean>
-                </pred.SerializedTypeTag>
-              </pred.TypeTags_-TypeTagImpl>
-            </pred.SerializedExpr>
+          <predicate class="funExp">
+            <type class="none"></type>
+            <param name="r">
+              <type class="none"></type>
+            </param>
+            <body class="binaryBasicOpExp" op="&lt;=">
+              <type class="some">
+                <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
+              </type>
+              <left class="accessExp" id="min">
+                <type class="none"></type>
+                <exp class="varRefExp" id="r">
+                  <type class="none"></type>
+                </exp>
+              </left>
+              <right class="accessExp" id="max">
+                <type class="none"></type>
+                <exp class="varRefExp" id="r">
+                  <type class="none"></type>
+                </exp>
+              </right>
+            </body>
           </predicate>
         </invariant>
       </members>

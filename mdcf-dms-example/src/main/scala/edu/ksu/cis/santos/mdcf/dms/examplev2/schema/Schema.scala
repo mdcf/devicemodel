@@ -617,13 +617,21 @@ trait ICE_FloatRangeSetting extends ICE_RangeSetting {
 //=======================================================================================================
 
 trait ICE_Alert extends ICE_Feature {
+  // The first two attributes come from the alert condition definition in
+  // section 7.4.1.1 of the 11073 specification 
+  @Const(PRODUCT)
+  val ALERT_SOURCE : IEEE11073_OID_TYPE
+  @Const(PRODUCT)
+  val ALERT_CODE : IEEE11073_OID_TYPE
   @Const(PRODUCT)
   val access : Option[ICE_Security_Access_Read]
   @Const(PRODUCT)
   val exchange : ICE_Sporadic_Exchange
 }
 
-trait ICE_FloatRangeValueAlert extends ICE_Alert with ICE_FloatRangeSetting
+trait ICE_FloatRangeValueAlert extends ICE_Alert{
+  val setting : ICE_FloatRangeSetting
+} 
 
 // trait TargetValueAlert extends ICE_Alert with ValueSetting
 // 

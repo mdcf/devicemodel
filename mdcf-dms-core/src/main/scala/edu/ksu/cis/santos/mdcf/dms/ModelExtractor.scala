@@ -19,6 +19,7 @@ import edu.ksu.cis.santos.mdcf.dms._
 import edu.ksu.cis.santos.mdcf.dml._
 import ast._
 import Ast._
+import exp._
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
@@ -362,6 +363,9 @@ object ModelExtractor {
 
     if (isInvariant) {
       inits.get(aName) match {
+        case Some(DYN) | None =>
+          context.reporter.error(s"Ill-formed model: $aQName")
+          None
         case Some(value) =>
           val valueClass = value.getClass
           if (valueClass.getName != "scala.reflect.api.Exprs$ExprImpl") {
@@ -375,11 +379,9 @@ object ModelExtractor {
               else tupleType(l.map { t =>
                 first2(extractType(aQName, t, None))
               })).asInstanceOf[PredicateType]
-            Some(invariant(aName, predicateType, value))
+            Some(invariant(aName, predicateType,
+              predExtractor(value.asInstanceOf[Predicate[_]])))
           }
-        case _ =>
-          context.reporter.error(s"Ill-formed model: $aQName")
-          None
       }
     } else if (isCompanion) {
       None
@@ -678,5 +680,126 @@ object ModelExtractor {
       }
     }
     false
+  }
+
+  def predExtractor[T](p : Predicate[T])(
+    implicit context : Context) : Exp = {
+    val scalaTypeMap = Set(
+      classOf[scala.collection.immutable.Map[_, _]].getName,
+      classOf[scala.collection.immutable.Set[_]].getName,
+      classOf[scala.collection.immutable.Seq[_]].getName,
+      classOf[scala.Tuple1[_]].getName,
+      classOf[scala.Tuple2[_, _]].getName,
+      classOf[scala.Tuple3[_, _, _]].getName,
+      classOf[scala.Tuple4[_, _, _, _]].getName,
+      classOf[scala.Tuple5[_, _, _, _, _]].getName,
+      classOf[scala.Tuple6[_, _, _, _, _, _]].getName,
+      classOf[scala.Tuple7[_, _, _, _, _, _, _]].getName,
+      classOf[scala.Tuple8[_, _, _, _, _, _, _, _]].getName,
+      classOf[scala.Tuple9[_, _, _, _, _, _, _, _, _]].getName,
+      classOf[scala.Tuple10[_, _, _, _, _, _, _, _, _, _]].getName,
+      classOf[scala.Tuple11[_, _, _, _, _, _, _, _, _, _, _]].getName,
+      classOf[scala.Tuple12[_, _, _, _, _, _, _, _, _, _, _, _]].getName,
+      classOf[scala.Tuple13[_, _, _, _, _, _, _, _, _, _, _, _, _]].getName,
+      classOf[scala.Tuple14[_, _, _, _, _, _, _, _, _, _, _, _, _, _]].getName,
+      classOf[scala.Tuple15[_, _, _, _, _, _, _, _, _, _, _, _, _, _, _]].getName,
+      classOf[scala.Tuple16[_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _]].getName,
+      classOf[scala.Tuple17[_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _]].getName,
+      classOf[scala.Tuple18[_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _]].getName,
+      classOf[scala.Tuple19[_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _]].getName,
+      classOf[scala.Tuple20[_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _]].getName,
+      classOf[scala.Tuple21[_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _]].getName,
+      classOf[scala.Tuple22[_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _]].getName
+    )
+
+      def clazzOf(t : Tree) = Reflection.getClassOfType(t.tpe)
+      def typeNameOf(t : Tree) = clazzOf(t).getName
+      def typeNameOfTypeTree(tpt : Tree) = tpt match {
+        case id @ Ident(nme) => typeNameOf(id)
+        case tpt @ TypeTree() =>
+          tpt.original match {
+            case id @ Ident(nme) => typeNameOf(id)
+            case tpto =>
+              context.reporter.error(s"Unhandled constraint form: ${showRaw(tpto)}")
+              "?"
+          }
+        case _ =>
+          context.reporter.error(s"Unhandled constraint form: ${showRaw(tpt)}")
+          "?"
+      }
+
+      def visitor(t : Tree) : Exp =
+        t match {
+          case Function(List(ValDef(_, termName, TypeTree(), _)), body) =>
+            funExp(param(none(), termName.decoded), visitor(body))
+          case Function(List(ValDef(_, termName, id : Ident, _)), body) =>
+            funExp(param(some(namedType(typeNameOf(id))), termName.decoded), visitor(body))
+          case Apply(Select(id @ Ident(_), applyName), List(Literal(Constant(v)))) if applyName.decoded == "apply" =>
+            val typeName = typeNameOf(id)
+            literalExp(v.toString) withType (namedType(typeName.substring(0, typeName.length - 1)))
+          case Apply(Select(Select(This(_), booleanName), applyName), List(e)) if booleanName.decoded == "Boolean" && applyName.decoded == "apply" =>
+            visitor(e)
+          case Apply(Select(Ident(_), b2sbName), List(e)) if b2sbName.decoded == "boolean2sboolean" =>
+            visitor(e)
+          case Apply(Select(qualifier, name), List(e)) if scalaTypeMap.contains(typeNameOf(qualifier)) =>
+            val typeName = typeNameOf(qualifier)
+            if (typeName.endsWith(".Map"))
+              mapOpExp(name.decoded, visitor(e))
+            else if (typeName.endsWith(".Set"))
+              setOpExp(name.decoded, visitor(e))
+            else if (typeName.endsWith(".Seq"))
+              seqOpExp(name.decoded, visitor(e))
+            else
+              tupleOpExp(name.decoded, visitor(e))
+          case Apply(Select(qualifier, name), List(e)) if classOf[BasicType].isAssignableFrom(clazzOf(qualifier)) =>
+            binaryBasicOpExp(visitor(qualifier), name.decoded, visitor(e)) withType (namedType(typeNameOf(qualifier)))
+          case Apply(fun, List(arg)) =>
+            applyExp(visitor(fun), visitor(arg))
+          case Select(qualifier, name) =>
+            accessExp(visitor(qualifier), name.decoded)
+          case Ident(name) =>
+            varRefExp(name.decoded)
+          case Literal(Constant(v)) =>
+            literalExp(v.toString)
+          case Match(selector, cases) =>
+            val cs = cases.toVector.flatMap {
+              _ match {
+                case CaseDef(Ident(varName), t, body) =>
+                  val cond =
+                    t match {
+                      case EmptyTree => none[Exp]()
+                      case t         => some(visitor(t))
+                    }
+                  val e = visitor(body)
+                  varName.decoded match {
+                    case "_"  => Some(matchCase(defaultMatchCaseBind, cond, e))
+                    case name => Some(matchCase(namedMatchCaseBind(name, none()), cond, e))
+                  }
+                case CaseDef(
+                  Bind(varName, Typed(Ident(wName), tpt)), t, body) if wName.decoded == "_" =>
+                  val cond =
+                    t match {
+                      case EmptyTree => none[Exp]()
+                      case t         => some(visitor(t))
+                    }
+                  val e = visitor(body)
+                  val typeName = typeNameOfTypeTree(tpt)
+                  Some(matchCase(namedMatchCaseBind(varName.decoded, some(namedType(typeName))), cond, e))
+                case cd =>
+                  context.reporter.error(s"Unhandled constraint form: ${showRaw(cd)}")
+                  None
+              }
+            }
+            import scala.collection.JavaConversions._
+            matchExp(visitor(selector), cs)
+          case TypeApply(Select(qualifier, isInstanceOfName), List(tpt)) if isInstanceOfName.decoded == "isInstanceOf" =>
+            val typeName = typeNameOfTypeTree(tpt)
+            instanceOfExp(visitor(qualifier), namedType(typeName))
+          case t =>
+            context.reporter.error(s"Unhandled constraint form: ${showRaw(t)}")
+            unknownExp
+        }
+    val t = Reflection.typeCheck(p.tree)
+    visitor(t)
   }
 }

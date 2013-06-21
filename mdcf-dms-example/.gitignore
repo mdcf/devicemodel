@@ -2,3 +2,5 @@
 /target
 /.cache
 /.scala_dependencies
+/.worksheet
+/src/main/scala/*.sc

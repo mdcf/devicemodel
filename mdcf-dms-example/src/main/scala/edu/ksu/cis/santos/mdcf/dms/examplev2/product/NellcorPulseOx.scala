@@ -6,56 +6,18 @@ which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html                             
 */
 
-package edu.ksu.cis.santos.mdcf.dms.examplev2.device
+package edu.ksu.cis.santos.mdcf.dms.examplev2.product
 
 import edu.ksu.cis.santos.mdcf.dms._
 import edu.ksu.cis.santos.mdcf.dms.examplev2._
 import edu.ksu.cis.santos.mdcf.dms.examplev2.schema._
 import edu.ksu.cis.santos.mdcf.dms.examplev2.clas._
-
-class NellcorGetExchange extends ICE_Get_Exchange {
-  override val access : Option[ICE_Security_Access_Read] = None
-  override val separation : NatRange = new NatRange {
-    override val min : Nat = 10
-    override val max : Nat = 50
-  }
-  override val serviceTime : NatRange = new NatRange {
-    override val min : Nat = 0
-    override val max : Nat = 50
-  }
-}
-
-class NellcorSetExchange extends ICE_Set_Exchange{
-  override val access : Option[ICE_Security_Access_Write] = None
-  override val separation : NatRange = new NatRange {
-    override val min : Nat = 10
-    override val max : Nat = 50
-  }
-  override val serviceTime : NatRange = new NatRange {
-    override val min : Nat = 0
-    override val max : Nat = 50
-  }
-}
-
-class NellcorPeriodicExchange extends ICE_Periodic_Exchange {
-  override val access : Option[ICE_Security_Access_Read] = None
-  override val separation : NatRange = new NatRange {
-    override val min : Nat = 98
-    override val max : Nat = 102
-  }
-  override val rate : NatRange = new NatRange {
-    override val min : Nat = 50
-    override val max : Nat = 150
-  }
-}
-
-class NellcorSporadicExchange extends ICE_Sporadic_Exchange {
-  override val access : Option[ICE_Security_Access_Read] = None
-  override val separation : NatRange = new NatRange {
-    override val min : Nat = 98
-    override val max : Nat = 102
-  }
-}
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product._
+import edu.ksu.cis.santos.mdcf.dms.examplev2.Float.apply
+import edu.ksu.cis.santos.mdcf.dms.examplev2.ICE_VMD_State.apply
+import edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE.apply
+import edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_TYPE.apply
+import edu.ksu.cis.santos.mdcf.dms.examplev2.String.apply
 
 final class NellcorPulseOx extends ICE_MDS {
   override val IEEE11073_MDC_ATTR_SYS_TYPE : IEEE11073_TYPE = "Nellcor PO"
@@ -91,11 +53,15 @@ final class NellcorPulseOx extends ICE_MDS {
                 "periodic" -> new NellcorPeriodicExchange {}
               )
               override val alerts : Map[String, ICE_Alert] = Map(
-                "spo2rangealert" -> new ICE_FloatRangeValueAlert{
-                  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
-                  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
-                  override val get : ICE_Get_Exchange = new NellcorGetExchange {}
-                  override val set : Option[ICE_Set_Exchange] = Some(new NellcorSetExchange {})
+                "spo2rangealert" -> new ICE_FloatRangeValueAlert {
+                  override val ALERT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER CODE"
+                  override val ALERT_SOURCE : IEEE11073_OID_TYPE = "PLACEHOLDER SOURCE"
+                  override val setting = new ICE_FloatRangeSetting {
+                    override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
+                    override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
+                    override val get : ICE_Get_Exchange = new NellcorGetExchange {}
+                    override val set : Option[ICE_Set_Exchange] = Some(new NellcorSetExchange {})
+                  }
                   override val access : Option[ICE_Security_Access_Read] = None
                   override val exchange : ICE_Sporadic_Exchange = new NellcorSporadicExchange {}
                   // All payload stuff is dynamic, so we don't write anything about it here
@@ -106,7 +72,7 @@ final class NellcorPulseOx extends ICE_MDS {
           override val statuses : Map[String, ICE_Status] = Map()
           override val actions : Map[String, ICE_Action] = Map()
         },
-        "pulserate" -> new ICE_SpO2_Channel {
+        "pulserate" -> new ICE_PulseRate_Channel {
           override val MDC_ATTR_ID_PARAM_GRP : IEEE11073_OID_TYPE = "Pulse Rate Channel"
           override val alerts : Map[String, ICE_Alert] = Map()
           override val metrics : Map[String, ICE_Metric] = Map(
@@ -120,11 +86,15 @@ final class NellcorPulseOx extends ICE_MDS {
                 "periodic" -> new NellcorPeriodicExchange {}
               )
               override val alerts : Map[String, ICE_Alert] = Map(
-                  "pulseraterangealert" -> new ICE_FloatRangeValueAlert{
-                  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
-                  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
-                  override val get : ICE_Get_Exchange = new NellcorGetExchange {}
-                  override val set : Option[ICE_Set_Exchange] = Some(new NellcorSetExchange {})
+                "pulseraterangealert" -> new ICE_FloatRangeValueAlert {
+                  override val ALERT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER CODE"
+                  override val ALERT_SOURCE : IEEE11073_OID_TYPE = "PLACEHOLDER SOURCE"
+                  override val setting = new ICE_FloatRangeSetting {
+                    override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "PLACEHOLDER ID"
+                    override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER UNIT CODE"
+                    override val get : ICE_Get_Exchange = new NellcorGetExchange {}
+                    override val set : Option[ICE_Set_Exchange] = Some(new NellcorSetExchange {})
+                  }
                   override val access : Option[ICE_Security_Access_Read] = None
                   override val exchange : ICE_Sporadic_Exchange = new NellcorSporadicExchange {}
                   // All payload stuff is dynamic, so we don't write anything about it here

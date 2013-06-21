@@ -13,6 +13,26 @@ import java.util.List;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.AccessExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.ApplyExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.BinaryBasicOpExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.DefaultMatchCaseBind;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.Exp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.FunExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.InstanceOfExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.LiteralExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.MapOpExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchCase;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchCaseBind;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.MatchExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.NamedMatchCaseBind;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.Param;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.SeqOpExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.SetOpExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.TupleOpExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.UnknownExp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.VarRefExp;
+
 /**
  * Provides AST construction methods.
  * 
@@ -27,6 +47,10 @@ public class Ast {
    */
   public static class Weak {
 
+    public static AccessExp accessExp(final Exp exp, final String id) {
+      return Ast.accessExp(exp, id);
+    }
+
     private static <T, O> boolean allInstanceOf(final Iterable<O> os,
         final Class<T> clazz) {
       for (final O o : os) {
@@ -35,6 +59,10 @@ public class Ast {
         }
       }
       return true;
+    }
+
+    public static ApplyExp applyExp(final Exp fun, final Exp arg) {
+      return Ast.applyExp(fun, arg);
     }
 
     public static Attribute attribute(final Iterable<?> annotations,
@@ -55,6 +83,11 @@ public class Ast {
       return Ast.basicType(name, list(supers, NamedType.class));
     }
 
+    public static BinaryBasicOpExp binaryBasicOpExp(final Exp left,
+        final String op, final Exp right) {
+      return Ast.binaryBasicOpExp(left, op, right);
+    }
+
     public static ConstAnnotation constAnnotation(final FeatureLevel level,
         final String qualifier) {
       return Ast.constAnnotation(level, qualifier);
@@ -62,6 +95,10 @@ public class Ast {
 
     public static DataAnnotation dataAnnotation() {
       return Ast.dataAnnotation();
+    }
+
+    public static DefaultMatchCaseBind defaultMatchCaseBind() {
+      return Ast.defaultMatchCaseBind();
     }
 
     public static EitherInit eitherInit(final int index,
@@ -94,8 +131,16 @@ public class Ast {
       return Ast.featureLevelAnnotation(level, qualifier);
     }
 
+    public static FunExp funExp(final Param param, final Exp body) {
+      return Ast.funExp(param, body);
+    }
+
+    public static InstanceOfExp instanceOfExp(final Exp exp, final Type testType) {
+      return Ast.instanceOfExp(exp, testType);
+    }
+
     public static Invariant invariant(final String name,
-        final PredicateType predicateType, final Object predicate) {
+        final PredicateType predicateType, final Exp predicate) {
       return Ast.invariant(name, predicateType, predicate);
     }
 
@@ -122,6 +167,10 @@ public class Ast {
       return Ast.list(ts);
     }
 
+    public static LiteralExp literalExp(final String value) {
+      return Ast.literalExp(value);
+    }
+
     public static MapInit mapInit(final Iterable<?> keyInits,
         final Iterable<?> valueInits) {
       return Ast.mapInit(
@@ -129,8 +178,21 @@ public class Ast {
           list(valueInits, Initialization.class));
     }
 
+    public static MapOpExp mapOpExp(final String id, final Exp exp) {
+      return Ast.mapOpExp(id, exp);
+    }
+
     public static MapType mapType(final Type keyType, final Type valueType) {
       return Ast.mapType(keyType, valueType);
+    }
+
+    public static MatchCase matchCase(final MatchCaseBind bind,
+        final Optional<Exp> cond, final Exp body) {
+      return Ast.matchCase(bind, cond, body);
+    }
+
+    public static MatchExp matchExp(final Exp exp, final List<?> cases) {
+      return Ast.matchExp(exp, list(cases, MatchCase.class));
     }
 
     public static Model model(final Iterable<?> declarations) {
@@ -140,6 +202,11 @@ public class Ast {
     public static MultiplicityAnnotation multiplicityAnnotation(final int lo,
         final int hi, final Optional<String> typeName) {
       return Ast.multiplicityAnnotation(lo, hi, typeName);
+    }
+
+    public static NamedMatchCaseBind namedMatchCaseBind(final String id,
+        final Optional<?> type) {
+      return Ast.namedMatchCaseBind(id, opt(type, Type.class));
     }
 
     public static NamedType namedType(final String name) {
@@ -181,6 +248,10 @@ public class Ast {
       return Ast.overrideAnnotation();
     }
 
+    public static Param param(final Optional<?> type, final String name) {
+      return Ast.param(opt(type, Type.class), name);
+    }
+
     public static RefinedType refinedType(final Iterable<?> types,
         final Iterable<?> attributes) {
       return Ast.refinedType(
@@ -197,12 +268,20 @@ public class Ast {
       return Ast.seqInit(list(inits, Initialization.class));
     }
 
+    public static SeqOpExp seqOpExp(final String id, final Exp exp) {
+      return Ast.seqOpExp(id, exp);
+    }
+
     public static SeqType seqType(final Type elementType) {
       return Ast.seqType(elementType);
     }
 
     public static SetInit setInit(final Iterable<?> inits) {
       return Ast.setInit(list(inits, Initialization.class));
+    }
+
+    public static SetOpExp setOpExp(final String id, final Exp exp) {
+      return Ast.setOpExp(id, exp);
     }
 
     public static SettableAnnotation settableAnnotation() {
@@ -225,12 +304,32 @@ public class Ast {
       return Ast.tupleInit(list(inits, Initialization.class));
     }
 
+    public static TupleOpExp tupleOpExp(final String id, final Exp exp) {
+      return Ast.tupleOpExp(id, exp);
+    }
+
     public static TupleType tupleType(final Iterable<?> elementTypes) {
       return Ast.tupleType(list(elementTypes, Type.class));
     }
 
+    public static UnknownExp unknownExp() {
+      return Ast.unknownExp();
+    }
+
     private Weak() {
     }
+
+    public VarRefExp varRefExp(final String id) {
+      return Ast.varRefExp(id);
+    }
+  }
+
+  public static AccessExp accessExp(final Exp exp, final String id) {
+    return new AccessExp(exp, id);
+  }
+
+  public static ApplyExp applyExp(final Exp fun, final Exp arg) {
+    return new ApplyExp(fun, arg);
   }
 
   public static Attribute attribute(
@@ -248,6 +347,11 @@ public class Ast {
     return new BasicType(name, supers);
   }
 
+  public static BinaryBasicOpExp binaryBasicOpExp(final Exp left,
+      final String op, final Exp right) {
+    return new BinaryBasicOpExp(left, op, right);
+  }
+
   public static ConstAnnotation constAnnotation(final FeatureLevel level,
       final String qualifier) {
     return new ConstAnnotation(level, qualifier);
@@ -255,6 +359,10 @@ public class Ast {
 
   public static DataAnnotation dataAnnotation() {
     return new DataAnnotation();
+  }
+
+  public static DefaultMatchCaseBind defaultMatchCaseBind() {
+    return new DefaultMatchCaseBind();
   }
 
   public static EitherInit eitherInit(final int index, final Initialization init) {
@@ -281,8 +389,16 @@ public class Ast {
     return new FeatureLevelAnnotation(level, qualifier);
   }
 
+  public static FunExp funExp(final Param param, final Exp body) {
+    return new FunExp(param, body);
+  }
+
+  public static InstanceOfExp instanceOfExp(final Exp exp, final Type testType) {
+    return new InstanceOfExp(exp, testType);
+  }
+
   public static Invariant invariant(final String name,
-      final PredicateType predicateType, final Object predicate) {
+      final PredicateType predicateType, final Exp predicate) {
     return new Invariant(name, predicateType, predicate);
   }
 
@@ -299,13 +415,30 @@ public class Ast {
     return ImmutableList.<T> builder().add(ts).build();
   }
 
+  public static LiteralExp literalExp(final String value) {
+    return new LiteralExp(value);
+  }
+
   public static MapInit mapInit(final Iterable<Initialization> keyInits,
       final Iterable<Initialization> valueInits) {
     return new MapInit(list(keyInits), list(valueInits));
   }
 
+  public static MapOpExp mapOpExp(final String id, final Exp exp) {
+    return new MapOpExp(id, exp);
+  }
+
   public static MapType mapType(final Type keyType, final Type valueType) {
     return new MapType(keyType, valueType);
+  }
+
+  public static MatchCase matchCase(final MatchCaseBind bind,
+      final Optional<Exp> cond, final Exp body) {
+    return new MatchCase(bind, cond, body);
+  }
+
+  public static MatchExp matchExp(final Exp exp, final List<MatchCase> cases) {
+    return new MatchExp(exp, cases);
   }
 
   public static Model model(final Iterable<Declaration> declarations) {
@@ -315,6 +448,11 @@ public class Ast {
   public static MultiplicityAnnotation multiplicityAnnotation(final int lo,
       final int hi, final Optional<String> typeName) {
     return new MultiplicityAnnotation(lo, hi, typeName);
+  }
+
+  public static NamedMatchCaseBind namedMatchCaseBind(final String id,
+      final Optional<Type> type) {
+    return new NamedMatchCaseBind(id, type);
   }
 
   public static NamedType namedType(final String name) {
@@ -337,6 +475,10 @@ public class Ast {
     return new OverrideAnnotation();
   }
 
+  public static Param param(final Optional<Type> type, final String name) {
+    return new Param(type, name);
+  }
+
   public static RefinedType refinedType(final Iterable<NamedType> types,
       final Iterable<Attribute> attributes) {
     return new RefinedType(types, attributes);
@@ -351,12 +493,20 @@ public class Ast {
     return new SeqInit(inits);
   }
 
+  public static SeqOpExp seqOpExp(final String id, final Exp exp) {
+    return new SeqOpExp(id, exp);
+  }
+
   public static SeqType seqType(final Type elementType) {
     return new SeqType(elementType);
   }
 
   public static SetInit setInit(final Iterable<Initialization> inits) {
     return new SetInit(inits);
+  }
+
+  public static SetOpExp setOpExp(final String id, final Exp exp) {
+    return new SetOpExp(id, exp);
   }
 
   public static SettableAnnotation settableAnnotation() {
@@ -379,8 +529,20 @@ public class Ast {
     return new TupleInit(inits);
   }
 
+  public static TupleOpExp tupleOpExp(final String id, final Exp exp) {
+    return new TupleOpExp(id, exp);
+  }
+
   public static TupleType tupleType(final Iterable<Type> elementTypes) {
     return new TupleType(elementTypes);
+  }
+
+  public static UnknownExp unknownExp() {
+    return new UnknownExp();
+  }
+
+  public static VarRefExp varRefExp(final String id) {
+    return new VarRefExp(id);
   }
 
   private Ast() {
