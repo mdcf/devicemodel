@@ -25,6 +25,14 @@ class NoninGetExchange extends ICE_Get_Exchange {
   }
 }
 
+class NoninSporadicExchange extends ICE_Sporadic_Exchange {
+  override val access : Option[ICE_Security_Access_Read] = None
+  override val separation : NatRange = new NatRange {
+    override val min : Nat = 98
+    override val max : Nat = 102
+  }
+}
+
 class NellcorGetExchange extends ICE_Get_Exchange {
   override val access : Option[ICE_Security_Access_Read] = None
   override val separation : NatRange = new NatRange {
@@ -56,8 +64,8 @@ class NellcorPeriodicExchange extends ICE_Periodic_Exchange {
     override val max : Nat = 102
   }
   override val rate : NatRange = new NatRange {
-    override val min : Nat = 50
-    override val max : Nat = 150
+    override val min : Nat = 490
+    override val max : Nat = 600
   }
 }
 

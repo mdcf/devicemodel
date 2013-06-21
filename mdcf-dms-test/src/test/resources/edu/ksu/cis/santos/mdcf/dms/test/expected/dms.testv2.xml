@@ -669,7 +669,7 @@
                                                       </annotations>
                                                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Float"/>
                                                       <init class="some">
-                                                        <reference class="basicInit" value="0.0"/>
+                                                        <reference class="basicInit" value="70.0"/>
                                                       </init>
                                                     </attribute>
                                                     <attribute name="max">
@@ -2648,7 +2648,7 @@
                   </annotations>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                   <init class="some">
-                    <reference class="basicInit" value="50"/>
+                    <reference class="basicInit" value="490"/>
                   </init>
                 </attribute>
                 <attribute name="max">
@@ -2657,7 +2657,7 @@
                   </annotations>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                   <init class="some">
-                    <reference class="basicInit" value="150"/>
+                    <reference class="basicInit" value="600"/>
                   </init>
                 </attribute>
               </attributes>
@@ -2894,7 +2894,7 @@
                                                       </annotations>
                                                       <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Float"/>
                                                       <init class="some">
-                                                        <reference class="basicInit" value="0.0"/>
+                                                        <reference class="basicInit" value="50.0"/>
                                                       </init>
                                                     </attribute>
                                                     <attribute name="max">
@@ -3998,8 +3998,13 @@
                                                 <reference class="mapInit">
                                                   <keyInits class="ilist">
                                                     <basicInit value="get"/>
+                                                    <basicInit value="sporadic"/>
                                                   </keyInits>
                                                   <valueInits class="ilist">
+                                                    <featureInit>
+                                                      <types class="ilist"></types>
+                                                      <attributes class="ilist"></attributes>
+                                                    </featureInit>
                                                     <featureInit>
                                                       <types class="ilist"></types>
                                                       <attributes class="ilist"></attributes>
@@ -4313,6 +4318,62 @@
                   </attributes>
                 </featureInit>
               </valueInits>
+            </reference>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninSporadicExchange">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Product</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Sporadic_Exchange"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="access">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="optionType">
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+          </type>
+          <init class="some">
+            <reference class="noneInit"/>
+          </init>
+        </attribute>
+        <attribute name="separation">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <init class="some">
+            <reference class="featureInit">
+              <types class="ilist">
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+              </types>
+              <attributes class="ilist">
+                <attribute name="min">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="98"/>
+                  </init>
+                </attribute>
+                <attribute name="max">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="102"/>
+                  </init>
+                </attribute>
+              </attributes>
             </reference>
           </init>
         </attribute>

@@ -49,7 +49,8 @@ final class NoninPulseOx extends ICE_MDS {
                 override val max : Float = 100.0
               }
               override val exchanges : Map[String, ICE_Data_Exchange] = Map(
-                "get" -> new NoninGetExchange {}
+                "get" -> new NoninGetExchange {},
+                "sporadic" -> new NoninSporadicExchange {}
               )
               override val alerts : Map[String, ICE_Alert] = Map()
             })

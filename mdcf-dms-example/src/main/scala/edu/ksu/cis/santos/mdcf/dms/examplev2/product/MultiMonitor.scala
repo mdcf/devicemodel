@@ -45,7 +45,7 @@ final class MultiMonitor extends ICE_MDS {
           override val metrics : Map[String, ICE_Metric] = Map(
             "spo2_num" -> new ICE_SpO2_Numeric {
               override val range : FloatRange = new FloatRange {
-                override val min : Float = 0.0
+                override val min : Float = 70.0
                 override val max : Float = 100.0
               }
               override val exchanges : Map[String, ICE_Data_Exchange] = Map(
