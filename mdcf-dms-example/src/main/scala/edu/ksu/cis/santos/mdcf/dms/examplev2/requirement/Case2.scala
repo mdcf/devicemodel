@@ -26,19 +26,11 @@ object AppReq2 {
   val ReqDev : Predicate[AppReq2] =
     pred { vmd : AppReq2 =>
       vmd.dev.channels.values.exists(
-        _ match {
-          case chan : ICE_Channel => chan.metrics.values.exists(_.isInstanceOf[ICE_SpO2_Numeric])
-          case _                  => false
-        }
-      )
+        _.metrics.values.exists(
+          _.isInstanceOf[ICE_SpO2_Numeric]))
     }
 }
 
 trait AppReq2Alt {
   val num : ICE_SpO2_Numeric
 }
-
-//object AppReq2Alt {
-//  @Inv
-//  val ReqNum : Predicate[AppReq2Alt] = pred { x : AppReq2Alt => true }
-//}
