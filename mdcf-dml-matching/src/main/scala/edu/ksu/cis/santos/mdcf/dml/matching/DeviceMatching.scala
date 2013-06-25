@@ -65,7 +65,7 @@ object DeviceMatching {
       m match {
         case attr : Attribute =>
           val ams =
-            reqAttributeMatches(st, device, attr.asInstanceOf[Attribute])
+            reqAttributeMatches(st, device, attr)
           if (ams.isEmpty)
             return ivectorEmpty
           attrMatchesMap += (attr.name -> ams)
