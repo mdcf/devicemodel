@@ -298,8 +298,10 @@ public class SymbolTableTest {
     final File expected = new File(testDir, "expected/" + name + ".rst");
     final File result = new File(testDir, "result/" + name + ".rst");
     if (SymbolTableTest.GENERATE_EXPECTED || !expected.exists()) {
+      expected.getParentFile().mkdirs();
       Files.write(content, expected, StandardCharsets.US_ASCII);
     } else {
+      result.getParentFile().mkdirs();
       Files.write(content, result, StandardCharsets.US_ASCII);
       assertEquals(expected, result);
     }
