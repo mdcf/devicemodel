@@ -3691,7 +3691,7 @@
                   </annotations>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                   <init class="some">
-                    <reference class="basicInit" value="0"/>
+                    <reference class="basicInit" value="5"/>
                   </init>
                 </attribute>
                 <attribute name="max">

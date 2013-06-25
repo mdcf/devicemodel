@@ -16,7 +16,7 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.clas._
 class NoninGetExchange extends ICE_Get_Exchange {
   override val access : Option[ICE_Security_Access_Read] = None
   override val separation : NatRange = new NatRange {
-    override val min : Nat = 0
+    override val min : Nat = 5
     override val max : Nat = 50
   }
   override val serviceTime : NatRange = new NatRange {
