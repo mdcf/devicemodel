@@ -9,18 +9,21 @@ http://www.eclipse.org/legal/epl-v10.html
 package edu.ksu.cis.santos.mdcf.dml.ast;
 
 import java.lang.ref.SoftReference;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 
 import com.google.common.base.Optional;
+import com.google.common.collect.Iterators;
 
 /**
  * Top-level AST class that all AST node inherits from.
  * 
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
-public abstract class AstNode {
+public abstract class AstNode
+    implements Iterable<Object> {
   protected final static Object[] EMPTY_CHILDREN = new Object[] {};
 
   private transient SoftReference<Object[]> _children;
@@ -41,6 +44,11 @@ public abstract class AstNode {
   }
 
   protected abstract Object[] getChildren();
+
+  @Override
+  public final Iterator<Object> iterator() {
+    return Iterators.forArray(children());
+  }
 
   /**
    * Constructs an AST node whose type is equal to this node's type with the
