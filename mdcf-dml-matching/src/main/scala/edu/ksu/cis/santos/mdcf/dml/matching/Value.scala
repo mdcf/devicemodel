@@ -98,3 +98,8 @@ object NoneValue extends ConcreteValue
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 case class BasicValue(value : String) extends ConcreteValue
+
+/**
+ * @author <a href="mailto:robby@k-state.edu">Robby</a>
+ */
+case class TypedBasicValue(value : Any, typeName : String) extends ConcreteValue

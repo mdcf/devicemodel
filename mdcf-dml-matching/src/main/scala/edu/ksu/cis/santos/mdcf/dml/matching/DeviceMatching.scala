@@ -32,6 +32,13 @@ case class AttributeMatch(
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
+class Context(val st : SymbolTable, val extensions : Array[String]) {
+  val superTransMap = st.superTransitiveMap
+}
+
+/**
+ * @author <a href="mailto:robby@k-state.edu">Robby</a>
+ */
 object DeviceMatching {
   import scala.collection.JavaConversions._
 
@@ -40,21 +47,21 @@ object DeviceMatching {
   type Path = java.util.List[String]
 
   def reqProductMatches(
-    st : SymbolTable,
+    ctx : Context,
     devices : java.util.Set[String],
     req : Requirement) : java.util.Map[FeatureName, FeatureMatch] = {
     var result = imapEmpty[String, FeatureMatch]
     for (
-      f <- st.features if isProduct(f) &&
+      f <- ctx.st.features if isProduct(f) &&
         (devices.isEmpty || devices.contains(f.name))
-    ) for (fm <- reqFeatureMatches(st, req, f))
+    ) for (fm <- reqFeatureMatches(ctx, req, f))
       result += (f.name -> fm)
 
     result
   }
 
   def reqFeatureMatches(
-    st : SymbolTable,
+    ctx : Context,
     req : Requirement,
     device : Feature) : ISeq[FeatureMatch] = {
     require(isProduct(device))
@@ -65,7 +72,7 @@ object DeviceMatching {
       m match {
         case attr : Attribute =>
           val ams =
-            reqAttributeMatches(st, device, attr)
+            reqAttributeMatches(ctx, device, attr)
           if (ams.isEmpty)
             return ivectorEmpty
           attrMatchesMap += (attr.name -> ams)
@@ -88,14 +95,14 @@ object DeviceMatching {
       val v = toValue(fm)
       req.members.forall(
         _ match {
-          case inv : Invariant => checkPred(st, inv.predicate, v)
+          case inv : Invariant => checkPred(inv.predicate, v)(ctx)
           case _               => true
         })
     }
   }
 
   def reqAttributeMatches(
-    st : SymbolTable,
+    ctx : Context,
     f : Feature,
     req : Attribute) : ISeq[AttributeMatch] = {
     val result = marrayEmpty[AttributeMatch]
@@ -106,7 +113,7 @@ object DeviceMatching {
         case ct : RefinedType => ct.types.map(_.name).toSet
       }
 
-    val superTransMap = st.superTransitiveMap
+    val superTransMap = ctx.st.superTransitiveMap
 
     val path : MArray[String] = {
       val r = marrayEmpty[String]
@@ -155,6 +162,6 @@ object DeviceMatching {
         case _ => false
       })
 
-  private def option[T](o : Optional[T]) : Option[T] =
+  private[matching] def option[T](o : Optional[T]) : Option[T] =
     if (o.isPresent) Some(o.get) else None
 }

@@ -25,30 +25,6 @@ import language.implicitConversions
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 object ExpEvaluator {
-  def toValue(fm : FeatureMatch) : FeatureValue = {
-    import Ast._
-    val attrs =
-      fm.attributeMatches.values.toVector.map { am =>
-        val attr = am.attribute
-        attribute(list(), attr.`type`, attr.name, some(am.initMatch))
-      }
-    FeatureValue(
-      featureInit(
-        list(),
-        attrs))
-  }
-
-  def checkPred(st : SymbolTable, pred : FunExp, v : FeatureValue) : Boolean = {
-    implicit val ctx = Context(st)
-    val s = BasicState().enterClosure(Map(pred.param.name -> v))
-    val r = new ExpEvaluator().evalExp(s, pred.body).map(second2)
-    r.exists(v2b)
-  }
-
-  case class Context(st : SymbolTable) {
-    val superTransMap = st.superTransitiveMap
-  }
-
   type V = Value
 
   val TRUE = KonkritBooleanExtension.TT
@@ -56,7 +32,6 @@ object ExpEvaluator {
   val &&& = KonkritBooleanExtension.binopLSem(PilarAstUtil.LOGICAL_AND_BINOP) _
   val ||| = KonkritBooleanExtension.binopLSem(PilarAstUtil.LOGICAL_OR_BINOP) _
   val b2v = KonkritBooleanExtension.b2v _
-
   val typeNames : Type --> ISet[String] = {
     case nt : NamedType   => Set(nt.name)
     case rt : RefinedType => rt.types.map(_.name).toSet
@@ -64,29 +39,73 @@ object ExpEvaluator {
 
   implicit def t2iseq[T](t : T) : ISeq[T] = ivector(t)
   implicit def v2b(v : V) = v match {
-    case TRUE                => true
-    case FALSE               => false
-    case BasicValue("true")  => true
-    case BasicValue("false") => false
+    case TRUE | BasicValue("true")
+      | TypedBasicValue("true", _) | TypedBasicValue(true, _) => true
+    case FALSE | BasicValue("false")
+      | TypedBasicValue("false", _) | TypedBasicValue(false, _) => false
   }
-}
 
-/**
- * @author <a href="mailto:robby@k-state.edu">Robby</a>
- */
-class ExpEvaluator[S <: State[S]] {
-  import ExpEvaluator._
-  type R = ISeq[(S, V)]
-  def evalExp(s : S, exp : Exp)(implicit ctx : Context) : R =
+  def toValue(fm : FeatureMatch) : FeatureValue = {
+    import Ast._
+    FeatureValue(
+      featureInit(
+        list(),
+        fm.attributeMatches.values.toVector.map { am =>
+          val attr = am.attribute
+          attribute(list(), attr.`type`, attr.name, some(am.initMatch))
+        }))
+  }
+
+  def checkPred(pred : FunExp, v : FeatureValue)(
+    implicit ctx : Context) : Boolean = {
+    val s = BasicState().enterClosure(Map(pred.param.name -> v))
+    val r = evalExp(s, pred.body).map(second2)
+    r.exists(v2b)
+  }
+
+  def mapOp(op : String, m : MapValue) : V =
+    op match {
+      case "keys" =>
+        SeqValue(m.value.keys.toVector)
+      case "values" =>
+        SeqValue(m.value.values.toVector)
+      case "forall" =>
+        ForallValue(m.value.map(e => TupleValue(ivector(e._1, e._2))))
+      case "exists" =>
+        ExistsValue(m.value.map(e => TupleValue(ivector(e._1, e._2))))
+    }
+
+  def setqOp(op : String, values : Traversable[Value]) : V =
+    op match {
+      case "forall" =>
+        ForallValue(values)
+      case "exists" =>
+        ExistsValue(values)
+    }
+
+  def tupleOp(op : String, t : TupleValue) : V =
+    t.value(op.substring(1).toInt)
+
+  def toValue(init : Initialization) : V =
+    init match {
+      case bi : BasicInit   => BasicValue(bi.value)
+      case ei : EitherInit  => EitherValue(ei.index, toValue(ei.init))
+      case fi : FeatureInit => FeatureValue(fi)
+      case mi : MapInit     => MapValue(imapEmpty ++ mi.keyInits.map(toValue).zip(mi.valueInits.map(toValue)))
+      case ni : NoneInit    => NoneValue
+      case si : SeqInit     => SeqValue(si.inits.map(toValue).toVector)
+      case si : SetInit     => SetValue(si.inits.map(toValue).toSet)
+      case si : SomeInit    => SomeValue(toValue(si.init))
+      case ti : TupleInit   => TupleValue(ti.inits.map(toValue).toVector)
+    }
+
+  def evalExp[S <: State[S]](s : S, exp : Exp)(
+    implicit ctx : Context) : ISeq[(S, V)] =
     exp match {
       case ae : AccessExp =>
-        for {
-          (s2, v) <- evalExp(s, ae.exp)
-        } yield {
-          v match {
-            case v : FeatureValue if v.hasAccess(ae.id) =>
-              (s2, toValue(v.access(ae.id).init.get))
-          }
+        for { (s2, v) <- evalExp(s, ae.exp) } yield v match {
+          case v : FeatureValue if v.hasAccess(ae.id) =>
+            (s2, toValue(v.access(ae.id).init.get))
         }
       case ae : ApplyExp =>
         for {
@@ -97,22 +116,20 @@ class ExpEvaluator[S <: State[S]] {
               evalExp(s3.enterClosure(Map(id -> arg)), exp).
                 map(p => (p._1.exitClosure, p._2))
             case (ForallValue(values), FunValue(id, exp)) =>
-              var r : R = ivector((s3, TRUE))
-              for (fv <- values) {
+              var r : ISeq[(S, V)] = (s3, TRUE)
+              for (fv <- values)
                 r = for {
                   (s5, cond) <- r
                   (s6, b) <- evalExp(s5.enterClosure(Map(id -> fv)), exp)
                 } yield (s6.exitClosure, b2v(&&&(cond, b)))
-              }
               r
             case (ExistsValue(values), FunValue(id, exp)) =>
-              var r : R = ivector((s3, FALSE))
-              for (fv <- values) {
+              var r : ISeq[(S, V)] = (s3, FALSE)
+              for (fv <- values)
                 r = for {
                   (s5, cond) <- r
                   (s6, b) <- evalExp(s5.enterClosure(Map(id -> fv)), exp)
                 } yield (s6.exitClosure, b2v(|||(cond, b)))
-              }
               r
           }
         } yield (s4, v)
@@ -131,24 +148,26 @@ class ExpEvaluator[S <: State[S]] {
           }
         }
       case le : LiteralExp =>
-        (s, BasicValue(le.value))
+        le.value match {
+          case "true"  => (s, TRUE)
+          case "false" => (s, FALSE)
+          case _ =>
+            DeviceMatching.option(le.`type`) match {
+              case Some(nt : NamedType) =>
+                (s, TypedBasicValue(le.value, nt.name)) // TODO call literal ext
+              case _ =>
+                (s, BasicValue(le.value))
+            }
+        }
       case moe : MapOpExp =>
-        for { (s2, m) <- evalExp(s, moe.exp) }
-          yield (moe.id, m) match {
-          case ("keys", m : MapValue) =>
-            (s2, SeqValue(m.value.keys.toVector))
-          case ("values", m : MapValue) =>
-            (s2, SeqValue(m.value.values.toVector))
-          case ("forall", m : MapValue) =>
-            (s2, ForallValue(m.value.map(e => TupleValue(ivector(e._1, e._2)))))
-          case ("exists", m : MapValue) =>
-            (s2, ExistsValue(m.value.map(e => TupleValue(ivector(e._1, e._2)))))
+        for { (s2, m) <- evalExp(s, moe.exp) } yield m match {
+          case m : MapValue => (s2, mapOp(moe.id, m))
         }
       case me : MatchExp =>
         for {
           (s2, v) <- evalExp(s, me.exp)
           (s3, b) <- {
-            var r : R = ivectorEmpty
+            var r = ivectorEmpty[(S, V)]
             var ss = ivector(s2)
             for (mc <- me.cases) {
               (mc.bind, v) match {
@@ -161,12 +180,12 @@ class ExpEvaluator[S <: State[S]] {
                       ss = ss.map(_.enterClosure(Map(n.id -> v)))
                       if (mc.cond.isPresent) {
                         var newSS = ivectorEmpty[S]
-                        for ((s4, cond) <- ss.flatMap(evalExp(_, mc.cond.get))) {
-                          if (cond) {
-                            r ++= evalExp(s4, mc.body).map(p => (p._1.exitClosure, p._2))
-                          } else
+                        for ((s4, cond) <- ss.flatMap(evalExp(_, mc.cond.get)))
+                          if (cond)
+                            r ++= evalExp(s4, mc.body).
+                              map(p => (p._1.exitClosure, p._2))
+                          else
                             newSS :+= s4.exitClosure
-                        }
                         ss = newSS
                       } else {
                         r ++= ss.flatMap(evalExp(_, mc.body))
@@ -177,12 +196,11 @@ class ExpEvaluator[S <: State[S]] {
                 case (d : DefaultMatchCaseBind, _) =>
                   if (mc.cond.isPresent) {
                     var newSS = ivectorEmpty[S]
-                    for ((s4, cond) <- ss.flatMap(evalExp(_, mc.cond.get))) {
-                      if (cond) {
+                    for ((s4, cond) <- ss.flatMap(evalExp(_, mc.cond.get)))
+                      if (cond)
                         r ++= evalExp(s4, mc.body)
-                      } else
+                      else
                         newSS :+= s4
-                    }
                     ss = newSS
                   } else {
                     r ++= ss.flatMap(evalExp(_, mc.body))
@@ -195,41 +213,18 @@ class ExpEvaluator[S <: State[S]] {
           }
         } yield (s3, b)
       case soe : SeqOpExp =>
-        for { (s2, s) <- evalExp(s, soe.exp) }
-          yield (soe.id, s) match {
-          case ("forall", s : SeqValue) =>
-            (s2, ForallValue(s.value))
-          case ("exists", s : SeqValue) =>
-            (s2, ExistsValue(s.value))
+        for { (s2, s) <- evalExp(s, soe.exp) } yield s match {
+          case s : SeqValue => (s2, setqOp(soe.id, s.value))
         }
       case soe : SetOpExp =>
-        for { (s2, s) <- evalExp(s, soe.exp) }
-          yield (soe.id, s) match {
-          case ("forall", s : SetValue) =>
-            (s2, ForallValue(s.value))
-          case ("exists", s : SetValue) =>
-            (s2, ExistsValue(s.value))
+        for { (s2, s) <- evalExp(s, soe.exp) } yield s match {
+          case s : SetValue => (s2, setqOp(soe.id, s.value))
         }
       case toe : TupleOpExp =>
-        for { (s2, t) <- evalExp(s, toe.exp) }
-          yield (toe.id.substring(1).toInt, t) match {
-          case (i, t : TupleValue) =>
-            (s2, t.value(i))
+        for { (s2, t) <- evalExp(s, toe.exp) } yield (toe.id, t) match {
+          case (op, t : TupleValue) => (s2, tupleOp(op, t))
         }
       case vre : VarRefExp =>
         (s, s.variable(vre.id))
-    }
-
-  def toValue(init : Initialization) : V =
-    init match {
-      case bi : BasicInit   => BasicValue(bi.value)
-      case ei : EitherInit  => EitherValue(ei.index, toValue(ei.init))
-      case fi : FeatureInit => FeatureValue(fi)
-      case mi : MapInit     => MapValue(imapEmpty ++ mi.keyInits.map(toValue).zip(mi.valueInits.map(toValue)))
-      case ni : NoneInit    => NoneValue
-      case si : SeqInit     => SeqValue(si.inits.map(toValue).toVector)
-      case si : SetInit     => SetValue(si.inits.map(toValue).toSet)
-      case si : SomeInit    => SomeValue(toValue(si.init))
-      case ti : TupleInit   => TupleValue(ti.inits.map(toValue).toVector)
     }
 }

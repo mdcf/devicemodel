@@ -26,6 +26,7 @@ import org.junit.Test;
 import com.google.common.io.Files;
 
 import edu.ksu.cis.santos.mdcf.dml.matching.AttributeMatch;
+import edu.ksu.cis.santos.mdcf.dml.matching.Context;
 import edu.ksu.cis.santos.mdcf.dml.matching.DeviceMatching;
 import edu.ksu.cis.santos.mdcf.dml.matching.FeatureMatch;
 import edu.ksu.cis.santos.mdcf.dml.symbol.SymbolTable;
@@ -74,7 +75,7 @@ public class DeviceMatchingTest {
   public void testCase3() throws Exception {
     testProductMatches(AppReq3.class);
   }
-  
+
   void testExpectedResult(final String name, final String content)
       throws URISyntaxException, IOException, Exception {
     final File testDir = new File(new URI(getClass().getResource("").toURI()
@@ -93,8 +94,9 @@ public class DeviceMatchingTest {
   }
 
   void testProductMatches(final Class<?> c) throws Exception {
+    final Context ctx = new Context(DeviceMatchingTest.ST, new String[] {});
     final Map<String, FeatureMatch> result = DeviceMatching.reqProductMatches(
-        DeviceMatchingTest.ST,
+        ctx,
         new HashSet<String>(),
         DeviceMatchingTest.ST.requirement(c.getName()));
 
