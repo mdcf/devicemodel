@@ -4649,31 +4649,30 @@
                             </type>
                           </bind>
                           <cond class="none"></cond>
-                          <body class="applyExp">
-                            <type class="none"></type>
-                            <fun class="accessExp" id="&amp;&amp;">
-                              <type class="none"></type>
-                              <exp class="binaryBasicOpExp" op="&lt;=">
+                          <body class="binaryBasicOpExp" op="&amp;&amp;">
+                            <type class="some">
+                              <reference class="namedType" name="boolean"/>
+                            </type>
+                            <left class="binaryBasicOpExp" op="&lt;=">
+                              <type class="some">
+                                <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                              </type>
+                              <left class="accessExp" id="min">
+                                <type class="none"></type>
+                                <exp class="accessExp" id="range">
+                                  <type class="none"></type>
+                                  <exp class="varRefExp" id="spo2">
+                                    <type class="none"></type>
+                                  </exp>
+                                </exp>
+                              </left>
+                              <right class="literalExp" value="50">
                                 <type class="some">
                                   <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
                                 </type>
-                                <left class="accessExp" id="min">
-                                  <type class="none"></type>
-                                  <exp class="accessExp" id="range">
-                                    <type class="none"></type>
-                                    <exp class="varRefExp" id="spo2">
-                                      <type class="none"></type>
-                                    </exp>
-                                  </exp>
-                                </left>
-                                <right class="literalExp" value="30">
-                                  <type class="some">
-                                    <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
-                                  </type>
-                                </right>
-                              </exp>
-                            </fun>
-                            <arg class="binaryBasicOpExp" op="&gt;=">
+                              </right>
+                            </left>
+                            <right class="binaryBasicOpExp" op="&gt;=">
                               <type class="some">
                                 <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
                               </type>
@@ -4691,7 +4690,7 @@
                                   <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
                                 </type>
                               </right>
-                            </arg>
+                            </right>
                           </body>
                         </matchCase>
                         <matchCase>
@@ -4811,31 +4810,30 @@
                                       </type>
                                     </bind>
                                     <cond class="none"></cond>
-                                    <body class="applyExp">
-                                      <type class="none"></type>
-                                      <fun class="accessExp" id="&amp;&amp;">
-                                        <type class="none"></type>
-                                        <exp class="binaryBasicOpExp" op="&gt;=">
-                                          <type class="some">
-                                            <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                          </type>
-                                          <left class="accessExp" id="min">
+                                    <body class="binaryBasicOpExp" op="&amp;&amp;">
+                                      <type class="some">
+                                        <reference class="namedType" name="boolean"/>
+                                      </type>
+                                      <left class="binaryBasicOpExp" op="&gt;=">
+                                        <type class="some">
+                                          <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                        </type>
+                                        <left class="accessExp" id="min">
+                                          <type class="none"></type>
+                                          <exp class="accessExp" id="rate">
                                             <type class="none"></type>
-                                            <exp class="accessExp" id="rate">
+                                            <exp class="varRefExp" id="exch">
                                               <type class="none"></type>
-                                              <exp class="varRefExp" id="exch">
-                                                <type class="none"></type>
-                                              </exp>
                                             </exp>
-                                          </left>
-                                          <right class="literalExp" value="490">
-                                            <type class="some">
-                                              <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
-                                            </type>
-                                          </right>
-                                        </exp>
-                                      </fun>
-                                      <arg class="binaryBasicOpExp" op="&lt;=">
+                                          </exp>
+                                        </left>
+                                        <right class="literalExp" value="490">
+                                          <type class="some">
+                                            <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                          </type>
+                                        </right>
+                                      </left>
+                                      <right class="binaryBasicOpExp" op="&lt;=">
                                         <type class="some">
                                           <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                         </type>
@@ -4853,7 +4851,7 @@
                                             <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
                                           </type>
                                         </right>
-                                      </arg>
+                                      </right>
                                     </body>
                                   </matchCase>
                                   <matchCase>
@@ -4966,31 +4964,30 @@
                                   </type>
                                 </bind>
                                 <cond class="none"></cond>
-                                <body class="applyExp">
-                                  <type class="none"></type>
-                                  <fun class="accessExp" id="&amp;&amp;">
-                                    <type class="none"></type>
-                                    <exp class="binaryBasicOpExp" op="&lt;">
+                                <body class="binaryBasicOpExp" op="&amp;&amp;">
+                                  <type class="some">
+                                    <reference class="namedType" name="boolean"/>
+                                  </type>
+                                  <left class="binaryBasicOpExp" op="&lt;">
+                                    <type class="some">
+                                      <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                    </type>
+                                    <left class="accessExp" id="min">
+                                      <type class="none"></type>
+                                      <exp class="accessExp" id="range">
+                                        <type class="none"></type>
+                                        <exp class="varRefExp" id="spo2num">
+                                          <type class="none"></type>
+                                        </exp>
+                                      </exp>
+                                    </left>
+                                    <right class="literalExp" value="40">
                                       <type class="some">
                                         <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
                                       </type>
-                                      <left class="accessExp" id="min">
-                                        <type class="none"></type>
-                                        <exp class="accessExp" id="range">
-                                          <type class="none"></type>
-                                          <exp class="varRefExp" id="spo2num">
-                                            <type class="none"></type>
-                                          </exp>
-                                        </exp>
-                                      </left>
-                                      <right class="literalExp" value="40">
-                                        <type class="some">
-                                          <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
-                                        </type>
-                                      </right>
-                                    </exp>
-                                  </fun>
-                                  <arg class="binaryBasicOpExp" op="==">
+                                    </right>
+                                  </left>
+                                  <right class="binaryBasicOpExp" op="==">
                                     <type class="some">
                                       <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
                                     </type>
@@ -5006,7 +5003,7 @@
                                     <right class="literalExp" value="100">
                                       <type class="none"></type>
                                     </right>
-                                  </arg>
+                                  </right>
                                 </body>
                               </matchCase>
                               <matchCase>
@@ -5108,31 +5105,30 @@
                                   </type>
                                 </bind>
                                 <cond class="none"></cond>
-                                <body class="applyExp">
-                                  <type class="none"></type>
-                                  <fun class="accessExp" id="&amp;&amp;">
-                                    <type class="none"></type>
-                                    <exp class="binaryBasicOpExp" op="&lt;=">
+                                <body class="binaryBasicOpExp" op="&amp;&amp;">
+                                  <type class="some">
+                                    <reference class="namedType" name="boolean"/>
+                                  </type>
+                                  <left class="binaryBasicOpExp" op="&lt;=">
+                                    <type class="some">
+                                      <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
+                                    </type>
+                                    <left class="accessExp" id="min">
+                                      <type class="none"></type>
+                                      <exp class="accessExp" id="range">
+                                        <type class="none"></type>
+                                        <exp class="varRefExp" id="prnum">
+                                          <type class="none"></type>
+                                        </exp>
+                                      </exp>
+                                    </left>
+                                    <right class="literalExp" value="30">
                                       <type class="some">
                                         <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
                                       </type>
-                                      <left class="accessExp" id="min">
-                                        <type class="none"></type>
-                                        <exp class="accessExp" id="range">
-                                          <type class="none"></type>
-                                          <exp class="varRefExp" id="prnum">
-                                            <type class="none"></type>
-                                          </exp>
-                                        </exp>
-                                      </left>
-                                      <right class="literalExp" value="30">
-                                        <type class="some">
-                                          <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
-                                        </type>
-                                      </right>
-                                    </exp>
-                                  </fun>
-                                  <arg class="binaryBasicOpExp" op="&gt;=">
+                                    </right>
+                                  </left>
+                                  <right class="binaryBasicOpExp" op="&gt;=">
                                     <type class="some">
                                       <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
                                     </type>
@@ -5150,7 +5146,7 @@
                                         <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
                                       </type>
                                     </right>
-                                  </arg>
+                                  </right>
                                 </body>
                               </matchCase>
                               <matchCase>
@@ -5202,28 +5198,27 @@
             <param name="bls">
               <type class="none"></type>
             </param>
-            <body class="applyExp">
-              <type class="none"></type>
-              <fun class="accessExp" id="&amp;&amp;">
-                <type class="none"></type>
-                <exp class="binaryBasicOpExp" op="&lt;=">
+            <body class="binaryBasicOpExp" op="&amp;&amp;">
+              <type class="some">
+                <reference class="namedType" name="boolean"/>
+              </type>
+              <left class="binaryBasicOpExp" op="&lt;=">
+                <type class="some">
+                  <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+                </type>
+                <left class="literalExp" value="0">
                   <type class="some">
                     <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
                   </type>
-                  <left class="literalExp" value="0">
-                    <type class="some">
-                      <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
-                    </type>
-                  </left>
-                  <right class="accessExp" id="level">
+                </left>
+                <right class="accessExp" id="level">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="bls">
                     <type class="none"></type>
-                    <exp class="varRefExp" id="bls">
-                      <type class="none"></type>
-                    </exp>
-                  </right>
-                </exp>
-              </fun>
-              <arg class="binaryBasicOpExp" op="&lt;=">
+                  </exp>
+                </right>
+              </left>
+              <right class="binaryBasicOpExp" op="&lt;=">
                 <type class="some">
                   <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
                 </type>
@@ -5238,7 +5233,7 @@
                     <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
                   </type>
                 </right>
-              </arg>
+              </right>
             </body>
           </predicate>
         </invariant>

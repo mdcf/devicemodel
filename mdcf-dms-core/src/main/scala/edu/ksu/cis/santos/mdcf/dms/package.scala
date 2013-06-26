@@ -71,7 +71,7 @@ package object dms {
   /**
    * @author <a href="mailto:robby@k-state.edu">Robby</a>
    */
-  final class Boolean(val value : scala.Boolean) {
+  final class Boolean(val value : scala.Boolean) extends BasicType {
     import Boolean._
     def unary_! : Boolean = if (value) FALSE else TRUE
     def &&(o : => Boolean) : Boolean = if (!value) FALSE else o

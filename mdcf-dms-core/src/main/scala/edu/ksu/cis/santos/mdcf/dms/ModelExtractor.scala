@@ -743,7 +743,11 @@ object ModelExtractor {
           case Apply(Select(Ident(_), b2sbName), List(e)) if b2sbName.decoded == "boolean2sboolean" =>
             visitor(e)
           case Apply(Select(qualifier, name), List(e)) if classOf[BasicType].isAssignableFrom(clazzOf(qualifier)) =>
-            binaryBasicOpExp(visitor(qualifier), name.decoded, visitor(e)) withType (namedType(typeNameOf(qualifier)))
+            var tn = typeNameOf(qualifier)
+            if (tn == classOf[edu.ksu.cis.santos.mdcf.dms.Boolean].getName)
+              tn = "boolean"
+            binaryBasicOpExp(visitor(qualifier), name.decoded,
+              visitor(e)) withType (namedType(tn))
           case Apply(fun, List(arg)) =>
             applyExp(visitor(fun), visitor(arg))
           case Select(qualifier, name) =>
