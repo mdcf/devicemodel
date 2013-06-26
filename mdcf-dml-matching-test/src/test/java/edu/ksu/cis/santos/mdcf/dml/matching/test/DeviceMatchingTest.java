@@ -94,7 +94,8 @@ public class DeviceMatchingTest {
   }
 
   void testProductMatches(final Class<?> c) throws Exception {
-    final Context ctx = new Context(DeviceMatchingTest.ST, new String[] {});
+    final Context ctx = new Context(DeviceMatchingTest.ST,
+        DeviceMatchingTest.ST.getClass().getClassLoader(), new String[] {});
     final Map<String, FeatureMatch> result = DeviceMatching.reqProductMatches(
         ctx,
         new HashSet<String>(),

@@ -11,8 +11,10 @@ package edu.ksu.cis.santos.mdcf.dml.matching
 import edu.ksu.cis.santos.mdcf.dml.ast._
 import edu.ksu.cis.santos.mdcf.dml.ast.exp._
 import edu.ksu.cis.santos.mdcf.dml.symbol._
+import org.sireum.extension._
+import org.sireum.pilar.state._
 import org.sireum.util._
-import com.google.common.base.Optional
+import org.sireum.konkrit.extension.KonkritBooleanExtension
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
@@ -32,8 +34,39 @@ case class AttributeMatch(
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
-class Context(val st : SymbolTable, val extensions : Array[String]) {
+class Context(
+    val st : SymbolTable,
+    val cl : ClassLoader,
+    val extensionNames : Array[String]) {
   val superTransMap = st.superTransitiveMap
+
+  type S = BasicState
+  type V = Value
+  type R = ISeq[(S, V)]
+  type C = ISeq[(S, Boolean)]
+  type SR = ISeq[S]
+
+  val sem = new SemanticsExtensionModule[S, V, R, C, SR] {
+    val sei = new SemanticsExtensionInitImpl[S, V, R, C, SR] {}
+    val miners = ivector(ExtensionMiner.mine[S, V, R, C, SR] _)
+  }
+
+  var sec : SemanticsExtensionConsumer[S, V, R, C, SR] = _
+
+  sem.initialize(new ExtensionConfig with SemanticsExtensionConfig {
+    val extensions : ISeq[ExtensionCompanion] =
+      extensionNames.toVector.:+(
+        classOf[KonkritBooleanExtension[_]].getName).map { en =>
+          Reflection.companion(cl.loadClass(en), false).
+            get._2.asInstanceOf[ExtensionCompanion]
+        }
+    def semanticsExtension[SS, VS, RS, CS, SRS] =
+      sec.asInstanceOf[SemanticsExtensionConsumer[SS, VS, RS, CS, SRS]]
+    def semanticsExtension_=[SS, VS, RS, CS, SRS](
+      _sec : SemanticsExtensionConsumer[SS, VS, RS, CS, SRS]) {
+      sec = _sec.asInstanceOf[SemanticsExtensionConsumer[S, V, R, C, SR]]
+    }
+  })
 }
 
 /**
@@ -162,6 +195,6 @@ object DeviceMatching {
         case _ => false
       })
 
-  private[matching] def option[T](o : Optional[T]) : Option[T] =
+  private[matching] def option[T](o : com.google.common.base.Optional[T]) : Option[T] =
     if (o.isPresent) Some(o.get) else None
 }
