@@ -40,7 +40,7 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq3;
  */
 public class DeviceMatchingTest {
 
-  private static boolean GENERATE_EXPECTED = true;
+  private static boolean GENERATE_EXPECTED = false;
   private static SymbolTable ST = SymbolTable.of(ModelExtractor
       .extractModel(new String[] { "edu.ksu.cis.santos.mdcf.dms.examplev2" }));
 

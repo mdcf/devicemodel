@@ -4390,29 +4390,29 @@
     </requirement>
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2">
       <members class="ilist">
-        <attribute name="dev">
+        <attribute name="vmd">
           <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD"/>
           <init class="none"></init>
         </attribute>
         <invariant name="ReqDev">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
-            <param name="vmd">
+            <param name="ar">
               <type class="none"></type>
             </param>
             <body class="applyExp">
               <type class="none"></type>
-              <fun class="accessExp" id="exists">
+              <fun class="seqOpExp" id="exists">
                 <type class="none"></type>
-                <exp class="accessExp" id="values">
+                <exp class="mapOpExp" id="values">
                   <type class="none"></type>
                   <exp class="accessExp" id="channels">
                     <type class="none"></type>
-                    <exp class="accessExp" id="dev">
+                    <exp class="accessExp" id="vmd">
                       <type class="none"></type>
-                      <exp class="varRefExp" id="vmd">
+                      <exp class="varRefExp" id="ar">
                         <type class="none"></type>
                       </exp>
                     </exp>
@@ -4421,18 +4421,18 @@
               </fun>
               <arg class="funExp">
                 <type class="none"></type>
-                <param name="x$1">
+                <param name="po_channel">
                   <type class="none"></type>
                 </param>
                 <body class="applyExp">
                   <type class="none"></type>
-                  <fun class="accessExp" id="exists">
+                  <fun class="seqOpExp" id="exists">
                     <type class="none"></type>
-                    <exp class="accessExp" id="values">
+                    <exp class="mapOpExp" id="values">
                       <type class="none"></type>
                       <exp class="accessExp" id="metrics">
                         <type class="none"></type>
-                        <exp class="varRefExp" id="x$1">
+                        <exp class="varRefExp" id="po_channel">
                           <type class="none"></type>
                         </exp>
                       </exp>
@@ -4440,12 +4440,12 @@
                   </fun>
                   <arg class="funExp">
                     <type class="none"></type>
-                    <param name="x$2">
+                    <param name="spo2">
                       <type class="none"></type>
                     </param>
                     <body class="instanceOfExp">
                       <type class="none"></type>
-                      <exp class="varRefExp" id="x$2">
+                      <exp class="varRefExp" id="spo2">
                         <type class="none"></type>
                       </exp>
                       <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
@@ -4460,7 +4460,7 @@
     </requirement>
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2Alt">
       <members class="ilist">
-        <attribute name="num">
+        <attribute name="spo2">
           <annotations class="ilist"></annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
@@ -4476,16 +4476,16 @@
         </attribute>
         <invariant name="req1">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq3"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="vmd">
               <type class="none"></type>
             </param>
             <body class="applyExp">
               <type class="none"></type>
-              <fun class="accessExp" id="exists">
+              <fun class="seqOpExp" id="exists">
                 <type class="none"></type>
-                <exp class="accessExp" id="values">
+                <exp class="mapOpExp" id="values">
                   <type class="none"></type>
                   <exp class="accessExp" id="channels">
                     <type class="none"></type>
@@ -4505,9 +4505,9 @@
                 </param>
                 <body class="applyExp">
                   <type class="none"></type>
-                  <fun class="accessExp" id="exists">
+                  <fun class="seqOpExp" id="exists">
                     <type class="none"></type>
-                    <exp class="accessExp" id="values">
+                    <exp class="mapOpExp" id="values">
                       <type class="none"></type>
                       <exp class="accessExp" id="metrics">
                         <type class="none"></type>
@@ -4535,9 +4535,21 @@
                             </type>
                           </bind>
                           <cond class="none"></cond>
-                          <body class="mapOpExp" id="exists">
+                          <body class="applyExp">
                             <type class="none"></type>
-                            <exp class="funExp">
+                            <fun class="seqOpExp" id="exists">
+                              <type class="none"></type>
+                              <exp class="mapOpExp" id="values">
+                                <type class="none"></type>
+                                <exp class="accessExp" id="alerts">
+                                  <type class="none"></type>
+                                  <exp class="varRefExp" id="spo2">
+                                    <type class="none"></type>
+                                  </exp>
+                                </exp>
+                              </exp>
+                            </fun>
+                            <arg class="funExp">
                               <type class="none"></type>
                               <param name="x$3">
                                 <type class="none"></type>
@@ -4549,7 +4561,7 @@
                                 </exp>
                                 <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeValueAlert"/>
                               </body>
-                            </exp>
+                            </arg>
                           </body>
                         </matchCase>
                         <matchCase>
@@ -4578,16 +4590,16 @@
         </attribute>
         <invariant name="req1">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq4"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="vmd">
               <type class="none"></type>
             </param>
             <body class="applyExp">
               <type class="none"></type>
-              <fun class="accessExp" id="exists">
+              <fun class="seqOpExp" id="exists">
                 <type class="none"></type>
-                <exp class="accessExp" id="values">
+                <exp class="mapOpExp" id="values">
                   <type class="none"></type>
                   <exp class="accessExp" id="channels">
                     <type class="none"></type>
@@ -4607,9 +4619,9 @@
                 </param>
                 <body class="applyExp">
                   <type class="none"></type>
-                  <fun class="accessExp" id="exists">
+                  <fun class="seqOpExp" id="exists">
                     <type class="none"></type>
-                    <exp class="accessExp" id="values">
+                    <exp class="mapOpExp" id="values">
                       <type class="none"></type>
                       <exp class="accessExp" id="metrics">
                         <type class="none"></type>
@@ -4708,16 +4720,16 @@
         </attribute>
         <invariant name="req1">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq5"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="vmd">
               <type class="none"></type>
             </param>
             <body class="applyExp">
               <type class="none"></type>
-              <fun class="accessExp" id="exists">
+              <fun class="seqOpExp" id="exists">
                 <type class="none"></type>
-                <exp class="accessExp" id="values">
+                <exp class="mapOpExp" id="values">
                   <type class="none"></type>
                   <exp class="accessExp" id="channels">
                     <type class="none"></type>
@@ -4737,9 +4749,9 @@
                 </param>
                 <body class="applyExp">
                   <type class="none"></type>
-                  <fun class="accessExp" id="exists">
+                  <fun class="seqOpExp" id="exists">
                     <type class="none"></type>
-                    <exp class="accessExp" id="values">
+                    <exp class="mapOpExp" id="values">
                       <type class="none"></type>
                       <exp class="accessExp" id="metrics">
                         <type class="none"></type>
@@ -4769,9 +4781,9 @@
                           <cond class="none"></cond>
                           <body class="applyExp">
                             <type class="none"></type>
-                            <fun class="accessExp" id="exists">
+                            <fun class="seqOpExp" id="exists">
                               <type class="none"></type>
-                              <exp class="accessExp" id="values">
+                              <exp class="mapOpExp" id="values">
                                 <type class="none"></type>
                                 <exp class="accessExp" id="exchanges">
                                   <type class="none"></type>
@@ -4882,21 +4894,33 @@
         </attribute>
         <invariant name="req1">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.MyPulseOxReq"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="rpo">
               <type class="none"></type>
             </param>
-            <body class="mapOpExp" id="exists">
+            <body class="applyExp">
               <type class="none"></type>
-              <exp class="funExp">
+              <fun class="mapOpExp" id="exists">
+                <type class="none"></type>
+                <exp class="accessExp" id="channels">
+                  <type class="none"></type>
+                  <exp class="accessExp" id="po">
+                    <type class="none"></type>
+                    <exp class="varRefExp" id="rpo">
+                      <type class="none"></type>
+                    </exp>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="funExp">
                 <type class="none"></type>
                 <param name="x$1">
                   <type class="none"></type>
                 </param>
                 <body class="matchExp">
                   <type class="none"></type>
-                  <exp class="accessExp" id="_2">
+                  <exp class="tupleOpExp" id="_2">
                     <type class="none"></type>
                     <exp class="varRefExp" id="x$1">
                       <type class="none"></type>
@@ -4910,16 +4934,25 @@
                         </type>
                       </bind>
                       <cond class="none"></cond>
-                      <body class="mapOpExp" id="exists">
+                      <body class="applyExp">
                         <type class="none"></type>
-                        <exp class="funExp">
+                        <fun class="mapOpExp" id="exists">
+                          <type class="none"></type>
+                          <exp class="accessExp" id="metrics">
+                            <type class="none"></type>
+                            <exp class="varRefExp" id="spo2">
+                              <type class="none"></type>
+                            </exp>
+                          </exp>
+                        </fun>
+                        <arg class="funExp">
                           <type class="none"></type>
                           <param name="x$2">
                             <type class="none"></type>
                           </param>
                           <body class="matchExp">
                             <type class="none"></type>
-                            <exp class="accessExp" id="_2">
+                            <exp class="tupleOpExp" id="_2">
                               <type class="none"></type>
                               <exp class="varRefExp" id="x$2">
                                 <type class="none"></type>
@@ -4985,7 +5018,7 @@
                               </matchCase>
                             </cases>
                           </body>
-                        </exp>
+                        </arg>
                       </body>
                     </matchCase>
                     <matchCase>
@@ -4997,27 +5030,39 @@
                     </matchCase>
                   </cases>
                 </body>
-              </exp>
+              </arg>
             </body>
           </predicate>
         </invariant>
         <invariant name="req2">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.MyPulseOxReq"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="rpo">
               <type class="none"></type>
             </param>
-            <body class="mapOpExp" id="exists">
+            <body class="applyExp">
               <type class="none"></type>
-              <exp class="funExp">
+              <fun class="mapOpExp" id="exists">
+                <type class="none"></type>
+                <exp class="accessExp" id="channels">
+                  <type class="none"></type>
+                  <exp class="accessExp" id="po">
+                    <type class="none"></type>
+                    <exp class="varRefExp" id="rpo">
+                      <type class="none"></type>
+                    </exp>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="funExp">
                 <type class="none"></type>
                 <param name="x$3">
                   <type class="none"></type>
                 </param>
                 <body class="matchExp">
                   <type class="none"></type>
-                  <exp class="accessExp" id="_2">
+                  <exp class="tupleOpExp" id="_2">
                     <type class="none"></type>
                     <exp class="varRefExp" id="x$3">
                       <type class="none"></type>
@@ -5031,16 +5076,25 @@
                         </type>
                       </bind>
                       <cond class="none"></cond>
-                      <body class="mapOpExp" id="exists">
+                      <body class="applyExp">
                         <type class="none"></type>
-                        <exp class="funExp">
+                        <fun class="mapOpExp" id="exists">
+                          <type class="none"></type>
+                          <exp class="accessExp" id="metrics">
+                            <type class="none"></type>
+                            <exp class="varRefExp" id="pr">
+                              <type class="none"></type>
+                            </exp>
+                          </exp>
+                        </fun>
+                        <arg class="funExp">
                           <type class="none"></type>
                           <param name="x$4">
                             <type class="none"></type>
                           </param>
                           <body class="matchExp">
                             <type class="none"></type>
-                            <exp class="accessExp" id="_2">
+                            <exp class="tupleOpExp" id="_2">
                               <type class="none"></type>
                               <exp class="varRefExp" id="x$4">
                                 <type class="none"></type>
@@ -5108,7 +5162,7 @@
                               </matchCase>
                             </cases>
                           </body>
-                        </exp>
+                        </arg>
                       </body>
                     </matchCase>
                     <matchCase>
@@ -5120,7 +5174,7 @@
                     </matchCase>
                   </cases>
                 </body>
-              </exp>
+              </arg>
             </body>
           </predicate>
         </invariant>
@@ -5143,7 +5197,7 @@
         </attribute>
         <invariant name="level is in 1..100">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.BatteryLevelStatus"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="bls">
               <type class="none"></type>
@@ -6497,7 +6551,7 @@
         </attribute>
         <invariant name="min is less than or equal to max">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.Range"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="r">
               <type class="none"></type>

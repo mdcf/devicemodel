@@ -25,7 +25,7 @@ object AppReq3 {
         _.metrics.values.exists(
           _ match {
             case spo2 : ICE_SpO2_Numeric =>
-              spo2.alerts.exists(_.isInstanceOf[ICE_FloatRangeValueAlert])
+              spo2.alerts.values.exists(_.isInstanceOf[ICE_FloatRangeValueAlert])
             case _ =>
               false
           }))

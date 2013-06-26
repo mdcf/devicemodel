@@ -71,14 +71,23 @@
         </attribute>
         <invariant name="At least one Blood Pressure param">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="bp">
               <type class="none"></type>
             </param>
-            <body class="setOpExp" id="exists">
+            <body class="applyExp">
               <type class="none"></type>
-              <exp class="funExp">
+              <fun class="setOpExp" id="exists">
+                <type class="none"></type>
+                <exp class="accessExp" id="physioParams">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="bp">
+                    <type class="none"></type>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="funExp">
                 <type class="none"></type>
                 <param name="x$3">
                   <type class="none"></type>
@@ -90,7 +99,7 @@
                   </exp>
                   <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate"/>
                 </body>
-              </exp>
+              </arg>
             </body>
           </predicate>
         </invariant>
@@ -183,14 +192,23 @@
         </attribute>
         <invariant name="At least one SpO2 param">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="mm">
               <type class="none"></type>
             </param>
-            <body class="setOpExp" id="exists">
+            <body class="applyExp">
               <type class="none"></type>
-              <exp class="funExp">
+              <fun class="setOpExp" id="exists">
+                <type class="none"></type>
+                <exp class="accessExp" id="physioParams">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="mm">
+                    <type class="none"></type>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="funExp">
                 <type class="none"></type>
                 <param name="x$4">
                   <type class="none"></type>
@@ -202,20 +220,29 @@
                   </exp>
                   <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2"/>
                 </body>
-              </exp>
+              </arg>
             </body>
           </predicate>
         </invariant>
         <invariant name="At least one Pulse Rate param">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="mm">
               <type class="none"></type>
             </param>
-            <body class="setOpExp" id="exists">
+            <body class="applyExp">
               <type class="none"></type>
-              <exp class="funExp">
+              <fun class="setOpExp" id="exists">
+                <type class="none"></type>
+                <exp class="accessExp" id="physioParams">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="mm">
+                    <type class="none"></type>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="funExp">
                 <type class="none"></type>
                 <param name="x$5">
                   <type class="none"></type>
@@ -227,20 +254,29 @@
                   </exp>
                   <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate"/>
                 </body>
-              </exp>
+              </arg>
             </body>
           </predicate>
         </invariant>
         <invariant name="At least one Blood Pressure param">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEMultiMonitor"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="mm">
               <type class="none"></type>
             </param>
-            <body class="setOpExp" id="exists">
+            <body class="applyExp">
               <type class="none"></type>
-              <exp class="funExp">
+              <fun class="setOpExp" id="exists">
+                <type class="none"></type>
+                <exp class="accessExp" id="physioParams">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="mm">
+                    <type class="none"></type>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="funExp">
                 <type class="none"></type>
                 <param name="x$6">
                   <type class="none"></type>
@@ -252,7 +288,7 @@
                   </exp>
                   <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure"/>
                 </body>
-              </exp>
+              </arg>
             </body>
           </predicate>
         </invariant>
@@ -298,7 +334,7 @@
         </attribute>
         <invariant name="At least one SpO2 param">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="po">
               <type class="none"></type>
@@ -307,11 +343,20 @@
               <type class="none"></type>
               <fun class="accessExp" id="&gt;=">
                 <type class="none"></type>
-                <exp class="accessExp" id="size">
+                <exp class="setOpExp" id="size">
                   <type class="none"></type>
-                  <exp class="setOpExp" id="filter">
+                  <exp class="applyExp">
                     <type class="none"></type>
-                    <exp class="funExp">
+                    <fun class="setOpExp" id="filter">
+                      <type class="none"></type>
+                      <exp class="accessExp" id="physioParams">
+                        <type class="none"></type>
+                        <exp class="varRefExp" id="po">
+                          <type class="none"></type>
+                        </exp>
+                      </exp>
+                    </fun>
+                    <arg class="funExp">
                       <type class="none"></type>
                       <param name="x$1">
                         <type class="none"></type>
@@ -323,7 +368,7 @@
                         </exp>
                         <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICESpO2"/>
                       </body>
-                    </exp>
+                    </arg>
                   </exp>
                 </exp>
               </fun>
@@ -335,14 +380,23 @@
         </invariant>
         <invariant name="At least one Pulse Rate param">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="po">
               <type class="none"></type>
             </param>
-            <body class="setOpExp" id="exists">
+            <body class="applyExp">
               <type class="none"></type>
-              <exp class="funExp">
+              <fun class="setOpExp" id="exists">
+                <type class="none"></type>
+                <exp class="accessExp" id="physioParams">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="po">
+                    <type class="none"></type>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="funExp">
                 <type class="none"></type>
                 <param name="x$2">
                   <type class="none"></type>
@@ -354,7 +408,7 @@
                   </exp>
                   <testType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseRate"/>
                 </body>
-              </exp>
+              </arg>
             </body>
           </predicate>
         </invariant>
@@ -1656,14 +1710,23 @@
       <members class="ilist">
         <invariant name="(SpO2&apos;s min &lt; 40 and SpO2&apos;s max == 100)">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="po">
               <type class="none"></type>
             </param>
-            <body class="setOpExp" id="exists">
+            <body class="applyExp">
               <type class="none"></type>
-              <exp class="funExp">
+              <fun class="setOpExp" id="exists">
+                <type class="none"></type>
+                <exp class="accessExp" id="physioParams">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="po">
+                    <type class="none"></type>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="funExp">
                 <type class="none"></type>
                 <param name="x$1">
                   <type class="none"></type>
@@ -1733,20 +1796,29 @@
                     </matchCase>
                   </cases>
                 </body>
-              </exp>
+              </arg>
             </body>
           </predicate>
         </invariant>
         <invariant name="PulseRate&apos;s min &lt;= 30 and PulseRate&apos;s max &gt;= 200">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEPulseOx"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="po">
               <type class="none"></type>
             </param>
-            <body class="setOpExp" id="exists">
+            <body class="applyExp">
               <type class="none"></type>
-              <exp class="funExp">
+              <fun class="setOpExp" id="exists">
+                <type class="none"></type>
+                <exp class="accessExp" id="physioParams">
+                  <type class="none"></type>
+                  <exp class="varRefExp" id="po">
+                    <type class="none"></type>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="funExp">
                 <type class="none"></type>
                 <param name="x$2">
                   <type class="none"></type>
@@ -1818,7 +1890,7 @@
                     </matchCase>
                   </cases>
                 </body>
-              </exp>
+              </arg>
             </body>
           </predicate>
         </invariant>
@@ -1841,7 +1913,7 @@
         </attribute>
         <invariant name="level is in 1..100">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.BatteryLevelStatus"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="bls">
               <type class="none"></type>
@@ -2448,7 +2520,7 @@
         </attribute>
         <invariant name="min is less than or equal to max">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.Range"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="r">
               <type class="none"></type>
@@ -2500,7 +2572,7 @@
         </attribute>
         <invariant name="min is less than or equal to max">
           <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.RangeSetting"/>
-          <predicate class="funExp">
+          <predicate>
             <type class="none"></type>
             <param name="r">
               <type class="none"></type>

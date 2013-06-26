@@ -18,19 +18,19 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric
  */
 
 trait AppReq2 {
-  val dev : ICE_VMD
+  val vmd : ICE_VMD
 }
 
 object AppReq2 {
   @Inv
   val ReqDev : Predicate[AppReq2] =
-    pred { vmd : AppReq2 =>
-      vmd.dev.channels.values.exists(
-        _.metrics.values.exists(
-          _.isInstanceOf[ICE_SpO2_Numeric]))
+    pred { ar : AppReq2 =>
+      ar.vmd.channels.values.exists(po_channel =>
+        po_channel.metrics.values.exists(spo2 =>
+          spo2.isInstanceOf[ICE_SpO2_Numeric]))
     }
 }
 
 trait AppReq2Alt {
-  val num : ICE_SpO2_Numeric
+  val spo2 : ICE_SpO2_Numeric
 }
