@@ -759,7 +759,8 @@ public final class SymbolTable {
    * @return true if typeName is a super type of name.
    */
   public boolean isSubTypeOf(final String typeName, final String name) {
-    return superTransitiveMap().containsEntry(typeName, name);
+    return typeName.equals(name)
+        || superTransitiveMap().containsEntry(typeName, name);
   }
 
   /**
@@ -774,7 +775,8 @@ public final class SymbolTable {
    * @return true if typeName is a super type of name.
    */
   public boolean isSuperTypeOf(final String typeName, final String name) {
-    return subTransitiveMap().containsEntry(typeName, name);
+    return typeName.equals(name)
+        || subTransitiveMap().containsEntry(typeName, name);
   }
 
   /**
@@ -901,7 +903,7 @@ public final class SymbolTable {
       for (final NamedType nt : basicType.supers) {
         final String superName = nt.name;
         superTransitive(seen, superm, basicType(superName));
-        for (String ancestor : superm.get(superName)) {
+        for (final String ancestor : superm.get(superName)) {
           superm.put(basicTypeName, ancestor);
         }
         superm.put(basicTypeName, superName);
@@ -917,7 +919,7 @@ public final class SymbolTable {
       for (final NamedType nt : feature.supers) {
         final String superName = nt.name;
         superTransitive(seen, superm, feature(superName));
-        for (String ancestor : superm.get(superName)) {
+        for (final String ancestor : superm.get(superName)) {
           superm.put(featureName, ancestor);
         }
         superm.put(featureName, superName);
@@ -938,7 +940,7 @@ public final class SymbolTable {
     if ((this._superMap == null) || ((result = this._superMap.get()) == null)) {
       final HashSet<String> seen = new HashSet<>();
 
-      HashMultimap<String, String> m = HashMultimap.create();
+      final HashMultimap<String, String> m = HashMultimap.create();
       for (final BasicType bt : basicTypes()) {
         superTransitive(seen, m, bt);
       }
@@ -952,9 +954,9 @@ public final class SymbolTable {
       final ImmutableMultimap.Builder<String, String> subb = ImmutableMultimap
           .builder();
 
-      for (String sub : m.keySet()) {
-        Set<String> sups = m.get(sub);
-        for (String sup : sups) {
+      for (final String sub : m.keySet()) {
+        final Set<String> sups = m.get(sub);
+        for (final String sup : sups) {
           superb.put(sub, sup);
           subb.put(sup, sub);
         }

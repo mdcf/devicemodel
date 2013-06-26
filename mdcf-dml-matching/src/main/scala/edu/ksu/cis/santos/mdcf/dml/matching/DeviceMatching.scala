@@ -83,7 +83,15 @@ object DeviceMatching {
       }
     }
 
-    attrMatchComb.map(FeatureMatch(device, _))
+    attrMatchComb.map(FeatureMatch(device, _)).filter { fm =>
+      import ExpEvaluator._
+      val v = toValue(fm)
+      req.members.forall(
+        _ match {
+          case inv : Invariant => checkPred(st, inv.predicate, v)
+          case _               => true
+        })
+    }
   }
 
   def reqAttributeMatches(

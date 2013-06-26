@@ -31,14 +31,16 @@ import edu.ksu.cis.santos.mdcf.dml.matching.FeatureMatch;
 import edu.ksu.cis.santos.mdcf.dml.symbol.SymbolTable;
 import edu.ksu.cis.santos.mdcf.dms.ModelExtractor;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq1;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2Alt;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq3;
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public class DeviceMatchingTest {
 
-  private static boolean GENERATE_EXPECTED = false;
+  private static boolean GENERATE_EXPECTED = true;
   private static SymbolTable ST = SymbolTable.of(ModelExtractor
       .extractModel(new String[] { "edu.ksu.cis.santos.mdcf.dms.examplev2" }));
 
@@ -59,10 +61,20 @@ public class DeviceMatchingTest {
   }
 
   @Test
+  public void testCase2() throws Exception {
+    testProductMatches(AppReq2.class);
+  }
+
+  @Test
   public void testCase2Alt() throws Exception {
     testProductMatches(AppReq2Alt.class);
   }
 
+  @Test
+  public void testCase3() throws Exception {
+    testProductMatches(AppReq3.class);
+  }
+  
   void testExpectedResult(final String name, final String content)
       throws URISyntaxException, IOException, Exception {
     final File testDir = new File(new URI(getClass().getResource("").toURI()

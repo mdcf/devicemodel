@@ -683,10 +683,11 @@ object ModelExtractor {
   }
 
   def predExtractor[T](p : Predicate[T])(
-    implicit context : Context) : Exp = {
+    implicit context : Context) : FunExp = {
     val scalaTypeMap = Set(
       classOf[scala.collection.immutable.Map[_, _]].getName,
       classOf[scala.collection.immutable.Set[_]].getName,
+      classOf[scala.collection.Iterable[_]].getName,
       classOf[scala.collection.immutable.Seq[_]].getName,
       classOf[scala.Tuple1[_]].getName,
       classOf[scala.Tuple2[_, _]].getName,
@@ -741,22 +742,25 @@ object ModelExtractor {
             visitor(e)
           case Apply(Select(Ident(_), b2sbName), List(e)) if b2sbName.decoded == "boolean2sboolean" =>
             visitor(e)
-          case Apply(Select(qualifier, name), List(e)) if scalaTypeMap.contains(typeNameOf(qualifier)) =>
-            val typeName = typeNameOf(qualifier)
-            if (typeName.endsWith(".Map"))
-              mapOpExp(name.decoded, visitor(e))
-            else if (typeName.endsWith(".Set"))
-              setOpExp(name.decoded, visitor(e))
-            else if (typeName.endsWith(".Seq"))
-              seqOpExp(name.decoded, visitor(e))
-            else
-              tupleOpExp(name.decoded, visitor(e))
           case Apply(Select(qualifier, name), List(e)) if classOf[BasicType].isAssignableFrom(clazzOf(qualifier)) =>
             binaryBasicOpExp(visitor(qualifier), name.decoded, visitor(e)) withType (namedType(typeNameOf(qualifier)))
           case Apply(fun, List(arg)) =>
             applyExp(visitor(fun), visitor(arg))
           case Select(qualifier, name) =>
-            accessExp(visitor(qualifier), name.decoded)
+            if (scalaTypeMap.contains(typeNameOf(qualifier))) {
+              val typeName = typeNameOf(qualifier)
+              if (typeName.endsWith(".Map"))
+                mapOpExp(name.decoded, visitor(qualifier))
+              else if (typeName.endsWith(".Set"))
+                setOpExp(name.decoded, visitor(qualifier))
+              else if (typeName.endsWith(".Seq"))
+                seqOpExp(name.decoded, visitor(qualifier))
+              else if (typeName.endsWith(".Iterable"))
+                seqOpExp(name.decoded, visitor(qualifier))
+              else
+                tupleOpExp(name.decoded, visitor(qualifier))
+            } else
+              accessExp(visitor(qualifier), name.decoded)
           case Ident(name) =>
             varRefExp(name.decoded)
           case Literal(Constant(v)) =>
@@ -800,6 +804,6 @@ object ModelExtractor {
             unknownExp
         }
     val t = Reflection.typeCheck(p.tree)
-    visitor(t)
+    visitor(t).asInstanceOf[FunExp]
   }
 }

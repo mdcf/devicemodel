@@ -6,5 +6,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/sireum-util"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/sireum-lib"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dms-core"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/sireum-konkrit"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/sireum-pilar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

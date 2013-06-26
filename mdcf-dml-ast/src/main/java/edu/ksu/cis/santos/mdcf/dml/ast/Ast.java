@@ -140,7 +140,7 @@ public class Ast {
     }
 
     public static Invariant invariant(final String name,
-        final PredicateType predicateType, final Exp predicate) {
+        final PredicateType predicateType, final FunExp predicate) {
       return Ast.invariant(name, predicateType, predicate);
     }
 
@@ -398,7 +398,7 @@ public class Ast {
   }
 
   public static Invariant invariant(final String name,
-      final PredicateType predicateType, final Exp predicate) {
+      final PredicateType predicateType, final FunExp predicate) {
     return new Invariant(name, predicateType, predicate);
   }
 

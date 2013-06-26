@@ -8,17 +8,17 @@ http://www.eclipse.org/legal/epl-v10.html
 
 package edu.ksu.cis.santos.mdcf.dml.ast;
 
-import edu.ksu.cis.santos.mdcf.dml.ast.exp.Exp;
+import edu.ksu.cis.santos.mdcf.dml.ast.exp.FunExp;
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public final class Invariant extends Member {
   public final PredicateType predicateType;
-  public final Exp predicate;
+  public final FunExp predicate;
 
   public Invariant(final String name, final PredicateType predicateType,
-      final Exp predicate) {
+      final FunExp predicate) {
     super(name);
     this.predicateType = predicateType;
     this.predicate = predicate;
