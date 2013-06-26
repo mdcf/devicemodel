@@ -64,8 +64,10 @@ object ExpEvaluator {
 
   implicit def t2iseq[T](t : T) : ISeq[T] = ivector(t)
   implicit def v2b(v : V) = v match {
-    case TRUE => true
-    case _    => false
+    case TRUE                => true
+    case FALSE               => false
+    case BasicValue("true")  => true
+    case BasicValue("false") => false
   }
 }
 
