@@ -3,6 +3,9 @@
 <provider id="org.eclipse.egit.core.GitProvider">
 <project reference="1.0,git@github.com:mdcf/devicemodel.git,master,mdcf-dm-doc"/>
 <project reference="1.0,git@github.com:mdcf/devicemodel.git,master,mdcf-dml-ast"/>
+<project reference="1.0,git@github.com:mdcf/devicemodel.git,master,mdcf-dml-matching"/>
+<project reference="1.0,git@github.com:mdcf/devicemodel.git,master,mdcf-dml-matching-extension"/>
+<project reference="1.0,git@github.com:mdcf/devicemodel.git,master,mdcf-dml-test"/>
 <project reference="1.0,git@github.com:mdcf/devicemodel.git,master,mdcf-dms-core"/>
 <project reference="1.0,git@github.com:mdcf/devicemodel.git,master,mdcf-dms-example"/>
 <project reference="1.0,git@github.com:mdcf/devicemodel.git,master,mdcf-dms-test"/>
