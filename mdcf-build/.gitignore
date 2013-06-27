@@ -1,0 +1,5 @@
+/bin
+/target
+/sbt
+/.cache
+/.scala_dependencies

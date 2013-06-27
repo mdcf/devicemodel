@@ -1,0 +1,27 @@
+digraph G {
+  "Sireum Lib" [shape="box"]
+  "Sireum Util" [shape="box"]
+  "Sireum Util" -> "Sireum Lib"
+  "Sireum Pilar" [shape="box"]
+  "Sireum Pilar" -> "Sireum Util"
+  "Sireum Konkrit" [shape="box"]
+  "Sireum Konkrit" -> "Sireum Pilar"
+  "MDCF DMS Core" [shape="box"]
+  "MDCF DMS Core" -> "Sireum Util"
+  "MDCF DMS AST" [shape="box"]
+  "MDCF DMS AST" -> "Sireum Lib"
+  "MDCF DMS Example" [shape="box"]
+  "MDCF DMS Example" -> "MDCF DMS Core"
+  "MDCF DMS Example" -> "MDCF DMS AST"
+  "MDCF DMS Test" [shape="box"]
+  "MDCF DMS Test" -> "MDCF DMS Example"
+  "MDCF DML Matching" [shape="box"]
+  "MDCF DML Matching" -> "Sireum Konkrit"
+  "MDCF DML Matching" -> "MDCF DMS Core"
+  "MDCF DML Matching" -> "MDCF DMS AST"
+  "MDCF DML Matching Extension" [shape="box"]
+  "MDCF DML Matching Extension" -> "MDCF DML Matching"
+  "MDCF DML Matching Test" [shape="box"]
+  "MDCF DML Matching Test" -> "MDCF DMS Example"
+  "MDCF DML Matching Test" -> "MDCF DML Matching Extension"
+}
