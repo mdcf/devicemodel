@@ -11,6 +11,7 @@ package edu.ksu.cis.santos.mdcf.dml.matching
 import edu.ksu.cis.santos.mdcf.dml.ast._
 import edu.ksu.cis.santos.mdcf.dml.ast.exp._
 import edu.ksu.cis.santos.mdcf.dml.symbol._
+import edu.ksu.cis.santos.mdcf.dml.util._
 import org.sireum.extension._
 import org.sireum.pilar.state._
 import org.sireum.util._
@@ -36,8 +37,19 @@ case class AttributeMatch(
  */
 class Context(
     val st : SymbolTable,
+    val extensionNames : Array[String],
     val cl : ClassLoader,
-    val extensionNames : Array[String]) {
+    val reporter : Reporter) {
+
+  def this(st : SymbolTable, extensionNames : Array[String]) =
+    this(st, extensionNames, st.getClass.getClassLoader, Context.DEFAULT_REPORTER)
+
+  def this(st : SymbolTable, extensionNames : Array[String], cl : ClassLoader) =
+    this(st, extensionNames, cl, Context.DEFAULT_REPORTER)
+
+  def this(st : SymbolTable, extensionNames : Array[String], r : Reporter) =
+    this(st, extensionNames, st.getClass.getClassLoader, r)
+
   val superTransMap = st.superTransitiveMap
 
   type S = BasicState
@@ -67,6 +79,13 @@ class Context(
       sec = _sec.asInstanceOf[SemanticsExtensionConsumer[S, V, R, C, SR]]
     }
   })
+}
+
+/**
+ * @author <a href="mailto:robby@k-state.edu">Robby</a>
+ */
+object Context {
+  val DEFAULT_REPORTER = new ConsoleReporter
 }
 
 /**

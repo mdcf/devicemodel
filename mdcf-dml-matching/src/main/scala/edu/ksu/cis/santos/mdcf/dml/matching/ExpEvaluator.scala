@@ -25,13 +25,17 @@ import language.implicitConversions
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 object ExpEvaluator {
+  type S = BasicState
   type V = Value
+
+  import PilarAstUtil._
 
   val TRUE = KonkritBooleanExtension.TT
   val FALSE = KonkritBooleanExtension.FF
-  val &&& = KonkritBooleanExtension.binopLSem(PilarAstUtil.LOGICAL_AND_BINOP) _
-  val ||| = KonkritBooleanExtension.binopLSem(PilarAstUtil.LOGICAL_OR_BINOP) _
+  val &&& = KonkritBooleanExtension.binopLSem(LOGICAL_AND_BINOP) _
+  val ||| = KonkritBooleanExtension.binopLSem(LOGICAL_OR_BINOP) _
   val b2v = KonkritBooleanExtension.b2v _
+
   val typeNames : Type --> ISet[String] = {
     case nt : NamedType   => Set(nt.name)
     case rt : RefinedType => rt.types.map(_.name).toSet
@@ -39,10 +43,8 @@ object ExpEvaluator {
 
   implicit def t2iseq[T](t : T) : ISeq[T] = ivector(t)
   implicit def v2b(v : V) = v match {
-    case TRUE | BasicValue("true")
-      | TypedBasicValue("true", _) | TypedBasicValue(true, _) => true
-    case FALSE | BasicValue("false")
-      | TypedBasicValue("false", _) | TypedBasicValue(false, _) => false
+    case TRUE | BasicValue("true")   => true
+    case FALSE | BasicValue("false") => false
   }
 
   def toValue(fm : FeatureMatch) : FeatureValue = {
@@ -99,7 +101,17 @@ object ExpEvaluator {
       case ti : TupleInit   => TupleValue(ti.inits.map(toValue).toVector)
     }
 
-  def evalExp[S <: State[S]](s : S, exp : Exp)(
+  def simpleName(name : String) = {
+    val i = name.lastIndexOf(".")
+    if (i >= 0) name.substring(i + 1)
+    else name
+  }
+
+  def normalizeValue(name : String, ctx : Context)(
+    s : S, v : V) : ISeq[(S, V)] =
+    ctx.sec.expExtCall(name, (s, v))
+
+  def evalExp(s : S, exp : Exp)(
     implicit ctx : Context) : ISeq[(S, V)] =
     exp match {
       case ae : AccessExp =>
@@ -134,8 +146,42 @@ object ExpEvaluator {
           }
         } yield (s4, v)
       case bboe : BinaryBasicOpExp =>
-        assert(false) // TODO
-        ivectorEmpty
+        val name = simpleName(bboe.`type`.asInstanceOf[NamedType].name)
+        val (e1, op, e2) = (bboe.left, bboe.op, bboe.right)
+        val sec = ctx.sec
+        val nv = normalizeValue(name, ctx) _
+        sec.binaryOpMode(op) match {
+          case BinaryOpMode.LAZY_LEFT =>
+            for {
+              (s2, v2) <- evalExp(s, e2)
+              (s3, v2n) <- nv(s2, v2)
+              sv <- sec.lazyLBinaryOp(op, s2, { s =>
+                for {
+                  (s4, v1) <- evalExp(s, e1)
+                  sv2 <- nv(s4, v1)
+                } yield sv2
+              }, v2n)
+            } yield sv
+          case BinaryOpMode.LAZY_RIGHT =>
+            for {
+              (s2, v1) <- evalExp(s, e1)
+              (s3, v1n) <- nv(s2, v1)
+              sv <- sec.lazyRBinaryOp(op, s3, v1n, { s =>
+                for {
+                  (s4, v2) <- evalExp(s, e2)
+                  sv2 <- nv(s4, v2)
+                } yield sv2
+              })
+            } yield sv
+          case BinaryOpMode.REGULAR =>
+            for {
+              (s2, v1) <- evalExp(s, e1)
+              (s3, v1n) <- nv(s2, v1)
+              (s4, v2) <- evalExp(s3, e2)
+              (s5, v2n) <- nv(s4, v2)
+              sv <- sec.binaryOp(op, s5, v1n, v2n)
+            } yield sv
+        }
       case fe : FunExp =>
         (s, FunValue(fe.param.name, fe.body))
       case ioe : InstanceOfExp if typeNames isDefinedAt ioe.testType =>
@@ -144,20 +190,15 @@ object ExpEvaluator {
             case (v : FeatureValue, nt : NamedType) =>
               (s2, b2v(v.types.exists(ctx.st.isSubTypeOf(_, nt.name))))
             case (v, nt : NamedType) =>
-              (s2, FALSE) // TODO Warning
+              ctx.reporter.warning(s"Testing $v with ${nt.name} is always false!")
+              (s2, FALSE)
           }
         }
       case le : LiteralExp =>
         le.value match {
           case "true"  => (s, TRUE)
           case "false" => (s, FALSE)
-          case _ =>
-            DeviceMatching.option(le.`type`) match {
-              case Some(nt : NamedType) =>
-                (s, TypedBasicValue(le.value, nt.name)) // TODO call literal ext
-              case _ =>
-                (s, BasicValue(le.value))
-            }
+          case _       => (s, BasicValue(le.value))
         }
       case moe : MapOpExp =>
         for { (s2, m) <- evalExp(s, moe.exp) } yield m match {

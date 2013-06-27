@@ -20,34 +20,14 @@ import edu.ksu.cis.santos.mdcf.dml._
 import ast._
 import Ast._
 import exp._
+import edu.ksu.cis.santos.mdcf.dml.util._
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 object ModelExtractor {
 
-  trait Reporter {
-    def error(message : String)
-    def warning(message : String)
-    def info(message : String)
-  }
-
-  final val DEFAULT_REPORTER = new Reporter {
-    def error(message : String) {
-      Console.err.println(message)
-      Console.err.flush
-    }
-
-    def warning(message : String) {
-      Console.out.println(message)
-      Console.out.flush
-    }
-
-    def info(message : String) {
-      Console.out.println(message)
-      Console.out.flush
-    }
-  }
+  final val DEFAULT_REPORTER = new ConsoleReporter
 
   import scala.collection.JavaConversions._
   import scala.reflect.runtime.universe._
@@ -211,7 +191,13 @@ object ModelExtractor {
       extractFeatureLevelAnnotation(fm, name, a.clazz, qualifier, false)
     }
 
-    var featureAnnotations = fm.featureAnnotations
+    val featureAnnotations = fm.featureAnnotations
+    implicit val isProduct = featureAnnotations.exists(
+      _ match {
+        case fla : FeatureLevelAnnotation =>
+          fla.level == FeatureLevel.Product || fla.level == FeatureLevel.Device
+        case _ => false
+      })
     var isReq = fm.isReq
 
     var supers = ivectorEmpty[NamedType]
@@ -294,7 +280,8 @@ object ModelExtractor {
   private def extract(
     owner : String, isCompanion : scala.Boolean, symbol : Symbol,
     inits : IMap[String, Object])(
-      implicit context : Context) : scala.Option[Member] = {
+      implicit context : Context,
+      isProduct : scala.Boolean) : scala.Option[Member] = {
     val aName = symbol.name.decoded.trim
     val aQName = owner + '.' + aName
 
@@ -398,15 +385,18 @@ object ModelExtractor {
   private def extractAttributeTypeInit(
     aQName : String, aName : String, symbol : Symbol,
     inits : IMap[String, Object])(
-      implicit context : Context) : (ast.Type, Optional[Initialization]) =
+      implicit context : Context,
+      isProduct : scala.Boolean) : (ast.Type, Optional[Initialization]) = {
     extractType(aQName, symbol.typeSignature match {
       case NullaryMethodType(resultType) => resultType
       case tipe                          => tipe
     }, inits.get(aName))
+  }
 
   private def extractType(
     aQName : String, tipe : Type, value : Option[scala.Any])(
-      implicit context : Context) : (ast.Type, Optional[Initialization]) = {
+      implicit context : Context,
+      isProduct : scala.Boolean) : (ast.Type, Optional[Initialization]) = {
     val clazz = Reflection.getClassOfType(tipe.erasure)
     clazz.getName match {
       case `ANY_NAME` =>
@@ -530,25 +520,32 @@ object ModelExtractor {
             (namedType(c), none())
         }
       case c =>
+        def isAttrSym(sym : Symbol, notp : java.lang.String => scala.Boolean) =
+            !notp(sym.name.decoded.trim) && sym.isTerm && {
+              val t = sym.asTerm
+              t.isGetter || t.isVal
+            }
+
         tipe match {
           case RefinedType(parents, decls) =>
             var success = true
             val types = filterType(aQName, parents)
             var inits = imapEmpty[String, Object]
             var aTypes = imapEmpty[String, Type]
+            val decls = if (isProduct) tipe.members else tipe.declarations
             value match {
               case None | Some(DYN) =>
               case Some(value) =>
                 val vClass = value.getClass
-                for (d <- tipe.members if d.isTerm && d.asTerm.isGetter) {
-                  val dName = d.name.encoded.trim
+                for (d <- decls if isAttrSym(d, inits.contains)) {
+                  val dName = d.name.decoded.trim
                   val dValue = vClass.getMethod(d.name.encoded).invoke(value)
                   inits += (dName -> dValue)
                   aTypes += (dName -> d.asTerm.typeSignature)
                 }
             }
             var attributes = ivectorEmpty[Attribute]
-            for (d <- tipe.declarations.sorted if d.isTerm && d.asTerm.isGetter)
+            for (d <- tipe.declarations.sorted if isAttrSym(d, truePredicate1)) {
               extract(aQName, false, d,
                 imapEmpty[String, Object]) match {
                   case Some(a : Attribute) => attributes :+= a
@@ -558,6 +555,7 @@ object ModelExtractor {
                         s"but found ${m.getClass}.")
                   case _ =>
                 }
+            }
 
             val resultType =
               if (types.size > 1 || attributes.size > 0)
@@ -568,7 +566,8 @@ object ModelExtractor {
               case None | Some(DYN) => (resultType, none())
               case Some(_) =>
                 var attributeInits = ivectorEmpty[Attribute]
-                for (d <- tipe.members.sorted if d.isTerm && d.asTerm.isGetter)
+                var attributeNames = isetEmpty[String]
+                for (d <- decls.sorted if isAttrSym(d, attributeNames.contains))
                   extract(aQName, false, d, inits) match {
                     case Some(a : Attribute) =>
                       val NullaryMethodType(dType) = d.typeSignature
@@ -596,14 +595,15 @@ object ModelExtractor {
                 val vClass = value.getClass
                 val vTipe = Reflection.getTypeOfClass(vClass)
                 var inits = imapEmpty[String, Object]
-                for (d <- vTipe.declarations if d.isTerm && d.asTerm.isVal) {
-                  val dName = d.name.encoded.trim
+                val decls = if (isProduct) vTipe.members else vTipe.declarations
+                for (d <- decls if isAttrSym(d, inits.contains)) {
+                  val dName = d.name.decoded.trim
                   val dValue = vClass.getMethod(d.name.encoded).invoke(value)
                   inits += (dName -> dValue)
                 }
                 var attributes = ivectorEmpty[Attribute]
                 var aTypes = imapEmpty[String, Type]
-                for (d <- vTipe.declarations.sorted if d.isTerm && d.asTerm.isVal)
+                for (d <- decls.sorted if isAttrSym(d, aTypes.contains))
                   extract(aQName, false, d, inits) match {
                     case Some(a : Attribute) =>
                       attributes :+= a
@@ -629,9 +629,14 @@ object ModelExtractor {
                             a
                         })))
                   case TypeRef(pre, sym, _) =>
-                    val interfaces = Reflection.getClassOfType(vTipe).
-                      getInterfaces.toVector
-                    val types = interfaces.map(x => namedType(x.getName))
+                    val clazz = Reflection.getClassOfType(vTipe)
+                    val interfaces = clazz.getInterfaces.toVector
+                    val sclazz = clazz.getSuperclass
+                    val types =
+                      (if (sclazz != null && sclazz.getName != OBJECT_NAME)
+                        ivector(namedType(sclazz.getName))
+                      else ivectorEmpty[NamedType]) ++
+                        interfaces.map(x => namedType(x.getName))
                     val itypes = interfaces.map(Reflection.getTypeOfClass(_))
                     (resultType,
                       some(featureInit(types, attributes.map { a =>

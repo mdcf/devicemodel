@@ -21,6 +21,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.google.common.io.Files;
@@ -35,6 +36,8 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq1;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2Alt;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq3;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq4;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq5;
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
@@ -76,6 +79,18 @@ public class DeviceMatchingTest {
     testProductMatches(AppReq3.class);
   }
 
+  @Test
+  @Ignore
+  public void testCase4() throws Exception {
+    testProductMatches(AppReq4.class);
+  }
+
+  @Test
+  @Ignore
+  public void testCase5() throws Exception {
+    testProductMatches(AppReq5.class);
+  }
+
   void testExpectedResult(final String name, final String content)
       throws URISyntaxException, IOException, Exception {
     final File testDir = new File(new URI(getClass().getResource("").toURI()
@@ -94,8 +109,7 @@ public class DeviceMatchingTest {
   }
 
   void testProductMatches(final Class<?> c) throws Exception {
-    final Context ctx = new Context(DeviceMatchingTest.ST,
-        DeviceMatchingTest.ST.getClass().getClassLoader(), new String[] {});
+    final Context ctx = new Context(DeviceMatchingTest.ST, new String[] {});
     final Map<String, FeatureMatch> result = DeviceMatching.reqProductMatches(
         ctx,
         new HashSet<String>(),

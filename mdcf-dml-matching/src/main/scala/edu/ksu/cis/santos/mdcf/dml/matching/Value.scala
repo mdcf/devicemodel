@@ -41,6 +41,8 @@ case class FeatureValue(value : FeatureInit) extends ConcreteValue {
     for (a <- value.attributes)
       m += (a.name -> a)
 
+    if (m.isEmpty)
+      println("Hello")
     m
   }
 
@@ -98,8 +100,3 @@ object NoneValue extends ConcreteValue
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 case class BasicValue(value : String) extends ConcreteValue
-
-/**
- * @author <a href="mailto:robby@k-state.edu">Robby</a>
- */
-case class TypedBasicValue(value : Any, typeName : String) extends ConcreteValue
