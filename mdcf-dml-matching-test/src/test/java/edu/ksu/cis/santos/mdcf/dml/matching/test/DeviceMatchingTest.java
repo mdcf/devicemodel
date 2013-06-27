@@ -21,11 +21,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.google.common.io.Files;
 
+import edu.ksu.cis.santos.mdcf.dml.examplev2.extension.FloatExtension;
+import edu.ksu.cis.santos.mdcf.dml.examplev2.extension.IntExtension;
+import edu.ksu.cis.santos.mdcf.dml.examplev2.extension.NatExtension;
+import edu.ksu.cis.santos.mdcf.dml.examplev2.extension.NumberExtension;
 import edu.ksu.cis.santos.mdcf.dml.matching.AttributeMatch;
 import edu.ksu.cis.santos.mdcf.dml.matching.Context;
 import edu.ksu.cis.santos.mdcf.dml.matching.DeviceMatching;
@@ -47,6 +50,9 @@ public class DeviceMatchingTest {
   private static boolean GENERATE_EXPECTED = false;
   private static SymbolTable ST = SymbolTable.of(ModelExtractor
       .extractModel(new String[] { "edu.ksu.cis.santos.mdcf.dms.examplev2" }));
+  private static String[] extensions = new String[] {
+      FloatExtension.class.getName(), NatExtension.class.getName(),
+      IntExtension.class.getName(), NumberExtension.class.getName() };
 
   void assertEquals(final File expected, final File result) throws Exception {
     final List<String> expectedLines = Files.readLines(
@@ -80,13 +86,11 @@ public class DeviceMatchingTest {
   }
 
   @Test
-  @Ignore
   public void testCase4() throws Exception {
     testProductMatches(AppReq4.class);
   }
 
   @Test
-  @Ignore
   public void testCase5() throws Exception {
     testProductMatches(AppReq5.class);
   }
@@ -109,7 +113,8 @@ public class DeviceMatchingTest {
   }
 
   void testProductMatches(final Class<?> c) throws Exception {
-    final Context ctx = new Context(DeviceMatchingTest.ST, new String[] {});
+    final Context ctx = new Context(DeviceMatchingTest.ST,
+        DeviceMatchingTest.extensions);
     final Map<String, FeatureMatch> result = DeviceMatching.reqProductMatches(
         ctx,
         new HashSet<String>(),

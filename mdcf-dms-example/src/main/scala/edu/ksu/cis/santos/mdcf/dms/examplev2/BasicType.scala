@@ -93,6 +93,7 @@ trait Number extends BasicType {
 object Number {
   implicit def apply(n : scala.Int) = Int(n)
   implicit def apply(n : scala.Long) = Int(n)
+  implicit def apply(n : scala.Double) = Float(n)
 }
 
 /**

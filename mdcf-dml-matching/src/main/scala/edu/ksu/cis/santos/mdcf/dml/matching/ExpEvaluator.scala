@@ -109,7 +109,10 @@ object ExpEvaluator {
 
   def normalizeValue(name : String, ctx : Context)(
     s : S, v : V) : ISeq[(S, V)] =
-    ctx.sec.expExtCall(name, (s, v))
+    v match {
+      case v : BasicValue => ctx.sec.expExtCall(name, (s, v))
+      case _              => (s, v)
+    }
 
   def evalExp(s : S, exp : Exp)(
     implicit ctx : Context) : ISeq[(S, V)] =
@@ -146,7 +149,7 @@ object ExpEvaluator {
           }
         } yield (s4, v)
       case bboe : BinaryBasicOpExp =>
-        val name = simpleName(bboe.`type`.asInstanceOf[NamedType].name)
+        val name = simpleName(bboe.`type`.get.asInstanceOf[NamedType].name)
         val (e1, op, e2) = (bboe.left, bboe.op, bboe.right)
         val sec = ctx.sec
         val nv = normalizeValue(name, ctx) _
