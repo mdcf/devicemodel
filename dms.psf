@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <psf version="2.0">
 <provider id="org.eclipse.egit.core.GitProvider">
-<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dm-doc"/>
-<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dml-ast"/>
-<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dml-matching"/>
-<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dml-matching-extension"/>
-<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dml-matching-test"/>
-<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dms-core"/>
-<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dms-example"/>
-<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dms-test"/>
 <project reference="1.0,git://git.assembla.com/sireum-core.prelude.git,master,sireum-lib"/>
 <project reference="1.0,git://git.assembla.com/sireum-core.prelude.git,master,sireum-util"/>
 <project reference="1.0,git://git.assembla.com/sireum-core.git,master,sireum-pilar"/>
 <project reference="1.0,git://git.assembla.com/sireum-core.git,master,sireum-konkrit"/>
+<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dms-core"/>
+<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dml-ast"/>
+<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dms-example"/>
+<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dms-test"/>
+<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dml-matching"/>
+<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dml-matching-extension"/>
+<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dml-matching-test"/>
+<project reference="1.0,git://github.com/mdcf/devicemodel.git,master,mdcf-dm-doc"/>
 </provider>
 </psf>
 
