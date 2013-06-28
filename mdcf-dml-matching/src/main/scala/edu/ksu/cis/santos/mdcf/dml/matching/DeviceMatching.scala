@@ -12,17 +12,21 @@ import edu.ksu.cis.santos.mdcf.dml.ast._
 import edu.ksu.cis.santos.mdcf.dml.ast.exp._
 import edu.ksu.cis.santos.mdcf.dml.symbol._
 import edu.ksu.cis.santos.mdcf.dml.util._
+
 import org.sireum.extension._
+import org.sireum.konkrit.extension._
 import org.sireum.pilar.state._
 import org.sireum.util._
-import org.sireum.konkrit.extension.KonkritBooleanExtension
+
+import java.util.TreeMap
+import java.util.SortedMap
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 case class FeatureMatch(
   feature : Feature,
-  attributeMatches : java.util.Map[DeviceMatching.AttributeName, AttributeMatch])
+  attributeMatches : SortedMap[DeviceMatching.AttributeName, AttributeMatch])
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
@@ -101,13 +105,16 @@ object DeviceMatching {
   def reqProductMatches(
     ctx : Context,
     devices : java.util.Set[String],
-    req : Requirement) : java.util.Map[FeatureName, FeatureMatch] = {
-    var result = imapEmpty[String, FeatureMatch]
+    req : Requirement) : SortedMap[FeatureName, java.util.List[FeatureMatch]] = {
+    val result = new TreeMap[FeatureName, java.util.List[FeatureMatch]]
     for (
       f <- ctx.st.features if isProduct(f) &&
         (devices.isEmpty || devices.contains(f.name))
-    ) for (fm <- reqFeatureMatches(ctx, req, f))
-      result += (f.name -> fm)
+    ) {
+      val fms = reqFeatureMatches(ctx, req, f)
+      if (!fms.isEmpty)
+        result.put(f.name, fms)
+    }
 
     result
   }
@@ -142,15 +149,16 @@ object DeviceMatching {
       }
     }
 
-    attrMatchComb.map(FeatureMatch(device, _)).filter { fm =>
-      import ExpEvaluator._
-      val v = toValue(fm)
-      req.members.forall(
-        _ match {
-          case inv : Invariant => checkPred(inv.predicate, v)(ctx)
-          case _               => true
-        })
-    }
+    attrMatchComb.map(am => FeatureMatch(device, new TreeMap(am))).
+      filter { fm =>
+        import ExpEvaluator._
+        val v = toValue(fm)
+        req.members.forall(
+          _ match {
+            case inv : Invariant => checkPred(inv.predicate, v)(ctx)
+            case _               => true
+          })
+      }
   }
 
   def reqAttributeMatches(

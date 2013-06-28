@@ -19,7 +19,7 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
+import java.util.SortedMap;
 
 import org.junit.Test;
 
@@ -118,10 +118,11 @@ public class DeviceMatchingTest {
   void testProductMatches(final Class<?> c) throws Exception {
     final Context ctx = new Context(DeviceMatchingTest.ST,
         DeviceMatchingTest.extensions);
-    final Map<String, FeatureMatch> result = DeviceMatching.reqProductMatches(
-        ctx,
-        new HashSet<String>(),
-        DeviceMatchingTest.ST.requirement(c.getName()));
+    final SortedMap<String, List<FeatureMatch>> result = DeviceMatching
+        .reqProductMatches(
+            ctx,
+            new HashSet<String>(),
+            DeviceMatchingTest.ST.requirement(c.getName()));
 
     final StringWriter sw = new StringWriter();
     final PrintWriter pw = new PrintWriter(sw);
@@ -132,18 +133,19 @@ public class DeviceMatchingTest {
       pw.println("Found " + result.size() + " match(es)!");
       pw.println();
 
-      for (final FeatureMatch fm : result.values()) {
-        pw.println("Match: " + fm.feature().name);
-        for (final AttributeMatch am : fm.attributeMatches().values()) {
+      for (final List<FeatureMatch> l : result.values()) {
+        for (final FeatureMatch fm : l) {
+          pw.println("Match: " + fm.feature().name);
+          for (final AttributeMatch am : fm.attributeMatches().values()) {
+            pw.println();
+            pw.println("* " + am.attribute().name + ": " + am.path());
+            final String matchString = am.initMatch().toString();
+            pw.println("  "
+                + (matchString.length() > 100 ? matchString.substring(0, 100)
+                    + " ..." : matchString));
+          }
           pw.println();
-          pw.println("* " + am.attribute().name + ": " + am.path());
-          final String matchString = am.initMatch().toString();
-          pw.println("  "
-              + (matchString.length() > 100 ? matchString.substring(0, 100)
-                  + " ..." : matchString));
         }
-
-        pw.println();
       }
     }
 
