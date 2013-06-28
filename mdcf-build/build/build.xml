@@ -44,8 +44,8 @@
         </fileset>
       </batchtest>
     </junit>
-    <junitreport todir="test">
-      <fileset dir="test">
+    <junitreport todir="test/xml">
+      <fileset dir="test/xml">
         <include name="**/TEST-*.xml" />
       </fileset>
       <report todir="test/html" />
