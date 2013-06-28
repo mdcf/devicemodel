@@ -29,6 +29,7 @@ import com.google.common.io.Files;
 
 import edu.ksu.cis.santos.mdcf.dml.ast.Model;
 import edu.ksu.cis.santos.mdcf.dms.ModelExtractor;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninPulseOx;
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
@@ -58,12 +59,20 @@ public class ModelExtractorTest {
 
   @Test
   public void example() throws Exception {
-    test("dms.test", "edu.ksu.cis.santos.mdcf.dms.example");
+    test("dms.test", new String[] { "edu.ksu.cis.santos.mdcf.dms.example" });
   }
 
   @Test
   public void examplev2() throws Exception {
-    test("dms.testv2", "edu.ksu.cis.santos.mdcf.dms.examplev2");
+    test("dms.testv2", new String[] { "edu.ksu.cis.santos.mdcf.dms.examplev2" });
+  }
+
+  @Test
+  public void examplev2nonin() throws Exception {
+    test(
+        "dms.testv2.nonin",
+        new String[] {},
+        new String[] { NoninPulseOx.class.getName() });
   }
 
   @Before
@@ -72,8 +81,13 @@ public class ModelExtractorTest {
     };
   }
 
-  void test(final String name, final String... packageNames) throws Exception {
-    final Model m = ModelExtractor.extractModel(packageNames);
+  void test(final String name, final String[] packageNames) throws Exception {
+    test(name, packageNames, new String[0]);
+  }
+
+  void test(final String name, final String[] packageNames,
+      final String[] classNames) throws Exception {
+    final Model m = ModelExtractor.extractModel(packageNames, classNames);
 
     testExpectedResult(name, m);
     testXml(m);

@@ -55,35 +55,77 @@ object ModelExtractor {
     classOf[Feature].getName)
 
   def extractModel(packageNames : Array[String]) : Model =
-    extract(Context(packageNames.toIterable))
+    extract(Context(packageNames = packageNames))
 
   def extractModel(cl : ClassLoader,
                    packageNames : Array[String]) : Model =
-    extract(Context(packageNames.toIterable, classLoader = cl))
+    extract(Context(
+      packageNames = packageNames,
+      classLoader = cl))
 
   def extractModel(reporter : Reporter,
                    packageNames : Array[String]) : Model =
-    extract(Context(packageNames.toIterable, reporter = reporter))
+    extract(Context(
+      packageNames = packageNames,
+      reporter = reporter))
 
   def extractModel(reporter : Reporter, cl : ClassLoader,
                    packageNames : Array[String]) : Model =
-    extract(Context(packageNames.toIterable, reporter, cl))
+    extract(Context(
+      packageNames = packageNames,
+      reporter = reporter,
+      classLoader = cl))
 
-  final case class Context(
+  def extractModel(packageNames : Array[String],
+                   classNames : Array[String]) : Model =
+    extract(Context(
+      packageNames = packageNames,
+      classNames = classNames))
+
+  def extractModel(cl : ClassLoader,
+                   packageNames : Array[String],
+                   classNames : Array[String]) : Model =
+    extract(Context(
+      packageNames = packageNames,
+      classLoader = cl,
+      classNames = classNames))
+
+  def extractModel(reporter : Reporter,
+                   packageNames : Array[String],
+                   classNames : Array[String]) : Model =
+    extract(Context(
+      packageNames = packageNames,
+      reporter = reporter,
+      classNames = classNames))
+
+  def extractModel(reporter : Reporter, cl : ClassLoader,
+                   packageNames : Array[String],
+                   classNames : Array[String]) : Model =
+    extract(Context(
+      packageNames = packageNames,
+      classNames = classNames,
+      reporter = reporter,
+      classLoader = cl))
+
+  private final case class Context(
       packageNames : Traversable[String],
+      classNames : Traversable[String] = ivectorEmpty,
       reporter : Reporter = DEFAULT_REPORTER,
       classLoader : ClassLoader = getClass.getClassLoader match {
         case null=> ClassLoader.getSystemClassLoader
         case cl=> cl
       }) {
+    var size = 0
+    private[dms] val pkgModifier = mmapEmpty[String, FM]
+
     def basicTypeClass = classLoader.loadClass(classOf[BasicType].getName)
     def featureClass = classLoader.loadClass(classOf[Feature].getName)
   }
 
-  def isPackageClass(c : java.lang.Class[_]) =
+  private def isPackageClass(c : java.lang.Class[_]) =
     c.getName.endsWith(".package-info") || c.getName.endsWith(".package")
 
-  def isEnum(c : java.lang.Class[_]) : scala.Boolean =
+  private def isEnum(c : java.lang.Class[_]) : scala.Boolean =
     if (classOf[Enumeration].isAssignableFrom(c)) true
     else
       Reflection.companion(c, false) match {
@@ -92,48 +134,58 @@ object ModelExtractor {
         case None => false
       }
 
-  def extract(implicit context : Context) : Model = {
+  private def extract(implicit context : Context) : Model = {
     var decls = ivectorEmpty[Declaration]
 
-    val pkgModifier = mmapEmpty[String, FM]
+    for (p <- context.packageNames)
+      decls ++= extractPackage(p)
 
-    var size = 0
-    for (p <- context.packageNames) {
-      val cp = ClassPath.from(context.classLoader)
-      val cis = cp.getTopLevelClassesRecursive(p)
-      size += cis.size
-      for (ci <- cis) {
-        val clazz = ci.load
-        if (!isPackageClass(clazz) && !isEnum(clazz)) {
-          val pkg = clazz.getPackage
-          val pkgName = pkg.getName
-          decls :+= extract(pkgModifier.getOrElseUpdate(pkgName, {
-            var isReq = false
-            val pm = new FM()
-            for (a <- pkg.getAnnotations) {
-              var qualifier = ""
-              try {
-                val m = a.annotationType().getDeclaredMethod("value")
-                qualifier = m.invoke(a).toString
-              } catch {
-                case e : Exception =>
-              }
-              extractFeatureLevelAnnotation(pm, pkgName, a.annotationType,
-                qualifier, true)
-            }
-            pm
-          }), clazz, imapEmpty[String, Object])
-        }
-      }
-    }
+    for (c <- context.classNames)
+      decls :+= extractClass(context.classLoader.loadClass(c))
 
-    if (size == 0) {
+    if (context.size == 0) {
       context.reporter.warning("Could not find any class in the provided " +
         s"packages ${context.packageNames.toVector}; " +
         "perhaps classpath issues or typos?")
     }
 
     model(decls)
+  }
+
+  private def extractPackage(p : String)(
+    implicit context : Context) : ISeq[Declaration] = {
+    var result = ivectorEmpty[Declaration]
+    val cp = ClassPath.from(context.classLoader)
+    val cis = cp.getTopLevelClassesRecursive(p)
+    for (ci <- cis) {
+      val clazz = ci.load
+      if (!isPackageClass(clazz) && !isEnum(clazz))
+        result :+= extractClass(clazz)
+    }
+    result
+  }
+
+  private def extractClass[T](clazz : java.lang.Class[T])(
+    implicit context : Context) : Declaration = {
+    val pkg = clazz.getPackage
+    val pkgName = pkg.getName
+    context.size += 1
+    extract(context.pkgModifier.getOrElseUpdate(pkgName, {
+      var isReq = false
+      val pm = new FM()
+      for (a <- pkg.getAnnotations) {
+        var qualifier = ""
+        try {
+          val m = a.annotationType().getDeclaredMethod("value")
+          qualifier = m.invoke(a).toString
+        } catch {
+          case e : Exception =>
+        }
+        extractFeatureLevelAnnotation(pm, pkgName, a.annotationType,
+          qualifier, true)
+      }
+      pm
+    }), clazz, imapEmpty[String, Object])
   }
 
   private final class FM(
