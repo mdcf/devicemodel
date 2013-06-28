@@ -33,14 +33,22 @@
     <javac srcdir="test/src" fork="true" includeantruntime="false">
       <classpath refid="classpath.test" />
     </javac>
+    <mkdir dir="test/xml"/>
+    <mkdir dir="test/html"/>
     <junit printsummary="yes" fork="true">
       <classpath refid="classpath.test" />
-      <batchtest todir="test">
+      <batchtest todir="test/xml">
         <formatter type="xml" />
         <fileset dir="test/src">
           <include name="**/*Test.class" />
         </fileset>
       </batchtest>
     </junit>
+    <junitreport todir="test">
+      <fileset dir="test">
+        <include name="**/TEST-*.xml" />
+      </fileset>
+      <report todir="test/html" />
+    </junitreport>
   </target>
 </project>
