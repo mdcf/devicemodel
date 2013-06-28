@@ -5,8 +5,9 @@ are made available under the terms of the Eclipse Public License v1.0
 which accompanies this distribution, and is available at              
 http://www.eclipse.org/legal/epl-v10.html                             
 */
+import java.io.File
 
-import MdcfBuild.ProjectInfo
+import sbt._
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
@@ -59,5 +60,36 @@ object ProjectHelper {
       pw.println("}")
       println("Project dependency graph written to: " + f.getCanonicalPath)
     } finally fw.close
+  }
+
+  def makeDistH(
+    p : String => Boolean, isCustomPath : Boolean, parentDir : File) {
+    import ProjectInfo._
+
+    val buildDir = new File(parentDir, "build")
+    val libDir = new File(buildDir, "lib")
+    val srcDir = new File(buildDir, "src")
+    val licDir = new File(buildDir, "licenses")
+    val testSrcDir = new File(buildDir, "test/src")
+    libDir.mkdirs
+    srcDir.mkdirs
+    licDir.mkdirs
+    testSrcDir.mkdirs
+    for (pi <- projectInfos) {
+      if (p(pi.name)) {
+        for (libF <- pi.libFiles)
+          IO.copyFile(libF, new File(libDir, libF.getName), true)
+        for (srcF <- pi.srcFiles)
+          IO.copyFile(srcF, new File(srcDir, srcF.getName), true)
+      } else {
+        IO.copyDirectory(new File(pi.baseDir, "src/test/scala"), testSrcDir)
+        IO.copyDirectory(new File(pi.baseDir, "src/test/java"), testSrcDir)
+        IO.copyDirectory(new File(pi.baseDir, "src/test/resources"), testSrcDir)
+      }
+      for (licF <- pi.licensesFiles)
+        IO.copyFile(licF, new File(licDir, licF.getName), true)
+    }
+    if (isCustomPath)
+      IO.copyFile(new File("build/build.xml"), new File(buildDir, "build.xml"))
   }
 }

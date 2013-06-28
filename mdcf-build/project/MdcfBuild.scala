@@ -8,7 +8,6 @@ http://www.eclipse.org/legal/epl-v10.html
 
 import sbt._
 import Keys._
-import eu.henkelmann.sbt._
 import scala.collection.mutable.ArrayBuffer
 import java.net.URLClassLoader
 import java.io.BufferedInputStream
@@ -34,34 +33,31 @@ object MdcfBuild extends Build {
   final val CORE_DIR = "codebase/sireum-core/"
   final val DML_DIR = "codebase/mdcf-devicemodel/"
 
-  var projectInfos = Vector[ProjectInfo]()
+  import ProjectInfo._
 
   lazy val mdcf =
     Project(
       id = "mdcf",
-      settings = mdcfSettings ++ Seq(
-        makeDistTask,
-        depDotTask,
-        printPisTask),
+      settings = mdcfSettings ++
+        Seq(makeDistTask, depDotTask, printPisTask),
       base = file(".")) aggregate (
         lib, util, pilar, konkrit,
         dmlAst, dmsCore, dmsExample,
-        dmlMatching, dmlMatchingExt) settings (
-          name := "MDCF")
+        dmlMatching, dmlMatchingExt) settings (name := "MDCF")
 
   final val scalaVer = "2.10.2"
 
   lazy val mdcfSettings = Defaults.defaultSettings ++ Seq(
     organization := "SAnToS Laboratory",
-    artifactName := { (config : ScalaVersion, module : ModuleID, artifact : Artifact) =>
-      artifact.name + (
-        artifact.classifier match {
-          case Some("sources") => "-src"
-          case Some("javadoc") => "-doc"
-          case _               => ""
-        }) + "." + artifact.extension
+    artifactName := {
+      (config : ScalaVersion, module : ModuleID, artifact : Artifact) =>
+        artifact.name + (
+          artifact.classifier match {
+            case Some("sources") => "-src"
+            case Some("javadoc") => "-doc"
+            case _               => ""
+          }) + "." + artifact.extension
     },
-    parallelExecution in Test := false,
     scalaVersion := scalaVer,
     publishArtifact in (Compile, packageDoc) := false,
     publishArtifact in (Test, packageBin) := true,
@@ -70,11 +66,7 @@ object MdcfBuild extends Build {
     scalacOptions ++= Seq("-target:jvm-1.7"),
     libraryDependencies += "org.scala-lang" % "scala-actors" % scalaVer,
     libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVer,
-    libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVer,
-    libraryDependencies += "org.scalatest" %% "scalatest" % "2.0.M5b" % "test",
-    testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-oD"),
-    testListeners <<= (target, streams).map((t, s) => Seq(new JUnitXmlTestsListener(t.getAbsolutePath)))
-  )
+    libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVer)
 
   lazy val lib = toSbtProject(libPI)
   lazy val util = toSbtProject(utilPI)
@@ -120,72 +112,12 @@ object MdcfBuild extends Build {
     libPI, utilPI, pilarPI, konkritPI, dmsCorePI, dmlAstPI, dmlMatchingPI,
     dmlMatchingExtPI, dmsExamplePI)
 
-  /**
-   * @author <a href="mailto:robby@k-state.edu">Robby</a>
-   */
-  case class ProjectInfo(name : String, dir : String,
-                         depFeatures : Seq[String],
-                         dependencies : ProjectInfo*) {
-    projectInfos = projectInfos.:+(this)
-    val id = name.toLowerCase.replace(" ", "-")
-    val baseDir = file(dir + id)
-    lazy val (libFiles, srcFiles, licensesFiles) = {
-      val libs = ArrayBuffer[File]()
-      val srcs = ArrayBuffer[File]()
-      val licenses = ArrayBuffer[File]()
-
-        def mineFiles(dir : File) {
-          if (dir.exists) {
-            for (f <- dir.listFiles) {
-              if (f.isDirectory)
-                mineFiles(f)
-              else {
-                val fName = f.getName
-                if (fName.endsWith("-src.jar") || fName.endsWith("-src.zip"))
-                  srcs += f
-                else if (fName.endsWith(".jar"))
-                  libs += f
-                else if (fName.endsWith("-license.txt"))
-                  licenses += f
-              }
-            }
-          }
-        }
-      mineFiles(baseDir / "lib")
-      mineFiles(baseDir / "elib")
-      mineFiles(baseDir / "target")
-      (libs, srcs, licenses)
-    }
-
-    def toDot(seen : scala.collection.mutable.Set[String], pw : PrintWriter) {
-      if (seen.contains(name)) return
-
-      seen += name
-      pw.println("  \"" + name + "\" [shape=\"box\"]")
-      for (pi <- dependencies)
-        pw.println("  \"" + name + "\" -> \"" + pi.name + "\"")
-    }
-
-    override def toString = {
-        def h(t : Traversable[Object]) =
-          if (t.isEmpty) "None"
-          else "\n" + t.foldLeft("")((s, o) => s + "* " + o.toString + "\n")
-      s"""
-Project Name:         $name
-Project Directory:    $dir
-Feature Dependencies: ${h(depFeatures)}
-Project Dependencies: ${h(dependencies.map(_.name))}
-Library Files:        ${h(libFiles)}
-Source Files:         ${h(srcFiles)}
-License Files:        ${h(licensesFiles)}
-      """
-    }
-  }
+  import ProjectHelper._
 
   val depDot = InputKey[Unit]("dep-dot", "Print project dependency in dot.")
   val depDotTask = depDot := {
     val args : Seq[String] = Def.spaceDelimited("<file>").parsed
-    ProjectHelper.dotDependency(args, projectInfos)
+    dotDependency(args, projectInfos)
   }
 
   val printPis = TaskKey[Unit]("print-pis", "Print all project infos.")
@@ -193,36 +125,7 @@ License Files:        ${h(licensesFiles)}
     projectInfos.foreach(println)
   }
 
-  def makeDistH(
-    p : String => Boolean, isCustomPath : Boolean, parentDir : File) {
-    val buildDir = new File(parentDir, "build")
-    val libDir = new File(buildDir, "lib")
-    val srcDir = new File(buildDir, "src")
-    val licDir = new File(buildDir, "licenses")
-    val testSrcDir = new File(buildDir, "test/src")
-    libDir.mkdirs
-    srcDir.mkdirs
-    licDir.mkdirs
-    testSrcDir.mkdirs
-    for (pi <- projectInfos) {
-      if (p(pi.name)) {
-        for (libF <- pi.libFiles)
-          IO.copyFile(libF, new File(libDir, libF.getName), true)
-        for (srcF <- pi.srcFiles)
-          IO.copyFile(srcF, new File(srcDir, srcF.getName), true)
-      } else {
-        IO.copyDirectory(new File(pi.baseDir, "src/test/scala"), testSrcDir)
-        IO.copyDirectory(new File(pi.baseDir, "src/test/java"), testSrcDir)
-        IO.copyDirectory(new File(pi.baseDir, "src/test/resources"), testSrcDir)
-      }
-      for (licF <- pi.licensesFiles)
-        IO.copyFile(licF, new File(licDir, licF.getName), true)
-    }
-    if (isCustomPath)
-      IO.copyFile(new File("build/build.xml"), new File(buildDir, "build.xml"))
-  }
-
-  val makeDist = InputKey[Unit]("make-dist", "Make core distribution.")
+  val makeDist = InputKey[Unit]("make-dist", "Make distribution.")
   val makeDistTask = makeDist := {
     val args : Seq[String] = Def.spaceDelimited("[<result-parent-dir>]").parsed
     val currFile = new File(".")
