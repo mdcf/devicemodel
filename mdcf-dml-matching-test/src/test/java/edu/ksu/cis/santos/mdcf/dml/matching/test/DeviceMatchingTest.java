@@ -25,6 +25,7 @@ import org.junit.Test;
 
 import com.google.common.io.Files;
 
+import edu.ksu.cis.santos.mdcf.dml.ast.Model;
 import edu.ksu.cis.santos.mdcf.dml.examplev2.extension.FloatExtension;
 import edu.ksu.cis.santos.mdcf.dml.examplev2.extension.IntExtension;
 import edu.ksu.cis.santos.mdcf.dml.examplev2.extension.NatExtension;
@@ -33,14 +34,15 @@ import edu.ksu.cis.santos.mdcf.dml.matching.AttributeMatch;
 import edu.ksu.cis.santos.mdcf.dml.matching.Context;
 import edu.ksu.cis.santos.mdcf.dml.matching.DeviceMatching;
 import edu.ksu.cis.santos.mdcf.dml.matching.FeatureMatch;
+import edu.ksu.cis.santos.mdcf.dml.serialization.XStreamer;
 import edu.ksu.cis.santos.mdcf.dml.symbol.SymbolTable;
-import edu.ksu.cis.santos.mdcf.dms.ModelExtractor;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq1;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2Alt;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq3;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq4;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq5;
+import edu.ksu.cis.santos.mdcf.dms.test.TestAnchor;
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
@@ -48,8 +50,9 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq5;
 public class DeviceMatchingTest {
 
   private static boolean GENERATE_EXPECTED = false;
-  private static SymbolTable ST = SymbolTable.of(ModelExtractor
-      .extractModel(new String[] { "edu.ksu.cis.santos.mdcf.dms.examplev2" }));
+  private static SymbolTable ST = SymbolTable.of(XStreamer
+      .<Model> fromXml(TestAnchor.class
+          .getResourceAsStream("expected/dms.testv2.xml")));
   private static String[] extensions = new String[] {
       FloatExtension.class.getName(), NatExtension.class.getName(),
       IntExtension.class.getName(), NumberExtension.class.getName() };

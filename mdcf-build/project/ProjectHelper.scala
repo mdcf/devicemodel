@@ -63,10 +63,9 @@ object ProjectHelper {
   }
 
   def makeDistH(
-    p : String => Boolean, isCustomPath : Boolean, parentDir : File) {
+    p : String => Boolean, isCustomPath : Boolean, buildDir : File) {
     import ProjectInfo._
 
-    val buildDir = new File(parentDir, "build")
     val libDir = new File(buildDir, "lib")
     val srcDir = new File(buildDir, "src")
     val licDir = new File(buildDir, "licenses")
@@ -82,6 +81,9 @@ object ProjectHelper {
         for (srcF <- pi.srcFiles)
           IO.copyFile(srcF, new File(srcDir, srcF.getName), true)
       } else {
+        IO.copyDirectory(new File(pi.baseDir, "src/main/scala"), testSrcDir)
+        IO.copyDirectory(new File(pi.baseDir, "src/main/java"), testSrcDir)
+        IO.copyDirectory(new File(pi.baseDir, "src/main/resources"), testSrcDir)
         IO.copyDirectory(new File(pi.baseDir, "src/test/scala"), testSrcDir)
         IO.copyDirectory(new File(pi.baseDir, "src/test/java"), testSrcDir)
         IO.copyDirectory(new File(pi.baseDir, "src/test/resources"), testSrcDir)

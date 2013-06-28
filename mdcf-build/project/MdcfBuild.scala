@@ -87,7 +87,7 @@ object MdcfBuild extends Build {
   val libPI = new ProjectInfo("Sireum Lib", PRELUDE_DIR, Seq())
   val utilPI = new ProjectInfo("Sireum Util", PRELUDE_DIR, Seq(),
     libPI)
-  
+
   val pilarPI = new ProjectInfo("Sireum Pilar", CORE_DIR, Seq(),
     libPI, utilPI)
   val konkritPI = new ProjectInfo("Sireum Konkrit", CORE_DIR, Seq(),
@@ -107,7 +107,7 @@ object MdcfBuild extends Build {
     libPI, utilPI, pilarPI, konkritPI, dmsCorePI, dmlAstPI, dmlMatchingPI)
   val dmlMatchingTestPI = new ProjectInfo("MDCF DML Matching Test", DML_DIR, Seq(),
     libPI, utilPI, pilarPI, konkritPI, dmsCorePI, dmlAstPI, dmlMatchingPI,
-    dmlMatchingExtPI, dmsExamplePI)
+    dmlMatchingExtPI, dmsExamplePI, dmsTestPI)
 
   import ProjectHelper._
 
@@ -124,13 +124,13 @@ object MdcfBuild extends Build {
 
   val makeDist = InputKey[Unit]("make-dist", "Make distribution.")
   val makeDistTask = makeDist := {
-    val args : Seq[String] = Def.spaceDelimited("[<result-parent-dir>]").parsed
-    val currFile = new File(".")
+    val args : Seq[String] = Def.spaceDelimited("[<result-dir>]").parsed
+    val currFile = new File("build")
     val (parentDir, isCustomPath) = args match {
       case Seq(path) =>
         val f = new File(path)
         (new File(path), f.getAbsolutePath != currFile.getAbsolutePath)
-      case _ => (new File("."), false)
+      case _ => (currFile, false)
     }
     makeDistH({ _.indexOf(" Test") < 0 }, isCustomPath, parentDir)
   }

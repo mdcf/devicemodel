@@ -39,7 +39,7 @@ To build and run test, run:
  
     build.sh [<result-path>]
 
-The default ``<result-path>`` is the current directory (``.``).
+The default ``<result-path>`` is the ``REPO/build``.
 
 To resolve mdcf-build Eclipse project dependency, run:
 

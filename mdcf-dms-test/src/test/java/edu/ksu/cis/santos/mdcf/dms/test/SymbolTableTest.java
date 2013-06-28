@@ -35,9 +35,9 @@ import edu.ksu.cis.santos.mdcf.dml.ast.Feature;
 import edu.ksu.cis.santos.mdcf.dml.ast.Invariant;
 import edu.ksu.cis.santos.mdcf.dml.ast.Member;
 import edu.ksu.cis.santos.mdcf.dml.ast.Model;
+import edu.ksu.cis.santos.mdcf.dml.serialization.XStreamer;
 import edu.ksu.cis.santos.mdcf.dml.symbol.SymbolTable;
 import edu.ksu.cis.santos.mdcf.dml.symbol.SymbolTable.Kind;
-import edu.ksu.cis.santos.mdcf.dms.ModelExtractor;
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
@@ -45,8 +45,9 @@ import edu.ksu.cis.santos.mdcf.dms.ModelExtractor;
 public class SymbolTableTest {
 
   private static boolean GENERATE_EXPECTED = false;
-  private static SymbolTable ST = SymbolTable.of(ModelExtractor
-      .extractModel(new String[] { "edu.ksu.cis.santos.mdcf.dms.example" }));
+  private static SymbolTable ST = SymbolTable.of(XStreamer
+      .<Model> fromXml(TestAnchor.class
+          .getResourceAsStream("expected/dms.test.xml")));
 
   private static final String lineSep = System.lineSeparator();
 
@@ -181,10 +182,10 @@ public class SymbolTableTest {
         assertThat(mm.get(memberName)).isEqualTo(m);
         if (m instanceof Attribute) {
           assertThat(am.containsKey(memberName)).isTrue();
-          assertThat(am.get(memberName)).isEqualTo((Attribute) m);
+          assertThat(am.get(memberName)).isEqualTo(m);
         } else {
           assertThat(im.containsKey(memberName)).isTrue();
-          assertThat(im.get(memberName)).isEqualTo((Invariant) m);
+          assertThat(im.get(memberName)).isEqualTo(m);
         }
       }
     }

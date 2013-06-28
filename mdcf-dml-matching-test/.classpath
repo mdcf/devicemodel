@@ -13,5 +13,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/sireum-konkrit"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/sireum-pilar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dml-matching-extension"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/mdcf-dms-test"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

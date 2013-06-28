@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Jun 27, 2013 11:30:47 AM                                                        
+
+     MDCF    
+     Medical Device Coordination Framework
+     http://mdcf.santos.cis.ksu.edu
+                   
+     robby                                                                
+     ====================================================================== -->
+<project name="MDCF" default="default" basedir=".">
+  <description>
+    Medical Device Coordination Framework
+    http://mdcf.santos.cis.ksu.edu
+  </description>
+
+  <path id="classpath.test">
+    <fileset dir="lib">
+      <include name="**/*.jar" />
+    </fileset>
+    <pathelement location="test/src" />
+  </path>
+
+  <pathconvert pathsep="${line.separator} |- "
+               property="classpath.echo"
+               refid="classpath.test"
+  />
+
+  <echo message="Test Classpath" />
+  <echo message=" |- ${classpath.echo}" />
+
+  <target name="default">
+    <javac srcdir="test/src" fork="true" includeantruntime="false">
+      <classpath refid="classpath.test" />
+    </javac>
+    <junit printsummary="yes" fork="true">
+      <classpath refid="classpath.test" />
+      <batchtest todir="test">
+        <formatter type="xml" />
+        <fileset dir="test/src">
+          <include name="**/*Test.class" />
+        </fileset>
+      </batchtest>
+    </junit>
+  </target>
+</project>
