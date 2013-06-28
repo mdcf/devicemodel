@@ -21,12 +21,14 @@ import org.sireum.util._
 import java.util.TreeMap
 import java.util.SortedMap
 
+import DeviceMatching._
+
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 case class FeatureMatch(
   feature : Feature,
-  attributeMatches : SortedMap[DeviceMatching.AttributeName, AttributeMatch])
+  attributeMatches : SortedMap[AttributeName, AttributeMatch])
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
@@ -46,10 +48,10 @@ class Context(
     val reporter : Reporter) {
 
   def this(st : SymbolTable, extensionNames : Array[String]) =
-    this(st, extensionNames, st.getClass.getClassLoader, Context.DEFAULT_REPORTER)
+    this(st, extensionNames, st.getClass.getClassLoader, new ConsoleReporter)
 
   def this(st : SymbolTable, extensionNames : Array[String], cl : ClassLoader) =
-    this(st, extensionNames, cl, Context.DEFAULT_REPORTER)
+    this(st, extensionNames, cl, new ConsoleReporter)
 
   def this(st : SymbolTable, extensionNames : Array[String], r : Reporter) =
     this(st, extensionNames, st.getClass.getClassLoader, r)
@@ -88,22 +90,35 @@ class Context(
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
-object Context {
-  val DEFAULT_REPORTER = new ConsoleReporter
+object DeviceMatching {
+  type FeatureName = String
+  type AttributeName = String
+  type Path = java.util.List[String]
+
+  private def isProduct(f : Feature) = {
+    import scala.collection.JavaConversions._
+    f.annotations.exists(
+      _ match {
+        case fla : FeatureLevelAnnotation =>
+          fla.level == FeatureLevel.Product ||
+            fla.level == FeatureLevel.Device
+        case _ => false
+      })
+  }
+
+  private[matching] def option[T](o : com.google.common.base.Optional[T]) : Option[T] =
+    if (o.isPresent) Some(o.get) else None
 }
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
-object DeviceMatching {
+class DeviceMatching(ctx : Context) {
   import scala.collection.JavaConversions._
 
-  type FeatureName = String
-  type AttributeName = String
-  type Path = java.util.List[String]
+  val ee = new ExpEvaluator(ctx)
 
-  def reqProductMatches(
-    ctx : Context,
+  def productMatches(
     devices : java.util.Set[String],
     req : Requirement) : SortedMap[FeatureName, java.util.List[FeatureMatch]] = {
     val result = new TreeMap[FeatureName, java.util.List[FeatureMatch]]
@@ -111,7 +126,7 @@ object DeviceMatching {
       f <- ctx.st.features if isProduct(f) &&
         (devices.isEmpty || devices.contains(f.name))
     ) {
-      val fms = reqFeatureMatches(ctx, req, f)
+      val fms = featureMatches(req, f)
       if (!fms.isEmpty)
         result.put(f.name, fms)
     }
@@ -119,10 +134,9 @@ object DeviceMatching {
     result
   }
 
-  def reqFeatureMatches(
-    ctx : Context,
+  def featureMatches(
     req : Requirement,
-    device : Feature) : ISeq[FeatureMatch] = {
+    device : Feature) : java.util.List[FeatureMatch] = {
     require(isProduct(device))
 
     var attrMatchesMap = imapEmpty[AttributeName, ISeq[AttributeMatch]]
@@ -130,10 +144,9 @@ object DeviceMatching {
     for (m <- req.members)
       m match {
         case attr : Attribute =>
-          val ams =
-            reqAttributeMatches(ctx, device, attr)
+          val ams = attributeMatches(device, attr)
           if (ams.isEmpty)
-            return ivectorEmpty
+            return ivectorEmpty[FeatureMatch]
           attrMatchesMap += (attr.name -> ams)
         case _ =>
       }
@@ -149,20 +162,18 @@ object DeviceMatching {
       }
     }
 
-    attrMatchComb.map(am => FeatureMatch(device, new TreeMap(am))).
+    attrMatchComb.map { am => FeatureMatch(device, new TreeMap(am)) }.
       filter { fm =>
-        import ExpEvaluator._
-        val v = toValue(fm)
+        val v = ExpEvaluator.toValue(fm)
         req.members.forall(
           _ match {
-            case inv : Invariant => checkPred(inv.predicate, v)(ctx)
+            case inv : Invariant => ee.checkPred(inv.predicate, v)
             case _               => true
           })
       }
   }
 
-  def reqAttributeMatches(
-    ctx : Context,
+  private def attributeMatches(
     f : Feature,
     req : Attribute) : ISeq[AttributeMatch] = {
     val result = marrayEmpty[AttributeMatch]
@@ -212,16 +223,4 @@ object DeviceMatching {
 
     result.toVector
   }
-
-  private def isProduct(f : Feature) =
-    f.annotations.exists(
-      _ match {
-        case fla : FeatureLevelAnnotation =>
-          fla.level == FeatureLevel.Product ||
-            fla.level == FeatureLevel.Device
-        case _ => false
-      })
-
-  private[matching] def option[T](o : com.google.common.base.Optional[T]) : Option[T] =
-    if (o.isPresent) Some(o.get) else None
 }

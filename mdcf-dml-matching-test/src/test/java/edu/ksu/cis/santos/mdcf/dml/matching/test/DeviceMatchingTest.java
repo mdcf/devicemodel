@@ -118,9 +118,8 @@ public class DeviceMatchingTest {
   void testProductMatches(final Class<?> c) throws Exception {
     final Context ctx = new Context(DeviceMatchingTest.ST,
         DeviceMatchingTest.extensions);
-    final SortedMap<String, List<FeatureMatch>> result = DeviceMatching
-        .reqProductMatches(
-            ctx,
+    final SortedMap<String, List<FeatureMatch>> result = new DeviceMatching(ctx)
+        .productMatches(
             new HashSet<String>(),
             DeviceMatchingTest.ST.requirement(c.getName()));
 

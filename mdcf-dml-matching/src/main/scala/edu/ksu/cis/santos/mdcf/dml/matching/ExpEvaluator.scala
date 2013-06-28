@@ -58,13 +58,6 @@ object ExpEvaluator {
         }))
   }
 
-  def checkPred(pred : FunExp, v : FeatureValue)(
-    implicit ctx : Context) : Boolean = {
-    val s = BasicState().enterClosure(Map(pred.param.name -> v))
-    val r = evalExp(s, pred.body).map(second2)
-    r.exists(v2b)
-  }
-
   def mapOp(op : String, m : MapValue) : V =
     op match {
       case "keys" =>
@@ -106,16 +99,27 @@ object ExpEvaluator {
     if (i >= 0) name.substring(i + 1)
     else name
   }
+}
 
-  def normalizeValue(name : String, ctx : Context)(
-    s : S, v : V) : ISeq[(S, V)] =
+/**
+ * @author <a href="mailto:robby@k-state.edu">Robby</a>
+ */
+class ExpEvaluator(ctx : Context) {
+  import ExpEvaluator._
+
+  def checkPred(pred : FunExp, v : FeatureValue) : Boolean = {
+    val s = BasicState().enterClosure(Map(pred.param.name -> v))
+    val r = evalExp(s, pred.body).map(second2)
+    r.exists(v2b)
+  }
+
+  def normalizeValue(name : String)(s : S, v : V) : ISeq[(S, V)] =
     v match {
       case v : BasicValue => ctx.sec.expExtCall(name, (s, v))
       case _              => (s, v)
     }
 
-  def evalExp(s : S, exp : Exp)(
-    implicit ctx : Context) : ISeq[(S, V)] =
+  def evalExp(s : S, exp : Exp) : ISeq[(S, V)] =
     exp match {
       case ae : AccessExp =>
         for { (s2, v) <- evalExp(s, ae.exp) } yield v match {
@@ -152,7 +156,7 @@ object ExpEvaluator {
         val name = simpleName(bboe.`type`.get.asInstanceOf[NamedType].name)
         val (e1, op, e2) = (bboe.left, bboe.op, bboe.right)
         val sec = ctx.sec
-        val nv = normalizeValue(name, ctx) _
+        val nv = normalizeValue(name) _
         sec.binaryOpMode(op) match {
           case BinaryOpMode.LAZY_LEFT =>
             for {
