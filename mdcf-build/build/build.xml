@@ -21,14 +21,13 @@
     <pathelement location="test/src" />
   </path>
 
-  <pathconvert pathsep="${line.separator} |-- "
+  <pathconvert pathsep="${line.separator} |- "
                property="classpath.echo"
                refid="classpath.test"
   />
 
-  <echo message="JUnit Classpath" />
-  <echo message=" |" />
-  <echo message=" |-- ${classpath.echo}" />
+  <echo message="Test Classpath" />
+  <echo message=" |- ${classpath.echo}" />
 
   <target name="default">
     <javac srcdir="test/src" fork="true" includeantruntime="false">

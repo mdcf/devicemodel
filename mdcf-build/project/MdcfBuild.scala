@@ -59,10 +59,6 @@ object MdcfBuild extends Build {
           }) + "." + artifact.extension
     },
     scalaVersion := scalaVer,
-    publishArtifact in (Compile, packageDoc) := false,
-    publishArtifact in (Test, packageBin) := true,
-    publishArtifact in (Test, packageDoc) := false,
-    publishArtifact in (Test, packageSrc) := true,
     scalacOptions ++= Seq("-target:jvm-1.7"),
     libraryDependencies += "org.scala-lang" % "scala-actors" % scalaVer,
     libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVer,
@@ -91,6 +87,7 @@ object MdcfBuild extends Build {
   val libPI = new ProjectInfo("Sireum Lib", PRELUDE_DIR, Seq())
   val utilPI = new ProjectInfo("Sireum Util", PRELUDE_DIR, Seq(),
     libPI)
+  
   val pilarPI = new ProjectInfo("Sireum Pilar", CORE_DIR, Seq(),
     libPI, utilPI)
   val konkritPI = new ProjectInfo("Sireum Konkrit", CORE_DIR, Seq(),
