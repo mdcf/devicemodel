@@ -26,12 +26,6 @@ import edu.ksu.cis.santos.mdcf.dml.util._
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 object ModelExtractor {
-
-  final val DEFAULT_REPORTER = new ConsoleReporter
-
-  import scala.collection.JavaConversions._
-  import scala.reflect.runtime.universe._
-
   private final val ANY_NAME = classOf[scala.Any].getName
   private final val OBJECT_NAME = classOf[java.lang.Object].getName
   private final val OPTION_NAME = classOf[scala.Option[_]].getName
@@ -55,71 +49,106 @@ object ModelExtractor {
     classOf[Feature].getName)
 
   def extractModel(packageNames : Array[String]) : Model =
-    extract(Context(packageNames = packageNames))
+    new ModelExtractor(packageNames = packageNames).extract
 
   def extractModel(cl : ClassLoader,
                    packageNames : Array[String]) : Model =
-    extract(Context(
+    new ModelExtractor(
       packageNames = packageNames,
-      classLoader = cl))
+      classLoader = cl).extract
 
   def extractModel(reporter : Reporter,
                    packageNames : Array[String]) : Model =
-    extract(Context(
+    new ModelExtractor(
       packageNames = packageNames,
-      reporter = reporter))
+      reporter = reporter).extract
 
   def extractModel(reporter : Reporter, cl : ClassLoader,
                    packageNames : Array[String]) : Model =
-    extract(Context(
+    new ModelExtractor(
       packageNames = packageNames,
       reporter = reporter,
-      classLoader = cl))
+      classLoader = cl).extract
 
   def extractModel(packageNames : Array[String],
                    classNames : Array[String]) : Model =
-    extract(Context(
+    new ModelExtractor(
       packageNames = packageNames,
-      classNames = classNames))
+      classNames = classNames).extract
 
   def extractModel(cl : ClassLoader,
                    packageNames : Array[String],
                    classNames : Array[String]) : Model =
-    extract(Context(
+    new ModelExtractor(
       packageNames = packageNames,
       classLoader = cl,
-      classNames = classNames))
+      classNames = classNames).extract
 
   def extractModel(reporter : Reporter,
                    packageNames : Array[String],
                    classNames : Array[String]) : Model =
-    extract(Context(
+    new ModelExtractor(
       packageNames = packageNames,
       reporter = reporter,
-      classNames = classNames))
+      classNames = classNames).extract
 
   def extractModel(reporter : Reporter, cl : ClassLoader,
                    packageNames : Array[String],
                    classNames : Array[String]) : Model =
-    extract(Context(
+    new ModelExtractor(
       packageNames = packageNames,
       classNames = classNames,
       reporter = reporter,
-      classLoader = cl))
+      classLoader = cl).extract
+}
 
-  private final case class Context(
-      packageNames : Traversable[String],
-      classNames : Traversable[String] = ivectorEmpty,
-      reporter : Reporter = DEFAULT_REPORTER,
-      classLoader : ClassLoader = getClass.getClassLoader match {
-        case null=> ClassLoader.getSystemClassLoader
-        case cl=> cl
-      }) {
-    var size = 0
-    private[dms] val pkgModifier = mmapEmpty[String, FM]
+import ModelExtractor._
 
-    def basicTypeClass = classLoader.loadClass(classOf[BasicType].getName)
-    def featureClass = classLoader.loadClass(classOf[Feature].getName)
+class ModelExtractor(
+    packageNames : Traversable[String],
+    classNames : Traversable[String] = ivectorEmpty,
+    reporter : Reporter = new ConsoleReporter,
+    classLoader : ClassLoader = getClass.getClassLoader match {
+      case null=> ClassLoader.getSystemClassLoader
+      case cl=> cl
+    }) {
+  import scala.collection.JavaConversions._
+  import scala.reflect.runtime.universe._
+
+  private var size = 0
+  private val pkgModifier = mmapEmpty[String, FM]
+
+  private def basicTypeClass = classLoader.loadClass(classOf[BasicType].getName)
+  private def featureClass = classLoader.loadClass(classOf[Feature].getName)
+
+  private def extract : Model = {
+    var decls = ivectorEmpty[Declaration]
+
+    for (p <- packageNames)
+      decls ++= extractPackage(p)
+
+    for (c <- classNames)
+      decls :+= extractClass(classLoader.loadClass(c))
+
+    if (size == 0) {
+      reporter.warning("Could not find any class in the provided " +
+        s"packages ${packageNames.toVector}; " +
+        "perhaps classpath issues or typos?")
+    }
+
+    model(decls)
+  }
+
+  private def extractPackage(p : String) : ISeq[Declaration] = {
+    var result = ivectorEmpty[Declaration]
+    val cp = ClassPath.from(classLoader)
+    val cis = cp.getTopLevelClassesRecursive(p)
+    for (ci <- cis) {
+      val clazz = ci.load
+      if (!isPackageClass(clazz) && !isEnum(clazz))
+        result :+= extractClass(clazz)
+    }
+    result
   }
 
   private def isPackageClass(c : java.lang.Class[_]) =
@@ -134,43 +163,11 @@ object ModelExtractor {
         case None => false
       }
 
-  private def extract(implicit context : Context) : Model = {
-    var decls = ivectorEmpty[Declaration]
-
-    for (p <- context.packageNames)
-      decls ++= extractPackage(p)
-
-    for (c <- context.classNames)
-      decls :+= extractClass(context.classLoader.loadClass(c))
-
-    if (context.size == 0) {
-      context.reporter.warning("Could not find any class in the provided " +
-        s"packages ${context.packageNames.toVector}; " +
-        "perhaps classpath issues or typos?")
-    }
-
-    model(decls)
-  }
-
-  private def extractPackage(p : String)(
-    implicit context : Context) : ISeq[Declaration] = {
-    var result = ivectorEmpty[Declaration]
-    val cp = ClassPath.from(context.classLoader)
-    val cis = cp.getTopLevelClassesRecursive(p)
-    for (ci <- cis) {
-      val clazz = ci.load
-      if (!isPackageClass(clazz) && !isEnum(clazz))
-        result :+= extractClass(clazz)
-    }
-    result
-  }
-
-  private def extractClass[T](clazz : java.lang.Class[T])(
-    implicit context : Context) : Declaration = {
+  private def extractClass[T](clazz : java.lang.Class[T]) : Declaration = {
     val pkg = clazz.getPackage
     val pkgName = pkg.getName
-    context.size += 1
-    extract(context.pkgModifier.getOrElseUpdate(pkgName, {
+    size += 1
+    extract(pkgModifier.getOrElseUpdate(pkgName, {
       var isReq = false
       val pm = new FM()
       for (a <- pkg.getAnnotations) {
@@ -194,7 +191,7 @@ object ModelExtractor {
 
   private def extractFeatureLevelAnnotation(
     fm : FM, entityName : String, clazz : java.lang.Class[_],
-    qualifier : String, allowReq : scala.Boolean)(implicit context : Context) {
+    qualifier : String, allowReq : scala.Boolean) {
     val name =
       if (!clazz.isInterface) clazz.getInterfaces()(0).getName
       else clazz.getName
@@ -213,7 +210,7 @@ object ModelExtractor {
       case `DATA_NAME`            => fm.featureAnnotations :+= dataAnnotation
       case `REQ_NAME` if allowReq => fm.isReq = true
       case c =>
-        context.reporter.warning(
+        reporter.warning(
           s"Unexpected annotation $c for $entityName; only Schema, Class, " +
             "Product, Device, Instance, and Data are allowed.")
     }
@@ -221,8 +218,7 @@ object ModelExtractor {
 
   private def extract(
     pm : FM, clazz : java.lang.Class[_],
-    inits : IMap[String, Object])(
-      implicit context : Context) : Declaration = {
+    inits : IMap[String, Object]) : Declaration = {
     val tipe = Reflection.getTypeOfClass(clazz)
     val ts = tipe.typeSymbol
     val name = clazz.getName
@@ -266,19 +262,19 @@ object ModelExtractor {
     }
 
     val isBasicType = {
-      val isBasic = context.basicTypeClass.isAssignableFrom(clazz)
-      val isFeature = context.featureClass.isAssignableFrom(clazz)
+      val isBasic = basicTypeClass.isAssignableFrom(clazz)
+      val isFeature = featureClass.isAssignableFrom(clazz)
       (isBasic, isFeature) match {
         case (true, false) => true
         case (false, true) => false
         case (true, true) =>
-          context.reporter.warning(
+          reporter.warning(
             s"$name cannot be both a basic type and a feature; " +
               "assuming it is a feature.")
           false
         case (false, false) =>
           if (!isReq)
-            context.reporter.warning(
+            reporter.warning(
               s"Could not determine whether $name is a basic " +
                 "type or a feature; assuming it is a feature.")
           false
@@ -309,7 +305,7 @@ object ModelExtractor {
             a.clazz.getName match {
               case `REQ_NAME` => isReq = true
               case c =>
-                context.reporter.warning(
+                reporter.warning(
                   s"Unexpected annotation $c for $name companion; " +
                     "only Req is allowed.")
             }
@@ -332,8 +328,7 @@ object ModelExtractor {
   private def extract(
     owner : String, isCompanion : scala.Boolean, symbol : Symbol,
     inits : IMap[String, Object])(
-      implicit context : Context,
-      isProduct : scala.Boolean) : scala.Option[Member] = {
+      implicit isProduct : scala.Boolean) : scala.Option[Member] = {
     val aName = symbol.name.decoded.trim
     val aQName = owner + '.' + aName
 
@@ -385,16 +380,16 @@ object ModelExtractor {
                 }
             }
           if (lo < 0) {
-            context.reporter.error(
+            reporter.error(
               s"Invalid low range for $aQName multiplicity.")
           } else if (lo > hi && hi >= 0) {
-            context.reporter.error(
+            reporter.error(
               "High range cannot be smaller than low range for " +
                 s"$aQName multiplicity.")
           } else
             aAnnotations :+= multiplicityAnnotation(lo, hi, typeName)
         case c =>
-          context.reporter.warning(
+          reporter.warning(
             s"Unexpected annotation $c for $aQName; " +
               "only Const, Data, Inv, and Settable are allowed.")
       }
@@ -403,12 +398,12 @@ object ModelExtractor {
     if (isInvariant) {
       inits.get(aName) match {
         case Some(DYN) | None =>
-          context.reporter.error(s"Ill-formed model: $aQName")
+          reporter.error(s"Ill-formed model: $aQName")
           None
         case Some(value) =>
           val valueClass = value.getClass
           if (valueClass.getName != "scala.reflect.api.Exprs$ExprImpl") {
-            context.reporter.warning(
+            reporter.warning(
               s"Not permitted invariant type $valueClass for $aQName")
             None
           } else {
@@ -437,8 +432,7 @@ object ModelExtractor {
   private def extractAttributeTypeInit(
     aQName : String, aName : String, symbol : Symbol,
     inits : IMap[String, Object])(
-      implicit context : Context,
-      isProduct : scala.Boolean) : (ast.Type, Optional[Initialization]) = {
+      implicit isProduct : scala.Boolean) : (ast.Type, Optional[Initialization]) = {
     extractType(aQName, symbol.typeSignature match {
       case NullaryMethodType(resultType) => resultType
       case tipe                          => tipe
@@ -447,15 +441,14 @@ object ModelExtractor {
 
   private def extractType(
     aQName : String, tipe : Type, value : Option[scala.Any])(
-      implicit context : Context,
-      isProduct : scala.Boolean) : (ast.Type, Optional[Initialization]) = {
+      implicit isProduct : scala.Boolean) : (ast.Type, Optional[Initialization]) = {
     val clazz = Reflection.getClassOfType(tipe.erasure)
     clazz.getName match {
       case `ANY_NAME` =>
         value match {
           case Some(DYN) | None =>
           case Some(v) =>
-            context.reporter.error(
+            reporter.error(
               s"Any type initialization for $aQName is not permitted.")
         }
         (namedType("Any"), none())
@@ -559,12 +552,12 @@ object ModelExtractor {
       case c if clazz.isPrimitive || clazz.isEnum || clazz.isArray ||
         clazz.isAnnotation || clazz.isSynthetic || c.startsWith("scala.") ||
         c.startsWith("java.") =>
-        context.reporter.error(
+        reporter.error(
           s"Not permitted type $c for $aQName; only feature, scala.Option, " +
             "scala.Either, scala.Tuple<N>, Set, Seq, or subtypes of basic " +
             "types are allowed.")
         (namedType("Error"), none())
-      case c if context.basicTypeClass.isAssignableFrom(clazz) =>
+      case c if basicTypeClass.isAssignableFrom(clazz) =>
         (value : @unchecked) match {
           case Some(value : BasicType) =>
             (namedType(c), some(basicInit(value.asString)))
@@ -602,7 +595,7 @@ object ModelExtractor {
                 imapEmpty[String, Object]) match {
                   case Some(a : Attribute) => attributes :+= a
                   case Some(m) =>
-                    context.reporter.error(
+                    reporter.error(
                       s"Expecting attribute for $aQName, " +
                         s"but found ${m.getClass}.")
                   case _ =>
@@ -629,7 +622,7 @@ object ModelExtractor {
                       else
                         attributeInits :+= a
                     case Some(m) =>
-                      context.reporter.error(
+                      reporter.error(
                         s"Expecting attribute for $aQName initialization, " +
                           s"but found ${m.getClass}.")
                     case _ =>
@@ -640,7 +633,7 @@ object ModelExtractor {
             value match {
               case None | Some(DYN) =>
                 (namedType(c), none())
-              case Some(value) if context.basicTypeClass.isAssignableFrom(value.getClass) =>
+              case Some(value) if basicTypeClass.isAssignableFrom(value.getClass) =>
                 (namedType(value.getClass.getName),
                   some(basicInit(value.asInstanceOf[BasicType].asString)))
               case Some(value) =>
@@ -661,7 +654,7 @@ object ModelExtractor {
                       attributes :+= a
                       aTypes += (a.name -> d.typeSignature)
                     case Some(m) =>
-                      context.reporter.error(
+                      reporter.error(
                         s"Expecting attribute for $aQName initialization, " +
                           s"but found ${m.getClass}.")
                     case _ =>
@@ -683,7 +676,7 @@ object ModelExtractor {
                   case TypeRef(pre, sym, _) =>
                     val clazz = Reflection.getClassOfType(vTipe)
                     val interfaces = clazz.getInterfaces.toVector
-                    val sclazz = clazz.getSuperclass
+                    val sclazz : java.lang.Class[_] = clazz.getSuperclass
                     val types =
                       (if (sclazz != null && sclazz.getName != OBJECT_NAME)
                         ivector(namedType(sclazz.getName))
@@ -706,20 +699,18 @@ object ModelExtractor {
     }
   }
 
-  private def filterType(aQName : String, l : List[Type])(
-    implicit context : Context) : ISeq[NamedType] = {
-    l.flatMap {
-      _ match {
-        case TypeRef(_, sym, _) =>
-          val name = sym.name.decoded
-          if (name == "AnyRef") None
-          else Some(namedType(
-            Reflection.getClassOfType(sym.asType.typeSignature).getName))
-        case t =>
-          context.reporter.error(
-            s"Unexpected type $t for $aQName initialization.")
-          None
-      }
+  private def filterType(
+    aQName : String, l : List[Type]) : ISeq[NamedType] = l.flatMap {
+    _ match {
+      case TypeRef(_, sym, _) =>
+        val name = sym.name.decoded
+        if (name == "AnyRef") None
+        else Some(namedType(
+          Reflection.getClassOfType(sym.asType.typeSignature).getName))
+      case t =>
+        reporter.error(
+          s"Unexpected type $t for $aQName initialization.")
+        None
     }
   }
 
@@ -739,8 +730,7 @@ object ModelExtractor {
     false
   }
 
-  def predExtractor[T](p : Predicate[T])(
-    implicit context : Context) : FunExp = {
+  private def predExtractor[T](p : Predicate[T]) : FunExp = {
     val scalaTypeMap = Set(
       classOf[scala.collection.immutable.Map[_, _]].getName,
       classOf[scala.collection.immutable.Set[_]].getName,
@@ -778,11 +768,11 @@ object ModelExtractor {
           tpt.original match {
             case id @ Ident(nme) => typeNameOf(id)
             case tpto =>
-              context.reporter.error(s"Unhandled constraint form: ${showRaw(tpto)}")
+              reporter.error(s"Unhandled constraint form: ${showRaw(tpto)}")
               "?"
           }
         case _ =>
-          context.reporter.error(s"Unhandled constraint form: ${showRaw(tpt)}")
+          reporter.error(s"Unhandled constraint form: ${showRaw(tpt)}")
           "?"
       }
 
@@ -851,7 +841,7 @@ object ModelExtractor {
                   val typeName = typeNameOfTypeTree(tpt)
                   Some(matchCase(namedMatchCaseBind(varName.decoded, some(namedType(typeName))), cond, e))
                 case cd =>
-                  context.reporter.error(s"Unhandled constraint form: ${showRaw(cd)}")
+                  reporter.error(s"Unhandled constraint form: ${showRaw(cd)}")
                   None
               }
             }
@@ -861,7 +851,7 @@ object ModelExtractor {
             val typeName = typeNameOfTypeTree(tpt)
             instanceOfExp(visitor(qualifier), namedType(typeName))
           case t =>
-            context.reporter.error(s"Unhandled constraint form: ${showRaw(t)}")
+            reporter.error(s"Unhandled constraint form: ${showRaw(t)}")
             unknownExp
         }
     val t = Reflection.typeCheck(p.tree)
