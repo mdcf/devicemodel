@@ -91,7 +91,9 @@ object ProjectHelper {
       for (licF <- pi.licensesFiles)
         IO.copyFile(licF, new File(licDir, licF.getName), true)
     }
-    if (isCustomPath)
+    if (isCustomPath) {
       IO.copyFile(new File("build/build.xml"), new File(buildDir, "build.xml"))
+      IO.copyFile(new File("build/README.rst"), new File(buildDir, "README.rst"))
+    }
   }
 }

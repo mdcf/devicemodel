@@ -1,7 +1,7 @@
 How To Build MDCF using the Simple Build Tool (SBT)
 ===================================================
 
-Requirement: 
+Requirements: 
 
 * Java 7 SDK or above
 
