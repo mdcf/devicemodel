@@ -48,8 +48,6 @@ object MdcfBuild extends Build {
 
   final val scalaVer = "2.10.2"
     
-  val tf = new TestFramework("com.dadrox.sbt.junit.JunitFramework")
-
   lazy val mdcfSettings = Defaults.defaultSettings ++ Seq(
     organization := "SAnToS Laboratory",
     artifactName := {
