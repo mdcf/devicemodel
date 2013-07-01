@@ -102,7 +102,7 @@ class ExpEvaluator(ctx : Context) {
           case v : FeatureValue if v.hasAccess(ae.id) =>
             (s2, toValue(v.access(ae.id).init.get))
           case _ =>
-            ctx.reporter.internalError(s"Cannot access ${ae.id} on value: $v")
+            ctx.reporter.error(s"Cannot access ${ae.id} on value: $v")
             throw EvalFailed
         }
       case ae : ApplyExp =>
@@ -130,7 +130,7 @@ class ExpEvaluator(ctx : Context) {
                 } yield (s6.exitClosure, b2v(|||(cond, b)))
               r
             case (f, arg) =>
-              ctx.reporter.internalError(s"Cannot apply function $f with argument $arg")
+              ctx.reporter.error(s"Cannot apply function $f with argument $arg")
               throw EvalFailed
           }
         } yield (s4, v)
@@ -173,7 +173,7 @@ class ExpEvaluator(ctx : Context) {
               } yield sv
           } catch {
           case _ : Exception =>
-            ctx.reporter.internalError(s"Could not find extension $op to evaluate: $exp")
+            ctx.reporter.error(s"Could not find extension $op to evaluate: $exp")
             throw EvalFailed
         }
       case fe : FunExp =>
@@ -195,7 +195,7 @@ class ExpEvaluator(ctx : Context) {
               ctx.reporter.warning(s"Testing $v with ${t} is always false!")
               (s2, FALSE)
             case (v, t) =>
-              ctx.reporter.internalError(s"Instance of test on $t is not allowed!")
+              ctx.reporter.error(s"Instance of test on $t is not allowed!")
               throw EvalFailed
           }
         }
@@ -209,7 +209,7 @@ class ExpEvaluator(ctx : Context) {
         for { (s2, m) <- evalExp(s, moe.exp) } yield m match {
           case m : MapValue => (s2, mapOp(moe.id, m))
           case v =>
-            ctx.reporter.internalError(s"Cannot evaluate map $moe.id on $v")
+            ctx.reporter.error(s"Cannot evaluate map $moe.id on $v")
             throw EvalFailed
         }
       case me : MatchExp =>
@@ -265,7 +265,7 @@ class ExpEvaluator(ctx : Context) {
         for { (s2, s) <- evalExp(s, soe.exp) } yield s match {
           case s : SeqValue => (s2, setqOp(soe.id, s.value))
           case v =>
-            ctx.reporter.internalError(s"Cannot evaluate seq $soe.id on $v")
+            ctx.reporter.error(s"Cannot evaluate seq $soe.id on $v")
             throw EvalFailed
         }
       case soe : SetOpExp =>
@@ -273,20 +273,20 @@ class ExpEvaluator(ctx : Context) {
           case s : SetValue =>
             (s2, setqOp(soe.id, s.value))
           case v =>
-            ctx.reporter.internalError(s"Cannot evaluate set $soe.id on $v")
+            ctx.reporter.error(s"Cannot evaluate set $soe.id on $v")
             throw EvalFailed
         }
       case toe : TupleOpExp =>
         for { (s2, t) <- evalExp(s, toe.exp) } yield (toe.id, t) match {
           case (op, t : TupleValue) => (s2, tupleOp(op, t))
           case (op, v) =>
-            ctx.reporter.internalError(s"Cannot evaluate tuple $op on $v")
+            ctx.reporter.error(s"Cannot evaluate tuple $op on $v")
             throw EvalFailed
         }
       case vre : VarRefExp =>
         (s, s.variable(vre.id))
       case _ =>
-        ctx.reporter.internalError(s"Unsupported exp: $exp")
+        ctx.reporter.error(s"Unsupported exp: $exp")
         throw EvalFailed
     }
 
@@ -301,7 +301,7 @@ class ExpEvaluator(ctx : Context) {
       case "exists" =>
         ExistsValue(m.value.map(e => TupleValue(ivector(e._1, e._2))))
       case _ =>
-        ctx.reporter.internalError(s"Unsupported map op: $op")
+        ctx.reporter.error(s"Unsupported map op: $op")
         throw EvalFailed
     }
 
@@ -312,7 +312,7 @@ class ExpEvaluator(ctx : Context) {
       case "exists" =>
         ExistsValue(values)
       case _ =>
-        ctx.reporter.internalError(s"Unsupported set/seq op: $op")
+        ctx.reporter.error(s"Unsupported set/seq op: $op")
         throw EvalFailed
     }
 
@@ -320,7 +320,7 @@ class ExpEvaluator(ctx : Context) {
     try t.value(op.substring(1).toInt)
     catch {
       case _ : Exception =>
-        ctx.reporter.internalError(s"Unsupported tuple op: $op")
+        ctx.reporter.error(s"Unsupported tuple op: $op")
         throw EvalFailed
     }
 
@@ -331,7 +331,7 @@ class ExpEvaluator(ctx : Context) {
         if (ctx.sec.expExtCall.isDefinedAt(name, sv))
           ctx.sec.expExtCall(name, sv)
         else {
-          ctx.reporter.internalError(
+          ctx.reporter.error(
             s"Could not find top-level expression extension $name that handles: $sv")
           throw EvalFailed
         }
