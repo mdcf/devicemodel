@@ -8272,6 +8272,263 @@
         </invariant>
       </members>
     </requirement>
+    <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.PulseOxDisplayApp">
+      <members class="ilist">
+        <attribute name="dev">
+          <annotations class="ilist"></annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD"/>
+          <init class="none"></init>
+        </attribute>
+        <invariant name="reqSpO2">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.PulseOxDisplayApp"/>
+          <predicate>
+            <type class="none"></type>
+            <param name="vmd">
+              <type class="none"></type>
+            </param>
+            <body class="applyExp">
+              <type class="none"></type>
+              <fun class="seqOpExp" id="exists">
+                <type class="none"></type>
+                <exp class="mapOpExp" id="values">
+                  <type class="none"></type>
+                  <exp class="accessExp" id="channels">
+                    <type class="none"></type>
+                    <exp class="accessExp" id="dev">
+                      <type class="none"></type>
+                      <exp class="varRefExp" id="vmd">
+                        <type class="none"></type>
+                      </exp>
+                    </exp>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="funExp">
+                <type class="none"></type>
+                <param name="x$1">
+                  <type class="none"></type>
+                </param>
+                <body class="applyExp">
+                  <type class="none"></type>
+                  <fun class="seqOpExp" id="exists">
+                    <type class="none"></type>
+                    <exp class="mapOpExp" id="values">
+                      <type class="none"></type>
+                      <exp class="accessExp" id="metrics">
+                        <type class="none"></type>
+                        <exp class="varRefExp" id="x$1">
+                          <type class="none"></type>
+                        </exp>
+                      </exp>
+                    </exp>
+                  </fun>
+                  <arg class="funExp">
+                    <type class="none"></type>
+                    <param name="x$2">
+                      <type class="none"></type>
+                    </param>
+                    <body class="matchExp">
+                      <type class="none"></type>
+                      <exp class="varRefExp" id="x$2">
+                        <type class="none"></type>
+                      </exp>
+                      <cases class="ilist">
+                        <matchCase>
+                          <bind class="namedMatchCaseBind" id="spo2num">
+                            <type class="some">
+                              <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
+                            </type>
+                          </bind>
+                          <cond class="none"></cond>
+                          <body class="applyExp">
+                            <type class="none"></type>
+                            <fun class="seqOpExp" id="exists">
+                              <type class="none"></type>
+                              <exp class="mapOpExp" id="values">
+                                <type class="none"></type>
+                                <exp class="accessExp" id="exchanges">
+                                  <type class="none"></type>
+                                  <exp class="varRefExp" id="spo2num">
+                                    <type class="none"></type>
+                                  </exp>
+                                </exp>
+                              </exp>
+                            </fun>
+                            <arg class="funExp">
+                              <type class="none"></type>
+                              <param name="x$3">
+                                <type class="none"></type>
+                              </param>
+                              <body class="matchExp">
+                                <type class="none"></type>
+                                <exp class="varRefExp" id="x$3">
+                                  <type class="none"></type>
+                                </exp>
+                                <cases class="ilist">
+                                  <matchCase>
+                                    <bind class="namedMatchCaseBind" id="spo2Exchange">
+                                      <type class="some">
+                                        <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
+                                      </type>
+                                    </bind>
+                                    <cond class="none"></cond>
+                                    <body class="literalExp" value="true">
+                                      <type class="none"></type>
+                                    </body>
+                                  </matchCase>
+                                  <matchCase>
+                                    <bind class="defaultMatchCaseBindExp"/>
+                                    <cond class="none"></cond>
+                                    <body class="literalExp" value="false">
+                                      <type class="none"></type>
+                                    </body>
+                                  </matchCase>
+                                </cases>
+                              </body>
+                            </arg>
+                          </body>
+                        </matchCase>
+                        <matchCase>
+                          <bind class="defaultMatchCaseBindExp"/>
+                          <cond class="none"></cond>
+                          <body class="literalExp" value="false">
+                            <type class="none"></type>
+                          </body>
+                        </matchCase>
+                      </cases>
+                    </body>
+                  </arg>
+                </body>
+              </arg>
+            </body>
+          </predicate>
+        </invariant>
+        <invariant name="reqPulseRate">
+          <predicateType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.PulseOxDisplayApp"/>
+          <predicate>
+            <type class="none"></type>
+            <param name="vmd">
+              <type class="none"></type>
+            </param>
+            <body class="applyExp">
+              <type class="none"></type>
+              <fun class="seqOpExp" id="exists">
+                <type class="none"></type>
+                <exp class="mapOpExp" id="values">
+                  <type class="none"></type>
+                  <exp class="accessExp" id="channels">
+                    <type class="none"></type>
+                    <exp class="accessExp" id="dev">
+                      <type class="none"></type>
+                      <exp class="varRefExp" id="vmd">
+                        <type class="none"></type>
+                      </exp>
+                    </exp>
+                  </exp>
+                </exp>
+              </fun>
+              <arg class="funExp">
+                <type class="none"></type>
+                <param name="x$4">
+                  <type class="none"></type>
+                </param>
+                <body class="applyExp">
+                  <type class="none"></type>
+                  <fun class="seqOpExp" id="exists">
+                    <type class="none"></type>
+                    <exp class="mapOpExp" id="values">
+                      <type class="none"></type>
+                      <exp class="accessExp" id="metrics">
+                        <type class="none"></type>
+                        <exp class="varRefExp" id="x$4">
+                          <type class="none"></type>
+                        </exp>
+                      </exp>
+                    </exp>
+                  </fun>
+                  <arg class="funExp">
+                    <type class="none"></type>
+                    <param name="x$5">
+                      <type class="none"></type>
+                    </param>
+                    <body class="matchExp">
+                      <type class="none"></type>
+                      <exp class="varRefExp" id="x$5">
+                        <type class="none"></type>
+                      </exp>
+                      <cases class="ilist">
+                        <matchCase>
+                          <bind class="namedMatchCaseBind" id="prnum">
+                            <type class="some">
+                              <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseRate_Numeric"/>
+                            </type>
+                          </bind>
+                          <cond class="none"></cond>
+                          <body class="applyExp">
+                            <type class="none"></type>
+                            <fun class="seqOpExp" id="exists">
+                              <type class="none"></type>
+                              <exp class="mapOpExp" id="values">
+                                <type class="none"></type>
+                                <exp class="accessExp" id="exchanges">
+                                  <type class="none"></type>
+                                  <exp class="varRefExp" id="prnum">
+                                    <type class="none"></type>
+                                  </exp>
+                                </exp>
+                              </exp>
+                            </fun>
+                            <arg class="funExp">
+                              <type class="none"></type>
+                              <param name="x$6">
+                                <type class="none"></type>
+                              </param>
+                              <body class="matchExp">
+                                <type class="none"></type>
+                                <exp class="varRefExp" id="x$6">
+                                  <type class="none"></type>
+                                </exp>
+                                <cases class="ilist">
+                                  <matchCase>
+                                    <bind class="namedMatchCaseBind" id="prExchange">
+                                      <type class="some">
+                                        <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
+                                      </type>
+                                    </bind>
+                                    <cond class="none"></cond>
+                                    <body class="literalExp" value="true">
+                                      <type class="none"></type>
+                                    </body>
+                                  </matchCase>
+                                  <matchCase>
+                                    <bind class="defaultMatchCaseBindExp"/>
+                                    <cond class="none"></cond>
+                                    <body class="literalExp" value="false">
+                                      <type class="none"></type>
+                                    </body>
+                                  </matchCase>
+                                </cases>
+                              </body>
+                            </arg>
+                          </body>
+                        </matchCase>
+                        <matchCase>
+                          <bind class="defaultMatchCaseBindExp"/>
+                          <cond class="none"></cond>
+                          <body class="literalExp" value="false">
+                            <type class="none"></type>
+                          </body>
+                        </matchCase>
+                      </cases>
+                    </body>
+                  </arg>
+                </body>
+              </arg>
+            </body>
+          </predicate>
+        </invariant>
+      </members>
+    </requirement>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.BatteryLevelStatus">
       <annotations class="ilist">
         <featureLevel qualifier="">
