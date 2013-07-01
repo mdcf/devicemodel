@@ -19,6 +19,24 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE.apply
 import edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_TYPE.apply
 import edu.ksu.cis.santos.mdcf.dms.examplev2.String.apply
 
+class NoninGetExchange extends ICE_Get_Exchange {
+  override val access : Option[ICE_Security_Access_Read] = None
+  override val separation_interval : NatRange = new NatRange {
+    override val min : Nat = 5
+    override val max : Nat = 50
+  }
+  override val serviceTime : NatRange = new NatRange {
+    override val min : Nat = 0
+    override val max : Nat = 50
+  }
+}
+
+class NoninSporadicExchange extends ICE_Sporadic_Exchange {
+  override val access : Option[ICE_Security_Access_Read] = None
+  override val separation_interval : Nat = 98
+}
+
+
 final class NoninPulseOx extends ICE_MDS {
   override val IEEE11073_MDC_ATTR_SYS_TYPE : IEEE11073_TYPE = "Nonin PO"
 

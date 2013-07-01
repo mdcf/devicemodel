@@ -113,9 +113,6 @@ trait ICE_Data_Exchange extends Feature {
 // For code generation, specification of an provider initiated exchange should trigger the generation
 // of a client-side (e.g., app side) event handler to handle the published message.
 //
-// TODO: Sam check the QoS parameters to make sure that they align with our AADL/MIDAS-compatible 
-// proposals.
-//
 // TODO: It is unclear to me if I am using the correct modeling strategy here.  Specifically, for
 // each exchange one needs to specify the payload of the data being exchanged somewhere (or in the
 // case of the action, the arguments and return value).   How should that be done?  By having the
@@ -133,18 +130,17 @@ trait ICE_Periodic_Exchange extends ICE_ProviderInitiated_Exchange {
   @Const(PRODUCT)
   val access : Option[ICE_Security_Access_Read]
   @Const(PRODUCT)
-  val separation : NatRange // The separation between messages in milliseconds, using this allows us to model jitter
-  @Const(INSTANCE)
-  val rate : NatRange // latency (This will be govern code-generation at the channel level)
+  val separation_interval : NatRange // The separation between messages in milliseconds, using this allows us to model jitter
 }
 
 // An episodic provider-initiated exchange indicates that the interface provider (e.g., a device) publishes
-// a value episodically (i.e., intermittently)
+// a value sporadically.  Typically, this will be an exchange that may never get used, like an alarm.  If you
+// want a timeout-type feature, use an ICE_PERIODIC_EXCHANGE instead.
 trait ICE_Sporadic_Exchange extends ICE_ProviderInitiated_Exchange {
   @Const(PRODUCT)
   val access : Option[ICE_Security_Access_Read]
   @Const(PRODUCT)
-  val separation : NatRange // The separation between messages in milliseconds
+  val separation_interval : Nat // The separation between messages in milliseconds
 }
 
 // A client-initiated exchange indicates that the interface client (e.g., an app) fetches 
@@ -153,7 +149,7 @@ trait ICE_Get_Exchange extends ICE_ClientInitiated_Exchange {
   @Const(PRODUCT)
   val access : Option[ICE_Security_Access_Read]
   @Const(PRODUCT)
-  val separation : NatRange // This may need revision per Andrew's paper
+  val separation_interval : NatRange // This may need revision per Andrew's paper
   @Const(PRODUCT)
   val serviceTime : NatRange
 // Andrew notes that technically this is not needed for scheduling
@@ -167,7 +163,7 @@ trait ICE_Set_Exchange extends ICE_ClientInitiated_Exchange {
   @Const(PRODUCT)
   val access : Option[ICE_Security_Access_Write]
   @Const(PRODUCT)
-  val separation : NatRange // This may need revision per Andrew's paper
+  val separation_interval : NatRange // This may need revision per Andrew's paper
   @Const(PRODUCT)
   val serviceTime : NatRange // See note in Get_Exchange
 }
@@ -176,7 +172,7 @@ trait ICE_Action_Exchange extends ICE_ClientInitiated_Exchange {
   @Const(PRODUCT)
   val access : Option[ICE_Security_Access_Action]
   @Const(PRODUCT)
-  val separation : NatRange // This may need revision per Andrew's paper
+  val separation_interval : NatRange // This may need revision per Andrew's paper
   @Const(PRODUCT)
   val serviceTime : NatRange // See note in Get_Exchange
  }

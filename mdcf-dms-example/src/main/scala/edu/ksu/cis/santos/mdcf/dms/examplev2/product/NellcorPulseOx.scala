@@ -19,6 +19,43 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE.apply
 import edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_TYPE.apply
 import edu.ksu.cis.santos.mdcf.dms.examplev2.String.apply
 
+class NellcorGetExchange extends ICE_Get_Exchange {
+  override val access : Option[ICE_Security_Access_Read] = None
+  override val separation_interval : NatRange = new NatRange {
+    override val min : Nat = 10
+    override val max : Nat = 50
+  }
+  override val serviceTime : NatRange = new NatRange {
+    override val min : Nat = 0
+    override val max : Nat = 50
+  }
+}
+
+class NellcorSetExchange extends ICE_Set_Exchange {
+  override val access : Option[ICE_Security_Access_Write] = None
+  override val separation_interval : NatRange = new NatRange {
+    override val min : Nat = 10
+    override val max : Nat = 50
+  }
+  override val serviceTime : NatRange = new NatRange {
+    override val min : Nat = 0
+    override val max : Nat = 50
+  }
+}
+
+class NellcorPeriodicExchange extends ICE_Periodic_Exchange {
+  override val access : Option[ICE_Security_Access_Read] = None
+  override val separation_interval : NatRange = new NatRange {
+    override val min : Nat = 98
+    override val max : Nat = 102
+  }
+}
+
+class NellcorSporadicExchange extends ICE_Sporadic_Exchange {
+  override val access : Option[ICE_Security_Access_Read] = None
+  override val separation_interval : Nat = 98
+}
+
 final class NellcorPulseOx extends ICE_MDS {
   override val IEEE11073_MDC_ATTR_SYS_TYPE : IEEE11073_TYPE = "Nellcor PO"
 

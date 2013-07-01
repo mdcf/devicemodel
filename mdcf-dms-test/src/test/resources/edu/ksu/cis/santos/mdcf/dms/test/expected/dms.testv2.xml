@@ -595,7 +595,7 @@
                                         <reference class="noneInit"/>
                                       </init>
                                     </attribute>
-                                    <attribute name="separation">
+                                    <attribute name="separation_interval">
                                       <annotations class="ilist">
                                         <override/>
                                       </annotations>
@@ -796,7 +796,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -880,7 +880,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -907,39 +907,6 @@
                                                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
                                                                     <reference class="basicInit" value="102"/>
-                                                                  </init>
-                                                                </attribute>
-                                                              </attributes>
-                                                            </reference>
-                                                          </init>
-                                                        </attribute>
-                                                        <attribute name="rate">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                          <init class="some">
-                                                            <reference class="featureInit">
-                                                              <types class="ilist">
-                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                              </types>
-                                                              <attributes class="ilist">
-                                                                <attribute name="min">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="495"/>
-                                                                  </init>
-                                                                </attribute>
-                                                                <attribute name="max">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="505"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
@@ -1040,7 +1007,7 @@
                                                                             <reference class="noneInit"/>
                                                                           </init>
                                                                         </attribute>
-                                                                        <attribute name="separation">
+                                                                        <attribute name="separation_interval">
                                                                           <annotations class="ilist">
                                                                             <override/>
                                                                           </annotations>
@@ -1135,7 +1102,7 @@
                                                                               <reference class="noneInit"/>
                                                                             </init>
                                                                           </attribute>
-                                                                          <attribute name="separation">
+                                                                          <attribute name="separation_interval">
                                                                             <annotations class="ilist">
                                                                               <override/>
                                                                             </annotations>
@@ -1259,37 +1226,13 @@
                                                                     <reference class="noneInit"/>
                                                                   </init>
                                                                 </attribute>
-                                                                <attribute name="separation">
+                                                                <attribute name="separation_interval">
                                                                   <annotations class="ilist">
                                                                     <override/>
                                                                   </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
-                                                                    <reference class="featureInit">
-                                                                      <types class="ilist">
-                                                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                                      </types>
-                                                                      <attributes class="ilist">
-                                                                        <attribute name="min">
-                                                                          <annotations class="ilist">
-                                                                            <override/>
-                                                                          </annotations>
-                                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                          <init class="some">
-                                                                            <reference class="basicInit" value="98"/>
-                                                                          </init>
-                                                                        </attribute>
-                                                                        <attribute name="max">
-                                                                          <annotations class="ilist">
-                                                                            <override/>
-                                                                          </annotations>
-                                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                          <init class="some">
-                                                                            <reference class="basicInit" value="102"/>
-                                                                          </init>
-                                                                        </attribute>
-                                                                      </attributes>
-                                                                    </reference>
+                                                                    <reference class="basicInit" value="98"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
@@ -1492,7 +1435,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -1576,7 +1519,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -1603,39 +1546,6 @@
                                                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
                                                                     <reference class="basicInit" value="102"/>
-                                                                  </init>
-                                                                </attribute>
-                                                              </attributes>
-                                                            </reference>
-                                                          </init>
-                                                        </attribute>
-                                                        <attribute name="rate">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                          <init class="some">
-                                                            <reference class="featureInit">
-                                                              <types class="ilist">
-                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                              </types>
-                                                              <attributes class="ilist">
-                                                                <attribute name="min">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="495"/>
-                                                                  </init>
-                                                                </attribute>
-                                                                <attribute name="max">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="505"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
@@ -1736,7 +1646,7 @@
                                                                             <reference class="noneInit"/>
                                                                           </init>
                                                                         </attribute>
-                                                                        <attribute name="separation">
+                                                                        <attribute name="separation_interval">
                                                                           <annotations class="ilist">
                                                                             <override/>
                                                                           </annotations>
@@ -1831,7 +1741,7 @@
                                                                               <reference class="noneInit"/>
                                                                             </init>
                                                                           </attribute>
-                                                                          <attribute name="separation">
+                                                                          <attribute name="separation_interval">
                                                                             <annotations class="ilist">
                                                                               <override/>
                                                                             </annotations>
@@ -1955,37 +1865,13 @@
                                                                     <reference class="noneInit"/>
                                                                   </init>
                                                                 </attribute>
-                                                                <attribute name="separation">
+                                                                <attribute name="separation_interval">
                                                                   <annotations class="ilist">
                                                                     <override/>
                                                                   </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
-                                                                    <reference class="featureInit">
-                                                                      <types class="ilist">
-                                                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                                      </types>
-                                                                      <attributes class="ilist">
-                                                                        <attribute name="min">
-                                                                          <annotations class="ilist">
-                                                                            <override/>
-                                                                          </annotations>
-                                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                          <init class="some">
-                                                                            <reference class="basicInit" value="98"/>
-                                                                          </init>
-                                                                        </attribute>
-                                                                        <attribute name="max">
-                                                                          <annotations class="ilist">
-                                                                            <override/>
-                                                                          </annotations>
-                                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                          <init class="some">
-                                                                            <reference class="basicInit" value="102"/>
-                                                                          </init>
-                                                                        </attribute>
-                                                                      </attributes>
-                                                                    </reference>
+                                                                    <reference class="basicInit" value="98"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
@@ -2149,7 +2035,7 @@
                                         <reference class="noneInit"/>
                                       </init>
                                     </attribute>
-                                    <attribute name="separation">
+                                    <attribute name="separation_interval">
                                       <annotations class="ilist">
                                         <override/>
                                       </annotations>
@@ -2336,7 +2222,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -2420,7 +2306,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -2447,39 +2333,6 @@
                                                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
                                                                     <reference class="basicInit" value="102"/>
-                                                                  </init>
-                                                                </attribute>
-                                                              </attributes>
-                                                            </reference>
-                                                          </init>
-                                                        </attribute>
-                                                        <attribute name="rate">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                          <init class="some">
-                                                            <reference class="featureInit">
-                                                              <types class="ilist">
-                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                              </types>
-                                                              <attributes class="ilist">
-                                                                <attribute name="min">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="495"/>
-                                                                  </init>
-                                                                </attribute>
-                                                                <attribute name="max">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="505"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
@@ -2580,7 +2433,7 @@
                                                                             <reference class="noneInit"/>
                                                                           </init>
                                                                         </attribute>
-                                                                        <attribute name="separation">
+                                                                        <attribute name="separation_interval">
                                                                           <annotations class="ilist">
                                                                             <override/>
                                                                           </annotations>
@@ -2675,7 +2528,7 @@
                                                                               <reference class="noneInit"/>
                                                                             </init>
                                                                           </attribute>
-                                                                          <attribute name="separation">
+                                                                          <attribute name="separation_interval">
                                                                             <annotations class="ilist">
                                                                               <override/>
                                                                             </annotations>
@@ -2799,37 +2652,13 @@
                                                                     <reference class="noneInit"/>
                                                                   </init>
                                                                 </attribute>
-                                                                <attribute name="separation">
+                                                                <attribute name="separation_interval">
                                                                   <annotations class="ilist">
                                                                     <override/>
                                                                   </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
-                                                                    <reference class="featureInit">
-                                                                      <types class="ilist">
-                                                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                                      </types>
-                                                                      <attributes class="ilist">
-                                                                        <attribute name="min">
-                                                                          <annotations class="ilist">
-                                                                            <override/>
-                                                                          </annotations>
-                                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                          <init class="some">
-                                                                            <reference class="basicInit" value="98"/>
-                                                                          </init>
-                                                                        </attribute>
-                                                                        <attribute name="max">
-                                                                          <annotations class="ilist">
-                                                                            <override/>
-                                                                          </annotations>
-                                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                          <init class="some">
-                                                                            <reference class="basicInit" value="102"/>
-                                                                          </init>
-                                                                        </attribute>
-                                                                      </attributes>
-                                                                    </reference>
+                                                                    <reference class="basicInit" value="98"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
@@ -2938,7 +2767,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -3022,7 +2851,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -3049,39 +2878,6 @@
                                                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
                                                                     <reference class="basicInit" value="102"/>
-                                                                  </init>
-                                                                </attribute>
-                                                              </attributes>
-                                                            </reference>
-                                                          </init>
-                                                        </attribute>
-                                                        <attribute name="rate">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                          <init class="some">
-                                                            <reference class="featureInit">
-                                                              <types class="ilist">
-                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                              </types>
-                                                              <attributes class="ilist">
-                                                                <attribute name="min">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="495"/>
-                                                                  </init>
-                                                                </attribute>
-                                                                <attribute name="max">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="505"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
@@ -3182,7 +2978,7 @@
                                                                             <reference class="noneInit"/>
                                                                           </init>
                                                                         </attribute>
-                                                                        <attribute name="separation">
+                                                                        <attribute name="separation_interval">
                                                                           <annotations class="ilist">
                                                                             <override/>
                                                                           </annotations>
@@ -3277,7 +3073,7 @@
                                                                               <reference class="noneInit"/>
                                                                             </init>
                                                                           </attribute>
-                                                                          <attribute name="separation">
+                                                                          <attribute name="separation_interval">
                                                                             <annotations class="ilist">
                                                                               <override/>
                                                                             </annotations>
@@ -3401,37 +3197,13 @@
                                                                     <reference class="noneInit"/>
                                                                   </init>
                                                                 </attribute>
-                                                                <attribute name="separation">
+                                                                <attribute name="separation_interval">
                                                                   <annotations class="ilist">
                                                                     <override/>
                                                                   </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
-                                                                    <reference class="featureInit">
-                                                                      <types class="ilist">
-                                                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                                      </types>
-                                                                      <attributes class="ilist">
-                                                                        <attribute name="min">
-                                                                          <annotations class="ilist">
-                                                                            <override/>
-                                                                          </annotations>
-                                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                          <init class="some">
-                                                                            <reference class="basicInit" value="98"/>
-                                                                          </init>
-                                                                        </attribute>
-                                                                        <attribute name="max">
-                                                                          <annotations class="ilist">
-                                                                            <override/>
-                                                                          </annotations>
-                                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                          <init class="some">
-                                                                            <reference class="basicInit" value="102"/>
-                                                                          </init>
-                                                                        </attribute>
-                                                                      </attributes>
-                                                                    </reference>
+                                                                    <reference class="basicInit" value="98"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
@@ -3540,7 +3312,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -3624,7 +3396,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -3651,39 +3423,6 @@
                                                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
                                                                     <reference class="basicInit" value="102"/>
-                                                                  </init>
-                                                                </attribute>
-                                                              </attributes>
-                                                            </reference>
-                                                          </init>
-                                                        </attribute>
-                                                        <attribute name="rate">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                          <init class="some">
-                                                            <reference class="featureInit">
-                                                              <types class="ilist">
-                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                              </types>
-                                                              <attributes class="ilist">
-                                                                <attribute name="min">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="495"/>
-                                                                  </init>
-                                                                </attribute>
-                                                                <attribute name="max">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="505"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
@@ -3784,7 +3523,7 @@
                                                                             <reference class="noneInit"/>
                                                                           </init>
                                                                         </attribute>
-                                                                        <attribute name="separation">
+                                                                        <attribute name="separation_interval">
                                                                           <annotations class="ilist">
                                                                             <override/>
                                                                           </annotations>
@@ -3879,7 +3618,7 @@
                                                                               <reference class="noneInit"/>
                                                                             </init>
                                                                           </attribute>
-                                                                          <attribute name="separation">
+                                                                          <attribute name="separation_interval">
                                                                             <annotations class="ilist">
                                                                               <override/>
                                                                             </annotations>
@@ -4003,37 +3742,13 @@
                                                                     <reference class="noneInit"/>
                                                                   </init>
                                                                 </attribute>
-                                                                <attribute name="separation">
+                                                                <attribute name="separation_interval">
                                                                   <annotations class="ilist">
                                                                     <override/>
                                                                   </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
-                                                                    <reference class="featureInit">
-                                                                      <types class="ilist">
-                                                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                                      </types>
-                                                                      <attributes class="ilist">
-                                                                        <attribute name="min">
-                                                                          <annotations class="ilist">
-                                                                            <override/>
-                                                                          </annotations>
-                                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                          <init class="some">
-                                                                            <reference class="basicInit" value="98"/>
-                                                                          </init>
-                                                                        </attribute>
-                                                                        <attribute name="max">
-                                                                          <annotations class="ilist">
-                                                                            <override/>
-                                                                          </annotations>
-                                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                          <init class="some">
-                                                                            <reference class="basicInit" value="102"/>
-                                                                          </init>
-                                                                        </attribute>
-                                                                      </attributes>
-                                                                    </reference>
+                                                                    <reference class="basicInit" value="98"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
@@ -4181,7 +3896,7 @@
             <reference class="noneInit"/>
           </init>
         </attribute>
-        <attribute name="separation">
+        <attribute name="separation_interval">
           <annotations class="ilist">
             <override/>
           </annotations>
@@ -4270,7 +3985,7 @@
             <reference class="noneInit"/>
           </init>
         </attribute>
-        <attribute name="separation">
+        <attribute name="separation_interval">
           <annotations class="ilist">
             <override/>
           </annotations>
@@ -4303,39 +4018,6 @@
             </reference>
           </init>
         </attribute>
-        <attribute name="rate">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-          <init class="some">
-            <reference class="featureInit">
-              <types class="ilist">
-                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-              </types>
-              <attributes class="ilist">
-                <attribute name="min">
-                  <annotations class="ilist">
-                    <override/>
-                  </annotations>
-                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                  <init class="some">
-                    <reference class="basicInit" value="495"/>
-                  </init>
-                </attribute>
-                <attribute name="max">
-                  <annotations class="ilist">
-                    <override/>
-                  </annotations>
-                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                  <init class="some">
-                    <reference class="basicInit" value="505"/>
-                  </init>
-                </attribute>
-              </attributes>
-            </reference>
-          </init>
-        </attribute>
       </members>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorSetExchange">
@@ -4359,7 +4041,7 @@
             <reference class="noneInit"/>
           </init>
         </attribute>
-        <attribute name="separation">
+        <attribute name="separation_interval">
           <annotations class="ilist">
             <override/>
           </annotations>
@@ -4448,37 +4130,13 @@
             <reference class="noneInit"/>
           </init>
         </attribute>
-        <attribute name="separation">
+        <attribute name="separation_interval">
           <annotations class="ilist">
             <override/>
           </annotations>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
           <init class="some">
-            <reference class="featureInit">
-              <types class="ilist">
-                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-              </types>
-              <attributes class="ilist">
-                <attribute name="min">
-                  <annotations class="ilist">
-                    <override/>
-                  </annotations>
-                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                  <init class="some">
-                    <reference class="basicInit" value="98"/>
-                  </init>
-                </attribute>
-                <attribute name="max">
-                  <annotations class="ilist">
-                    <override/>
-                  </annotations>
-                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                  <init class="some">
-                    <reference class="basicInit" value="102"/>
-                  </init>
-                </attribute>
-              </attributes>
-            </reference>
+            <reference class="basicInit" value="98"/>
           </init>
         </attribute>
       </members>
@@ -4504,7 +4162,7 @@
             <reference class="noneInit"/>
           </init>
         </attribute>
-        <attribute name="separation">
+        <attribute name="separation_interval">
           <annotations class="ilist">
             <override/>
           </annotations>
@@ -4593,7 +4251,7 @@
             <reference class="noneInit"/>
           </init>
         </attribute>
-        <attribute name="separation">
+        <attribute name="separation_interval">
           <annotations class="ilist">
             <override/>
           </annotations>
@@ -4620,39 +4278,6 @@
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                   <init class="some">
                     <reference class="basicInit" value="102"/>
-                  </init>
-                </attribute>
-              </attributes>
-            </reference>
-          </init>
-        </attribute>
-        <attribute name="rate">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-          <init class="some">
-            <reference class="featureInit">
-              <types class="ilist">
-                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-              </types>
-              <attributes class="ilist">
-                <attribute name="min">
-                  <annotations class="ilist">
-                    <override/>
-                  </annotations>
-                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                  <init class="some">
-                    <reference class="basicInit" value="490"/>
-                  </init>
-                </attribute>
-                <attribute name="max">
-                  <annotations class="ilist">
-                    <override/>
-                  </annotations>
-                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                  <init class="some">
-                    <reference class="basicInit" value="600"/>
                   </init>
                 </attribute>
               </attributes>
@@ -4815,7 +4440,7 @@
                                         <reference class="noneInit"/>
                                       </init>
                                     </attribute>
-                                    <attribute name="separation">
+                                    <attribute name="separation_interval">
                                       <annotations class="ilist">
                                         <override/>
                                       </annotations>
@@ -5016,7 +4641,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -5100,7 +4725,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -5127,39 +4752,6 @@
                                                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
                                                                     <reference class="basicInit" value="102"/>
-                                                                  </init>
-                                                                </attribute>
-                                                              </attributes>
-                                                            </reference>
-                                                          </init>
-                                                        </attribute>
-                                                        <attribute name="rate">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                          <init class="some">
-                                                            <reference class="featureInit">
-                                                              <types class="ilist">
-                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                              </types>
-                                                              <attributes class="ilist">
-                                                                <attribute name="min">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="490"/>
-                                                                  </init>
-                                                                </attribute>
-                                                                <attribute name="max">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="600"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
@@ -5260,7 +4852,7 @@
                                                                             <reference class="noneInit"/>
                                                                           </init>
                                                                         </attribute>
-                                                                        <attribute name="separation">
+                                                                        <attribute name="separation_interval">
                                                                           <annotations class="ilist">
                                                                             <override/>
                                                                           </annotations>
@@ -5355,7 +4947,7 @@
                                                                               <reference class="noneInit"/>
                                                                             </init>
                                                                           </attribute>
-                                                                          <attribute name="separation">
+                                                                          <attribute name="separation_interval">
                                                                             <annotations class="ilist">
                                                                               <override/>
                                                                             </annotations>
@@ -5479,37 +5071,13 @@
                                                                     <reference class="noneInit"/>
                                                                   </init>
                                                                 </attribute>
-                                                                <attribute name="separation">
+                                                                <attribute name="separation_interval">
                                                                   <annotations class="ilist">
                                                                     <override/>
                                                                   </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
-                                                                    <reference class="featureInit">
-                                                                      <types class="ilist">
-                                                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                                      </types>
-                                                                      <attributes class="ilist">
-                                                                        <attribute name="min">
-                                                                          <annotations class="ilist">
-                                                                            <override/>
-                                                                          </annotations>
-                                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                          <init class="some">
-                                                                            <reference class="basicInit" value="98"/>
-                                                                          </init>
-                                                                        </attribute>
-                                                                        <attribute name="max">
-                                                                          <annotations class="ilist">
-                                                                            <override/>
-                                                                          </annotations>
-                                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                          <init class="some">
-                                                                            <reference class="basicInit" value="102"/>
-                                                                          </init>
-                                                                        </attribute>
-                                                                      </attributes>
-                                                                    </reference>
+                                                                    <reference class="basicInit" value="98"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
@@ -5712,7 +5280,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -5796,7 +5364,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -5823,39 +5391,6 @@
                                                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
                                                                     <reference class="basicInit" value="102"/>
-                                                                  </init>
-                                                                </attribute>
-                                                              </attributes>
-                                                            </reference>
-                                                          </init>
-                                                        </attribute>
-                                                        <attribute name="rate">
-                                                          <annotations class="ilist">
-                                                            <override/>
-                                                          </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                          <init class="some">
-                                                            <reference class="featureInit">
-                                                              <types class="ilist">
-                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                              </types>
-                                                              <attributes class="ilist">
-                                                                <attribute name="min">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="490"/>
-                                                                  </init>
-                                                                </attribute>
-                                                                <attribute name="max">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="600"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
@@ -5956,7 +5491,7 @@
                                                                             <reference class="noneInit"/>
                                                                           </init>
                                                                         </attribute>
-                                                                        <attribute name="separation">
+                                                                        <attribute name="separation_interval">
                                                                           <annotations class="ilist">
                                                                             <override/>
                                                                           </annotations>
@@ -6051,7 +5586,7 @@
                                                                               <reference class="noneInit"/>
                                                                             </init>
                                                                           </attribute>
-                                                                          <attribute name="separation">
+                                                                          <attribute name="separation_interval">
                                                                             <annotations class="ilist">
                                                                               <override/>
                                                                             </annotations>
@@ -6175,37 +5710,13 @@
                                                                     <reference class="noneInit"/>
                                                                   </init>
                                                                 </attribute>
-                                                                <attribute name="separation">
+                                                                <attribute name="separation_interval">
                                                                   <annotations class="ilist">
                                                                     <override/>
                                                                   </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
-                                                                    <reference class="featureInit">
-                                                                      <types class="ilist">
-                                                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                                      </types>
-                                                                      <attributes class="ilist">
-                                                                        <attribute name="min">
-                                                                          <annotations class="ilist">
-                                                                            <override/>
-                                                                          </annotations>
-                                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                          <init class="some">
-                                                                            <reference class="basicInit" value="98"/>
-                                                                          </init>
-                                                                        </attribute>
-                                                                        <attribute name="max">
-                                                                          <annotations class="ilist">
-                                                                            <override/>
-                                                                          </annotations>
-                                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                          <init class="some">
-                                                                            <reference class="basicInit" value="102"/>
-                                                                          </init>
-                                                                        </attribute>
-                                                                      </attributes>
-                                                                    </reference>
+                                                                    <reference class="basicInit" value="98"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
@@ -6338,7 +5849,7 @@
             <reference class="noneInit"/>
           </init>
         </attribute>
-        <attribute name="separation">
+        <attribute name="separation_interval">
           <annotations class="ilist">
             <override/>
           </annotations>
@@ -6427,37 +5938,13 @@
             <reference class="noneInit"/>
           </init>
         </attribute>
-        <attribute name="separation">
+        <attribute name="separation_interval">
           <annotations class="ilist">
             <override/>
           </annotations>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
           <init class="some">
-            <reference class="featureInit">
-              <types class="ilist">
-                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-              </types>
-              <attributes class="ilist">
-                <attribute name="min">
-                  <annotations class="ilist">
-                    <override/>
-                  </annotations>
-                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                  <init class="some">
-                    <reference class="basicInit" value="98"/>
-                  </init>
-                </attribute>
-                <attribute name="max">
-                  <annotations class="ilist">
-                    <override/>
-                  </annotations>
-                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                  <init class="some">
-                    <reference class="basicInit" value="102"/>
-                  </init>
-                </attribute>
-              </attributes>
-            </reference>
+            <reference class="basicInit" value="98"/>
           </init>
         </attribute>
       </members>
@@ -6483,7 +5970,7 @@
             <reference class="noneInit"/>
           </init>
         </attribute>
-        <attribute name="separation">
+        <attribute name="separation_interval">
           <annotations class="ilist">
             <override/>
           </annotations>
@@ -6705,7 +6192,7 @@
                                         <reference class="noneInit"/>
                                       </init>
                                     </attribute>
-                                    <attribute name="separation">
+                                    <attribute name="separation_interval">
                                       <annotations class="ilist">
                                         <override/>
                                       </annotations>
@@ -6906,7 +6393,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -6990,37 +6477,13 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                           <init class="some">
-                                                            <reference class="featureInit">
-                                                              <types class="ilist">
-                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-                                                              </types>
-                                                              <attributes class="ilist">
-                                                                <attribute name="min">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="98"/>
-                                                                  </init>
-                                                                </attribute>
-                                                                <attribute name="max">
-                                                                  <annotations class="ilist">
-                                                                    <override/>
-                                                                  </annotations>
-                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                                                                  <init class="some">
-                                                                    <reference class="basicInit" value="102"/>
-                                                                  </init>
-                                                                </attribute>
-                                                              </attributes>
-                                                            </reference>
+                                                            <reference class="basicInit" value="98"/>
                                                           </init>
                                                         </attribute>
                                                       </attributes>
@@ -7233,7 +6696,7 @@
                                                             <reference class="noneInit"/>
                                                           </init>
                                                         </attribute>
-                                                        <attribute name="separation">
+                                                        <attribute name="separation_interval">
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
@@ -7440,37 +6903,13 @@
             <reference class="noneInit"/>
           </init>
         </attribute>
-        <attribute name="separation">
+        <attribute name="separation_interval">
           <annotations class="ilist">
             <override/>
           </annotations>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
           <init class="some">
-            <reference class="featureInit">
-              <types class="ilist">
-                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-              </types>
-              <attributes class="ilist">
-                <attribute name="min">
-                  <annotations class="ilist">
-                    <override/>
-                  </annotations>
-                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                  <init class="some">
-                    <reference class="basicInit" value="98"/>
-                  </init>
-                </attribute>
-                <attribute name="max">
-                  <annotations class="ilist">
-                    <override/>
-                  </annotations>
-                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
-                  <init class="some">
-                    <reference class="basicInit" value="102"/>
-                  </init>
-                </attribute>
-              </attributes>
-            </reference>
+            <reference class="basicInit" value="98"/>
           </init>
         </attribute>
       </members>
@@ -7916,7 +7355,7 @@
                                         </type>
                                         <left class="accessExp" id="min">
                                           <type class="none"></type>
-                                          <exp class="accessExp" id="rate">
+                                          <exp class="accessExp" id="separation_interval">
                                             <type class="none"></type>
                                             <exp class="varRefExp" id="exch">
                                               <type class="none"></type>
@@ -7935,7 +7374,7 @@
                                         </type>
                                         <left class="accessExp" id="max">
                                           <type class="none"></type>
-                                          <exp class="accessExp" id="rate">
+                                          <exp class="accessExp" id="separation_interval">
                                             <type class="none"></type>
                                             <exp class="varRefExp" id="exch">
                                               <type class="none"></type>
@@ -8650,7 +8089,7 @@
           </type>
           <init class="none"></init>
         </attribute>
-        <attribute name="separation">
+        <attribute name="separation_interval">
           <annotations class="ilist">
             <const qualifier="">
               <level>Product</level>
@@ -8947,7 +8386,7 @@
           </type>
           <init class="none"></init>
         </attribute>
-        <attribute name="separation">
+        <attribute name="separation_interval">
           <annotations class="ilist">
             <const qualifier="">
               <level>Product</level>
@@ -9221,19 +8660,10 @@
           </type>
           <init class="none"></init>
         </attribute>
-        <attribute name="separation">
+        <attribute name="separation_interval">
           <annotations class="ilist">
             <const qualifier="">
               <level>Product</level>
-            </const>
-          </annotations>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
-          <init class="none"></init>
-        </attribute>
-        <attribute name="rate">
-          <annotations class="ilist">
-            <const qualifier="">
-              <level>Instance</level>
             </const>
           </annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
@@ -9436,7 +8866,7 @@
           </type>
           <init class="none"></init>
         </attribute>
-        <attribute name="separation">
+        <attribute name="separation_interval">
           <annotations class="ilist">
             <const qualifier="">
               <level>Product</level>
@@ -9579,13 +9009,13 @@
           </type>
           <init class="none"></init>
         </attribute>
-        <attribute name="separation">
+        <attribute name="separation_interval">
           <annotations class="ilist">
             <const qualifier="">
               <level>Product</level>
             </const>
           </annotations>
-          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
           <init class="none"></init>
         </attribute>
       </members>
