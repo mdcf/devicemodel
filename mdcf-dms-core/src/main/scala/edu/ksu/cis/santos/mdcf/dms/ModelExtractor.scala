@@ -32,6 +32,7 @@ object ModelExtractor {
   private final val EITHER_NAME = classOf[scala.Either[_, _]].getName
   private final val MAP_NAME = classOf[scala.collection.immutable.Map[_, _]].getName
   private final val SET_NAME = classOf[scala.collection.immutable.Set[_]].getName
+  private final val ITERABLE_NAME = classOf[scala.collection.Iterable[_]].getName
   private final val SEQ_NAME = classOf[scala.collection.immutable.Seq[_]].getName
   private final val SCHEMA_NAME = classOf[annotation.Schema].getName
   private final val CLASS_NAME = classOf[annotation.Class].getName
@@ -537,7 +538,7 @@ class ModelExtractor(
             if (inits.exists(!_.isPresent)) (resultType, none())
             else (resultType, some(setInit(inits.toSeq.map(_.get))))
         }
-      case `SEQ_NAME` =>
+      case `SEQ_NAME` | `ITERABLE_NAME` =>
         val TypeRef(_, _, List(elementType)) = tipe
         val (eType, _) = extractType(aQName, elementType, None)
         val resultType = seqType(eType)
@@ -760,20 +761,26 @@ class ModelExtractor(
       classOf[scala.Tuple22[_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _]].getName
     )
 
+      def unhandled(t : Tree) = s"\n${show(t)}\n${showRaw(t)}"
       def clazzOf(t : Tree) = Reflection.getClassOfType(t.tpe)
-      def typeNameOf(t : Tree) = clazzOf(t).getName
+      def typeNameOf(t : Tree) = (extractType("", t.tpe, None)(false))._1
+
       def typeNameOfTypeTree(tpt : Tree) = tpt match {
         case id @ Ident(nme) => typeNameOf(id)
         case tpt @ TypeTree() =>
           tpt.original match {
             case id @ Ident(nme) => typeNameOf(id)
+            case CompoundTypeTree(Template(l, _, List())) =>
+              Ast.refinedType(
+                l.map(x => namedType(clazzOf(x).getName)),
+                ivectorEmpty[Attribute])
             case tpto =>
-              reporter.error(s"Unhandled constraint form: ${showRaw(tpto)}")
-              "?"
+              reporter.error(s"Unhandled constraint form:${unhandled(tpto)}")
+              namedType("?")
           }
         case _ =>
-          reporter.error(s"Unhandled constraint form: ${showRaw(tpt)}")
-          "?"
+          reporter.error(s"Unhandled constraint form:${unhandled(tpt)}")
+          namedType("?")
       }
 
       def visitor(t : Tree) : Exp =
@@ -781,25 +788,29 @@ class ModelExtractor(
           case Function(List(ValDef(_, termName, TypeTree(), _)), body) =>
             funExp(param(none(), termName.decoded), visitor(body))
           case Function(List(ValDef(_, termName, id : Ident, _)), body) =>
-            funExp(param(some(namedType(typeNameOf(id))), termName.decoded), visitor(body))
+            funExp(param(some(typeNameOf(id)), termName.decoded), visitor(body))
           case Apply(Select(id @ Ident(_), applyName), List(Literal(Constant(v)))) if applyName.decoded == "apply" =>
-            val typeName = typeNameOf(id)
+            val typeName = clazzOf(id).getName
             literalExp(v.toString) withType (namedType(typeName.substring(0, typeName.length - 1)))
           case Apply(Select(Select(This(_), booleanName), applyName), List(e)) if booleanName.decoded == "Boolean" && applyName.decoded == "apply" =>
             visitor(e)
           case Apply(Select(Ident(_), b2sbName), List(e)) if b2sbName.decoded == "boolean2sboolean" =>
             visitor(e)
           case Apply(Select(qualifier, name), List(e)) if classOf[BasicType].isAssignableFrom(clazzOf(qualifier)) =>
-            var tn = typeNameOf(qualifier)
-            if (tn == classOf[edu.ksu.cis.santos.mdcf.dms.Boolean].getName)
-              tn = "boolean"
+            var clz = clazzOf(qualifier)
+            val tipe =
+              if (clz.getName == classOf[edu.ksu.cis.santos.mdcf.dms.Boolean].getName)
+                namedType("boolean")
+              else typeNameOf(qualifier)
             binaryBasicOpExp(visitor(qualifier), name.decoded,
-              visitor(e)) withType (namedType(tn))
+              visitor(e)) withType (tipe)
           case Apply(fun, List(arg)) =>
             applyExp(visitor(fun), visitor(arg))
           case Select(qualifier, name) =>
-            if (scalaTypeMap.contains(typeNameOf(qualifier))) {
-              val typeName = typeNameOf(qualifier)
+            val typeName =
+              try clazzOf(qualifier).getName
+              catch { case _ : ClassNotFoundException => "?" }
+            if (scalaTypeMap.contains(typeName))
               if (typeName.endsWith(".Map"))
                 mapOpExp(name.decoded, visitor(qualifier))
               else if (typeName.endsWith(".Set"))
@@ -810,8 +821,7 @@ class ModelExtractor(
                 seqOpExp(name.decoded, visitor(qualifier))
               else
                 tupleOpExp(name.decoded, visitor(qualifier))
-            } else
-              accessExp(visitor(qualifier), name.decoded)
+            else accessExp(visitor(qualifier), name.decoded)
           case Ident(name) =>
             varRefExp(name.decoded)
           case Literal(Constant(v)) =>
@@ -838,20 +848,19 @@ class ModelExtractor(
                       case t         => some(visitor(t))
                     }
                   val e = visitor(body)
-                  val typeName = typeNameOfTypeTree(tpt)
-                  Some(matchCase(namedMatchCaseBind(varName.decoded, some(namedType(typeName))), cond, e))
+                  val tipe = typeNameOfTypeTree(tpt)
+                  Some(matchCase(namedMatchCaseBind(varName.decoded, some(tipe)), cond, e))
                 case cd =>
-                  reporter.error(s"Unhandled constraint form: ${showRaw(cd)}")
+                  reporter.error(s"Unhandled constraint form:${unhandled(cd)}")
                   None
               }
             }
             import scala.collection.JavaConversions._
             matchExp(visitor(selector), cs)
           case TypeApply(Select(qualifier, isInstanceOfName), List(tpt)) if isInstanceOfName.decoded == "isInstanceOf" =>
-            val typeName = typeNameOfTypeTree(tpt)
-            instanceOfExp(visitor(qualifier), namedType(typeName))
+            instanceOfExp(visitor(qualifier), typeNameOfTypeTree(tpt))
           case t =>
-            reporter.error(s"Unhandled constraint form: ${showRaw(t)}")
+            reporter.error(s"Unhandled constraint form:${unhandled(t)}")
             unknownExp
         }
     val t = Reflection.typeCheck(p.tree)
