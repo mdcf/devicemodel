@@ -46,7 +46,7 @@ public class SymbolTableTest {
 
   private static boolean GENERATE_EXPECTED = false;
   private static SymbolTable ST = SymbolTable.of(XStreamer
-      .<Model> fromXml(TestAnchor.class
+      .<Model> fromXml(ModelExtractorTest.class
           .getResourceAsStream("expected/dms.test.xml")));
 
   private static final String lineSep = System.lineSeparator();

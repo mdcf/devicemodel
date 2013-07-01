@@ -58,29 +58,6 @@ object ExpEvaluator {
         }))
   }
 
-  def mapOp(op : String, m : MapValue) : V =
-    op match {
-      case "keys" =>
-        SeqValue(m.value.keys.toVector)
-      case "values" =>
-        SeqValue(m.value.values.toVector)
-      case "forall" =>
-        ForallValue(m.value.map(e => TupleValue(ivector(e._1, e._2))))
-      case "exists" =>
-        ExistsValue(m.value.map(e => TupleValue(ivector(e._1, e._2))))
-    }
-
-  def setqOp(op : String, values : Traversable[Value]) : V =
-    op match {
-      case "forall" =>
-        ForallValue(values)
-      case "exists" =>
-        ExistsValue(values)
-    }
-
-  def tupleOp(op : String, t : TupleValue) : V =
-    t.value(op.substring(1).toInt)
-
   def toValue(init : Initialization) : V =
     init match {
       case bi : BasicInit   => BasicValue(bi.value)
@@ -107,16 +84,15 @@ object ExpEvaluator {
 class ExpEvaluator(ctx : Context) {
   import ExpEvaluator._
 
-  def checkPred(pred : FunExp, v : FeatureValue) : Boolean = {
-    val s = BasicState().enterClosure(Map(pred.param.name -> v))
-    val r = evalExp(s, pred.body).map(second2)
-    r.exists(v2b)
-  }
+  object EvalFailed extends Exception
 
-  def normalizeValue(name : String)(s : S, v : V) : ISeq[(S, V)] =
-    v match {
-      case v : BasicValue => ctx.sec.expExtCall(name, (s, v))
-      case _              => (s, v)
+  def checkPred(pred : FunExp, v : FeatureValue) : Boolean =
+    try {
+      val s = BasicState().enterClosure(Map(pred.param.name -> v))
+      val r = evalExp(s, pred.body).map(second2)
+      r.exists(v2b)
+    } catch {
+      case EvalFailed => false
     }
 
   def evalExp(s : S, exp : Exp) : ISeq[(S, V)] =
@@ -125,6 +101,9 @@ class ExpEvaluator(ctx : Context) {
         for { (s2, v) <- evalExp(s, ae.exp) } yield v match {
           case v : FeatureValue if v.hasAccess(ae.id) =>
             (s2, toValue(v.access(ae.id).init.get))
+          case _ =>
+            ctx.reporter.error(s"Cannot access ${ae.id} on value: $v")
+            throw EvalFailed
         }
       case ae : ApplyExp =>
         for {
@@ -150,6 +129,9 @@ class ExpEvaluator(ctx : Context) {
                   (s6, b) <- evalExp(s5.enterClosure(Map(id -> fv)), exp)
                 } yield (s6.exitClosure, b2v(|||(cond, b)))
               r
+            case (f, arg) =>
+              ctx.reporter.error(s"Cannot apply function $f with argument $arg")
+              throw EvalFailed
           }
         } yield (s4, v)
       case bboe : BinaryBasicOpExp =>
@@ -157,37 +139,42 @@ class ExpEvaluator(ctx : Context) {
         val (e1, op, e2) = (bboe.left, bboe.op, bboe.right)
         val sec = ctx.sec
         val nv = normalizeValue(name) _
-        sec.binaryOpMode(op) match {
-          case BinaryOpMode.LAZY_LEFT =>
-            for {
-              (s2, v2) <- evalExp(s, e2)
-              (s3, v2n) <- nv(s2, v2)
-              sv <- sec.lazyLBinaryOp(op, s2, { s =>
-                for {
-                  (s4, v1) <- evalExp(s, e1)
-                  sv2 <- nv(s4, v1)
-                } yield sv2
-              }, v2n)
-            } yield sv
-          case BinaryOpMode.LAZY_RIGHT =>
-            for {
-              (s2, v1) <- evalExp(s, e1)
-              (s3, v1n) <- nv(s2, v1)
-              sv <- sec.lazyRBinaryOp(op, s3, v1n, { s =>
-                for {
-                  (s4, v2) <- evalExp(s, e2)
-                  sv2 <- nv(s4, v2)
-                } yield sv2
-              })
-            } yield sv
-          case BinaryOpMode.REGULAR =>
-            for {
-              (s2, v1) <- evalExp(s, e1)
-              (s3, v1n) <- nv(s2, v1)
-              (s4, v2) <- evalExp(s3, e2)
-              (s5, v2n) <- nv(s4, v2)
-              sv <- sec.binaryOp(op, s5, v1n, v2n)
-            } yield sv
+        try
+          sec.binaryOpMode(op) match {
+            case BinaryOpMode.LAZY_LEFT =>
+              for {
+                (s2, v2) <- evalExp(s, e2)
+                (s3, v2n) <- nv(s2, v2)
+                sv <- sec.lazyLBinaryOp(op, s2, { s =>
+                  for {
+                    (s4, v1) <- evalExp(s, e1)
+                    sv2 <- nv(s4, v1)
+                  } yield sv2
+                }, v2n)
+              } yield sv
+            case BinaryOpMode.LAZY_RIGHT =>
+              for {
+                (s2, v1) <- evalExp(s, e1)
+                (s3, v1n) <- nv(s2, v1)
+                sv <- sec.lazyRBinaryOp(op, s3, v1n, { s =>
+                  for {
+                    (s4, v2) <- evalExp(s, e2)
+                    sv2 <- nv(s4, v2)
+                  } yield sv2
+                })
+              } yield sv
+            case BinaryOpMode.REGULAR =>
+              for {
+                (s2, v1) <- evalExp(s, e1)
+                (s3, v1n) <- nv(s2, v1)
+                (s4, v2) <- evalExp(s3, e2)
+                (s5, v2n) <- nv(s4, v2)
+                sv <- sec.binaryOp(op, s5, v1n, v2n)
+              } yield sv
+          } catch {
+          case _ : Exception =>
+            ctx.reporter.error(s"Could not find extension $op to evaluate: $exp")
+            throw EvalFailed
         }
       case fe : FunExp =>
         (s, FunValue(fe.param.name, fe.body))
@@ -196,9 +183,20 @@ class ExpEvaluator(ctx : Context) {
           (v, ioe.testType) match {
             case (v : FeatureValue, nt : NamedType) =>
               (s2, b2v(v.types.exists(ctx.st.isSubTypeOf(_, nt.name))))
+            case (v : FeatureValue, rt : RefinedType) =>
+              (s2, b2v(
+                rt.types.forall(nt =>
+                  v.types.exists(ctx.st.isSubTypeOf(_, nt.name)))))
             case (v, nt : NamedType) =>
               ctx.reporter.warning(s"Testing $v with ${nt.name} is always false!")
               (s2, FALSE)
+            case (v, rt : RefinedType) =>
+              val t = rt.types.foldLeft("")((t, nt) => s"$t with ${nt.name}")
+              ctx.reporter.warning(s"Testing $v with ${t} is always false!")
+              (s2, FALSE)
+            case (v, t) =>
+              ctx.reporter.error(s"Instance of test on $t is not allowed!")
+              throw EvalFailed
           }
         }
       case le : LiteralExp =>
@@ -210,6 +208,9 @@ class ExpEvaluator(ctx : Context) {
       case moe : MapOpExp =>
         for { (s2, m) <- evalExp(s, moe.exp) } yield m match {
           case m : MapValue => (s2, mapOp(moe.id, m))
+          case v =>
+            ctx.reporter.error(s"Cannot evaluate map $moe.id on $v")
+            throw EvalFailed
         }
       case me : MatchExp =>
         for {
@@ -263,16 +264,78 @@ class ExpEvaluator(ctx : Context) {
       case soe : SeqOpExp =>
         for { (s2, s) <- evalExp(s, soe.exp) } yield s match {
           case s : SeqValue => (s2, setqOp(soe.id, s.value))
+          case v =>
+            ctx.reporter.error(s"Cannot evaluate seq $soe.id on $v")
+            throw EvalFailed
         }
       case soe : SetOpExp =>
         for { (s2, s) <- evalExp(s, soe.exp) } yield s match {
-          case s : SetValue => (s2, setqOp(soe.id, s.value))
+          case s : SetValue =>
+            (s2, setqOp(soe.id, s.value))
+          case v =>
+            ctx.reporter.error(s"Cannot evaluate set $soe.id on $v")
+            throw EvalFailed
         }
       case toe : TupleOpExp =>
         for { (s2, t) <- evalExp(s, toe.exp) } yield (toe.id, t) match {
           case (op, t : TupleValue) => (s2, tupleOp(op, t))
+          case (op, v) =>
+            ctx.reporter.error(s"Cannot evaluate tuple $op on $v")
+            throw EvalFailed
         }
       case vre : VarRefExp =>
         (s, s.variable(vre.id))
+      case _ =>
+        ctx.reporter.error(s"Unsupported exp: $exp")
+        throw EvalFailed
     }
+
+  def mapOp(op : String, m : MapValue) : V =
+    op match {
+      case "keys" =>
+        SeqValue(m.value.keys.toVector)
+      case "values" =>
+        SeqValue(m.value.values.toVector)
+      case "forall" =>
+        ForallValue(m.value.map(e => TupleValue(ivector(e._1, e._2))))
+      case "exists" =>
+        ExistsValue(m.value.map(e => TupleValue(ivector(e._1, e._2))))
+      case _ =>
+        ctx.reporter.error(s"Unsupported map op: $op")
+        throw EvalFailed
+    }
+
+  def setqOp(op : String, values : Traversable[Value]) : V =
+    op match {
+      case "forall" =>
+        ForallValue(values)
+      case "exists" =>
+        ExistsValue(values)
+      case _ =>
+        ctx.reporter.error(s"Unsupported set/seq op: $op")
+        throw EvalFailed
+    }
+
+  def tupleOp(op : String, t : TupleValue) : V =
+    try t.value(op.substring(1).toInt)
+    catch {
+      case _ : Exception =>
+        ctx.reporter.error(s"Unsupported tuple op: $op")
+        throw EvalFailed
+    }
+
+  def normalizeValue(name : String)(s : S, v : V) : ISeq[(S, V)] = {
+    val sv = (s, v)
+    v match {
+      case v : BasicValue =>
+        if (ctx.sec.expExtCall.isDefinedAt(name, sv))
+          ctx.sec.expExtCall(name, sv)
+        else {
+          ctx.reporter.error(
+            s"Could not find top-level expression extension $name that handles: $sv")
+          throw EvalFailed
+        }
+      case _ => sv
+    }
+  }
 }

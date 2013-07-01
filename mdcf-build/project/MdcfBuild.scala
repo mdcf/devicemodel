@@ -42,11 +42,12 @@ object MdcfBuild extends Build {
         Seq(makeDistTask, depDotTask, printPisTask),
       base = file(".")) aggregate (
         lib, util, pilar, konkrit,
-        dmlAst, dmsCore, dmsExample,
-        dmlMatching, dmlMatchingExt) settings (name := "MDCF")
+        dmlAst, dmsCore, dmsExample, dmsTest,
+        dmlMatching, dmlMatchingExt, dmlMatchingTest) settings (
+          name := "MDCF")
 
   final val scalaVer = "2.10.2"
-
+    
   lazy val mdcfSettings = Defaults.defaultSettings ++ Seq(
     organization := "SAnToS Laboratory",
     artifactName := {
@@ -58,11 +59,14 @@ object MdcfBuild extends Build {
             case _               => ""
           }) + "." + artifact.extension
     },
+    fork := true,
     scalaVersion := scalaVer,
     scalacOptions ++= Seq("-target:jvm-1.7"),
     libraryDependencies += "org.scala-lang" % "scala-actors" % scalaVer,
     libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVer,
-    libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVer)
+    libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVer,
+    libraryDependencies += "com.novocode" % "junit-interface" % "0.10-M4" % "test",
+    testOptions += Tests.Argument(TestFrameworks.JUnit, "-v", "-s", "-a"))
 
   lazy val lib = toSbtProject(libPI)
   lazy val util = toSbtProject(utilPI)
@@ -71,8 +75,10 @@ object MdcfBuild extends Build {
   lazy val dmsCore = toSbtProject(dmsCorePI)
   lazy val dmlAst = toSbtProject(dmlAstPI)
   lazy val dmsExample = toSbtProject(dmsExamplePI)
+  lazy val dmsTest = toSbtProject(dmsTestPI)
   lazy val dmlMatching = toSbtProject(dmlMatchingPI)
   lazy val dmlMatchingExt = toSbtProject(dmlMatchingExtPI)
+  lazy val dmlMatchingTest = toSbtProject(dmlMatchingTestPI)
 
   def toSbtProject(pi : ProjectInfo) : Project =
     Project(
@@ -80,7 +86,8 @@ object MdcfBuild extends Build {
       settings = mdcfSettings,
       base = pi.baseDir).
       dependsOn(pi.dependencies.map { p =>
-        new ClasspathDependency(new LocalProject(p.id), None)
+        new ClasspathDependency(new LocalProject(p.id),
+          Some("test->test;compile->compile;test->compile"))
       } : _*).
       settings(name := pi.name)
 
