@@ -42,7 +42,7 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2Alt;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq3;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq4;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq5;
-import edu.ksu.cis.santos.mdcf.dms.test.TestAnchor;
+import edu.ksu.cis.santos.mdcf.dms.test.ModelExtractorTest;
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
@@ -51,7 +51,7 @@ public class DeviceMatchingTest {
 
   private static boolean GENERATE_EXPECTED = false;
   private static SymbolTable ST = SymbolTable.of(XStreamer
-      .<Model> fromXml(TestAnchor.class
+      .<Model> fromXml(ModelExtractorTest.class
           .getResourceAsStream("expected/dms.testv2.xml")));
   private static String[] extensions = new String[] {
       FloatExtension.class.getName(), NatExtension.class.getName(),
