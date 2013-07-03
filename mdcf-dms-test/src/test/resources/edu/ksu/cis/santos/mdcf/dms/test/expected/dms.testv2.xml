@@ -6076,7 +6076,7 @@
                   </annotations>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                   <init class="some">
-                    <reference class="basicInit" value="98"/>
+                    <reference class="basicInit" value="105"/>
                   </init>
                 </attribute>
                 <attribute name="max">
@@ -6085,7 +6085,7 @@
                   </annotations>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                   <init class="some">
-                    <reference class="basicInit" value="102"/>
+                    <reference class="basicInit" value="110"/>
                   </init>
                 </attribute>
               </attributes>
@@ -6550,7 +6550,7 @@
                                                                   </annotations>
                                                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
-                                                                    <reference class="basicInit" value="98"/>
+                                                                    <reference class="basicInit" value="105"/>
                                                                   </init>
                                                                 </attribute>
                                                                 <attribute name="max">
@@ -6559,7 +6559,7 @@
                                                                   </annotations>
                                                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
-                                                                    <reference class="basicInit" value="102"/>
+                                                                    <reference class="basicInit" value="110"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
@@ -6878,7 +6878,7 @@
                                                                   </annotations>
                                                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
-                                                                    <reference class="basicInit" value="98"/>
+                                                                    <reference class="basicInit" value="105"/>
                                                                   </init>
                                                                 </attribute>
                                                                 <attribute name="max">
@@ -6887,7 +6887,7 @@
                                                                   </annotations>
                                                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
-                                                                    <reference class="basicInit" value="102"/>
+                                                                    <reference class="basicInit" value="110"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
