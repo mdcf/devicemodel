@@ -26,7 +26,7 @@ object AppReq5 {
               spo2.exchanges.values.exists(
                 _ match {
                   case exch : ICE_Periodic_Exchange =>
-                    exch.separation_interval.min >= 490 && exch.separation_interval.max <= 510
+                    exch.separation_interval.min >= 98 && exch.separation_interval.max <= 102
                   case _ =>
                     false
                 }

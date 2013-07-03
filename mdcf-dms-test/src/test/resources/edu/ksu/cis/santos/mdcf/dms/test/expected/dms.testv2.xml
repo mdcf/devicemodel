@@ -4268,7 +4268,7 @@
                   </annotations>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                   <init class="some">
-                    <reference class="basicInit" value="98"/>
+                    <reference class="basicInit" value="97"/>
                   </init>
                 </attribute>
                 <attribute name="max">
@@ -4742,7 +4742,7 @@
                                                                   </annotations>
                                                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
-                                                                    <reference class="basicInit" value="98"/>
+                                                                    <reference class="basicInit" value="97"/>
                                                                   </init>
                                                                 </attribute>
                                                                 <attribute name="max">
@@ -5381,7 +5381,7 @@
                                                                   </annotations>
                                                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
-                                                                    <reference class="basicInit" value="98"/>
+                                                                    <reference class="basicInit" value="97"/>
                                                                   </init>
                                                                 </attribute>
                                                                 <attribute name="max">
@@ -7362,7 +7362,7 @@
                                             </exp>
                                           </exp>
                                         </left>
-                                        <right class="literalExp" value="490">
+                                        <right class="literalExp" value="98">
                                           <type class="some">
                                             <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
                                           </type>
@@ -7381,7 +7381,7 @@
                                             </exp>
                                           </exp>
                                         </left>
-                                        <right class="literalExp" value="510">
+                                        <right class="literalExp" value="102">
                                           <type class="some">
                                             <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
                                           </type>

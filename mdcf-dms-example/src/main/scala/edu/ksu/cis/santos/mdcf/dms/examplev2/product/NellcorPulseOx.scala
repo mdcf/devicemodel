@@ -46,7 +46,7 @@ class NellcorSetExchange extends ICE_Set_Exchange {
 class NellcorPeriodicExchange extends ICE_Periodic_Exchange {
   override val access : Option[ICE_Security_Access_Read] = None
   override val separation_interval : NatRange = new NatRange {
-    override val min : Nat = 98
+    override val min : Nat = 97
     override val max : Nat = 102
   }
 }
