@@ -1,4 +1,4 @@
-if defined %1 ( set DIR=%1 ) else ( set DIR=build )
+if '%1'=='' ( set DIR=build ) else ( set DIR=%1% )
 tools\bin\sbt "compile:packageBin" "compile:packageSrc" "make-dist %DIR%"
 cd %DIR%
 ant
