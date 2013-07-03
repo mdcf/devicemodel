@@ -22,18 +22,21 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.String.apply
 class NoninGetExchange extends ICE_Get_Exchange {
   override val access : Option[ICE_Security_Access_Read] = None
   override val separation_interval : NatRange = new NatRange {
-    override val min : Nat = 5
+    override val min : Nat = 5  // Shows up in XML
     override val max : Nat = 50
   }
   override val serviceTime : NatRange = new NatRange {
-    override val min : Nat = 0
-    override val max : Nat = 50
+    override val min : Nat = 0  // max shows up in XML (as wcet)
+    override val max : Nat = 50 // min isn't necessary?
   }
 }
 
-class NoninSporadicExchange extends ICE_Sporadic_Exchange {
+class NoninPeriodicExchange extends ICE_Periodic_Exchange {
   override val access : Option[ICE_Security_Access_Read] = None
-  override val separation_interval : Nat = 98
+  override val separation_interval : NatRange = new NatRange {
+    override val min : Nat = 98
+    override val max : Nat = 102
+  }
 }
 
 
@@ -42,8 +45,8 @@ final class NoninPulseOx extends ICE_MDS {
 
   override val manufacturerModel : ICE_ManufacturerModel = new ICE_ManufacturerModel {
     override val MDC_ATTR_ID_MODEL : IEEE11073_SystemModel = new IEEE11073_SystemModel {
-      override val manufacturer : String = "Nonin"
-      override val model_number : String = "Nonin Onyx II X5551122"
+      override val manufacturer : String = "Nonin" // Are these inaccessible?
+      override val model_number : String = "Onyx II X5551122"
     }
     override val credentials : Map[String, ICE_Security_Certificate] = Map()
   }
@@ -63,12 +66,12 @@ final class NoninPulseOx extends ICE_MDS {
           override val metrics : Map[String, ICE_Metric] = Map(
             "spo2_num" -> new ICE_SpO2_Numeric {
               override val range : FloatRange = new FloatRange {
-                override val min : Float = 0.0
+                override val min : Float = 0.0 // Where should these show up?
                 override val max : Float = 100.0
               }
               override val exchanges : Map[String, ICE_Data_Exchange] = Map(
                 "get" -> new NoninGetExchange {},
-                "sporadic" -> new NoninSporadicExchange {}
+                "periodic" -> new NoninPeriodicExchange {}
               )
               override val alerts : Map[String, ICE_Alert] = Map()
             })
@@ -86,7 +89,8 @@ final class NoninPulseOx extends ICE_MDS {
                 override val max : Float = 300.0
               }
               override val exchanges : Map[String, ICE_Data_Exchange] = Map(
-                "get" -> new NoninGetExchange {}
+                "get" -> new NoninGetExchange {},
+                "periodic" -> new NoninPeriodicExchange {}
               )
               override val alerts : Map[String, ICE_Alert] = Map()
             }

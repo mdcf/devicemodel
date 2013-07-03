@@ -56,7 +56,7 @@
                           </annotations>
                           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
                           <init class="some">
-                            <reference class="basicInit" value="Nonin Onyx II X5551122"/>
+                            <reference class="basicInit" value="Onyx II X5551122"/>
                           </init>
                         </attribute>
                       </attributes>
@@ -336,7 +336,7 @@
                                                 <reference class="mapInit">
                                                   <keyInits class="ilist">
                                                     <basicInit value="get"/>
-                                                    <basicInit value="sporadic"/>
+                                                    <basicInit value="periodic"/>
                                                   </keyInits>
                                                   <valueInits class="ilist">
                                                     <featureInit>
@@ -425,7 +425,7 @@
                                                     </featureInit>
                                                     <featureInit>
                                                       <types class="ilist">
-                                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninSporadicExchange"/>
+                                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninPeriodicExchange"/>
                                                       </types>
                                                       <attributes class="ilist">
                                                         <attribute name="access">
@@ -443,9 +443,33 @@
                                                           <annotations class="ilist">
                                                             <override/>
                                                           </annotations>
-                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
                                                           <init class="some">
-                                                            <reference class="basicInit" value="98"/>
+                                                            <reference class="featureInit">
+                                                              <types class="ilist">
+                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                              </types>
+                                                              <attributes class="ilist">
+                                                                <attribute name="min">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="98"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="max">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="102"/>
+                                                                  </init>
+                                                                </attribute>
+                                                              </attributes>
+                                                            </reference>
                                                           </init>
                                                         </attribute>
                                                       </attributes>
@@ -640,6 +664,7 @@
                                                 <reference class="mapInit">
                                                   <keyInits class="ilist">
                                                     <basicInit value="get"/>
+                                                    <basicInit value="periodic"/>
                                                   </keyInits>
                                                   <valueInits class="ilist">
                                                     <featureInit>
@@ -718,6 +743,57 @@
                                                                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
                                                                   <init class="some">
                                                                     <reference class="basicInit" value="50"/>
+                                                                  </init>
+                                                                </attribute>
+                                                              </attributes>
+                                                            </reference>
+                                                          </init>
+                                                        </attribute>
+                                                      </attributes>
+                                                    </featureInit>
+                                                    <featureInit>
+                                                      <types class="ilist">
+                                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninPeriodicExchange"/>
+                                                      </types>
+                                                      <attributes class="ilist">
+                                                        <attribute name="access">
+                                                          <annotations class="ilist">
+                                                            <override/>
+                                                          </annotations>
+                                                          <type class="optionType">
+                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+                                                          </type>
+                                                          <init class="some">
+                                                            <reference class="noneInit"/>
+                                                          </init>
+                                                        </attribute>
+                                                        <attribute name="separation_interval">
+                                                          <annotations class="ilist">
+                                                            <override/>
+                                                          </annotations>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                          <init class="some">
+                                                            <reference class="featureInit">
+                                                              <types class="ilist">
+                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                              </types>
+                                                              <attributes class="ilist">
+                                                                <attribute name="min">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="98"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="max">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="102"/>
                                                                   </init>
                                                                 </attribute>
                                                               </attributes>
