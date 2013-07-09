@@ -22,7 +22,7 @@ object AppReq4 {
         _.metrics.values.exists(
           _ match {
             case spo2 : ICE_SpO2_Numeric =>
-              spo2.range.min <= 50 && spo2.range.max >= 100
+              spo2.range.min <= 30 && spo2.range.max >= 100
             case _ =>
               false
           }))

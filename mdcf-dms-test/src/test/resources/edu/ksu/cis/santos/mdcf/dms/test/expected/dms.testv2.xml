@@ -7301,7 +7301,7 @@
                                   </exp>
                                 </exp>
                               </left>
-                              <right class="literalExp" value="50">
+                              <right class="literalExp" value="30">
                                 <type class="some">
                                   <reference class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
                                 </type>
