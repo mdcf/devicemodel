@@ -4,7 +4,7 @@ All rights reserved. This program and the accompanying materials
 are made available under the terms of the Eclipse Public License v1.0 
 which accompanies this distribution, and is available at              
 http://www.eclipse.org/legal/epl-v10.html                             
-*/
+ */
 
 package edu.ksu.cis.santos.mdcf.dms.test;
 
@@ -31,87 +31,131 @@ import edu.ksu.cis.santos.mdcf.dml.ast.Model;
 import edu.ksu.cis.santos.mdcf.dms.ModelExtractor;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninPulseOx;
 
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NellcorPulseOx;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NellcorGetExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NellcorPeriodicExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NellcorSetExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NellcorSporadicExchange;
+
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitor;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorGetExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorPeriodicExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorSetExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorSporadicExchange;
+
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 public class ModelExtractorTest {
 
-  private static boolean GENERATE_EXPECTED = false;
+	private static boolean GENERATE_EXPECTED = false;
 
-  private XMLTestCase xmlUnit;
+	private XMLTestCase xmlUnit;
 
-  void assertEquals(final File expected, final File result) throws Exception {
-    final String expectedXml = Files.toString(
-        expected,
-        StandardCharsets.US_ASCII);
-    final String resultXml = Files.toString(result, StandardCharsets.US_ASCII);
-    this.assertEquals(expectedXml, resultXml);
-  }
+	void assertEquals(final File expected, final File result) throws Exception {
+		final String expectedXml = Files.toString(expected,
+				StandardCharsets.US_ASCII);
+		final String resultXml = Files.toString(result,
+				StandardCharsets.US_ASCII);
+		this.assertEquals(expectedXml, resultXml);
+	}
 
-  void assertEquals(final String expectedXml, final String resultXml)
-      throws SAXException, IOException {
-    final DetailedDiff myDiff = new DetailedDiff(this.xmlUnit.compareXML(
-        expectedXml,
-        resultXml));
-    final List<?> allDifferences = myDiff.getAllDifferences();
-    assertThat(allDifferences.size()).isZero().describedAs(myDiff.toString());
-  }
+	void assertEquals(final String expectedXml, final String resultXml)
+			throws SAXException, IOException {
+		final DetailedDiff myDiff = new DetailedDiff(this.xmlUnit.compareXML(
+				expectedXml, resultXml));
+		final List<?> allDifferences = myDiff.getAllDifferences();
+		assertThat(allDifferences.size()).isZero().describedAs(
+				myDiff.toString());
+	}
 
-  @Test
-  public void example() throws Exception {
-    test("dms.test", new String[] { "edu.ksu.cis.santos.mdcf.dms.example" });
-  }
+	@Test
+	public void example() throws Exception {
+		test("dms.test", new String[] { "edu.ksu.cis.santos.mdcf.dms.example" });
+	}
 
-  @Test
-  public void examplev2() throws Exception {
-    test("dms.testv2", new String[] { "edu.ksu.cis.santos.mdcf.dms.examplev2" });
-  }
+	@Test
+	public void examplev2() throws Exception {
+		test("dms.testv2",
+				new String[] { "edu.ksu.cis.santos.mdcf.dms.examplev2" });
+	}
 
-  @Test
-  public void examplev2nonin() throws Exception {
-    test(
-        "dms.testv2.nonin",
-        new String[] {},
-        new String[] { NoninPulseOx.class.getName() });
-  }
+	@Test
+	public void examplev2nonin() throws Exception {
+		test("dms.testv2.nonin", new String[] {},
+				new String[] { NoninPulseOx.class.getName() });
+	}
 
-  @Before
-  public void setUp() throws Exception {
-    this.xmlUnit = new XMLTestCase() {
-    };
-  }
+	@Test
+	public void examplev2nellcor() throws Exception {
+		test("dms.testv2.nellcor", new String[] {},
+				new String[] { NellcorPulseOx.class.getName(),
+						NellcorGetExchange.class.getName(),
+						NellcorPeriodicExchange.class.getName(),
+						NellcorSetExchange.class.getName(),
+						NellcorSporadicExchange.class.getName() });
+	}
 
-  void test(final String name, final String[] packageNames) throws Exception {
-    test(name, packageNames, new String[0]);
-  }
+	@Test
+	public void examplev2multimonitor() throws Exception {
+		test("dms.testv2.multimonitor", new String[] {},
+				new String[] { MultiMonitor.class.getName(),
+						MultiMonitorGetExchange.class.getName(),
+						MultiMonitorPeriodicExchange.class.getName(),
+						MultiMonitorSetExchange.class.getName(),
+						MultiMonitorSporadicExchange.class.getName() });
+	}
 
-  void test(final String name, final String[] packageNames,
-      final String[] classNames) throws Exception {
-    final Model m = ModelExtractor.extractModel(packageNames, classNames);
+	@Test
+	public void examplev2SchemaAndClass() throws Exception {
+		test("dms.testv2.common", new String[] {
+				"edu.ksu.cis.santos.mdcf.dms.examplev2.schema",
+				"edu.ksu.cis.santos.mdcf.dms.examplev2.clas" });
+	}
 
-    testExpectedResult(name, m);
-    testXml(m);
-  }
+	@Test
+	public void examplev2Requirements() throws Exception {
+		test("dms.testv2.requirements",
+				new String[] { "edu.ksu.cis.santos.mdcf.dms.examplev2.requirement" });
+	}
 
-  void testExpectedResult(final String name, final Model m)
-      throws URISyntaxException, IOException, Exception {
-    final File testDir = new File(new URI(getClass().getResource("").toURI()
-        .toString().replace("/bin/", "/src/test/resources/")));
+	@Before
+	public void setUp() throws Exception {
+		this.xmlUnit = new XMLTestCase() {
+		};
+	}
 
-    final File expected = new File(testDir, "expected/" + name + ".xml");
-    final File result = new File(testDir, "result/" + name + ".xml");
-    if (ModelExtractorTest.GENERATE_EXPECTED || !expected.exists()) {
-      Files.write(toXml(m), expected, StandardCharsets.US_ASCII);
-    } else {
-      Files.write(toXml(m), result, StandardCharsets.US_ASCII);
-      this.assertEquals(expected, result);
-    }
-  }
+	void test(final String name, final String[] packageNames) throws Exception {
+		test(name, packageNames, new String[0]);
+	}
 
-  void testXml(final Model m) throws Exception {
-    final String xml1 = toXml(m);
-    final Model m2 = fromXml(xml1);
-    assertThat(m2.toString()).isEqualTo(m.toString());
-    this.assertEquals(xml1, toXml(m2));
-  }
+	void test(final String name, final String[] packageNames,
+			final String[] classNames) throws Exception {
+		final Model m = ModelExtractor.extractModel(packageNames, classNames);
+
+		testExpectedResult(name, m);
+		testXml(m);
+	}
+
+	void testExpectedResult(final String name, final Model m)
+			throws URISyntaxException, IOException, Exception {
+		final File testDir = new File(new URI(getClass().getResource("")
+				.toURI().toString().replace("/bin/", "/src/test/resources/")));
+
+		final File expected = new File(testDir, "expected/" + name + ".xml");
+		final File result = new File(testDir, "result/" + name + ".xml");
+		if (ModelExtractorTest.GENERATE_EXPECTED || !expected.exists()) {
+			Files.write(toXml(m), expected, StandardCharsets.US_ASCII);
+		} else {
+			Files.write(toXml(m), result, StandardCharsets.US_ASCII);
+			this.assertEquals(expected, result);
+		}
+	}
+
+	void testXml(final Model m) throws Exception {
+		final String xml1 = toXml(m);
+		final Model m2 = fromXml(xml1);
+		assertThat(m2.toString()).isEqualTo(m.toString());
+		this.assertEquals(xml1, toXml(m2));
+	}
 }
