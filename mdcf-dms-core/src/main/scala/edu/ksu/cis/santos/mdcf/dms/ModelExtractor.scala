@@ -796,14 +796,18 @@ class ModelExtractor(
             visitor(e)
           case Apply(Select(Ident(_), b2sbName), List(e)) if b2sbName.decoded == "boolean2sboolean" =>
             visitor(e)
-          case Apply(Select(qualifier, name), List(e)) if classOf[BasicType].isAssignableFrom(clazzOf(qualifier)) =>
+          case Apply(Select(qualifier, name), List(e)) if classOf[BasicType].isAssignableFrom(clazzOf(qualifier)) || classOf[scala.Boolean].isAssignableFrom(clazzOf(qualifier)) =>
             var clz = clazzOf(qualifier)
             val tipe =
-              if (clz.getName == classOf[edu.ksu.cis.santos.mdcf.dms.Boolean].getName)
+              if (clz.getName == classOf[edu.ksu.cis.santos.mdcf.dms.Boolean].getName ||
+                clz.getName == classOf[scala.Boolean].getName)
                 namedType("boolean")
               else typeNameOf(qualifier)
             binaryBasicOpExp(visitor(qualifier), name.decoded,
               visitor(e)) withType (tipe)
+          case Apply(Select(qualifier, name), List(e)) if name.decoded == "==" =>
+            binaryBasicOpExp(visitor(qualifier), name.decoded,
+              visitor(e)) withType (namedType("any"))
           case Apply(fun, List(arg)) =>
             applyExp(visitor(fun), visitor(arg))
           case Select(qualifier, name) =>

@@ -12,26 +12,27 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric
  */
 
 trait AppReq5 {
-  val dev : ICE_VMD
+  val spo2 : ICE_SpO2_Numeric
+  val spo2_ex : ICE_Periodic_Exchange
 }
 
 object AppReq5 {
   @Inv
   val req1 : Predicate[AppReq5] =
-    pred { vmd : AppReq5 =>
-      vmd.dev.channels.values.exists(
-        _.metrics.values.exists(
-          _ match {
-            case spo2 : ICE_SpO2_Numeric =>
-              spo2.exchanges.values.exists(
-                _ match {
-                  case exch : ICE_Periodic_Exchange =>
-                    exch.separation_interval.min >= 98 && exch.separation_interval.max <= 102
-                  case _ =>
-                    false
-                }
-              )
-            case _ => false
-          }))
+    pred { ar : AppReq5 =>
+      ar.spo2 match {
+        case spo2 : ICE_SpO2_Numeric =>
+          spo2.exchanges.values.exists(
+            _ match {
+              case exch : ICE_Periodic_Exchange =>
+                ar.spo2_ex == exch &&
+                  exch.separation_interval.min >= 98 &&
+                  exch.separation_interval.max <= 102
+              case _ =>
+                false
+            }
+          )
+        case _ => false
+      }
     }
 }

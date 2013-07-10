@@ -95,6 +95,13 @@ class ExpEvaluator(ctx : Context) {
       case EvalFailed => false
     }
 
+  def anyOpSem(s : S, v1 : V, op : String, v2 : V) : (S, V) =
+    (v1, op, v2) match {
+      case (v1 : FeatureValue, "==", v2 : FeatureValue) =>
+        (s, b2v(v1 == v2))
+      case _ => (s, FALSE)
+    }
+
   def evalExp(s : S, exp : Exp) : ISeq[(S, V)] =
     exp match {
       case ae : AccessExp =>
@@ -137,44 +144,51 @@ class ExpEvaluator(ctx : Context) {
       case bboe : BinaryBasicOpExp =>
         val name = simpleName(bboe.`type`.get.asInstanceOf[NamedType].name)
         val (e1, op, e2) = (bboe.left, bboe.op, bboe.right)
-        val sec = ctx.sec
-        val nv = normalizeValue(name) _
-        try
-          sec.binaryOpMode(op) match {
-            case BinaryOpMode.LAZY_LEFT =>
-              for {
-                (s2, v2) <- evalExp(s, e2)
-                (s3, v2n) <- nv(s2, v2)
-                sv <- sec.lazyLBinaryOp(op, s2, { s =>
-                  for {
-                    (s4, v1) <- evalExp(s, e1)
-                    sv2 <- nv(s4, v1)
-                  } yield sv2
-                }, v2n)
-              } yield sv
-            case BinaryOpMode.LAZY_RIGHT =>
-              for {
-                (s2, v1) <- evalExp(s, e1)
-                (s3, v1n) <- nv(s2, v1)
-                sv <- sec.lazyRBinaryOp(op, s3, v1n, { s =>
-                  for {
-                    (s4, v2) <- evalExp(s, e2)
-                    sv2 <- nv(s4, v2)
-                  } yield sv2
-                })
-              } yield sv
-            case BinaryOpMode.REGULAR =>
-              for {
-                (s2, v1) <- evalExp(s, e1)
-                (s3, v1n) <- nv(s2, v1)
-                (s4, v2) <- evalExp(s3, e2)
-                (s5, v2n) <- nv(s4, v2)
-                sv <- sec.binaryOp(op, s5, v1n, v2n)
-              } yield sv
-          } catch {
-          case _ : Exception =>
-            ctx.reporter.error(s"Could not find extension $op to evaluate: $exp")
-            throw EvalFailed
+        if (name == "any")
+          for {
+            (s2, v1) <- evalExp(s, e1)
+            (s3, v2) <- evalExp(s2, e2)
+          } yield anyOpSem(s3, v1, op, v2)
+        else {
+          val sec = ctx.sec
+          val nv = normalizeValue(name) _
+          try
+            sec.binaryOpMode(op) match {
+              case BinaryOpMode.LAZY_LEFT =>
+                for {
+                  (s2, v2) <- evalExp(s, e2)
+                  (s3, v2n) <- nv(s2, v2)
+                  sv <- sec.lazyLBinaryOp(op, s2, { s =>
+                    for {
+                      (s4, v1) <- evalExp(s, e1)
+                      sv2 <- nv(s4, v1)
+                    } yield sv2
+                  }, v2n)
+                } yield sv
+              case BinaryOpMode.LAZY_RIGHT =>
+                for {
+                  (s2, v1) <- evalExp(s, e1)
+                  (s3, v1n) <- nv(s2, v1)
+                  sv <- sec.lazyRBinaryOp(op, s3, v1n, { s =>
+                    for {
+                      (s4, v2) <- evalExp(s, e2)
+                      sv2 <- nv(s4, v2)
+                    } yield sv2
+                  })
+                } yield sv
+              case BinaryOpMode.REGULAR =>
+                for {
+                  (s2, v1) <- evalExp(s, e1)
+                  (s3, v1n) <- nv(s2, v1)
+                  (s4, v2) <- evalExp(s3, e2)
+                  (s5, v2n) <- nv(s4, v2)
+                  sv <- sec.binaryOp(op, s5, v1n, v2n)
+                } yield sv
+            } catch {
+            case _ : Exception =>
+              ctx.reporter.error(s"Could not find extension $op to evaluate: $exp")
+              throw EvalFailed
+          }
         }
       case fe : FunExp =>
         (s, FunValue(fe.param.name, fe.body))
