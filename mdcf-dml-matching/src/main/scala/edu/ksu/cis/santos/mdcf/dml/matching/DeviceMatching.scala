@@ -192,13 +192,28 @@ class DeviceMatching(ctx : Context) {
       r
     }
 
-    val visitor : VisitorFunction = {
+    val visitorEnd : VisitorFunction = {
+      case _ : Attribute | _ : SetInit | _ : SeqInit =>
+        path.remove(path.size - 1)
+        true
+    }
+
+    lazy val visitor : VisitorFunction = {
       case attr : Attribute =>
         path += attr.name
         true
       case mi : MapInit =>
-        path += "map_elements"
-        true
+        var i = 0
+        for ((ki, vi) <- mi.keyInits.zip(mi.valueInits)) {
+          ki match {
+            case bi : BasicInit => path += bi.value
+            case _              => path += "map_elements"
+          }
+          Visitor.buildEnd(visitor, visitorEnd)(vi)
+          path.remove(path.size - 1)
+          i += 1
+        }
+        false
       case si : SetInit =>
         path += "set_elements"
         true
@@ -210,12 +225,6 @@ class DeviceMatching(ctx : Context) {
         initTypes ++= initTypes.flatMap(superTransMap.get)
         if (reqTypes.subsetOf(initTypes))
           result += AttributeMatch(req, fi, Ast.list(path : _*))
-        true
-    }
-
-    val visitorEnd : VisitorFunction = {
-      case _ : Attribute | _ : MapInit | _ : SetInit | _ : SeqInit =>
-        path.remove(path.size - 1)
         true
     }
 
