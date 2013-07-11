@@ -216,7 +216,7 @@ final class MultiMonitor extends ICE_MDS {
                 "periodic" -> new MultiMonitorPeriodicExchange {}
               )
               override val alerts : Map[String, ICE_Alert] = Map(
-                  "bpsys_rangealert" -> new ICE_FloatRangeValueAlert{
+                  "bpmean_rangealert" -> new ICE_FloatRangeValueAlert{
                   override val ALERT_CODE : IEEE11073_OID_TYPE = "PLACEHOLDER CODE"
                   override val ALERT_SOURCE : IEEE11073_OID_TYPE = "PLACEHOLDER SOURCE"
                   override val setting = new ICE_FloatRangeSetting {

@@ -3006,7 +3006,7 @@
                                               <init class="some">
                                                 <reference class="mapInit">
                                                   <keyInits class="ilist">
-                                                    <basicInit value="bpsys_rangealert"/>
+                                                    <basicInit value="bpmean_rangealert"/>
                                                   </keyInits>
                                                   <valueInits class="ilist">
                                                     <featureInit>
