@@ -42,6 +42,7 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2Alt;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq3;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq4;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq5;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.PulseOxDisplayApp;
 import edu.ksu.cis.santos.mdcf.dms.test.ModelExtractorTest;
 
 /**
@@ -98,6 +99,11 @@ public class DeviceMatchingTest {
     testProductMatches(AppReq5.class);
   }
 
+  @Test
+  public void testPulseOxDisplay() throws Exception {
+    testProductMatches(PulseOxDisplayApp.class);
+  }
+  
   void testExpectedResult(final String name, final String content)
       throws URISyntaxException, IOException, Exception {
     final File testDir = new File(new URI(getClass().getResource("").toURI()
