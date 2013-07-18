@@ -36,6 +36,8 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NellcorGetExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NellcorPeriodicExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NellcorSetExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NellcorSporadicExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninGetExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninPeriodicExchange;
 
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitor;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorGetExchange;
@@ -83,7 +85,9 @@ public class ModelExtractorTest {
 	@Test
 	public void examplev2nonin() throws Exception {
 		test("dms.testv2.nonin", new String[] {},
-				new String[] { NoninPulseOx.class.getName() });
+				new String[] { NoninPulseOx.class.getName(),
+						NoninGetExchange.class.getName(),
+						NoninPeriodicExchange.class.getName()});
 	}
 
 	@Test

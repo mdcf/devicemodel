@@ -920,5 +920,150 @@
         </attribute>
       </members>
     </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninGetExchange">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Product</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="access">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="optionType">
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+          </type>
+          <init class="some">
+            <reference class="noneInit"/>
+          </init>
+        </attribute>
+        <attribute name="separation_interval">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <init class="some">
+            <reference class="featureInit">
+              <types class="ilist">
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+              </types>
+              <attributes class="ilist">
+                <attribute name="min">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="5"/>
+                  </init>
+                </attribute>
+                <attribute name="max">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="50"/>
+                  </init>
+                </attribute>
+              </attributes>
+            </reference>
+          </init>
+        </attribute>
+        <attribute name="serviceTime">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <init class="some">
+            <reference class="featureInit">
+              <types class="ilist">
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+              </types>
+              <attributes class="ilist">
+                <attribute name="min">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="0"/>
+                  </init>
+                </attribute>
+                <attribute name="max">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="50"/>
+                  </init>
+                </attribute>
+              </attributes>
+            </reference>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninPeriodicExchange">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Product</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="access">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="optionType">
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+          </type>
+          <init class="some">
+            <reference class="noneInit"/>
+          </init>
+        </attribute>
+        <attribute name="separation_interval">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <init class="some">
+            <reference class="featureInit">
+              <types class="ilist">
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+              </types>
+              <attributes class="ilist">
+                <attribute name="min">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="105"/>
+                  </init>
+                </attribute>
+                <attribute name="max">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="110"/>
+                  </init>
+                </attribute>
+              </attributes>
+            </reference>
+          </init>
+        </attribute>
+      </members>
+    </feature>
   </declarations>
 </model>
