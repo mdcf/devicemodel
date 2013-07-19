@@ -44,6 +44,7 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorGetExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorPeriodicExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorSetExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorSporadicExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.PulseOxDisplayApp;
 
 /**
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
@@ -123,6 +124,12 @@ public class ModelExtractorTest {
 				new String[] { "edu.ksu.cis.santos.mdcf.dms.examplev2.requirement" });
 	}
 
+	@Test
+	public void examplev2PulseOxReq() throws Exception {
+		test("dms.testv2.req.pulseox", new String[] {},
+				new String[] { PulseOxDisplayApp.class.getName()});
+	}
+	
 	@Before
 	public void setUp() throws Exception {
 		this.xmlUnit = new XMLTestCase() {
