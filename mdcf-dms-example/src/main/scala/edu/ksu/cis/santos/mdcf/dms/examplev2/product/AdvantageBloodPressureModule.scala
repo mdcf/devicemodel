@@ -19,31 +19,36 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE.apply
 import edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_TYPE.apply
 import edu.ksu.cis.santos.mdcf.dms.examplev2.String.apply
 
-class AnDBPGetExchange extends ICE_Get_Exchange {
+class AdvantageBPGetExchange extends ICE_Get_Exchange {
   override val access : Option[ICE_Security_Access_Read] = None
   override val separation_interval : NatRange = new NatRange {
-    override val min : Nat = 9000
-    override val max : Nat = 9000
+    override val min : Nat = 9000 //In theory, new measurement could be taken right after the previous one is taken, so this number is same as the minimum service time. 
+    override val max : Nat = 13000 + 15000 + 1000
+    										//This should be infinite since we don't know when the get will occur?
+    										//The numbers are (max single measure) + (over 10mmHg air timer) + (deflation time)
+    										//In case the pressure of the cuff is not under 10mmHg yet, then the measurement cannot be taken.
+    										//We might have to wait till the deflation timer kicks in(150 seconds). 
+    										//Then the assumption that deflation will take 10 seconds. So this figure is 150 seconds + 10 seconds. 
   }
   override val serviceTime : NatRange = new NatRange {
-    override val min : Nat = 9000  // Assume single measurement will take around 1 min and 30 seconds.
-    override val max : Nat = 9000*3 //This blood pressure cuff has a feature to retake the BP if there seems to be a problem. Assuming it will try three times.
+    override val min : Nat = 9000  // Assume single measurement will take around 90 seconds.
+    override val max : Nat = 13000  // In page 36, maximum measurement time out is 130 seconds
   }
 }
 
-class AnDBPSporadicExchange extends ICE_Sporadic_Exchange {
+class AdvantageBPSporadicExchange extends ICE_Sporadic_Exchange {
   override val access : Option[ICE_Security_Access_Read] = None
-  override val separation_interval : Nat = 9000 // Assuming 1 min 30 seconds to complete a measurement
+  override val separation_interval : Nat = 9000 // Assuming minimum 90 seconds to complete a measurement as above 'get exchange' assumption.
 }
 
 
-final class AnDBP extends ICE_MDS {
-  override val IEEE11073_MDC_ATTR_SYS_TYPE : IEEE11073_TYPE = "AnD BloodPressure"
+final class AdvantageBPModule extends ICE_MDS {
+  override val IEEE11073_MDC_ATTR_SYS_TYPE : IEEE11073_TYPE = "Advantage OEM BP Module"
 
   override val manufacturerModel : ICE_ManufacturerModel = new ICE_ManufacturerModel {
     override val MDC_ATTR_ID_MODEL : IEEE11073_SystemModel = new IEEE11073_SystemModel {
-      override val manufacturer : String = "AnD"
-      override val model_number : String = "UA-767PBT-C"
+      override val manufacturer : String = "SunTech Medical Inc."
+      override val model_number : String = "Model 2"
     }
     override val credentials : Map[String, ICE_Security_Certificate] = Map()
   }
@@ -53,7 +58,7 @@ final class AnDBP extends ICE_MDS {
       override val status : ICE_VMD_Status = new ICE_VMD_Status {
         override val state : ICE_VMD_State = ICE_VMD_StateValue.Ok
         override val access : Option[ICE_Security_Access_Read] = None
-        override val exchange : ICE_Get_Exchange = new AnDBPGetExchange {}
+        override val exchange : ICE_Get_Exchange = new AdvantageBPGetExchange {}
       }
 
       override val channels : Map[String, ICE_Channel] = Map(
@@ -62,35 +67,35 @@ final class AnDBP extends ICE_MDS {
           override val alerts : Map[String, ICE_Alert] = Map()
           override val metrics : Map[String, ICE_Metric] = Map(
             "bp_systolic_num" -> new ICE_BloodPressure_Systolic_Numeric {
-              override val range : FloatRange = new FloatRange { //this range is from the brochure
-                override val min : Float = 20.0
-                override val max : Float = 280.0 
+              override val range : FloatRange = new FloatRange {
+                override val min : Float = 40.0
+                override val max : Float = 260.0
               }
               override val exchanges : Map[String, ICE_Data_Exchange] = Map(
-                "get" -> new AnDBPGetExchange {},
-                "sporadic" -> new AnDBPSporadicExchange {}
+                "get" -> new AdvantageBPGetExchange {},
+                "sporadic" -> new AdvantageBPSporadicExchange {}
               )
               override val alerts : Map[String, ICE_Alert] = Map()
             },
              "bp_diastolic_num" -> new ICE_BloodPressure_Diastolic_Numeric {
-              override val range : FloatRange = new FloatRange { //this range is from the brochure
+              override val range : FloatRange = new FloatRange {
                 override val min : Float = 20.0
-                override val max : Float = 280.0
+                override val max : Float = 200.0
               }
               override val exchanges : Map[String, ICE_Data_Exchange] = Map(
-                "get" -> new AnDBPGetExchange {},
-                "sporadic" -> new AnDBPSporadicExchange {}
+                "get" -> new AdvantageBPGetExchange {},
+                "sporadic" -> new AdvantageBPSporadicExchange {}
               )
               override val alerts : Map[String, ICE_Alert] = Map()
             },           
-            "bp_mean_num" -> new ICE_BloodPressure_Mean_Numeric {
-              override val range : FloatRange = new FloatRange { //this range is from the brochure
-                override val min : Float = 20.0
-                override val max : Float = 280.0
+            "bp_mean_num" -> new ICE_BloodPressure_Mean_Numeric { //MAP = [(2*diastolic) + systolic] / 3
+              override val range : FloatRange = new FloatRange {
+                override val min : Float = 20.0 //26.7 based on the formula
+                override val max : Float = 225.0 //220 based on the formula
               }
               override val exchanges : Map[String, ICE_Data_Exchange] = Map(
-                "get" -> new AnDBPGetExchange {},
-                "sporadic" -> new AnDBPSporadicExchange {}
+                "get" -> new AdvantageBPGetExchange {},
+                "sporadic" -> new AdvantageBPSporadicExchange {}
               )
               override val alerts : Map[String, ICE_Alert] = Map()
             }
@@ -104,13 +109,13 @@ final class AnDBP extends ICE_MDS {
           override val alerts : Map[String, ICE_Alert] = Map()
           override val metrics : Map[String, ICE_Metric] = Map(
             "pulserate_num" -> new ICE_PulseRate_Numeric {
-              override val range : FloatRange = new FloatRange { //this range is from the brochure
-                override val min : Float = 40.0
-                override val max : Float = 200.0
+              override val range : FloatRange = new FloatRange {
+                override val min : Float = 30.0
+                override val max : Float = 220.0
               }
               override val exchanges : Map[String, ICE_Data_Exchange] = Map(
-                "get" -> new AnDBPGetExchange {},
-                "sporadic" -> new AnDBPSporadicExchange {}
+                "get" -> new AdvantageBPGetExchange {},
+                "sporadic" -> new AdvantageBPSporadicExchange {}
               )
               override val alerts : Map[String, ICE_Alert] = Map()
             }
