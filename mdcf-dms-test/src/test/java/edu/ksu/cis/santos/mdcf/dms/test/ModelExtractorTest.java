@@ -30,7 +30,6 @@ import com.google.common.io.Files;
 import edu.ksu.cis.santos.mdcf.dml.ast.Model;
 import edu.ksu.cis.santos.mdcf.dms.ModelExtractor;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninPulseOx;
-
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NellcorPulseOx;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NellcorGetExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NellcorPeriodicExchange;
@@ -38,12 +37,12 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NellcorSetExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NellcorSporadicExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninGetExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninPeriodicExchange;
-
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitor;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorGetExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorPeriodicExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorSetExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorSporadicExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq4;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.PulseOxDisplayApp;
 
 /**
@@ -129,6 +128,12 @@ public class ModelExtractorTest {
 		test("dms.testv2.req.pulseox", new String[] {},
 				new String[] { PulseOxDisplayApp.class.getName()});
 	}
+
+//	 @Test
+//	  public void examplev2Case4Req() throws Exception {
+//	    test("dms.testv2.req.pulseox", new String[] {},
+//	        new String[] { AppReq4.class.getName()});
+//	  }
 	
 	@Before
 	public void setUp() throws Exception {
