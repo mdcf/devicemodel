@@ -30,6 +30,7 @@ import java.io.StringWriter
 object MdcfBuild extends Build {
   final val BUILD_FILENAME = "BUILD"
   final val PRELUDE_DIR = "codebase/sireum-core.prelude/"
+  final val PARSER_DIR = "codebase/sireum-parser/"
   final val CORE_DIR = "codebase/sireum-core/"
   final val DML_DIR = "codebase/mdcf-devicemodel/"
 
@@ -41,7 +42,7 @@ object MdcfBuild extends Build {
       settings = mdcfSettings ++
         Seq(makeDistTask, depDotTask, printPisTask),
       base = file(".")) aggregate (
-        lib, util, pilar, konkrit,
+        lib, util, parser, pilar, konkrit,
         dmlAst, dmsCore, dmsExample, dmsTest,
         dmlMatching, dmlMatchingExt, dmlMatchingTest) settings (
           name := "MDCF")
@@ -70,6 +71,7 @@ object MdcfBuild extends Build {
 
   lazy val lib = toSbtProject(libPI)
   lazy val util = toSbtProject(utilPI)
+  lazy val parser = toSbtProject(parserPI)
   lazy val pilar = toSbtProject(pilarPI)
   lazy val konkrit = toSbtProject(konkritPI)
   lazy val dmsCore = toSbtProject(dmsCorePI)
@@ -94,9 +96,11 @@ object MdcfBuild extends Build {
   val libPI = new ProjectInfo("Sireum Lib", PRELUDE_DIR, Seq())
   val utilPI = new ProjectInfo("Sireum Util", PRELUDE_DIR, Seq(),
     libPI)
+  val parserPI = new ProjectInfo("Sireum Parser", PARSER_DIR, Seq(),
+      libPI)
 
   val pilarPI = new ProjectInfo("Sireum Pilar", CORE_DIR, Seq(),
-    libPI, utilPI)
+    libPI, utilPI, parserPI)
   val konkritPI = new ProjectInfo("Sireum Konkrit", CORE_DIR, Seq(),
     libPI, utilPI, pilarPI)
 
