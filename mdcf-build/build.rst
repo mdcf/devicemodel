@@ -12,6 +12,8 @@ Requirements:
 Let ``REPO`` denotes the path containing mdcf-build,
 ``REPO_PRELUDE`` denotes the path containing sireum-core.prelude projects 
 (e.g., sireum-util),
+``REPO_PARSER`` denotes the path containing sireum-parser projects 
+(e.g., sireum-parser),
 ``REPO_CORE`` denotes the path containing sireum-core projects 
 (e.g., sireum-pilar), and
 ``REPO_DML`` denotes the path containing mdcf-devicemodel projects 
@@ -22,6 +24,10 @@ To run the build locally, create the following symbolic links:
     REPO/mdcf-build/codebase/sireum-core.prelude 
 
 that points to ``REPO_PRELUDE``,
+
+    REPO/mdcf-build/codebase/sireum-parser
+
+that points to ``REPO_PARSER``,
 
     REPO/mdcf-build/codebase/sireum-core
 
