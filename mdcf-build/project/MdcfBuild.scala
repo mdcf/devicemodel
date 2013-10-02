@@ -47,7 +47,7 @@ object MdcfBuild extends Build {
         dmlMatching, dmlMatchingExt, dmlMatchingTest) settings (
           name := "MDCF")
 
-  final val scalaVer = "2.10.2"
+  final val scalaVer = "2.10.3"
     
   lazy val mdcfSettings = Defaults.defaultSettings ++ Seq(
     organization := "SAnToS Laboratory",
