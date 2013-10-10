@@ -294,7 +294,6 @@ public class XStreamer {
     result.alias("symbolTable", SymbolTable.class);
     result.alias("some", Optional.of(new Object()).getClass());
     result.alias("none", Optional.absent().getClass());
-    result.alias("ilist", ImmutableList.of().getClass());
     result.alias("ilist", ImmutableList.of(new Object()).getClass());
     result.alias("ilist", ImmutableList.of(new Object(), new Object())
         .getClass());
@@ -326,24 +325,6 @@ public class XStreamer {
             null,
             ArrayList.class);
         return Ast.list(l);
-      }
-    });
-    result.registerConverter(new SingleValueConverter() {
-      Class<?> clazz = ImmutableList.of().getClass();
-
-      @Override
-      public boolean canConvert(@SuppressWarnings("rawtypes") final Class type) {
-        return this.clazz.isAssignableFrom(type);
-      }
-
-      @Override
-      public Object fromString(final String str) {
-        return ImmutableList.of();
-      }
-
-      @Override
-      public String toString(final Object obj) {
-        return "";
       }
     });
     result.registerConverter(new SingleValueConverter() {
