@@ -1,7 +1,7 @@
 <model>
   <declarations class="ilist">
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.DeviceId">
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.Float">
       <supers class="ilist">
@@ -9,34 +9,34 @@
       </supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.ICETimeStamp">
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.ICE_UDI">
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_FLOAT_TYPE">
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_32">
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8">
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE">
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_TYPE">
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEEDeviceType">
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEEPhysioParameterType">
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEEUnit">
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int">
       <supers class="ilist">
@@ -49,7 +49,7 @@
       </supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.MeasurementStatus">
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat">
       <supers class="ilist">
@@ -57,7 +57,7 @@
       </supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number">
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.RealType">
       <supers class="ilist">
@@ -65,7 +65,7 @@
       </supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.String">
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
     </basicType>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_BloodPressure_Channel">
       <annotations class="ilist">
@@ -602,8 +602,8 @@
                   </type>
                   <init class="some">
                     <reference class="mapInit">
-                      <keyInits class="ilist"></keyInits>
-                      <valueInits class="ilist"></valueInits>
+                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                     </reference>
                   </init>
                 </attribute>
@@ -796,8 +796,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -995,8 +995,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="ilist"></keyInits>
-                                                  <valueInits class="ilist"></valueInits>
+                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -1205,8 +1205,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="ilist"></keyInits>
-                                                  <valueInits class="ilist"></valueInits>
+                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -1415,8 +1415,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="ilist"></keyInits>
-                                                  <valueInits class="ilist"></valueInits>
+                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -1461,8 +1461,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -1476,8 +1476,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -1491,8 +1491,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -1522,8 +1522,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -1719,8 +1719,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="ilist"></keyInits>
-                                                  <valueInits class="ilist"></valueInits>
+                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -1765,8 +1765,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -1780,8 +1780,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -1795,8 +1795,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -1928,8 +1928,8 @@
                   </type>
                   <init class="some">
                     <reference class="mapInit">
-                      <keyInits class="ilist"></keyInits>
-                      <valueInits class="ilist"></valueInits>
+                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                     </reference>
                   </init>
                 </attribute>
@@ -2122,8 +2122,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -2321,8 +2321,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="ilist"></keyInits>
-                                                  <valueInits class="ilist"></valueInits>
+                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -2531,8 +2531,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="ilist"></keyInits>
-                                                  <valueInits class="ilist"></valueInits>
+                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -2741,8 +2741,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="ilist"></keyInits>
-                                                  <valueInits class="ilist"></valueInits>
+                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -2787,8 +2787,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -2802,8 +2802,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -2817,8 +2817,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -2848,8 +2848,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -3045,8 +3045,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="ilist"></keyInits>
-                                                  <valueInits class="ilist"></valueInits>
+                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -3091,8 +3091,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -3106,8 +3106,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -3121,8 +3121,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -3343,8 +3343,8 @@
                   </type>
                   <init class="some">
                     <reference class="mapInit">
-                      <keyInits class="ilist"></keyInits>
-                      <valueInits class="ilist"></valueInits>
+                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                     </reference>
                   </init>
                 </attribute>
@@ -3538,8 +3538,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -4116,8 +4116,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -4131,8 +4131,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -4146,8 +4146,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -4177,8 +4177,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -4755,8 +4755,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -4770,8 +4770,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -4785,8 +4785,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -6632,8 +6632,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -6647,8 +6647,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -6662,8 +6662,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -6677,8 +6677,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -7189,8 +7189,8 @@
                   </type>
                   <init class="some">
                     <reference class="mapInit">
-                      <keyInits class="ilist"></keyInits>
-                      <valueInits class="ilist"></valueInits>
+                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                     </reference>
                   </init>
                 </attribute>
@@ -7383,8 +7383,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -7961,8 +7961,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -7976,8 +7976,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -7991,8 +7991,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -8022,8 +8022,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -8600,8 +8600,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -8615,8 +8615,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -8630,8 +8630,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -8775,6 +8775,1183 @@
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
           <init class="some">
             <reference class="basicInit" value="98"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.Nonin9560GetExchange">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Product</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="access">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="optionType">
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+          </type>
+          <init class="some">
+            <reference class="noneInit"/>
+          </init>
+        </attribute>
+        <attribute name="separation_interval">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <init class="some">
+            <reference class="featureInit">
+              <types class="ilist">
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+              </types>
+              <attributes class="ilist">
+                <attribute name="min">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="333"/>
+                  </init>
+                </attribute>
+                <attribute name="max">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="333"/>
+                  </init>
+                </attribute>
+              </attributes>
+            </reference>
+          </init>
+        </attribute>
+        <attribute name="serviceTime">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <init class="some">
+            <reference class="featureInit">
+              <types class="ilist">
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+              </types>
+              <attributes class="ilist">
+                <attribute name="min">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="0"/>
+                  </init>
+                </attribute>
+                <attribute name="max">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="50"/>
+                  </init>
+                </attribute>
+              </attributes>
+            </reference>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.Nonin9560PulseOx">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Product</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_MDS"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="IEEE11073_MDC_ATTR_SYS_TYPE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="Nonin PO"/>
+          </init>
+        </attribute>
+        <attribute name="manufacturerModel">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_ManufacturerModel"/>
+          <init class="some">
+            <reference class="featureInit">
+              <types class="ilist">
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_ManufacturerModel"/>
+              </types>
+              <attributes class="ilist">
+                <attribute name="MDC_ATTR_ID_MODEL">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.IEEE11073_SystemModel"/>
+                  <init class="some">
+                    <reference class="featureInit">
+                      <types class="ilist">
+                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.IEEE11073_SystemModel"/>
+                      </types>
+                      <attributes class="ilist">
+                        <attribute name="manufacturer">
+                          <annotations class="ilist">
+                            <override/>
+                          </annotations>
+                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                          <init class="some">
+                            <reference class="basicInit" value="Nonin"/>
+                          </init>
+                        </attribute>
+                        <attribute name="model_number">
+                          <annotations class="ilist">
+                            <override/>
+                          </annotations>
+                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                          <init class="some">
+                            <reference class="basicInit" value="Onyx II Model 9560"/>
+                          </init>
+                        </attribute>
+                      </attributes>
+                    </reference>
+                  </init>
+                </attribute>
+                <attribute name="credentials">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="mapType">
+                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Certificate"/>
+                  </type>
+                  <init class="some">
+                    <reference class="mapInit">
+                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                    </reference>
+                  </init>
+                </attribute>
+              </attributes>
+            </reference>
+          </init>
+        </attribute>
+        <attribute name="vmds">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="mapType">
+            <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+            <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD"/>
+          </type>
+          <init class="some">
+            <reference class="mapInit">
+              <keyInits class="ilist">
+                <basicInit value="pulseox"/>
+              </keyInits>
+              <valueInits class="ilist">
+                <featureInit>
+                  <types class="ilist">
+                    <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseOx_VMD"/>
+                  </types>
+                  <attributes class="ilist">
+                    <attribute name="status">
+                      <annotations class="ilist">
+                        <override/>
+                      </annotations>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD_Status"/>
+                      <init class="some">
+                        <reference class="featureInit">
+                          <types class="ilist">
+                            <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD_Status"/>
+                          </types>
+                          <attributes class="ilist">
+                            <attribute name="state">
+                              <annotations class="ilist">
+                                <override/>
+                              </annotations>
+                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.ICE_VMD_State"/>
+                              <init class="some">
+                                <reference class="basicInit" value="Ok"/>
+                              </init>
+                            </attribute>
+                            <attribute name="access">
+                              <annotations class="ilist">
+                                <override/>
+                              </annotations>
+                              <type class="optionType">
+                                <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+                              </type>
+                              <init class="some">
+                                <reference class="noneInit"/>
+                              </init>
+                            </attribute>
+                            <attribute name="exchange">
+                              <annotations class="ilist">
+                                <override/>
+                              </annotations>
+                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Get_Exchange"/>
+                              <init class="some">
+                                <reference class="featureInit">
+                                  <types class="ilist">
+                                    <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninGetExchange"/>
+                                  </types>
+                                  <attributes class="ilist">
+                                    <attribute name="access">
+                                      <annotations class="ilist">
+                                        <override/>
+                                      </annotations>
+                                      <type class="optionType">
+                                        <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+                                      </type>
+                                      <init class="some">
+                                        <reference class="noneInit"/>
+                                      </init>
+                                    </attribute>
+                                    <attribute name="separation_interval">
+                                      <annotations class="ilist">
+                                        <override/>
+                                      </annotations>
+                                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                      <init class="some">
+                                        <reference class="featureInit">
+                                          <types class="ilist">
+                                            <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                          </types>
+                                          <attributes class="ilist">
+                                            <attribute name="min">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                              <init class="some">
+                                                <reference class="basicInit" value="5"/>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="max">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                              <init class="some">
+                                                <reference class="basicInit" value="50"/>
+                                              </init>
+                                            </attribute>
+                                          </attributes>
+                                        </reference>
+                                      </init>
+                                    </attribute>
+                                    <attribute name="serviceTime">
+                                      <annotations class="ilist">
+                                        <override/>
+                                      </annotations>
+                                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                      <init class="some">
+                                        <reference class="featureInit">
+                                          <types class="ilist">
+                                            <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                          </types>
+                                          <attributes class="ilist">
+                                            <attribute name="min">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                              <init class="some">
+                                                <reference class="basicInit" value="0"/>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="max">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                              <init class="some">
+                                                <reference class="basicInit" value="50"/>
+                                              </init>
+                                            </attribute>
+                                          </attributes>
+                                        </reference>
+                                      </init>
+                                    </attribute>
+                                  </attributes>
+                                </reference>
+                              </init>
+                            </attribute>
+                          </attributes>
+                        </reference>
+                      </init>
+                    </attribute>
+                    <attribute name="channels">
+                      <annotations class="ilist">
+                        <override/>
+                      </annotations>
+                      <type class="mapType">
+                        <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                        <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+                      </type>
+                      <init class="some">
+                        <reference class="mapInit">
+                          <keyInits class="ilist">
+                            <basicInit value="spo2"/>
+                            <basicInit value="pulserate"/>
+                          </keyInits>
+                          <valueInits class="ilist">
+                            <featureInit>
+                              <types class="ilist">
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Channel"/>
+                              </types>
+                              <attributes class="ilist">
+                                <attribute name="MDC_ATTR_ID_PARAM_GRP">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                  <init class="some">
+                                    <reference class="basicInit" value="SpO2 Channel"/>
+                                  </init>
+                                </attribute>
+                                <attribute name="alerts">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="metrics">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Metric"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="ilist">
+                                        <basicInit value="spo2_num"/>
+                                      </keyInits>
+                                      <valueInits class="ilist">
+                                        <featureInit>
+                                          <types class="ilist">
+                                            <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
+                                          </types>
+                                          <attributes class="ilist">
+                                            <attribute name="range">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.FloatRange"/>
+                                              <init class="some">
+                                                <reference class="featureInit">
+                                                  <types class="ilist">
+                                                    <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.FloatRange"/>
+                                                  </types>
+                                                  <attributes class="ilist">
+                                                    <attribute name="min">
+                                                      <annotations class="ilist">
+                                                        <override/>
+                                                      </annotations>
+                                                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Float"/>
+                                                      <init class="some">
+                                                        <reference class="basicInit" value="0.0"/>
+                                                      </init>
+                                                    </attribute>
+                                                    <attribute name="max">
+                                                      <annotations class="ilist">
+                                                        <override/>
+                                                      </annotations>
+                                                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Float"/>
+                                                      <init class="some">
+                                                        <reference class="basicInit" value="100.0"/>
+                                                      </init>
+                                                    </attribute>
+                                                  </attributes>
+                                                </reference>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="exchanges">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="mapType">
+                                                <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                                <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Data_Exchange"/>
+                                              </type>
+                                              <init class="some">
+                                                <reference class="mapInit">
+                                                  <keyInits class="ilist">
+                                                    <basicInit value="get"/>
+                                                    <basicInit value="periodic"/>
+                                                  </keyInits>
+                                                  <valueInits class="ilist">
+                                                    <featureInit>
+                                                      <types class="ilist">
+                                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninGetExchange"/>
+                                                      </types>
+                                                      <attributes class="ilist">
+                                                        <attribute name="access">
+                                                          <annotations class="ilist">
+                                                            <override/>
+                                                          </annotations>
+                                                          <type class="optionType">
+                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+                                                          </type>
+                                                          <init class="some">
+                                                            <reference class="noneInit"/>
+                                                          </init>
+                                                        </attribute>
+                                                        <attribute name="separation_interval">
+                                                          <annotations class="ilist">
+                                                            <override/>
+                                                          </annotations>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                          <init class="some">
+                                                            <reference class="featureInit">
+                                                              <types class="ilist">
+                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                              </types>
+                                                              <attributes class="ilist">
+                                                                <attribute name="min">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="5"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="max">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="50"/>
+                                                                  </init>
+                                                                </attribute>
+                                                              </attributes>
+                                                            </reference>
+                                                          </init>
+                                                        </attribute>
+                                                        <attribute name="serviceTime">
+                                                          <annotations class="ilist">
+                                                            <override/>
+                                                          </annotations>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                          <init class="some">
+                                                            <reference class="featureInit">
+                                                              <types class="ilist">
+                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                              </types>
+                                                              <attributes class="ilist">
+                                                                <attribute name="min">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="0"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="max">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="50"/>
+                                                                  </init>
+                                                                </attribute>
+                                                              </attributes>
+                                                            </reference>
+                                                          </init>
+                                                        </attribute>
+                                                      </attributes>
+                                                    </featureInit>
+                                                    <featureInit>
+                                                      <types class="ilist">
+                                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninPeriodicExchange"/>
+                                                      </types>
+                                                      <attributes class="ilist">
+                                                        <attribute name="access">
+                                                          <annotations class="ilist">
+                                                            <override/>
+                                                          </annotations>
+                                                          <type class="optionType">
+                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+                                                          </type>
+                                                          <init class="some">
+                                                            <reference class="noneInit"/>
+                                                          </init>
+                                                        </attribute>
+                                                        <attribute name="separation_interval">
+                                                          <annotations class="ilist">
+                                                            <override/>
+                                                          </annotations>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                          <init class="some">
+                                                            <reference class="featureInit">
+                                                              <types class="ilist">
+                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                              </types>
+                                                              <attributes class="ilist">
+                                                                <attribute name="min">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="105"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="max">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="110"/>
+                                                                  </init>
+                                                                </attribute>
+                                                              </attributes>
+                                                            </reference>
+                                                          </init>
+                                                        </attribute>
+                                                      </attributes>
+                                                    </featureInit>
+                                                  </valueInits>
+                                                </reference>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="alerts">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="mapType">
+                                                <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                                <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+                                              </type>
+                                              <init class="some">
+                                                <reference class="mapInit">
+                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                </reference>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="MDC_ATTR_ID_PHYSIO">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                              <init class="some">
+                                                <reference class="basicInit" value="MDC_PULS_OXIM_SAT_O2"/>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="MDC_ATTR_UNIT_CODE">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                              <init class="some">
+                                                <reference class="basicInit" value="MDC_DIM_PERCENT"/>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="observedValue">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_NuObsValue"/>
+                                              <init class="none"></init>
+                                            </attribute>
+                                          </attributes>
+                                        </featureInit>
+                                      </valueInits>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="settings">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="statuses">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="actions">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                              </attributes>
+                            </featureInit>
+                            <featureInit>
+                              <types class="ilist">
+                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseRate_Channel"/>
+                              </types>
+                              <attributes class="ilist">
+                                <attribute name="MDC_ATTR_ID_PARAM_GRP">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                  <init class="some">
+                                    <reference class="basicInit" value="Pulse Rate Channel"/>
+                                  </init>
+                                </attribute>
+                                <attribute name="alerts">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="metrics">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Metric"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="ilist">
+                                        <basicInit value="pulserate_num"/>
+                                      </keyInits>
+                                      <valueInits class="ilist">
+                                        <featureInit>
+                                          <types class="ilist">
+                                            <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseRate_Numeric"/>
+                                          </types>
+                                          <attributes class="ilist">
+                                            <attribute name="range">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.FloatRange"/>
+                                              <init class="some">
+                                                <reference class="featureInit">
+                                                  <types class="ilist">
+                                                    <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.FloatRange"/>
+                                                  </types>
+                                                  <attributes class="ilist">
+                                                    <attribute name="min">
+                                                      <annotations class="ilist">
+                                                        <override/>
+                                                      </annotations>
+                                                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Float"/>
+                                                      <init class="some">
+                                                        <reference class="basicInit" value="18.0"/>
+                                                      </init>
+                                                    </attribute>
+                                                    <attribute name="max">
+                                                      <annotations class="ilist">
+                                                        <override/>
+                                                      </annotations>
+                                                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Float"/>
+                                                      <init class="some">
+                                                        <reference class="basicInit" value="321.0"/>
+                                                      </init>
+                                                    </attribute>
+                                                  </attributes>
+                                                </reference>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="exchanges">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="mapType">
+                                                <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                                <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Data_Exchange"/>
+                                              </type>
+                                              <init class="some">
+                                                <reference class="mapInit">
+                                                  <keyInits class="ilist">
+                                                    <basicInit value="get"/>
+                                                    <basicInit value="periodic"/>
+                                                  </keyInits>
+                                                  <valueInits class="ilist">
+                                                    <featureInit>
+                                                      <types class="ilist">
+                                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninGetExchange"/>
+                                                      </types>
+                                                      <attributes class="ilist">
+                                                        <attribute name="access">
+                                                          <annotations class="ilist">
+                                                            <override/>
+                                                          </annotations>
+                                                          <type class="optionType">
+                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+                                                          </type>
+                                                          <init class="some">
+                                                            <reference class="noneInit"/>
+                                                          </init>
+                                                        </attribute>
+                                                        <attribute name="separation_interval">
+                                                          <annotations class="ilist">
+                                                            <override/>
+                                                          </annotations>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                          <init class="some">
+                                                            <reference class="featureInit">
+                                                              <types class="ilist">
+                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                              </types>
+                                                              <attributes class="ilist">
+                                                                <attribute name="min">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="5"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="max">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="50"/>
+                                                                  </init>
+                                                                </attribute>
+                                                              </attributes>
+                                                            </reference>
+                                                          </init>
+                                                        </attribute>
+                                                        <attribute name="serviceTime">
+                                                          <annotations class="ilist">
+                                                            <override/>
+                                                          </annotations>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                          <init class="some">
+                                                            <reference class="featureInit">
+                                                              <types class="ilist">
+                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                              </types>
+                                                              <attributes class="ilist">
+                                                                <attribute name="min">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="0"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="max">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="50"/>
+                                                                  </init>
+                                                                </attribute>
+                                                              </attributes>
+                                                            </reference>
+                                                          </init>
+                                                        </attribute>
+                                                      </attributes>
+                                                    </featureInit>
+                                                    <featureInit>
+                                                      <types class="ilist">
+                                                        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.NoninPeriodicExchange"/>
+                                                      </types>
+                                                      <attributes class="ilist">
+                                                        <attribute name="access">
+                                                          <annotations class="ilist">
+                                                            <override/>
+                                                          </annotations>
+                                                          <type class="optionType">
+                                                            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+                                                          </type>
+                                                          <init class="some">
+                                                            <reference class="noneInit"/>
+                                                          </init>
+                                                        </attribute>
+                                                        <attribute name="separation_interval">
+                                                          <annotations class="ilist">
+                                                            <override/>
+                                                          </annotations>
+                                                          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                          <init class="some">
+                                                            <reference class="featureInit">
+                                                              <types class="ilist">
+                                                                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+                                                              </types>
+                                                              <attributes class="ilist">
+                                                                <attribute name="min">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="105"/>
+                                                                  </init>
+                                                                </attribute>
+                                                                <attribute name="max">
+                                                                  <annotations class="ilist">
+                                                                    <override/>
+                                                                  </annotations>
+                                                                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                                                                  <init class="some">
+                                                                    <reference class="basicInit" value="110"/>
+                                                                  </init>
+                                                                </attribute>
+                                                              </attributes>
+                                                            </reference>
+                                                          </init>
+                                                        </attribute>
+                                                      </attributes>
+                                                    </featureInit>
+                                                  </valueInits>
+                                                </reference>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="alerts">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="mapType">
+                                                <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                                <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+                                              </type>
+                                              <init class="some">
+                                                <reference class="mapInit">
+                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                </reference>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="MDC_ATTR_ID_PHYSIO">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                              <init class="some">
+                                                <reference class="basicInit" value="MDC_PULS_OXIM_PULS_RATE"/>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="MDC_ATTR_UNIT_CODE">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                                              <init class="some">
+                                                <reference class="basicInit" value="MDC_DIM_BEAT_PER_MIN"/>
+                                              </init>
+                                            </attribute>
+                                            <attribute name="observedValue">
+                                              <annotations class="ilist">
+                                                <override/>
+                                              </annotations>
+                                              <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_NuObsValue"/>
+                                              <init class="none"></init>
+                                            </attribute>
+                                          </attributes>
+                                        </featureInit>
+                                      </valueInits>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="settings">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="statuses">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                                <attribute name="actions">
+                                  <annotations class="ilist">
+                                    <override/>
+                                  </annotations>
+                                  <type class="mapType">
+                                    <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+                                    <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
+                                  </type>
+                                  <init class="some">
+                                    <reference class="mapInit">
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                    </reference>
+                                  </init>
+                                </attribute>
+                              </attributes>
+                            </featureInit>
+                          </valueInits>
+                        </reference>
+                      </init>
+                    </attribute>
+                    <attribute name="MDC_ATTR_ID_PARAM_GRP">
+                      <annotations class="ilist">
+                        <override/>
+                      </annotations>
+                      <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+                      <init class="some">
+                        <reference class="basicInit" value="IEEE ... Pulse Ox"/>
+                      </init>
+                    </attribute>
+                  </attributes>
+                </featureInit>
+              </valueInits>
+            </reference>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.Nonin9560SPPDataFormat2">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Product</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="access">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="optionType">
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+          </type>
+          <init class="some">
+            <reference class="noneInit"/>
+          </init>
+        </attribute>
+        <attribute name="separation_interval">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <init class="some">
+            <reference class="featureInit">
+              <types class="ilist">
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+              </types>
+              <attributes class="ilist">
+                <attribute name="min">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="333"/>
+                  </init>
+                </attribute>
+                <attribute name="max">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="333"/>
+                  </init>
+                </attribute>
+              </attributes>
+            </reference>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.Nonin9560SPPDataFormat7">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Product</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="access">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="optionType">
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+          </type>
+          <init class="some">
+            <reference class="noneInit"/>
+          </init>
+        </attribute>
+        <attribute name="separation_interval">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <init class="some">
+            <reference class="featureInit">
+              <types class="ilist">
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+              </types>
+              <attributes class="ilist">
+                <attribute name="min">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="333"/>
+                  </init>
+                </attribute>
+                <attribute name="max">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="333"/>
+                  </init>
+                </attribute>
+              </attributes>
+            </reference>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.product.Nonin9560SPPDataFormat8">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Product</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="access">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="optionType">
+            <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read"/>
+          </type>
+          <init class="some">
+            <reference class="noneInit"/>
+          </init>
+        </attribute>
+        <attribute name="separation_interval">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+          <init class="some">
+            <reference class="featureInit">
+              <types class="ilist">
+                <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.NatRange"/>
+              </types>
+              <attributes class="ilist">
+                <attribute name="min">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="1000"/>
+                  </init>
+                </attribute>
+                <attribute name="max">
+                  <annotations class="ilist">
+                    <override/>
+                  </annotations>
+                  <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat"/>
+                  <init class="some">
+                    <reference class="basicInit" value="1000"/>
+                  </init>
+                </attribute>
+              </attributes>
+            </reference>
           </init>
         </attribute>
       </members>
@@ -8997,8 +10174,8 @@
                   </type>
                   <init class="some">
                     <reference class="mapInit">
-                      <keyInits class="ilist"></keyInits>
-                      <valueInits class="ilist"></valueInits>
+                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                     </reference>
                   </init>
                 </attribute>
@@ -9191,8 +10368,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -9412,8 +10589,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="ilist"></keyInits>
-                                                  <valueInits class="ilist"></valueInits>
+                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -9458,8 +10635,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -9473,8 +10650,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -9488,8 +10665,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -9519,8 +10696,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -9740,8 +10917,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="ilist"></keyInits>
-                                                  <valueInits class="ilist"></valueInits>
+                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -9786,8 +10963,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -9801,8 +10978,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -9816,8 +10993,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -9847,7 +11024,7 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq1">
       <members class="ilist">
         <attribute name="po">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseOx_VMD"/>
           <init class="none"></init>
         </attribute>
@@ -9856,7 +11033,7 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2">
       <members class="ilist">
         <attribute name="vmd">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD"/>
           <init class="none"></init>
         </attribute>
@@ -9926,7 +11103,7 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2Alt">
       <members class="ilist">
         <attribute name="spo2">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
@@ -9935,12 +11112,12 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq3">
       <members class="ilist">
         <attribute name="spo2">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
         <attribute name="spo2_ex">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>
@@ -10075,12 +11252,12 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq4">
       <members class="ilist">
         <attribute name="spo2">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
         <attribute name="spo2_ex">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>
@@ -10230,12 +11407,12 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq5">
       <members class="ilist">
         <attribute name="spo2">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
         <attribute name="spo2_ex">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>
@@ -10385,7 +11562,7 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.MyPulseOxReq">
       <members class="ilist">
         <attribute name="po">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseOx_VMD"/>
           <init class="none"></init>
         </attribute>
@@ -10678,22 +11855,22 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.PulseOxDisplayApp">
       <members class="ilist">
         <attribute name="spo2">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
         <attribute name="pulserate">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseRate_Numeric"/>
           <init class="none"></init>
         </attribute>
         <attribute name="spo2_ex">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>
         <attribute name="pr_ex">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>
@@ -10896,7 +12073,7 @@
       </supers>
       <members class="ilist">
         <attribute name="level">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
           <init class="none"></init>
         </attribute>
@@ -10983,7 +12160,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Feature"/>
       </supers>
-      <members class="ilist"></members>
+      <members class="com.google.common.collect.EmptyImmutableList"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action_Exchange">
       <annotations class="ilist">
@@ -11082,7 +12259,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_PARAM_GRP">
           <annotations class="ilist">
@@ -11094,7 +12271,7 @@
           <init class="none"></init>
         </attribute>
         <attribute name="alerts">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
@@ -11102,7 +12279,7 @@
           <init class="none"></init>
         </attribute>
         <attribute name="metrics">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Metric"/>
@@ -11110,7 +12287,7 @@
           <init class="none"></init>
         </attribute>
         <attribute name="settings">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
@@ -11118,7 +12295,7 @@
           <init class="none"></init>
         </attribute>
         <attribute name="statuses">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
@@ -11126,7 +12303,7 @@
           <init class="none"></init>
         </attribute>
         <attribute name="actions">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
@@ -11144,7 +12321,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Data_Exchange"/>
       </supers>
-      <members class="ilist"></members>
+      <members class="com.google.common.collect.EmptyImmutableList"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Data_Exchange">
       <annotations class="ilist">
@@ -11152,8 +12329,8 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="ilist"></supers>
-      <members class="ilist"></members>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="com.google.common.collect.EmptyImmutableList"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Feature">
       <annotations class="ilist">
@@ -11161,8 +12338,8 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="ilist"></supers>
-      <members class="ilist"></members>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="com.google.common.collect.EmptyImmutableList"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting">
       <annotations class="ilist">
@@ -11276,7 +12453,7 @@
       </supers>
       <members class="ilist">
         <attribute name="setting">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
           <init class="none"></init>
         </attribute>
@@ -11356,7 +12533,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_MODEL">
           <annotations class="ilist">
@@ -11368,7 +12545,7 @@
           <init class="none"></init>
         </attribute>
         <attribute name="credentials">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Certificate"/>
@@ -11384,10 +12561,10 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
       <members class="ilist">
         <attribute name="messageConstructed">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.ICETimeStamp"/>
           <init class="none"></init>
         </attribute>
@@ -11399,7 +12576,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_PHYSIO">
           <annotations class="ilist">
@@ -11454,7 +12631,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
       </supers>
-      <members class="ilist"></members>
+      <members class="com.google.common.collect.EmptyImmutableList"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_NuObsValue">
       <annotations class="ilist">
@@ -11470,7 +12647,7 @@
       </supers>
       <members class="ilist">
         <attribute name="value">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
           <init class="none"></init>
         </attribute>
@@ -11483,10 +12660,10 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
       <members class="ilist">
         <attribute name="measurementTaken">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.ICETimeStamp"/>
           <init class="none"></init>
         </attribute>
@@ -11519,10 +12696,10 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
       <members class="ilist">
         <attribute name="status">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.MeasurementStatus"/>
           <init class="none"></init>
         </attribute>
@@ -11597,7 +12774,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Data_Exchange"/>
       </supers>
-      <members class="ilist"></members>
+      <members class="com.google.common.collect.EmptyImmutableList"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_RangeSetting">
       <annotations class="ilist">
@@ -11706,8 +12883,8 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="ilist"></supers>
-      <members class="ilist"></members>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="com.google.common.collect.EmptyImmutableList"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Action">
       <annotations class="ilist">
@@ -11718,7 +12895,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access"/>
       </supers>
-      <members class="ilist"></members>
+      <members class="com.google.common.collect.EmptyImmutableList"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read">
       <annotations class="ilist">
@@ -11729,7 +12906,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access"/>
       </supers>
-      <members class="ilist"></members>
+      <members class="com.google.common.collect.EmptyImmutableList"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read_Write">
       <annotations class="ilist">
@@ -11740,7 +12917,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access"/>
       </supers>
-      <members class="ilist"></members>
+      <members class="com.google.common.collect.EmptyImmutableList"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Write">
       <annotations class="ilist">
@@ -11751,7 +12928,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access"/>
       </supers>
-      <members class="ilist"></members>
+      <members class="com.google.common.collect.EmptyImmutableList"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Certificate">
       <annotations class="ilist">
@@ -11759,8 +12936,8 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="ilist"></supers>
-      <members class="ilist"></members>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="com.google.common.collect.EmptyImmutableList"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange">
       <annotations class="ilist">
@@ -11809,7 +12986,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_PHYSIO">
           <annotations class="ilist">
@@ -11883,7 +13060,7 @@
       </supers>
       <members class="ilist">
         <attribute name="payload">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="Any"/>
           <init class="none"></init>
         </attribute>
@@ -11896,10 +13073,10 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
       <members class="ilist">
         <attribute name="payload">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="Any"/>
           <init class="none"></init>
         </attribute>
@@ -11975,7 +13152,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
       <members class="ilist">
         <attribute name="status">
           <annotations class="ilist">
@@ -12020,7 +13197,7 @@
       </supers>
       <members class="ilist">
         <attribute name="state">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.ICE_VMD_State"/>
           <init class="none"></init>
         </attribute>
@@ -12032,7 +13209,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
       <members class="ilist">
         <attribute name="IEEE11073_MDC_ATTR_SYS_TYPE">
           <annotations class="ilist">
@@ -12070,45 +13247,45 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
       <members class="ilist">
         <attribute name="century">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="year">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="month">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="day">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="mon">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="minute">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="second">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="sec_franctions">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
@@ -12121,25 +13298,25 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
       <members class="ilist">
         <attribute name="century">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="year">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="month">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="day">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
@@ -12152,15 +13329,15 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
       <members class="ilist">
         <attribute name="manufacturer">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
           <init class="none"></init>
         </attribute>
         <attribute name="model_number">
-          <annotations class="ilist"></annotations>
+          <annotations class="com.google.common.collect.EmptyImmutableList"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
           <init class="none"></init>
         </attribute>
@@ -12224,7 +13401,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="ilist"></supers>
+      <supers class="com.google.common.collect.EmptyImmutableList"/>
       <members class="ilist">
         <attribute name="min">
           <annotations class="ilist">

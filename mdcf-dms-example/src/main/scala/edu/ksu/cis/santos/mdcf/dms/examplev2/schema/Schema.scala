@@ -387,6 +387,11 @@ trait ICE_Metric extends Feature {
   val alerts : Map[String, ICE_Alert]
 }
 
+//trait ICE_Sample_Array extends ICE_Metric {
+//  @Data
+//  val observedValue : ICE_NuSampleArray = DYN
+//}
+
 // === I C E   N u m e r i c ===
 
 //  The 11073 Numeric class is used to specified reported physiological values represented
@@ -440,6 +445,11 @@ trait ICE_NuObsValueContext extends Feature {
 trait ICE_NuObsValueStatusAttributes extends Feature {
   val status : MeasurementStatus = DYN // enum, TODO: extensibility
 }
+
+//@Data
+//trait ICE_NuSampleArray extends ICE_MessageContext {
+//  val array : Array = DYN
+//}
 
 // Defines the representation of the physiological parameter.   This should be a polymorphic
 // structure.  To simplify things, for now, we possible status values for sensor readings represented by ICE Numerics.

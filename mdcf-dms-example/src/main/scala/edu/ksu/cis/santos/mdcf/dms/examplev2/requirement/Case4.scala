@@ -23,12 +23,13 @@ object AppReq4 {
       ar.spo2 match {
         case spo2 : ICE_SpO2_Numeric =>
           spo2.exchanges.values.exists(
-              _ match {
-                case exch : ICE_Periodic_Exchange =>
-                  ar.spo2_ex == exch
-                case _ => false
-              }
-              ) && spo2.range.min <= 30 && spo2.range.max >= 100
+            _ match {
+              case exch : ICE_Periodic_Exchange =>
+                ar.spo2_ex == exch
+              case _ => false
+            }
+          ) && spo2.range.min <= 30 &&
+            spo2.range.max >= 100
         case _ => false
       }
     }

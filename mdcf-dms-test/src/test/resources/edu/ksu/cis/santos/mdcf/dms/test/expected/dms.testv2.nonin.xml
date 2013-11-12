@@ -73,8 +73,8 @@
                   </type>
                   <init class="some">
                     <reference class="mapInit">
-                      <keyInits class="ilist"></keyInits>
-                      <valueInits class="ilist"></valueInits>
+                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                     </reference>
                   </init>
                 </attribute>
@@ -267,8 +267,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -488,8 +488,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="ilist"></keyInits>
-                                                  <valueInits class="ilist"></valueInits>
+                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -534,8 +534,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -549,8 +549,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -564,8 +564,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -595,8 +595,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -816,8 +816,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="ilist"></keyInits>
-                                                  <valueInits class="ilist"></valueInits>
+                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -862,8 +862,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -877,8 +877,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -892,8 +892,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="ilist"></keyInits>
-                                      <valueInits class="ilist"></valueInits>
+                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
                                     </reference>
                                   </init>
                                 </attribute>

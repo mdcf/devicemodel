@@ -23,16 +23,18 @@ object AppReq3 {
   @Inv
   val req1 : Predicate[AppReq3] =
     pred { ar : AppReq3 =>
-            ar.spo2 match {
+      ar.spo2 match {
         case spo2 : ICE_SpO2_Numeric =>
           spo2.exchanges.values.exists(
-              _ match {
-                case exch : ICE_Periodic_Exchange =>
-                  ar.spo2_ex == exch
-                case _ => false
-              }
-              ) && spo2.alerts.values.exists(_.isInstanceOf[ICE_FloatRangeValueAlert])
+            _ match {
+              case exch : ICE_Periodic_Exchange =>
+                ar.spo2_ex == exch
+              case _ => false
+            }
+          ) && spo2.alerts.values.exists(
+              _.isInstanceOf[ICE_FloatRangeValueAlert]
+            )
         case _ => false
       }
-  }
+    }
 }
