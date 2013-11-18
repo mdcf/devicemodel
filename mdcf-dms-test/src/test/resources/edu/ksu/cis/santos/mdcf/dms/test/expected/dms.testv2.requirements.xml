@@ -3,7 +3,7 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq1">
       <members class="ilist">
         <attribute name="po">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseOx_VMD"/>
           <init class="none"></init>
         </attribute>
@@ -12,7 +12,7 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2">
       <members class="ilist">
         <attribute name="vmd">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD"/>
           <init class="none"></init>
         </attribute>
@@ -82,7 +82,7 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2Alt">
       <members class="ilist">
         <attribute name="spo2">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
@@ -91,12 +91,12 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq3">
       <members class="ilist">
         <attribute name="spo2">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
         <attribute name="spo2_ex">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>
@@ -231,12 +231,12 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq4">
       <members class="ilist">
         <attribute name="spo2">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
         <attribute name="spo2_ex">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>
@@ -386,12 +386,12 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq5">
       <members class="ilist">
         <attribute name="spo2">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
         <attribute name="spo2_ex">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>
@@ -541,7 +541,7 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.MyPulseOxReq">
       <members class="ilist">
         <attribute name="po">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseOx_VMD"/>
           <init class="none"></init>
         </attribute>
@@ -834,22 +834,22 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.PulseOxDisplayApp">
       <members class="ilist">
         <attribute name="spo2">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
         <attribute name="pulserate">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseRate_Numeric"/>
           <init class="none"></init>
         </attribute>
         <attribute name="spo2_ex">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>
         <attribute name="pr_ex">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>

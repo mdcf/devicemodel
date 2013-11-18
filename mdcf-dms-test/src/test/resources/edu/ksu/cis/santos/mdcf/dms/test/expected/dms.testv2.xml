@@ -1,7 +1,7 @@
 <model>
   <declarations class="ilist">
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.DeviceId">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.Float">
       <supers class="ilist">
@@ -9,34 +9,34 @@
       </supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.ICETimeStamp">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.ICE_UDI">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_FLOAT_TYPE">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_32">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_TYPE">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEEDeviceType">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEEPhysioParameterType">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEEUnit">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int">
       <supers class="ilist">
@@ -49,7 +49,7 @@
       </supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.MeasurementStatus">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.Nat">
       <supers class="ilist">
@@ -57,7 +57,7 @@
       </supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.RealType">
       <supers class="ilist">
@@ -65,7 +65,7 @@
       </supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.examplev2.String">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_BloodPressure_Channel">
       <annotations class="ilist">
@@ -602,8 +602,8 @@
                   </type>
                   <init class="some">
                     <reference class="mapInit">
-                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                      <keyInits class="ilist"/>
+                      <valueInits class="ilist"/>
                     </reference>
                   </init>
                 </attribute>
@@ -796,8 +796,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -995,8 +995,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <keyInits class="ilist"/>
+                                                  <valueInits class="ilist"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -1205,8 +1205,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <keyInits class="ilist"/>
+                                                  <valueInits class="ilist"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -1415,8 +1415,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <keyInits class="ilist"/>
+                                                  <valueInits class="ilist"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -1461,8 +1461,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -1476,8 +1476,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -1491,8 +1491,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -1522,8 +1522,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -1719,8 +1719,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <keyInits class="ilist"/>
+                                                  <valueInits class="ilist"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -1765,8 +1765,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -1780,8 +1780,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -1795,8 +1795,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -1928,8 +1928,8 @@
                   </type>
                   <init class="some">
                     <reference class="mapInit">
-                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                      <keyInits class="ilist"/>
+                      <valueInits class="ilist"/>
                     </reference>
                   </init>
                 </attribute>
@@ -2122,8 +2122,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -2321,8 +2321,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <keyInits class="ilist"/>
+                                                  <valueInits class="ilist"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -2531,8 +2531,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <keyInits class="ilist"/>
+                                                  <valueInits class="ilist"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -2741,8 +2741,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <keyInits class="ilist"/>
+                                                  <valueInits class="ilist"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -2787,8 +2787,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -2802,8 +2802,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -2817,8 +2817,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -2848,8 +2848,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -3045,8 +3045,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <keyInits class="ilist"/>
+                                                  <valueInits class="ilist"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -3091,8 +3091,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -3106,8 +3106,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -3121,8 +3121,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -3343,8 +3343,8 @@
                   </type>
                   <init class="some">
                     <reference class="mapInit">
-                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                      <keyInits class="ilist"/>
+                      <valueInits class="ilist"/>
                     </reference>
                   </init>
                 </attribute>
@@ -3538,8 +3538,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -4116,8 +4116,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -4131,8 +4131,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -4146,8 +4146,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -4177,8 +4177,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -4755,8 +4755,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -4770,8 +4770,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -4785,8 +4785,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -6632,8 +6632,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -6647,8 +6647,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -6662,8 +6662,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -6677,8 +6677,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -7189,8 +7189,8 @@
                   </type>
                   <init class="some">
                     <reference class="mapInit">
-                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                      <keyInits class="ilist"/>
+                      <valueInits class="ilist"/>
                     </reference>
                   </init>
                 </attribute>
@@ -7383,8 +7383,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -7961,8 +7961,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -7976,8 +7976,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -7991,8 +7991,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -8022,8 +8022,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -8600,8 +8600,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -8615,8 +8615,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -8630,8 +8630,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -8941,8 +8941,8 @@
                   </type>
                   <init class="some">
                     <reference class="mapInit">
-                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                      <keyInits class="ilist"/>
+                      <valueInits class="ilist"/>
                     </reference>
                   </init>
                 </attribute>
@@ -9135,8 +9135,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -9356,8 +9356,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <keyInits class="ilist"/>
+                                                  <valueInits class="ilist"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -9402,8 +9402,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -9417,8 +9417,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -9432,8 +9432,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -9463,8 +9463,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -9684,8 +9684,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <keyInits class="ilist"/>
+                                                  <valueInits class="ilist"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -9730,8 +9730,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -9745,8 +9745,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -9760,8 +9760,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -10174,8 +10174,8 @@
                   </type>
                   <init class="some">
                     <reference class="mapInit">
-                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                      <keyInits class="ilist"/>
+                      <valueInits class="ilist"/>
                     </reference>
                   </init>
                 </attribute>
@@ -10368,8 +10368,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -10589,8 +10589,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <keyInits class="ilist"/>
+                                                  <valueInits class="ilist"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -10635,8 +10635,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -10650,8 +10650,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -10665,8 +10665,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -10696,8 +10696,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -10917,8 +10917,8 @@
                                               </type>
                                               <init class="some">
                                                 <reference class="mapInit">
-                                                  <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                                  <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                                  <keyInits class="ilist"/>
+                                                  <valueInits class="ilist"/>
                                                 </reference>
                                               </init>
                                             </attribute>
@@ -10963,8 +10963,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -10978,8 +10978,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -10993,8 +10993,8 @@
                                   </type>
                                   <init class="some">
                                     <reference class="mapInit">
-                                      <keyInits class="com.google.common.collect.EmptyImmutableList"/>
-                                      <valueInits class="com.google.common.collect.EmptyImmutableList"/>
+                                      <keyInits class="ilist"/>
+                                      <valueInits class="ilist"/>
                                     </reference>
                                   </init>
                                 </attribute>
@@ -11024,7 +11024,7 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq1">
       <members class="ilist">
         <attribute name="po">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseOx_VMD"/>
           <init class="none"></init>
         </attribute>
@@ -11033,7 +11033,7 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2">
       <members class="ilist">
         <attribute name="vmd">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD"/>
           <init class="none"></init>
         </attribute>
@@ -11103,7 +11103,7 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq2Alt">
       <members class="ilist">
         <attribute name="spo2">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
@@ -11112,12 +11112,12 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq3">
       <members class="ilist">
         <attribute name="spo2">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
         <attribute name="spo2_ex">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>
@@ -11252,12 +11252,12 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq4">
       <members class="ilist">
         <attribute name="spo2">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
         <attribute name="spo2_ex">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>
@@ -11407,12 +11407,12 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq5">
       <members class="ilist">
         <attribute name="spo2">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
         <attribute name="spo2_ex">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>
@@ -11562,7 +11562,7 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.MyPulseOxReq">
       <members class="ilist">
         <attribute name="po">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseOx_VMD"/>
           <init class="none"></init>
         </attribute>
@@ -11855,22 +11855,22 @@
     <requirement name="edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.PulseOxDisplayApp">
       <members class="ilist">
         <attribute name="spo2">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_SpO2_Numeric"/>
           <init class="none"></init>
         </attribute>
         <attribute name="pulserate">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseRate_Numeric"/>
           <init class="none"></init>
         </attribute>
         <attribute name="spo2_ex">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>
         <attribute name="pr_ex">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Periodic_Exchange"/>
           <init class="none"></init>
         </attribute>
@@ -12073,7 +12073,7 @@
       </supers>
       <members class="ilist">
         <attribute name="level">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
           <init class="none"></init>
         </attribute>
@@ -12160,7 +12160,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Feature"/>
       </supers>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action_Exchange">
       <annotations class="ilist">
@@ -12259,7 +12259,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_PARAM_GRP">
           <annotations class="ilist">
@@ -12271,7 +12271,7 @@
           <init class="none"></init>
         </attribute>
         <attribute name="alerts">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
@@ -12279,7 +12279,7 @@
           <init class="none"></init>
         </attribute>
         <attribute name="metrics">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Metric"/>
@@ -12287,7 +12287,7 @@
           <init class="none"></init>
         </attribute>
         <attribute name="settings">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
@@ -12295,7 +12295,7 @@
           <init class="none"></init>
         </attribute>
         <attribute name="statuses">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
@@ -12303,7 +12303,7 @@
           <init class="none"></init>
         </attribute>
         <attribute name="actions">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
@@ -12321,7 +12321,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Data_Exchange"/>
       </supers>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Data_Exchange">
       <annotations class="ilist">
@@ -12329,8 +12329,8 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Feature">
       <annotations class="ilist">
@@ -12338,8 +12338,8 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting">
       <annotations class="ilist">
@@ -12453,7 +12453,7 @@
       </supers>
       <members class="ilist">
         <attribute name="setting">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_FloatRangeSetting"/>
           <init class="none"></init>
         </attribute>
@@ -12533,7 +12533,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_MODEL">
           <annotations class="ilist">
@@ -12545,7 +12545,7 @@
           <init class="none"></init>
         </attribute>
         <attribute name="credentials">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="mapType">
             <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
             <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Certificate"/>
@@ -12561,10 +12561,10 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="messageConstructed">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.ICETimeStamp"/>
           <init class="none"></init>
         </attribute>
@@ -12576,7 +12576,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_PHYSIO">
           <annotations class="ilist">
@@ -12631,7 +12631,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
       </supers>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_NuObsValue">
       <annotations class="ilist">
@@ -12647,7 +12647,7 @@
       </supers>
       <members class="ilist">
         <attribute name="value">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Number"/>
           <init class="none"></init>
         </attribute>
@@ -12660,10 +12660,10 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="measurementTaken">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.ICETimeStamp"/>
           <init class="none"></init>
         </attribute>
@@ -12696,10 +12696,10 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="status">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.MeasurementStatus"/>
           <init class="none"></init>
         </attribute>
@@ -12774,7 +12774,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Data_Exchange"/>
       </supers>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_RangeSetting">
       <annotations class="ilist">
@@ -12883,8 +12883,8 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Action">
       <annotations class="ilist">
@@ -12895,7 +12895,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access"/>
       </supers>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read">
       <annotations class="ilist">
@@ -12906,7 +12906,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access"/>
       </supers>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Read_Write">
       <annotations class="ilist">
@@ -12917,7 +12917,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access"/>
       </supers>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access_Write">
       <annotations class="ilist">
@@ -12928,7 +12928,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access"/>
       </supers>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Certificate">
       <annotations class="ilist">
@@ -12936,8 +12936,8 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Set_Exchange">
       <annotations class="ilist">
@@ -12986,7 +12986,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_PHYSIO">
           <annotations class="ilist">
@@ -13060,7 +13060,7 @@
       </supers>
       <members class="ilist">
         <attribute name="payload">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="Any"/>
           <init class="none"></init>
         </attribute>
@@ -13073,10 +13073,10 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="payload">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="Any"/>
           <init class="none"></init>
         </attribute>
@@ -13152,7 +13152,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="status">
           <annotations class="ilist">
@@ -13197,7 +13197,7 @@
       </supers>
       <members class="ilist">
         <attribute name="state">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.ICE_VMD_State"/>
           <init class="none"></init>
         </attribute>
@@ -13209,7 +13209,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="IEEE11073_MDC_ATTR_SYS_TYPE">
           <annotations class="ilist">
@@ -13247,45 +13247,45 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="century">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="year">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="month">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="day">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="mon">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="minute">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="second">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="sec_franctions">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
@@ -13298,25 +13298,25 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="century">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="year">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="month">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
         <attribute name="day">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_INT_U8"/>
           <init class="none"></init>
         </attribute>
@@ -13329,15 +13329,15 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="manufacturer">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
           <init class="none"></init>
         </attribute>
         <attribute name="model_number">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
           <init class="none"></init>
         </attribute>
@@ -13401,7 +13401,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="min">
           <annotations class="ilist">

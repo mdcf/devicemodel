@@ -50,7 +50,7 @@ import edu.ksu.cis.santos.mdcf.dms.test.ModelExtractorTest;
  */
 public class DeviceMatchingTest {
 
-  private static boolean GENERATE_EXPECTED = true;
+  private static boolean GENERATE_EXPECTED = false;
   private static SymbolTable ST = SymbolTable.of(XStreamer
       .<Model> fromXml(ModelExtractorTest.class
           .getResourceAsStream("expected/dms.testv2.xml")));

@@ -1,19 +1,19 @@
 <model>
   <declarations class="ilist">
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.DeviceId">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.ICETimeStamp">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.IEEEDeviceType">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.IEEEUnit">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.Int">
       <supers class="ilist">
@@ -31,10 +31,10 @@
       </supers>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.Number">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <basicType name="edu.ksu.cis.santos.mdcf.dms.example.String">
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
     </basicType>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.clas.ICEBloodPressure">
       <annotations class="ilist">
@@ -116,21 +116,21 @@
       </supers>
       <members class="ilist">
         <attribute name="systolic">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="some">
             <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_SYS"/>
           </init>
         </attribute>
         <attribute name="diastolic">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="some">
             <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_DIA"/>
           </init>
         </attribute>
         <attribute name="physioParameterType">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="some">
             <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_MEAN"/>
@@ -516,20 +516,20 @@
                   </init>
                 </attribute>
                 <attribute name="versionNumber">
-                  <annotations class="com.google.common.collect.EmptyImmutableList"/>
+                  <annotations class="ilist"/>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.String"/>
                   <init class="some">
                     <reference class="basicInit" value="XX.YY.ZZ"/>
                   </init>
                 </attribute>
                 <attribute name="credentials">
-                  <annotations class="com.google.common.collect.EmptyImmutableList"/>
+                  <annotations class="ilist"/>
                   <type class="setType">
                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                   </type>
                   <init class="some">
                     <reference class="setInit">
-                      <inits class="com.google.common.collect.EmptyImmutableList"/>
+                      <inits class="ilist"/>
                     </reference>
                   </init>
                 </attribute>
@@ -1070,20 +1070,20 @@
                   </init>
                 </attribute>
                 <attribute name="versionNumber">
-                  <annotations class="com.google.common.collect.EmptyImmutableList"/>
+                  <annotations class="ilist"/>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.String"/>
                   <init class="some">
                     <reference class="basicInit" value="XX.YY.ZZ"/>
                   </init>
                 </attribute>
                 <attribute name="credentials">
-                  <annotations class="com.google.common.collect.EmptyImmutableList"/>
+                  <annotations class="ilist"/>
                   <type class="setType">
                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                   </type>
                   <init class="some">
                     <reference class="setInit">
-                      <inits class="com.google.common.collect.EmptyImmutableList"/>
+                      <inits class="ilist"/>
                     </reference>
                   </init>
                 </attribute>
@@ -1467,20 +1467,20 @@
                   </init>
                 </attribute>
                 <attribute name="versionNumber">
-                  <annotations class="com.google.common.collect.EmptyImmutableList"/>
+                  <annotations class="ilist"/>
                   <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.String"/>
                   <init class="some">
                     <reference class="basicInit" value="XX.YY.ZZ"/>
                   </init>
                 </attribute>
                 <attribute name="credentials">
-                  <annotations class="com.google.common.collect.EmptyImmutableList"/>
+                  <annotations class="ilist"/>
                   <type class="setType">
                     <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
                   </type>
                   <init class="some">
                     <reference class="setInit">
-                      <inits class="com.google.common.collect.EmptyImmutableList"/>
+                      <inits class="ilist"/>
                     </reference>
                   </init>
                 </attribute>
@@ -1575,7 +1575,7 @@
                       </type>
                       <init class="some">
                         <reference class="setInit">
-                          <inits class="com.google.common.collect.EmptyImmutableList"/>
+                          <inits class="ilist"/>
                         </reference>
                       </init>
                     </attribute>
@@ -1676,7 +1676,7 @@
                       </type>
                       <init class="some">
                         <reference class="setInit">
-                          <inits class="com.google.common.collect.EmptyImmutableList"/>
+                          <inits class="ilist"/>
                         </reference>
                       </init>
                     </attribute>
@@ -1905,7 +1905,7 @@
       </supers>
       <members class="ilist">
         <attribute name="level">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
@@ -1989,7 +1989,7 @@
       </supers>
       <members class="ilist">
         <attribute name="cond">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="Boolean"/>
           <init class="none"></init>
         </attribute>
@@ -2004,7 +2004,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.SampleArray"/>
       </supers>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.Episodic">
       <annotations class="ilist">
@@ -2033,8 +2033,8 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange">
       <annotations class="ilist">
@@ -2042,8 +2042,8 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDevice">
       <annotations class="ilist">
@@ -2051,7 +2051,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="id">
           <annotations class="ilist">
@@ -2072,12 +2072,12 @@
           <init class="none"></init>
         </attribute>
         <attribute name="manufacturerModel">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEManufacturerModel"/>
           <init class="none"></init>
         </attribute>
         <attribute name="physioParams">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter"/>
           </type>
@@ -2091,10 +2091,10 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="security">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="optionType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
           </type>
@@ -2108,17 +2108,17 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="security">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="optionType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
           </type>
           <init class="none"></init>
         </attribute>
         <attribute name="alarms">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
           </type>
@@ -2132,7 +2132,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="modelNumber">
           <annotations class="ilist">
@@ -2144,12 +2144,12 @@
           <init class="none"></init>
         </attribute>
         <attribute name="versionNumber">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.String"/>
           <init class="none"></init>
         </attribute>
         <attribute name="credentials">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICESecurity"/>
           </type>
@@ -2164,10 +2164,10 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="messageConstructed">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.ICETimeStamp"/>
           <init class="none"></init>
         </attribute>
@@ -2179,8 +2179,8 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEPhysioParameter">
       <annotations class="ilist">
@@ -2188,7 +2188,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="physioParameterType">
           <annotations class="ilist">
@@ -2218,14 +2218,14 @@
           <init class="none"></init>
         </attribute>
         <attribute name="exchanges">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
           </type>
           <init class="none"></init>
         </attribute>
         <attribute name="alerts">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
           </type>
@@ -2239,8 +2239,8 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.IntRange">
       <annotations class="ilist">
@@ -2301,8 +2301,8 @@
         </featureLevel>
         <data/>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricTimeStampAttributes">
       <annotations class="ilist">
@@ -2316,47 +2316,47 @@
       </supers>
       <members class="ilist">
         <attribute name="sec">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="min">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="hour">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="mday">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="mon">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="year">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="wday">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="yday">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
         <attribute name="isdst">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Int"/>
           <init class="none"></init>
         </attribute>
@@ -2407,14 +2407,14 @@
           <init class="none"></init>
         </attribute>
         <attribute name="attributes">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute"/>
           </type>
           <init class="none"></init>
         </attribute>
         <attribute name="range">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.Range"/>
           <init class="none"></init>
         </attribute>
@@ -2432,17 +2432,17 @@
       </supers>
       <members class="ilist">
         <attribute name="measurementTaken">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.ICETimeStamp"/>
           <init class="none"></init>
         </attribute>
         <attribute name="value">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="Any"/>
           <init class="none"></init>
         </attribute>
         <attribute name="context">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.ObsValueContext"/>
           <init class="none"></init>
         </attribute>
@@ -2454,8 +2454,8 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.Periodic">
       <annotations class="ilist">
@@ -2487,7 +2487,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEDataExchange"/>
       </supers>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.Range">
       <annotations class="ilist">
@@ -2495,7 +2495,7 @@
           <level>Schema</level>
         </featureLevel>
       </annotations>
-      <supers class="com.google.common.collect.EmptyImmutableList"/>
+      <supers class="ilist"/>
       <members class="ilist">
         <attribute name="min">
           <annotations class="ilist">
@@ -2605,7 +2605,7 @@
         <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
         <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.RangeSetting"/>
       </supers>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.RealTimeSA">
       <annotations class="ilist">
@@ -2616,7 +2616,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.SampleArray"/>
       </supers>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.SampleArray">
       <annotations class="ilist">
@@ -2629,14 +2629,14 @@
       </supers>
       <members class="ilist">
         <attribute name="values">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="seqType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
           </type>
           <init class="none"></init>
         </attribute>
         <attribute name="attributes">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute"/>
           </type>
@@ -2653,7 +2653,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute"/>
       </supers>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.TargetValueAlert">
       <annotations class="ilist">
@@ -2665,7 +2665,7 @@
         <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
         <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ValueSetting"/>
       </supers>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.TimeSA">
       <annotations class="ilist">
@@ -2678,14 +2678,14 @@
       </supers>
       <members class="ilist">
         <attribute name="values">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="seqType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
           </type>
           <init class="none"></init>
         </attribute>
         <attribute name="attributes">
-          <annotations class="com.google.common.collect.EmptyImmutableList"/>
+          <annotations class="ilist"/>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute"/>
           </type>
@@ -2702,7 +2702,7 @@
       <supers class="ilist">
         <namedType name="edu.ksu.cis.santos.mdcf.dms.example.schema.ICEAlert"/>
       </supers>
-      <members class="com.google.common.collect.EmptyImmutableList"/>
+      <members class="ilist"/>
     </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.example.schema.ValueSetting">
       <annotations class="ilist">
