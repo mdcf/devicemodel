@@ -1602,6 +1602,2154 @@
         </attribute>
       </members>
     </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_AdministrationSession_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="settings">
+          <annotations class="ilist">
+            <override/>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_FluidDeliveryTime_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_StandbyTime_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_FluidDeliveryRate_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DeliveredDrugMass_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_InfusedVolume_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_VolumeRemainingToBeInfused_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_TotalDeliveredFluidVolume_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_GoodDemandNumber_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_TotalDemandNumber_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DoseGrantsPerHour_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DoseRequestsPerHour_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_CurrentPumpReservoirAmount_Status</reference>
+              </typeName>
+            </multiplicity>
+          </annotations>
+          <type class="mapType">
+            <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+            <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+          </type>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Alert_Channel">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="alerts">
+          <annotations class="ilist">
+            <override/>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Below_VTBI_Soft_Limit</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Above_VTBI_Soft_Limit</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Below_Basal_Rate_Soft_Limit</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Above_Basal_Rate_Soft_Limit</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Maximum_Safe_Dose</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Basal_Underinfusion</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Bolus_Underinfusion</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Square_Bolus_Underinfusion</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Battery_Backup</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Low_Battery</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Low_Reservoir</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Long_Pause</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Input_Needed</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Clinician_Authentication_Failure</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Patient_Authentication_Failure</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Prescription_Authentication_Failure</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Below_VTBI_Hard_Limit</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Above_VTBI_Hard_Limit</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Below_Basal_Rate_Hard_Limit</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Above_Basal_Rate_Hard_Limit</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Drug_Not_In_Library</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Open_Door_Alarm</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Basal_Overinfusion</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Bolus_Overinfusion</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Square_Bolus_Overinfusion</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Alert_Stop_Start</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Air_In_Line</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Empty_Reservoir</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Pump_Overheated</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Downstream_Occlusion</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Upstream_Occlusion</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_POST_Failure</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Sound_Failure</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_RAM_Failure</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_ROM_failure</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_CPU_Failure</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Thread_Monitor_Alarm</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Battery_Failure</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Voltage_Out_of_Range</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_PowerSupplyFailure</reference>
+              </typeName>
+            </multiplicity>
+          </annotations>
+          <type class="mapType">
+            <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+            <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+          </type>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_BolusDeliveryDuration_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_TIME_PD_BOLUS_DELIV"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_BolusDose_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_DOSE_DRUG_BOLUS"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_BolusDrugDeliveryRate_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_FLOW_BOLUS_DRUG_DELIV"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_BolusVolume_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_VOL_FLUID_BOLUS"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_CalculatedFluidPressure_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_FLOW_FLUID_DELIV_MIN"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Commands">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="actions">
+          <annotations class="ilist">
+            <override/>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Start_Action</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Pause_Action</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Stop_Action</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Prime_Action</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_ResetAdministrationSession_Action</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_ResetVolumeInfusedActualTotal_Action</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_PatientBolus_Action</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_SquareBolus_Action</reference>
+              </typeName>
+            </multiplicity>
+          </annotations>
+          <type class="mapType">
+            <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+            <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
+          </type>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_CurrentPumpReservoirAmount_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_NOM_CURRENT_PUMP_RESERVOIR_AMOUNT"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DeliveredDrugMass_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_MASS_DRUG_DELIV"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DiluentVolume_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_VOL_FLUID_DILUENT"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DoseGrantsPerHour_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_RATE_DOSE_GRANT_PER_HR"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DoseRequestsPerHour_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_RATE_DOSE_REQ_PER_HR"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DownstreamFlow_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_NOM_DOWNSTREAM_FLOW"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DrugCode_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_NOM_DRUG_CODE"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DrugConcentration_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_CONC_DRUG"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DrugDeliveryRate_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_FLOW_DRUG_DELIV"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DrugDiluent_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_NOM_SUBST_DILUENT"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DrugName_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_DRUG_NAME_POINTER"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_FluidBolusRate_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_FLOW_FLUID_BOLUS"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_FluidDeliveryRateResolution_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_FLOW_FLUID_RES"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_FluidDeliveryRate_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_FLOW_FLUID_PUMP"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_FluidDeliveryTime_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_TIME_PD_FLUID_DELIV_SINCE_START"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_GoodDemandNumber_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_RATE_PCA_GOOD_DMD"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_InfusedVolume_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_VOL_FLUID_DELIV"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_InitialVolumeDrug_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_NOM_INITIAL_VOLUME_DRUG"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_KVORate_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_FLOW_KVO"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_LockOutInterval_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_TIME_PD_FLUID_BOLUS_LOCKOUT"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_MassLoadingDose_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_MASS_DOSE_LOADING"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_MaxDrugPerHour_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_NOM_MAX_DRUG_PER_HOUR"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_MaxFluidDeliveryRate_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_FLOW_FLUID_MAX"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_MeasuredFluidPressure_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_FLOW_FLUID_RES"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_MinFluidDeliveryRate_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_FLOW_FLUID_DELIV_MIN"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_OperationalMode_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_FLOW_FLUID_MAX"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_OperationalStatus_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_VOL_FLUID_RES"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_PatientBolus_Action">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
+      </supers>
+      <members class="ilist"/>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_PatientLineType_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_TUBE_TYPE"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Pause_Action">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
+      </supers>
+      <members class="ilist"/>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_PrescriptionDose_Settings">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="settings">
+          <annotations class="ilist">
+            <override/>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DrugDeliveryRate_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_VolumeToBeInfused_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_LockOutInterval_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_MaxDrugPerHour_Setting</reference>
+              </typeName>
+            </multiplicity>
+          </annotations>
+          <type class="mapType">
+            <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+            <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+          </type>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_PrescriptionDrugInfo_Settings">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="settings">
+          <annotations class="ilist">
+            <override/>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DrugConcentration_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_MassLoadingDose_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DrugDiluent_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DrugName_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_SyringeType_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_PatientLineType_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DiluentVolume_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_SyringeVolume_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DrugCode_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_InitialVolumeDrug_Setting</reference>
+              </typeName>
+            </multiplicity>
+          </annotations>
+          <type class="mapType">
+            <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+            <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+          </type>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Prime_Action">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
+      </supers>
+      <members class="ilist"/>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_PumpSettings_Settings">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="settings">
+          <annotations class="ilist">
+            <override/>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_KVORate_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_BolusVolume_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_BolusDeliveryDuration_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_FluidBolusRate_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_BolusDrugDeliveryRate_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_BolusDose_Setting</reference>
+              </typeName>
+            </multiplicity>
+          </annotations>
+          <type class="mapType">
+            <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+            <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+          </type>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_PumpSpec_Settings">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="settings">
+          <annotations class="ilist">
+            <override/>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_MaxFluidDeliveryRate_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_MinFluidDeliveryRate_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_FluidDeliveryRateResolution_Setting</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_VolumeResolution_Setting</reference>
+              </typeName>
+            </multiplicity>
+          </annotations>
+          <type class="mapType">
+            <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+            <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+          </type>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Pump_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="settings">
+          <annotations class="ilist">
+            <override/>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_OperationalMode_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_CalculatedFluidPressure_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_MeasuredFluidPressure_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_OperationalStatus_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_VolumeInfusedActualTotal_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_RemainingBatteryTime_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_UsingBatteryPower_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_UpstreamFlow_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_DownstreamFlow_Status</reference>
+              </typeName>
+            </multiplicity>
+          </annotations>
+          <type class="mapType">
+            <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+            <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+          </type>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_RemainingBatteryTime_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_NOM_REMAINING_BATT_TIME"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_ResetAdministrationSession_Action">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
+      </supers>
+      <members class="ilist"/>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_ResetVolumeInfusedActualTotal_Action">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
+      </supers>
+      <members class="ilist"/>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_SquareBolus_Action">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
+      </supers>
+      <members class="ilist"/>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_StandbyTime_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_TIME_PD_FLUID_STANDBY"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Start_Action">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
+      </supers>
+      <members class="ilist"/>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Stop_Action">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Action"/>
+      </supers>
+      <members class="ilist"/>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_SyringeType_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_SYRINGE_TYPE"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_SyringeVolume_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_VOL_SYRINGE"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_TotalDeliveredFluidVolume_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_VOL_FLUID_DELIV_TOTAL_SET"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_TotalDemandNumber_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_RATE_PCA_REQ"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_UpstreamFlow_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_NOM_UPSTREAM_FLOW"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_UsingBatteryPower_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_NOM_USING_BATT"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_VolumeInfusedActualTotal_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_VOL_FLUID_RES"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_VolumeRemainingToBeInfused_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_VOL_FLUID_TBI_REMAIN"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_VolumeResolution_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_VOL_FLUID_RES"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_VolumeToBeInfused_Setting">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="NOM_VOL_FLUID_TBI"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value=""/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCA_FLAT_VMD">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PARAM_GRP">
+          <annotations class="ilist">
+            <override/>
+            <const qualifier="">
+              <level>Class</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="IEEE ... PCA"/>
+          </init>
+        </attribute>
+        <attribute name="channels">
+          <annotations class="ilist">
+            <override/>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_PrescriptionDose_Settings</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_PrescriptionDrugInfo_Settings</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_PumpSettings_Settings</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_AdministrationSession_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Pump_Status</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Commands</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="1">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PCAF_Alert_Channel</reference>
+              </typeName>
+            </multiplicity>
+          </annotations>
+          <type class="mapType">
+            <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+            <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+          </type>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_PulseOx_VMD">
       <annotations class="ilist">
         <featureLevel qualifier="">
@@ -1757,6 +3905,1548 @@
           <init class="some">
             <reference class="basicInit" value="MDC_DIM_PERCENT"/>
           </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Above_Basal_Rate_Hard_Limit">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Above_Basal_Rate_Hard_Limit"/>
+          </init>
+        </attribute>
+        <attribute name="hardLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="suggestedLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Above_VTBI_Hard_Limit">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Above_VTBI_Hard_Limit"/>
+          </init>
+        </attribute>
+        <attribute name="hardLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="suggestedLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Air_In_Line">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Air_In_Line"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Alert_Stop_Start">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Alert_Stop_Start"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Basal_Overinfusion">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Basal_Overinfusion"/>
+          </init>
+        </attribute>
+        <attribute name="supposedInfusion">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="currentInfusion">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Battery_Failure">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Battery_Failure"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Below_Basal_Rate_Hard_Limit">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Below_Basal_Rate_Hard_Limit"/>
+          </init>
+        </attribute>
+        <attribute name="hardLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="suggestedLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Below_VTBI_Hard_Limit">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Below_VTBI_Hard_Limit"/>
+          </init>
+        </attribute>
+        <attribute name="hardLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="suggestedLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Bolus_Overinfusion">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Square_Bolus_Overinfusion"/>
+          </init>
+        </attribute>
+        <attribute name="supposedInfusion">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="currentInfusion">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_CPU_Failure">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_CPU_Failure"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Clinician_Authentication_Failure">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Clinician_Authentication_Failure"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Downstream_Occlusion">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Downstream_Occlusion"/>
+          </init>
+        </attribute>
+        <attribute name="currentOcclusion">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Drug_Not_In_Library">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Drug_Not_In_Library"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Empty_Reservoir">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Empty_Reservoir"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Open_Door_Alarm">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Open_Door_Alarm"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_POST_Failure">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_CPU_Failure"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Patient_Authentication_Failure">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Patient_Authentication_Failure"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_PowerSupplyFailure">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_PowerSupplyFailure"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Prescription_Authentication_Failure">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Prescription_Authentication_Failure"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Pump_Overheated">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Pump_Overheated"/>
+          </init>
+        </attribute>
+        <attribute name="currentTemperature">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_RAM_Failure">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_CPU_Failure"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_ROM_failure">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_CPU_Failure"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Sound_Failure">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_CPU_Failure"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Square_Bolus_Overinfusion">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Square_Bolus_Overinfusion"/>
+          </init>
+        </attribute>
+        <attribute name="supposedInfusion">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="currentInfusion">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Thread_Monitor_Alarm">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Thread_Monitor_Alarm"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Upstream_Occlusion">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_CPU_Failure"/>
+          </init>
+        </attribute>
+        <attribute name="currentOcclusion">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Alarm_Voltage_Out_of_Range">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Alarm_Voltage_Out_of_Range"/>
+          </init>
+        </attribute>
+        <attribute name="currentVoltage">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Above_Basal_Rate_Soft_Limit">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Warning_Above_Basal_Rate_Soft_Limit"/>
+          </init>
+        </attribute>
+        <attribute name="softLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="suggestedLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Above_VTBI_Soft_Limit">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Warning_Above_VTBI_Soft_Limit"/>
+          </init>
+        </attribute>
+        <attribute name="softLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="suggestedLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Basal_Underinfusion">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Warning_Basal_Underinfusion"/>
+          </init>
+        </attribute>
+        <attribute name="supposedInfusion">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="currentInfusion">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Battery_Backup">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Warning_Battery_Backup"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Below_Basal_Rate_Soft_Limit">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Warning_Below_Basal_Rate_Soft_Limit"/>
+          </init>
+        </attribute>
+        <attribute name="softLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="suggestedLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Below_VTBI_Soft_Limit">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Warning_Below_VTBI_Soft_Limit"/>
+          </init>
+        </attribute>
+        <attribute name="softLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="suggestedLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Bolus_Underinfusion">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Warning_Bolus_Underinfusion"/>
+          </init>
+        </attribute>
+        <attribute name="supposedInfusion">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="currentInfusion">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Input_Needed">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Warning_Input_Needed"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Long_Pause">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Warning_Long_Pause"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Low_Battery">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Warning_Low_Battery"/>
+          </init>
+        </attribute>
+        <attribute name="lowBatteryLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="currentBatteryLevel">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Low_Reservoir">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Warning_Low_Reservoir"/>
+          </init>
+        </attribute>
+        <attribute name="lowReservoirLimit">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="currentReservoir">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Maximum_Safe_Dose">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Warning_Maximum_Safe_Dose"/>
+          </init>
+        </attribute>
+        <attribute name="safeDose">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="currentDose">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.PCAF_Warning_Square_Bolus_Underinfusion">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Alert"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="ALERT_SOURCE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="PCA"/>
+          </init>
+        </attribute>
+        <attribute name="ALERT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="KSU_Warning_Square_Bolus_Underinfusion"/>
+          </init>
+        </attribute>
+        <attribute name="supposedInfusion">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
+        </attribute>
+        <attribute name="currentInfusion">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Instance</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.Int"/>
+          <init class="none"></init>
         </attribute>
       </members>
     </feature>
