@@ -548,7 +548,7 @@ class ModelExtractor(
           case Some(s : ISeq[_]) =>
             val inits = s.map(x => extractType(aQName, elementType, Some(x))._2)
             if (inits.exists(!_.isPresent)) (resultType, none())
-            else (resultType, some(setInit(inits.map(_.get))))
+            else (resultType, some(seqInit(inits.map(_.get))))
         }
       case c if clazz.isPrimitive || clazz.isEnum || clazz.isArray ||
         clazz.isAnnotation || clazz.isSynthetic || c.startsWith("scala.") ||
