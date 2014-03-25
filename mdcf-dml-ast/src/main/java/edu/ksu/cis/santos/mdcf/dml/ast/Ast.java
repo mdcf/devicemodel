@@ -145,6 +145,13 @@ public class Ast {
       return Ast.invariant(name, predicateType, predicate);
     }
 
+    public static <T> List<T> list(final Iterable<?> ts) {
+      @SuppressWarnings("unchecked")
+      final List<T> result = ts instanceof AstNode ? Ast.<T> list((T) ts) : Ast
+          .<T> list((Iterable<T>) ts);
+      return result;
+    }
+
     @SuppressWarnings("unchecked")
     private static <T, O> List<T> list(final Iterable<O> os,
         final Class<T> clazz) {
@@ -157,10 +164,6 @@ public class Ast {
       } else {
         return ImmutableList.<T> builder().addAll((Iterable<T>) os).build();
       }
-    }
-
-    public static <T> List<T> list(final Iterable<T> ts) {
-      return Ast.list(ts);
     }
 
     @SafeVarargs

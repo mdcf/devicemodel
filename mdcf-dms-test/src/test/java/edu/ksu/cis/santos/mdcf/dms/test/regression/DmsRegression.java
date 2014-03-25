@@ -12,6 +12,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
+import edu.ksu.cis.santos.mdcf.dms.test.AstConstructionTest;
 import edu.ksu.cis.santos.mdcf.dms.test.ModelExtractorTest;
 import edu.ksu.cis.santos.mdcf.dms.test.SymbolTableTest;
 
@@ -19,6 +20,7 @@ import edu.ksu.cis.santos.mdcf.dms.test.SymbolTableTest;
  * @author <a href="mailto:robby@k-state.edu">Robby</a>
  */
 @RunWith(Suite.class)
-@SuiteClasses({ ModelExtractorTest.class, SymbolTableTest.class })
+@SuiteClasses({ AstConstructionTest.class, ModelExtractorTest.class,
+    SymbolTableTest.class })
 public class DmsRegression {
 }
