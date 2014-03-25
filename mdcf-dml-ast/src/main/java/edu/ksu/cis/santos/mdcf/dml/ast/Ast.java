@@ -12,6 +12,7 @@ import java.util.List;
 
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableList.Builder;
 
 import edu.ksu.cis.santos.mdcf.dml.ast.exp.AccessExp;
 import edu.ksu.cis.santos.mdcf.dml.ast.exp.ApplyExp;
@@ -412,7 +413,11 @@ public class Ast {
 
   @SafeVarargs
   public static <T> List<T> list(final T... ts) {
-    return ImmutableList.<T> builder().add(ts).build();
+    final Builder<T> b = ImmutableList.<T> builder();
+    for (final T t : ts) {
+      b.add(t);
+    }
+    return b.build();
   }
 
   public static LiteralExp literalExp(final String value) {
