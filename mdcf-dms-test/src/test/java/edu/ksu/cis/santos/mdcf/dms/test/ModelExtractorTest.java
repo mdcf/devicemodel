@@ -42,7 +42,6 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorGetExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorPeriodicExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorSetExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorSporadicExchange;
-import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.AppReq4;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.PulseOxDisplayApp;
 
 /**
