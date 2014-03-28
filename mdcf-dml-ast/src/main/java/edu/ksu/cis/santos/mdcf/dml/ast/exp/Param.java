@@ -28,7 +28,7 @@ public final class Param extends AstNode {
 
   @Override
   protected Object[] getChildren() {
-    return new Object[] { this.name, this.type };
+    return new Object[] { this.type, this.name };
   }
 
   @Override
