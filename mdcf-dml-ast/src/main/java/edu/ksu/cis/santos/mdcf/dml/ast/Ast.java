@@ -320,11 +320,11 @@ public class Ast {
       return Ast.unknownExp();
     }
 
-    private Weak() {
+    public static VarRefExp varRefExp(final String id) {
+      return Ast.varRefExp(id);
     }
 
-    public VarRefExp varRefExp(final String id) {
-      return Ast.varRefExp(id);
+    private Weak() {
     }
   }
 
