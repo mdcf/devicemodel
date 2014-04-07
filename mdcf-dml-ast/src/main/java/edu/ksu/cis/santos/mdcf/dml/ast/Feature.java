@@ -21,7 +21,7 @@ public final class Feature extends Declaration {
   public final List<NamedType> supers;
 
   public final List<Member> members;
-
+  
   public Feature(final Iterable<FeatureAnnotation> annotations,
       final String name, final Iterable<NamedType> supers,
       final Iterable<Member> members) {
