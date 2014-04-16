@@ -89,3 +89,36 @@ trait ICE_MultiMonitor_VMD extends ICE_VMD {
   @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_BloodPressure_Channel])
   override val channels : Map[String, ICE_Channel]
 }
+
+trait ICE_Capnography_VMD extends ICE_VMD {
+  @Const(CLASS)
+  override val MDC_ATTR_ID_PARAM_GRP : IEEE11073_OID_TYPE = "IEEE ... Capnography"
+
+  // declare an EtCo2 channel
+  // declare a RespiratoryRate channel
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_EtCo2_Channel])
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_RepiratoryRate_Channel])
+  override val channels : Map[String, ICE_Channel]
+}
+
+trait ICE_EtCo2_Channel extends ICE_Channel {
+  // indicate at least one Sp02 Numeric
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_EtCo2_Numeric])
+  override val metrics : Map[String, ICE_Metric]
+}
+
+trait ICE_RepiratoryRate_Channel extends ICE_Channel {
+  // indicate at least one PulseRate Numeric
+  @Multiplicity(lo = 1, hi = *, clas = classOf[ICE_RespiratoryRate_Numeric])
+  override val metrics : Map[String, ICE_Metric]
+}
+
+trait ICE_EtCo2_Numeric extends ICE_Numeric {
+  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "MDC_CAPNOGRAPHY_ETCO2"
+  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "MDC_DIM_PERCENT"
+}
+
+trait ICE_RespiratoryRate_Numeric extends ICE_Numeric {
+  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "MDC_CAPNOGRAPHY_RR"
+  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "MDC_DIM_BEAT_PER_MIN"
+}

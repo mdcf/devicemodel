@@ -42,6 +42,15 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorGetExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorPeriodicExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorSetExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorSporadicExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimpleCapnography;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimpleCapnographyGetExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimpleCapnographyPeriodicExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimplePCA;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimplePCAActionExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimplePCAGetExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimplePCAPeriodicExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimplePCASetExchange;
+import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimplePCASporadicExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.PulseOxDisplayApp;
 
 /**
@@ -108,6 +117,25 @@ public class ModelExtractorTest {
 						MultiMonitorSetExchange.class.getName(),
 						MultiMonitorSporadicExchange.class.getName() });
 	}
+	
+	@Test
+	public void examplev2simplecapnography() throws Exception {
+		test("dms.testv2.simplecapnography", new String[] {},
+						new String[] { SimpleCapnography.class.getName(),
+						SimpleCapnographyGetExchange.class.getName(),
+							SimpleCapnographyPeriodicExchange.class.getName() });
+	}
+	
+//	@Test
+//	public void examplev2simplepca() throws Exception {
+//		test("dms.testv2.simplepca", new String[] {},
+//						new String[] { SimplePCA.class.getName(),
+//						SimplePCAGetExchange.class.getName(),
+//						SimplePCASetExchange.class.getName(),
+//						SimplePCAActionExchange.class.getName(),
+//						SimplePCAPeriodicExchange.class.getName(),
+//						SimplePCASporadicExchange.class.getName() });
+//	}
 
 	@Test
 	public void examplev2SchemaAndClass() throws Exception {

@@ -316,49 +316,49 @@ trait ICE_PCAF_Pump_Status extends ICE_Channel {
   override val settings : Map[String, ICE_Setting]
 }
 
-trait ICE_PCAF_OperationalMode_Status extends ICE_Setting {
-  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "NOM_FLOW_FLUID_MAX"
-  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
+trait ICE_PCAF_OperationalMode_Status extends ICE_Status {
+  val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "NOM_FLOW_FLUID_MAX"
+  val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
 }
 
-trait ICE_PCAF_CalculatedFluidPressure_Status extends ICE_Setting {
-  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "NOM_FLOW_FLUID_DELIV_MIN"
-  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
+trait ICE_PCAF_CalculatedFluidPressure_Status extends ICE_Status {
+   val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "NOM_FLOW_FLUID_DELIV_MIN"
+   val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
 }
 
-trait ICE_PCAF_MeasuredFluidPressure_Status extends ICE_Setting {
-  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "NOM_FLOW_FLUID_RES"
-  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
+trait ICE_PCAF_MeasuredFluidPressure_Status extends ICE_Status {
+   val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "NOM_FLOW_FLUID_RES"
+   val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
 }
 
-trait ICE_PCAF_OperationalStatus_Status extends ICE_Setting {
-  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "NOM_VOL_FLUID_RES"
-  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
+trait ICE_PCAF_OperationalStatus_Status extends ICE_Status {
+   val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "NOM_VOL_FLUID_RES"
+   val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
 }
 
-trait ICE_PCAF_VolumeInfusedActualTotal_Status extends ICE_Setting {
-  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "NOM_VOL_FLUID_RES"
-  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
+trait ICE_PCAF_VolumeInfusedActualTotal_Status extends ICE_Status {
+   val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "NOM_VOL_FLUID_RES"
+   val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
 }
 
-trait ICE_PCAF_RemainingBatteryTime_Status extends ICE_Setting {
-  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "KSU_NOM_REMAINING_BATT_TIME"
-  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
+trait ICE_PCAF_RemainingBatteryTime_Status extends ICE_Status {
+   val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "KSU_NOM_REMAINING_BATT_TIME"
+   val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
 }
 
-trait ICE_PCAF_UsingBatteryPower_Status extends ICE_Setting {
-  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "KSU_NOM_USING_BATT"
-  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
+trait ICE_PCAF_UsingBatteryPower_Status extends ICE_Status {
+   val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "KSU_NOM_USING_BATT"
+   val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
 }
 
-trait ICE_PCAF_UpstreamFlow_Status extends ICE_Setting {
-  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "KSU_NOM_UPSTREAM_FLOW"
-  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
+trait ICE_PCAF_UpstreamFlow_Status extends ICE_Status {
+   val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "KSU_NOM_UPSTREAM_FLOW"
+   val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
 }
 
-trait ICE_PCAF_DownstreamFlow_Status extends ICE_Setting {
-  override val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "KSU_NOM_DOWNSTREAM_FLOW"
-  override val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
+trait ICE_PCAF_DownstreamFlow_Status extends ICE_Status {
+   val MDC_ATTR_ID_PHYSIO : IEEE11073_OID_TYPE = "KSU_NOM_DOWNSTREAM_FLOW"
+   val MDC_ATTR_UNIT_CODE : IEEE11073_OID_TYPE = "" //TODO: Find the unit
 }
 
 // Commands Channel

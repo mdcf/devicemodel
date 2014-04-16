@@ -815,6 +815,27 @@
         </attribute>
       </members>
     </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Reporting_Status">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Schema</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="report_exchange">
+          <annotations class="ilist">
+            <const qualifier="">
+              <level>Product</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_ProviderInitiated_Exchange"/>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Security_Access">
       <annotations class="ilist">
         <featureLevel qualifier="">
@@ -1553,6 +1574,107 @@
         </attribute>
       </members>
     </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_Capnography_VMD">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_VMD"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PARAM_GRP">
+          <annotations class="ilist">
+            <override/>
+            <const qualifier="">
+              <level>Class</level>
+            </const>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="IEEE ... Capnography"/>
+          </init>
+        </attribute>
+        <attribute name="channels">
+          <annotations class="ilist">
+            <override/>
+            <multiplicity lo="1" hi="*">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_EtCo2_Channel</reference>
+              </typeName>
+            </multiplicity>
+            <multiplicity lo="1" hi="*">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_RepiratoryRate_Channel</reference>
+              </typeName>
+            </multiplicity>
+          </annotations>
+          <type class="mapType">
+            <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+            <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+          </type>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_EtCo2_Channel">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="metrics">
+          <annotations class="ilist">
+            <override/>
+            <multiplicity lo="1" hi="*">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_EtCo2_Numeric</reference>
+              </typeName>
+            </multiplicity>
+          </annotations>
+          <type class="mapType">
+            <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+            <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Metric"/>
+          </type>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_EtCo2_Numeric">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Numeric"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="MDC_CAPNOGRAPHY_ETCO2"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="MDC_DIM_PERCENT"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
     <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_MultiMonitor_VMD">
       <annotations class="ilist">
         <featureLevel qualifier="">
@@ -2033,22 +2155,18 @@
         </featureLevel>
       </annotations>
       <supers class="ilist">
-        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
       </supers>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_PHYSIO">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value="NOM_FLOW_FLUID_DELIV_MIN"/>
           </init>
         </attribute>
         <attribute name="MDC_ATTR_UNIT_CODE">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value=""/>
@@ -2275,22 +2393,18 @@
         </featureLevel>
       </annotations>
       <supers class="ilist">
-        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
       </supers>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_PHYSIO">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value="KSU_NOM_DOWNSTREAM_FLOW"/>
           </init>
         </attribute>
         <attribute name="MDC_ATTR_UNIT_CODE">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value=""/>
@@ -2815,22 +2929,18 @@
         </featureLevel>
       </annotations>
       <supers class="ilist">
-        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
       </supers>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_PHYSIO">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value="NOM_FLOW_FLUID_RES"/>
           </init>
         </attribute>
         <attribute name="MDC_ATTR_UNIT_CODE">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value=""/>
@@ -2875,22 +2985,18 @@
         </featureLevel>
       </annotations>
       <supers class="ilist">
-        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
       </supers>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_PHYSIO">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value="NOM_FLOW_FLUID_MAX"/>
           </init>
         </attribute>
         <attribute name="MDC_ATTR_UNIT_CODE">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value=""/>
@@ -2905,22 +3011,18 @@
         </featureLevel>
       </annotations>
       <supers class="ilist">
-        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
       </supers>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_PHYSIO">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value="NOM_VOL_FLUID_RES"/>
           </init>
         </attribute>
         <attribute name="MDC_ATTR_UNIT_CODE">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value=""/>
@@ -3273,22 +3375,18 @@
         </featureLevel>
       </annotations>
       <supers class="ilist">
-        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
       </supers>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_PHYSIO">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value="KSU_NOM_REMAINING_BATT_TIME"/>
           </init>
         </attribute>
         <attribute name="MDC_ATTR_UNIT_CODE">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value=""/>
@@ -3508,22 +3606,18 @@
         </featureLevel>
       </annotations>
       <supers class="ilist">
-        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
       </supers>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_PHYSIO">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value="KSU_NOM_UPSTREAM_FLOW"/>
           </init>
         </attribute>
         <attribute name="MDC_ATTR_UNIT_CODE">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value=""/>
@@ -3538,22 +3632,18 @@
         </featureLevel>
       </annotations>
       <supers class="ilist">
-        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
       </supers>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_PHYSIO">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value="KSU_NOM_USING_BATT"/>
           </init>
         </attribute>
         <attribute name="MDC_ATTR_UNIT_CODE">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value=""/>
@@ -3568,22 +3658,18 @@
         </featureLevel>
       </annotations>
       <supers class="ilist">
-        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Setting"/>
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Status"/>
       </supers>
       <members class="ilist">
         <attribute name="MDC_ATTR_ID_PHYSIO">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value="NOM_VOL_FLUID_RES"/>
           </init>
         </attribute>
         <attribute name="MDC_ATTR_UNIT_CODE">
-          <annotations class="ilist">
-            <override/>
-          </annotations>
+          <annotations class="ilist"/>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value=""/>
@@ -3838,6 +3924,63 @@
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
           <init class="some">
             <reference class="basicInit" value="MDC_PULS_OXIM_PULS_RATE"/>
+          </init>
+        </attribute>
+        <attribute name="MDC_ATTR_UNIT_CODE">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="MDC_DIM_BEAT_PER_MIN"/>
+          </init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_RepiratoryRate_Channel">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Channel"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="metrics">
+          <annotations class="ilist">
+            <override/>
+            <multiplicity lo="1" hi="*">
+              <typeName class="some">
+                <reference class="string">edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_RespiratoryRate_Numeric</reference>
+              </typeName>
+            </multiplicity>
+          </annotations>
+          <type class="mapType">
+            <keyType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.String"/>
+            <valueType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Metric"/>
+          </type>
+          <init class="none"></init>
+        </attribute>
+      </members>
+    </feature>
+    <feature name="edu.ksu.cis.santos.mdcf.dms.examplev2.clas.ICE_RespiratoryRate_Numeric">
+      <annotations class="ilist">
+        <featureLevel qualifier="">
+          <level>Class</level>
+        </featureLevel>
+      </annotations>
+      <supers class="ilist">
+        <namedType name="edu.ksu.cis.santos.mdcf.dms.examplev2.schema.ICE_Numeric"/>
+      </supers>
+      <members class="ilist">
+        <attribute name="MDC_ATTR_ID_PHYSIO">
+          <annotations class="ilist">
+            <override/>
+          </annotations>
+          <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.examplev2.IEEE11073_OID_TYPE"/>
+          <init class="some">
+            <reference class="basicInit" value="MDC_CAPNOGRAPHY_RR"/>
           </init>
         </attribute>
         <attribute name="MDC_ATTR_UNIT_CODE">

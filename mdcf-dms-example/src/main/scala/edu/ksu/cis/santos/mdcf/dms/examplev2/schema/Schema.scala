@@ -668,6 +668,11 @@ trait ICE_Status extends ICE_Feature {
   val exchange : ICE_Get_Exchange
 }
 
+trait ICE_Reporting_Status extends ICE_Status {
+  @Const(PRODUCT)
+  val report_exchange : ICE_ProviderInitiated_Exchange
+}
+
 // TODO:
 // As with the Metric values, the status class should be parametric in the type of the status as well
 // as on behavioral constraints of the status.   A status should be required to define a value.

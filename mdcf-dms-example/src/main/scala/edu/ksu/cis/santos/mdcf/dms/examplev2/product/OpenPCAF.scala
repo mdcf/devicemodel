@@ -346,62 +346,44 @@ final class OpenPCAF extends ICE_MDS {
           override val MDC_ATTR_ID_PARAM_GRP : IEEE11073_OID_TYPE = "Status Settings Channel"
           override val alerts : Map[String, ICE_Alert] = Map()
           override val metrics : Map[String, ICE_Metric] = Map()
-          override val settings : Map[String, ICE_Setting] = Map(
+          override val settings : Map[String, ICE_Setting] = Map()
+          override val statuses : Map[String, ICE_Status] = Map(
             "OperationalMode" -> new ICE_PCAF_OperationalMode_Status {
-              override val get : ICE_Get_Exchange = new PCAFGetExchange {}
-              override val set : Option[ICE_Set_Exchange] = None
-              //override val get_payload : ICE_SettingGetPayload = DYN
-              //override val set_payload : Option[ICE_SettingSetPayload] = DYN
+              override val access : Option[ICE_Security_Access_Read] = None
+              override val exchange : ICE_Get_Exchange = new PCAFGetExchange {}
             },
             "CalculatedFluidPressure" -> new ICE_PCAF_CalculatedFluidPressure_Status {
-              override val get : ICE_Get_Exchange = new PCAFGetExchange {}
-              override val set : Option[ICE_Set_Exchange] = None
-              //override val get_payload : ICE_SettingGetPayload = DYN
-              //override val set_payload : Option[ICE_SettingSetPayload] = DYN
+              override val access : Option[ICE_Security_Access_Read] = None
+              override val exchange : ICE_Get_Exchange = new PCAFGetExchange {}
             },
             "MeasuredFluidPressure" -> new ICE_PCAF_MeasuredFluidPressure_Status {
-              override val get : ICE_Get_Exchange = new PCAFGetExchange {}
-              override val set : Option[ICE_Set_Exchange] = None
-              //override val get_payload : ICE_SettingGetPayload = DYN
-              //override val set_payload : Option[ICE_SettingSetPayload] = DYN
+              override val access : Option[ICE_Security_Access_Read] = None
+              override val exchange : ICE_Get_Exchange = new PCAFGetExchange {}
             },
             "OperationalStatus" -> new ICE_PCAF_OperationalStatus_Status {
-              override val get : ICE_Get_Exchange = new PCAFGetExchange {}
-              override val set : Option[ICE_Set_Exchange] = None
-              //override val get_payload : ICE_SettingGetPayload = DYN
-              //override val set_payload : Option[ICE_SettingSetPayload] = DYN
+              override val access : Option[ICE_Security_Access_Read] = None
+              override val exchange : ICE_Get_Exchange = new PCAFGetExchange {}
             },
             "VolumeInfusedActualTotal" -> new ICE_PCAF_VolumeInfusedActualTotal_Status {
-              override val get : ICE_Get_Exchange = new PCAFGetExchange {}
-              override val set : Option[ICE_Set_Exchange] = None
-              //override val get_payload : ICE_SettingGetPayload = DYN
-              //override val set_payload : Option[ICE_SettingSetPayload] = DYN
+              override val access : Option[ICE_Security_Access_Read] = None
+              override val exchange : ICE_Get_Exchange = new PCAFGetExchange {}
             },
             "RemainingBatteryTime" -> new ICE_PCAF_RemainingBatteryTime_Status {
-              override val get : ICE_Get_Exchange = new PCAFGetExchange {}
-              override val set : Option[ICE_Set_Exchange] = None
-              //override val get_payload : ICE_SettingGetPayload = DYN
-              //override val set_payload : Option[ICE_SettingSetPayload] = DYN
+              override val access : Option[ICE_Security_Access_Read] = None
+              override val exchange : ICE_Get_Exchange = new PCAFGetExchange {}
             },
             "UsingBatteryPower" -> new ICE_PCAF_UsingBatteryPower_Status {
-              override val get : ICE_Get_Exchange = new PCAFGetExchange {}
-              override val set : Option[ICE_Set_Exchange] = None
-              //override val get_payload : ICE_SettingGetPayload = DYN
-              //override val set_payload : Option[ICE_SettingSetPayload] = DYN
+              override val access : Option[ICE_Security_Access_Read] = None
+              override val exchange : ICE_Get_Exchange = new PCAFGetExchange {}
             },
             "UpstreamFlow" -> new ICE_PCAF_UpstreamFlow_Status {
-              override val get : ICE_Get_Exchange = new PCAFGetExchange {}
-              override val set : Option[ICE_Set_Exchange] = None
-              //override val get_payload : ICE_SettingGetPayload = DYN
-              //override val set_payload : Option[ICE_SettingSetPayload] = DYN
+              override val access : Option[ICE_Security_Access_Read] = None
+              override val exchange : ICE_Get_Exchange = new PCAFGetExchange {}
             },
             "DownstreamFlow" -> new ICE_PCAF_DownstreamFlow_Status {
-              override val get : ICE_Get_Exchange = new PCAFGetExchange {}
-              override val set : Option[ICE_Set_Exchange] = None
-              //override val get_payload : ICE_SettingGetPayload = DYN
-              //override val set_payload : Option[ICE_SettingSetPayload] = DYN
+              override val access : Option[ICE_Security_Access_Read] = None
+              override val exchange : ICE_Get_Exchange = new PCAFGetExchange {}
             })
-          override val statuses : Map[String, ICE_Status] = Map()
           override val actions : Map[String, ICE_Action] = Map()
         },
         "Commands" -> new ICE_PCAF_Commands {
