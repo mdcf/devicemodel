@@ -45,12 +45,6 @@ import edu.ksu.cis.santos.mdcf.dms.examplev2.product.MultiMonitorSporadicExchang
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimpleCapnography;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimpleCapnographyGetExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimpleCapnographyPeriodicExchange;
-import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimplePCA;
-import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimplePCAActionExchange;
-import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimplePCAGetExchange;
-import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimplePCAPeriodicExchange;
-import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimplePCASetExchange;
-import edu.ksu.cis.santos.mdcf.dms.examplev2.product.SimplePCASporadicExchange;
 import edu.ksu.cis.santos.mdcf.dms.examplev2.requirement.PulseOxDisplayApp;
 
 /**
