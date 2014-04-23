@@ -63,6 +63,7 @@ object MdcfBuild extends Build {
     fork := true,
     scalaVersion := scalaVer,
     scalacOptions ++= Seq("-target:jvm-1.7"),
+    incOptions := incOptions.value.withNameHashing(true),
     libraryDependencies += "org.scala-lang" % "scala-actors" % scalaVer,
     libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVer,
     libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVer,
