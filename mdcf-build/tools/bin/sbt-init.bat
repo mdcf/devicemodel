@@ -9,4 +9,4 @@ IF NOT DEFINED RESERVED_CODE_CACHE_SIZE (
 )
 set PROJECT_DIR=%~dp0\..\..
 set SBT_DIR=%PROJECT_DIR%\sbt
-java -Divy.home=%SBT_DIR%/ivy -Dsbt.ivy.home=%SBT_DIR%/sbtivy -Dsbt.boot.directory=%SBT_DIR%/boot -Dfile.encoding=UTF8 %JAVA_OPTS% -XX:ReservedCodeCacheSize=%RESERVED_CODE_CACHE_SIZE% -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=%MAX_PERM_SIZE% -Xmx%JAVA_HEAP_SIZE% -jar %PROJECT_DIR%\tools\bin\sbt-launch-0.13.0.jar %SBT_OPTS% %*
+java -Divy.home=%SBT_DIR%/ivy -Dsbt.ivy.home=%SBT_DIR%/sbtivy -Dsbt.boot.directory=%SBT_DIR%/boot -Dfile.encoding=UTF8 %JAVA_OPTS% -XX:ReservedCodeCacheSize=%RESERVED_CODE_CACHE_SIZE% -Xss1M -XX:+CMSClassUnloadingEnabled -Xmx%JAVA_HEAP_SIZE% -jar %PROJECT_DIR%\tools\bin\sbt-launch-0.13.2.jar %SBT_OPTS% %*

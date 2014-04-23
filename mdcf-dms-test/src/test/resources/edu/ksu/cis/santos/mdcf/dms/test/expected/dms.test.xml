@@ -130,7 +130,9 @@
           </init>
         </attribute>
         <attribute name="physioParameterType">
-          <annotations class="ilist"/>
+          <annotations class="ilist">
+            <override/>
+          </annotations>
           <type class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.IEEEPhysioParameterType"/>
           <init class="some">
             <reference class="basicInit" value="MDC_PRESS_BLD_NONINV_MEAN"/>
@@ -2678,14 +2680,18 @@
       </supers>
       <members class="ilist">
         <attribute name="values">
-          <annotations class="ilist"/>
+          <annotations class="ilist">
+            <override/>
+          </annotations>
           <type class="seqType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.Number"/>
           </type>
           <init class="none"></init>
         </attribute>
         <attribute name="attributes">
-          <annotations class="ilist"/>
+          <annotations class="ilist">
+            <override/>
+          </annotations>
           <type class="setType">
             <elementType class="namedType" name="edu.ksu.cis.santos.mdcf.dms.example.schema.MetricAttribute"/>
           </type>

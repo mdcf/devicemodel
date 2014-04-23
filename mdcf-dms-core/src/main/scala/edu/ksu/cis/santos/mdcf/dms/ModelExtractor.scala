@@ -338,7 +338,7 @@ class ModelExtractor(
 
     val anns = symbol.annotations.map(Reflection.annotation(_))
 
-    if (symbol.isOverride || symbol.isAbstractOverride)
+    if (!symbol.overrides.isEmpty || symbol.isAbstractOverride)
       aAnnotations :+= overrideAnnotation
 
     for (a <- anns) {
